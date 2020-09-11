@@ -1,18 +1,21 @@
+
 # MgPlus (Mg+)
 
 ## A minimalist CSS framework
 
 ### Extended version of Milligram CSS framework
 
-Mg+ is based on Milligram which provides a minimal setup of styles for a fast and clean starting point.
-
-**_Only 26kb minified_**
+Mg+ include Milligram which provides a minimal setup of styles for a fast and clean starting point.
 
 ### Aditionnal features
 
 Usefull extensions like navs or forms inputs and more advanced grid system (FlexBoxGrid)
 
 Unlike most other CSS UI Framework, Mg+ is more like a css survival kit specially designed for better performance and higher productivity.
+
+**_Only 26kb minified_**
+
+**[demo](https://medevod.github.io/mgplus/)**
 
 Core version:
 [milligram](https://github.com/milligram/milligram)
