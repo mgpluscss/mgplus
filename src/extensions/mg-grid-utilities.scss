@@ -1,0 +1,171 @@
+//
+//  Utilities -> Grid
+//  _____________________________________________
+
+@mixin grid-column($_gutter: $grid__gutter) {
+  flex: 0 0 100%;
+  max-width: 100%;
+  // Prevent columns from collapsing when empty
+  min-height: 1px;
+  // Inner gutter via padding
+  padding-left: ($_gutter / 2);
+  padding-right: ($_gutter / 2);
+}
+
+//  Centered container element
+@mixin init-container($_gutter: $grid__gutter) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($_gutter / 2);
+  padding-right: ($_gutter / 2);
+}
+
+//  Creates a wrapper for a series of columns
+@mixin init-row($_gutter: $grid__gutter) {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: ($_gutter / -2);
+  margin-right: ($_gutter / -2);
+}
+
+//  Generate extra small columns
+@mixin create-X($_columns, $_gutter: $grid__gutter) {
+  @include grid-column($_gutter);
+  max-width: percentage(($_columns / $grid__columns));
+}
+
+@mixin create-X--offset($_columns) {
+  margin-left: percentage(($_columns / $grid__columns));
+}
+
+//  Generate small columns
+@mixin create-S($_columns, $_gutter: $grid__gutter) {
+  @include grid-column($_gutter);
+
+  @media (min-width: $screen--S) {
+    max-width: percentage(($_columns / $grid__columns));
+  }
+}
+
+@mixin create-S--offset($_columns) {
+  @media (min-width: $screen--S) {
+    margin-left: percentage(($_columns / $grid__columns));
+  }
+}
+
+//  Generate medium columns
+@mixin create-M($_columns, $_gutter: $grid__gutter) {
+  @include grid-column($_gutter);
+
+  @media (min-width: $screen--M) {
+    max-width: percentage(($_columns / $grid__columns));
+  }
+}
+
+@mixin create-M--offset($_columns) {
+  @media (min-width: $screen--M) {
+    margin-left: percentage(($_columns / $grid__columns));
+  }
+}
+
+//  Generate large columns
+@mixin create-L($_columns, $_gutter: $grid__gutter) {
+  @include grid-column($_gutter);
+
+  @media (min-width: $screen--L) {
+    max-width: percentage(($_columns / $grid__columns));
+  }
+}
+
+@mixin create-L--offset($_columns) {
+  @media (min-width: $screen--L) {
+    margin-left: percentage(($_columns / $grid__columns));
+  }
+}
+
+//  Grid generation
+
+@mixin create-all-grid-columns(
+  $i: 1,
+  $list:
+    ".#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}"
+) {
+  @for $i from (1 + 1) through $grid__columns {
+    $list: "#{$list}, .#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}";
+  }
+  #{$list} {
+    @include grid-column();
+  }
+}
+
+@mixin calc-grid-column($index, $class, $type) {
+  @if ($type == width) and ($index > 0) {
+    .#{$class}#{$index} {
+      flex-basis: percentage(($index / $grid__columns));
+      max-width: percentage(($index / $grid__columns));
+    }
+  }
+  @if ($type == offset) {
+    .#{$class}--offset#{$index} {
+      margin-left: percentage(($index / $grid__columns));
+    }
+  }
+  @if ($type == order) {
+    .#{$class}--order#{$index} {
+      order: $index;
+    }
+  }
+}
+
+@mixin loop-grid-columns($columns, $class, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $class, $type);
+  }
+}
+
+// Create positioning classes
+@mixin create-positioning-row($_class) {
+  .#{$_class}--start {
+    justify-content: flex-start;
+  }
+  .#{$_class}--center {
+    justify-content: center;
+  }
+  .#{$_class}--end {
+    justify-content: flex-end;
+  }
+  .#{$_class}--top {
+    align-items: flex-start;
+  }
+  .#{$_class}--middle {
+    align-items: center;
+  }
+  .#{$_class}--bottom {
+    align-items: flex-end;
+  }
+  .#{$_class}--stretch {
+    align-items: stretch;
+  }
+  .#{$_class}--baseline {
+    align-items: baseline;
+  }
+  .#{$_class}--reverse {
+    flex-direction: row-reverse;
+  }
+  .#{$_class}--around {
+    justify-content: space-around;
+  }
+  .#{$_class}--between {
+    justify-content: space-between;
+  }
+}
+
+// Create grid for specific class
+@mixin create-grid-columns($_class) {
+  @include loop-grid-columns($grid__columns, $_class, width);
+  @include loop-grid-columns($grid__columns, $_class, offset);
+  @include loop-grid-columns($grid__columns, $_class, order);
+  @include create-positioning-row($_class);
+}

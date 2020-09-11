@@ -1,0 +1,100 @@
+/* The container must be positioned relative: */
+.mg-dropdown {
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+.mg-dropdown input {
+  display: none; /*hide original SELECT element: */
+}
+
+.mg-dropdown-button {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.mg-dropdown-button:after {
+  border: 2px solid transparent;
+  border-color: $color-initial;
+  right: 0.8rem;
+  border-right: 0;
+  border-top: 0;
+  content: "";
+  display: block;
+  height: 1rem;
+  margin-top: -0.8rem;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 1rem;
+  transition: all 0.2s;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.mg-dropdown.opened > .mg-dropdown-button:after {
+  transform: rotate(135deg);
+  margin-top: -0.4rem;
+}
+.mg-dropdown-button.button-clear:after {
+  border-color: $color-secondary;
+}
+
+.mg-dropdown-button.button-outline:after {
+  border-color: $color-secondary;
+}
+
+/* Style items (options): */
+.mg-dropdown-menu > ul {
+  list-style-type: none;
+  max-height: 50vh;
+  overflow-y: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* style the items (options), including the selected item: */
+.mg-dropdown-menu > ul > li {
+  padding: 1px 1px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  margin: 1px;
+}
+/* style the items (options), including the selected item: */
+.mg-dropdown-menu > ul > li > a {
+  display: block;
+}
+.mg-dropdown-menu > ul > li:hover {
+  background-color: $color-quaternary;
+}
+.mg-dropdown > .mg-dropdown-menu {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 100%;
+  border: 1px solid;
+  display: none;
+  padding: 0.5rem;
+  position: absolute;
+  background-color: $color-initial;
+  top: 100%;
+  z-index: 99;
+  border-color: $color-quaternary;
+  border-radius: $input-radius;
+  overflow-x: hidden;
+}
+.mg-dropdown-menu.mg-dropdown-menu-fit {
+  min-width: 100%;
+}
+.mg-dropdown-menu.mg-dropdown-menu-right {
+  right: 0;
+}
+.mg-dropdown-menu.mg-dropdown-menu-left {
+  left: 0;
+}
+.mg-dropdown.opened > .mg-dropdown-menu {
+  display: block;
+}

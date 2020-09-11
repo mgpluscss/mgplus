@@ -1,0 +1,55 @@
+:root {
+  --mg-color-initial: #fff;
+  --mg-color-primary: #9b4dca;
+  --mg-color-secondary: #8a949c;
+  --mg-color-tertiary: #f4f5f6;
+  --mg-color-quaternary: #d1d1d1;
+  --mg-color-quinary: #e1e1e1;
+  --mg-button-radius: 0.4rem;
+  --mg-input-radius: 0.1rem;
+  --mg-color-red: #dc3545;
+  --mg-color-orange: #fd7e14;
+  --mg-color-blue: #007bff;
+  --mg-color-green: #28a745;
+}
+
+$color-initial: var(--mg-color-initial) !default;
+$color-primary: var(--mg-color-primary) !default;
+$color-secondary: var(--mg-color-secondary) !default;
+$color-tertiary: var(--mg-color-tertiary) !default;
+$color-quaternary: var(--mg-color-quaternary) !default;
+$color-quinary: var(--mg-color-quinary) !default;
+$button-radius: var(--mg-button-radius) !default;
+$input-radius: var(--mg-input-radius) !default;
+
+$color-red: var(--mg-color-red);
+$color-orange: var(--mg-color-orange);
+$color-blue: var(--mg-color-blue);
+$color-green: var(--mg-color-green);
+
+$color-danger: $color-red;
+$color-warning: $color-orange;
+$color-success: $color-green;
+
+//
+//  Variables
+//  _____________________________________________
+
+$grid__columns: 12;
+$grid__gutter: 10px;
+
+$name--X: mg-x;
+$name--S: mg-s;
+$name--M: mg-m;
+$name--L: mg-l;
+$name--XL: mg-xl;
+
+$break--S: 480px;
+$break--M: 768px;
+$break--L: 1024px;
+$break--XL: 1440px;
+
+$screen--S: $break--S + 1;
+$screen--M: $break--M + 1;
+$screen--L: $break--L + 1;
+$screen--XL: $break--XL + 1;

@@ -1,0 +1,68 @@
+nav.mg-navbar {
+  padding-right: 1rem;
+}
+nav.mg-navbar .dropdown ul {
+  margin-top: 1.4rem;
+  margin-left: -1.5rem;
+}
+nav.mg-navbar .dropdown label {
+  padding: 0 1rem;
+}
+nav.mg-navbar {
+  background: $color-primary;
+  padding: 1.5rem;
+  color: $color-initial;
+}
+nav.mg-navbar.default {
+  background: $color-tertiary;
+  color: $color-primary;
+}
+nav.mg-navbar a {
+  color: $color-initial;
+  padding: 0 1rem;
+}
+nav.mg-navbar input {
+  max-width: 20rem;
+  margin: -0.9rem 0;
+  position: relative;
+  top: -0.3rem;
+}
+nav.mg-navbar.default a {
+  color: $color-primary;
+}
+nav.mg-navbar a:hover {
+  opacity: 0.85;
+}
+
+.mg-nav > ul > li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.mg-nav > ul > li.active {
+  color: var(--mg-color-primary);
+  border-left: 0.3rem solid $color-primary;
+  overflow-y: hidden;
+  font-weight: bold;
+}
+.mg-nav.mg-nav-inline > ul > li.active {
+  border: none;
+  border-bottom: 0.3rem solid $color-primary;
+}
+.mg-nav > ul > li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.mg-nav > ul > li a:hover {
+  background-color: $color-quaternary;
+}
+
+.mg-nav-inline > ul {
+  display: inline-block;
+  width: 100%;
+}
+.mg-nav-inline > ul > li:not(.mg-right) {
+  float: left;
+}

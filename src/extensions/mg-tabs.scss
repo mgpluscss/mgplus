@@ -1,0 +1,46 @@
+// Tabs
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.mg-tabs > ul {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  list-style: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.mg-tabs > ul > li > * {
+  color: $color-secondary;
+  white-space: nowrap;
+}
+.mg-tabs > ul > li {
+  opacity: 0.9;
+}
+
+.mg-tabs > ul > li.active {
+  color: var(--mg-color-primary);
+  border-bottom: 0.3rem solid $color-primary;
+  opacity: 1;
+  overflow-y: hidden;
+  font-weight: bold;
+}
+
+.mg-tabs > ul > li:hover {
+  border-bottom: 0.3rem solid $color-primary;
+}
+
+.mg-tabs-item {
+  margin-left: 0.2em;
+  margin-right: 0.2em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+}
+
+.mg-tabs-content {
+  display: none;
+  padding-bottom: 1em;
+  border-bottom: 1px solid transparent;
+  border-color: $color-quaternary;
+  clear: both;
+}

@@ -1,0 +1,35 @@
+.mg-toolbar {
+  display: flex;
+}
+.mg-toolbar > * {
+  flex: 0 0 1;
+  padding: 0;
+}
+.mg-toolbar > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
+.mg-toolbar > input:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-toolbar > button:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-toolbar > select:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-toolbar > textarea:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-toolbar > .button:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-toolbar > .mg-dropdown:not(:nth-child(1)):not(:nth-last-child(1)) > button {
+  border-radius: 0;
+}
+.mg-toolbar > .mg-select:nth-child(1) > select,
+.mg-toolbar > input:nth-child(1),
+.mg-toolbar > button:nth-child(1),
+.mg-toolbar > select:nth-child(1) .mg-toolbar > textarea:nth-child(1),
+.mg-toolbar > .mg-dropdown:nth-child(1) > .mg-dropdown-button,
+.mg-toolbar > .button:nth-child(1) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mg-toolbar > .mg-select:last-child > select,
+.mg-toolbar > select:last-child,
+.mg-toolbar > input:last-child,
+.mg-toolbar > button:last-child,
+.mg-toolbar > textarea:last-child,
+.mg-toolbar > .mg-dropdown:last-child > .mg-dropdown-button,
+.mg-toolbar > .button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

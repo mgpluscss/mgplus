@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+    />
+
+    <meta name="author" content="medevod" />
+    <meta
+      name="description"
+      content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code."
+    />
+    <title>Milligram Plus | A minimalist CSS framework.</title>
+
+    <link rel="icon" href="milligram-plus.svg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link rel="stylesheet" href="dist/mg-plus.min.css" />
+    <link rel="stylesheet" href="examples/site.css" />
+    <style>
+      :root {
+        --mg-color-initial: #fff;
+        --mg-color-primary: #23a3e1;
+        --mg-color-tertiary: #f7f7f7;
+        --mg-color-quaternary: #d2d2d3;
+        /*borders inputs*/
+        --mg-color-quinary: #d2d2d3;
+        /*disabled inputs*/
+        --mg-button-radius: 1.5rem;
+        --mg-input-radius: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+    <main class="wrapper">
+      <nav class="navigation">
+        <div class="mg-container">
+          <div class="mg-row mg-x--around mg-x--baseline">
+            <a
+              title="Milligram Plus - A minimalist CSS framework."
+              class="navigation-title"
+              href="https://medevod.github.io/mgplus"
+            >
+              <img class="img" src="milligram-plus.svg" />&nbsp;
+              <span>Mg+</span></a
+            >
+            <a
+              href="https://github.com/medevod/mgplus"
+              title="Milligram plus on Github"
+              target="_blank"
+            >
+              <svg class="octocat" viewBox="0 0 250 250">
+                <path
+                  d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"
+                ></path>
+                <path
+                  class="octocat-arm"
+                  d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                ></path>
+                <path
+                  class="octocat-body"
+                  d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                ></path>
+              </svg>
+            </a>
+            <div class="mg-dropdown mg-right">
+              <button
+                data-toggle="dropdown"
+                class="mg-dropdown-button button-outline"
+              >
+                Extensions
+              </button>
+              <div class="mg-dropdown-menu">
+                <ul>
+                  <li class="active"><a href="#home">Home</a></li>
+                  <li><a href="#nav">Nav</a></li>
+                  <li><a href="#nav-inline">Nav inline</a></li>
+                  <li><a href="#dropdown">Dropdown</a></li>
+                  <li><a href="#select">Select</a></li>
+                  <li><a href="#radio">Radio</a></li>
+                  <li><a href="#check">Check</a></li>
+                  <li><a href="#form">Form</a></li>
+                  <li><a href="#alert">Alert</a></li>
+                  <li><a href="#tabs">Tabs</a></li>
+                  <li><a href="#toolbar">Toolbar</a></li>
+                  <li><a href="#grid">Grid</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="page mg-container">
+        <section>
+          <div class="mg-center-block header">
+            <div class="stage">
+              <img
+                class="img box bounce-7"
+                src="milligram-plus.svg"
+                height="120"
+              />&nbsp;
+            </div>
+            <div>
+              <h3><b>MgPlus</b></h3>
+              <a href="https://medevod.github.io/mgplus">Github</a>
+              <h3>Minimalist CSS framework</h3>
+              <h4>Extended version of Milligram</h4>
+              <h5 class="title">
+                Based on
+                <a href="https://github.com/milligram/milligram">Milligram</a>
+                and
+                <a href="https://github.com/godban/flex-box-grid"
+                  >FlexBoxGrid</a
+                >
+              </h5>
+            </div>
+            <a href="#home" class="button">Explore extensions</a>
+          </div>
+        </section>
+        <section id="home" class="mg-center-block">
+          <h1 class="title">MgPlus Extensions</h2>
+        </section>
+        <section></section>
+        <section id="nav">
+          <h2 class="title">Nav vertical (default)</h2>
+          <div class="mg-nav" id="nav-vertical-example">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="nav-vertical-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="nav-inline">
+          <h2 class="title">Nav inline</h2>
+          <div class="mg-nav mg-nav-inline" id="nav-horizontal-example">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="mg-right"><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="nav-horizontal-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="dropdown">
+          <h2 class="title">Dropdown</h2>
+          <div class="mg-dropdown" data-value="bmw" id="dropdown-example">
+            <button data-toggle="dropdown" class="mg-dropdown-button">
+              Choose Action
+            </button>
+            <div class="mg-dropdown-menu">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="citroen">Citroen</li>
+                <li data-value="ford">Ford</li>
+                <li data-value="honda">Honda</li>
+                <li data-value="jaguar">Jaguar</li>
+                <li data-value="land-rover">Land Rover</li>
+                <li data-value="mercedes">Mercedes long! very long!</li>
+                <li data-value="mini">Mini</li>
+                <li data-value="nissan">Nissan</li>
+                <li data-value="toyota">Toyota</li>
+                <li data-value="volvo">Volvo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="dropdown-example"
+            ></pre>
+          </div>
+
+          <div class="mg-dropdown" data-value="bmw" id="dropdown-example2">
+            <button data-toggle="dropdown" class="mg-dropdown-button">
+              left side
+            </button>
+            <div class="mg-dropdown-menu mg-dropdown-menu-left">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="mercedes">Mercedes long! very very long!</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="mg-dropdown mg-right"
+            data-value="bmw"
+            id="dropdown-example2"
+          >
+            <button data-toggle="dropdown" class="mg-dropdown-button">
+              right side
+            </button>
+            <div class="mg-dropdown-menu mg-dropdown-menu-right">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="mercedes">Mercedes long! very long!</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="select">
+          <h2 class="title">select (native)</h2>
+          <div class="mg-select" id="select-example">
+            <select>
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+              <option value="4">Ford</option>
+              <option value="5">Honda</option>
+              <option value="6">Jaguar</option>
+              <option value="7">Land Rover</option>
+              <option value="8">Mercedes</option>
+              <option value="9">Mini</option>
+              <option value="10">Nissan</option>
+              <option value="11">Toyota</option>
+              <option value="12">Volvo</option>
+            </select>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="select-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="radio">
+          <h2 class="title">Radio</h2>
+          <div class="mg-group" id="radio-example">
+            <label class="mg-radio label-inline">
+              Two
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-radio label-inline">
+              Three
+              <input type="radio" disabled name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-radio label-inline">
+              Four
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="radio-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="check">
+          <h2 class="title">Check</h2>
+          <div class="mg-group" id="check-example">
+            <label class="mg-check label-inline">
+              check1
+              <input type="checkbox" checked="checked" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-check label-inline">
+              check2
+              <input type="checkbox" checked="checked" disabled />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-check label-inline">
+              check3
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="check-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="form">
+          <h2 class="title">Form</h2>
+          <form id="form-example2">
+            <fieldset>
+              <label for="nameField">Name</label>
+              <input type="text" placeholder="CJ Patoilo" id="nameField" />
+              <label for="ageRangeField">Age Range (mg+)</label>
+              <div class="mg-select">
+                <select id="ageRangeField2">
+                  <option value="0-13">0-13</option>
+                  <option value="14-17">14-17</option>
+                  <option value="18-23">18-23</option>
+                  <option value="24+">24+</option>
+                </select>
+              </div>
+              <label for="ageRangeField">Age Range (default)</label>
+              <select id="ageRangeField">
+                <option value="0-13">0-13</option>
+                <option value="14-17">14-17</option>
+                <option value="18-23">18-23</option>
+                <option value="24+">24+</option>
+              </select>
+              <label for="commentField">Comment</label>
+              <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+
+              <label for="car-dropdown"> Choose Action </label>
+
+              <div class="float-right">
+                <label class="mg-check label-inline" for="confirmField">
+                  Send a copy to yourself
+                  <input type="checkbox" id="confirmField" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="form-example2"
+            ></pre>
+          </div>
+        </section>
+        <section id="alert">
+          <h2 class="title">Alert</h2>
+          <div class="mg-alert" id="default-alert-example">
+            <span
+              class="mg-alert-closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            This is an default alert box.
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="default-alert-example"
+            ></pre>
+          </div>
+          <div class="mg-alert mg-alert-danger" id="danger-alert-example">
+            <span
+              class="mg-alert-closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            This is an danger alert box.
+          </div>
+          <div class="mg-alert mg-alert-success" id="success-alert-example">
+            <span
+              class="mg-alert-closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            This is an success alert box.
+          </div>
+          <div class="mg-alert mg-alert-warning" id="warning-alert-example">
+            <span
+              class="mg-alert-closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            This is an warning alert box.
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="warning-alert-example"
+            ></pre>
+          </div>
+          <div
+            class="mg-alert mg-alert-danger mg-color-danger"
+            id="danger-alert-example2"
+          >
+            <span
+              class="mg-alert-closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            This is an danger alert box.
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="danger-alert-example2"
+            ></pre>
+          </div>
+        </section>
+        <section id="tabs">
+          <h2 class="title">Tabs</h2>
+          <div class="mg-tabs" data-toggle="tabs" id="tabs-example">
+            <ul>
+              <li class="mg-tabs-item active" data-target="tab1">
+                <a href="#" class="secondary">Tab one</a>
+              </li>
+              <li class="mg-tabs-item" data-target="tab2">
+                <a href="#" class="button-outline">Tab two</a>
+              </li>
+              <li class="mg-tabs-item" data-target="tab3">
+                <a href="#" class="secondary">Tab one</a>
+              </li>
+            </ul>
+            <div class="mg-tabs-content" id="tab1">
+              1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+              iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
+              dolorum libero fugit quidem, voluptate veniam aut animi nihil
+              voluptas mollitia, aliquid inventore.
+            </div>
+            <div class="mg-tabs-content" id="tab2">
+              2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+              iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
+              dolorum libero fugit quidem, voluptate veniam aut animi nihil
+              voluptas mollitia, aliquid inventore.
+            </div>
+            <div class="mg-tabs-content" id="tab3">
+              3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+              iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
+              dolorum libero fugit quidem, voluptate veniam aut animi nihil
+              voluptas mollitia, aliquid inventore.
+            </div>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="tabs-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="toolbar">
+          <h2 class="title">Toolbar</h2>
+          <div class="mg-toolbar" id="toolbar-example">
+            <div
+              class="mg-dropdown mg-x2 mg-m1 mg-l1"
+              tabindex="1"
+              data-value="bmw"
+              id="car-dropdown"
+            >
+              <button data-toggle="dropdown" class="mg-dropdown-button">
+                <img
+                  src="examples/fr.svg"
+                  height="24px;"
+                  class="mg-valign-middle"
+                />
+              </button>
+              <div class="mg-dropdown-menu mg-dropdown-menu-left">
+                <ul>
+                  <li data-value="fr">
+                    <img
+                      src="examples/fr.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;France
+                  </li>
+                  <li data-value="es">
+                    <img
+                      src="examples/es.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;Espagne
+                  </li>
+                  <li data-value="de">
+                    <img
+                      src="examples/de.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;Deuthshland
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <a class="button mg-x2 mg-m1 mg-l1" href="#">Select</a>
+            <div
+              class="mg-dropdown mg-x3 mg-m1 mg-l1"
+              tabindex="1"
+              data-value="bmw"
+              id="car-dropdown"
+            >
+              <button data-toggle="dropdown" class="mg-dropdown-button">
+                Lang
+              </button>
+              <div class="mg-dropdown-menu mg-dropdown-menu-right">
+                <ul>
+                  <li data-value="fr">
+                    <img
+                      src="examples/fr.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;France
+                  </li>
+                  <li data-value="es">
+                    <img
+                      src="examples/es.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;Espagne
+                  </li>
+                  <li data-value="de">
+                    <img
+                      src="examples/de.svg"
+                      height="25px;"
+                      class="mg-valign-middle"
+                    />&nbsp;Deuthshland
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="toolbar-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="grid">
+          <h2 class="title">Grid</h2>
+          <h5 class="title">
+            Based on
+            <a href="https://github.com/godban/flex-box-grid">FlexBoxGrid</a>
+          </h5>
+          <div class="custom-styling">
+            <div class="mg-container" id="grid-example">
+              <div class="mg-row">
+                <div class="mg-m6 mg-m--offset1">mg-m6 mg-m--offset1</div>
+                <div class="mg-m5">mg-m5</div>
+              </div>
+              <div class="mg-row">
+                <div class="mg-m6 mg-m--offset3">mg-m6 mg-m--offset3</div>
+              </div>
+              <div class="mg-row">
+                <div class="mg-m4">mg-m4</div>
+                <div class="mg-m4 mg-m--offset4">mg-m4 mg-m--offset4</div>
+              </div>
+              <div class="example">
+                <pre
+                  class="prettyprint"
+                  data-toggle="prettify"
+                  data-source="grid-example"
+                ></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">
+          <div class="mg-center-block">         
+            Creation by
+            <a target="_blank" href="https://github.com/medevod" title="MedEvod"
+              >medevod</a
+            >. Licensed under the
+            <a target="_blank" href="license" title="MIT License">MIT License</a
+            >.           
+            <a href="https://medevod.github.io/mgplus">Github</a>         
+      </footer>
+    </main>
+    <script src="examples/site.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+  </body>
+</html>

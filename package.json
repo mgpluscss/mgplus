@@ -1,0 +1,44 @@
+{
+	"name": "mg-plus",
+	"version": "0.0.1",
+	"description": "An minimalist CSS framework",
+	"homepage": "https://medevod.github.io/mgplus",
+	"repository": "medevod/mgplus",
+	"license": "MIT",
+	"author": "medevod",
+	"main": "dist/mg-plus.css",
+	"keywords": [
+		"bootstrap",
+		"css",
+		"css3",
+		"flexbox",
+		"front-end",
+		"framework",
+		"html",
+		"html5",
+		"kickstarter",
+		"less",
+		"responsive",
+		"mobile",
+		"mobile-first",
+		"postcss",
+		"responsive",
+		"sass",
+		"scss",
+		"stylus"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"browser-sync": "^2.26.7",
+		"gulp-clean-css": "^4.2.0",
+		"gulp-rename": "^2.0.0",
+		"node-sass": "^4.14.1",
+		"gulp": "^4.0.2",
+		"gulp-less": "^4.0.1",
+		"gulp-sass": "^4.0.2"
+	},
+	"scripts": {
+		"start": "gulp start",
+		"reload": "gulp reload"
+	}
+}

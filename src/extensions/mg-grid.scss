@@ -1,0 +1,56 @@
+
+
+//
+//  Grid
+//  _____________________________________________
+ 
+.mg-container {
+    @include init-container();
+    max-width: $screen--L;
+} 
+.mg-container-fluid {
+    @include init-container();
+    max-width: width auto;
+} 
+   
+.mg-row {
+    @include init-row(); 
+}
+ 
+//  Make all grid columns
+//  ---------------------------------------------
+
+@include create-all-grid-columns();
+
+//  Columns X
+//  ---------------------------------------------
+
+@include create-grid-columns($name--X);
+
+//  Columns S
+//  ---------------------------------------------
+
+@media (min-width: $screen--S) {
+    @include create-grid-columns($name--S);
+}
+
+//  Columns M
+//  ---------------------------------------------
+
+@media (min-width: $screen--M) {
+    @include create-grid-columns($name--M);
+}
+
+//  Columns L
+//  ---------------------------------------------
+
+@media (min-width: $screen--L) {
+    @include create-grid-columns($name--L);
+}
+
+//  Columns XL
+//  ---------------------------------------------
+
+@media (min-width: $screen--XL) {
+    @include create-grid-columns($name--XL);
+}

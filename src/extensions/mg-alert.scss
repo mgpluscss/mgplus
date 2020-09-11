@@ -1,0 +1,45 @@
+.mg-alert {
+  border-left: 0.3rem solid $color-primary;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+  background-color: $color-tertiary;
+  width: 100%;
+}
+.mg-alert.mg-alert-danger {
+  border-left: 0.3rem solid $color-danger;
+}
+.mg-alert.mg-alert-success {
+  border-left: 0.3rem solid $color-success;
+}
+.mg-alert.mg-alert-warning {
+  border-left: 0.3rem solid $color-warning;
+}
+.mg-alert *:last-child {
+  margin: 0;
+}
+/* The close button */
+.mg-alert-closebtn {
+  margin: 1.5em;
+  color: $color-secondary;
+  font-weight: bold;
+  float: right;
+  font-size: 1.5em;
+  line-height: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* When moving the mouse over the close button */
+.mg-alert-closebtn:hover {
+  background-color: $color-primary;
+}
+.mg-color-warning {
+  color: $color-warning;
+}
+.mg-color-danger {
+  color: $color-danger;
+}
+.mg-color-success {
+  color: $color-success;
+}

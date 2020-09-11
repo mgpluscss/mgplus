@@ -1,0 +1,92 @@
+/*override milligram base style*/
+
+select {
+  -webkit-appearance: none;
+}
+
+/**
+ * Utilities
+ */
+
+.mg-right {
+  float: right;
+}
+
+.mg-left {
+  float: left;
+}
+
+.mg-clearfix {
+  *zoom: 1;
+}
+
+.mg-clearfix:after,
+.mg-clearfix:before {
+  content: "";
+  display: table;
+}
+
+.mg-clearfix:after {
+  clear: both;
+}
+
+.mg-text-left {
+  text-align: left;
+}
+
+.mg-text-right {
+  text-align: right;
+}
+
+.mg-text-center {
+  text-align: center;
+}
+
+.mg-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+.mg-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+.mg-margin-auto {
+  margin: auto;
+}
+.mg-center-block {
+  display: block;
+  text-align: center;
+}
+.mg-right-block {
+  display: block;
+  text-align: right;
+}
+.mg-left-block {
+  display: block;
+  text-align: left;
+}
+
+.mg-valign-middle {
+  vertical-align: middle;
+}
+.mg-loader,
+.mg-loader-error {
+  display: none !important;
+}
+.mg-loading ~ .mg-loader,
+.mg-error ~ .mg-loader-error {
+  display: inline-block !important;
+}
+.mg-loader {
+  display: none !important;
+}
+.mg-loading {
+  opacity: 0.4;
+}
