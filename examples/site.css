@@ -7,10 +7,7 @@ html {
   background-color: rgba(255, 255, 255, 0.8);
   border-top-right-radius: 6em;
   border-top-left-radius: 6em;
-  border-bottom-right-radius: 6em;
-  border-bottom-left-radius: 6em;
   padding: 1em;
-  padding-bottom: 6em;
 }
 .header {
   height: 90vh;
