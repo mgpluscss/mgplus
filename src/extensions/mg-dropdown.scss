@@ -72,6 +72,8 @@
   background-color: $color-quaternary;
 }
 .mg-dropdown > .mg-dropdown-menu {
+  width: max-content;
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   min-width: 100%;
