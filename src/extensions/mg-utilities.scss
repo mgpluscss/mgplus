@@ -1,9 +1,3 @@
-/*override milligram base style*/
-
-select {
-  -webkit-appearance: none;
-}
-
 /**
  * Utilities
  */
@@ -89,4 +83,8 @@ select {
 }
 .mg-loading {
   opacity: 0.4;
+}
+.mg-icon img {
+  height: 22;
+  vertical-align: middle;
 }
