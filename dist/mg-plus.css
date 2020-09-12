@@ -1,7 +1,7 @@
 :root {
   --mg-color-initial: #fff;
   --mg-color-primary: #9b4dca;
-  --mg-color-secondary: #8a949c;
+  --mg-color-secondary: #5e5c5c;
   --mg-color-tertiary: #f4f5f6;
   --mg-color-quaternary: #d1d1d1;
   --mg-color-quinary: #e1e1e1;
@@ -994,10 +994,6 @@ img {
   .mg-xl--between {
     justify-content: space-between; } }
 
-/*override milligram base style*/
-select {
-  -webkit-appearance: none; }
-
 /**
  * Utilities
  */
@@ -1072,6 +1068,10 @@ select {
 
 .mg-loading {
   opacity: 0.4; }
+
+img.mg-icon {
+  height: 22px;
+  vertical-align: middle; }
 
 /* The container must be positioned relative: */
 .mg-dropdown {
