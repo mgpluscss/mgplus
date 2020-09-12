@@ -81,18 +81,24 @@
                 data-toggle="dropdown"
                 class="mg-dropdown-button button-outline"
               >
-                Extensions
+                Explore
               </button>
               <div class="mg-dropdown-menu">
                 <ul>
                   <li class="active"><a href="#home">Home</a></li>
+                  <li><a href="#typography">Typography</a></li>
+                  <li><a href="#blockquotes">Blockquotes</a></li>
+                  <li><a href="#buttons">Buttons</a></li>
+                  <li><a href="#lists">Lists</a></li>
+                  <li><a href="#tables">Tables</a></li>
+                  <li><a href="#codes">Codes</a></li>
+                  <li><a href="#forms">Forms</a></li>
                   <li><a href="#nav">Nav</a></li>
                   <li><a href="#nav-inline">Nav inline</a></li>
                   <li><a href="#dropdown">Dropdown</a></li>
                   <li><a href="#select">Select</a></li>
                   <li><a href="#radio">Radio</a></li>
                   <li><a href="#check">Check</a></li>
-                  <li><a href="#form">Form</a></li>
                   <li><a href="#alert">Alert</a></li>
                   <li><a href="#tabs">Tabs</a></li>
                   <li><a href="#toolbar">Toolbar</a></li>
@@ -127,13 +133,212 @@
                 >
               </h5>
             </div>
-            <a href="#home" class="button">Explore extensions</a>
+            <a href="#home" class="button">Core elements</a>
+            <a href="#home-extensions" class="button">Extensions</a>
           </div>
         </section>
         <section id="home" class="mg-center-block">
-          <h1 class="title">MgPlus Extensions</h2>
+          <hr />
+          <h1 class="title">Core elements</h1>
         </section>
-        <section></section>
+        <section id="typography">
+          <h2 class="title">Typography</h2>
+          <div id="typography-example">
+            <!-- Base font-size and line-height -->
+            <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
+            <!-- Other elements to text markup -->
+            <a>Anchor</a>
+            <em>Emphasis</em>
+            <small>Small</small>
+            <strong>Strong</strong>
+            <u>Underline</u>
+            <!-- Default Headings -->
+            <h1>Heading</h1>
+            <h2>Heading</h2>
+            <h3>Heading</h3>
+            <h4>Heading</h4>
+            <h5>Heading</h5>
+            <h6>Heading</h6>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="typography-example"
+            ></pre>
+          </div>
+          <!-- The base font-size is set at 62.5% for having the convenience of sizing rems in a way that is similar to using px. So basically 1.6rem = 16px. -->
+        </section>
+        <section id="blockquotes">
+          <h2 class="title">Blockquotes</h2>
+          <div id="blockquotes-example">
+            <blockquote>
+              <p><em>Yeah!! Milligram is amazing.</em></p>
+            </blockquote>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="blockquotes-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="buttons">
+          <h2 class="title">Buttons</h2>
+          <div id="buttons-example">
+            <!-- Default Button -->
+            <a class="button" href="#">Default Button</a>
+
+            <!-- Outlined Button -->
+            <button class="button button-outline">Outlined Button</button>
+
+            <!-- Clear Button -->
+            <input
+              class="button button-clear"
+              type="submit"
+              value="Clear Button"
+            />
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="buttons-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="lists">
+          <h2 class="title">Lists</h2>
+          <div id="lists-example">
+            <!-- Unordered list -->
+            <ul>
+              <li>Unordered list item 1</li>
+              <li>Unordered list item 2</li>
+            </ul>
+
+            <!-- Ordered list -->
+            <ol>
+              <li>Ordered list item 1</li>
+              <li>Ordered list item 2</li>
+            </ol>
+
+            <!-- Description list -->
+            <dl>
+              <dt>Description list item 1</dt>
+              <dd>Description list item 1.1</dd>
+            </dl>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="lists-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="tables">
+          <h2 class="title">Tables</h2>
+          <div id="tables-example">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Height</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stephen Curry</td>
+                  <td>27</td>
+                  <td>1,91</td>
+                  <td>Akron, OH</td>
+                </tr>
+                <tr>
+                  <td>Klay Thompson</td>
+                  <td>25</td>
+                  <td>2,01</td>
+                  <td>Los Angeles, CA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="tables-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="codes">
+          <h2 class="title">Codes</h2>
+          <div id="codes-example">
+            <pre><code>
+              .milligram {
+                color: #9b4dca;
+              }
+              </code></pre>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="codes-example"
+            ></pre>
+          </div>
+        </section>
+        <section id="forms">
+          <h2>Forms</h2>
+          <form id="forms-example">
+            <fieldset>
+              <label for="nameField">Name</label>
+              <input type="text" placeholder="CJ Patoilo" id="nameField" />
+              <label for="ageRangeField">Age Range (mg+)</label>
+              <div class="mg-select">
+                <select id="ageRangeField2">
+                  <option value="0-13">0-13</option>
+                  <option value="14-17">14-17</option>
+                  <option value="18-23">18-23</option>
+                  <option value="24+">24+</option>
+                </select>
+              </div>
+              <label for="ageRangeField">Age Range (default)</label>
+              <select id="ageRangeField">
+                <option value="0-13">0-13</option>
+                <option value="14-17">14-17</option>
+                <option value="18-23">18-23</option>
+                <option value="24+">24+</option>
+              </select>
+              <label for="commentField">Comment</label>
+              <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+
+              <label for="car-dropdown"> Choose Action </label>
+
+              <div class="float-right">
+                <label class="mg-check label-inline" for="confirmField">
+                  Send a copy to yourself
+                  <input type="checkbox" id="confirmField" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="forms-example"
+            ></pre>
+          </div>
+        </section>
+
+        <section id="home-extensions" class="mg-center-block">
+          <hr />
+          <h1 class="title">Extensions</h1>
+        </section>
         <section id="nav">
           <h2 class="title">Nav vertical (default)</h2>
           <div class="mg-nav" id="nav-vertical-example">
@@ -308,50 +513,6 @@
               class="prettyprint"
               data-toggle="prettify"
               data-source="check-example"
-            ></pre>
-          </div>
-        </section>
-        <section id="form">
-          <h2 class="title">Form</h2>
-          <form id="form-example2">
-            <fieldset>
-              <label for="nameField">Name</label>
-              <input type="text" placeholder="CJ Patoilo" id="nameField" />
-              <label for="ageRangeField">Age Range (mg+)</label>
-              <div class="mg-select">
-                <select id="ageRangeField2">
-                  <option value="0-13">0-13</option>
-                  <option value="14-17">14-17</option>
-                  <option value="18-23">18-23</option>
-                  <option value="24+">24+</option>
-                </select>
-              </div>
-              <label for="ageRangeField">Age Range (default)</label>
-              <select id="ageRangeField">
-                <option value="0-13">0-13</option>
-                <option value="14-17">14-17</option>
-                <option value="18-23">18-23</option>
-                <option value="24+">24+</option>
-              </select>
-              <label for="commentField">Comment</label>
-              <textarea placeholder="Hi CJ …" id="commentField"></textarea>
-
-              <label for="car-dropdown"> Choose Action </label>
-
-              <div class="float-right">
-                <label class="mg-check label-inline" for="confirmField">
-                  Send a copy to yourself
-                  <input type="checkbox" id="confirmField" />
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-            </fieldset>
-          </form>
-          <div class="example">
-            <pre
-              class="prettyprint"
-              data-toggle="prettify"
-              data-source="form-example2"
             ></pre>
           </div>
         </section>
@@ -547,14 +708,14 @@
         </section>
       </div>
       <footer class="footer">
-          <div class="mg-center-block">         
-            Creation by
-            <a target="_blank" href="https://github.com/medevod" title="MedEvod"
-              >medevod</a
-            >. Licensed under the
-            <a target="_blank" href="license" title="MIT License">MIT License</a
-            >.           
-            <a href="https://medevod.github.io/mgplus">Github</a>         
+        <div class="mg-center-block">
+          Creation by
+          <a target="_blank" href="https://github.com/medevod" title="MedEvod"
+            >medevod</a
+          >. Licensed under the
+          <a target="_blank" href="license" title="MIT License">MIT License</a>.
+          <a href="https://medevod.github.io/mgplus">Github</a>
+        </div>
       </footer>
     </main>
     <script src="examples/site.js"></script>
