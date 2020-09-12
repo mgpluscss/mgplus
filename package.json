@@ -39,6 +39,6 @@
 	},
 	"scripts": {
 		"start": "gulp start",
-		"reload": "gulp reload"
+		"build": "gulp build"
 	}
 }

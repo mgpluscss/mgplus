@@ -1,4 +1,3 @@
-
 # MgPlus (Mg+)
 
 ## A minimalist CSS framework
@@ -25,21 +24,29 @@ FlexboxGrid:
 
 ## Getting started
 
-Clone the repository
+**_After cloned the repository_**
+
+**_Run:_**
 
 ```sh
 $ npm install
 ```
 
-Then
+**_Then to Debug:_**
 
 ```sh
 $ npm run start
 ```
 
+**_Or to build only:_**
+
+```sh
+$ npm run build
+```
+
 That's it!
 
-### Hot reload already configured with node sass and browser sync
+### Hot reload already configured with node sass compiler and browser sync
 
 ## License
 
