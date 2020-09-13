@@ -1069,9 +1069,11 @@ img {
 .mg-loading {
   opacity: 0.4; }
 
-img.mg-icon {
+.mg-icon {
   height: 22px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem; }
 
 /* The container must be positioned relative: */
 .mg-dropdown {
@@ -1085,7 +1087,8 @@ img.mg-icon {
 
 .mg-dropdown-button {
   width: 100%;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding-right: 2em; }
 
 .mg-dropdown-button:after {
   border: 2px solid transparent;
