@@ -162,10 +162,18 @@
   }
 }
 
+// Create hidden classes
+@mixin create-conditional-hidden($_class) {
+  .#{$_class}--hidden {
+    display: none;
+  }
+}
+
 // Create grid for specific class
 @mixin create-grid-columns($_class) {
   @include loop-grid-columns($grid__columns, $_class, width);
   @include loop-grid-columns($grid__columns, $_class, offset);
   @include loop-grid-columns($grid__columns, $_class, order);
   @include create-positioning-row($_class);
+  @include create-conditional-hidden($_class);
 }
