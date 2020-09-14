@@ -152,6 +152,24 @@ input[type="submit"] {
     input[type="submit"].button-clear[disabled]:focus,
     input[type="submit"].button-clear[disabled]:hover {
       color: var(--mg-color-primary); }
+  .button.button-small,
+  button.button-small,
+  input[type="button"].button-small,
+  input[type="reset"].button-small,
+  input[type="submit"].button-small {
+    font-size: 0.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding: 0 1.5rem; }
+  .button.button-large,
+  button.button-large,
+  input[type="button"].button-large,
+  input[type="reset"].button-large,
+  input[type="submit"].button-large {
+    font-size: 1.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem; }
 
 code {
   background: var(--mg-color-tertiary);
