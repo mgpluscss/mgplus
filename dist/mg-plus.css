@@ -546,6 +546,9 @@ img {
 .mg-x--between {
   justify-content: space-between; }
 
+.mg-x--hidden {
+  display: none; }
+
 @media (min-width: 481px) {
   .mg-s1 {
     flex-basis: 8.33333%;
@@ -656,7 +659,9 @@ img {
   .mg-s--around {
     justify-content: space-around; }
   .mg-s--between {
-    justify-content: space-between; } }
+    justify-content: space-between; }
+  .mg-s--hidden {
+    display: none; } }
 
 @media (min-width: 769px) {
   .mg-m1 {
@@ -768,7 +773,9 @@ img {
   .mg-m--around {
     justify-content: space-around; }
   .mg-m--between {
-    justify-content: space-between; } }
+    justify-content: space-between; }
+  .mg-m--hidden {
+    display: none; } }
 
 @media (min-width: 1025px) {
   .mg-l1 {
@@ -880,7 +887,9 @@ img {
   .mg-l--around {
     justify-content: space-around; }
   .mg-l--between {
-    justify-content: space-between; } }
+    justify-content: space-between; }
+  .mg-l--hidden {
+    display: none; } }
 
 @media (min-width: 1441px) {
   .mg-xl1 {
@@ -992,7 +1001,9 @@ img {
   .mg-xl--around {
     justify-content: space-around; }
   .mg-xl--between {
-    justify-content: space-between; } }
+    justify-content: space-between; }
+  .mg-xl--hidden {
+    display: none; } }
 
 /**
  * Utilities
@@ -1196,7 +1207,7 @@ img {
   font-weight: bold; }
 
 .mg-tabs > ul > li:hover {
-  border-bottom: 0.3rem solid var(--mg-color-primary); }
+  font-weight: bold; }
 
 .mg-tabs-item {
   margin-left: 0.2em;
