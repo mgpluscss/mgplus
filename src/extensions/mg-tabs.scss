@@ -12,25 +12,24 @@
 
 .mg-tabs > ul > li > * {
   color: $color-secondary;
-
   white-space: nowrap;
 }
 .mg-tabs > ul > li {
-  opacity: 0.7;
   font-weight: bold;
+  border-bottom: 0.3rem solid transparent;
+  color: $color-tertiary;
+  opacity: 0.7;
 }
 
 .mg-tabs > ul > li.active {
-  font-weight: bold;
   color: $color-primary;
-  border-bottom: 0.3rem solid $color-primary;
+  border-color: $color-primary;
   overflow-y: hidden;
   opacity: 1;
-  transition: all 1ms;
 }
 
 .mg-tabs > ul > li:hover {
-  font-weight: bold;
+  color: $color-secondary;
   opacity: 1;
 }
 
