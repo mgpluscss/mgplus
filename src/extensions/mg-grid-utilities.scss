@@ -160,6 +160,9 @@
   .#{$_class}--between {
     justify-content: space-between;
   }
+  .#{$_class}--evenly {
+    justify-content: space-evenly;
+  }
 }
 
 // Create hidden classes
