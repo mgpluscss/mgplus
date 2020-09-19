@@ -1,6 +1,7 @@
 // Sass configuration
 const gulp = require("gulp");
 const sass = require("gulp-sass");
+const del = require("del");
 const gulpRename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
 const browserSync = require("browser-sync").create();
@@ -20,17 +21,21 @@ gulp.task("start", function () {
   });
 });
 
-gulp.task("sass", function (cb) {
-  gulp
-    .src("src/mg-plus.scss")
-    .pipe(sass())
-    .pipe(
-      gulp.dest(function (f) {
-        return "dist/";
-      })
-    );
-  cb();
+gulp.task("sass", () => {
+  return (
+    gulp
+      .src("src/mg-plus.scss")
+      //.src("sass/**/*.scss")
+      .pipe(sass().on("error", sass.logError))
+      .pipe(gulp.dest("dist/"))
+  );
 });
+
+gulp.task("clean", () => {
+  return del(["dist/*.css"]);
+});
+
+gulp.task("sass-compile", gulp.series(["clean", "sass"]));
 
 gulp.task("minify", function (done) {
   gulp
@@ -53,6 +58,6 @@ gulp.task("minify", function (done) {
   done();
 });
 
-gulp.task("build", gulp.series(["sass", "minify"]), function (done) {
+gulp.task("build", gulp.series(["sass-compile", "minify"]), function (done) {
   done();
 });
