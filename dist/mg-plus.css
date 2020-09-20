@@ -1660,7 +1660,8 @@ nav.mg-navbar a:hover {
   margin-bottom: 1rem;
   margin-top: 1rem;
   z-index: 2000;
-  box-shadow: var(--mg-control-shadow); }
+  box-shadow: var(--mg-control-shadow);
+  overflow-y: auto; }
 
 .mg-show {
   opacity: 1;

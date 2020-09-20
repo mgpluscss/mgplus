@@ -26,6 +26,7 @@
   margin-top: 1rem;
   z-index: 2000;
   box-shadow: $control-shadow;
+  overflow-y: auto;
 }
 .mg-show {
   opacity: 1;
