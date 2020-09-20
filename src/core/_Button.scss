@@ -8,7 +8,7 @@ input[type="reset"],
 input[type="submit"] {
   background-color: $color-primary;
   border: 0.1rem solid $color-primary;
-  border-radius: $button-radius;
+  border-radius: $control-radius;
   color: $color-initial;
   cursor: pointer;
   display: inline-block;
