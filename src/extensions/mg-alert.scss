@@ -6,16 +6,15 @@
   margin-bottom: 2.5rem;
   background-color: $color-tertiary;
   width: 100%;
-  box-shadow: $control-shadow;
 }
 .mg-alert.mg-alert-danger {
-  border-left: 0.3rem solid $color-danger;
+  border-left-color: $color-danger;
 }
 .mg-alert.mg-alert-success {
-  border-left: 0.3rem solid $color-success;
+  border-left-color: $color-success;
 }
 .mg-alert.mg-alert-warning {
-  border-left: 0.3rem solid $color-warning;
+  border-left-color: $color-warning;
 }
 .mg-alert *:last-child {
   margin: 0;

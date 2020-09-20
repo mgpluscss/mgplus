@@ -1368,17 +1368,16 @@ img {
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
   background-color: var(--mg-color-tertiary);
-  width: 100%;
-  box-shadow: var(--mg-control-shadow); }
+  width: 100%; }
 
 .mg-alert.mg-alert-danger {
-  border-left: 0.3rem solid var(--mg-color-red); }
+  border-left-color: var(--mg-color-red); }
 
 .mg-alert.mg-alert-success {
-  border-left: 0.3rem solid var(--mg-color-green); }
+  border-left-color: var(--mg-color-green); }
 
 .mg-alert.mg-alert-warning {
-  border-left: 0.3rem solid var(--mg-color-orange); }
+  border-left-color: var(--mg-color-orange); }
 
 .mg-alert *:last-child {
   margin: 0; }
