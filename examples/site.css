@@ -8,6 +8,7 @@ html {
   border-top-right-radius: 6em;
   border-top-left-radius: 6em;
   padding: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 .header {
   height: 90vh;
@@ -62,9 +63,7 @@ html {
   top: 0;
   width: 100%;
   z-index: 1;
-
-  box-shadow: 0px 10px 13px -7px rgba(29, 90, 126, 0.103),
-    5px 5px 15px 5px rgba(29, 90, 126, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 .navigation .container {
   padding-bottom: 0;
@@ -419,13 +418,13 @@ pre.prettyprint {
   background-color: #081e40 !important;
 }
 
-.custom-styling > .mg-container > .mg-row > * {
+.blue-cell {
   background-color: var(--mg-color-primary);
-  margin-bottom: 1em;
-  padding: 1em 1em 1em;
+  margin: 0.5rem;
+  padding: 0;
   color: var(--mg-color-initial);
+  width: 100%;
 }
-
 body {
   background: radial-gradient(
     ellipse at center,

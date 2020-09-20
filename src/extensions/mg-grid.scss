@@ -1,22 +1,32 @@
-
-
 //
 //  Grid
 //  _____________________________________________
- 
+
 .mg-container {
-    @include init-container();
-    max-width: $screen--L;
-} 
-.mg-container-fluid {
-    @include init-container();
-    max-width: width auto;
-} 
-   
-.mg-row {
-    @include init-row(); 
+  @include init-container();
+  max-width: $screen--L;
 }
- 
+.mg-container-fluid {
+  @include init-container();
+  max-width: width auto;
+}
+
+.mg-row {
+  @include init-row();
+}
+
+.mg-col {
+  display: flex;
+  flex-direction: column;
+}
+.mg-col > * {
+  flex: 0 0 auto;
+}
+
+.mg-col > .mg--grow {
+  flex: 1 1 auto;
+}
+
 //  Make all grid columns
 //  ---------------------------------------------
 
@@ -31,26 +41,26 @@
 //  ---------------------------------------------
 
 @media (min-width: $screen--S) {
-    @include create-grid-columns($name--S);
+  @include create-grid-columns($name--S);
 }
 
 //  Columns M
 //  ---------------------------------------------
 
 @media (min-width: $screen--M) {
-    @include create-grid-columns($name--M);
+  @include create-grid-columns($name--M);
 }
 
 //  Columns L
 //  ---------------------------------------------
 
 @media (min-width: $screen--L) {
-    @include create-grid-columns($name--L);
+  @include create-grid-columns($name--L);
 }
 
 //  Columns XL
 //  ---------------------------------------------
 
 @media (min-width: $screen--XL) {
-    @include create-grid-columns($name--XL);
+  @include create-grid-columns($name--XL);
 }

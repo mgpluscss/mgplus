@@ -23,6 +23,7 @@ input[type="submit"] {
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 1;
+  box-shadow: $control-shadow;
 
   &:focus,
   &:hover {
@@ -83,5 +84,18 @@ input[type="submit"] {
         color: $color-primary;
       }
     }
+  }
+  &.button-small {
+    font-size: 0.8rem;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding: 0 1.5rem;
+  }
+
+  &.button-large {
+    font-size: 1.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
   }
 }

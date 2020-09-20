@@ -1,0 +1,43 @@
+.mg-modal {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(83, 77, 77, 0.8);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.mg-modal > .mg-modal-content {
+  background-color: $color-tertiary;
+  border-radius: $button-radius;
+  color: $color-secondary;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  z-index: 2000;
+  box-shadow: $control-shadow;
+}
+.mg-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: $screen--S) {
+  .mg-modal {
+    justify-content: flex-end;
+  }
+}

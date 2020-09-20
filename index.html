@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
     />
 
     <meta name="author" content="medevod" />
@@ -23,17 +23,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
-    <link rel="stylesheet" href="dist/mg-plus.min.css" />
+    <link rel="stylesheet" href="dist/mg-plus.css" />
     <link rel="stylesheet" href="examples/site.css" />
     <style>
       :root {
         --mg-color-initial: #fff;
         --mg-color-primary: #23a3e1;
-        --mg-color-tertiary: #f7f7f7;
-        --mg-color-quaternary: #d2d2d3;
-        /*borders inputs*/
-        --mg-color-quinary: #d2d2d3;
-        /*disabled inputs*/
         --mg-button-radius: 1.5rem;
         --mg-input-radius: 1rem;
       }
@@ -100,8 +95,9 @@
                   <li><a href="#check">Check</a></li>
                   <li><a href="#alert">Alert</a></li>
                   <li><a href="#tabs">Tabs</a></li>
-                  <li><a href="#toolbar">Toolbar</a></li>
-                  <li><a href="#grid">Grid</a></li>
+                  <li><a href="#group">Group</a></li>
+                  <li><a href="#grid">Grids</a></li>
+                  <li><a href="#modal">Modal</a></li>
                 </ul>
               </div>
             </div>
@@ -198,6 +194,11 @@
               type="submit"
               value="Clear Button"
             />
+
+            <!-- Small Button -->
+            <button class="button button-small">Small Button</button>
+            <!-- Large Button -->
+            <button class="button button-large">Large Button</button>
           </div>
           <div class="example">
             <pre
@@ -463,7 +464,7 @@
         </section>
         <section id="radio">
           <h2 class="title">Radio</h2>
-          <div class="mg-group" id="radio-example">
+          <div class="mg-row" id="radio-example">
             <label class="mg-radio label-inline">
               Two
               <input type="radio" name="radio" />
@@ -490,7 +491,7 @@
         </section>
         <section id="check">
           <h2 class="title">Check</h2>
-          <div class="mg-group" id="check-example">
+          <div class="mg-row" id="check-example">
             <label class="mg-check label-inline">
               check1
               <input type="checkbox" checked="checked" />
@@ -623,9 +624,9 @@
             ></pre>
           </div>
         </section>
-        <section id="toolbar">
-          <h2 class="title">Toolbar</h2>
-          <div class="mg-toolbar" id="toolbar-example">
+        <section id="group">
+          <h2 class="title">Group</h2>
+          <div class="mg-group" id="group-example">
             <div
               class="mg-dropdown mg-x3 mg-m1 mg-l1"
               tabindex="1"
@@ -655,7 +656,7 @@
               title="test"
               value="search"
             />
-            <a class="button mg-x2 mg-m1 mg-l1" href="#toolbar"
+            <a class="button mg-x2 mg-m1 mg-l1" href="#group"
               ><img class="mg-icon" src="search.svg"
             /></a>
           </div>
@@ -663,37 +664,166 @@
             <pre
               class="prettyprint"
               data-toggle="prettify"
-              data-source="toolbar-example"
+              data-source="group-example"
             ></pre>
           </div>
         </section>
         <section id="grid">
-          <h2 class="title">Grid</h2>
+          <h2 class="title">Grids</h2>
           <h5 class="title">
             Based on
             <a href="https://github.com/godban/flex-box-grid">FlexBoxGrid</a>
           </h5>
-          <div class="custom-styling">
-            <div class="mg-container" id="grid-example">
-              <div class="mg-row">
-                <div class="mg-m6 mg-m--offset1">mg-m6 mg-m--offset1</div>
-                <div class="mg-m5">mg-m5</div>
+          <div class="mg-container" id="grid-example">
+            <div class="mg-row">
+              <div class="blue-cell mg-x6 mg-m--offset1">
+                mg-x6 mg-x--offset1
               </div>
-              <div class="mg-row">
-                <div class="mg-m6 mg-m--offset3">mg-m6 mg-m--offset3</div>
-              </div>
-              <div class="mg-row">
-                <div class="mg-m4">mg-m4</div>
-                <div class="mg-m4 mg-m--offset4">mg-m4 mg-m--offset4</div>
-              </div>
-              <div class="example">
-                <pre
-                  class="prettyprint"
-                  data-toggle="prettify"
-                  data-source="grid-example"
-                ></pre>
+              <div class="blue-cell mg-x5">mg-x5</div>
+            </div>
+            <div class="mg-row">
+              <div class="blue-cell mg-x6 mg-m--offset3">
+                mg-x6 mg-x--offset3
               </div>
             </div>
+            <div class="mg-row">
+              <div class="blue-cell mg-x4">mg-x4</div>
+              <div class="blue-cell mg-x4 mg-m--offset4">
+                mg-x4 mg-x--offset4
+              </div>
+            </div>
+            <div class="mg-row">
+              <div class="blue-cell mg-x--hidden">mg-x--hidden</div>
+              <div class="blue-cell mg-m--hidden">mg-m--hidden</div>
+              <div class="blue-cell mg-l--hidden">mg-l--hidden</div>
+            </div>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="grid-example"
+              ></pre>
+            </div>
+          </div>
+
+          <h5 class="title">2 columns</h5>
+          <div class="mg-container" id="grid-example3">
+            <div class="mg-row">
+              <div class="mg-col mg-x5 mg-x--middle">
+                <div class="blue-cell mg-row mg-x4">mg-x4</div>
+                <div class="blue-cell mg-row mg-x3">mg-x3</div>
+                <div class="blue-cell mg-row mg-x2">mg-x2</div>
+              </div>
+              <div class="mg-col mg-x5 mg-x--middle">
+                <div class="blue-cell mg-row mg-x4">mg-x4</div>
+                <div class="blue-cell mg-row mg-x3">mg-x3</div>
+                <div class="blue-cell mg-row mg-x2">mg-x2</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="grid-example3"
+              ></pre>
+            </div>
+          </div>
+          <h5 class="title">4 columns default, around, between, evenly</h5>
+          <div class="mg-container" id="grid-example4">
+            <div class="mg-row">
+              <div class="mg-col mg-x3">
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x3 mg-x--around">
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x3 mg-x--between">
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x3 mg-x--evenly">
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="grid-example4"
+              ></pre>
+            </div>
+          </div>
+          <h5 class="title">
+            4 columns default, around (grow 2) , between, evenly(grow 2)
+          </h5>
+          <div class="mg-container" id="grid-example5">
+            <div class="mg-row">
+              <div class="mg-col mg-x3">
+                <div class="blue-cell mg-row mg-x1">x1</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x4">x4</div>
+              </div>
+              <div class="mg-col mg-x3 mg-x--around">
+                <div class="blue-cell mg-row mg-x2 mg--grow">x2 grow</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+              </div>
+              <div class="mg-col mg-x3 mg-x--evenly">
+                <div class="blue-cell mg-row mg--grow mg-x2">x2</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="grid-example5"
+              ></pre>
+            </div>
+          </div>
+        </section>
+        <section id="modal">
+          <h2 class="title">Modal</h2>
+          <button data-toggle="modal" data-target="modal-1">Show modal</button>
+          <div class="mg-container" id="modal-example">
+            <div class="mg-modal" id="modal-1">
+              <div class="mg-modal-content mg-container">
+                <h3>Modal Dialog</h3>
+                <div>
+                  <p>
+                    This is a modal window. You can do the following things with
+                    it:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Read:</strong> modal windows will probably tell
+                      you something important so don't forget to read what they
+                      say.
+                    </li>
+                    <li>
+                      <strong>Look:</strong> a modal window enjoys a certain
+                      kind of attention; just look at it and appreciate its
+                      presence.
+                    </li>
+                    <li>
+                      <strong>Close:</strong> click on the button below to close
+                      the modal.
+                    </li>
+                  </ul>
+                </div>
+                <button class="mg-close">Close me!</button>
+              </div>
+            </div>
+          </div>
+          <div class="example">
+            <pre
+              class="prettyprint"
+              data-toggle="prettify"
+              data-source="modal-example"
+            ></pre>
           </div>
         </section>
       </div>
@@ -710,5 +840,6 @@
     </main>
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+    <script src="dist/mg-plus-extensions.min.js"></script>
   </body>
 </html>

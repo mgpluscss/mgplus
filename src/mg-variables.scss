@@ -1,8 +1,8 @@
 :root {
-  --mg-color-initial: #fff;
+  --mg-color-initial: white;
   --mg-color-primary: #9b4dca;
-  --mg-color-secondary: #5e5c5c;
-  --mg-color-tertiary: #f4f5f6;
+  --mg-color-secondary: #494949;
+  --mg-color-tertiary: #e6e6e6;
   --mg-color-quaternary: #d1d1d1;
   --mg-color-quinary: #e1e1e1;
   --mg-button-radius: 0.4rem;
@@ -11,6 +11,8 @@
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
+  --mg-control-shadow: 0 1px 2px rgba(0, 0, 0, 0.12),
+    0 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 $color-initial: var(--mg-color-initial) !default;
@@ -21,7 +23,7 @@ $color-quaternary: var(--mg-color-quaternary) !default;
 $color-quinary: var(--mg-color-quinary) !default;
 $button-radius: var(--mg-button-radius) !default;
 $input-radius: var(--mg-input-radius) !default;
-
+$control-shadow: var(--mg-control-shadow) !default;
 $color-red: var(--mg-color-red);
 $color-orange: var(--mg-color-orange);
 $color-blue: var(--mg-color-blue);

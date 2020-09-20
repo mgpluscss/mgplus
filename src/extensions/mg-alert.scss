@@ -6,6 +6,7 @@
   margin-bottom: 2.5rem;
   background-color: $color-tertiary;
   width: 100%;
+  box-shadow: $control-shadow;
 }
 .mg-alert.mg-alert-danger {
   border-left: 0.3rem solid $color-danger;
