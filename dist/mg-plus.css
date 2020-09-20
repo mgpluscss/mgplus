@@ -2,10 +2,10 @@
   --mg-color-initial: white;
   --mg-color-primary: #9b4dca;
   --mg-color-secondary: #494949;
-  --mg-color-tertiary: #e6e6e6;
-  --mg-color-quaternary: #d1d1d1;
-  --mg-color-quinary: #e1e1e1;
-  --mg-button-radius: 0.4rem;
+  --mg-color-tertiary: #8d8d8d;
+  --mg-color-quaternary: #c2c1c1;
+  --mg-color-quinary: #dddddd;
+  --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
   --mg-color-orange: #fd7e14;
@@ -46,7 +46,7 @@ input[type="reset"],
 input[type="submit"] {
   background-color: var(--mg-color-primary);
   border: 0.1rem solid var(--mg-color-primary);
-  border-radius: var(--mg-button-radius);
+  border-radius: var(--mg-control-radius);
   color: var(--mg-color-initial);
   cursor: pointer;
   display: inline-block;
@@ -175,15 +175,15 @@ input[type="submit"] {
     padding: 0 2rem; }
 
 code {
-  background: var(--mg-color-tertiary);
-  border-radius: .4rem;
+  background: var(--mg-color-quinary);
+  border-radius: 0.4rem;
   font-size: 86%;
-  margin: 0 .2rem;
-  padding: .2rem .5rem;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
   white-space: nowrap; }
 
 pre {
-  background: var(--mg-color-tertiary);
+  background: var(--mg-color-quinary);
   border-left: 0.3rem solid var(--mg-color-primary);
   overflow-y: hidden; }
   pre > code {
@@ -1367,7 +1367,7 @@ img {
   margin-right: 0;
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
-  background-color: var(--mg-color-tertiary);
+  background-color: var(--mg-color-quinary);
   width: 100%; }
 
 .mg-alert.mg-alert-danger {
@@ -1653,8 +1653,8 @@ nav.mg-navbar a:hover {
   transition: all 0.3s; }
 
 .mg-modal > .mg-modal-content {
-  background-color: var(--mg-color-tertiary);
-  border-radius: var(--mg-button-radius);
+  background-color: var(--mg-color-initial);
+  border-radius: var(--mg-control-radius);
   color: var(--mg-color-secondary);
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
