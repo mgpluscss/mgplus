@@ -5,7 +5,24 @@ const del = require("del");
 const gulpRename = require("gulp-rename");
 const cleanCSS = require("gulp-clean-css");
 const browserSync = require("browser-sync").create();
+const minify = require("gulp-minify");
 
+gulp.task("minify-js", function (done) {
+  gulp
+    .src("src/**/*.js")
+    .pipe(
+      minify({
+        ext: {
+          src: ".js",
+          min: ".min.js",
+        },
+        exclude: [],
+        ignoreFiles: [],
+      })
+    )
+    .pipe(gulp.dest("dist/"));
+  done();
+});
 gulp.task("start", function () {
   browserSync.init({
     watch: true,
@@ -22,17 +39,14 @@ gulp.task("start", function () {
 });
 
 gulp.task("sass", () => {
-  return (
-    gulp
-      .src("src/mg-plus.scss")
-      //.src("sass/**/*.scss")
-      .pipe(sass().on("error", sass.logError))
-      .pipe(gulp.dest("dist/"))
-  );
+  return gulp
+    .src("src/mg-plus.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("dist/"));
 });
 
 gulp.task("clean", () => {
-  return del(["dist/*.css"]);
+  return del(["dist/*.css", "dist/*.js"]);
 });
 
 gulp.task("sass-compile", gulp.series(["clean", "sass"]));
@@ -58,6 +72,10 @@ gulp.task("minify", function (done) {
   done();
 });
 
-gulp.task("build", gulp.series(["sass-compile", "minify"]), function (done) {
-  done();
-});
+gulp.task(
+  "build",
+  gulp.series(["sass-compile", "minify", "minify-js"]),
+  function (done) {
+    done();
+  }
+);
