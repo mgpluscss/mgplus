@@ -61,6 +61,7 @@
     window.classie = classie;
   }
 })(window);
+//setup component effects
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
   function setupNav(nav) {
@@ -185,6 +186,29 @@ document.addEventListener("DOMContentLoaded", function () {
       currentDropdown.parentNode.classList.remove("opened");
       currentDropdown = false;
     }
+  }
+  document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
+
+  function setupModal(el) {
+    function removeModal() {
+      classie.remove(modal, "mg-show");
+    }
+
+    function removeModalHandler() {
+      removeModal(classie.has(el));
+    }
+
+    var modal = document.querySelector("#" + el.getAttribute("data-target")),
+      close = modal.querySelector(".mg-close");
+
+    el.addEventListener("click", function (ev) {
+      classie.add(modal, "mg-show");
+    });
+
+    close.addEventListener("click", function (ev) {
+      ev.stopPropagation();
+      removeModalHandler();
+    });
   }
 
   window.onclick = function (e) {
