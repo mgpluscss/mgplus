@@ -46,6 +46,10 @@
   border-color: $color-secondary;
 }
 
+.mg-dropdown-menu {
+  box-shadow: $control-shadow;
+}
+
 /* Style items (options): */
 .mg-dropdown-menu > ul {
   list-style-type: none;

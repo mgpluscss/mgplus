@@ -23,6 +23,7 @@ input[type="submit"] {
   text-transform: uppercase;
   white-space: nowrap;
   opacity: 1;
+  box-shadow: $control-shadow;
 
   &:focus,
   &:hover {
