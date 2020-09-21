@@ -1231,6 +1231,7 @@ img {
 
 .mg-tabs > ul {
   display: flex;
+  text-align: center;
   flex-wrap: nowrap;
   overflow-x: auto;
   list-style: none;
@@ -1245,7 +1246,8 @@ img {
   font-weight: bold;
   border-bottom: 0.3rem solid transparent;
   color: var(--mg-color-tertiary);
-  opacity: 0.7; }
+  opacity: 0.7;
+  flex: 0 0 auto; }
 
 .mg-tabs > ul > li.active {
   color: var(--mg-color-primary);
