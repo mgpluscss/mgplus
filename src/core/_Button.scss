@@ -70,6 +70,7 @@ input[type="submit"] {
     background-color: transparent;
     border-color: transparent;
     color: $color-primary;
+    box-shadow: none;
 
     &:focus,
     &:hover {

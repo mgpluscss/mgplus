@@ -132,7 +132,8 @@ input[type="submit"] {
   input[type="submit"].button-clear {
     background-color: transparent;
     border-color: transparent;
-    color: var(--mg-color-primary); }
+    color: var(--mg-color-primary);
+    box-shadow: none; }
     .button.button-clear:focus, .button.button-clear:hover,
     button.button-clear:focus,
     button.button-clear:hover,
