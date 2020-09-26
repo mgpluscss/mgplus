@@ -1673,3 +1673,57 @@ nav.mg-navbar a:hover {
 @media (max-width: 481px) {
   .mg-modal {
     justify-content: flex-end; } }
+
+/* The switch - the box around the slider */
+.mg-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px; }
+
+/* Hide default HTML checkbox */
+.mg-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+/* The slider */
+.mg-switch--slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--mg-color-tertiary);
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+.mg-switch--slider:before {
+  position: absolute;
+  content: "";
+  height: 1.5em;
+  width: 1.5em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: var(--mg-color-initial);
+  -webkit-transition: 0.4s;
+  transition: 0.4s; }
+
+input:checked + .mg-switch--slider {
+  background-color: var(--mg-color-primary); }
+
+input:focus + .mg-switch--slider {
+  box-shadow: 0 0 1px var(--mg-color-primary); }
+
+input:checked + .mg-switch--slider:before {
+  -webkit-transform: translateX(1.5em);
+  -ms-transform: translateX(1.5em);
+  transform: translateX(1.5em); }
+
+/* Rounded sliders */
+.mg-switch--slider.mg-switch--round {
+  border-radius: 34px; }
+
+.mg-switch--slider.mg-switch--round:before {
+  border-radius: 50%; }
