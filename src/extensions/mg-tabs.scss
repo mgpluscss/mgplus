@@ -32,7 +32,9 @@
 
 .mg-tabs > ul > li:hover {
   color: $color-secondary;
+  border-color: $color-tertiary;
   opacity: 1;
+  transition: all 0.3s;
 }
 
 .mg-tabs-item {
