@@ -198,13 +198,13 @@ hr {
   border-top: 0.1rem solid var(--mg-color-tertiary);
   margin: 3.0rem 0; }
 
-input[type='email'],
-input[type='number'],
-input[type='password'],
-input[type='search'],
-input[type='tel'],
-input[type='text'],
-input[type='url'],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
 textarea,
 select {
   appearance: none;
@@ -214,19 +214,29 @@ select {
   box-shadow: none;
   box-sizing: inherit;
   height: 3.8rem;
-  padding: .6rem 1.0rem;
+  padding: 0.6rem 1rem;
   width: 100%; }
-  input[type='email']:focus,
-  input[type='number']:focus,
-  input[type='password']:focus,
-  input[type='search']:focus,
-  input[type='tel']:focus,
-  input[type='text']:focus,
-  input[type='url']:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
   textarea:focus,
   select:focus {
     border-color: var(--mg-color-primary);
     outline: 0; }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; }
 
 textarea {
   min-height: 6.5rem; }
@@ -236,20 +246,20 @@ legend {
   display: block;
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: .5rem; }
+  margin-bottom: 0.5rem; }
 
 fieldset {
   border-width: 0;
   padding: 0; }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   display: inline; }
 
 .label-inline {
   display: inline-block;
   font-weight: normal;
-  margin-left: .5rem; }
+  margin-left: 0.5rem; }
 
 a {
   color: var(--mg-color-primary);
@@ -1258,7 +1268,9 @@ img {
 
 .mg-tabs > ul > li:hover {
   color: var(--mg-color-secondary);
-  opacity: 1; }
+  border-color: var(--mg-color-tertiary);
+  opacity: 1;
+  transition: all 0.3s; }
 
 .mg-tabs-item {
   margin-left: 0.2em;
