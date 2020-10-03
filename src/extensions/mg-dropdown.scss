@@ -48,6 +48,22 @@
 
 .mg-dropdown-menu {
   box-shadow: $control-shadow;
+  width: max-content;
+  max-width: 90vw;
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: none;
+  position: absolute;
+  background-color: $color-initial;
+  top: 100%;
+  z-index: 99;
+  border-color: $color-quaternary;
+  border-radius: $input-radius;
+  overflow-x: hidden;
 }
 
 /* Style items (options): */
@@ -61,7 +77,10 @@
 
 /* style the items (options), including the selected item: */
 .mg-dropdown-menu > ul > li {
-  padding: 1px 1px;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
@@ -76,23 +95,7 @@
 .mg-dropdown-menu > ul > li:hover {
   background-color: $color-quaternary;
 }
-.mg-dropdown > .mg-dropdown-menu {
-  width: max-content;
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 100%;
-  border: 1px solid;
-  display: none;
-  padding: 0.5rem;
-  position: absolute;
-  background-color: $color-initial;
-  top: 100%;
-  z-index: 99;
-  border-color: $color-quaternary;
-  border-radius: $input-radius;
-  overflow-x: hidden;
-}
+
 .mg-dropdown-menu.mg-dropdown-menu-fit {
   min-width: 100%;
 }
