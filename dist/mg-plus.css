@@ -1135,8 +1135,7 @@ img {
 .mg-icon {
   height: 22px;
   vertical-align: middle;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem; }
+  padding-right: 0.5rem; }
 
 /* The container must be positioned relative: */
 .mg-dropdown {
@@ -1689,8 +1688,8 @@ nav.mg-navbar a:hover {
 .mg-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px; }
+  width: 3.7em;
+  height: 2em; }
 
 /* Hide default HTML checkbox */
 .mg-switch input {
@@ -1713,8 +1712,8 @@ nav.mg-navbar a:hover {
 .mg-switch--slider:before {
   position: absolute;
   content: "";
-  height: 1.5em;
-  width: 1.5em;
+  height: 1.4em;
+  width: 1.4em;
   left: 0.3em;
   bottom: 0.3em;
   background-color: var(--mg-color-initial);
@@ -1734,7 +1733,7 @@ input:checked + .mg-switch--slider:before {
 
 /* Rounded sliders */
 .mg-switch--slider.mg-switch--round {
-  border-radius: 34px; }
+  border-radius: var(--mg-input-radius); }
 
 .mg-switch--slider.mg-switch--round:before {
   border-radius: 50%; }
