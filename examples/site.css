@@ -5,9 +5,9 @@ html {
 .page {
   margin-top: 25vh;
   background-color: var(--mg-color-initial);
-  border-top-right-radius: 6em;
-  border-top-left-radius: 6em;
-  padding: 1em;
+  border-top-right-radius: var(--mg-control-radius);
+  border-top-left-radius: var(--mg-control-radius);
+  padding: 0.5em;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 .header {
@@ -29,6 +29,7 @@ html {
 }
 .footer {
   padding: 8rem 0 2rem;
+  color: var(--mg-color-initial);
 }
 .footer .copyright {
   padding-right: 6rem;
@@ -420,10 +421,12 @@ pre.prettyprint {
 
 .blue-cell {
   background-color: var(--mg-color-primary);
-  margin: 0.5rem;
-  padding: 0;
+  margin: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   color: var(--mg-color-initial);
   width: 100%;
+  text-align: center;
 }
 body {
   background: radial-gradient(

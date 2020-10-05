@@ -4,7 +4,7 @@ name: CI
 env:
   AZURE_STORAGE_ACCOUNT_NAME: strsandbox2
   AZURE_INDEX_DOCUMENT_NAME: index.html
-  SOURCE_DIR: ./
+  SOURCE_DIR: ./dist
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:

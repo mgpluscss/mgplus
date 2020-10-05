@@ -16,8 +16,7 @@
 @mixin init-container($_gutter: $grid__gutter) {
   margin-right: auto;
   margin-left: auto;
-  padding-left: ($_gutter / 2);
-  padding-right: ($_gutter / 2);
+  width: 100%;
 }
 
 //  Creates a wrapper for a series of columns
