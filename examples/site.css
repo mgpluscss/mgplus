@@ -421,9 +421,7 @@ pre.prettyprint {
 
 .blue-cell {
   background-color: var(--mg-color-primary);
-  margin: 2rem;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  border: 1px solid white;
   color: var(--mg-color-initial);
   width: 100%;
   text-align: center;

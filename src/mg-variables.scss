@@ -3,8 +3,8 @@
   --mg-color-primary: #9b4dca;
   --mg-color-secondary: #494949;
   --mg-color-tertiary: #8d8d8d;
-  --mg-color-quaternary: #c2c1c1;
-  --mg-color-quinary: #dddddd;
+  --mg-color-quaternary: #dddddd;
+  --mg-color-quinary: #eeeeee;
   --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
@@ -38,7 +38,7 @@ $color-success: $color-green;
 //  _____________________________________________
 
 $grid__columns: 12;
-$grid__gutter: 10px;
+$grid__gutter: 5px;
 
 $name--X: mg-x;
 $name--S: mg-s;

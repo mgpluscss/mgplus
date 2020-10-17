@@ -689,54 +689,63 @@
         </section>
         <section id="grid">
           <h2 class="title">Grids</h2>
-          <h5 class="title">
-            Based on
-            <a href="https://github.com/godban/flex-box-grid">FlexBoxGrid</a>
-          </h5>
+          <h5 class="title">Row sizing and placement</h5>
           <div class="mg-container" id="grid-example">
             <div class="mg-row">
-              <div class="blue-cell mg-x6 mg-m--offset1">
-                mg-x6 mg-x--offset1
-              </div>
-              <div class="blue-cell mg-x5">mg-x5</div>
+              <div class="blue-cell mg-x4">x4</div>
+              <div class="blue-cell mg-x3">x3</div>
+              <div class="blue-cell mg-x2">x2</div>
             </div>
             <div class="mg-row">
-              <div class="blue-cell mg-x6 mg-m--offset3">
-                mg-x6 mg-x--offset3
-              </div>
+              <div class="blue-cell mg-x6">x6</div>
+              <div class="blue-cell mg-x6">x6</div>
             </div>
             <div class="mg-row">
-              <div class="blue-cell mg-x4">mg-x4</div>
-              <div class="blue-cell mg-x4 mg-m--offset4">
-                mg-x4 mg-x--offset4
+              <div class="blue-cell mg-x6 mg-x--offset3">x6 offset3</div>
+            </div>
+            <div class="mg-col">
+              <div class="mg-row mg-x--start">
+                <div class="blue-cell mg-x6">x6 start</div>
               </div>
-            </div>
-            <div class="mg-row">
-              <div class="blue-cell mg-x--hidden">mg-x--hidden</div>
-              <div class="blue-cell mg-m--hidden">mg-m--hidden</div>
-              <div class="blue-cell mg-l--hidden">mg-l--hidden</div>
-            </div>
-            <div class="example">
-              <pre
-                class="prettyprint"
-                data-toggle="prettify"
-                data-source="grid-example"
-              ></pre>
+              <div class="mg-row mg-x--end">
+                <div class="blue-cell mg-x6">x6 end</div>
+              </div>
+              <h5 class="title">Hidden effect (x,m,l)</h5>
+              <div class="mg-row">
+                <div class="blue-cell mg-x--hidden">hidden on x</div>
+                <div class="blue-cell mg-m--hidden">hidden on m</div>
+                <div class="blue-cell mg-l--hidden">hidden on l</div>
+              </div>
+              <div class="example">
+                <pre
+                  class="prettyprint"
+                  data-toggle="prettify"
+                  data-source="grid-example"
+                ></pre>
+              </div>
             </div>
           </div>
-
-          <h5 class="title">2 columns</h5>
+          <h5 class="title">Row alignment</h5>
           <div class="mg-container" id="grid-example3">
             <div class="mg-row">
-              <div class="mg-col mg-x5 mg-x--middle">
-                <div class="blue-cell mg-row mg-x4">mg-x4</div>
-                <div class="blue-cell mg-row mg-x3">mg-x3</div>
-                <div class="blue-cell mg-row mg-x2">mg-x2</div>
+              <div class="mg-col mg-x4 mg-x--start">
+                start
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
               </div>
-              <div class="mg-col mg-x5 mg-x--middle">
-                <div class="blue-cell mg-row mg-x4">mg-x4</div>
-                <div class="blue-cell mg-row mg-x3">mg-x3</div>
-                <div class="blue-cell mg-row mg-x2">mg-x2</div>
+              <div class="mg-col mg-x4 mg-x--center">
+                center
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x4 mg-x--end">
+                end
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
               </div>
             </div>
             <div class="example">
@@ -747,25 +756,23 @@
               ></pre>
             </div>
           </div>
-          <h5 class="title">4 columns default, around, between, evenly</h5>
+          <h5 class="title">Col alignment</h5>
           <div class="mg-container" id="grid-example4">
-            <div class="mg-row">
-              <div class="mg-col mg-x3">
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
+            <div class="mg-row" style="height: 10em">
+              <div class="mg-col mg-x4 mg-x--top">
+                top
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
               </div>
-              <div class="mg-col mg-x3 mg-x--around">
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
+              <div class="mg-col mg-x4 mg-x--middle">
+                middle
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
               </div>
-              <div class="mg-col mg-x3 mg-x--between">
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
-              </div>
-              <div class="mg-col mg-x3 mg-x--evenly">
-                <div class="blue-cell mg-row mg-x2">x2</div>
+              <div class="mg-col mg-x4 mg-x--bottom">
+                bottom
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
               </div>
             </div>
             <div class="example">
@@ -776,23 +783,20 @@
               ></pre>
             </div>
           </div>
-          <h5 class="title">
-            4 columns default, around (grow 2) , between, evenly(grow 2)
-          </h5>
+          <h5 class="title">Row grow</h5>
           <div class="mg-container" id="grid-example5">
-            <div class="mg-row">
-              <div class="mg-col mg-x3">
-                <div class="blue-cell mg-row mg-x1">x1</div>
-                <div class="blue-cell mg-row mg-x2">x2</div>
-                <div class="blue-cell mg-row mg-x3">x3</div>
-                <div class="blue-cell mg-row mg-x4">x4</div>
+            <div class="mg-row" style="height: 10em">
+              <div class="mg-col mg-x4">
+                <div class="blue-cell mg-row mg--grow">x4 grow</div>
+                <div class="blue-cell mg-row">x4</div>
               </div>
-              <div class="mg-col mg-x3 mg-x--around">
-                <div class="blue-cell mg-row mg-x2 mg--grow">x2 grow</div>
-                <div class="blue-cell mg-row mg-x3">x3</div>
+              <div class="mg-col mg-x4">
+                <div class="blue-cell mg-row mg--grow">x4 grow</div>
               </div>
-              <div class="mg-col mg-x3 mg-x--evenly">
-                <div class="blue-cell mg-row mg--grow mg-x2">x2 grow</div>
+              <div class="mg-col mg-x4">
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row mg--grow">x4 grow</div>
+                <div class="blue-cell mg-row">x4</div>
               </div>
             </div>
             <div class="example">
@@ -868,9 +872,11 @@
             ></pre>
           </div>
         </section>
-      </div>
-      <footer class="footer">
         <div class="mg-center-block">
+          <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">Github</a>
+          |
+          <a href="https://github.com/medevod/mgplus">Github</a>
+
           Creation by
           <a target="_blank" href="https://github.com/medevod" title="MedEvod"
             >medevod</a
@@ -878,7 +884,8 @@
           <a target="_blank" href="license" title="MIT License">MIT License</a>.
           <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">Github</a>
         </div>
-      </footer>
+      </div>
+      <footer class="footer"></footer>
     </main>
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
