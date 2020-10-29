@@ -12,7 +12,7 @@ Usefull extensions like navs or forms inputs and more advanced grid system (Flex
 
 Unlike most other CSS UI Framework, Mg+ is more like a css survival kit specially designed for better performance and higher productivity.
 
-**_Only 26kb minified_**
+**_Only 30KB minified_**
 
 **[demo](https://evodim.github.io/mgplus/)**
 
