@@ -22,8 +22,8 @@
   right: 0;
   bottom: 0;
   background-color: $color-tertiary;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .mg-switch--slider:before {
@@ -34,8 +34,8 @@
   left: 0.3em;
   bottom: 0.3em;
   background-color: $color-initial;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 input:checked + .mg-switch--slider {
@@ -54,7 +54,7 @@ input:checked + .mg-switch--slider:before {
 
 /* Rounded sliders */
 .mg-switch--slider.mg-switch--round {
-  border-radius: $input-radius;
+  border-radius: $control-radius;
 }
 
 .mg-switch--slider.mg-switch--round:before {
