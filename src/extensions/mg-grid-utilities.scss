@@ -201,6 +201,9 @@
   .mg-row.#{$_class}--reverse {
     flex-direction: row-reverse;
   }
+  .mg-row.#{$_class}--grow {
+    flex: 1 1 auto;
+  }
 }
 
 // Create hidden classes
