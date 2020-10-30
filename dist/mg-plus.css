@@ -407,9 +407,7 @@ img {
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: -2.5px;
-  margin-right: -2.5px; }
+  flex-wrap: wrap; }
 
 .mg-col {
   display: flex;
@@ -422,8 +420,8 @@ img {
   flex: 0 0 100%;
   max-width: 100%;
   min-height: 1px;
-  padding-left: 2.5px;
-  padding-right: 2.5px; }
+  padding-left: 2.5em;
+  padding-right: 2.5em; }
 
 .mg-x1 {
   flex-basis: 8.33333%;
