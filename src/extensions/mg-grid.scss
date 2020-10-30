@@ -1,27 +1,3 @@
-//
-//  Grid
-//  _____________________________________________
-
-.mg-container {
-  @include init-container();
-  max-width: $screen--L;
-}
-.mg-container-fluid {
-  @include init-container();
-  max-width: width auto;
-}
-
-.mg-row {
-  @include init-row();
-}
-
-.mg-col {
-  display: flex;
-  flex-direction: column;
-}
-.mg-col > * {
-  flex: 0 0 auto;
-}
 //  Make all grid columns
 //  ---------------------------------------------
 
@@ -58,4 +34,28 @@
 
 @media (min-width: $screen--XL) {
   @include create-grid-columns($name--XL);
+}
+//
+//  Grid
+//  _____________________________________________
+
+.mg-container {
+  @include init-container();
+  max-width: $screen--L;
+}
+.mg-container-fluid {
+  @include init-container();
+  max-width: width auto;
+}
+
+.mg-row {
+  @include init-row();
+}
+
+.mg-col {
+  display: flex;
+  flex-direction: column;
+}
+.mg-col > * {
+  flex: 0 0 auto;
 }

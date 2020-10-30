@@ -391,37 +391,12 @@ img {
 .float-right {
   float: right; }
 
-.mg-container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  max-width: 1025px; }
-
-.mg-container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  width: 100%;
-  max-width: width auto; }
-
-.mg-row {
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.mg-col {
-  display: flex;
-  flex-direction: column; }
-
-.mg-col > * {
-  flex: 0 0 auto; }
-
 .mg-x1, .mg-s1, .mg-m1, .mg-l1, .mg-xl1, .mg-x2, .mg-s2, .mg-m2, .mg-l2, .mg-xl2, .mg-x3, .mg-s3, .mg-m3, .mg-l3, .mg-xl3, .mg-x4, .mg-s4, .mg-m4, .mg-l4, .mg-xl4, .mg-x5, .mg-s5, .mg-m5, .mg-l5, .mg-xl5, .mg-x6, .mg-s6, .mg-m6, .mg-l6, .mg-xl6, .mg-x7, .mg-s7, .mg-m7, .mg-l7, .mg-xl7, .mg-x8, .mg-s8, .mg-m8, .mg-l8, .mg-xl8, .mg-x9, .mg-s9, .mg-m9, .mg-l9, .mg-xl9, .mg-x10, .mg-s10, .mg-m10, .mg-l10, .mg-xl10, .mg-x11, .mg-s11, .mg-m11, .mg-l11, .mg-xl11, .mg-x12, .mg-s12, .mg-m12, .mg-l12, .mg-xl12 {
   flex: 0 0 100%;
   max-width: 100%;
   min-height: 1px;
-  padding-left: 2.5em;
-  padding-right: 2.5em; }
+  padding-left: 0px;
+  padding-right: 0px; }
 
 .mg-x1 {
   flex-basis: 8.33333%;
@@ -1194,6 +1169,33 @@ img {
     flex-direction: column-reverse; }
   .mg-xl--hidden {
     display: none; } }
+
+.mg-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 1025px; }
+
+.mg-container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: width auto; }
+
+.mg-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-right: 0px; }
+
+.mg-col {
+  display: flex;
+  flex-direction: column; }
+
+.mg-col > * {
+  flex: 0 0 auto; }
 
 /**
  * Utilities
