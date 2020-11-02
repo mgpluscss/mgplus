@@ -308,8 +308,24 @@
           <h2>Forms</h2>
           <form id="forms-example">
             <fieldset>
-              <label for="nameField">Name</label>
-              <input type="text" placeholder="CJ Patoilo" id="nameField" />
+              <div class="mg-row">
+                <div class="mg-col mg-x6">
+                  <label for="firstNameField">First name</label>
+                  <input
+                    type="text"
+                    placeholder="CJ Patoilo"
+                    id="firstNameField"
+                  />
+                </div>
+                <div class="mg-col mg-x6">
+                  <label for="lastNameField">Last name</label>
+                  <input
+                    type="text"
+                    placeholder="CJ Patoilo"
+                    id="lastNameField"
+                  />
+                </div>
+              </div>
               <label for="ageRangeField">Age Range (mg+)</label>
               <div class="mg-select">
                 <select id="ageRangeField2">
@@ -335,7 +351,6 @@
                 type="number"
               />
               <label for="car-dropdown"> Choose Action </label>
-
               <div class="float-right">
                 <label class="mg-check label-inline" for="confirmField">
                   Send a copy to yourself
@@ -353,7 +368,6 @@
             ></pre>
           </div>
         </section>
-
         <section id="home-extensions" class="mg-center-block">
           <hr />
           <h1 class="title">Extensions</h1>
