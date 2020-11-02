@@ -13,7 +13,12 @@
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 1px 2px rgba(0, 0, 0, 0.12),
     0 3px 6px rgba(0, 0, 0, 0.12);
+  --mg-gutter-size: 0.5rem;
 }
+
+//
+//  Variables
+//  _____________________________________________
 
 $color-initial: var(--mg-color-initial) !default;
 $color-primary: var(--mg-color-primary) !default;
@@ -33,12 +38,8 @@ $color-danger: $color-red;
 $color-warning: $color-orange;
 $color-success: $color-green;
 
-//
-//  Variables
-//  _____________________________________________
-
 $grid__columns: 12;
-$grid__gutter: 0px;
+$grid__gutter: 0.5rem;
 
 $name--X: mg-x;
 $name--S: mg-s;
