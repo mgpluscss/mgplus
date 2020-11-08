@@ -1,7 +1,7 @@
 {
 	"name": "mg-plus",
-	"version": "0.0.4",
-	"description": "An minimalist CSS framework",
+	"version": "0.0.8",
+	"description": "Minimalist CSS framework",
 	"homepage": "https://medevod.github.io/mgplus",
 	"repository": "medevod/mgplus",
 	"license": "MIT",

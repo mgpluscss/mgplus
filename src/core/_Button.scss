@@ -7,7 +7,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background-color: $color-primary;
-  border: 0.1rem solid $color-primary;
+  border: 0.2rem solid $color-primary;
   border-radius: $control-radius;
   color: $color-initial;
   cursor: pointer;
@@ -51,9 +51,6 @@ input[type="submit"] {
     &:focus,
     &:hover {
       transition: opacity 0.5s;
-      background-color: transparent;
-      border-color: $color-primary;
-      color: $color-primary;
       opacity: 0.9;
     }
 
@@ -61,7 +58,6 @@ input[type="submit"] {
       &:focus,
       &:hover {
         border-color: inherit;
-        color: $color-primary;
       }
     }
   }
@@ -74,15 +70,14 @@ input[type="submit"] {
 
     &:focus,
     &:hover {
-      background-color: transparent;
-      border-color: transparent;
-      color: $color-primary;
+      transition: opacity 0.5s;
+      opacity: 0.9;
     }
 
     &[disabled] {
       &:focus,
       &:hover {
-        color: $color-primary;
+        border-color: inherit;
       }
     }
   }

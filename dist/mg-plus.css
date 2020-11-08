@@ -46,7 +46,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   background-color: var(--mg-color-primary);
-  border: 0.1rem solid var(--mg-color-primary);
+  border: 0.2rem solid var(--mg-color-primary);
   border-radius: var(--mg-control-radius);
   color: var(--mg-color-initial);
   cursor: pointer;
@@ -111,9 +111,6 @@ input[type="submit"] {
     input[type="submit"].button-outline:focus,
     input[type="submit"].button-outline:hover {
       transition: opacity 0.5s;
-      background-color: transparent;
-      border-color: var(--mg-color-primary);
-      color: var(--mg-color-primary);
       opacity: 0.9; }
     .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
     button.button-outline[disabled]:focus,
@@ -124,8 +121,7 @@ input[type="submit"] {
     input[type="reset"].button-outline[disabled]:hover,
     input[type="submit"].button-outline[disabled]:focus,
     input[type="submit"].button-outline[disabled]:hover {
-      border-color: inherit;
-      color: var(--mg-color-primary); }
+      border-color: inherit; }
   .button.button-clear,
   button.button-clear,
   input[type="button"].button-clear,
@@ -144,9 +140,8 @@ input[type="submit"] {
     input[type="reset"].button-clear:hover,
     input[type="submit"].button-clear:focus,
     input[type="submit"].button-clear:hover {
-      background-color: transparent;
-      border-color: transparent;
-      color: var(--mg-color-primary); }
+      transition: opacity 0.5s;
+      opacity: 0.9; }
     .button.button-clear[disabled]:focus, .button.button-clear[disabled]:hover,
     button.button-clear[disabled]:focus,
     button.button-clear[disabled]:hover,
@@ -156,7 +151,7 @@ input[type="submit"] {
     input[type="reset"].button-clear[disabled]:hover,
     input[type="submit"].button-clear[disabled]:focus,
     input[type="submit"].button-clear[disabled]:hover {
-      color: var(--mg-color-primary); }
+      border-color: inherit; }
   .button.button-small,
   button.button-small,
   input[type="button"].button-small,
@@ -1187,9 +1182,7 @@ img {
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: -0.25rem;
-  margin-right: -0.25rem; }
+  flex-wrap: wrap; }
 
 .mg-col {
   display: flex;
