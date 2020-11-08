@@ -36,6 +36,7 @@
   background-color: $color-initial;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  box-shadow: $control-shadow;
 }
 
 input:checked + .mg-switch--slider {
