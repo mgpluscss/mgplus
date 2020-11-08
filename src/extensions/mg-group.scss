@@ -22,6 +22,7 @@
 .mg-group > .button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border-right: 0;
 }
 .mg-group > .mg-select:last-child > select,
 .mg-group > select:last-child,
@@ -32,4 +33,5 @@
 .mg-group > .button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border-left: 0;
 }

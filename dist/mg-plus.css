@@ -1774,7 +1774,8 @@ nav.mg-navbar a:hover {
 .mg-group > .mg-dropdown:nth-child(1) > .mg-dropdown-button,
 .mg-group > .button:nth-child(1) {
   border-top-right-radius: 0;
-  border-bottom-right-radius: 0; }
+  border-bottom-right-radius: 0;
+  border-right: 0; }
 
 .mg-group > .mg-select:last-child > select,
 .mg-group > select:last-child,
@@ -1784,7 +1785,8 @@ nav.mg-navbar a:hover {
 .mg-group > .mg-dropdown:last-child > .mg-dropdown-button,
 .mg-group > .button:last-child {
   border-top-left-radius: 0;
-  border-bottom-left-radius: 0; }
+  border-bottom-left-radius: 0;
+  border-left: 0; }
 
 .mg-modal {
   position: fixed;
