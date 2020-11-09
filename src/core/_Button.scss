@@ -64,10 +64,8 @@ input[type="submit"] {
 
   &.button-clear {
     background-color: transparent;
-    border-color: transparent;
     color: $color-primary;
-    box-shadow: none;
-
+    border: none;
     &:focus,
     &:hover {
       transition: opacity 0.5s;
