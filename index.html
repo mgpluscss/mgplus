@@ -50,10 +50,20 @@
   </head>
 
   <body>
-    <div class="ocean">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
+<header>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+  <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+  </g>
+  </svg>
+</header>
     <main class="wrapper">
       <nav class="navigation">
         <div class="mg-container">
@@ -119,7 +129,9 @@
           </div>
         </div>
       </nav>
-      <div class="page mg-container">
+
+      <div class="page">
+        <div class=" mg-container">
         <section>
           <div class="mg-center-block header">
             <div class="stage">
@@ -130,7 +142,7 @@
               />&nbsp;
             </div>
             <div>
-              <h3><b>MgPlus</b></h3>
+              <h3><b>Mg+</b></h3>
               <h3>Minimalist CSS framework</h3>
               <a href="https://github.com/medevod/mgplus">Github</a>
               <h4>Extended version of Milligram</h4>
@@ -891,17 +903,21 @@
             ></pre>
           </div>
         </section>
-        <div class="mg-center-block">
-          <a
-            href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE"
-            >LICENSE</a
-          >
-          |
-          <a href="https://github.com/medevod/mgplus">Github</a>
-        </div>
+      
       </div>
-      <footer class="footer"></footer>
+      </div>
     </main>
+     <footer>
+      <div class="mg-center-block">
+        <a
+          href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE"
+          >LICENSE</a
+        >
+        |
+        <a href="https://github.com/medevod/mgplus">Github</a>
+      </div>
+     </footer>
+   
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="dist/mg-plus-extensions.js"></script>
