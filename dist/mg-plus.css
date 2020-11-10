@@ -11,7 +11,7 @@
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
-  --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.5), 0 3px 4px rgba(0, 0, 0, 0.15);
+  --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-gutter-size: 0.5rem; }
 
 .mg-color-initial {
