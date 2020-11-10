@@ -113,7 +113,7 @@
     /*tabs component*/
     document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
     function setupTabs(tabs) {
-      var items = tabs.getElementsByClassName("mg-tabs-item");
+      var items = tabs.getElementsByClassName("mg-tabs--item");
 
       for (var j = 0; j < items.length; j++) {
         if (
@@ -132,7 +132,7 @@
 
       tabs.addEventListener("click", function (e) {
         var selector = e.target;
-        if (classie.hasClass(e.target.parentNode, "mg-tabs-item"))
+        if (classie.hasClass(e.target.parentNode, "mg-tabs--item"))
           selector = e.target.parentNode;
 
         e.stopPropagation();
@@ -140,7 +140,7 @@
 
         if (selector.getAttribute("data-active") !== "true") {
           //disable all selected tabs
-          var items = tabs.getElementsByClassName("mg-tabs-item");
+          var items = tabs.getElementsByClassName("mg-tabs--item");
 
           for (var j = 0; j < items.length; j++) {
             classie.removeClass(items[j], "active");
@@ -166,7 +166,7 @@
       dropdownToggle.setAttribute("aria-expanded", "false");
 
       var dropdownMenu = dropdownToggle.parentNode.querySelector(
-        ".mg-dropdown-menu"
+        ".mg-dropdown--menu"
       );
 
       dropdownMenu.setAttribute("aria-hidden", "true");
@@ -228,8 +228,8 @@
 
     window.onclick = function (e) {
       if (classie.hasClass(e.target, "mg-dropdown")) return;
-      if (classie.hasClass(e.target, "mg-dropdown-button")) return;
-      if (classie.hasClass(e.target, "mg-dropdown-menu")) return;
+      if (classie.hasClass(e.target, "mg-dropdown--button")) return;
+      if (classie.hasClass(e.target, "mg-dropdown--menu")) return;
 
       closeCurrent.call();
     };

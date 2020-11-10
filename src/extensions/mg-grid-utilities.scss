@@ -27,7 +27,7 @@
   flex-wrap: wrap;
 }
 
-//  Generate extra small columns
+//  Generate default columns
 @mixin create-X($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
   max-width: percentage(($_columns / $grid__columns));

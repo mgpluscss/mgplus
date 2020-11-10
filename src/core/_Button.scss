@@ -44,7 +44,7 @@ input[type="submit"] {
     }
   }
 
-  &.button-outline {
+  &.button--outline {
     background-color: transparent;
     color: $color-primary;
 
@@ -62,33 +62,34 @@ input[type="submit"] {
     }
   }
 
-  &.button-clear {
+  &.button--clear {
     background-color: transparent;
-    border-color: transparent;
     color: $color-primary;
+    border: none;
+    &:focus,
+    &:hover {
+      transition: opacity 0.5s;
+      opacity: 0.9;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        border-color: inherit;
+      }
+    }
+  }
+  &.button--link {
     box-shadow: none;
-
-    &:focus,
-    &:hover {
-      transition: opacity 0.5s;
-      opacity: 0.9;
-    }
-
-    &[disabled] {
-      &:focus,
-      &:hover {
-        border-color: inherit;
-      }
-    }
   }
-  &.button-small {
+  &.button--small {
     font-size: 0.8rem;
     height: 2.8rem;
     line-height: 2.8rem;
     padding: 0 1.5rem;
   }
 
-  &.button-large {
+  &.button--large {
     font-size: 1.4rem;
     height: 4.5rem;
     line-height: 4.5rem;
