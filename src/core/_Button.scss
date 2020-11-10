@@ -61,7 +61,25 @@ input[type="submit"] {
       }
     }
   }
+  &.button--link {
+    box-shadow: none;
+    background-color: transparent;
+    color: $color-primary;
+    border: none;
+    &:focus,
+    &:hover {
+      transition: opacity 0.5s;
+      opacity: 0.9;
+      color: var(--mg-color-secondary);
+    }
 
+    &[disabled] {
+      &:focus,
+      &:hover {
+        border-color: inherit;
+      }
+    }
+  }
   &.button--clear {
     background-color: transparent;
     color: $color-primary;
@@ -78,9 +96,6 @@ input[type="submit"] {
         border-color: inherit;
       }
     }
-  }
-  &.button--link {
-    box-shadow: none;
   }
   &.button--small {
     font-size: 0.8rem;

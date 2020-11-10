@@ -148,6 +148,37 @@ input[type="submit"] {
     input[type="submit"].button--outline[disabled]:focus,
     input[type="submit"].button--outline[disabled]:hover {
       border-color: inherit; }
+  .button.button--link,
+  button.button--link,
+  input[type="button"].button--link,
+  input[type="reset"].button--link,
+  input[type="submit"].button--link {
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--mg-color-primary);
+    border: none; }
+    .button.button--link:focus, .button.button--link:hover,
+    button.button--link:focus,
+    button.button--link:hover,
+    input[type="button"].button--link:focus,
+    input[type="button"].button--link:hover,
+    input[type="reset"].button--link:focus,
+    input[type="reset"].button--link:hover,
+    input[type="submit"].button--link:focus,
+    input[type="submit"].button--link:hover {
+      transition: opacity 0.5s;
+      opacity: 0.9;
+      color: var(--mg-color-secondary); }
+    .button.button--link[disabled]:focus, .button.button--link[disabled]:hover,
+    button.button--link[disabled]:focus,
+    button.button--link[disabled]:hover,
+    input[type="button"].button--link[disabled]:focus,
+    input[type="button"].button--link[disabled]:hover,
+    input[type="reset"].button--link[disabled]:focus,
+    input[type="reset"].button--link[disabled]:hover,
+    input[type="submit"].button--link[disabled]:focus,
+    input[type="submit"].button--link[disabled]:hover {
+      border-color: inherit; }
   .button.button--clear,
   button.button--clear,
   input[type="button"].button--clear,
@@ -177,12 +208,6 @@ input[type="submit"] {
     input[type="submit"].button--clear[disabled]:focus,
     input[type="submit"].button--clear[disabled]:hover {
       border-color: inherit; }
-  .button.button--link,
-  button.button--link,
-  input[type="button"].button--link,
-  input[type="reset"].button--link,
-  input[type="submit"].button--link {
-    box-shadow: none; }
   .button.button--small,
   button.button--small,
   input[type="button"].button--small,
