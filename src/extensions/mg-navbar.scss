@@ -45,7 +45,7 @@ nav.mg-navbar a:hover {
   overflow-y: hidden;
   font-weight: bold;
 }
-.mg-nav.mg-nav-inline > ul > li.active {
+.mg-nav.mg-nav--inline > ul > li.active {
   border: none;
   border-bottom: 0.3rem solid $color-primary;
 }
@@ -59,10 +59,10 @@ nav.mg-navbar a:hover {
   background-color: $color-quaternary;
 }
 
-.mg-nav-inline > ul {
+.mg-nav--inline > ul {
   display: inline-block;
   width: 100%;
 }
-.mg-nav-inline > ul > li:not(.mg-right) {
+.mg-nav--inline > ul > li:not(.mg-right) {
   float: left;
 }

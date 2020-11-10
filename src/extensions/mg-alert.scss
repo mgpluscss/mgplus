@@ -7,20 +7,20 @@
   background-color: $color-quinary;
   width: 100%;
 }
-.mg-alert.mg-alert-danger {
+.mg-alert.mg-alert--danger {
   border-left-color: $color-danger;
 }
-.mg-alert.mg-alert-success {
+.mg-alert.mg-alert--success {
   border-left-color: $color-success;
 }
-.mg-alert.mg-alert-warning {
+.mg-alert.mg-alert--warning {
   border-left-color: $color-warning;
 }
 .mg-alert *:last-child {
   margin: 0;
 }
 /* The close button */
-.mg-alert-closebtn {
+.mg-alert--closebtn {
   margin: 1.5em;
   color: $color-secondary;
   font-weight: bold;
@@ -31,15 +31,6 @@
   transition: 0.3s;
 }
 /* When moving the mouse over the close button */
-.mg-alert-closebtn:hover {
+.mg-alert--closebtn:hover {
   background-color: $color-primary;
-}
-.mg-color-warning {
-  color: $color-warning;
-}
-.mg-color-danger {
-  color: $color-danger;
-}
-.mg-color-success {
-  color: $color-success;
 }

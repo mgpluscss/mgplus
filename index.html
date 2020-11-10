@@ -87,11 +87,11 @@
             <div class="mg-dropdown mg-right">
               <button
                 data-toggle="dropdown"
-                class="mg-dropdown-button"
+                class="mg-dropdown--button"
               >
                 Explore
               </button>
-              <div class="mg-dropdown-menu mg-dropdown-menu-right">
+              <div class="mg-dropdown--menu mg-dropdown--menu-right">
                 <ul>
                   <li class="active"><a href="#home">Home</a></li>
                   <li><a href="#typography">Typography</a></li>
@@ -201,19 +201,21 @@
             <a class="button" href="#">Default Button</a>
 
             <!-- Outlined Button -->
-            <button class="button button-outline">Outlined Button</button>
+            <button class="button button--outline">Outlined Button</button>
 
             <!-- Clear Button -->
             <input
-              class="button button-clear"
+              class="button button--clear"
               type="submit"
               value="Clear Button"
             />
 
             <!-- Small Button -->
-            <button class="button button-small">Small Button</button>
+            <button class="button button--small">Small Button</button>
             <!-- Large Button -->
-            <button class="button button-large">Large Button</button>
+            <button class="button  button--large">Large Button</button>
+            <!-- link Button -->
+            <button class="button button--clear button--small  button--link">small link Button</button>
           </div>
           <div class="example">
             <pre
@@ -393,7 +395,7 @@
         </section>
         <section id="nav-inline">
           <h2 class="title">Nav inline</h2>
-          <div class="mg-nav mg-nav-inline" id="nav-horizontal-example">
+          <div class="mg-nav mg-nav--inline" id="nav-horizontal-example">
             <ul>
               <li class="active"><a href="#home">Home</a></li>
               <li><a href="#news">News</a></li>
@@ -412,10 +414,10 @@
         <section id="dropdown">
           <h2 class="title">Dropdown</h2>
           <div class="mg-dropdown" data-value="bmw" id="dropdown-example">
-            <button data-toggle="dropdown" class="mg-dropdown-button">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
               Choose Action
             </button>
-            <div class="mg-dropdown-menu">
+            <div class="mg-dropdown--menu">
               <ul>
                 <li data-value="audi">Audi</li>
                 <li data-value="bmw">BMW</li>
@@ -441,10 +443,10 @@
           </div>
 
           <div class="mg-dropdown" data-value="bmw" id="dropdown-example2">
-            <button data-toggle="dropdown" class="mg-dropdown-button">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
               left side
             </button>
-            <div class="mg-dropdown-menu mg-dropdown-menu-left">
+            <div class="mg-dropdown--menu mg-dropdown--menu-left">
               <ul>
                 <li data-value="audi">Audi</li>
                 <li data-value="bmw">BMW</li>
@@ -457,10 +459,10 @@
             data-value="bmw"
             id="dropdown-example2"
           >
-            <button data-toggle="dropdown" class="mg-dropdown-button">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
               right side
             </button>
-            <div class="mg-dropdown-menu mg-dropdown-menu-right">
+            <div class="mg-dropdown--menu mg-dropdown--menu-right">
               <ul>
                 <li data-value="audi">Audi</li>
                 <li data-value="bmw">BMW</li>
@@ -554,7 +556,7 @@
           <h2 class="title">Alert</h2>
           <div class="mg-alert" id="default-alert-example">
             <span
-              class="mg-alert-closebtn"
+              class="mg-alert--closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
@@ -567,25 +569,25 @@
               data-source="default-alert-example"
             ></pre>
           </div>
-          <div class="mg-alert mg-alert-danger" id="danger-alert-example">
+          <div class="mg-alert mg-alert--danger" id="danger-alert-example">
             <span
-              class="mg-alert-closebtn"
+              class="mg-alert--closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
             This is an danger alert box.
           </div>
-          <div class="mg-alert mg-alert-success" id="success-alert-example">
+          <div class="mg-alert mg-alert--success" id="success-alert-example">
             <span
-              class="mg-alert-closebtn"
+              class="mg-alert--closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
             This is an success alert box.
           </div>
-          <div class="mg-alert mg-alert-warning" id="warning-alert-example">
+          <div class="mg-alert mg-alert--warning" id="warning-alert-example">
             <span
-              class="mg-alert-closebtn"
+              class="mg-alert--closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
@@ -599,11 +601,11 @@
             ></pre>
           </div>
           <div
-            class="mg-alert mg-alert-danger mg-color-danger"
+            class="mg-alert mg-alert--danger mg-color-danger"
             id="danger-alert-example2"
           >
             <span
-              class="mg-alert-closebtn"
+              class="mg-alert--closebtn"
               onclick="this.parentElement.style.display='none';"
               >&times;</span
             >
@@ -621,29 +623,29 @@
           <h2 class="title">Tabs</h2>
           <div class="mg-tabs" data-toggle="tabs" id="tabs-example">
             <ul>
-              <li class="mg-tabs-item active" data-target="tab1">
+              <li class="mg-tabs--item active" data-target="tab1">
                 <a href="#" class="secondary">Tab one</a>
               </li>
-              <li class="mg-tabs-item" data-target="tab2">
-                <a href="#" class="button-outline">Tab two</a>
+              <li class="mg-tabs--item" data-target="tab2">
+                <a href="#" class="button--outline">Tab two</a>
               </li>
-              <li class="mg-tabs-item" data-target="tab3">
+              <li class="mg-tabs--item" data-target="tab3">
                 <a href="#" class="secondary">Tab one</a>
               </li>
             </ul>
-            <div class="mg-tabs-content" id="tab1">
+            <div class="mg-tabs--content" id="tab1">
               1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
               iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
               dolorum libero fugit quidem, voluptate veniam aut animi nihil
               voluptas mollitia, aliquid inventore.
             </div>
-            <div class="mg-tabs-content" id="tab2">
+            <div class="mg-tabs--content" id="tab2">
               2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
               iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
               dolorum libero fugit quidem, voluptate veniam aut animi nihil
               voluptas mollitia, aliquid inventore.
             </div>
-            <div class="mg-tabs-content" id="tab3">
+            <div class="mg-tabs--content" id="tab3">
               3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
               iste, placeat voluptates sapiente blanditiis fuga ullam. Iure
               dolorum libero fugit quidem, voluptate veniam aut animi nihil
@@ -667,10 +669,10 @@
               data-value="bmw"
               id="car-dropdown"
             >
-              <button data-toggle="dropdown" class="mg-dropdown-button">
+              <button data-toggle="dropdown" class="mg-dropdown--button">
                 <img class="mg-icon" src="examples/fr.svg" />
               </button>
-              <div class="mg-dropdown-menu mg-dropdown-menu-left">
+              <div class="mg-dropdown--menu mg-dropdown--menu-left">
                 <ul>
                   <li data-value="fr">
                     <img src="examples/fr.svg" class="mg-icon" />France
@@ -683,6 +685,7 @@
                   </li>
                 </ul>
               </div>
+              
             </div>
             <input
               class="mg-x6 mg-m3 mg-l3"
@@ -701,7 +704,7 @@
               data-source="group-example"
             ></pre>
           </div>
-        </section>
+        </section> 
         <section id="grid">
           <h2 class="title">Grids</h2>
           <h5 class="title">Row sizing and placement</h5>
@@ -829,7 +832,7 @@
           <button data-toggle="modal" data-target="modal-1">Show modal</button>
           <div class="mg-container" id="modal-example">
             <div class="mg-modal" id="modal-1">
-              <div class="mg-modal-content mg-container">
+              <div class="mg-modal--content mg-container">
                 <h3>Modal Dialog</h3>
                 <div>
                   <p>
@@ -901,6 +904,6 @@
     </main>
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
-    <script src="dist/mg-plus-extensions.min.js"></script>
+    <script src="dist/mg-plus-extensions.js"></script>
   </body>
 </html>
