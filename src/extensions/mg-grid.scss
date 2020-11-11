@@ -39,6 +39,19 @@
 //  Grid
 //  _____________________________________________
 
+@media (max-width: $screen--S) {
+  @include create-conditional-hidden($name--S);
+}
+@media (max-width: $screen--M) {
+  @include create-conditional-hidden($name--M);
+}
+@media (max-width: $screen--L) {
+  @include create-conditional-hidden($name--L);
+}
+@media (max-width: $screen--XL) {
+  @include create-conditional-hidden($name--XL);
+}
+
 .mg-container {
   @include init-container();
   max-width: $screen--L;
