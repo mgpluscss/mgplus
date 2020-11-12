@@ -1247,7 +1247,8 @@ img {
 
 .mg-col {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100%; }
 
 .mg-col > * {
   flex: 0 0 auto; }
