@@ -1240,6 +1240,7 @@ img {
   max-width: width auto; }
 
 .mg-row {
+  width: 100%;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
@@ -1247,7 +1248,8 @@ img {
 
 .mg-col {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100%; }
 
 .mg-col > * {
   flex: 0 0 auto; }
