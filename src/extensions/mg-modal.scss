@@ -38,3 +38,18 @@
     justify-content: flex-end;
   }
 }
+
+/* The close button */
+.mg-modal--closebtn {
+  color: $color-secondary;
+  font-weight: bold;
+  float: right;
+  font-size: 2.5em;
+  line-height: 1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* When moving the mouse over the close button */
+.mg-modal--closebtn:hover {
+  opacity: 0.8;
+}

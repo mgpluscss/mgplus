@@ -1247,7 +1247,9 @@ img {
 
 .mg-col {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 100%;
+  height: 100%; }
 
 .mg-col > * {
   flex: 0 0 auto; }
@@ -1610,7 +1612,7 @@ img {
 
 /* When moving the mouse over the close button */
 .mg-alert--closebtn:hover {
-  background-color: var(--mg-color-primary); }
+  opacity: 0.8; }
 
 /* Customize the label (the container) */
 /* Hide the browser's default radio button */
@@ -1879,6 +1881,20 @@ nav.mg-navbar a:hover {
 @media (max-width: 481px) {
   .mg-modal {
     justify-content: flex-end; } }
+
+/* The close button */
+.mg-modal--closebtn {
+  color: var(--mg-color-secondary);
+  font-weight: bold;
+  float: right;
+  font-size: 2.5em;
+  line-height: 1em;
+  cursor: pointer;
+  transition: 0.3s; }
+
+/* When moving the mouse over the close button */
+.mg-modal--closebtn:hover {
+  opacity: 0.8; }
 
 /* The switch - the box around the slider */
 .mg-switch {
