@@ -20,6 +20,7 @@ footer {
 }
 .page {
   background-color: var(--mg-color-initial);
+  padding: 1em;
 }
 
 @keyframes a {
@@ -47,7 +48,7 @@ footer {
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 .navigation .container {
@@ -70,7 +71,7 @@ footer {
   margin-left: 2.5rem;
   position: relative;
 }
-.img {
+.logo {
   fill: #23a3e1;
   height: 2rem;
   position: relative;
