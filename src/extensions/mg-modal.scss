@@ -26,8 +26,13 @@
   margin-top: 1rem;
   z-index: 2000;
   box-shadow: $control-shadow;
+}
+
+.mg-modal > .mg-modal--content > .mg-modal--content-scroll {
+  max-height: 80vh;
   overflow-y: auto;
 }
+
 .mg-show {
   opacity: 1;
   visibility: visible;
