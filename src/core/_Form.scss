@@ -31,10 +31,8 @@ select {
 //Hide spin to input numbers
 //Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
-input::-moz-outer-spin-button input::-webkit-inner-spin-button,
-input::-moz-inner-spin-button {
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
 }
 //Mozilla
 input[type="number"] {
