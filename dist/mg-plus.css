@@ -268,7 +268,7 @@ select {
   box-shadow: none;
   box-sizing: inherit;
   height: 3.8rem;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 0.5rem;
   width: 100%; }
   input[type="email"]:focus,
   input[type="number"]:focus,
@@ -283,10 +283,8 @@ select {
     outline: 0; }
 
 input::-webkit-outer-spin-button,
-input::-moz-outer-spin-button input::-webkit-inner-spin-button,
-input::-moz-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0; }
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; }
 
 input[type="number"] {
   -moz-appearance: textfield; }
@@ -1874,7 +1872,7 @@ nav.mg-navbar a:hover {
   box-shadow: var(--mg-control-shadow); }
 
 .mg-modal > .mg-modal--content > .mg-modal--content-scroll {
-  max-height: 80vh;
+  max-height: 70vh;
   overflow-y: auto; }
 
 .mg-show {
