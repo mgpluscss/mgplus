@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: whitesmoke;
+  background-color: var(--mg-color-initial);
 }
 
 header {
@@ -260,3 +260,16 @@ pre.prettyprint {
 #home {
   padding-top: 10vh;
 }
+/*black theme*/
+/* :root {
+        --mg-color-initial: black;
+        --mg-color-primary: #23a3e1;
+        --mg-control-radius: 1.5rem;
+        --mg-input-radius: 1rem;
+        --mg-color-secondary: #999999;
+        --mg-color-tertiary: #858585;
+        --mg-color-quaternary: #5c5b5b;
+        --mg-color-quinary: #494949;
+      } */
+
+/*default theme*/
