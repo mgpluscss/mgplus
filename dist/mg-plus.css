@@ -289,14 +289,15 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: transparent;
+  background-color: var(--mg-color-initial);
   border: 0.1rem solid var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
   box-shadow: none;
   box-sizing: inherit;
   height: 3.8rem;
   padding: 0.6rem 0.7rem;
-  width: 100%; }
+  width: 100%;
+  color: var(--mg-color-secondary); }
   input[type="email"]:focus,
   input[type="number"]:focus,
   input[type="password"]:focus,

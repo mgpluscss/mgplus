@@ -13,7 +13,7 @@ select {
   appearance: none; // Removes awkward default styles on some inputs for iOS
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: transparent;
+  background-color: $color-initial;
   border: 0.1rem solid $color-quaternary;
   border-radius: $input-radius;
   box-shadow: none;
@@ -21,7 +21,7 @@ select {
   height: 3.8rem;
   padding: 0.6rem 0.7rem; // The .6rem vertically centers text on FF, ignored by Webkit
   width: 100%;
-
+  color: $color-secondary;
   &:focus {
     border-color: $color-primary;
     outline: 0;
