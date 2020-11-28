@@ -13,7 +13,7 @@ select {
   appearance: none; // Removes awkward default styles on some inputs for iOS
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: $color-initial;
+  background-color: transparent;
   border: 0.1rem solid $color-quaternary;
   border-radius: $input-radius;
   box-shadow: none;
