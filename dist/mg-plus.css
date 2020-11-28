@@ -41,6 +41,33 @@
 .mg-color-success {
   color: var(--mg-color-green); }
 
+.mg-bg-color-initial {
+  background-color: var(--mg-color-initial); }
+
+.mg-bg-color-primary {
+  background-color: var(--mg-color-primary); }
+
+.mg-bg-color-secondary {
+  background-color: var(--mg-color-secondary); }
+
+.mg-bg-color-tertiary {
+  background-color: var(--mg-color-tertiary); }
+
+.mg-bg-color-quaternary {
+  background-color: var(--mg-color-quaternary); }
+
+.mg-bg-color-quinary {
+  background-color: var(--mg-color-quinary); }
+
+.mg-bg-color-warning {
+  background-color: var(--mg-color-orange); }
+
+.mg-bg-color-danger {
+  background-color: var(--mg-color-red); }
+
+.mg-bg-color-success {
+  background-color: var(--mg-color-green); }
+
 *,
 *:after,
 *:before {
@@ -268,7 +295,7 @@ select {
   box-shadow: none;
   box-sizing: inherit;
   height: 3.8rem;
-  padding: 0.6rem 0.5rem;
+  padding: 0.6rem 0.7rem;
   width: 100%; }
   input[type="email"]:focus,
   input[type="number"]:focus,
