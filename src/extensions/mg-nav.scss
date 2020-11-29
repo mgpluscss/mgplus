@@ -4,7 +4,7 @@
   padding: 0;
 }
 .mg-nav > ul > li.active {
-  color: var(--mg-color-initial);
+  color: $color-initial;
   border-left: 0.3rem solid $color-primary;
   overflow-y: hidden;
   font-weight: bold;
@@ -18,10 +18,11 @@
   display: block;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  color: $color-secondary;
 }
 
 .mg-nav > ul > li a:hover {
-  background-color: $color-quaternary;
+  background-color: $color-quinary;
 }
 
 .mg-nav--inline > ul {

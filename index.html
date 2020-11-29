@@ -33,15 +33,13 @@
   --mg-control-radius: 1.5rem;
   --mg-input-radius: 1rem;
   /*dark theme*/      
-        /* --mg-color-initial: rgb(2, 1, 20);
-        --mg-color-primary: #23a3e1;
-        --mg-control-radius: 1.5rem;
-        --mg-input-radius: 1rem;
-        --mg-color-secondary: #c9c9c9;
-        --mg-color-tertiary: #858585;
-        --mg-color-quaternary: #5c5b5b;
-        --mg-color-quinary: #494949;  */
-        }
+        /* --mg-color-initial: #242323;
+        --mg-color-secondary: #dadada;
+        --mg-color-tertiary: #a7a7a7;
+        --mg-color-quaternary: #817f7f;
+        --mg-color-quinary: #4e4e4e; 
+        */
+      }
   </style>
   </head>
 
@@ -83,6 +81,7 @@
           <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
         </g>
       </svg>
+    
     </header>
     <main class="wrapper">
       <nav class="navigation">
@@ -114,8 +113,9 @@
                 ></path>
               </svg>
             </a>
-            <div class="mg-dropdown mg-right">
-              <button data-toggle="dropdown" class="mg-dropdown--button">
+       
+            <div class="mg-dropdown mg-right mg-x5">             
+              <button data-toggle="dropdown" class="mg-dropdown--button ">
                 Explore
               </button>
               <div class="mg-dropdown--menu mg-dropdown--menu-right">
@@ -143,8 +143,17 @@
                 </ul>
               </div>
             </div>
-          </div>
+            <div class="mg-row mg-x5 mg-x--middle">              
+              <label class="mg-switch" >
+                <input type="checkbox">
+                <span class="mg-switch--slider mg-switch--round"></span>
+              </label>
+              <span>Dark</span>
+              </div>    
+            </div>
+          
         </div>
+        
       </nav>
 
       <div class="page">
@@ -1097,4 +1106,5 @@
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="dist/mg-plus-extensions.js"></script>
   </body>
+   
 </html>

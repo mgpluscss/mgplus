@@ -38,8 +38,8 @@ footer {
   }
 }
 .navigation {
-  background: var(--mg-color-quinary);
-
+  background: #042846;
+  color: var(--mg-color-initial);
   display: block;
   height: 5.2rem;
   left: 0;
@@ -80,7 +80,6 @@ footer {
 }
 .navigation .navigation-title,
 .navigation .title {
-  color: #606c76;
   font-family: Gotham Rounded A, Gotham Rounded B, Helvetica Neue, Arial,
     sans-serif;
   position: relative;
@@ -191,7 +190,7 @@ pre.prettyprint {
 
 .blue-cell {
   background-color: var(--mg-color-primary);
-  border: 1px solid white;
+  border: 1px solid var(--mg-color-secondary);
   color: var(--mg-color-initial);
   width: 100%;
   text-align: center;
@@ -205,13 +204,6 @@ pre.prettyprint {
   margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 100px;
   max-height: 150px;
-}
-
-.content {
-  position: relative;
-  height: 20vh;
-  text-align: center;
-  background-color: white;
 }
 
 /* Animation */
@@ -260,16 +252,3 @@ pre.prettyprint {
 #home {
   padding-top: 10vh;
 }
-/*black theme*/
-/* :root {
-        --mg-color-initial: black;
-        --mg-color-primary: #23a3e1;
-        --mg-control-radius: 1.5rem;
-        --mg-input-radius: 1rem;
-        --mg-color-secondary: #999999;
-        --mg-color-tertiary: #858585;
-        --mg-color-quaternary: #5c5b5b;
-        --mg-color-quinary: #494949;
-      } */
-
-/*default theme*/

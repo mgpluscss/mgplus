@@ -27,7 +27,9 @@ select {
     outline: 0;
   }
 }
-
+select {
+  background-color: $color-initial;
+}
 //Hide spin to input numbers
 //Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
