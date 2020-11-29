@@ -16,8 +16,8 @@
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-gutter-size: 0.5rem; }
 
-.mg-dark {
-  --mg-color-initial: #242323 !important;
+.mg-theme--inverted {
+  --mg-color-initial: #302f2f !important;
   --mg-color-secondary: #dadada !important;
   --mg-color-tertiary: #a7a7a7 !important;
   --mg-color-quaternary: #817f7f !important;

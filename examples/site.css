@@ -13,14 +13,13 @@ header {
     rgba(84, 58, 183, 1) 0%,
     rgba(0, 172, 193, 1) 100%
   );
-  color: white;
+  color: var(--mg-color-initial);
 }
 footer {
   background-color: var(--mg-color-quinary);
 }
 .page {
   background-color: var(--mg-color-initial);
-  padding: 1em;
 }
 
 @keyframes a {
@@ -30,7 +29,7 @@ footer {
   }
   25% {
     fill-opacity: 0;
-    stroke: #23a3e1;
+    stroke: var(--mg-color-primary);
   }
   to {
     fill-opacity: 1;
@@ -39,7 +38,7 @@ footer {
 }
 .navigation {
   background: #042846;
-  color: var(--mg-color-initial);
+  color: var(--mg-color-light);
   display: block;
   height: 5.2rem;
   left: 0;
@@ -72,7 +71,7 @@ footer {
   position: relative;
 }
 .logo {
-  fill: #23a3e1;
+  fill: var(--mg-color-primary);
   height: 2rem;
   position: relative;
   top: 0.3rem;
@@ -102,8 +101,8 @@ h2.title {
 }
 .octocat {
   border: 0;
-  color: #f4f5f6;
-  fill: #23a3e1;
+  color: var(--mg-color-light);
+  fill: var(--mg-color-primary);
   height: 5.2rem;
   position: fixed;
   right: 0;
@@ -190,7 +189,7 @@ pre.prettyprint {
 
 .blue-cell {
   background-color: var(--mg-color-primary);
-  border: 1px solid var(--mg-color-secondary);
+  border: 1px solid var(--mg-color-quinary);
   color: var(--mg-color-initial);
   width: 100%;
   text-align: center;

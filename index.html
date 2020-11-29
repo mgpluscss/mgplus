@@ -31,14 +31,7 @@
       :root {
   --mg-color-primary: #23a3e1;
   --mg-control-radius: 1.5rem;
-  --mg-input-radius: 1rem;
-  /*dark theme*/      
-        /* --mg-color-initial: #242323;
-        --mg-color-secondary: #dadada;
-        --mg-color-tertiary: #a7a7a7;
-        --mg-color-quaternary: #817f7f;
-        --mg-color-quinary: #4e4e4e; 
-        */
+  --mg-input-radius: 1rem;  
       }
   </style>
   </head>
@@ -78,7 +71,7 @@
             y="5"
             fill="rgba(255,255,255,0.3)"
           />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--mg-color-initial)" />
         </g>
       </svg>
     
@@ -87,12 +80,11 @@
       <nav class="navigation">
         <div class="mg-container">
           <div class="mg-row mg-x11 mg-x--around mg-x--baseline">
-            <a
+            <div
               title="Milligram Plus - A minimalist CSS framework."
-              class="navigation-title"
-              href="https://github.com/Evodim/mgplus"
+              class="navigation-title"             
             >
-              <img class="logo" src="milligram-plus.svg" /><span>Mg+</span></a
+              <img class="logo" src="milligram-plus.svg" /><span>Mg+</span></div
             >
             <a
               href="https://github.com/Evodim/mgplus"
@@ -114,7 +106,7 @@
               </svg>
             </a>
        
-            <div class="mg-dropdown mg-right mg-x5">             
+            <div class="mg-dropdown mg-right mg-x5 mg-s6 mg-m3">             
               <button data-toggle="dropdown" class="mg-dropdown--button ">
                 Explore
               </button>
@@ -143,6 +135,7 @@
                 </ul>
               </div>
             </div>
+                   
          </div>
       </nav>
      <div class="page">
@@ -1094,6 +1087,7 @@
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="dist/mg-plus-extensions.js"></script>
+  
   </body>
    
 </html>
