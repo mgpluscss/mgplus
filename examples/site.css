@@ -20,6 +20,7 @@ footer {
 }
 .page {
   background-color: var(--mg-color-initial);
+  margin:1rem;
 }
 
 @keyframes a {
