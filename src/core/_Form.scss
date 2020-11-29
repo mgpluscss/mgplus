@@ -21,13 +21,15 @@ select {
   height: 3.8rem;
   padding: 0.6rem 0.7rem; // The .6rem vertically centers text on FF, ignored by Webkit
   width: 100%;
-
+  color: $color-secondary;
   &:focus {
     border-color: $color-primary;
     outline: 0;
   }
 }
-
+select {
+  background-color: $color-initial;
+}
 //Hide spin to input numbers
 //Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,

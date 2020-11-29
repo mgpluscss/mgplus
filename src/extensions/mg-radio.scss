@@ -1,67 +1,65 @@
 /* Customize the label (the container) */
 /* Hide the browser's default radio button */
 .mg-radio input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
- 
+
 /* Create a custom radio button */
 .mg-radio .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 1.5em;
-	width: 1.5em;
-	border-radius: 50%;
-	border-style: solid;
-	border-color: var(--mg-color-quaternary);
-	border-width: thin;
-	transition: all 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--mg-color-quaternary);
+  border-width: thin;
+  transition: all 0.4s;
 }
 
 /* On mouse-over, add a grey background color */
 .mg-radio:hover input ~ .checkmark {
-	background-color: $color-secondary;
+  background-color: $color-secondary;
 }
 
 /* When the radio button is checked, add a blue background */
 .mg-radio input:checked ~ .checkmark {
-	background-color: var(--mg-color-primary);
+  background-color: var(--mg-color-primary);
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .mg-radio .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
 .mg-radio input:checked ~ .checkmark:after {
-	display: block;
+  display: block;
 }
 
 /* Style the indicator (dot/circle) */
 .mg-radio .checkmark:after {
-	top: 0.5em;
-	left: 0.5em;
-	width: 0.4em;
-	height: 0.4em;
-	border-radius: 50%;
-	background-color: var(--mg-color-initial);
+  top: 0.5em;
+  left: 0.5em;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background-color: var(--mg-color-light);
 }
-
 
 .mg-radio input:disabled ~ .checkmark {
-	background-color: var(--mg-color-quinary);
+  background-color: var(--mg-color-quinary);
 }
 
-
 .mg-radio input:focus ~ .checkmark {
-	border-color: var(--mg-color-primary);
-	border-style: dotted;
-	border-width: thin;
+  border-color: var(--mg-color-primary);
+  border-style: dotted;
+  border-width: thin;
 }

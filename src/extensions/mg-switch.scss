@@ -4,6 +4,8 @@
   display: inline-block;
   width: 3.7em;
   height: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 /* Hide default HTML checkbox */
@@ -21,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: $color-tertiary;
+  background-color: $color-quaternary;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -33,7 +35,7 @@
   width: 1.4em;
   left: 0.3em;
   bottom: 0.3em;
-  background-color: $color-initial;
+  background-color: $color-light;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   box-shadow: $control-shadow;

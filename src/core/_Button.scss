@@ -9,7 +9,7 @@ input[type="submit"] {
   background-color: $color-primary;
   border: 0.2rem solid $color-primary;
   border-radius: $control-radius;
-  color: $color-initial;
+  color: $color-light;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -28,9 +28,9 @@ input[type="submit"] {
   &:focus,
   &:hover {
     transition: opacity 0.5s;
-    color: $color-initial;
     outline: 0;
     opacity: 0.9;
+    color: $color-light;
   }
 
   &[disabled] {
@@ -100,7 +100,7 @@ input[type="submit"] {
   &.button--small {
     font-size: 0.8rem;
     height: 2.8rem;
-    line-height: 2.8rem;
+    line-height: 2.6rem;
     padding: 0 1.5rem;
   }
 

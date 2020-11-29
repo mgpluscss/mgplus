@@ -25,7 +25,6 @@
   left: 0;
   height: 1.5em;
   width: 1.5em;
-  /*background-color:$color-quaternary;*/
   border-style: solid;
   border-color: $color-quaternary;
   border-width: thin;
@@ -60,7 +59,7 @@
   top: 0.1em;
   width: 0.5em;
   height: 1em;
-  border: solid $color-initial;
+  border: solid $color-light;
   border-width: 0 2px 3px 0;
   transform: rotate(45deg);
 }

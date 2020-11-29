@@ -1,10 +1,12 @@
 :root {
+  --mg-color-dark: #000000;
+  --mg-color-light: #fcfcfc;
   --mg-color-initial: #ffffff;
   --mg-color-primary: #9b4dca;
-  --mg-color-secondary: #494949;
-  --mg-color-tertiary: #8d8d8d;
-  --mg-color-quaternary: #dddddd;
-  --mg-color-quinary: #eeeeee;
+  --mg-color-secondary: #302f2f;
+  --mg-color-tertiary: #797979;
+  --mg-color-quaternary: #a7a7a7;
+  --mg-color-quinary: #dadada;
   --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
@@ -14,11 +16,18 @@
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-gutter-size: 0.5rem;
 }
-
+.mg-theme--inverted {
+  --mg-color-initial: #302f2f !important;
+  --mg-color-secondary: #dadada !important;
+  --mg-color-tertiary: #a7a7a7 !important;
+  --mg-color-quaternary: #817f7f !important;
+  --mg-color-quinary: #4e4e4e !important;
+}
 //
 //  Variables
 //  _____________________________________________
-
+$color-light: var(--mg-color-light) !default;
+$color-dark: var(--mg-color-dark) !default;
 $color-initial: var(--mg-color-initial) !default;
 $color-primary: var(--mg-color-primary) !default;
 $color-secondary: var(--mg-color-secondary) !default;

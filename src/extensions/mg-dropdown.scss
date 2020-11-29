@@ -16,7 +16,7 @@
 
 .mg-dropdown--button:after {
   border: 2px solid transparent;
-  border-color: $color-initial;
+  border-color: $color-light;
   right: 0.8rem;
   border-right: 0;
   border-top: 0;
@@ -86,12 +86,14 @@
   text-overflow: ellipsis;
   text-align: left;
 }
+
 /* style the items (options), including the selected item: */
 .mg-dropdown--menu > ul > li > a {
   display: block;
+  color: $color-secondary;
 }
 .mg-dropdown--menu > ul > li:hover {
-  background-color: $color-quaternary;
+  background-color: $color-quinary;
 }
 
 .mg-dropdown--menu.mg-dropdown--menu-fit {
