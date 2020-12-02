@@ -96,3 +96,8 @@
 .mg-100vh {
   height: 100vh;
 }
+
+.mg-icon-close::after {
+  content: "\3C";
+  font-size: 2em;
+}
