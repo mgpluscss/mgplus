@@ -16,7 +16,7 @@
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-gutter-size: 0.5rem;
 }
-.mg-theme--inverted {
+.mg-theme-inverted {
   --mg-color-initial: #302f2f !important;
   --mg-color-secondary: #dadada !important;
   --mg-color-tertiary: #a7a7a7 !important;
@@ -41,11 +41,9 @@ $color-red: var(--mg-color-red);
 $color-orange: var(--mg-color-orange);
 $color-blue: var(--mg-color-blue);
 $color-green: var(--mg-color-green);
-
 $color-danger: $color-red;
 $color-warning: $color-orange;
 $color-success: $color-green;
-
 $grid__columns: 12;
 $grid__gutter: 0.5rem;
 
