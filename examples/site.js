@@ -21,4 +21,27 @@
     el.innerHTML = quineHtml;
   }
   document.querySelectorAll("[data-toggle~=prettify]").forEach(prettify);
+  var theme = document.querySelector(':root');
+  
+ 
+  var colorPicker = new iro.ColorPicker('#picker',{
+    // Set the size of the color picker
+    width: 120,
+    // Set the initial color to pure red
+    color: "#f00"
+  });
+  colorPicker.on('color:change', function(color) {
+    // log the current color as a HEX string
+    theme.style.setProperty('--mg-color-primary', color.hexString);
+  });
+
+ 
 })();
+function switchTheme() {
+  var element = document.getElementsByTagName('body')[0];
+  element.classList.toggle("mg-theme-inverted");      
+ }
+ function tooglePickerPanel(){
+  var pickerPanel = document.getElementById('pickerPanel');
+  pickerPanel.classList.toggle("opened")
+}

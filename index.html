@@ -74,7 +74,20 @@
           <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--mg-color-initial)" />
         </g>
       </svg>
-    
+      <div id="pickerPanel" class="mg-theme-inverted">        
+         <b>Switch</b> 
+          <label class="mg-switch">
+            <input type="checkbox" id="theme-switcher" onchange="switchTheme();" />
+            <span class="mg-switch--slider mg-switch--round"></span>
+          </label>          
+          <button
+          class="button button--large button--link"
+          onclick="tooglePickerPanel();"
+          ><img src="examples/gears.svg" class="mg-icon" /> </button
+        >
+          <div id="picker"></div>
+      </div>
+     
     </header>
     <main class="wrapper">
       <nav class="navigation">
@@ -1083,7 +1096,7 @@
         <a href="https://github.com/medevod/mgplus">Github</a>
       </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="dist/mg-plus-extensions.js"></script>

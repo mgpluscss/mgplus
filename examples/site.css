@@ -20,7 +20,7 @@ footer {
 }
 .page {
   background-color: var(--mg-color-initial);
-  margin:1rem;
+  margin: 1rem;
 }
 
 @keyframes a {
@@ -76,7 +76,6 @@ footer {
   height: 2rem;
   position: relative;
   top: 0.3rem;
-  z-index: 1;
 }
 .navigation .navigation-title,
 .navigation .title {
@@ -251,4 +250,22 @@ pre.prettyprint {
 
 #home {
   padding-top: 10vh;
+}
+
+#pickerPanel.opened {
+  left: 0;
+  height: auto;
+}
+#pickerPanel {
+  z-index: 1;
+  padding: 1rem;
+  position: fixed;
+  top: 4em;
+  left: -140px;
+  height: 65px;
+  box-shadow: var(--mg-control-shadow);
+  background-color: #042846;
+  color: var(--mg-color-light);
+  border-top-right-radius: var(--mg-control-radius);
+  border-bottom-right-radius: var(--mg-control-radius);
 }
