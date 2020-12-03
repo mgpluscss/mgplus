@@ -251,21 +251,21 @@ pre.prettyprint {
 #home {
   padding-top: 10vh;
 }
-
-#pickerPanel.opened {
-  left: 0;
-  height: auto;
+#pickerPanel > .mg-dropdown--menu {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 2rem;
+}
+#pickerPanel > .mg-dropdown--button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 #pickerPanel {
   z-index: 1;
-  padding: 1rem;
+  text-align: center;
+  padding: 0;
+  color: var(--mg-color-secondary);
   position: fixed;
-  top: 4em;
-  left: -140px;
-  height: 65px;
-  box-shadow: var(--mg-control-shadow);
-  background-color: #042846;
-  color: var(--mg-color-light);
-  border-top-right-radius: var(--mg-control-radius);
-  border-bottom-right-radius: var(--mg-control-radius);
+  left: 0;
+  top: 10vh;
 }
