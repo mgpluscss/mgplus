@@ -13,8 +13,7 @@
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
-  --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
-  --mg-gutter-size: 0.5rem; }
+  --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15); }
 
 .mg-theme-inverted {
   --mg-color-initial: #302f2f !important;
@@ -346,11 +345,6 @@ fieldset {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline; }
-
-.label-inline {
-  display: inline-block;
-  font-weight: normal;
-  margin-left: 0.5rem; }
 
 a {
   color: var(--mg-color-primary);
@@ -1719,6 +1713,7 @@ img {
   position: relative;
   padding-left: 1.8em;
   margin-right: 1.1em;
+  margin-bottom: 1.5rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -1911,10 +1906,11 @@ img {
 .mg-switch {
   position: relative;
   display: inline-block;
-  width: 3.7em;
   height: 2em;
   margin-left: 0.5em;
-  margin-right: 0.5em; }
+  margin-right: 0.5em;
+  margin-bottom: 1.5rem;
+  width: 3.7em; }
 
 /* Hide default HTML checkbox */
 .mg-switch input {

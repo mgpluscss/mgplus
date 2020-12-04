@@ -25,14 +25,13 @@
     <link rel="stylesheet" href="dist/mg-plus.css" />
     <link rel="stylesheet" href="examples/site.css" />
     <style>
-    
       /*default theme*/
       :root {
-  --mg-color-primary: #23a3e1;
-  --mg-control-radius: 1.5rem;
-  --mg-input-radius: 1rem;  
+        --mg-color-primary: #23a3e1;
+        --mg-control-radius: 1.5rem;
+        --mg-input-radius: 1rem;
       }
-  </style>
+    </style>
   </head>
   <body>
     <header>
@@ -69,23 +68,34 @@
             y="5"
             fill="rgba(255,255,255,0.3)"
           />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--mg-color-initial)" />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="7"
+            fill="var(--mg-color-initial)"
+          />
         </g>
-      </svg>     
-        <div id="pickerPanel" class="mg-dropdown mg-left  mg-x5 mg-s6 mg-m3">             
-          <button data-toggle="dropdown" class="mg-dropdown--button ">
-            <img src="examples/gears.svg" class="mg-icon" />
-          </button>          
-          <div class="mg-dropdown--menu mg-dropdown--menu-left">            
-            <b>Switch</b> 
+      </svg>
+      <div id="pickerPanel" class="mg-dropdown mg-left mg-x5 mg-s6 mg-m3">
+        <button data-toggle="dropdown" class="mg-dropdown--button">
+          <img src="examples/gears.svg" class="mg-icon" />
+        </button>
+        <div class="mg-dropdown--menu mg-dropdown--menu-left">
+          <div class="mg-row">
+            <label>Dark</label>
             <label class="mg-switch">
-              <b>Switch</b> 
-              <input type="checkbox" id="theme-switcher" onchange="switchTheme();" />
+              <input
+                type="checkbox"
+                id="theme-switcher"
+                onchange="switchTheme();"
+              />
               <span class="mg-switch--slider mg-switch--round"></span>
             </label>
-            <div id="picker"></div>
           </div>
+
+          <div id="picker"></div>
         </div>
+      </div>
     </header>
     <main class="wrapper">
       <nav class="navigation">
@@ -93,10 +103,10 @@
           <div class="mg-row mg-x11 mg-x--around mg-x--baseline">
             <div
               title="Milligram Plus - A minimalist CSS framework."
-              class="navigation-title"             
+              class="navigation-title"
             >
-              <img class="logo" src="milligram-plus.svg" /><span>Mg+</span></div
-            >
+              <img class="logo" src="milligram-plus.svg" /><span>Mg+</span>
+            </div>
             <a
               href="https://github.com/Evodim/mgplus"
               title="Milligram plus on Github"
@@ -115,9 +125,9 @@
                   d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
                 ></path>
               </svg>
-            </a>       
-            <div class="mg-dropdown mg-right mg-x5 mg-s6 mg-m3">             
-              <button data-toggle="dropdown" class="mg-dropdown--button ">
+            </a>
+            <div class="mg-dropdown mg-right mg-x5 mg-s6 mg-m3">
+              <button data-toggle="dropdown" class="mg-dropdown--button">
                 Explore
               </button>
               <div class="mg-dropdown--menu mg-dropdown--menu-right">
@@ -129,7 +139,6 @@
                   <li><a href="#lists">Lists</a></li>
                   <li><a href="#tables">Tables</a></li>
                   <li><a href="#codes">Codes</a></li>
-                  <li><a href="#forms">Forms</a></li>
                   <li><a href="#nav">Nav</a></li>
                   <li><a href="#nav-inline">Nav inline</a></li>
                   <li><a href="#dropdown">Dropdown</a></li>
@@ -142,13 +151,14 @@
                   <li><a href="#grid">Grids</a></li>
                   <li><a href="#modal">Modal</a></li>
                   <li><a href="#switch">Switch</a></li>
+                  <li><a href="#forms">Forms</a></li>
                 </ul>
               </div>
             </div>
-                   
-         </div>
+          </div>
+        </div>
       </nav>
-     <div class="page">
+      <div class="page">
         <div class="mg-container">
           <section>
             <div class="mg-center-block header">
@@ -339,70 +349,6 @@
               ></pre>
             </div>
           </section>
-          <section id="forms">
-            <h2>Forms</h2>
-            <form id="forms-example">
-              <fieldset>
-                <div class="mg-row">
-                  <div class="mg-col mg-x6">
-                    <label for="firstNameField">First name</label>
-                    <input
-                      type="text"
-                      placeholder="CJ Patoilo"
-                      id="firstNameField"
-                    />
-                  </div>
-                  <div class="mg-col mg-x6">
-                    <label for="lastNameField">Last name</label>
-                    <input
-                      type="text"
-                      placeholder="CJ Patoilo"
-                      id="lastNameField"
-                    />
-                  </div>
-                </div>
-                <label for="ageRangeField">Age Range (mg+)</label>
-                <div class="mg-select">
-                  <select id="ageRangeField2">
-                    <option value="0-13">0-13</option>
-                    <option value="14-17">14-17</option>
-                    <option value="18-23">18-23</option>
-                    <option value="24+">24+</option>
-                  </select>
-                </div>
-                <label for="ageRangeField">Age Range (default)</label>
-                <select id="ageRangeField">
-                  <option value="0-13">0-13</option>
-                  <option value="14-17">14-17</option>
-                  <option value="18-23">18-23</option>
-                  <option value="24+">24+</option>
-                </select>
-                <label for="commentField">Comment</label>
-                <textarea placeholder="Hi CJ …" id="commentField"></textarea>
-                <label for="numberField">Numbers only</label>
-                <input
-                  placeholder="number input"
-                  id="numberField"
-                  type="number"
-                />
-                <label for="car-dropdown"> Choose Action </label>
-                <div class="float-right">
-                  <label class="mg-check label-inline" for="confirmField">
-                    Send a copy to yourself
-                    <input type="checkbox" id="confirmField" />
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-              </fieldset>
-            </form>
-            <div class="example">
-              <pre
-                class="prettyprint"
-                data-toggle="prettify"
-                data-source="forms-example"
-              ></pre>
-            </div>
-          </section>
           <section id="home-extensions" class="mg-center-block">
             <hr />
             <h1 class="title">Extensions</h1>
@@ -427,7 +373,11 @@
           </section>
           <section id="nav-inline">
             <h2 class="title">Nav inline</h2>
-            <div class="mg-nav mg-nav--inline" id="nav-horizontal-example" data-toggle="nav">
+            <div
+              class="mg-nav mg-nav--inline"
+              id="nav-horizontal-example"
+              data-toggle="nav"
+            >
               <ul>
                 <li class="active"><a href="#home">Home</a></li>
                 <li><a href="#news">News</a></li>
@@ -533,17 +483,17 @@
           <section id="radio">
             <h2 class="title">Radio</h2>
             <div class="mg-row" id="radio-example">
-              <label class="mg-radio label-inline">
+              <label class="mg-radio">
                 Two
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
               </label>
-              <label class="mg-radio label-inline">
+              <label class="mg-radio">
                 Three
                 <input type="radio" disabled name="radio" />
                 <span class="checkmark"></span>
               </label>
-              <label class="mg-radio label-inline">
+              <label class="mg-radio">
                 Four
                 <input type="radio" name="radio" />
                 <span class="checkmark"></span>
@@ -560,17 +510,17 @@
           <section id="check">
             <h2 class="title">Check</h2>
             <div class="mg-row" id="check-example">
-              <label class="mg-check label-inline">
+              <label class="mg-check">
                 check1
                 <input type="checkbox" checked="checked" />
                 <span class="checkmark"></span>
               </label>
-              <label class="mg-check label-inline">
+              <label class="mg-check">
                 check2
                 <input type="checkbox" checked="checked" disabled />
                 <span class="checkmark"></span>
               </label>
-              <label class="mg-check label-inline">
+              <label class="mg-check">
                 check3
                 <input type="checkbox" />
                 <span class="checkmark"></span>
@@ -1060,13 +1010,16 @@
           <section id="switch">
             <h2 class="title">Switch</h2>
 
-            <div class="mg-container" id="switch-example">
+            <div class="mg-row" id="switch-example">
               <!-- Rectangular switch -->
+              <label>default</label>
               <label class="mg-switch">
                 <input type="checkbox" />
                 <span class="mg-switch--slider"></span>
               </label>
+
               <!-- Rounded switch -->
+              <label>rounded</label>
               <label class="mg-switch">
                 <input type="checkbox" />
                 <span class="mg-switch--slider mg-switch--round"></span>
@@ -1077,6 +1030,89 @@
                 class="prettyprint"
                 data-toggle="prettify"
                 data-source="switch-example"
+              ></pre>
+            </div>
+          </section>
+          <section id="forms">
+            <h2>Forms</h2>
+            <form id="forms-example">
+              <fieldset>
+                <label>2 cols input</label>
+                <div class="mg-row">
+                  <div class="mg-col mg-x6"><input type="text" /></div>
+                  <div class="mg-col mg-x6"><input type="text" /></div>
+                </div>
+                <label>Switch inline</label>
+                <div class="mg-row">
+                  <label>switch</label>
+                  <!-- Rectangular switch -->
+                  <label class="mg-switch">
+                    <input type="checkbox" />
+                    <span class="mg-switch--slider"></span>
+                  </label>
+
+                  <label>switch</label>
+                  <!-- Rounded switch -->
+                  <label class="mg-switch">
+                    <input type="checkbox" />
+                    <span class="mg-switch--slider mg-switch--round"></span>
+                    test
+                  </label>
+                </div>
+
+                <label>Check inline</label>
+                <div class="mg-row">
+                  <label class="mg-check">
+                    check1
+                    <input type="checkbox" checked="checked" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="mg-check">
+                    check1
+                    <input type="checkbox" checked="checked" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+
+                <label for="ageRangeField">Age Range (mg+)</label>
+                <div class="mg-select">
+                  <select id="ageRangeField2">
+                    <option value="0-13">0-13</option>
+                    <option value="14-17">14-17</option>
+                    <option value="18-23">18-23</option>
+                    <option value="24+">24+</option>
+                  </select>
+                </div>
+                <label for="ageRangeField">Age Range (default)</label>
+                <select id="ageRangeField">
+                  <option value="0-13">0-13</option>
+                  <option value="14-17">14-17</option>
+                  <option value="18-23">18-23</option>
+                  <option value="24+">24+</option>
+                </select>
+                <label for="commentField">Comment</label>
+                <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+                <label for="numberField">Numbers only</label>
+                <input
+                  placeholder="number input"
+                  id="numberField"
+                  type="number"
+                />
+                <label for="car-dropdown"> Choose Action </label>
+                <div class="float-right">
+                  <label class="mg-check" for="confirmField">
+                    floated right check
+                    <input type="checkbox" id="confirmField" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </fieldset>
+            </form>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="forms-example"
               ></pre>
             </div>
           </section>
@@ -1097,7 +1133,5 @@
     <script src="examples/site.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
     <script src="dist/mg-plus-extensions.js"></script>
-  
   </body>
-   
 </html>
