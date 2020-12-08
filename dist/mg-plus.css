@@ -1954,7 +1954,7 @@ img {
   border-radius: 50%;
   position: absolute;
   content: "";
-  height: 1.4em;
+  height: 1.3em;
   width: 1.4em;
   left: 0;
   background-color: var(--mg-color-light);
