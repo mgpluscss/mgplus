@@ -22,8 +22,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 2em;
-  width: 3.5em;
+  height: 100%;
+  width: 3em;
   border-style: solid;
   border-color: $color-quaternary;
   border-width: thin;
@@ -48,8 +48,7 @@
   content: "";
   height: 1.4em;
   width: 1.4em;
-  left: 0.3em;
-  bottom: 0.3em;
+  left: 0;
   background-color: $color-light;
   -webkit-transition: 0.3s;
   transition: 0.3s;
