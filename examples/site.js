@@ -37,10 +37,7 @@
   document.querySelector("#theme-switcher").addEventListener(
     "click",
     function (event) {
-      switchTheme(event);
-      ev.stopPropagation();
-      ev.preventDefault();
-      return false;
+      switchTheme(ev);
     },
     false
   );
