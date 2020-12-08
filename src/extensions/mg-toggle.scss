@@ -1,0 +1,73 @@
+.mg-toggle {
+  position: relative;
+  padding-left: 3.8em;
+  margin-right: 1.1em;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.mg-toggle input {
+  position: absolute;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.mg-toggle .checkmark {
+  border-radius: $control-radius;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2em;
+  width: 3.5em;
+  border-style: solid;
+  border-color: $color-quaternary;
+  border-width: thin;
+  transition: all 0.3s;
+}
+
+/* On mouse-over, add a grey background color */
+.mg-toggle input ~ .checkmark {
+  background-color: $color-quaternary;
+}
+
+/* When the checkbox is checked, add a blue background */
+.mg-toggle input:checked ~ .checkmark {
+  background-color: $color-primary;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.mg-toggle .checkmark:after {
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: $color-light;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: $control-shadow;
+}
+
+/* Show the checkmark when checked */
+.mg-toggle input:checked ~ .checkmark:after {
+  left: 1.5em;
+}
+
+/*disabled state*/
+.mg-toggle input:disabled ~ .checkmark {
+  background-color: $color-quinary;
+}
+
+.mg-toggle input:focus ~ .checkmark {
+  border-color: $color-primary;
+  border-style: dotted;
+  border-width: thin;
+}
