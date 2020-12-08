@@ -1921,6 +1921,8 @@ img {
 
 /* Hide the browser's default checkbox */
 .mg-toggle input {
+  opacity: 0;
+  display: none;
   position: absolute;
   height: 0;
   width: 0; }
