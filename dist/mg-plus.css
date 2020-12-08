@@ -1376,6 +1376,9 @@ img {
   content: "\3C";
   font-size: 2em; }
 
+.mg-label--light {
+  font-weight: 400; }
+
 /* The container must be positioned relative: */
 .mg-dropdown {
   position: relative;
@@ -1708,6 +1711,9 @@ img {
   border-style: dotted;
   border-width: thin; }
 
+.mg-label--inline {
+  font-weight: 400; }
+
 .mg-check,
 .mg-radio {
   position: relative;
@@ -1902,35 +1908,48 @@ img {
 .mg-modal--closebtn:hover {
   opacity: 0.8; }
 
-/* The switch - the box around the slider */
-.mg-switch {
+.mg-toggle {
   position: relative;
-  display: inline-block;
-  height: 2em;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  padding-left: 3.8em;
+  margin-right: 1.1em;
   margin-bottom: 1.5rem;
-  width: 3.7em; }
-
-/* Hide default HTML checkbox */
-.mg-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0; }
-
-/* The slider */
-.mg-switch--slider {
-  position: absolute;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Hide the browser's default checkbox */
+.mg-toggle input {
+  position: absolute;
+  height: 0;
+  width: 0; }
+
+/* Create a custom checkbox */
+.mg-toggle .checkmark {
+  border-radius: var(--mg-control-radius);
+  position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--mg-color-quaternary);
-  -webkit-transition: 0.3s;
-  transition: 0.3s; }
+  height: 2em;
+  width: 3.5em;
+  border-style: solid;
+  border-color: var(--mg-color-quaternary);
+  border-width: thin;
+  transition: all 0.3s; }
 
-.mg-switch--slider:before {
+/* On mouse-over, add a grey background color */
+.mg-toggle input ~ .checkmark {
+  background-color: var(--mg-color-quaternary); }
+
+/* When the checkbox is checked, add a blue background */
+.mg-toggle input:checked ~ .checkmark {
+  background-color: var(--mg-color-primary); }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.mg-toggle .checkmark:after {
+  content: "";
+  border-radius: 50%;
   position: absolute;
   content: "";
   height: 1.4em;
@@ -1942,20 +1961,15 @@ img {
   transition: 0.3s;
   box-shadow: var(--mg-control-shadow); }
 
-input:checked + .mg-switch--slider {
-  background-color: var(--mg-color-primary); }
+/* Show the checkmark when checked */
+.mg-toggle input:checked ~ .checkmark:after {
+  left: 1.5em; }
 
-input:focus + .mg-switch--slider {
-  box-shadow: 0 0 1px var(--mg-color-primary); }
+/*disabled state*/
+.mg-toggle input:disabled ~ .checkmark {
+  background-color: var(--mg-color-quinary); }
 
-input:checked + .mg-switch--slider:before {
-  -webkit-transform: translateX(1.5em);
-  -ms-transform: translateX(1.5em);
-  transform: translateX(1.5em); }
-
-/* Rounded sliders */
-.mg-switch--slider.mg-switch--round {
-  border-radius: var(--mg-control-radius); }
-
-.mg-switch--slider.mg-switch--round:before {
-  border-radius: 50%; }
+.mg-toggle input:focus ~ .checkmark {
+  border-color: var(--mg-color-primary);
+  border-style: dotted;
+  border-width: thin; }
