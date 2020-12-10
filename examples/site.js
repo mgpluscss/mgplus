@@ -36,14 +36,10 @@
 
   document.querySelector("#theme-switcher").addEventListener(
     "click",
-    function (event) {
-      switchTheme(ev);
+    function () {
+      var element = document.getElementsByTagName("body")[0];
+      element.classList.toggle("mg-theme-inverted");
     },
     false
   );
 })();
-
-function switchTheme(ev) {
-  var element = document.getElementsByTagName("body")[0];
-  element.classList.toggle("mg-theme-inverted");
-}
