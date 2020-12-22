@@ -1,4 +1,4 @@
-# mgplus (Mg+)
+# mgplus (*Mg+*)
 
 ## A minimalist CSS framework
 
@@ -24,6 +24,23 @@ FlexboxGrid:
 
 ## Getting started
 
+### Install dependencies from [npm](https://www.npmjs.com/package/mgplus) 
+
+```sh
+$ npm install mgplus
+```
+
+import in your project dist/ files
+
+### or from Github
+
+[mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus.min.css)
+[mgplus-extensions.min.js](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus-extensions.min.js)
+
+js extensions are required only to handle interactions for navs, tabs, dropdowns, modals, etc.
+It could be replaced by any UI framework like reactjs.
+
+### Run from source code and sample page locally
 **_After cloned the repository_**
 
 **_Run:_**
