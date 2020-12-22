@@ -1,12 +1,12 @@
 {
-	"name": "mg-plus",
-	"version": "0.0.9",
+	"name": "mgplus",
+	"version": "1.0.0",
 	"description": "Minimalist CSS framework",
-	"homepage": "https://medevod.github.io/mgplus",
-	"repository": "medevod/mgplus",
+	"homepage": "https://evodim.github.io/mgplus",
+	"repository": "https://github.com/Evodim/mgplus",
 	"license": "MIT",
-	"author": "medevod",
-	"main": "dist/mg-plus.css",
+	"author": "evodim",
+	"main": "dist/mgplus.css",
 	"keywords": [
 		"bootstrap",
 		"css",

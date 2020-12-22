@@ -1,4 +1,4 @@
-# MgPlus (Mg+)
+# mgplus (Mg+)
 
 ## A minimalist CSS framework
 
