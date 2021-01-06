@@ -1435,7 +1435,7 @@ img {
   position: absolute;
   background-color: var(--mg-color-initial);
   top: 100%;
-  z-index: 99;
+  z-index: 1;
   border-color: var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
   overflow-x: hidden; }
