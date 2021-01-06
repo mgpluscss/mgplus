@@ -1895,7 +1895,7 @@ img {
 .mg-modal--closebtn {
   color: var(--mg-color-secondary);
   float: right;
-  font-size: 2em;
+  font-size: 2.5em;
   line-height: 1em;
   cursor: pointer;
   transition: 0.3s; }
