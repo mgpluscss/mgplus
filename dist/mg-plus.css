@@ -1373,8 +1373,7 @@ img {
   height: 100vh; }
 
 .mg-icon-close::after {
-  content: "\3C";
-  font-size: 2em; }
+  content: "\D7"; }
 
 .mg-label--light {
   font-weight: 400; }
@@ -1436,7 +1435,7 @@ img {
   position: absolute;
   background-color: var(--mg-color-initial);
   top: 100%;
-  z-index: 99;
+  z-index: 1;
   border-color: var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
   overflow-x: hidden; }
@@ -1643,7 +1642,6 @@ img {
 .mg-alert--closebtn {
   margin: 1.5em;
   color: var(--mg-color-secondary);
-  font-weight: bold;
   float: right;
   font-size: 1.5em;
   line-height: 1em;
@@ -1896,7 +1894,6 @@ img {
 /* The close button */
 .mg-modal--closebtn {
   color: var(--mg-color-secondary);
-  font-weight: bold;
   float: right;
   font-size: 2.5em;
   line-height: 1em;
