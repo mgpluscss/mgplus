@@ -37,64 +37,63 @@
     <header>
       <div>
         <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shape-rendering="auto"
-      >
-        <defs>
-          <path
-            id="gentle-wave"
-            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          />
-        </defs>
-        <g class="parallax">
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="0"
-            fill="rgba(255,255,255,0.7"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="3"
-            fill="rgba(255,255,255,0.5)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="5"
-            fill="rgba(255,255,255,0.3)"
-          />
-          <use
-            xlink:href="#gentle-wave"
-            x="48"
-            y="7"
-            fill="var(--mg-color-initial)"
-          />
-        </g>
-      </svg>
-      <div id="pickerPanel" class="mg-dropdown mg-left mg-x5 mg-s6 mg-m3">
-        <button data-toggle="dropdown" class="mg-dropdown--button">
-          <img src="examples/gears.svg" class="mg-icon" />
-        </button>
-        <div class="mg-dropdown--menu mg-dropdown--menu-left">
-          <div class="mg-row">
-            <label class="mg-toggle">
-              Dark
-              <input type="checkbox" id="theme-switcher" />
-              <span class="checkmark"></span>
-            </label>
-          </div>
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(255,255,255,0.7"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="7"
+              fill="var(--mg-color-initial)"
+            />
+          </g>
+        </svg>
+        <div id="pickerPanel" class="mg-dropdown mg-left mg-x5 mg-s6 mg-m3">
+          <button data-toggle="dropdown" class="mg-dropdown--button">
+            <img src="examples/gears.svg" class="mg-icon" />
+          </button>
+          <div class="mg-dropdown--menu mg-dropdown--menu-left">
+            <div class="mg-row">
+              <label class="mg-toggle">
+                Dark
+                <input type="checkbox" id="theme-switcher" />
+                <span class="checkmark"></span>
+              </label>
+            </div>
 
-          <div id="picker"></div>
+            <div id="picker"></div>
+          </div>
         </div>
       </div>
-      </div>
-      
     </header>
     <main class="wrapper">
       <nav class="navigation">
@@ -565,10 +564,10 @@
             <h2 class="title">Alert</h2>
             <div class="mg-alert" id="default-alert-example">
               <span
-                class="mg-alert--closebtn"
+                class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
-                >&times;</span
               >
+              </span>
               This is an default alert box.
             </div>
             <div class="example">
@@ -580,26 +579,26 @@
             </div>
             <div class="mg-alert mg-alert--danger" id="danger-alert-example">
               <span
-                class="mg-alert--closebtn"
+                class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
-                >&times;</span
               >
+              </span>
               This is an danger alert box.
             </div>
             <div class="mg-alert mg-alert--success" id="success-alert-example">
               <span
-                class="mg-alert--closebtn"
+                class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
-                >&times;</span
               >
+              </span>
               This is an success alert box.
             </div>
             <div class="mg-alert mg-alert--warning" id="warning-alert-example">
               <span
-                class="mg-alert--closebtn"
+                class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
-                >&times;</span
               >
+              </span>
               This is an warning alert box.
             </div>
             <div class="example">
@@ -614,10 +613,10 @@
               id="danger-alert-example2"
             >
               <span
-                class="mg-alert--closebtn"
+                class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
-                >&times;</span
               >
+              </span>
               This is an danger alert box.
             </div>
             <div class="example">
@@ -854,7 +853,7 @@
             <div class="mg-container" id="modal-example">
               <div class="mg-modal" id="modal-1">
                 <div class="mg-modal--content mg-container">
-                  <span class="mg-modal--closebtn">&times;</span>
+                  <span class="mg-modal--closebtn mg-icon-close"></span>
                   <h3>Modal Dialog</h3>
 
                   <div>
@@ -884,7 +883,7 @@
             </div>
             <div class="mg-modal" id="modal-2">
               <div class="mg-modal--content mg-container">
-                <span class="mg-modal--closebtn">&times;</span>
+                <span class="mg-modal--closebtn mg-icon-close"> </span>
                 <h3>Modal scrollable Dialog</h3>
                 <div class="mg-modal--content-scroll">
                   <div id="lipsum">
