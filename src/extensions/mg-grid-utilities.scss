@@ -202,6 +202,9 @@
   .mg-row.#{$_class}--grow {
     flex: 1 1 auto;
   }
+  .mg-row.#{$_class}--ungrow {
+    flex: 0;
+  }
 }
 
 // Create hidden classes
