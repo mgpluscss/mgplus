@@ -110,4 +110,8 @@ input[type="submit"] {
     line-height: 4.5rem;
     padding: 0 2rem;
   }
+  &.button--transparent {
+    background-color: transparent;
+    border-color: transparent;
+  }
 }

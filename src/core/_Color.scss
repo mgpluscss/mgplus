@@ -28,6 +28,12 @@
 .mg-color-success {
   color: $color-success;
 }
+.mg-color-light {
+  color: $color-light;
+}
+.mg-color-dark {
+  color: $color-dark;
+}
 
 .mg-bg-color-initial {
   background-color: $color-initial;
@@ -55,4 +61,10 @@
 }
 .mg-bg-color-success {
   background-color: $color-success;
+}
+.mg-bg-color-light {
+  background-color: $color-light;
+}
+.mg-bg-color-dark {
+  background-color: $color-dark;
 }
