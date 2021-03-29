@@ -37,12 +37,6 @@
   visibility: visible;
 }
 
-@media (max-width: $screen--S) {
-  .mg-modal {
-    justify-content: flex-end;
-  }
-}
-
 /* The close button */
 .mg-modal--closebtn {
   color: $color-secondary;
