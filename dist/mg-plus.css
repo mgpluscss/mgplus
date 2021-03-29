@@ -1811,6 +1811,9 @@ img {
   border-style: dotted;
   border-width: thin; }
 
+.mg-nav > ul {
+  margin-bottom: 0; }
+
 .mg-nav > ul > li {
   list-style-type: none;
   margin: 0;
