@@ -1811,6 +1811,9 @@ img {
   border-style: dotted;
   border-width: thin; }
 
+.mg-nav > ul {
+  margin-bottom: 0; }
+
 .mg-nav > ul > li {
   list-style-type: none;
   margin: 0;
@@ -1916,10 +1919,6 @@ img {
 .mg-show {
   opacity: 1;
   visibility: visible; }
-
-@media (max-width: 481px) {
-  .mg-modal {
-    justify-content: flex-end; } }
 
 /* The close button */
 .mg-modal--closebtn {
