@@ -1653,8 +1653,7 @@ img {
   margin-right: 0;
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
-  background-color: var(--mg-color-quinary);
-  width: 100%; }
+  background-color: var(--mg-color-quinary); }
 
 .mg-alert.mg-alert--danger {
   border-left-color: var(--mg-color-red); }
