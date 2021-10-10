@@ -70,20 +70,6 @@
 .mg-valign-middle {
   vertical-align: middle;
 }
-.mg-loader,
-.mg-loader-error {
-  display: none !important;
-}
-.mg-loading ~ .mg-loader,
-.mg-error ~ .mg-loader-error {
-  display: inline-block !important;
-}
-.mg-loader {
-  display: none !important;
-}
-.mg-loading {
-  opacity: 0.4;
-}
 
 .mg-icon {
   height: 22px;

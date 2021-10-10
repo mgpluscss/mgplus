@@ -1377,20 +1377,6 @@ img {
 .mg-valign-middle {
   vertical-align: middle; }
 
-.mg-loader,
-.mg-loader-error {
-  display: none !important; }
-
-.mg-loading ~ .mg-loader,
-.mg-error ~ .mg-loader-error {
-  display: inline-block !important; }
-
-.mg-loader {
-  display: none !important; }
-
-.mg-loading {
-  opacity: 0.4; }
-
 .mg-icon {
   height: 22px;
   vertical-align: middle;
@@ -1653,8 +1639,7 @@ img {
   margin-right: 0;
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
-  background-color: var(--mg-color-quinary);
-  width: 100%; }
+  background-color: var(--mg-color-quinary); }
 
 .mg-alert.mg-alert--danger {
   border-left-color: var(--mg-color-red); }
@@ -1999,3 +1984,16 @@ img {
   border-color: var(--mg-color-primary);
   border-style: dotted;
   border-width: thin; }
+
+.mg-loader--loading {
+  opacity: 0.4; }
+
+.mg-loader:not(.mg-loader--loaded) ~ .mg-loader--result,
+.mg-loader:not(.mg-loader--loading) ~ .mg-loader--status {
+  display: none; }
+
+.mg-loader--loading
+~ .mg-loader--result
+.mg-loader--loaded
+~ .mg-loader--status {
+  display: none; }
