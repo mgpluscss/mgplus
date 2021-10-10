@@ -42,4 +42,18 @@
     },
     false
   );
+
+  document.querySelector("#loader-button").addEventListener(
+    "click",
+    function (el) {
+      var element = el.target.parentNode;
+      element.classList.add("mg-loader--loading");
+      element.classList.remove("mg-loader--loaded");
+      setTimeout(function () {
+        element.classList.remove("mg-loader--loading");
+        element.classList.add("mg-loader--loaded");
+      }, 3000);
+    },
+    false
+  );
 })();
