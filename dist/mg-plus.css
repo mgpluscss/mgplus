@@ -1998,12 +1998,12 @@ img {
 ~ .mg-loader--status {
   display: none; }
 
-.mg-timeline {
+.mg-timeline > ul {
   position: relative;
   padding-left: 45px;
   list-style: none; }
 
-.mg-timeline::before {
+.mg-timeline > ul::before {
   display: inline-block;
   content: "";
   position: absolute;
@@ -2013,15 +2013,15 @@ img {
   height: 100%;
   border-left: 2px solid #ccc; }
 
-.mg-timeline--item {
+.mg-timeline > ul li {
   position: relative;
   counter-increment: list;
   margin-bottom: 0; }
 
-.mg-timeline--item:not(:last-child) {
+.mg-timeline > ul li:not(:last-child) {
   padding-bottom: 20px; }
 
-.mg-timeline--item::before {
+.mg-timeline > ul li::before {
   display: inline-block;
   content: "";
   position: absolute;
@@ -2029,7 +2029,7 @@ img {
   height: 100%;
   width: 10px; }
 
-.mg-timeline--item::after {
+.mg-timeline > ul li::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -2041,10 +2041,10 @@ img {
   border-radius: 50%;
   background-color: #fff; }
 
-.mg-timeline--item.mg-timeline--is-done::before {
+.mg-timeline > ul li.active::before {
   border-left: 2px solid var(--mg-color-primary); }
 
-.mg-timeline--item.mg-timeline--is-done::after {
+.mg-timeline > ul li.active::after {
   /*content: "?";*/
   font-size: 10px;
   color: #fff;
@@ -2052,12 +2052,9 @@ img {
   border: 2px solid var(--mg-color-primary);
   background-color: var(--mg-color-primary); }
 
-.mg-timeline--item.current::after {
+.mg-timeline > ul li.current::after {
   border: 4px solid var(--mg-color-primary);
   width: 15px;
   height: 15px;
   left: -37px;
   border-radius: 50%; }
-
-.mg-timeline strong {
-  display: block; }
