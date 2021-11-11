@@ -11,7 +11,6 @@
   left: 1.5rem;
   width: 1rem;
   height: 100%;
-  border-left: 2px solid #ccc;
 }
 .mg-timeline > ul li {
   position: relative;
@@ -28,6 +27,7 @@
   left: -3rem;
   height: 100%;
   width: 10px;
+  border-left: 2px solid var(--mg-color-quaternary);
 }
 .mg-timeline > ul li:last-child::before {
   border-color: none;
@@ -40,17 +40,20 @@
   left: -3.5rem;
   width: 1.2rem;
   height: 1.2rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--mg-color-quaternary);
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--mg-color-initial);
 }
 .mg-timeline > ul li.active::before {
   border-left: 2px solid var(--mg-color-primary);
 }
+.mg-timeline > ul li:last-of-type::before {
+  border-left: 2px solid transparent !important;
+}
+
 .mg-timeline > ul li.active::after {
   /*content: "?";*/
   font-size: 1rem;
-  color: #fff;
   text-align: center;
   border: 2px solid var(--mg-color-primary);
   background-color: var(--mg-color-primary);
@@ -70,6 +73,10 @@
 }
 .mg-timeline-inline > ul li {
   border-top: 2px solid var(--mg-color-quaternary);
+  flex-grow: 1;
+}
+.mg-timeline-inline > ul li:last-of-type {
+  border-top: 2px solid transparent;
 }
 
 .mg-timeline-inline > ul li.active {
@@ -78,7 +85,6 @@
 }
 .mg-timeline-inline > ul li.active::before {
   font-size: 1rem;
-  color: #fff;
   text-align: center;
   border-color: var(--mg-color-primary);
   background-color: var(--mg-color-primary);
@@ -98,7 +104,7 @@
   top: -1.2rem;
   width: 1.2rem;
   height: 1.2rem;
-  border: 2px solid #ccc;
+  border: 2px solid var(--mg-color-quaternary);
   border-radius: 50%;
-  background-color: #fff;
+  background-color: var(--mg-color-initial);
 }
