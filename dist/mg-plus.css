@@ -2073,9 +2073,6 @@ img {
   border-top: 2px solid var(--mg-color-quaternary);
   flex-grow: 1; }
 
-.mg-timeline-inline > ul li:last-of-type {
-  border-top: 2px solid transparent; }
-
 .mg-timeline-inline > ul li.active {
   padding-right: 1rem;
   border-color: var(--mg-color-primary); }
@@ -2104,3 +2101,6 @@ img {
   border: 2px solid var(--mg-color-quaternary);
   border-radius: 50%;
   background-color: var(--mg-color-initial); }
+
+.mg-timeline-inline > ul li:last-of-type {
+  border-top: 2px solid transparent; }

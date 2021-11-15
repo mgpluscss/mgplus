@@ -52,7 +52,6 @@
 }
 
 .mg-timeline > ul li.active::after {
-  /*content: "?";*/
   font-size: 1rem;
   text-align: center;
   border: 2px solid var(--mg-color-primary);
@@ -74,9 +73,6 @@
 .mg-timeline-inline > ul li {
   border-top: 2px solid var(--mg-color-quaternary);
   flex-grow: 1;
-}
-.mg-timeline-inline > ul li:last-of-type {
-  border-top: 2px solid transparent;
 }
 
 .mg-timeline-inline > ul li.active {
@@ -107,4 +103,7 @@
   border: 2px solid var(--mg-color-quaternary);
   border-radius: 50%;
   background-color: var(--mg-color-initial);
+}
+.mg-timeline-inline > ul li:last-of-type {
+  border-top: 2px solid transparent;
 }
