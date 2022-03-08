@@ -14,10 +14,11 @@ Unlike most other CSS UI Framework, Mg+ is more like a css survival kit speciall
 
 **_Only 30KB minified_**
 
-**[examples](https://evodim.github.io/mgplus/)**
+**[demo](https://evodim.github.io/mgplus/)**
 
 
-**[website demo](https://redassurances.com/)**
+Full website implementation:
+**[red](https://redassurances.com/)**
 
 
 Core version:
