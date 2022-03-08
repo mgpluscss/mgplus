@@ -14,7 +14,9 @@ Unlike most other CSS UI Framework, Mg+ is more like a css survival kit speciall
 
 **_Only 30KB minified_**
 
-**[demo](https://evodim.github.io/mgplus/)**
+**[examples](https://evodim.github.io/mgplus/)**
+**[website demo](https://redassurances.com/)**
+
 
 Core version:
 [milligram](https://github.com/milligram/milligram)
@@ -68,3 +70,5 @@ That's it!
 ## License
 
 Licensed under the [MIT License](https://raw.githubusercontent.com/Evodim/mgplus/master/LICENSE).
+
+
