@@ -2027,7 +2027,7 @@ img {
   left: -3rem;
   height: 100%;
   width: 10px;
-  border-left: 2px solid var(--mg-color-quaternary); }
+  border-left: 0.3rem solid var(--mg-color-quaternary); }
 
 .mg-timeline > ul li:last-child::before {
   border-color: none; }
@@ -2037,31 +2037,30 @@ img {
   display: inline-block;
   position: absolute;
   top: 0;
-  left: -3.5rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 2px solid var(--mg-color-quaternary);
+  left: -3.6rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.3rem solid var(--mg-color-quaternary);
   border-radius: 50%;
   background-color: var(--mg-color-initial); }
 
 .mg-timeline > ul li.active::before {
-  border-left: 2px solid var(--mg-color-primary); }
+  border-left: 0.3rem solid var(--mg-color-primary); }
 
 .mg-timeline > ul li:last-of-type::before {
-  border-left: 2px solid transparent !important; }
+  border-left: 0.3rem solid transparent !important; }
 
 .mg-timeline > ul li.active::after {
-  /*content: "?";*/
   font-size: 1rem;
   text-align: center;
-  border: 2px solid var(--mg-color-primary);
+  border: 0.3rem solid var(--mg-color-primary);
   background-color: var(--mg-color-primary); }
 
 .mg-timeline > ul li.current::after {
-  border: 4px solid var(--mg-color-primary);
+  border: 0.3rem solid var(--mg-color-primary);
   width: 1.5rem;
   height: 1.5rem;
-  left: -3.7rem;
+  left: -3.6rem;
   border-radius: 50%; }
 
 .mg-timeline-inline > ul {
@@ -2070,7 +2069,7 @@ img {
   flex-direction: row; }
 
 .mg-timeline-inline > ul li {
-  border-top: 2px solid var(--mg-color-quaternary);
+  border-top: 0.3rem solid var(--mg-color-quaternary);
   flex-grow: 1; }
 
 .mg-timeline-inline > ul li.active {
@@ -2084,9 +2083,7 @@ img {
   background-color: var(--mg-color-primary); }
 
 .mg-timeline-inline > ul li.current::before {
-  border: 4px solid var(--mg-color-primary);
-  width: 1.5rem;
-  height: 1.5rem;
+  border: 0.3rem solid var(--mg-color-primary);
   border-radius: 50%; }
 
 .mg-timeline-inline > ul li::before {
@@ -2096,11 +2093,11 @@ img {
   display: inline-block;
   position: relative;
   top: -1.2rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  border: 2px solid var(--mg-color-quaternary);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.3rem solid var(--mg-color-quaternary);
   border-radius: 50%;
   background-color: var(--mg-color-initial); }
 
 .mg-timeline-inline > ul li:last-of-type {
-  border-top: 2px solid transparent; }
+  border-top: 0.3rem solid transparent; }
