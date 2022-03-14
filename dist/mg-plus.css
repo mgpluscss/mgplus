@@ -2100,4 +2100,5 @@ img {
   background-color: var(--mg-color-initial); }
 
 .mg-timeline-inline > ul li:last-of-type {
-  border-top: 0.3rem solid transparent; }
+  border-top: 0.3rem solid transparent;
+  flex-grow: 0; }
