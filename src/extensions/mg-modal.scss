@@ -28,13 +28,8 @@
 }
 
 .mg-modal > .mg-modal--content > .mg-modal--content-scroll {
-  max-height: 70vh;
+  max-height: 90vh;
   overflow-y: auto;
-}
-
-.mg-show {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* The close button */
@@ -49,4 +44,23 @@
 /* When moving the mouse over the close button */
 .mg-modal--closebtn:hover {
   opacity: 0.8;
+}
+.mg-modal.mg-right > .mg-modal--content {
+  position: fixed;
+  right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mg-modal.mg-left > .mg-modal--content {
+  position: fixed;
+  left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.mg-modal.mg-bottom > .mg-modal--content {
+  bottom: 0;
+}
+.mg-modal.mg-top > .mg-modal--content {
+  top: 0;
 }
