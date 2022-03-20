@@ -22,13 +22,13 @@
   color: $color-secondary;
   padding: 1rem 1.5rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 10rem;
   z-index: 2000;
   box-shadow: $control-shadow;
 }
 
 .mg-modal > .mg-modal--content > .mg-modal--content-scroll {
-  max-height: 70vh;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
@@ -44,4 +44,23 @@
 /* When moving the mouse over the close button */
 .mg-modal--closebtn:hover {
   opacity: 0.8;
+}
+.mg-modal.mg-right > .mg-modal--content {
+  position: fixed;
+  right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.mg-modal.mg-left > .mg-modal--content {
+  position: fixed;
+  left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.mg-modal.mg-bottom > .mg-modal--content {
+  bottom: 0;
+}
+.mg-modal.mg-top > .mg-modal--content {
+  top: 0;
 }
