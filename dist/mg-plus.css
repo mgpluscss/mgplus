@@ -1819,7 +1819,7 @@ img {
   z-index: 2000;
   box-shadow: var(--mg-control-shadow); }
 
-.mg-modal > .mg-modal--content > .mg-modal--content-scroll {
+.mg-modal > .mg-modal--content > .mg-modal--body {
   max-height: 90vh;
   overflow-y: auto; }
 
