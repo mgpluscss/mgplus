@@ -16,11 +16,6 @@ Unlike most other CSS UI Framework, Mg+ is more like a css survival kit speciall
 
 **[demo](https://evodim.github.io/mgplus/)**
 
-
-Full website implementation:
-**[red](https://redassurances.com/)**
-
-
 Core version:
 [milligram](https://github.com/milligram/milligram)
 
