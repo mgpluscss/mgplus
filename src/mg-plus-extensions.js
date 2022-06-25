@@ -153,8 +153,16 @@
           classie.addClass(selector, "active");
           selector.setAttribute("data-active", "true");
           var targetToShow = selector.getAttribute("data-target");
-          if (targetToShow)
+          if (targetToShow) {
             document.getElementById(targetToShow).style.display = "block";
+          } else {
+            // return to first element
+            items[0].setAttribute("data-active", "true");
+            classie.addClass(items[0], "active");
+            var targetToShow = items[0].getAttribute("data-target");
+            if (targetToShow)
+              document.getElementById(targetToShow).style.display = "block";
+          }
         }
       });
     }
