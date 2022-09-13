@@ -132,29 +132,32 @@
 
       tabs.addEventListener("click", function (e) {
         var selector = e.target;
-        if (classie.hasClass(e.target.parentNode, "mg-tabs--item"))
+        if (classie.hasClass(e.target.parentNode, "mg-tabs--item")) {
           selector = e.target.parentNode;
 
-        e.stopPropagation();
-        e.preventDefault();
+          e.stopPropagation();
+          e.preventDefault();
 
-        if (selector.getAttribute("data-active") !== "true") {
-          //disable all selected tabs
-          var items = tabs.getElementsByClassName("mg-tabs--item");
+          if (selector.getAttribute("data-active") !== "true") {
+            //disable all selected tabs
+            var items = tabs.getElementsByClassName("mg-tabs--item");
 
-          for (var j = 0; j < items.length; j++) {
-            classie.removeClass(items[j], "active");
-            items[j].setAttribute("data-active", "false");
-            var targetToHide = items[j].getAttribute("data-target");
-            if (targetToHide)
-              document.getElementById(targetToHide).style.display = "none";
+            for (var j = 0; j < items.length; j++) {
+              classie.removeClass(items[j], "active");
+              items[j].setAttribute("data-active", "false");
+              var targetToHide = items[j].getAttribute("data-target");
+              if (targetToHide) {
+                document.getElementById(targetToHide).style.display = "none";
+              }
+            }
+            //activate selected tab
+            classie.addClass(selector, "active");
+            selector.setAttribute("data-active", "true");
+            var targetToShow = selector.getAttribute("data-target");
+            if (targetToShow) {
+              document.getElementById(targetToShow).style.display = "block";
+            }
           }
-          //activate selected tab
-          classie.addClass(selector, "active");
-          selector.setAttribute("data-active", "true");
-          var targetToShow = selector.getAttribute("data-target");
-          if (targetToShow)
-            document.getElementById(targetToShow).style.display = "block";
         }
       });
     }
@@ -165,9 +168,8 @@
       dropdownToggle.setAttribute("aria-haspopup", "true");
       dropdownToggle.setAttribute("aria-expanded", "false");
 
-      var dropdownMenu = dropdownToggle.parentNode.querySelector(
-        ".mg-dropdown--menu"
-      );
+      var dropdownMenu =
+        dropdownToggle.parentNode.querySelector(".mg-dropdown--menu");
 
       dropdownMenu.setAttribute("aria-hidden", "true");
 

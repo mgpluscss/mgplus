@@ -1424,7 +1424,6 @@ img {
   flex-wrap: nowrap;
   overflow-x: auto;
   list-style: none;
-  cursor: pointer;
   margin: 0; }
 
 .mg-tabs > ul > li > * {
