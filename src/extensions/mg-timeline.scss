@@ -1,5 +1,5 @@
 .mg-timeline, .mg-timeline-inline {
-  line-height: normal;
+  line-height: normal; 
   }  
 .mg-timeline > ul {
   position: relative;
@@ -97,7 +97,7 @@
   left: 0;
   display: inline-block;
   position: relative;
-  top: -1.2rem;
+  top: -1rem;
   width: 1.5rem;
   height: 1.5rem;
   border: 0.3rem solid var(--mg-color-quaternary);
