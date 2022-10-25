@@ -1,13 +1,17 @@
-// Sass configuration
-const gulp = require("gulp");
-const sass = require("gulp-sass");
-const del = require("del");
-const gulpRename = require("gulp-rename");
-const cleanCSS = require("gulp-clean-css");
-const browserSync = require("browser-sync").create();
-const minify = require("gulp-minify");
+import gulp from "gulp";
+import gulpSass from "gulp-sass";
+import nodeSass from "node-sass";
+import { deleteAsync } from "del";
+import gulpRename from "gulp-rename";
+import cleanCSS from "gulp-clean-css";
+import browserSync from "browser-sync";
+import minify from "gulp-minify";
 
-gulp.task("minify-js", function (done) {
+const sass = gulpSass(nodeSass);
+
+browserSync.create();
+
+gulp.task("minify-js", (done) => {
   gulp
     .src("src/**/*.js")
     .pipe(
@@ -23,7 +27,7 @@ gulp.task("minify-js", function (done) {
     .pipe(gulp.dest("dist/"));
   done();
 });
-gulp.task("start", function () {
+gulp.task("start", () => {
   browserSync.init({
     watch: true,
     logLevel: "debug",
@@ -32,7 +36,7 @@ gulp.task("start", function () {
     },
     injectChanges: true,
   });
-  gulp.watch(["src/**/*.scss"], gulp.series(["build"]), function (done) {
+  gulp.watch(["src/**/*.scss"], gulp.series(["build"]), (done) => {
     browserSync.reload();
     done();
   });
@@ -46,12 +50,12 @@ gulp.task("sass", () => {
 });
 
 gulp.task("clean", () => {
-  return del(["dist/*.css", "dist/*.js"]);
+  return deleteAsync(["dist/*.css", "dist/*.js"]);
 });
 
 gulp.task("sass-compile", gulp.series(["clean", "sass"]));
 
-gulp.task("minify", function (done) {
+gulp.task("minify", (done) => {
   gulp
     .src("dist/mg-plus.css")
     .pipe(
@@ -75,7 +79,7 @@ gulp.task("minify", function (done) {
 gulp.task(
   "build",
   gulp.series(["sass-compile", "minify", "minify-js"]),
-  function (done) {
+  (done) => {
     done();
   }
 );
