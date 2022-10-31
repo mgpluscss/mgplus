@@ -39,6 +39,8 @@
 //  Grid
 //  _____________________________________________
 
+
+//Adaptative hide
 @media (max-width: $screen--S) {
   @include create-conditional-hidden($name--S);
 }
@@ -50,6 +52,20 @@
 }
 @media (max-width: $screen--XL) {
   @include create-conditional-hidden($name--XL);
+}
+
+//Adaptative display
+@media (min-width: $screen--S) {
+  @include create-conditional-display($name--S);
+}
+@media (min-width: $screen--M) {
+  @include create-conditional-display($name--M);
+}
+@media (min-width: $screen--L) {
+  @include create-conditional-display($name--L);
+}
+@media (min-width: $screen--XL) {
+  @include create-conditional-display($name--XL);
 }
 
 .mg-container {
