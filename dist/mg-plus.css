@@ -1289,6 +1289,22 @@ img {
   .mg-xl--hidden {
     display: none; } }
 
+@media (min-width: 481px) {
+  .mg-s--display {
+    display: none; } }
+
+@media (min-width: 769px) {
+  .mg-m--display {
+    display: none; } }
+
+@media (min-width: 1025px) {
+  .mg-l--display {
+    display: none; } }
+
+@media (min-width: 1441px) {
+  .mg-xl--display {
+    display: none; } }
+
 .mg-container {
   margin-right: auto;
   margin-left: auto;
@@ -2121,3 +2137,9 @@ img {
 
 .mg-label--light {
   font-weight: 400; }
+
+.mg-w100 {
+  width: 100%; }
+
+.mg-h100 {
+  height: 100%; }

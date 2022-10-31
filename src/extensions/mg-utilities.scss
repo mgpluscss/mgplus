@@ -12,7 +12,7 @@
 
 .mg-left {
   float: left;
-}
+} 
 
 .mg-clearfix {
   *zoom: 1;
@@ -21,7 +21,7 @@
 .mg-clearfix:after,
 .mg-clearfix:before {
   content: "";
-  display: table;
+  display: table; 
 }
 
 .mg-clearfix:after {
@@ -92,4 +92,12 @@
 }
 .mg-label--light {
   font-weight: 400;
+}
+
+.mg-w100 {
+width: 100%;
+}
+
+.mg-h100 {
+height: 100%;
 }
