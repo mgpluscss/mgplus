@@ -2,8 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: var(--mg-color-initial);
-  font-size: 1.9rem;
+  background-color: var(--mg-color-initial); 
 }
 
 header > div {
