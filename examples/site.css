@@ -3,6 +3,7 @@ html {
 }
 body {
   background-color: var(--mg-color-initial);
+  font-size: 1.9rem;
 }
 
 header > div {

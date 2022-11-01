@@ -2045,7 +2045,8 @@ img {
   left: 0;
   display: inline-block;
   position: relative;
-  top: -1rem;
+  vertical-align: text-top;
+  bottom: calc(1.5rem/2);
   width: 1.5rem;
   height: 1.5rem;
   border: 0.3rem solid var(--mg-color-quaternary);
