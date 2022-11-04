@@ -6,13 +6,13 @@
   margin-bottom: 2.5rem;
   background-color: $color-quinary;
 }
-.mg-alert.mg-alert--danger {
+.mg-alert.danger {
   border-left-color: $color-danger;
 }
-.mg-alert.mg-alert--success {
+.mg-alert.success {
   border-left-color: $color-success;
 }
-.mg-alert.mg-alert--warning {
+.mg-alert.warning {
   border-left-color: $color-warning;
 }
 .mg-alert *:last-child {
