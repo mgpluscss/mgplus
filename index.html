@@ -144,6 +144,7 @@
                   <li><a href="#radio">Radio</a></li>
                   <li><a href="#check">Check</a></li>
                   <li><a href="#alert">Alert</a></li>
+                  <li><a href="#badges">Badges</a></li>
                   <li><a href="#tabs">Tabs</a></li>
                   <li><a href="#group">Group</a></li>
                   <li><a href="#grid">Grids</a></li>
@@ -203,12 +204,12 @@
               <strong>Strong</strong>
               <u>Underline</u>
               <!-- Default Headings -->
-              <h1>Heading</h1>
-              <h2>Heading</h2>
-              <h3>Heading</h3>
-              <h4>Heading</h4>
-              <h5>Heading</h5>
-              <h6>Heading</h6>
+              <h1>Heading <span class="mg-badge">h1</span></h1>
+              <h2>Heading <span class="mg-badge">h2</span></h2>
+              <h3>Heading <span class="mg-badge">h3</span></h3>
+              <h4>Heading <span class="mg-badge">h4</span></h4>
+              <h5>Heading <span class="mg-badge">h5</span></h5>
+              <h6>Heading <span class="mg-badge">h6</span></h6>
             </div>
             <div class="example">
               <pre
@@ -581,7 +582,7 @@
                 data-source="default-alert-example"
               ></pre>
             </div>
-            <div class="mg-alert mg-alert--danger" id="danger-alert-example">
+            <div class="mg-alert danger" id="danger-alert-example">
               <span
                 class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
@@ -589,7 +590,7 @@
               </span>
               This is an danger alert box.
             </div>
-            <div class="mg-alert mg-alert--success" id="success-alert-example">
+            <div class="mg-alert success" id="success-alert-example">
               <span
                 class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
@@ -597,7 +598,7 @@
               </span>
               This is an success alert box.
             </div>
-            <div class="mg-alert mg-alert--warning" id="warning-alert-example">
+            <div class="mg-alert warning" id="warning-alert-example">
               <span
                 class="mg-alert--closebtn mg-icon-close"
                 onclick="this.parentElement.style.display='none';"
@@ -612,25 +613,25 @@
                 data-source="warning-alert-example"
               ></pre>
             </div>
-            <div
-              class="mg-alert mg-alert--danger mg-color-danger"
-              id="danger-alert-example2"
-            >
-              <span
-                class="mg-alert--closebtn mg-icon-close"
-                onclick="this.parentElement.style.display='none';"
-              >
-              </span>
-              This is an danger alert box.
+          </section>
+          <section id="badges">
+            <h2 class="title">Badges</h2>
+            <div id="badges-example">
+              <span class="mg-badge">default</span>
+              <span class="mg-badge success">danger</span>
+              <span class="mg-badge warning">success</span>
+              <span class="mg-badge danger">warning</span>
             </div>
+
             <div class="example">
               <pre
                 class="prettyprint"
                 data-toggle="prettify"
-                data-source="danger-alert-example2"
+                data-source="badges-example"
               ></pre>
             </div>
           </section>
+
           <section id="tabs">
             <h2 class="title">Tabs</h2>
             <div class="mg-tabs" data-toggle="tabs" id="tabs-example">
