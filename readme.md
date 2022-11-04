@@ -1,33 +1,25 @@
 # mgplus (*Mg+*)
 
-## A minimalist CSS framework
-
-### Extended version of Milligram CSS framework
-
-Mg+ include Milligram which provides a minimal setup of styles for a fast and clean starting point.
+## Formerly called Milligram Plus, Mg+ is a small CSS library 
+ 
+Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point.
 
 ### Aditionnal features
 
-Usefull extensions like navs or forms inputs and more advanced grid system (FlexBoxGrid)
+Usefull components was included in this library like theming, navs, forms inputs, badges, modals and advanced grid system (inspired by FlexBoxGrid)
 
-Unlike most other CSS UI Framework, Mg+ is more like a css survival kit specially designed for better performance and higher productivity.
+**Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity.**
 
-**_Only 30KB minified_**
+***_Only 37KB minified_***
 
-**[demo](https://evodim.github.io/mgplus/)**
-
-Core version:
-[milligram](https://github.com/milligram/milligram)
-
-FlexboxGrid:
-[flexboxgrid](https://github.com/godban/flex-box-grid)
-
+**[Live Demo](https://evodim.github.io/mgplus/)**
+ 
 ## Getting started
 
 ### Install dependencies from [npm](https://www.npmjs.com/package/mgplus) 
 
 ```sh
-$ npm install mgplus
+$ npm install mgplus or yarn add mgplus
 ```
 
 import in your project dist/ files
@@ -35,10 +27,11 @@ import in your project dist/ files
 ### or from Github
 
 [mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus.min.css)
+
 [mgplus-extensions.min.js](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus-extensions.min.js)
 
-js extensions are required only to handle interactions for navs, tabs, dropdowns, modals, etc.
-It could be replaced by any UI framework like reactjs.
+js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
+It could be replaced by creating wrapped UI components with react, angular or other any UI framework.
 
 ### Run from source code and sample page locally
 **_After cloned the repository_**
@@ -46,19 +39,19 @@ It could be replaced by any UI framework like reactjs.
 **_Run:_**
 
 ```sh
-$ npm install
+$ npm install or yarn install
 ```
 
 **_Then to Debug:_**
 
 ```sh
-$ npm run start
+$ npm run start or yarn start
 ```
 
 **_Or to build only:_**
 
 ```sh
-$ npm run build
+$ npm run build  or yarn build
 ```
 
 That's it!
