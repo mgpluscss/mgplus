@@ -18,17 +18,4 @@
 .mg-alert *:last-child {
   margin: 0;
 }
-/* The close button */
-.mg-alert--closebtn {
-  margin: 1.5em;
-  color: $color-secondary;
-  float: right;
-  font-size: 1.5em;
-  line-height: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-/* When moving the mouse over the close button */
-.mg-alert--closebtn:hover {
-  opacity: 0.8;
-}
+

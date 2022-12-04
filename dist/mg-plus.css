@@ -1435,7 +1435,6 @@ img {
 
 .mg-select::after {
   border: 2px solid transparent;
-  border-radius: 2px;
   border-right: 0;
   border-top: 0;
   content: " ";
@@ -1523,20 +1522,6 @@ img {
 
 .mg-alert *:last-child {
   margin: 0; }
-
-/* The close button */
-.mg-alert--closebtn {
-  margin: 1.5em;
-  color: var(--mg-color-secondary);
-  float: right;
-  font-size: 1.5em;
-  line-height: 1em;
-  cursor: pointer;
-  transition: 0.3s; }
-
-/* When moving the mouse over the close button */
-.mg-alert--closebtn:hover {
-  opacity: 0.8; }
 
 /* Customize the label (the container) */
 /* Hide the browser's default radio button */
@@ -1769,21 +1754,8 @@ img {
   box-shadow: var(--mg-control-shadow); }
 
 .mg-modal > .mg-modal--content > .mg-modal--body {
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto; }
-
-/* The close button */
-.mg-modal--closebtn {
-  color: var(--mg-color-secondary);
-  float: right;
-  font-size: 2.5em;
-  line-height: 1em;
-  cursor: pointer;
-  transition: 0.3s; }
-
-/* When moving the mouse over the close button */
-.mg-modal--closebtn:hover {
-  opacity: 0.8; }
 
 .mg-modal.mg-right > .mg-modal--content {
   position: fixed;
@@ -2078,19 +2050,11 @@ img {
 .mg-valign-middle {
   vertical-align: middle; }
 
-.mg-icon {
-  height: 22px;
-  vertical-align: middle;
-  padding-right: 0.5rem; }
-
 .mg-min-100vh {
   min-height: 100vh; }
 
 .mg-100vh {
   height: 100vh; }
-
-.mg-icon-close::after {
-  content: "\D7"; }
 
 .mg-label--light {
   font-weight: 400; }
@@ -2166,3 +2130,25 @@ img {
 
 .mg-bg-dark {
   background-color: var(--mg-color-dark); }
+
+.mg-icon {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: middle;
+  padding-right: 0.5rem;
+  display: inline-block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.mg-icon-close {
+  font-size: 110%; }
+
+.mg-icon-close::before {
+  content: "\D7";
+  cursor: pointer;
+  transition: 0.3s;
+  top: 2rem; }
+
+.mg-icon-close:hover {
+  opacity: 0.8; }

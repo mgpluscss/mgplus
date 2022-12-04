@@ -216,7 +216,7 @@
       }
 
       var modal = document.querySelector("#" + el.getAttribute("data-target")),
-        close = modal.querySelector(".mg-modal--closebtn");
+        close = modal.querySelector("[data-action=close]");
 
       el.addEventListener("click", function (ev) {
         classie.add(modal, "mg-show");

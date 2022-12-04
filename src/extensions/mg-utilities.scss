@@ -75,21 +75,13 @@
   vertical-align: middle;
 }
 
-.mg-icon {
-  height: 22px;
-  vertical-align: middle;
-  padding-right: 0.5rem;
-}
 .mg-min-100vh {
   min-height: 100vh;
 }
 .mg-100vh {
-  height: 100vh;
+  height: 100vh; 
 }
 
-.mg-icon-close::after {
-  content: "\D7";
-}
 .mg-label--light {
   font-weight: 400;
 }
@@ -168,4 +160,29 @@ height: 100%;
 }
 .mg-bg-dark {
   background-color: $color-dark;
+} 
+ 
+.mg-icon {
+  width: 2rem; 
+  height: 2rem; 
+  vertical-align: middle;
+  padding-right: 0.5rem;
+  display: inline-block;
+  content: ""; 
+  background-repeat: no-repeat;   
+  background-size: contain; 
 }
+.mg-icon-close {
+  font-size: 110%;
+}
+.mg-icon-close::before {  
+ 
+  content: "\D7";
+  cursor: pointer;
+  transition: 0.3s;   
+  top:2rem; 
+}  
+.mg-icon-close:hover {
+  opacity: 0.8;
+} 
+ 
