@@ -28,23 +28,11 @@
 }
 
 .mg-modal > .mg-modal--content > .mg-modal--body {
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
-/* The close button */
-.mg-modal--closebtn {
-  color: $color-secondary;
-  float: right;
-  font-size: 2.5em;
-  line-height: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-/* When moving the mouse over the close button */
-.mg-modal--closebtn:hover {
-  opacity: 0.8;
-}
+
 .mg-modal.mg-right > .mg-modal--content {
   position: fixed;
   right: 0;
