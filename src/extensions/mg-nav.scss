@@ -1,12 +1,18 @@
-.mg-nav > ul {
+.mg-nav ul {
   margin-bottom: 0;
 }
-.mg-nav > ul > li {
+.mg-nav ul > li {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  color: $color-secondary;
+  justify-content: start;
 }
-.mg-nav > ul > li.active {
+
+.mg-nav ul > li.active {
   color: $color-initial;
   border-left: 0.3rem solid $color-primary;
   overflow-y: hidden;
@@ -17,22 +23,26 @@
   border: none;
   border-bottom: 0.3rem solid $color-primary;
 }
-.mg-nav > ul > li a {
-  display: block;
-  padding: 0.5rem 1rem;
+
+.mg-nav ul > li > a {
   text-decoration: none;
   color: $color-secondary;
 }
 
-.mg-nav > ul > li a:hover {
+.mg-nav ul > li:hover {
   background-color: $color-quinary;
 }
 
-.mg-nav--inline > ul {
-  display: inline-block;
-  width: 100%;
+.mg-nav--inline ul {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: baseline;
 }
-
-.mg-nav--inline > ul > li:not(.mg-right) {
+.mg-nav--inline ul > li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.mg-nav--inline ul > li:not(.mg-right) {
   float: left;
 }
