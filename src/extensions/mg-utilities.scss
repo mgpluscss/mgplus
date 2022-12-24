@@ -12,7 +12,7 @@
 
 .mg-left {
   float: left;
-} 
+}
 
 .mg-clearfix {
   *zoom: 1;
@@ -21,7 +21,7 @@
 .mg-clearfix:after,
 .mg-clearfix:before {
   content: "";
-  display: table; 
+  display: table;
 }
 
 .mg-clearfix:after {
@@ -79,7 +79,7 @@
   min-height: 100vh;
 }
 .mg-100vh {
-  height: 100vh; 
+  height: 100vh;
 }
 
 .mg-label--light {
@@ -87,13 +87,13 @@
 }
 
 .mg-w100 {
-width: 100%;
+  width: 100%;
 }
 
 .mg-h100 {
-height: 100%;
+  height: 100%;
 }
- 
+
 .mg-initial {
   color: $color-initial;
 }
@@ -160,29 +160,27 @@ height: 100%;
 }
 .mg-bg-dark {
   background-color: $color-dark;
-} 
- 
+}
+
 .mg-icon {
-  width: 2rem; 
-  height: 2rem; 
+  width: 2.2rem;
+  height: 2.2rem;
   vertical-align: middle;
-  padding-right: 0.5rem;
-  display: inline-block;
-  content: ""; 
-  background-repeat: no-repeat;   
-  background-size: contain; 
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+  display: inline-flex;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .mg-icon-close {
   font-size: 110%;
 }
-.mg-icon-close::before {  
- 
+.mg-icon-close::before {
   content: "\D7";
   cursor: pointer;
-  transition: 0.3s;   
-  top:2rem; 
-}  
+  transition: 0.3s;
+  top: 2rem;
+}
 .mg-icon-close:hover {
   opacity: 0.8;
-} 
- 
+}
