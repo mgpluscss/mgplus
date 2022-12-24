@@ -18,22 +18,24 @@
 .mg-group > input:nth-child(1),
 .mg-group > button:nth-child(1),
 .mg-group > select:nth-child(1) .mg-group > textarea:nth-child(1),
-.mg-group > .mg-dropdown:nth-child(1) > .mg-dropdown--button,
+.mg-group > .mg-dropdown:nth-child(1) > button,
 .mg-group > .button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
+  padding-left: calc(var(--mg-control-radius) / 2);
 }
 .mg-group > .mg-select:last-child > select,
 .mg-group > select:last-child,
 .mg-group > input:last-child,
 .mg-group > button:last-child,
 .mg-group > textarea:last-child,
-.mg-group > .mg-dropdown:last-child > .mg-dropdown--button,
+.mg-group > .mg-dropdown:last-child > button,
 .mg-group > .button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left: 0;
+  padding-right: calc(var(--mg-control-radius) / 2);
 }
 
 .mg-group .mg-group--outline {
