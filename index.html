@@ -135,7 +135,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 Explore
               </button>
-              <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li class="active"><a href="#home">Home</a></li>
                   <li><a href="#typography">Typography</a></li>
@@ -412,7 +414,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 Choose Action
               </button>
-              <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -440,7 +444,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 left side
               </button>
-              <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -456,7 +462,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 right side
               </button>
-              <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -578,7 +586,7 @@
             <h2 class="title">Alert</h2>
             <div class="mg-alert" id="default-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-icon mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -593,7 +601,7 @@
             </div>
             <div class="mg-alert danger" id="danger-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-icon mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -601,7 +609,7 @@
             </div>
             <div class="mg-alert success" id="success-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-icon mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -609,7 +617,7 @@
             </div>
             <div class="mg-alert warning" id="warning-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-icon mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -697,7 +705,9 @@
                 >
                   <img alt="fr" class="mg-icon" src="examples/fr.svg" />
                 </button>
-                <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+                <div
+                  class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+                >
                   <ul>
                     <li data-value="fr">
                       <img
@@ -892,13 +902,16 @@
               Show scrollable modal
             </button>
             <button data-toggle="modal" data-target="modal-4">
+              <span class="mg-arrow mg-arrow--left"></span>
               Show side left bottom modal
             </button>
             <button data-toggle="modal" data-target="modal-5">
               Show side right top modal
+              <span class="mg-arrow mg-arrow--right"></span>
             </button>
             <button data-toggle="modal" data-target="modal-3">
               Show side right top modal
+              <span class="mg-arrow mg-arrow--right"></span>
             </button>
             <div class="mg-container" id="modal-example">
               <div class="mg-modal" id="modal-1">
@@ -906,7 +919,7 @@
                   <h3>
                     Modal Dialog
                     <span
-                      class="mg-icon-close mg-right"
+                      class="mg-icon mg-close mg-right"
                       data-action="close"
                     ></span>
                   </h3>
@@ -940,7 +953,7 @@
                 <h3>
                   Modal scrollable Dialog
                   <span
-                    class="mg-icon-close mg-right"
+                    class="mg-icon mg-close mg-right"
                     data-action="close"
                   ></span>
                 </h3>
@@ -1089,7 +1102,7 @@
                 <h3>
                   Modal side right Dialog
                   <span
-                    class="mg-icon-close mg-right"
+                    class="mg-icon mg-close mg-right"
                     data-action="close"
                   ></span>
                 </h3>
@@ -1238,7 +1251,7 @@
                 <h3>
                   Modal side left Dialog
                   <span
-                    class="mg-icon-close mg-right"
+                    class="mg-icon mg-close mg-right"
                     data-action="close"
                   ></span>
                 </h3>
@@ -1266,7 +1279,7 @@
                   Modal side left Dialog
 
                   <span
-                    class="mg-icon-close mg-right"
+                    class="mg-icon mg-close mg-right"
                     data-action="close"
                   ></span>
                 </h3>
@@ -1371,11 +1384,9 @@
               <div class="mg-loader">
                 <button id="loader-button">
                   Load
-                  <img
-                    src="examples/loader.svg"
-                    alt="..."
-                    class="mg-loader--status mg-icon"
-                  ></img>
+                  <span
+                    class="mg-icon mg-icon--loader mg-loader--status"
+                  ></span>
                 </button>
               </div>
               <div class="mg-loader--status">Loading...</div>
@@ -1482,13 +1493,13 @@
                   </li>
                   <li>
                     <a>
-                      <span  class="mg-s--hidden">Options</span>
+                      <span class="mg-s--hidden">Options</span>
                       <span class="mg-icon mg-icon--gears"></span>
                     </a>
                   </li>
                   <li class="mg-right">
                     <a>
-                      <span  class="mg-s--hidden">fr</span>
+                      <span class="mg-s--hidden">fr</span>
                       <span class="mg-icon mg-icon--fr"></span>
                     </a>
                   </li>
@@ -1525,7 +1536,9 @@
                   <button data-toggle="dropdown" class="mg-dropdown--button">
                     Nav
                   </button>
-                  <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+                  <div
+                    class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+                  >
                     <ul>
                       <li>
                         <span class="mg-icon mg-icon--fr"></span>
@@ -1539,18 +1552,18 @@
                   </div>
                 </div>
                 <button>
-                  <span class="mg-s--hidden">options</span> 
+                  <span class="mg-s--hidden">options</span>
                   <span class="mg-icon mg-icon--gears"></span>
                 </button>
                 <button>
                   <span class="mg-icon mg-icon--fr"></span>
-                  <span class="mg-s--hidden">fr</span> 
+                  <span class="mg-s--hidden">fr</span>
                 </button>
                 <button>
                   <span class="mg-icon mg-icon--es"></span>
-                  <span class="mg-s--hidden">es</span> 
+                  <span class="mg-s--hidden">es</span>
                 </button>
-              </div> 
+              </div>
             </div>
             <div class="example">
               <pre
