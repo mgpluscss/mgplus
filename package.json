@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "mgplus",
-  "version": "1.1.0-alpha.5",
+  "version": "1.1.0-preview.0",
   "description": "Minimalist CSS framework",
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",

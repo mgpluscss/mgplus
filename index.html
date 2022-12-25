@@ -78,10 +78,14 @@
           </g>
         </svg>
         <div id="pickerPanel" class="mg-dropdown mg-left mg-x5 mg-s6 mg-m3">
-          <button data-toggle="dropdown" class="mg-dropdown--button">
-            <img src="examples/gears.svg" class="mg-icon" />
+          <button
+            title="menu"
+            data-toggle="dropdown"
+            class="mg-dropdown--button"
+          >
+            <img alt="gears" src="examples/gears.svg" class="mg-icon" />
           </button>
-          <div class="mg-dropdown--menu mg-dropdown--menu-left">
+          <div class="mg-dropdown--content mg-dropdown--content-left">
             <div class="mg-row">
               <label class="mg-toggle">
                 Dark
@@ -103,9 +107,12 @@
               title="Milligram Plus - A minimalist CSS framework."
               class="navigation-title"
             >
-              <img class="logo" src="milligram-plus.svg" /><span>Mg+</span>
+              <img alt="logo" class="logo" src="milligram-plus.svg" /><span
+                >Mg+</span
+              >
             </div>
             <a
+              rel="noopener"
               href="https://github.com/Evodim/mgplus"
               title="Milligram plus on Github"
               target="_blank"
@@ -128,7 +135,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 Explore
               </button>
-              <div class="mg-dropdown--menu mg-dropdown--menu-right">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li class="active"><a href="#home">Home</a></li>
                   <li><a href="#typography">Typography</a></li>
@@ -153,6 +162,7 @@
                   <li><a href="#forms">Forms</a></li>
                   <li><a href="#loader">Loader</a></li>
                   <li><a href="#timeline">Timeline</a></li>
+                  <li><a href="#icons">Icons</a></li>
                 </ul>
               </div>
             </div>
@@ -165,6 +175,7 @@
             <div class="mg-center-block header">
               <div class="stage">
                 <img
+                  alt="logo"
                   class="logo box bounce-7"
                   src="milligram-plus.svg"
                   height="120"
@@ -398,11 +409,14 @@
           </section>
           <section id="dropdown">
             <h2 class="title">Dropdown</h2>
+
             <div class="mg-dropdown" data-value="bmw" id="dropdown-example">
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 Choose Action
               </button>
-              <div class="mg-dropdown--menu">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -411,7 +425,6 @@
                   <li data-value="honda">Honda</li>
                   <li data-value="jaguar">Jaguar</li>
                   <li data-value="land-rover">Land Rover</li>
-                  <li data-value="mercedes">Mercedes long! very long!</li>
                   <li data-value="mini">Mini</li>
                   <li data-value="nissan">Nissan</li>
                   <li data-value="toyota">Toyota</li>
@@ -431,7 +444,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 left side
               </button>
-              <div class="mg-dropdown--menu mg-dropdown--menu-left">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -447,7 +462,9 @@
               <button data-toggle="dropdown" class="mg-dropdown--button">
                 right side
               </button>
-              <div class="mg-dropdown--menu mg-dropdown--menu-right">
+              <div
+                class="mg-dropdown--content mg-dropdown--content-right mg-nav"
+              >
                 <ul>
                   <li data-value="audi">Audi</li>
                   <li data-value="bmw">BMW</li>
@@ -459,7 +476,7 @@
           <section id="select">
             <h2 class="title">select (native)</h2>
             <div class="mg-select" id="select-example">
-              <select>
+              <select title="select car">
                 <option value="0">Select car:</option>
                 <option value="1">Audi</option>
                 <option value="2">BMW</option>
@@ -569,7 +586,7 @@
             <h2 class="title">Alert</h2>
             <div class="mg-alert" id="default-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -584,7 +601,7 @@
             </div>
             <div class="mg-alert danger" id="danger-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -592,7 +609,7 @@
             </div>
             <div class="mg-alert success" id="success-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -600,7 +617,7 @@
             </div>
             <div class="mg-alert warning" id="warning-alert-example">
               <span
-                class="mg-icon-close mg-right"
+                class="mg-close mg-right"
                 onclick="this.parentElement.style.display='none';"
               >
               </span>
@@ -681,19 +698,37 @@
                 data-value="bmw"
                 id="car-dropdown"
               >
-                <button data-toggle="dropdown" class="mg-dropdown--button">
-                  <img class="mg-icon" src="examples/fr.svg" />
+                <button
+                  title="dropdown"
+                  data-toggle="dropdown"
+                  class="mg-dropdown--button"
+                >
+                  <img alt="fr" class="mg-icon" src="examples/fr.svg" />
                 </button>
-                <div class="mg-dropdown--menu mg-dropdown--menu-left">
+                <div
+                  class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+                >
                   <ul>
                     <li data-value="fr">
-                      <img src="examples/fr.svg" class="mg-icon" />France
+                      <img
+                        alt="fr"
+                        src="examples/fr.svg"
+                        class="mg-icon"
+                      />France
                     </li>
                     <li data-value="es">
-                      <img src="examples/es.svg" class="mg-icon" />Espagne
+                      <img
+                        alt="es"
+                        src="examples/es.svg"
+                        class="mg-icon"
+                      />Espagne
                     </li>
                     <li data-value="de">
-                      <img src="examples/de.svg" class="mg-icon" />Deuthshland
+                      <img
+                        alt="de"
+                        src="examples/de.svg"
+                        class="mg-icon"
+                      />Deuthshland
                     </li>
                   </ul>
                 </div>
@@ -705,8 +740,8 @@
                 value="search"
               />
               <a class="button mg-x2 mg-m1 mg-l1" href="#group"
-                ><img class="mg-icon" src="search.svg"
-              /></a>
+                ><span alt="search" class="mg-icon mg-icon--search"></span
+              ></a>
             </div>
             <div class="example">
               <pre
@@ -867,23 +902,23 @@
               Show scrollable modal
             </button>
             <button data-toggle="modal" data-target="modal-4">
+              <span class="mg-arrow mg-arrow--left"></span>
               Show side left bottom modal
             </button>
             <button data-toggle="modal" data-target="modal-5">
               Show side right top modal
+              <span class="mg-arrow mg-arrow--right"></span>
             </button>
             <button data-toggle="modal" data-target="modal-3">
               Show side right top modal
+              <span class="mg-arrow mg-arrow--right"></span>
             </button>
             <div class="mg-container" id="modal-example">
               <div class="mg-modal" id="modal-1">
                 <div class="mg-modal--content mg-container">
                   <h3>
                     Modal Dialog
-                    <span
-                      class="mg-icon-close mg-right"
-                      data-action="close"
-                    ></span>
+                    <span class="mg-close mg-right" data-action="close"></span>
                   </h3>
                   <div>
                     <p>
@@ -914,10 +949,7 @@
               <div class="mg-modal--content mg-container">
                 <h3>
                   Modal scrollable Dialog
-                  <span
-                    class="mg-icon-close mg-right"
-                    data-action="close"
-                  ></span>
+                  <span class="mg-close mg-right" data-action="close"></span>
                 </h3>
                 <div class="mg-modal--body">
                   <div id="lipsum">
@@ -1063,10 +1095,7 @@
               <div class="mg-modal--content mg-container">
                 <h3>
                   Modal side right Dialog
-                  <span
-                    class="mg-icon-close mg-right"
-                    data-action="close"
-                  ></span>
+                  <span class="mg-close mg-right" data-action="close"></span>
                 </h3>
                 <div class="mg-modal--body">
                   <div id="lipsum">
@@ -1212,10 +1241,7 @@
               <div class="mg-modal--content mg-container">
                 <h3>
                   Modal side left Dialog
-                  <span
-                    class="mg-icon-close mg-right"
-                    data-action="close"
-                  ></span>
+                  <span class="mg-close mg-right" data-action="close"></span>
                 </h3>
                 <div class="mg-modal--body">
                   <div id="lipsum">
@@ -1240,10 +1266,7 @@
                 <h3>
                   Modal side left Dialog
 
-                  <span
-                    class="mg-icon-close mg-right"
-                    data-action="close"
-                  ></span>
+                  <span class="mg-close mg-right" data-action="close"></span>
                 </h3>
                 <div class="mg-modal--body">
                   <div id="lipsum">
@@ -1277,8 +1300,12 @@
               <fieldset>
                 <label>2 cols input</label>
                 <div class="mg-row">
-                  <div class="mg-col mg-x6"><input type="text" /></div>
-                  <div class="mg-col mg-x6"><input type="text" /></div>
+                  <div class="mg-col mg-x6">
+                    <input title="input" type="text" />
+                  </div>
+                  <div class="mg-col mg-x6">
+                    <input title="input" type="text" />
+                  </div>
                 </div>
                 <label>Toggle inline</label>
                 <div class="mg-row">
@@ -1295,7 +1322,7 @@
                 </div>
                 <label for="ageRangeField">Age Range (mg+)</label>
                 <div class="mg-select">
-                  <select id="ageRangeField2">
+                  <select id="ageRangeField2" title="choose">
                     <option value="0-13">0-13</option>
                     <option value="14-17">14-17</option>
                     <option value="18-23">18-23</option>
@@ -1340,7 +1367,12 @@
             <h2 class="title">Loader</h2>
             <div class="mg-container" id="loader-example">
               <div class="mg-loader">
-                <button id="loader-button">Load</button>
+                <button id="loader-button">
+                  Load
+                  <span
+                    class="mg-icon mg-icon--loader mg-loader--status"
+                  ></span>
+                </button>
               </div>
               <div class="mg-loader--status">Loading...</div>
               <div class="mg-loader--result">Loaded</div>
@@ -1355,7 +1387,8 @@
             </div>
           </section>
           <section id="timeline">
-            <h2 class="title">Timeline (default and inline)</h2>
+            <h2 class="title">Timeline</h2>
+            <h3>vertical (default)</h3>
             <div class="mg-container" id="timeline-example">
               <div class="mg-timeline">
                 <ul>
@@ -1377,6 +1410,7 @@
                   </li>
                 </ul>
               </div>
+              <h3>inline</h3>
               <div class="mg-timeline-inline">
                 <ul>
                   <li class="active">
@@ -1403,6 +1437,124 @@
                 class="prettyprint"
                 data-toggle="prettify"
                 data-source="timeline-example"
+              ></pre>
+            </div>
+          </section>
+          <section id="icons">
+            <h2 class="title">Icons</h2>
+            <h3>Combined with other components</h3>
+            <div class="mg-container" id="icons-example">
+              <h4>Inline nav</h4>
+              <div class="mg-nav mg-nav--inline">
+                <ul>
+                  <li>
+                    <div class="mg-dropdown">
+                      <button
+                        title="menu"
+                        data-toggle="dropdown"
+                        class="mg-dropdown--button button--clear"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                      >
+                        <img
+                          alt="gears"
+                          src="examples/gears.svg"
+                          class="mg-icon"
+                        />
+                      </button>
+                      <div
+                        class="mg-dropdown--content mg-dropdown--content-left"
+                        aria-hidden="false"
+                      >
+                        <div class="mg-row">
+                          <label class="mg-toggle">
+                            Switch
+                            <input type="checkbox" id="theme-switcher" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="mg-s--hidden">Options</span>
+                      <span class="mg-icon mg-icon--gears"></span>
+                    </a>
+                  </li>
+                  <li class="mg-right">
+                    <a>
+                      <span class="mg-s--hidden">fr</span>
+                      <span class="mg-icon mg-icon--fr"></span>
+                    </a>
+                  </li>
+                  <li class="mg-right">
+                    <a>
+                      <span class="mg-s--hidden">es</span>
+                      <span class="mg-icon mg-icon--es"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <h4>group of buttons, dropdown, nav</h4>
+              <div class="mg-group">
+                <div class="mg-dropdown">
+                  <button data-toggle="dropdown" class="mg-dropdown--button">
+                    Inline nav
+                  </button>
+                  <div
+                    class="mg-dropdown--content mg-dropdown--content-left mg-nav mg-nav--inline"
+                  >
+                    <ul>
+                      <li>
+                        <span class="mg-icon mg-icon--fr"></span>
+                        <a href="">fr</a>
+                      </li>
+                      <li>
+                        <span class="mg-icon mg-icon--es"></span>
+                        <a href="">es</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="mg-dropdown">
+                  <button data-toggle="dropdown" class="mg-dropdown--button">
+                    Nav
+                  </button>
+                  <div
+                    class="mg-dropdown--content mg-dropdown--content-left mg-nav"
+                  >
+                    <ul>
+                      <li>
+                        <span class="mg-icon mg-icon--fr"></span>
+                        <a href="">fr</a>
+                      </li>
+                      <li>
+                        <span class="mg-icon mg-icon--es"></span>
+                        <a href="">es</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <button>
+                  <span class="mg-s--hidden">options</span>
+                  <span class="mg-icon mg-icon--gears"></span>
+                </button>
+                <button>
+                  <span class="mg-icon mg-icon--fr"></span>
+                  <span class="mg-s--hidden">fr</span>
+                </button>
+                <button>
+                  <span class="mg-icon mg-icon--es"></span>
+                  <span class="mg-s--hidden">es</span>
+                </button>
+              </div>
+            </div>
+            <div class="example">
+              <pre
+                class="prettyprint"
+                data-toggle="prettify"
+                data-source="icons-example"
               ></pre>
             </div>
           </section>

@@ -168,10 +168,11 @@
       dropdownToggle.setAttribute("aria-haspopup", "true");
       dropdownToggle.setAttribute("aria-expanded", "false");
 
-      var dropdownMenu =
-        dropdownToggle.parentNode.querySelector(".mg-dropdown--menu");
+      var dropdownContent = dropdownToggle.parentNode.querySelector(
+        ".mg-dropdown--content"
+      );
 
-      dropdownMenu.setAttribute("aria-hidden", "true");
+      dropdownContent.setAttribute("aria-hidden", "true");
 
       dropdownToggle.onclick = toggleDropdown;
 
@@ -180,7 +181,7 @@
         e.stopPropagation();
         if (dropdownToggle.getAttribute("aria-expanded") === "true") {
           dropdownToggle.setAttribute("aria-expanded", "false");
-          dropdownMenu.setAttribute("aria-hidden", "true");
+          dropdownContent.setAttribute("aria-hidden", "true");
           dropdownToggle.parentNode.classList.remove("opened");
           currentDropdown = false;
           return;
@@ -188,9 +189,9 @@
         closeCurrent.call();
 
         dropdownToggle.setAttribute("aria-expanded", "true");
-        dropdownMenu.setAttribute("aria-hidden", "false");
+        dropdownContent.setAttribute("aria-hidden", "false");
         dropdownToggle.parentNode.classList.add("opened");
-        dropdownMenu.children[0].focus();
+        dropdownContent.children[0].focus();
         currentDropdown = dropdownToggle;
         return;
       }
@@ -231,7 +232,7 @@
     window.onclick = function (e) {
       if (classie.hasClass(e.target, "mg-dropdown")) return;
       if (classie.hasClass(e.target, "mg-dropdown--button")) return;
-      if (classie.hasClass(e.target, "mg-dropdown--menu")) return;
+      if (classie.hasClass(e.target, "mg-dropdown--content")) return;
 
       closeCurrent.call();
     };

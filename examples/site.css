@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background-color: var(--mg-color-initial); 
+  background-color: var(--mg-color-initial);
 }
 
 header > div {
@@ -244,7 +244,6 @@ pre.prettyprint {
   .content {
     height: 30vh;
   }
-  
 }
 
 #home {
@@ -267,4 +266,25 @@ pre.prettyprint {
   position: fixed;
   left: 0;
   top: 10vh;
+}
+.mg-icon--gears {
+  background-image: url(gears.svg);
+}
+.mg-icon--fr {
+  background-image: url(fr.svg);
+}
+
+.mg-icon--es {
+  background-image: url(es.svg);
+}
+
+.mg-icon--de {
+  background-image: url(de.svg);
+}
+
+.mg-icon--loader {
+  background-image: url("loader.svg");
+}
+.mg-icon--search {
+  background-image: url("search.svg");
 }
