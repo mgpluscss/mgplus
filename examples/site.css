@@ -282,9 +282,6 @@ pre.prettyprint {
   background-image: url(de.svg);
 }
 
-.mg-icon--loader {
-  background-image: url("loader.svg");
-}
 .mg-icon--search {
   background-image: url("search.svg");
 }
