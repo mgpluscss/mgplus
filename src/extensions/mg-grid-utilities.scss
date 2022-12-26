@@ -210,14 +210,14 @@
 // Create hidden classes
 @mixin create-conditional-hidden($_class) {
   .#{$_class}--hidden {
-    display: none; 
+    display: none !important;
   }
 }
 
 // Create diplay classes
 @mixin create-conditional-display($_class) {
   .#{$_class}--display {
-    display: none;
+    display: none !important;
   }
 }
 
