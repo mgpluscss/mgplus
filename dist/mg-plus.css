@@ -1209,35 +1209,35 @@ img {
 
 @media (max-width: 481px) {
   .mg-s--hidden {
-    display: none; } }
+    display: none !important; } }
 
 @media (max-width: 769px) {
   .mg-m--hidden {
-    display: none; } }
+    display: none !important; } }
 
 @media (max-width: 1025px) {
   .mg-l--hidden {
-    display: none; } }
+    display: none !important; } }
 
 @media (max-width: 1441px) {
   .mg-xl--hidden {
-    display: none; } }
+    display: none !important; } }
 
 @media (min-width: 481px) {
   .mg-s--display {
-    display: none; } }
+    display: none !important; } }
 
 @media (min-width: 769px) {
   .mg-m--display {
-    display: none; } }
+    display: none !important; } }
 
 @media (min-width: 1025px) {
   .mg-l--display {
-    display: none; } }
+    display: none !important; } }
 
 @media (min-width: 1441px) {
   .mg-xl--display {
-    display: none; } }
+    display: none !important; } }
 
 .mg-container {
   margin-right: auto;
