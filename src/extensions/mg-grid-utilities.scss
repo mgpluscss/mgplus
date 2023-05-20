@@ -198,11 +198,14 @@
   }
   .mg-row.#{$_class}--reverse {
     flex-direction: row-reverse;
-  }
-  .mg-row.#{$_class}--grow {
+  }  
+}
+
+@mixin create-growing-effects($_class) {
+  .#{$_class}--grow { 
     flex: 1 1 auto;
   }
-  .mg-row.#{$_class}--ungrow {
+  .#{$_class}--ungrow { 
     flex: 0;
   }
 }
@@ -228,4 +231,6 @@
   @include loop-grid-columns($grid__columns, $_class, order);
   @include create-positioning-row($_class);
   @include create-positioning-col($_class);
+  @include create-growing-effects($_class);
+ 
 }
