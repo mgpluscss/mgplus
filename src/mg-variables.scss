@@ -7,21 +7,14 @@
   --mg-color-tertiary: #797979;
   --mg-color-quaternary: #a7a7a7;
   --mg-color-quinary: #dadada;
-  --mg-control-radius: 0.4rem;
+  --mg-control-radius: 0.4rem; 
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
-}
-.mg-theme-inverted {
-  --mg-color-initial: #302f2f !important;
-  --mg-color-secondary: #dadada !important;
-  --mg-color-tertiary: #a7a7a7 !important;
-  --mg-color-quaternary: #817f7f !important;
-  --mg-color-quinary: #4e4e4e !important;
-}
+}  
 //
 //  Variables
 //  _____________________________________________
