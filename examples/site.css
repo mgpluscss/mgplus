@@ -1,10 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
-body {
-  background-color: var(--mg-color-initial);
-}
-
+ 
 header > div {
   position: relative;
   text-align: center;
@@ -38,40 +35,7 @@ footer {
     stroke-dashoffset: 0;
   }
 }
-.navigation {
-  background: #042846;
-  color: var(--mg-color-light);
-  display: block;
-  height: 5.2rem;
-  left: 0;
-  max-width: 100%;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 2;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.12);
-}
-.navigation .container {
-  padding-bottom: 0;
-  padding-top: 0;
-}
-.navigation .navigation-list {
-  list-style: none;
-  margin-bottom: 0;
-  margin-right: 5rem;
-}
-@media (min-width: 80rem) {
-  .navigation .navigation-list {
-    margin-right: 0;
-  }
-}
-.navigation .navigation-item {
-  float: left;
-  margin-bottom: 0;
-  margin-left: 2.5rem;
-  position: relative;
-}
+  
 .logo {
   fill: var(--mg-color-primary);
   height: 2rem;
