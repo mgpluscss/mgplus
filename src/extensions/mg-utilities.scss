@@ -45,27 +45,29 @@
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
 }
+
 .mg-fixed-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
 }
 
 .mg-margin-auto {
   margin: auto;
 }
+
 .mg-center-block {
   display: block;
   text-align: center;
 }
+
 .mg-right-block {
   display: block;
   text-align: right;
 }
+
 .mg-left-block {
   display: block;
   text-align: left;
@@ -78,6 +80,7 @@
 .mg-min-100vh {
   min-height: 100vh;
 }
+
 .mg-100vh {
   height: 100vh;
 }
@@ -97,70 +100,123 @@
 .mg-initial {
   color: $color-initial;
 }
+
 .mg-primary {
   color: $color-primary;
 }
+
 .mg-secondary {
   color: $color-secondary;
 }
+
 .mg-tertiary {
   color: $color-tertiary;
 }
+
 .mg-quaternary {
   color: $color-quaternary;
 }
+
 .mg-quinary {
   color: $color-quinary;
 }
+
 .mg-warning {
   color: $color-warning;
 }
+
 .mg-danger {
   color: $color-danger;
 }
+
 .mg-success {
   color: $color-success;
 }
+
 .mg-light {
   color: $color-light;
 }
+
 .mg-dark {
   color: $color-dark;
+}
+
+.mg-blue {
+  color: $color-blue;
+}
+
+.mg-red {
+  color: $color-red;
+}
+
+.mg-green {
+  color: $color-green;
+}
+
+.mg-orange {
+  color: $color-orange;
 }
 
 .mg-bg-initial {
   background-color: $color-initial;
 }
+
 .mg-bg-primary {
   background-color: $color-primary;
 }
+
 .mg-bg-secondary {
   background-color: $color-secondary;
 }
+
 .mg-bg-tertiary {
   background-color: $color-tertiary;
 }
+
 .mg-bg-quaternary {
   background-color: $color-quaternary;
 }
+
 .mg-bg-quinary {
   background-color: $color-quinary;
 }
+
 .mg-bg-warning {
   background-color: $color-warning;
 }
+
 .mg-bg-danger {
   background-color: $color-danger;
 }
+
 .mg-bg-success {
   background-color: $color-success;
 }
+
 .mg-bg-light {
   background-color: $color-light;
 }
+
 .mg-bg-dark {
   background-color: $color-dark;
 }
+
+.mg-bg-blue {
+  background-color: $color-blue;
+}
+
+.mg-bg-red {
+  background-color: $color-red;
+}
+
+.mg-bg-green {
+  background-color: $color-green;
+}
+
+.mg-bg-orange {
+  background-color: $color-orange;
+}
+
 
 .mg-icon {
   width: 2.2rem;
@@ -180,9 +236,11 @@
   font-size: calc(100% + 1rem);
   margin-top: -1rem;
 }
+
 .mg-close::after {
   content: "\D7";
 }
+
 .mg-close:hover {
   opacity: 0.8;
 }
@@ -193,7 +251,8 @@
   display: inline-block;
   padding: 0.4rem;
 }
-.mg-arrow > * {
+
+.mg-arrow>* {
   -webkit-transform: rotate(0);
   transform: rotate(0);
 }
@@ -223,4 +282,20 @@
   transform: rotate(45deg);
   margin-left: 0.4rem;
   margin-right: 0.4rem;
+}
+
+.mg-bold {
+  font-weight: bold;
+}
+
+.mg-bolder {
+  font-weight: bolder;
+}
+
+.mg-lighter {
+  font-weight: lighter;
+}
+
+.mg-shadow {
+  box-shadow: $control-shadow;
 }

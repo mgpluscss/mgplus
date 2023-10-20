@@ -37,8 +37,10 @@
   document.querySelector("#theme-switcher").addEventListener(
     "click",
     function () {
-      var element = document.getElementsByTagName("body")[0];
-      element.classList.toggle("mg-theme-inverted");
+      var current = document.querySelector("html").getAttribute("data-theme");
+      document.querySelector("html")
+      .setAttribute("data-theme",current == "dark" ? "light" : "dark");      
+       
     },
     false
   );
