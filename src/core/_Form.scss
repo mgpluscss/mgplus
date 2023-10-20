@@ -11,8 +11,7 @@ input[type="url"],
 textarea,
 select {
   appearance: none; // Removes awkward default styles on some inputs for iOS
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background-color: transparent;
   border: 0.1rem solid $color-quaternary;
   border-radius: $input-radius;
@@ -38,7 +37,7 @@ input::-webkit-inner-spin-button {
 }
 //Mozilla
 input[type="number"] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 textarea {
