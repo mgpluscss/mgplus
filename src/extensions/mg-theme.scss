@@ -1,39 +1,40 @@
-@mixin dark-colors {
-    --mg-color-initial: #302f2f !important;
-    --mg-color-secondary: #dadada !important;
-    --mg-color-tertiary: #a7a7a7 !important;
-    --mg-color-quaternary: #817f7f !important;
-    --mg-color-quinary: #4e4e4e !important;
-  }
-  @mixin light-colors {
-  --mg-color-initial: $color-initial !important;
-  --mg-color-secondary: $color-secondary !important;
-  --mg-color-tertiary: $color-tertiary !important;
-  --mg-color-quaternary: $color-quaternary !important;
-  --mg-color-quinary: $color-quinary !important;
-  }
+ @mixin dark-colors {
+   --mg-color-initial: #302f2f;
+   --mg-color-secondary: #dadada;
+   --mg-color-tertiary: #a7a7a7;
+   --mg-color-quaternary: #817f7f;
+   --mg-color-quinary: #4e4e4e;
 
-:root[data-theme='dark'] {
-  @include dark-colors;
-  } 
-  
-  :root {
-    color-scheme: light dark auto; /* both supported */
-  }
-    
-@media (prefers-color-scheme: dark) {
-    :root[data-theme='auto'] { 
-        @include dark-colors;
-        color: var(--mg-color-secondary); 
-    }
-  }
-  .mg-theme--light
-  {
-    @include light-colors;
-    color: var(--mg-color-initial);
-  }
-  .mg-theme--dark
-  {
-    @include dark-colors;
-    color: var(--mg-color-secondary); 
-  }
+ }
+
+ @mixin light-colors {
+   --mg-color-initial: $color-initial;
+   --mg-color-secondary: $color-secondary;
+   --mg-color-tertiary: $color-tertiary;
+   --mg-color-quaternary: $color-quaternary;
+   --mg-color-quinary: $color-quinary;
+ }
+
+ :root[data-theme='dark'] {
+   @include dark-colors;
+   color-scheme: dark light;
+ }
+
+ @media (prefers-color-scheme: dark) {
+
+   :root[data-theme='auto'] {
+     @include dark-colors;
+     color: var(--mg-color-secondary);
+     color-scheme: dark light;
+   }
+ }
+
+ .mg-theme--light {
+   @include light-colors;
+   color: var(--mg-color-initial);
+ }
+
+ .mg-theme--dark {
+   @include dark-colors;
+   color: var(--mg-color-secondary);
+ }
