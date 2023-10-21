@@ -669,39 +669,37 @@ img {
   display: table; }
 
 :root[data-theme='dark'] {
-  --mg-color-initial: #302f2f !important;
-  --mg-color-secondary: #dadada !important;
-  --mg-color-tertiary: #a7a7a7 !important;
-  --mg-color-quaternary: #817f7f !important;
-  --mg-color-quinary: #4e4e4e !important; }
-
-:root {
-  color-scheme: light dark auto;
-  /* both supported */ }
+  --mg-color-initial: #302f2f;
+  --mg-color-secondary: #dadada;
+  --mg-color-tertiary: #a7a7a7;
+  --mg-color-quaternary: #817f7f;
+  --mg-color-quinary: #4e4e4e;
+  color-scheme: dark light; }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme='auto'] {
-    --mg-color-initial: #302f2f !important;
-    --mg-color-secondary: #dadada !important;
-    --mg-color-tertiary: #a7a7a7 !important;
-    --mg-color-quaternary: #817f7f !important;
-    --mg-color-quinary: #4e4e4e !important;
-    color: var(--mg-color-secondary); } }
+    --mg-color-initial: #302f2f;
+    --mg-color-secondary: #dadada;
+    --mg-color-tertiary: #a7a7a7;
+    --mg-color-quaternary: #817f7f;
+    --mg-color-quinary: #4e4e4e;
+    color: var(--mg-color-secondary);
+    color-scheme: dark light auto; } }
 
 .mg-theme--light {
-  --mg-color-initial: $color-initial !important;
-  --mg-color-secondary: $color-secondary !important;
-  --mg-color-tertiary: $color-tertiary !important;
-  --mg-color-quaternary: $color-quaternary !important;
-  --mg-color-quinary: $color-quinary !important;
+  --mg-color-initial: $color-initial;
+  --mg-color-secondary: $color-secondary;
+  --mg-color-tertiary: $color-tertiary;
+  --mg-color-quaternary: $color-quaternary;
+  --mg-color-quinary: $color-quinary;
   color: var(--mg-color-initial); }
 
 .mg-theme--dark {
-  --mg-color-initial: #302f2f !important;
-  --mg-color-secondary: #dadada !important;
-  --mg-color-tertiary: #a7a7a7 !important;
-  --mg-color-quaternary: #817f7f !important;
-  --mg-color-quinary: #4e4e4e !important;
+  --mg-color-initial: #302f2f;
+  --mg-color-secondary: #dadada;
+  --mg-color-tertiary: #a7a7a7;
+  --mg-color-quaternary: #817f7f;
+  --mg-color-quinary: #4e4e4e;
   color: var(--mg-color-secondary); }
 
 .mg-col {
@@ -1670,6 +1668,9 @@ img {
   margin-bottom: 1.5rem; }
 
 .mg-select > select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   text-overflow: ellipsis;
   width: 100%;
   padding-right: 1em;
