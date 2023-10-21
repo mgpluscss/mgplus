@@ -25,7 +25,7 @@
    :root[data-theme='auto'] {
      @include dark-colors;
      color: var(--mg-color-secondary);
-     color-scheme: dark light;
+     color-scheme: dark light auto;
    }
  }
 

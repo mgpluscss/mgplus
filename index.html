@@ -58,7 +58,7 @@
     </div>
   </header>
   <main>
-    <nav class="mg-fixed-top mg-w100 mg-theme--dark mg-shadow mg-bg-blue mg-bold" style="padding-top:1rem"> 
+    <nav class="mg-fixed-top mg-w100 mg-light mg-shadow mg-bold" > 
       <div class="mg-container">
         <div class="mg-row mg-x11 mg-x--around mg-x--baseline">
           <div title="Milligram Plus - A minimalist CSS framework." class="navigation-title">
@@ -1171,13 +1171,17 @@
                   <option value="24+">24+</option>
                 </select>
               </div>
-              <label for="ageRangeField">Age Range (default)</label>
+              <label for="ageRangeField">Select (native)</label>
               <select id="ageRangeField">
                 <option value="0-13">0-13</option>
                 <option value="14-17">14-17</option>
                 <option value="18-23">18-23</option>
                 <option value="24+">24+</option>
               </select>
+              <label for="myRange">Input range (native)</label>              
+              <input type="range" min="1" max="100" value="50"   id="myRange">  
+              <label for="myRange2">Input range disabled (native)</label>              
+              <input type="range" disabled min="1" max="100" value="50"   id="myRange2">  
               <label for="commentField">Comment</label>
               <textarea placeholder="Hi CJ …" id="commentField"></textarea>
               <label for="numberField">Numbers only</label>
