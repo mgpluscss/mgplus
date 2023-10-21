@@ -1,0 +1,44 @@
+.mg-slider  {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;      
+    background: $color-quinary;  
+    outline: none; /* Remove outline */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: var(--mg-input-radius); 
+    margin-bottom: 1.5rem;
+    margin-right: 1.1em;
+  }
+  
+  /* Mouse-over effects */
+  .mg-slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .mg-slider::-webkit-slider-thumb {
+    
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 2.5rem; /* Set a specific slider handle width */
+    height:  2.5rem; /* Slider handle height */
+    background: $color-primary; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: var(--mg-input-radius); 
+  }
+  
+  .mg-slider::-moz-range-thumb {
+    width:  2.5rem; /* Set a specific slider handle width */
+    height: 2.5rem; /* Slider handle height */
+    background: $color-primary; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: var(--mg-input-radius); 
+  }
+
+.mg-slider:disabled
+{
+  opacity: 0.7;
+  background-color: $color-quinary; 
+}  
+ 
