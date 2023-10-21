@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+ main > nav {
+  padding-top:1rem;
+  background-color: #081e40;
+
+ }
  
 header > div {
   position: relative;
