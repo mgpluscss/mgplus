@@ -40,24 +40,15 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} 
-          enable-AzPSSession: true
-      - uses: actions/checkout@v2
-      - name: copy demo site to Azure static website
-        uses: kheiakiyama/install-azcopy-action@v1        
+          enable-AzPSSession: true 
+      - name: deploy demo site to Azure static website
+        uses: azure/CLI@v1     
+        env: 
+         DEST_CONTAINER : $web/mgplus/demos/${{ github.event.ref }}
         with:
-          version: 'v10'
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - run: azcopy_v10 --source ./ --destination https://stevodocs.blob.core.windows.net/pr-${{ github.event.ref }} --recursive --set-content-type
-
-      # - name: deploy demo site to Azure static website
-      #   uses: azure/CLI@v1     
-      #   env: 
-      #    DEST_CONTAINER : $web/mgplus/demos
-      #    DEMO_VERSION: ${{ github.event.ref }}
-      #   with:
-      #     azcliversion: 2.30.0
-      #     inlineScript: |    
-      #       az storage blob copy start-batch --source-share $SOURCE_DIR --destination-share $DEST_CONTAINER --account-name $AZURE_STORAGE_ACCOUNT_NAME --pattern '*'
+          azcliversion: 2.30.0
+          inlineScript: |    
+            az storage blob directory upload start-batch -s $SOURCE_DIR -d $DEST_CONTAINER --account-name $AZURE_STORAGE_ACCOUNT_NAME --recursive
 
 
             
