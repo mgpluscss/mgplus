@@ -1,31 +1,27 @@
-# This is a basic workflow to help you get started with Actions
+# mgplus workflow
 
 name: CI
 env:
+  AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
+  AZURE_STORAGE_AUTH_MODE: login
   AZURE_STORAGE_ACCOUNT_NAME: stevodocs
   AZURE_INDEX_DOCUMENT_NAME: index.html
   SOURCE_DIR: ./dist
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  deploy_pr_website:
-    # The type of runner that the job will run on
+  # deploy pullrequest version of demo site
+  deploy_pr_demo:
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'    
     runs-on: ubuntu-latest
     name: build and deploy PR version
     permissions:
       contents: read            
       id-token: write 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # checkout the repo
       - name: "Checkout Github Action"
         uses: actions/checkout@master
 
@@ -45,3 +41,16 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} 
           enable-AzPSSession: true
+      - name: deploy demo site to Azure static website
+        uses: azure/CLI@v1     
+        env: 
+         DEST_CONTAINER : $web/mgplus/demos
+         DEMO_VERSION: ${{ github.event.ref }}
+        with:
+          azcliversion: 2.30.0
+          inlineScript: |    
+            az storage blob copy start-batch --source-share $SOURCE_DIR --destination-share $DEST_CONTAINER --account-name $AZURE_STORAGE_ACCOUNT_NAME --pattern '*'
+
+
+            
+        
