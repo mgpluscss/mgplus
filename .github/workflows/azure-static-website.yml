@@ -44,12 +44,12 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          SOURCE_DIR : demo
-         DEST_DIR : $web/mgplus/${{ github.event.ref }}
+         DEST_DIR : "$web/mgplus/${{ github.ref_name }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
-           az storage blob upload-batch -s  $SOURCE_DIR -d "$DEST_DIR" --account-name stevodocs
+           az storage blob upload-batch -s  $SOURCE_DIR -d $DEST_DIR --account-name stevodocs
         
            
 
