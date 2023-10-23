@@ -24,15 +24,15 @@ jobs:
     steps:
       - name: "Checkout Github Action"
         uses: actions/checkout@master
-      # - name: Setup Node 14.x
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: "14.x"
-      # - name: "npm install, build, and test"
-      #   run: |
-      #     npm install
-      #     npm run build --if-present
-      #     npm run test --if-present
+      - name: Setup Node 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: "npm install, build, and test"
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
       - name: azure login
         uses: azure/login@v1
         with:
@@ -45,9 +45,9 @@ jobs:
         env: 
          ACCOUNT_NAME: stevodocs
          DEMO_SOURCE_DIR : demo
-         DEMO_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/demo"
+         DEMO_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title/\//-/ }}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
-         DIST_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/dist"
+         DIST_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title/\//-/ }}-${{ github.event.pull_request.number }}/dist"
         with:
           azcliversion: 2.30.0
           inlineScript: |
