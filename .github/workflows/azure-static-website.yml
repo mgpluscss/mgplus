@@ -49,8 +49,8 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-           az extension add -n storage-preview -y
-           az storage blob directory upload -c "$web" --account-name "stevodocs" -s "./demo" -d "mgplus/test" --recursive
+           az storage fs directory upload -f "$web" --account-name stevodocs -s "mgplus/test" -d directory --recursive
+           
            
 
 
