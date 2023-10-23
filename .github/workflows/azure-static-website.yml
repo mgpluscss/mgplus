@@ -43,13 +43,18 @@ jobs:
       - name: deploy demo site to Azure static website
         uses: azure/CLI@v1     
         env: 
-         SOURCE_DIR : demo
-         DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}"
+         ACCOUNT_NAME: stevodocs
+         DEMO_SOURCE_DIR : demo
+         DEMO_DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}/demo"
+         DIST_SOURCE_DIR : dist
+         DIST_DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}/dist"
         with:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
-           az storage blob upload-batch -s  $SOURCE_DIR -d $DEST_DIR --account-name stevodocs
+           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
+           az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+           
         
            
 
