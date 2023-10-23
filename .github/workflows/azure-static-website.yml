@@ -24,16 +24,15 @@ jobs:
     steps:
       - name: "Checkout Github Action"
         uses: actions/checkout@master
-
-      - name: Setup Node 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x"
-      - name: "npm install, build, and test"
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+      # - name: Setup Node 14.x
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: "14.x"
+      # - name: "npm install, build, and test"
+      #   run: |
+      #     npm install
+      #     npm run build --if-present
+      #     npm run test --if-present
       - name: azure login
         uses: azure/login@v1
         with:
@@ -45,12 +44,12 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          SOURCE_DIR : demo
-         DEST_DIR : '$web/mgplus/${{ github.event.ref }}'
+         DEST_DIR : $web/mgplus/${{ github.event.ref }}
         with:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
-           az storage blob upload-batch -s 'demo' -d $DEST_DIR --account-name stevodocs
+           az storage blob upload-batch -s  $SOURCE_DIR -d "$DEST_DIR" --account-name stevodocs
         
            
 
