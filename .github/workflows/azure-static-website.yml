@@ -49,9 +49,9 @@ jobs:
         with:
           azcliversion: 2.30.0
           inlineScript: |
-            az config set extension.use_dynamic_install=yes_without_prompt
-            az extension add -n storage-preview -y
-            az storage blob directory upload -c "$web" --account-name "stevodocs" -s "./demo" -d "mgplus/test" --recursive
+           az extension add -n storage-preview -y
+           az storage blob directory upload -c "$web" --account-name "stevodocs" -s "./demo" -d "mgplus/test" --recursive
+           
 
 
 
