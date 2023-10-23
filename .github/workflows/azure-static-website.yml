@@ -44,7 +44,6 @@ jobs:
       - name: deploy demo site to Azure static website
         uses: azure/CLI@v1     
         env: 
-         
          SOURCE_DIR : demo
          DEST_DIR : mgplus/${{ github.event.ref }}
         with:
@@ -52,7 +51,7 @@ jobs:
           inlineScript: |
             az config set extension.use_dynamic_install=yes_without_prompt
             az extension add -n storage-preview -y 
-            az storage blob directory upload -c '$web' --account-name $AZURE_STORAGE_ACCOUNT_NAME -s $SOURCE_DIR -d $DEST_DIR --recursive
+            az storage blob directory upload -c '$web' --account-name $AZURE_STORAGE_ACCOUNT_NAME -s demo -d mgplus/test --recursive
 
 
 
