@@ -45,16 +45,16 @@ jobs:
         env: 
          ACCOUNT_NAME: stevodocs
          DEMO_SOURCE_DIR : demo
-         DEMO_DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}/demo"
+         DEMO_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
-         DIST_DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}/dist"
+         DIST_DEST_DIR : "$web/mgplus/pullrequest-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/dist"
         with:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           
+
         
            
 
