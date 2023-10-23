@@ -44,7 +44,7 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          SOURCE_DIR : demo
-         DEST_DIR : "$web/mgplus/${{ github.ref_name }}"
+         DEST_DIR : "$web/mgplus/pullrequest-${{ github.ref_name }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
