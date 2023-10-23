@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="author" content="medevod" />
+  <meta name="description"
+    content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
+  <title>Milligram Plus | A minimalist CSS framework.</title>
+
+  <link rel="icon" href="./milligram-plus.svg" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+
+  <link rel="stylesheet" href="./mg-plus.css" />
+  <link rel="stylesheet" href="./site.css" />
+  <style>
+    /*default theme*/
+    :root {
+      --mg-color-primary: #23a3e1;
+      --mg-control-radius: 1.5rem;
+      --mg-input-radius: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--mg-color-initial)" />
+        </g>
+      </svg>
+      <div id="pickerPanel" class="mg-dropdown mg-left mg-x5 mg-s6 mg-m3">
+        <button title="menu" data-toggle="dropdown" class="mg-dropdown--button">
+          <img alt="gears" src="./images/gears.svg" class="mg-icon" />
+        </button>
+        <div class="mg-dropdown--content mg-dropdown--content-left">
+          <div class="mg-row">
+            <label class="mg-toggle">
+              Dark
+              <input type="checkbox" id="theme-switcher" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div id="picker"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <nav class="mg-fixed-top mg-w100 mg-light mg-shadow mg-bold" > 
+      <div class="mg-container">
+        <div class="mg-row mg-x11 mg-x--around mg-x--baseline">
+          <div title="Milligram Plus - A minimalist CSS framework." class="navigation-title">
+            <img alt="logo" class="logo" src="./images/milligram-plus.svg" /><span>Mg+</span>
+          </div>
+          <a rel="noopener" href="https://github.com/Evodim/mgplus" title="Milligram plus on Github" target="_blank">
+            <svg class="octocat" viewBox="0 0 250 250">
+              <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+              <path class="octocat-arm"
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2">
+              </path>
+              <path class="octocat-body"
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z">
+              </path>
+            </svg>
+          </a>
+          <div class="mg-dropdown mg-right mg-x5 mg-s6 mg-m3">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
+              Explore
+            </button>
+            <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <ul>
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#blockquotes">Blockquotes</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#codes">Codes</a></li>
+                <li><a href="#nav">Nav</a></li>
+                <li><a href="#nav-inline">Nav inline</a></li>
+                <li><a href="#dropdown">Dropdown</a></li>
+                <li><a href="#select">Select</a></li>
+                <li><a href="#radio">Radio</a></li>
+                <li><a href="#check">Check</a></li>
+                <li><a href="#alert">Alert</a></li>
+                <li><a href="#badges">Badges</a></li>
+                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#group">Group</a></li>
+                <li><a href="#grid">Grids</a></li>
+                <li><a href="#modal">Modal</a></li>
+                <li><a href="#toggle">Toggle</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#loader">Loader</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#icons">Icons</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="page">
+      <div class="mg-container">
+        <section>
+          <div class="mg-center-block header">
+            <div class="stage">
+              <img alt="logo" class="logo box bounce-7" src="images/milligram-plus.svg" height="120" />&nbsp;
+            </div>
+            <div>
+              <h3><b>Mg+</b></h3>
+              <h3>Minimalist CSS framework</h3>
+              <a href="https://github.com/medevod/mgplus">Github</a>
+              <h4>Extended version of Milligram</h4>
+              <h5 class="title">
+                Based on
+                <a href="https://github.com/milligram/milligram">Milligram</a>
+                and
+                <a href="https://github.com/godban/flex-box-grid">FlexBoxGrid</a>
+              </h5>
+            </div>
+            <a href="#home" class="button">Core elements</a>
+            <a href="#home-extensions" class="button">Extensions</a>
+          </div>
+        </section>
+        <section id="home" class="mg-center-block">
+          <hr />
+          <h1 class="title">Core elements</h1>
+        </section>
+        <section id="typography">
+          <h2 class="title">Typography</h2>
+          <div id="typography-example">
+            <!-- Base font-size and line-height -->
+            <p>The base type is 1.6rem (16px) over 1.6 line height (24px)</p>
+            <!-- Other elements to text markup -->
+            <a>Anchor</a>
+            <em>Emphasis</em>
+            <small>Small</small>
+            <strong>Strong</strong>
+            <u>Underline</u>
+            <!-- Default Headings -->
+            <h1>Heading <span class="mg-badge">h1</span></h1>
+            <h2>Heading <span class="mg-badge">h2</span></h2>
+            <h3>Heading <span class="mg-badge">h3</span></h3>
+            <h4>Heading <span class="mg-badge">h4</span></h4>
+            <h5>Heading <span class="mg-badge">h5</span></h5>
+            <h6>Heading <span class="mg-badge">h6</span></h6>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="typography-example"></pre>
+          </div>
+          <!-- The base font-size is set at 62.5% for having the convenience of sizing rems in a way that is similar to using px. So basically 1.6rem = 16px. -->
+        </section>
+        <section id="blockquotes">
+          <h2 class="title">Blockquotes</h2>
+          <div id="blockquotes-example">
+            <blockquote>
+              <p><em>Yeah!! Milligram is amazing.</em></p>
+            </blockquote>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="blockquotes-example"></pre>
+          </div>
+        </section>
+        <section id="buttons">
+          <h2 class="title">Buttons</h2>
+          <div id="buttons-example">
+            <!-- Default Button -->
+            <a class="button" href="#">Default Button</a>
+
+            <!-- Outlined Button -->
+            <button class="button button--outline">Outlined Button</button>
+
+            <!-- Clear Button -->
+            <input class="button button--clear" type="submit" value="Clear Button" />
+
+            <!-- Small Button -->
+            <button class="button button--small">Small Button</button>
+            <!-- Large Button -->
+            <button class="button button--large">Large Button</button>
+            <!-- link Button -->
+            <button class="button button--small button--link">
+              small link Button
+            </button>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="buttons-example"></pre>
+          </div>
+        </section>
+        <section id="lists">
+          <h2 class="title">Lists</h2>
+          <div id="lists-example">
+            <!-- Unordered list -->
+            <ul>
+              <li>Unordered list item 1</li>
+              <li>Unordered list item 2</li>
+              <li>Unordered list item 3</li>
+              <li>Unordered list item 4</li>
+            </ul>
+
+            <!-- Ordered list -->
+            <ol>
+              <li>Ordered list item 1</li>
+              <li>Ordered list item 2</li>
+            </ol>
+
+            <!-- Description list -->
+            <dl>
+              <dt>Description list item 1</dt>
+              <dd>Description list item 1.1</dd>
+            </dl>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="lists-example"></pre>
+          </div>
+        </section>
+        <section id="tables">
+          <h2 class="title">Tables</h2>
+          <div id="tables-example">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Height</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stephen Curry</td>
+                  <td>27</td>
+                  <td>1,91</td>
+                  <td>Akron, OH</td>
+                </tr>
+                <tr>
+                  <td>Klay Thompson</td>
+                  <td>25</td>
+                  <td>2,01</td>
+                  <td>Los Angeles, CA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="tables-example"></pre>
+          </div>
+        </section>
+        <section id="codes">
+          <h2 class="title">Codes</h2>
+          <div id="codes-example">
+            <pre><code>
+              .milligram {
+                color: #9b4dca;
+              }
+              </code></pre>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="codes-example"></pre>
+          </div>
+        </section>
+        <section id="home-extensions" class="mg-center-block">
+          <hr />
+          <h1 class="title">Extensions</h1>
+        </section>
+        <section id="nav">
+          <h2 class="title">Nav vertical (default)</h2>
+          <div class="mg-nav" id="nav-vertical-example" data-toggle="nav">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="nav-vertical-example"></pre>
+          </div>
+        </section>
+        <section id="nav-inline">
+          <h2 class="title">Nav inline</h2>
+          <div class="mg-nav mg-nav--inline" id="nav-horizontal-example" data-toggle="nav">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="mg-right"><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="nav-horizontal-example"></pre>
+          </div>
+        </section>
+        <section id="dropdown">
+          <h2 class="title">Dropdown</h2>
+
+          <div class="mg-dropdown" data-value="bmw" id="dropdown-example">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
+              Choose Action
+            </button>
+            <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="citroen">Citroen</li>
+                <li data-value="ford">Ford</li>
+                <li data-value="honda">Honda</li>
+                <li data-value="jaguar">Jaguar</li>
+                <li data-value="land-rover">Land Rover</li>
+                <li data-value="mini">Mini</li>
+                <li data-value="nissan">Nissan</li>
+                <li data-value="toyota">Toyota</li>
+                <li data-value="volvo">Volvo</li>
+              </ul>
+            </div>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="dropdown-example"></pre>
+          </div>
+
+          <div class="mg-dropdown" data-value="bmw" id="dropdown-example2">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
+              left side
+            </button>
+            <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="mercedes">Mercedes long! very very long!</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mg-dropdown mg-right" data-value="bmw" id="dropdown-example2">
+            <button data-toggle="dropdown" class="mg-dropdown--button">
+              right side
+            </button>
+            <div class="mg-dropdown--content mg-dropdown--content-right mg-nav">
+              <ul>
+                <li data-value="audi">Audi</li>
+                <li data-value="bmw">BMW</li>
+                <li data-value="mercedes">Mercedes long! very long!</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="select">
+          <h2 class="title">select (native)</h2>
+          <div class="mg-select" id="select-example">
+            <select title="select car">
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+              <option value="4">Ford</option>
+              <option value="5">Honda</option>
+              <option value="6">Jaguar</option>
+              <option value="7">Land Rover</option>
+              <option value="8">Mercedes</option>
+              <option value="9">Mini</option>
+              <option value="10">Nissan</option>
+              <option value="11">Toyota</option>
+              <option value="12">Volvo</option>
+            </select>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="select-example"></pre>
+          </div>
+        </section>
+        <section id="radio">
+          <h2 class="title">Radio</h2>
+          <div class="mg-row" id="radio-example">
+            <label class="mg-radio">
+              on
+              <input type="radio" checked name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-radio">
+              off
+              <input type="radio" name="radio" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-radio">
+              disabled
+              <input type="radio" checked disabled name="radio" />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="radio-example"></pre>
+          </div>
+        </section>
+        <section id="check">
+          <h2 class="title">Check</h2>
+          <div class="mg-row" id="check-example">
+            <label class="mg-check">
+              on
+              <input type="checkbox" checked="checked" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-check">
+              off
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-check">
+              disabled
+              <input type="checkbox" checked disabled />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="check-example"></pre>
+          </div>
+        </section>
+        <section id="toggle">
+          <h2 class="title">Toggle</h2>
+
+          <div class="mg-row" id="toggle-example">
+            <label class="mg-toggle">
+              on
+              <input type="checkbox" checked />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-toggle">
+              off
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <label class="mg-toggle">
+              disabled
+              <input type="checkbox" disabled checked />
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="toggle-example"></pre>
+          </div>
+        </section>
+        <section id="alert">
+          <h2 class="title">Alert</h2>
+          <div class="mg-alert" id="default-alert-example">
+            <span class="mg-close mg-right" onclick="this.parentElement.style.display='none';">
+            </span>
+            This is an default alert box.
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="default-alert-example"></pre>
+          </div>
+          <div class="mg-alert danger" id="danger-alert-example">
+            <span class="mg-close mg-right" onclick="this.parentElement.style.display='none';">
+            </span>
+            This is an danger alert box.
+          </div>
+          <div class="mg-alert success" id="success-alert-example">
+            <span class="mg-close mg-right" onclick="this.parentElement.style.display='none';">
+            </span>
+            This is an success alert box.
+          </div>
+          <div class="mg-alert warning" id="warning-alert-example">
+            <span class="mg-close mg-right" onclick="this.parentElement.style.display='none';">
+            </span>
+            This is an warning alert box.
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="warning-alert-example"></pre>
+          </div>
+        </section>
+        <section id="badges">
+          <h2 class="title">Badges</h2>
+          <div id="badges-example">
+            <span class="mg-badge">default</span>
+            <span class="mg-badge success">danger</span>
+            <span class="mg-badge warning">success</span>
+            <span class="mg-badge danger">warning</span>
+          </div>
+
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="badges-example"></pre>
+          </div>
+        </section>
+        <section id="tabs">
+          <h2 class="title">Tabs</h2>
+          <div class="mg-tabs" data-toggle="tabs" id="tabs-example">
+            <ul>
+              <li class="mg-tabs--item active" data-target="tab1">
+                <a href="#" class="secondary">First tab</a>
+              </li>
+              <li class="mg-tabs--item" data-target="tab2">
+                <a href="#" class="button--outline">Second tab</a>
+              </li>
+              <li class="mg-tabs--item" data-target="tab3">
+                <a href="#" class="secondary">Third tab</a>
+              </li>
+            </ul>
+            <div class="mg-tabs--content" id="tab1">
+              1 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Magni iste, placeat voluptates sapiente blanditiis fuga ullam.
+              Iure dolorum libero fugit quidem, voluptate veniam aut animi
+              nihil voluptas mollitia, aliquid inventore.
+            </div>
+            <div class="mg-tabs--content" id="tab2">
+              2 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Magni iste, placeat voluptates sapiente blanditiis fuga ullam.
+              Iure dolorum libero fugit quidem, voluptate veniam aut animi
+              nihil voluptas mollitia, aliquid inventore.
+            </div>
+            <div class="mg-tabs--content" id="tab3">
+              3 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Magni iste, placeat voluptates sapiente blanditiis fuga ullam.
+              Iure dolorum libero fugit quidem, voluptate veniam aut animi
+              nihil voluptas mollitia, aliquid inventore.
+            </div>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="tabs-example"></pre>
+          </div>
+        </section>
+        <section id="group">
+          <h2 class="title">Group</h2>
+          <div class="mg-group" id="group-example">
+            <div class="mg-dropdown mg-x3 mg-m1 mg-l1" tabindex="1" data-value="bmw" id="car-dropdown">
+              <button title="dropdown" data-toggle="dropdown" class="mg-dropdown--button">
+                <img alt="fr" class="mg-icon" src="./images/fr.svg" />
+              </button>
+              <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+                <ul>
+                  <li data-value="fr">
+                    <img alt="fr" src="./images/fr.svg" class="mg-icon" />France
+                  </li>
+                  <li data-value="es">
+                    <img alt="es" src="./images/es.svg" class="mg-icon" />Espagne
+                  </li>
+                  <li data-value="de">
+                    <img alt="de" src="./images/de.svg" class="mg-icon" />Deuthshland
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <input class="mg-x6 mg-m3 mg-l3" type="text" title="test" value="search" />
+            <a class="button mg-x2 mg-m1 mg-l1" href="#group"><span alt="search"
+                class="mg-icon mg-icon--search"></span></a>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="group-example"></pre>
+          </div>
+        </section>
+        <section id="grid">
+          <h2 class="title">Grids</h2>
+          <h5 class="title">Row sizing and placement</h5>
+          <div class="mg-container" id="grid-example">
+            <div class="mg-row">
+              <div class="blue-cell mg-x4">x4</div>
+              <div class="blue-cell mg-x3">x3</div>
+              <div class="blue-cell mg-x2">x2</div>
+            </div>
+            <div class="mg-row">
+              <div class="blue-cell mg-x6">x6</div>
+              <div class="blue-cell mg-x6">x6</div>
+            </div>
+            <div class="mg-row">
+              <div class="blue-cell mg-x6 mg-x--offset3">x6 offset3</div>
+            </div>
+            <div class="mg-col">
+              <div class="mg-row mg-x--start">
+                <div class="blue-cell mg-x6">x6 start</div>
+              </div>
+              <div class="mg-row mg-x--end">
+                <div class="blue-cell mg-x6">x6 end</div>
+              </div>
+              <h5 class="title">Hidden effect (s,m,l,xl)</h5>
+              <div class="mg-row">
+                <div class="blue-cell mg-s--hidden">
+                  hidden until small screen
+                </div>
+                <div class="blue-cell mg-m--hidden">
+                  hidden until medium screen
+                </div>
+                <div class="blue-cell mg-l--hidden">
+                  hidden until large screen
+                </div>
+                <div class="blue-cell mg-xl--hidden">
+                  hidden until extra large screen
+                </div>
+                <div class="blue-cell mg-s--display">
+                  display until small screen
+                </div>
+                <div class="blue-cell mg-m--display">
+                  display until medium screen
+                </div>
+                <div class="blue-cell mg-l--display">
+                  display until large screen
+                </div>
+                <div class="blue-cell mg-xl--display">
+                  display until extra large screen
+                </div>
+              </div>
+              <div class="example">
+                <pre class="prettyprint" data-toggle="prettify" data-source="grid-example"></pre>
+              </div>
+            </div>
+          </div>
+          <h5 class="title">Row alignment</h5>
+          <div class="mg-container" id="grid-example3">
+            <div class="mg-row">
+              <div class="mg-col mg-x4 mg-x--start">
+                start
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x4 mg-x--center">
+                center
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+              <div class="mg-col mg-x4 mg-x--end">
+                end
+                <div class="blue-cell mg-row mg-x4">x4</div>
+                <div class="blue-cell mg-row mg-x3">x3</div>
+                <div class="blue-cell mg-row mg-x2">x2</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre class="prettyprint" data-toggle="prettify" data-source="grid-example3"></pre>
+            </div>
+          </div>
+          <h5 class="title">Col alignment</h5>
+          <div class="mg-container" id="grid-example4">
+            <div class="mg-row" style="height: 10em">
+              <div class="mg-col mg-x4 mg-x--top">
+                top
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
+              </div>
+              <div class="mg-col mg-x4 mg-x--middle">
+                middle
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
+              </div>
+              <div class="mg-col mg-x4 mg-x--bottom">
+                bottom
+                <div class="blue-cell mg-row">x4</div>
+                <div class="blue-cell mg-row">x4</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre class="prettyprint" data-toggle="prettify" data-source="grid-example4"></pre>
+            </div>
+          </div>
+          <h5 class="title">Row grow</h5>
+          <div class="mg-container" id="grid-example5">
+            <div class="mg-row" style="height: 10em">
+              <div class="mg-col mg-x4">
+                <div class="blue-cell mg-x--grow">x4 grow</div>
+                <div class="blue-cell">x4</div>
+              </div>
+              <div class="mg-col mg-x4">
+                <div class="blue-cell mg-x--grow">x4 grow</div>
+              </div>
+              <div class="mg-col mg-x4">
+                <div class="blue-cell">x4</div>
+                <div class="blue-cell mg-x--grow">x4 grow</div>
+                <div class="blue-cell">x4</div>
+              </div>
+            </div>
+            <div class="example">
+              <pre class="prettyprint" data-toggle="prettify" data-source="grid-example5"></pre>
+            </div>
+          </div>
+        </section>
+        <section id="modal">
+          <h2 class="title">Modal</h2>
+          <button data-toggle="modal" data-target="modal-1">
+            Show modal
+          </button>
+          <button data-toggle="modal" data-target="modal-6">
+            Show bottom modal
+            <span class="mg-arrow mg-arrow--down"></span>
+          </button>
+          <button data-toggle="modal" data-target="modal-7">
+            Show up modal
+            <span class="mg-arrow mg-arrow--up"></span>
+          </button>
+          <button data-toggle="modal" data-target="modal-2">
+            Show scrollable modal
+          </button>
+          <button data-toggle="modal" data-target="modal-4">
+            <span class="mg-arrow mg-arrow--left"></span>
+            Show side left bottom modal
+          </button>
+          <button data-toggle="modal" data-target="modal-5">
+            Show side right top modal
+            <span class="mg-arrow mg-arrow--right"></span>
+          </button>
+          <button data-toggle="modal" data-target="modal-3">
+            Show side right top modal
+            <span class="mg-arrow mg-arrow--right"></span>
+          </button>
+          <div class="mg-container" id="modal-example">
+            <div class="mg-modal" id="modal-1">
+              <div class="mg-modal--content mg-container">
+                <h3>
+                  Modal Dialog
+                  <span class="mg-close mg-right" data-action="close"></span>
+                </h3>
+                <div>
+                  <p>
+                    This is a modal window. You can do the following things
+                    with it:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Read:</strong> modal windows will probably tell
+                      you something important so don't forget to read what
+                      they say.
+                    </li>
+                    <li>
+                      <strong>Look:</strong> a modal window enjoys a certain
+                      kind of attention; just look at it and appreciate its
+                      presence.
+                    </li>
+                    <li>
+                      <strong>Close:</strong> click on the button on top to
+                      close modal the modal.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal" id="modal-2">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal scrollable Dialog
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                  <p>
+                    Aenean in ex eu ante viverra semper. Nullam at condimentum
+                    quam. Sed elit sapien, maximus ac pretium ac, viverra
+                    aliquam tortor. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Cras
+                    sed sapien fermentum, elementum mi efficitur, congue
+                    tellus. Interdum et malesuada fames ac ante ipsum primis
+                    in faucibus. Cras malesuada lorem enim, eget scelerisque
+                    orci vestibulum a. Proin scelerisque enim nibh, egestas
+                    euismod nunc aliquam vel. Pellentesque facilisis lacus
+                    tortor, nec dictum augue porttitor nec. Quisque ut lacus
+                    eleifend lorem lobortis fermentum nec sit amet lacus.
+                    Vestibulum vehicula lobortis lectus ut pellentesque.
+                    Nullam tempus in ligula at lacinia. Etiam accumsan
+                    eleifend nunc, at rhoncus nulla tincidunt sed. Sed turpis
+                    dui, hendrerit vitae finibus ut, luctus quis ligula.
+                    Aenean venenatis id diam tempor interdum. Nulla mauris
+                    est, lacinia a fermentum at, ullamcorper ut ante.
+                  </p>
+                  <p>
+                    Suspendisse gravida diam sit amet malesuada interdum. Cras
+                    odio ipsum, scelerisque ac auctor ac, rutrum eget elit.
+                    Nulla sodales hendrerit leo, eget mattis velit suscipit
+                    vitae. Quisque interdum quam at convallis vestibulum.
+                    Aenean est ex, lacinia in leo vitae, euismod ullamcorper
+                    enim. Donec vulputate odio non metus elementum tincidunt.
+                    Integer bibendum ultricies risus a viverra. Fusce mattis
+                    turpis justo, non vehicula mauris feugiat vel. Etiam ut
+                    mauris ultrices orci aliquam placerat.
+                  </p>
+                  <p>
+                    Praesent varius ut eros ut sollicitudin. Curabitur
+                    vehicula fermentum massa, nec scelerisque diam posuere
+                    quis. Etiam ut diam nec quam sollicitudin finibus sit amet
+                    in ipsum. Suspendisse cursus in urna eu condimentum. Cras
+                    ultricies sed nibh id mollis. Sed gravida ex sed tortor
+                    rhoncus malesuada eu non lorem. Cras vel erat tristique,
+                    pretium neque nec, sagittis velit. Nulla non iaculis
+                    dolor. Aenean a nulla a elit ornare consequat ac fringilla
+                    nibh. Praesent volutpat orci tellus, in hendrerit leo
+                    imperdiet eget. Aliquam erat volutpat.
+                  </p>
+                  <p>
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque nunc est, convallis ac ultricies sit
+                    amet, sagittis ac eros. Morbi gravida interdum sapien, ac
+                    elementum orci sollicitudin quis. Donec suscipit arcu non
+                    est rutrum cursus vitae eget lacus. Curabitur pulvinar sit
+                    amet lectus in efficitur. Pellentesque ultricies ultricies
+                    mauris, a ultrices leo sodales vel. Aliquam sapien turpis,
+                    egestas eu volutpat at, semper vel ligula. Sed pretium
+                    lacus ut tellus blandit, nec ornare sapien varius. Nulla
+                    in ornare mi, eu congue libero. Curabitur non urna quis
+                    dui eleifend dictum. Vivamus quis enim sem.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                  <p>
+                    Aenean in ex eu ante viverra semper. Nullam at condimentum
+                    quam. Sed elit sapien, maximus ac pretium ac, viverra
+                    aliquam tortor. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Cras
+                    sed sapien fermentum, elementum mi efficitur, congue
+                    tellus. Interdum et malesuada fames ac ante ipsum primis
+                    in faucibus. Cras malesuada lorem enim, eget scelerisque
+                    orci vestibulum a. Proin scelerisque enim nibh, egestas
+                    euismod nunc aliquam vel. Pellentesque facilisis lacus
+                    tortor, nec dictum augue porttitor nec. Quisque ut lacus
+                    eleifend lorem lobortis fermentum nec sit amet lacus.
+                    Vestibulum vehicula lobortis lectus ut pellentesque.
+                    Nullam tempus in ligula at lacinia. Etiam accumsan
+                    eleifend nunc, at rhoncus nulla tincidunt sed. Sed turpis
+                    dui, hendrerit vitae finibus ut, luctus quis ligula.
+                    Aenean venenatis id diam tempor interdum. Nulla mauris
+                    est, lacinia a fermentum at, ullamcorper ut ante.
+                  </p>
+                  <p>
+                    Suspendisse gravida diam sit amet malesuada interdum. Cras
+                    odio ipsum, scelerisque ac auctor ac, rutrum eget elit.
+                    Nulla sodales hendrerit leo, eget mattis velit suscipit
+                    vitae. Quisque interdum quam at convallis vestibulum.
+                    Aenean est ex, lacinia in leo vitae, euismod ullamcorper
+                    enim. Donec vulputate odio non metus elementum tincidunt.
+                    Integer bibendum ultricies risus a viverra. Fusce mattis
+                    turpis justo, non vehicula mauris feugiat vel. Etiam ut
+                    mauris ultrices orci aliquam placerat.
+                  </p>
+                  <p>
+                    Praesent varius ut eros ut sollicitudin. Curabitur
+                    vehicula fermentum massa, nec scelerisque diam posuere
+                    quis. Etiam ut diam nec quam sollicitudin finibus sit amet
+                    in ipsum. Suspendisse cursus in urna eu condimentum. Cras
+                    ultricies sed nibh id mollis. Sed gravida ex sed tortor
+                    rhoncus malesuada eu non lorem. Cras vel erat tristique,
+                    pretium neque nec, sagittis velit. Nulla non iaculis
+                    dolor. Aenean a nulla a elit ornare consequat ac fringilla
+                    nibh. Praesent volutpat orci tellus, in hendrerit leo
+                    imperdiet eget. Aliquam erat volutpat.
+                  </p>
+                  <p>
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque nunc est, convallis ac ultricies sit
+                    amet, sagittis ac eros. Morbi gravida interdum sapien, ac
+                    elementum orci sollicitudin quis. Donec suscipit arcu non
+                    est rutrum cursus vitae eget lacus. Curabitur pulvinar sit
+                    amet lectus in efficitur. Pellentesque ultricies ultricies
+                    mauris, a ultrices leo sodales vel. Aliquam sapien turpis,
+                    egestas eu volutpat at, semper vel ligula. Sed pretium
+                    lacus ut tellus blandit, nec ornare sapien varius. Nulla
+                    in ornare mi, eu congue libero. Curabitur non urna quis
+                    dui eleifend dictum. Vivamus quis enim sem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal mg-right" id="modal-3">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal side right Dialog
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                  <p>
+                    Aenean in ex eu ante viverra semper. Nullam at condimentum
+                    quam. Sed elit sapien, maximus ac pretium ac, viverra
+                    aliquam tortor. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Cras
+                    sed sapien fermentum, elementum mi efficitur, congue
+                    tellus. Interdum et malesuada fames ac ante ipsum primis
+                    in faucibus. Cras malesuada lorem enim, eget scelerisque
+                    orci vestibulum a. Proin scelerisque enim nibh, egestas
+                    euismod nunc aliquam vel. Pellentesque facilisis lacus
+                    tortor, nec dictum augue porttitor nec. Quisque ut lacus
+                    eleifend lorem lobortis fermentum nec sit amet lacus.
+                    Vestibulum vehicula lobortis lectus ut pellentesque.
+                    Nullam tempus in ligula at lacinia. Etiam accumsan
+                    eleifend nunc, at rhoncus nulla tincidunt sed. Sed turpis
+                    dui, hendrerit vitae finibus ut, luctus quis ligula.
+                    Aenean venenatis id diam tempor interdum. Nulla mauris
+                    est, lacinia a fermentum at, ullamcorper ut ante.
+                  </p>
+                  <p>
+                    Suspendisse gravida diam sit amet malesuada interdum. Cras
+                    odio ipsum, scelerisque ac auctor ac, rutrum eget elit.
+                    Nulla sodales hendrerit leo, eget mattis velit suscipit
+                    vitae. Quisque interdum quam at convallis vestibulum.
+                    Aenean est ex, lacinia in leo vitae, euismod ullamcorper
+                    enim. Donec vulputate odio non metus elementum tincidunt.
+                    Integer bibendum ultricies risus a viverra. Fusce mattis
+                    turpis justo, non vehicula mauris feugiat vel. Etiam ut
+                    mauris ultrices orci aliquam placerat.
+                  </p>
+                  <p>
+                    Praesent varius ut eros ut sollicitudin. Curabitur
+                    vehicula fermentum massa, nec scelerisque diam posuere
+                    quis. Etiam ut diam nec quam sollicitudin finibus sit amet
+                    in ipsum. Suspendisse cursus in urna eu condimentum. Cras
+                    ultricies sed nibh id mollis. Sed gravida ex sed tortor
+                    rhoncus malesuada eu non lorem. Cras vel erat tristique,
+                    pretium neque nec, sagittis velit. Nulla non iaculis
+                    dolor. Aenean a nulla a elit ornare consequat ac fringilla
+                    nibh. Praesent volutpat orci tellus, in hendrerit leo
+                    imperdiet eget. Aliquam erat volutpat.
+                  </p>
+                  <p>
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque nunc est, convallis ac ultricies sit
+                    amet, sagittis ac eros. Morbi gravida interdum sapien, ac
+                    elementum orci sollicitudin quis. Donec suscipit arcu non
+                    est rutrum cursus vitae eget lacus. Curabitur pulvinar sit
+                    amet lectus in efficitur. Pellentesque ultricies ultricies
+                    mauris, a ultrices leo sodales vel. Aliquam sapien turpis,
+                    egestas eu volutpat at, semper vel ligula. Sed pretium
+                    lacus ut tellus blandit, nec ornare sapien varius. Nulla
+                    in ornare mi, eu congue libero. Curabitur non urna quis
+                    dui eleifend dictum. Vivamus quis enim sem.
+                  </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                  <p>
+                    Aenean in ex eu ante viverra semper. Nullam at condimentum
+                    quam. Sed elit sapien, maximus ac pretium ac, viverra
+                    aliquam tortor. Class aptent taciti sociosqu ad litora
+                    torquent per conubia nostra, per inceptos himenaeos. Cras
+                    sed sapien fermentum, elementum mi efficitur, congue
+                    tellus. Interdum et malesuada fames ac ante ipsum primis
+                    in faucibus. Cras malesuada lorem enim, eget scelerisque
+                    orci vestibulum a. Proin scelerisque enim nibh, egestas
+                    euismod nunc aliquam vel. Pellentesque facilisis lacus
+                    tortor, nec dictum augue porttitor nec. Quisque ut lacus
+                    eleifend lorem lobortis fermentum nec sit amet lacus.
+                    Vestibulum vehicula lobortis lectus ut pellentesque.
+                    Nullam tempus in ligula at lacinia. Etiam accumsan
+                    eleifend nunc, at rhoncus nulla tincidunt sed. Sed turpis
+                    dui, hendrerit vitae finibus ut, luctus quis ligula.
+                    Aenean venenatis id diam tempor interdum. Nulla mauris
+                    est, lacinia a fermentum at, ullamcorper ut ante.
+                  </p>
+                  <p>
+                    Suspendisse gravida diam sit amet malesuada interdum. Cras
+                    odio ipsum, scelerisque ac auctor ac, rutrum eget elit.
+                    Nulla sodales hendrerit leo, eget mattis velit suscipit
+                    vitae. Quisque interdum quam at convallis vestibulum.
+                    Aenean est ex, lacinia in leo vitae, euismod ullamcorper
+                    enim. Donec vulputate odio non metus elementum tincidunt.
+                    Integer bibendum ultricies risus a viverra. Fusce mattis
+                    turpis justo, non vehicula mauris feugiat vel. Etiam ut
+                    mauris ultrices orci aliquam placerat.
+                  </p>
+                  <p>
+                    Praesent varius ut eros ut sollicitudin. Curabitur
+                    vehicula fermentum massa, nec scelerisque diam posuere
+                    quis. Etiam ut diam nec quam sollicitudin finibus sit amet
+                    in ipsum. Suspendisse cursus in urna eu condimentum. Cras
+                    ultricies sed nibh id mollis. Sed gravida ex sed tortor
+                    rhoncus malesuada eu non lorem. Cras vel erat tristique,
+                    pretium neque nec, sagittis velit. Nulla non iaculis
+                    dolor. Aenean a nulla a elit ornare consequat ac fringilla
+                    nibh. Praesent volutpat orci tellus, in hendrerit leo
+                    imperdiet eget. Aliquam erat volutpat.
+                  </p>
+                  <p>
+                    Interdum et malesuada fames ac ante ipsum primis in
+                    faucibus. Quisque nunc est, convallis ac ultricies sit
+                    amet, sagittis ac eros. Morbi gravida interdum sapien, ac
+                    elementum orci sollicitudin quis. Donec suscipit arcu non
+                    est rutrum cursus vitae eget lacus. Curabitur pulvinar sit
+                    amet lectus in efficitur. Pellentesque ultricies ultricies
+                    mauris, a ultrices leo sodales vel. Aliquam sapien turpis,
+                    egestas eu volutpat at, semper vel ligula. Sed pretium
+                    lacus ut tellus blandit, nec ornare sapien varius. Nulla
+                    in ornare mi, eu congue libero. Curabitur non urna quis
+                    dui eleifend dictum. Vivamus quis enim sem.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal mg-left mg-bottom" id="modal-4">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal side left Dialog
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal mg-right mg-top" id="modal-5">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal side left Dialog
+
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal mg-bottom" id="modal-6">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal bottom Dialog
+
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-modal mg-top" id="modal-7">
+            <div class="mg-modal--content mg-container">
+              <h3>
+                Modal top Dialog
+
+                <span class="mg-close mg-right" data-action="close"></span>
+              </h3>
+              <div class="mg-modal--body">
+                <div id="lipsum">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Curabitur euismod tortor eget magna auctor, eu hendrerit
+                    ipsum mattis. Etiam vitae ligula nulla. Nulla facilisi.
+                    Maecenas eu orci ac erat mollis fringilla. Donec semper,
+                    metus vitae laoreet fringilla, nisl velit auctor ligula,
+                    vitae hendrerit lectus elit eu tellus. Mauris finibus,
+                    ante quis malesuada interdum, odio massa scelerisque eros,
+                    ac iaculis tellus turpis vitae dolor. Nullam id diam eu
+                    tellus dictum tempor. Vestibulum finibus eros vitae
+                    pretium varius.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="modal-example"></pre>
+          </div>
+        </section>
+        <section id="forms">
+          <h2>Forms</h2>
+          <form id="forms-example">
+            <fieldset>
+              <label>2 cols input</label>
+              <div class="mg-row">
+                <div class="mg-col mg-x6">
+                  <input title="input" type="text" />
+                </div>
+                <div class="mg-col mg-x6">
+                  <input title="input" type="text" />
+                </div>
+              </div>
+              <label>Toggle inline</label>
+              <div class="mg-row">
+                <label class="mg-toggle mg-label--light">
+                  on
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="mg-toggle mg-label--light">
+                  off
+                  <input type="checkbox" checked="checked" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <label for="ageRangeField">Age Range (mg+)</label>
+              <div class="mg-select">
+                <select id="ageRangeField2" title="choose">
+                  <option value="0-13">0-13</option>
+                  <option value="14-17">14-17</option>
+                  <option value="18-23">18-23</option>
+                  <option value="24+">24+</option>
+                </select>
+              </div>
+              <label for="ageRangeField">Select (native)</label>
+              <select id="ageRangeField">
+                <option value="0-13">0-13</option>
+                <option value="14-17">14-17</option>
+                <option value="18-23">18-23</option>
+                <option value="24+">24+</option>
+              </select>
+              <label for="myRange">Input range (native)</label>              
+              <input type="range" min="1" max="100" value="50"   id="myRange">  
+              <label for="myRange2">Input range disabled (native)</label>              
+              <input type="range" disabled min="1" max="100" value="50"   id="myRange2">  
+              <label for="commentField">Comment</label>
+              <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+              <label for="numberField">Numbers only</label>
+              <input placeholder="number input" id="numberField" type="number" />
+              <label for="car-dropdown"> Choose Action </label>
+              <div class="float-right">
+                <label class="mg-check" for="confirmField">
+                  floated right check
+                  <input type="checkbox" id="confirmField" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="forms-example"></pre>
+          </div>
+        </section>
+
+        <section id="loader">
+          <h2 class="title">Loader</h2>
+          <div class="mg-container" id="loader-example">
+            <div class="mg-loader">
+              <button id="loader-button">
+                Load
+                <span class="mg-icon mg-icon--loader mg-loader--status"></span>
+              </button>
+            </div>
+            <div class="mg-loader--status">
+              Loading...
+              <span class="mg-icon mg-icon--loader mg-loader--status"></span>
+            </div>
+            <div class="mg-loader--result">Loaded</div>
+          </div>
+
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="loader-example"></pre>
+          </div>
+        </section>
+        <section id="timeline">
+          <h2 class="title">Timeline</h2>
+          <h3>vertical (default)</h3>
+          <div class="mg-container" id="timeline-example">
+            <div class="mg-timeline">
+              <ul>
+                <li class="active">
+                  <div>Step 1</div>
+                  <div>active</div>
+                </li>
+                <li class="active">
+                  <div>Step 2</div>
+                  <div>active</div>
+                </li>
+                <li class="current">
+                  <div>Step 3</div>
+                  <div>current</div>
+                </li>
+                <li>
+                  <div>Step 4</div>
+                  <div>not active</div>
+                </li>
+              </ul>
+            </div>
+            <h3>inline</h3>
+            <div class="mg-timeline-inline">
+              <ul>
+                <li class="active">
+                  <div>Step 1</div>
+                  <div>active</div>
+                </li>
+                <li class="active">
+                  <div>Step 2</div>
+                  <div>active</div>
+                </li>
+                <li class="current">
+                  <div>Step 3...</div>
+                  <div>current</div>
+                </li>
+                <li>
+                  <div>Step 4</div>
+                  <div>not active</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="timeline-example"></pre>
+          </div>
+        </section>
+        <section id="icons">
+          <h2 class="title">Icons</h2>
+          <h3>Combined with other components</h3>
+          <div class="mg-container" id="icons-example">
+            <h4>Inline nav</h4>
+            <div class="mg-nav mg-nav--inline">
+              <ul>
+                <li>
+                  <div class="mg-dropdown">
+                    <button title="menu" data-toggle="dropdown" class="mg-dropdown--button button--clear"
+                      aria-haspopup="true" aria-expanded="true">
+                      <img alt="gears" src="./images/gears.svg" class="mg-icon" />
+                    </button>
+                    <div class="mg-dropdown--content mg-dropdown--content-left" aria-hidden="false">
+                      <div class="mg-row">
+                        <label class="mg-toggle">
+                          Switch
+                          <input type="checkbox" id="theme-switcher" />
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <a>
+                    <span class="mg-s--hidden">Options</span>
+                    <span class="mg-icon mg-icon--gears"></span>
+                  </a>
+                </li>
+                <li class="mg-right">
+                  <a>
+                    <span class="mg-s--hidden">fr</span>
+                    <span class="mg-icon mg-icon--fr"></span>
+                  </a>
+                </li>
+                <li class="mg-right">
+                  <a>
+                    <span class="mg-s--hidden">es</span>
+                    <span class="mg-icon mg-icon--es"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <h4>group of buttons, dropdown, nav</h4>
+            <div class="mg-group">
+              <div class="mg-dropdown">
+                <button data-toggle="dropdown" class="mg-dropdown--button">
+                  Inline nav
+                </button>
+                <div class="mg-dropdown--content mg-dropdown--content-left mg-nav mg-nav--inline">
+                  <ul>
+                    <li>
+                      <span class="mg-icon mg-icon--fr"></span>
+                      <a href="">fr</a>
+                    </li>
+                    <li>
+                      <span class="mg-icon mg-icon--es"></span>
+                      <a href="">es</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mg-dropdown">
+                <button data-toggle="dropdown" class="mg-dropdown--button">
+                  Nav
+                </button>
+                <div class="mg-dropdown--content mg-dropdown--content-left mg-nav">
+                  <ul>
+                    <li>
+                      <span class="mg-icon mg-icon--fr"></span>
+                      <a href="">fr</a>
+                    </li>
+                    <li>
+                      <span class="mg-icon mg-icon--es"></span>
+                      <a href="">es</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <button>
+                <span class="mg-s--hidden">options</span>
+                <span class="mg-icon mg-icon--gears"></span>
+              </button>
+              <button>
+                <span class="mg-icon mg-icon--fr"></span>
+                <span class="mg-s--hidden">fr</span>
+              </button>
+              <button>
+                <span class="mg-icon mg-icon--es"></span>
+                <span class="mg-s--hidden">es</span>
+              </button>
+            </div>
+          </div>
+          <div class="example">
+            <pre class="prettyprint" data-toggle="prettify" data-source="icons-example"></pre>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="mg-center-block">
+      <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">LICENSE</a>
+      |
+      <a href="https://github.com/medevod/mgplus">Github</a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+  <script src="site.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+  <script src="mg-plus-extensions.js"></script>
+</body>
+
+</html>
