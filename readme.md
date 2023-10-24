@@ -10,7 +10,7 @@ Usefull components was included in this library like theming, navs, forms inputs
 
 **Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity.**
 
-***_Only 37KB minified_***
+***_Only 42KB minified_***
 
 **[Live Demo](https://evodim.github.io/mgplus/)**
  
