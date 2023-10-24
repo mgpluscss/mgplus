@@ -80,6 +80,9 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: azure login
         uses: azure/login@v1
         with:
@@ -90,18 +93,18 @@ jobs:
       - name: deploy demo site to Azure static website
         uses: azure/CLI@v1     
         env: 
-          ACCOUNT_NAME: stevodocs
-          DEMO_SOURCE_DIR : demo
-          DEMO_DEST_DIR : "$web/mgplus/preview-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/demo"
-          DIST_SOURCE_DIR : dist
-          DIST_DEST_DIR : "$web/mgplus/preview-${{ github.event.pull_request.title }}-${{ github.event.pull_request.number }}/dist"
+         ACCOUNT_NAME: stevodocs
+         DEMO_SOURCE_DIR : demo
+         DEMO_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/demo"
+         DIST_SOURCE_DIR : dist
+         DIST_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/dist"
         with:
           azcliversion: 2.30.0
           inlineScript: |
-            az extension add -n storage-preview -y
-            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
-            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-
+           az extension add -n storage-preview -y
+           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
+           az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+  
         
            
 
