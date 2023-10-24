@@ -3,11 +3,8 @@
 
 input[type="range"] {
   appearance: none;
-  background: $color-quaternary;
-  border-color: $color-quaternary;
-  border-radius: $input-radius;
-  border-style: solid;
-  border-width: thin;
+  background: $color-quaternary; 
+  border-radius: $input-radius; 
   display: inline-block;
   height: 1.2rem;
   margin-bottom: 1.5rem;
@@ -23,7 +20,7 @@ input[type="range"] {
   width: 100%;
 
   &:hover {
-    opacity: 1;
+    opacity: 1; 
     
   } 
   
@@ -32,6 +29,7 @@ input[type="range"] {
     appearance: none;
     background: $color-primary;
     border-radius: 50%;
+    border: none;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
     height: 2.7rem;
@@ -42,6 +40,7 @@ input[type="range"] {
     appearance: none;
     background: $color-primary;
     border-radius: 50%;
+    border: none;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
     height: 2.7rem;

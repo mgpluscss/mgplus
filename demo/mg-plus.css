@@ -675,10 +675,7 @@ img {
 input[type="range"] {
   appearance: none;
   background: var(--mg-color-quaternary);
-  border-color: var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
-  border-style: solid;
-  border-width: thin;
   display: inline-block;
   height: 1.2rem;
   margin-bottom: 1.5rem;
@@ -699,6 +696,7 @@ input[type="range"] {
     appearance: none;
     background: var(--mg-color-primary);
     border-radius: 50%;
+    border: none;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
     height: 2.7rem;
@@ -708,6 +706,7 @@ input[type="range"] {
     appearance: none;
     background: var(--mg-color-primary);
     border-radius: 50%;
+    border: none;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
     height: 2.7rem;
