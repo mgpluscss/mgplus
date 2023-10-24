@@ -70,7 +70,7 @@ input[type="submit"] {
     &:hover {
       transition: opacity 0.5s;
       opacity: 0.9;
-      color: var(--mg-color-secondary);
+      color: $color-secondary;
     }
 
     &[disabled] {
