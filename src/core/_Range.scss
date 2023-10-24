@@ -1,0 +1,59 @@
+// Range input (native)
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+input[type="range"] {
+  appearance: none;
+  background: $color-quaternary;
+  border-color: $color-quaternary;
+  border-radius: $input-radius;
+  border-style: solid;
+  border-width: thin;
+  display: inline-block;
+  height: 1.2rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.1em;
+  opacity: 0.9;
+  outline: none;
+  padding: 0;
+  position: relative;
+  transition: opacity 0.2s;
+  vertical-align: top;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+
+  &:hover {
+    opacity: 1;
+    
+  } 
+  
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: $color-secondary;
+    border-radius: 50%;
+    box-shadow: var(--mg-control-shadow);
+    cursor: pointer;
+    height: 2.7rem;
+    width: 2.7rem;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: $color-primary;
+    border-radius: 50%;
+    box-shadow: var(--mg-control-shadow);
+    cursor: pointer;
+    height: 2.7rem;
+    width: 2.7rem;
+  }
+  &:disabled {
+    opacity: 0.5;
+    &::-moz-slider-thumb {
+      background: $color-quaternary;
+    }
+    &::-webkit-slider-thumb {
+      background: $color-quaternary;
+    }
+  }
+}
