@@ -728,14 +728,14 @@ input[type="range"] {
   color-scheme: dark light; }
 
 @media (prefers-color-scheme: dark) {
-  :root[data-theme='auto'] {
+  :root[data-theme='system'] {
     --mg-color-initial: #302f2f;
     --mg-color-secondary: #dadada;
     --mg-color-tertiary: #a7a7a7;
     --mg-color-quaternary: #817f7f;
     --mg-color-quinary: #4e4e4e;
     color: var(--mg-color-secondary);
-    color-scheme: dark light auto; } }
+    color-scheme: dark light system; } }
 
 .mg-theme--light {
   --mg-color-initial: $color-initial;
