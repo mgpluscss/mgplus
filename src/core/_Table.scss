@@ -1,5 +1,5 @@
 
-// Table
+// Table (native)
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 table {
@@ -21,3 +21,9 @@ th {
 		padding-right: 0;
 	}
 }
+ 
+	table.table--responsive {
+		display: inline-block;
+		overflow-x: auto;
+  } 
+   

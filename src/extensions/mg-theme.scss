@@ -22,10 +22,10 @@
 
  @media (prefers-color-scheme: dark) {
 
-   :root[data-theme='auto'] {
+   :root[data-theme='system'] {
      @include dark-colors;
      color: var(--mg-color-secondary);
-     color-scheme: dark light auto;
+     color-scheme: dark light system;
    }
  }
 

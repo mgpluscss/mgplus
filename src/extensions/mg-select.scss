@@ -6,6 +6,9 @@
   margin-bottom: 1.5rem;
 }
 .mg-select > select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   text-overflow: ellipsis;
   width: 100%;
   padding-right: 1em;

@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+ main > nav {
+  padding-top:1rem;
+  background-color: #081e40;
+
+ }
  
 header > div {
   position: relative;
@@ -232,20 +237,20 @@ pre.prettyprint {
   top: 10vh;
 }
 .mg-icon--gears {
-  background-image: url(gears.svg);
+  background-image: url(./images/gears.svg);
 }
 .mg-icon--fr {
-  background-image: url(fr.svg);
+  background-image: url(./images/fr.svg);
 }
 
 .mg-icon--es {
-  background-image: url(es.svg);
+  background-image: url(./images/es.svg);
 }
 
 .mg-icon--de {
-  background-image: url(de.svg);
+  background-image: url(./images/de.svg);
 }
 
 .mg-icon--search {
-  background-image: url("search.svg");
+  background-image: url(./images/search.svg);
 }
