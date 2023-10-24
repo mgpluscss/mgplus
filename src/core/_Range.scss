@@ -30,7 +30,7 @@ input[type="range"] {
   &::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: $color-secondary;
+    background: $color-primary;
     border-radius: 50%;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
@@ -49,11 +49,11 @@ input[type="range"] {
   }
   &:disabled {
     opacity: 0.5;
-    &::-moz-slider-thumb {
+    &::-moz-range-thumb {
       background: $color-quaternary;
     }
     &::-webkit-slider-thumb {
-      background: $color-quaternary;
+      background: $color-quaternary; 
     }
   }
 }

@@ -697,7 +697,7 @@ input[type="range"] {
   input[type="range"]::-moz-range-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: var(--mg-color-secondary);
+    background: var(--mg-color-primary);
     border-radius: 50%;
     box-shadow: var(--mg-control-shadow);
     cursor: pointer;
@@ -714,7 +714,7 @@ input[type="range"] {
     width: 2.7rem; }
   input[type="range"]:disabled {
     opacity: 0.5; }
-    input[type="range"]:disabled::-moz-slider-thumb {
+    input[type="range"]:disabled::-moz-range-thumb {
       background: var(--mg-color-quaternary); }
     input[type="range"]:disabled::-webkit-slider-thumb {
       background: var(--mg-color-quaternary); }
