@@ -12,7 +12,7 @@ Usefull components was included in this library like theming, navs, forms inputs
 
 ***_Only 42KB minified_***
 
-**[Live Demo](https://evodim.github.io/mgplus/)**
+**[Live Demo](https://evodim.github.io/mgplus/demo)**
  
 ## Getting started
 
