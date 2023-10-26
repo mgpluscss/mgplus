@@ -1,12 +1,27 @@
 # mgplus (*Mg+*)
 
-## Formerly called Milligram Plus, Mg+ is a small CSS library 
- 
+## Mg+ is a micro CSS library 
+Formerly called Milligram Plus, 
 Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point.
 
-### Aditionnal features
+### Features
 
-Usefull components was included in this library like theming, navs, forms inputs, badges, modals and advanced grid system (inspired by FlexBoxGrid)
+* Reponsive and mobile first design
+* Could be extended or composed for your custom needs
+
+Usefull components was included in this library:
+
+* Custom variables
+* Theming
+* Navs
+* Tabs
+* Forms inputs
+* Badges
+* Modals
+* Grid system 
+* Icon helper
+* Styling helpers like tailwindcss
+* Optionnal vanilla js extensions to handle ui interaction with some css components
 
 **Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity.**
 
@@ -18,8 +33,14 @@ Usefull components was included in this library like theming, navs, forms inputs
 
 ### Install dependencies from [npm](https://www.npmjs.com/package/mgplus) 
 
+#### npm
 ```sh
-$ npm install mgplus or yarn add mgplus
+$ npm install mgplus
+```
+
+#### yarn
+```sh
+$ yarn add mgplus
 ```
 
 import in your project dist/ files
