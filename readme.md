@@ -2,7 +2,9 @@
 
 ## Mg+ is a micro CSS library 
 Formerly called Milligram Plus, 
-Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point.
+Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point
+
+***_Only 42KB minified_***
 
 ### Features
 
@@ -23,61 +25,67 @@ Usefull components was included in this library:
 * Styling helpers like tailwindcss
 * Optionnal vanilla js extensions to handle ui interaction with some css components
 
-**Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity.**
-
-***_Only 42KB minified_***
-
+**Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity**
+ 
 **[Live Demo](https://evodim.github.io/mgplus/demo)**
  
-## Getting started
+## Getting started 
 
-### Install dependencies from [npm](https://www.npmjs.com/package/mgplus) 
+### Install dependencies from [npm](https://www.npmjs.com/package/mgplus) :
 
-#### npm
+**_npm_**
 ```sh
 $ npm install mgplus
 ```
 
-#### yarn
+**_yarn_**
 ```sh
 $ yarn add mgplus
 ```
 
-import in your project dist/ files
+### Finaly import mg-plus.css file to your project
 
-### or from Github
 
-[mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus.min.css)
+### Alternatively, you can import directly the css library without nodejs stack :
+
+**_[mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus.min.css)_**
+
+Optionaly: import js extension plugin to handle UI interaction for some components
 
 [mgplus-extensions.min.js](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus-extensions.min.js)
 
-js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
-It could be replaced by creating wrapped UI components with react, angular or other any UI framework.
+_Js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
+It could be replaced by creating wrapped UI components with react, angular or other any UI framework_
 
-### Run from source code and sample page locally
-**_After cloned the repository_**
+### For debugging run demo site directly from the repository :
 
-**_Run:_**
-
-```sh
-$ npm install or yarn install
-```
-
-**_Then to Debug:_**
+* Clone the repository
 
 ```sh
-$ npm run start or yarn start
+$ git clone https://github.com/Evodim/mgplus.git
+```
+ 
+* Install packages
+   
+```sh
+$ npm install
 ```
 
-**_Or to build only:_**
+* To start demo page in debug :
 
 ```sh
-$ npm run build  or yarn build
+$ npm run start 
 ```
+_Hot reload already configured with node sass compiler and browser sync_
 
-That's it!
+ 
+* To build only the library :
+ 
+```sh
+$ npm run build
+``` 
 
-### Hot reload already configured with node sass compiler and browser sync
+_yarn commands are also supported_
 
 ## License
 
