@@ -69,12 +69,10 @@
 }
 
 @each $key, $value in $rem-map {
-    .mg-text-size#{$key} {
+    .mg-text#{$key} {
         font-size: $value;
     }
 }
-
-
 
 .mg-text-bold {
     font-weight: bold;
