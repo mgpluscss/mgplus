@@ -2783,6 +2783,9 @@ input[type="range"] {
 .mg-text-none {
   text-decoration: none; }
 
+.mg-text-italic {
+  font-style: italic; }
+
 .mg-text-break {
   word-break: break-all; }
 
@@ -2832,20 +2835,14 @@ input[type="range"] {
 .mg-text-bolder {
   font-weight: bolder; }
 
-.mg-text-ligher {
+.mg-text-lighter {
   font-weight: lighter; }
-
-.mg-text-bolder {
-  font-weight: bold; }
 
 .mg-bolder {
   font-weight: bolder; }
 
 .mg-lighter {
   font-weight: lighter; }
-
-.mg-label--light {
-  font-weight: 400; }
 
 .mg-block {
   display: block; }
