@@ -2796,34 +2796,34 @@ input[type="range"] {
   text-overflow: clip;
   white-space: nowrap; }
 
-.mg-text-size1 {
+.mg-text1 {
   font-size: 1rem; }
 
-.mg-text-size2 {
+.mg-text2 {
   font-size: 2rem; }
 
-.mg-text-size3 {
+.mg-text3 {
   font-size: 3rem; }
 
-.mg-text-size4 {
+.mg-text4 {
   font-size: 4rem; }
 
-.mg-text-size5 {
+.mg-text5 {
   font-size: 5rem; }
 
-.mg-text-size6 {
+.mg-text6 {
   font-size: 6rem; }
 
-.mg-text-size7 {
+.mg-text7 {
   font-size: 7rem; }
 
-.mg-text-size8 {
+.mg-text8 {
   font-size: 8rem; }
 
-.mg-text-size9 {
+.mg-text9 {
   font-size: 9rem; }
 
-.mg-text-size10 {
+.mg-text10 {
   font-size: 10rem; }
 
 .mg-text-bold {
@@ -2832,20 +2832,14 @@ input[type="range"] {
 .mg-text-bolder {
   font-weight: bolder; }
 
-.mg-text-ligher {
+.mg-text-lighter {
   font-weight: lighter; }
-
-.mg-text-bolder {
-  font-weight: bold; }
 
 .mg-bolder {
   font-weight: bolder; }
 
 .mg-lighter {
   font-weight: lighter; }
-
-.mg-label--light {
-  font-weight: 400; }
 
 .mg-block {
   display: block; }
