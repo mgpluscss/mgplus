@@ -1,0 +1,153 @@
+//doc all the mg-helpers classes here
+
+@each $key, $value in $rem-map {
+  .mg-padding#{$key} {
+    padding: $value;
+  }
+
+  .mg-margin#{$key} {
+    margin: $value;
+  }  
+
+  .mg-border-radius#{$key} {
+    border-radius: $value;
+  }
+
+  .mg-border-tl-radius#{$key} {
+    border-top-left-radius: $value;
+  }
+
+  .mg-border-tr-radius#{$key} {
+    border-top-right-radius: $value;
+  }
+
+  .mg-border-br-radius#{$key} {
+    border-bottom-right-radius: $value;
+  }
+
+  .mg-border-bl-radius#{$key} {
+    border-bottom-left-radius: $value;
+  }
+
+  .mg-font-size#{$key} {
+    font-size: $value;
+  }
+}
+
+.mg-margin-auto {
+  margin: auto;
+}
+
+.mg-right {
+  float: right;
+}
+
+.mg-left {
+  float: left;
+}
+
+.mg-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.mg-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.mg-valign-middle {
+  vertical-align: middle;
+}
+
+
+// Path: src/extensions/mg-position.scss
+// Compare this snippet from src/extensions/mg-position.scss:
+.mg-relative {
+  position: relative;
+}
+
+.mg-absolute {
+  position: absolute;
+}
+
+.mg-fixed {
+  position: fixed;
+}
+
+.mg-static {
+  position: static;
+}
+
+.mg-sticky {
+  position: sticky;
+}
+
+//Compare this snippet from src/extensions/mg-position.scss:
+.mg-top {
+  top: 0;
+}
+
+.mg-right {
+  right: 0;
+}
+
+.mg-bottom {
+  bottom: 0;
+}
+
+.mg-left {
+  left: 0;
+}
+
+.mg-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mg-middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//Compare this snippet from src/extensions/mg-position.scss:
+.mg-top-left {
+  top: 0;
+  left: 0;
+}
+
+.mg-top-right {
+  top: 0;
+  right: 0;
+}
+
+.mg-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.mg-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+
+//Deprecated to be removed in next version
+.mg-center-block {
+  display: block;
+  text-align: center;
+}
+
+.mg-right-block {
+  display: block;
+  text-align: right;
+}
+
+.mg-left-block {
+  display: block;
+  text-align: left;
+}

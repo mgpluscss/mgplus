@@ -155,6 +155,7 @@ pre.prettyprint {
   white-space: pre !important;
   font-size: smaller;
   background-color: #081e40 !important;
+  border-radius: 0 !important;
 }
 
 .blue-cell {
