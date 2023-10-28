@@ -54,3 +54,23 @@ $screen--S: $break--S + 1;
 $screen--M: $break--M + 1;
 $screen--L: $break--L + 1;
 $screen--XL: $break--XL + 1;
+
+$rem-map: (
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 6rem,
+  7: 7rem,
+  8: 8rem,
+  9: 9rem,
+  10: 10rem,
+);
+
+$sizing-map: (
+  25: 50%,
+  50: 50%,
+  75: 75%,
+  100: 100%  
+);

@@ -1,0 +1,51 @@
+@each $key, $value in $sizing-map {
+
+    .mg-min-#{$key}vh {
+        min-height: #{$key}vh;
+    }
+
+    .mg-max-#{$key}vh {
+        min-height: #{$key}vh;
+    }
+
+    .mg-#{$key}vh {
+        height: #{$key}vh;
+    }
+
+    .mg-#{$key}vw {
+        width: #{$key}vw;
+    }
+
+    .mg-min-#{$key}vw {
+        min-width: #{$key}vw;
+    }
+
+    .mg-max-#{$key}vw {
+        max-width: #{$key}vw;
+    }
+
+    .mg-w#{$key} {
+        width: #{$value};
+    }
+
+    .mg-h#{$key} {
+        height: #{$value};
+    }
+
+    .mg-min-w#{$key} {
+        min-width: #{$value};
+    }
+
+    .mg-min-h#{$key} {
+        min-height: #{$value};
+    }
+
+    .mg-max-w#{$key} {
+        max-width: #{$value};
+    }
+
+    .mg-max-h#{$key} {
+        max-height: #{$value};
+    }
+
+}

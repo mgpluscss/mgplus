@@ -1,0 +1,26 @@
+.mg-block {
+    display: block;
+}
+
+.mg-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mg-clearfix {
+    *zoom: 1;
+}
+
+.mg-clearfix:after,
+.mg-clearfix:before {
+    content: "";
+    display: table;
+}
+
+.mg-clearfix:after {
+    clear: both;
+}
+
+.mg-shadow {
+    box-shadow: $control-shadow;
+}
