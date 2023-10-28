@@ -151,3 +151,12 @@
   display: block;
   text-align: left;
 }
+
+.mg-box-border {
+  box-sizing: border-box;
+}
+
+.mg-box-content {
+  box-sizing: content-box;
+}
+

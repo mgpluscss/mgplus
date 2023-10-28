@@ -2,6 +2,18 @@
     display: block;
 }
 
+.mg-inline-block {
+    display: inline-block;
+}
+
+.mg-inline {
+    display: inline;
+}
+
+.mg-hidden {
+    display: none;
+}
+
 .mg-show {
     opacity: 1;
     visibility: visible;
@@ -23,4 +35,28 @@
 
 .mg-shadow {
     box-shadow: $control-shadow;
+}
+
+.mg-overflow-auto {
+    overflow: auto;
+}
+
+.mg-overflow-hidden {
+    overflow: hidden;
+}
+
+.mg-overflow-x-auto {
+    overflow-x: auto;
+}
+
+.mg-overflow-y-auto {
+    overflow-y: auto;
+}
+
+.mg-overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.mg-overflow-y-hidden {
+    overflow-y: hidden;
 }
