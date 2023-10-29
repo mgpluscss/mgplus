@@ -21,7 +21,7 @@ body {
   background-color: $color-initial;
 	color: $color-secondary;
 	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-	font-size: 1.6em; // Currently ems cause chrome bug misinterpreting rems on body element
+	font-size: $base-font-size; // Currently ems cause chrome bug misinterpreting rems on body element
 	font-weight: 300;
 	letter-spacing: .01em;
 	line-height: 1.6;
