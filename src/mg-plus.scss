@@ -1,5 +1,6 @@
 @import "mg-variables";
 @import "core/milligram";
+@import "extensions/mg-common"; 
 @import "extensions/mg-theme";
 @import "extensions/mg-grid-utilities";
 @import "extensions/mg-grid";
@@ -20,5 +21,6 @@
 @import "extensions/mg-positioning"; 
 @import "extensions/mg-text"; 
 @import "extensions/mg-display"; 
-@import "extensions/mg-sizing"; 
-@import "extensions/mg-common"; 
+@import "extensions/mg-sizing";
+
+
