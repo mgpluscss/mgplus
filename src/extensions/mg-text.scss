@@ -68,9 +68,9 @@
     white-space: nowrap;
 }
 
-@each $key, $value in $rem-map {
-    .mg-text#{$key} {
-        font-size: $value;
+@each $key, $value in $text-map {
+    .mg-text-#{$key} {
+        font-size: $value; 
     }
 }
 
