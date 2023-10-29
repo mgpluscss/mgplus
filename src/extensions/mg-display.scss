@@ -72,3 +72,35 @@
 .mg-collapse {
     visibility: collapse;
 }
+
+
+@each $key, $value in $rem-map {
+
+    .mg-rounded#{$key} {
+        border-radius: $value;
+    }
+
+    .mg-rounded-tl#{$key} {
+        border-top-left-radius: $value;
+    }
+
+    .mg-rounded-tr#{$key} {
+        border-top-right-radius: $value;
+    }
+
+    .mg-rounded-br#{$key} {
+        border-bottom-right-radius: $value;
+    }
+
+    .mg-rounded-bl#{$key} {
+        border-bottom-left-radius: $value;
+    }
+}
+
+.mg-rounder-none {
+    border-radius: 0;
+}
+
+.mg-rounded-full {
+    border-radius: 100%;
+}
