@@ -7,17 +7,20 @@
   --mg-color-tertiary: #797979;
   --mg-color-quaternary: #a7a7a7;
   --mg-color-quinary: #dadada;
-  --mg-control-radius: 0.4rem; 
+  --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
-}  
+}
+
 //
 //  Variables
 //  _____________________________________________
+
+$base-font-size: 1.6rem;
 $color-light: var(--mg-color-light) !default;
 $color-dark: var(--mg-color-dark) !default;
 $color-initial: var(--mg-color-initial) !default;
@@ -56,6 +59,7 @@ $screen--L: $break--L + 1;
 $screen--XL: $break--XL + 1;
 
 $rem-map: (
+  0: 0,
   1: 1rem,
   2: 2rem,
   3: 3rem,
@@ -67,10 +71,22 @@ $rem-map: (
   9: 9rem,
   10: 10rem,
 );
+$text-map: (
+  s: 1rem,
+  m: $base-font-size*0.2 + 1rem,
+  x: $base-font-size,
+  l: $base-font-size*1.2,
+  xl: $base-font-size*1.5,
+  2xl: $base-font-size*1.9,
+  3xl: $base-font-size*2.4,
+  4xl: $base-font-size*3,
+  5xl: $base-font-size*3.8,
+);
+
 
 $sizing-map: (
   25: 50%,
   50: 50%,
   75: 75%,
-  100: 100%  
+  100: 100%
 );

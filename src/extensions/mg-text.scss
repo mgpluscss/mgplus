@@ -68,13 +68,11 @@
     white-space: nowrap;
 }
 
-@each $key, $value in $rem-map {
-    .mg-text-size#{$key} {
-        font-size: $value;
+@each $key, $value in $text-map {
+    .mg-text-#{$key} {
+        font-size: $value; 
     }
 }
-
-
 
 .mg-text-bold {
     font-weight: bold;
@@ -86,15 +84,11 @@
 }
 
 
-.mg-text-ligher {
+.mg-text-lighter {
     font-weight: lighter;
 }
 
 //deprecated in next version
-
-.mg-text-bolder {
-    font-weight: bold;
-}
 
 .mg-bolder {
     font-weight: bolder;
@@ -102,9 +96,4 @@
 
 .mg-lighter {
     font-weight: lighter;
-}
-
-
-.mg-label--light {
-    font-weight: 400;
 }

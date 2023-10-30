@@ -2,6 +2,18 @@
     display: block;
 }
 
+.mg-inline-block {
+    display: inline-block;
+}
+
+.mg-inline {
+    display: inline;
+}
+
+.mg-hidden {
+    display: none;
+}
+
 .mg-show {
     opacity: 1;
     visibility: visible;
@@ -23,4 +35,72 @@
 
 .mg-shadow {
     box-shadow: $control-shadow;
+}
+
+.mg-overflow-auto {
+    overflow: auto;
+}
+
+.mg-overflow-hidden {
+    overflow: hidden;
+}
+
+.mg-overflow-x-auto {
+    overflow-x: auto;
+}
+
+.mg-overflow-y-auto {
+    overflow-y: auto;
+}
+
+.mg-overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.mg-overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.mg-visible {
+    visibility: visible;
+}
+
+.mg-invisible {
+    visibility: hidden;
+}
+
+.mg-collapse {
+    visibility: collapse;
+}
+
+
+@each $key, $value in $rem-map {
+
+    .mg-rounded#{$key} {
+        border-radius: $value;
+    }
+
+    .mg-rounded-tl#{$key} {
+        border-top-left-radius: $value;
+    }
+
+    .mg-rounded-tr#{$key} {
+        border-top-right-radius: $value;
+    }
+
+    .mg-rounded-br#{$key} {
+        border-bottom-right-radius: $value;
+    }
+
+    .mg-rounded-bl#{$key} {
+        border-bottom-left-radius: $value;
+    }
+}
+
+.mg-rounder-none {
+    border-radius: 0;
+}
+
+.mg-rounded-full {
+    border-radius: 100%;
 }

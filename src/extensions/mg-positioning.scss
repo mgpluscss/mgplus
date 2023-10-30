@@ -1,40 +1,33 @@
-//doc all the mg-helpers classes here
 
 @each $key, $value in $rem-map {
-  .mg-padding#{$key} {
+
+  .mg-pad#{$key} {
     padding: $value;
   }
 
-  .mg-margin#{$key} {
+  .mg-pad-l#{$key} {
+    padding-left: $value;
+  }
+
+  .mg-pad-r#{$key} {
+    padding-right: $value;
+  }
+
+  .mg-space#{$key} {
     margin: $value;
-  }  
-
-  .mg-border-radius#{$key} {
-    border-radius: $value;
   }
 
-  .mg-border-tl-radius#{$key} {
-    border-top-left-radius: $value;
+  .mg-space-l#{$key} {
+    margin-left: $value;
   }
 
-  .mg-border-tr-radius#{$key} {
-    border-top-right-radius: $value;
+  .mg-space-r#{$key} {
+    margin-right: $value;
   }
 
-  .mg-border-br-radius#{$key} {
-    border-bottom-right-radius: $value;
-  }
-
-  .mg-border-bl-radius#{$key} {
-    border-bottom-left-radius: $value;
-  }
-
-  .mg-font-size#{$key} {
-    font-size: $value;
-  }
 }
 
-.mg-margin-auto {
+.mg-space-auto {
   margin: auto;
 }
 
@@ -150,4 +143,12 @@
 .mg-left-block {
   display: block;
   text-align: left;
+}
+
+.mg-box-border {
+  box-sizing: border-box;
+}
+
+.mg-box-content {
+  box-sizing: content-box;
 }
