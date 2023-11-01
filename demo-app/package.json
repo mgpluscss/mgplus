@@ -17,6 +17,7 @@
     "vite-plugin-solid-svg": "^0.7.0"
   },
   "dependencies": {
+    "solid-colorful": "^0.0.2",
     "solid-js": "^1.7.6"
   }
 }

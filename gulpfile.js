@@ -24,7 +24,7 @@ gulp.task("minify-js", (done) => {
         ignoreFiles: [],
       })
     )
-    .pipe(gulp.dest("demo"))
+    .pipe(gulp.dest("demo")) 
     .pipe(gulp.dest("dist/"));
   done();
 });
@@ -33,7 +33,7 @@ gulp.task("start", () => {
     watch: true,
     logLevel: "debug",
     server: {
-      baseDir: "./demo",
+      baseDir: "./demo-app/dist",
     },
     injectChanges: true,
   });
@@ -60,6 +60,8 @@ gulp.task("minify", (done) => {
   gulp
     .src("dist/mg-plus.css")
     .pipe(gulp.dest("demo"))
+    .pipe(gulp.dest("demo-app"))
+    .pipe(gulp.dest("demo-app/dist"))
     .pipe(
       cleanCSS(
         {

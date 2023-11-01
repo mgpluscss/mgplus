@@ -13,10 +13,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+nav {
+  transition: all 1s ease-in-out;  
+}
 :root {
-  --mg-color-primary: #425cdf;
-  --mg-color-secondary: #212d67; 
+  --mg-color-primary: #475dca;
+  --mg-color-secondary: #34237a; 
   --mg-control-radius: 1.5rem;
   --mg-input-radius: 1rem;
   --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }
+
+header {
+  padding-top: 10vh;
+  position: relative;
+  text-align: center;
+  background: linear-gradient( 360deg, transparent 1%, #34237a 0%, #00acc1 90%);
+  color: var(--mg-color-light);
+}
+
+.mg-icon--darkmode {  
+  background: url("./assets/darkmode.svg"); 
+}
+ 
+
+.mg-icon--colors { 
+  background: url("./assets/colors.svg"); 
+}
+
+.mg-icon--gears { 
+  background: url("./assets/gears.svg"); 
+}
+
+.mg-icon--loader { 
+  background: url("./assets/loader.svg"); 
+}
+.mg-icon--fr { 
+  background: url("./assets/fr.svg"); 
+}
+
+.mg-icon--sp { 
+  background: url("./assets/sp.svg"); 
+}
+
+.mg-icon--de { 
+  background: url("./assets/de.svg"); 
+}
+.mg-icon--search { 
+  background: url("./assets/search.svg"); 
+}
+
+ 

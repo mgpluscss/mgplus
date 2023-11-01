@@ -228,7 +228,7 @@
         removeModalHandler();
       });
     }
-
+    //register global handlers
     window.onclick = function (e) {
       if (classie.hasClass(e.target, "mg-dropdown")) return;
       if (classie.hasClass(e.target, "mg-dropdown--button")) return;

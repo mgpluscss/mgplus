@@ -20,9 +20,10 @@
 *:before {
   box-sizing: inherit; }
 
-html {
+html, body {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow-x: hidden; }
 
 body {
   background-color: var(--mg-color-initial);
@@ -294,7 +295,7 @@ blockquote {
   blockquote *:last-child {
     margin-bottom: 0; }
 
-.button,
+.mg-button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -317,7 +318,7 @@ input[type="submit"] {
   white-space: nowrap;
   opacity: 1;
   box-shadow: var(--mg-control-shadow); }
-  .button:focus, .button:hover,
+  .mg-button:focus, .mg-button:hover,
   button:focus,
   button:hover,
   input[type="button"]:focus,
@@ -330,14 +331,14 @@ input[type="submit"] {
     outline: 0;
     opacity: 0.9;
     color: var(--mg-color-light); }
-  .button[disabled],
+  .mg-button[disabled],
   button[disabled],
   input[type="button"][disabled],
   input[type="reset"][disabled],
   input[type="submit"][disabled] {
     cursor: default;
     opacity: 0.5; }
-    .button[disabled]:focus, .button[disabled]:hover,
+    .mg-button[disabled]:focus, .mg-button[disabled]:hover,
     button[disabled]:focus,
     button[disabled]:hover,
     input[type="button"][disabled]:focus,
@@ -348,117 +349,117 @@ input[type="submit"] {
     input[type="submit"][disabled]:hover {
       background-color: var(--mg-color-secondary);
       border-color: var(--mg-color-primary); }
-  .button.button--outline,
-  button.button--outline,
-  input[type="button"].button--outline,
-  input[type="reset"].button--outline,
-  input[type="submit"].button--outline {
+  .mg-button.mg-button--outline,
+  button.mg-button--outline,
+  input[type="button"].mg-button--outline,
+  input[type="reset"].mg-button--outline,
+  input[type="submit"].mg-button--outline {
     background-color: transparent;
     color: var(--mg-color-primary); }
-    .button.button--outline:focus, .button.button--outline:hover,
-    button.button--outline:focus,
-    button.button--outline:hover,
-    input[type="button"].button--outline:focus,
-    input[type="button"].button--outline:hover,
-    input[type="reset"].button--outline:focus,
-    input[type="reset"].button--outline:hover,
-    input[type="submit"].button--outline:focus,
-    input[type="submit"].button--outline:hover {
+    .mg-button.mg-button--outline:focus, .mg-button.mg-button--outline:hover,
+    button.mg-button--outline:focus,
+    button.mg-button--outline:hover,
+    input[type="button"].mg-button--outline:focus,
+    input[type="button"].mg-button--outline:hover,
+    input[type="reset"].mg-button--outline:focus,
+    input[type="reset"].mg-button--outline:hover,
+    input[type="submit"].mg-button--outline:focus,
+    input[type="submit"].mg-button--outline:hover {
       transition: opacity 0.5s;
       opacity: 0.9; }
-    .button.button--outline[disabled]:focus, .button.button--outline[disabled]:hover,
-    button.button--outline[disabled]:focus,
-    button.button--outline[disabled]:hover,
-    input[type="button"].button--outline[disabled]:focus,
-    input[type="button"].button--outline[disabled]:hover,
-    input[type="reset"].button--outline[disabled]:focus,
-    input[type="reset"].button--outline[disabled]:hover,
-    input[type="submit"].button--outline[disabled]:focus,
-    input[type="submit"].button--outline[disabled]:hover {
+    .mg-button.mg-button--outline[disabled]:focus, .mg-button.mg-button--outline[disabled]:hover,
+    button.mg-button--outline[disabled]:focus,
+    button.mg-button--outline[disabled]:hover,
+    input[type="button"].mg-button--outline[disabled]:focus,
+    input[type="button"].mg-button--outline[disabled]:hover,
+    input[type="reset"].mg-button--outline[disabled]:focus,
+    input[type="reset"].mg-button--outline[disabled]:hover,
+    input[type="submit"].mg-button--outline[disabled]:focus,
+    input[type="submit"].mg-button--outline[disabled]:hover {
       border-color: inherit; }
-  .button.button--link,
-  button.button--link,
-  input[type="button"].button--link,
-  input[type="reset"].button--link,
-  input[type="submit"].button--link {
+  .mg-button.mg-button--link,
+  button.mg-button--link,
+  input[type="button"].mg-button--link,
+  input[type="reset"].mg-button--link,
+  input[type="submit"].mg-button--link {
     box-shadow: none;
     background-color: transparent;
     color: var(--mg-color-primary);
     border: none; }
-    .button.button--link:focus, .button.button--link:hover,
-    button.button--link:focus,
-    button.button--link:hover,
-    input[type="button"].button--link:focus,
-    input[type="button"].button--link:hover,
-    input[type="reset"].button--link:focus,
-    input[type="reset"].button--link:hover,
-    input[type="submit"].button--link:focus,
-    input[type="submit"].button--link:hover {
+    .mg-button.mg-button--link:focus, .mg-button.mg-button--link:hover,
+    button.mg-button--link:focus,
+    button.mg-button--link:hover,
+    input[type="button"].mg-button--link:focus,
+    input[type="button"].mg-button--link:hover,
+    input[type="reset"].mg-button--link:focus,
+    input[type="reset"].mg-button--link:hover,
+    input[type="submit"].mg-button--link:focus,
+    input[type="submit"].mg-button--link:hover {
       transition: opacity 0.5s;
       opacity: 0.9;
       color: var(--mg-color-secondary); }
-    .button.button--link[disabled]:focus, .button.button--link[disabled]:hover,
-    button.button--link[disabled]:focus,
-    button.button--link[disabled]:hover,
-    input[type="button"].button--link[disabled]:focus,
-    input[type="button"].button--link[disabled]:hover,
-    input[type="reset"].button--link[disabled]:focus,
-    input[type="reset"].button--link[disabled]:hover,
-    input[type="submit"].button--link[disabled]:focus,
-    input[type="submit"].button--link[disabled]:hover {
+    .mg-button.mg-button--link[disabled]:focus, .mg-button.mg-button--link[disabled]:hover,
+    button.mg-button--link[disabled]:focus,
+    button.mg-button--link[disabled]:hover,
+    input[type="button"].mg-button--link[disabled]:focus,
+    input[type="button"].mg-button--link[disabled]:hover,
+    input[type="reset"].mg-button--link[disabled]:focus,
+    input[type="reset"].mg-button--link[disabled]:hover,
+    input[type="submit"].mg-button--link[disabled]:focus,
+    input[type="submit"].mg-button--link[disabled]:hover {
       border-color: inherit; }
-  .button.button--clear,
-  button.button--clear,
-  input[type="button"].button--clear,
-  input[type="reset"].button--clear,
-  input[type="submit"].button--clear {
+  .mg-button.mg-button--clear,
+  button.mg-button--clear,
+  input[type="button"].mg-button--clear,
+  input[type="reset"].mg-button--clear,
+  input[type="submit"].mg-button--clear {
     background-color: transparent;
     color: var(--mg-color-primary);
     border: none; }
-    .button.button--clear:focus, .button.button--clear:hover,
-    button.button--clear:focus,
-    button.button--clear:hover,
-    input[type="button"].button--clear:focus,
-    input[type="button"].button--clear:hover,
-    input[type="reset"].button--clear:focus,
-    input[type="reset"].button--clear:hover,
-    input[type="submit"].button--clear:focus,
-    input[type="submit"].button--clear:hover {
+    .mg-button.mg-button--clear:focus, .mg-button.mg-button--clear:hover,
+    button.mg-button--clear:focus,
+    button.mg-button--clear:hover,
+    input[type="button"].mg-button--clear:focus,
+    input[type="button"].mg-button--clear:hover,
+    input[type="reset"].mg-button--clear:focus,
+    input[type="reset"].mg-button--clear:hover,
+    input[type="submit"].mg-button--clear:focus,
+    input[type="submit"].mg-button--clear:hover {
       transition: opacity 0.5s;
       opacity: 0.9; }
-    .button.button--clear[disabled]:focus, .button.button--clear[disabled]:hover,
-    button.button--clear[disabled]:focus,
-    button.button--clear[disabled]:hover,
-    input[type="button"].button--clear[disabled]:focus,
-    input[type="button"].button--clear[disabled]:hover,
-    input[type="reset"].button--clear[disabled]:focus,
-    input[type="reset"].button--clear[disabled]:hover,
-    input[type="submit"].button--clear[disabled]:focus,
-    input[type="submit"].button--clear[disabled]:hover {
+    .mg-button.mg-button--clear[disabled]:focus, .mg-button.mg-button--clear[disabled]:hover,
+    button.mg-button--clear[disabled]:focus,
+    button.mg-button--clear[disabled]:hover,
+    input[type="button"].mg-button--clear[disabled]:focus,
+    input[type="button"].mg-button--clear[disabled]:hover,
+    input[type="reset"].mg-button--clear[disabled]:focus,
+    input[type="reset"].mg-button--clear[disabled]:hover,
+    input[type="submit"].mg-button--clear[disabled]:focus,
+    input[type="submit"].mg-button--clear[disabled]:hover {
       border-color: inherit; }
-  .button.button--small,
-  button.button--small,
-  input[type="button"].button--small,
-  input[type="reset"].button--small,
-  input[type="submit"].button--small {
+  .mg-button.mg-button--small,
+  button.mg-button--small,
+  input[type="button"].mg-button--small,
+  input[type="reset"].mg-button--small,
+  input[type="submit"].mg-button--small {
     font-size: 0.8rem;
     height: 2.8rem;
     line-height: 2.6rem;
     padding: 0 1.5rem; }
-  .button.button--large,
-  button.button--large,
-  input[type="button"].button--large,
-  input[type="reset"].button--large,
-  input[type="submit"].button--large {
+  .mg-button.mg-button--large,
+  button.mg-button--large,
+  input[type="button"].mg-button--large,
+  input[type="reset"].mg-button--large,
+  input[type="submit"].mg-button--large {
     font-size: 1.4rem;
     height: 4.5rem;
     line-height: 4.5rem;
     padding: 0 2rem; }
-  .button.button--transparent,
-  button.button--transparent,
-  input[type="button"].button--transparent,
-  input[type="reset"].button--transparent,
-  input[type="submit"].button--transparent {
+  .mg-button.mg-button--transparent,
+  button.mg-button--transparent,
+  input[type="button"].mg-button--transparent,
+  input[type="reset"].mg-button--transparent,
+  input[type="submit"].mg-button--transparent {
     background-color: transparent;
     border-color: transparent; }
 
@@ -485,6 +486,7 @@ hr {
   border-top: 0.1rem solid var(--mg-color-tertiary);
   margin: 3.0rem 0; }
 
+input[type="range"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
@@ -505,6 +507,7 @@ select {
   padding: 0.6rem 0.7rem;
   width: 100%;
   color: var(--mg-color-secondary); }
+  input[type="range"]:focus,
   input[type="email"]:focus,
   input[type="number"]:focus,
   input[type="password"]:focus,
@@ -575,7 +578,7 @@ ol {
 ul {
   list-style: circle inside; }
 
-.button,
+.mg-button,
 button,
 dd,
 dt,
@@ -677,7 +680,7 @@ input[type="range"] {
   background: var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
   display: inline-block;
-  height: 1.2rem;
+  height: 0.8rem;
   margin-bottom: 1.5rem;
   margin-right: 1.1em;
   opacity: 0.9;
@@ -773,17 +776,6 @@ input[type="range"] {
   transform: rotate(45deg);
   margin-left: 0.4rem;
   margin-right: 0.4rem; }
-
-.mg-burger {
-  background-color: var(--mg-color-primary);
-  width: 2rem;
-  height: 2rem; }
-
-.mg-burger > span {
-  color: var(--mg-color-secondary);
-  width: 2rem;
-  padding: .1rem;
-  border: 1rem solid var(--mg-color-secondary); }
 
 :root[data-theme='dark'] {
   --mg-color-initial: #302f2f;
@@ -1642,12 +1634,16 @@ input[type="range"] {
 .mg-container {
   margin-right: auto;
   margin-left: auto;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
   width: 100%;
   max-width: 1025px; }
 
 .mg-container-fluid {
   margin-right: auto;
   margin-left: auto;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
   width: 100%;
   max-width: width auto; }
 
@@ -1696,10 +1692,10 @@ input[type="range"] {
   transform: rotate(135deg);
   margin-top: -0.4rem; }
 
-.mg-dropdown--button.button--clear:after {
+.mg-dropdown--button.mg-button--clear:after {
   border-color: var(--mg-color-secondary); }
 
-.mg-dropdown--button.button--outline:after {
+.mg-dropdown--button.mg-button--outline:after {
   border-color: var(--mg-color-secondary); }
 
 .mg-dropdown--content {
@@ -2072,16 +2068,17 @@ input[type="range"] {
 .mg-group > button:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > select:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > textarea:not(:nth-child(1)):not(:nth-last-child(1)),
-.mg-group > .button:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-group > .mg-button:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > .mg-dropdown:not(:nth-child(1)):not(:nth-last-child(1)) > button {
   border-radius: 0; }
 
 .mg-group > .mg-select:nth-child(1) > select,
 .mg-group > input:nth-child(1),
 .mg-group > button:nth-child(1),
+.mg-group > .mg-button:nth-child(1),
 .mg-group > select:nth-child(1) .mg-group > textarea:nth-child(1),
 .mg-group > .mg-dropdown:nth-child(1) > button,
-.mg-group > .button:nth-child(1) {
+.mg-group > button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
@@ -2091,9 +2088,10 @@ input[type="range"] {
 .mg-group > select:last-child,
 .mg-group > input:last-child,
 .mg-group > button:last-child,
+.mg-group > .mg-button:last-child,
 .mg-group > textarea:last-child,
 .mg-group > .mg-dropdown:last-child > button,
-.mg-group > .button:last-child {
+.mg-group > .mh-button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left: 0;
@@ -2376,7 +2374,6 @@ input[type="range"] {
   padding: .35em .65em;
   font-size: .75em;
   font-weight: 700;
-  line-height: 1;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;

@@ -1,6 +1,6 @@
-import { Component } from 'solid-js';
+
 import styles from './Waves.module.css';
-import WavesImage from './waves.svg?component-solid';
+
 const Waves = () => {
 
 return  <svg xmlns="http://www.w3.org/2000/svg"  class={styles["waves"]}
