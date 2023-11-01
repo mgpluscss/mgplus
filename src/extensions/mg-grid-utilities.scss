@@ -16,6 +16,8 @@
 @mixin init-container($_gutter: $grid__gutter) {
   margin-right: auto;
   margin-left: auto;
+  padding-right: 0.8rem;
+  padding-left:  0.8rem; 
   width: 100%;
 }
 
