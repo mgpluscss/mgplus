@@ -1,7 +1,7 @@
 // Button
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.button,
+.mg-button,
 button,
 input[type="button"],
 input[type="reset"],
@@ -17,7 +17,7 @@ input[type="submit"] {
   height: 3.8rem;
   letter-spacing: 0.1rem;
   line-height: 3.8rem;
-  padding: 0 2rem;
+  padding: 0 2rem;  
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -44,7 +44,7 @@ input[type="submit"] {
     }
   }
 
-  &.button--outline {
+  &.mg-button--outline {
     background-color: transparent;
     color: $color-primary;
 
@@ -61,7 +61,7 @@ input[type="submit"] {
       }
     }
   }
-  &.button--link {
+  &.mg-button--link {
     box-shadow: none;
     background-color: transparent;
     color: $color-primary;
@@ -80,7 +80,7 @@ input[type="submit"] {
       }
     }
   }
-  &.button--clear {
+  &.mg-button--clear {
     background-color: transparent;
     color: $color-primary;
     border: none;
@@ -97,20 +97,20 @@ input[type="submit"] {
       }
     }
   }
-  &.button--small {
+  &.mg-button--small {
     font-size: 0.8rem;
     height: 2.8rem;
     line-height: 2.6rem;
     padding: 0 1.5rem;
   }
 
-  &.button--large {
+  &.mg-button--large {
     font-size: 1.4rem;
     height: 4.5rem;
     line-height: 4.5rem;
     padding: 0 2rem;
   }
-  &.button--transparent {
+  &.mg-button--transparent {
     background-color: transparent;
     border-color: transparent;
   }

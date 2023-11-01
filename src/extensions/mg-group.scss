@@ -10,16 +10,17 @@
 .mg-group > button:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > select:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > textarea:not(:nth-child(1)):not(:nth-last-child(1)),
-.mg-group > .button:not(:nth-child(1)):not(:nth-last-child(1)),
+.mg-group > .mg-button:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > .mg-dropdown:not(:nth-child(1)):not(:nth-last-child(1)) > button {
   border-radius: 0;
 }
 .mg-group > .mg-select:nth-child(1) > select,
 .mg-group > input:nth-child(1),
 .mg-group > button:nth-child(1),
+.mg-group > .mg-button:nth-child(1),
 .mg-group > select:nth-child(1) .mg-group > textarea:nth-child(1),
 .mg-group > .mg-dropdown:nth-child(1) > button,
-.mg-group > .button:nth-child(1) {
+.mg-group > button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
@@ -29,9 +30,10 @@
 .mg-group > select:last-child,
 .mg-group > input:last-child,
 .mg-group > button:last-child,
+.mg-group > .mg-button:last-child,
 .mg-group > textarea:last-child,
 .mg-group > .mg-dropdown:last-child > button,
-.mg-group > .button:last-child {
+.mg-group > .mh-button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-left: 0;
