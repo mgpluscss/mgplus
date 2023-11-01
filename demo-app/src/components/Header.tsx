@@ -1,4 +1,4 @@
-import Logo from "../logo.svg?component-solid";
+import Logo from "../assets/logo.svg?component-solid";
 import Waves from "./Waves";
 import styles from "./Header.module.css";
 import NavBar from "./NavBar";
@@ -18,11 +18,8 @@ const Header = () => {
       > 
       </a>
       <a href="https://github.com/medevod/mgplus">Github</a>
-      <h4>Extended version of Milligram</h4>
-      <h5 class="title">
-        Based on
-        <a href="https://github.com/milligram/milligram">Milligram</a>
-      </h5>
+      <h4>Extended version of Milligram</h4> 
+        <a href="https://github.com/milligram/milligram">Milligram</a> 
       <Waves></Waves>
     </header>
   );
