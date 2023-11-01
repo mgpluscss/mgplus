@@ -63,3 +63,16 @@
   margin-left: 0.4rem;
   margin-right: 0.4rem;
 }
+
+.mg-burger {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primary;
+  width: auto;
+  height: 2rem;
+}
+.mg-burger > span {
+  background-color: var(--mg-color-secondary);
+  width: 2rem;
+  padding: .1rem;
+} 

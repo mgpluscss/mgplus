@@ -7,7 +7,7 @@
   height: 20vh;
   pointer-events: none;
 }
-header {
+main {
     padding-top: 10rem;
     position: relative;
     text-align: center;

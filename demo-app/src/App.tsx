@@ -6,11 +6,23 @@ import Waves from './components/Waves';
 
 const App: Component = () => {
   return (
-    <div class={styles.App}>
-      <nav class='mg-navbar mg-fixed-top mg-bg-primary mg-w100 mg-theme--dark mg-control-shadow'>
-        <h2>test</h2>
+   <>
+        <header class="mg-fixed-top mg-w100 mg-bg-secondary ">
+        <nav class="mg-navbar  mg-control-shadow mg-row mg-x--between mg-container mg-pad-t1">
+        
+        <img class="mg-icon "></img>
+        <button > 
+          <div class="mg-burger">
+
+        
+            <span></span>
+            <span></span>
+            <span></span>   </div>
+        </button>       
       </nav>
-      <header class={styles.header}>
+      </header>
+
+      <main class={styles.header}>
         <Logo class={styles.logo} />
         <h1 class="mg-text-bolder">Mg+</h1>
         <h2> Micro css framework</h2>
@@ -23,9 +35,9 @@ const App: Component = () => {
           Learn Solid
         </a>
         <Waves></Waves>
-      </header>
+      </main>
    
-    </div>
+   </>
   );
 };
 

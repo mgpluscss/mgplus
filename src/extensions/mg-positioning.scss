@@ -12,6 +12,13 @@
   .mg-pad-r#{$key} {
     padding-right: $value;
   }
+  .mg-pad-t#{$key} {
+    padding-top: $value;
+  }
+  .mg-pad-b#{$key} {
+    padding-bottom: $value;
+  }
+
 
   .mg-space#{$key} {
     margin: $value;
@@ -24,6 +31,15 @@
   .mg-space-r#{$key} {
     margin-right: $value;
   }
+
+  .mg-space-t#{$key} {
+    margin-top: $value;
+  }
+
+  .mg-space-b#{$key} {
+    margin-bottom: $value;
+  }
+
 
 }
 

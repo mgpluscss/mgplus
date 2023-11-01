@@ -14,7 +14,8 @@ code {
     monospace;
 }
 :root {
-  --mg-color-primary: rgb(52, 35, 122);
+  --mg-color-primary: #425cdf;
+  --mg-color-secondary: #212d67; 
   --mg-control-radius: 1.5rem;
   --mg-input-radius: 1rem;
   --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
