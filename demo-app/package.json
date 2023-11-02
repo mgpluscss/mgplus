@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "solid-colorful": "^0.0.2",
-    "solid-js": "^1.7.6"
+    "solid-js": "^1.7.6",
+    "solidjs-use": "^2.3.0"
   }
 }

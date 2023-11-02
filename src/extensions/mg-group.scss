@@ -1,10 +1,8 @@
-.mg-group {
+ .mg-group {
   display: flex;
-}
-.mg-group > * {
-  flex: 0 0 1;
-  padding: 0;
-}
+  align-items: baseline;
+  flex-wrap: nowrap;
+ }
 .mg-group > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
 .mg-group > input:not(:nth-child(1)):not(:nth-last-child(1)),
 .mg-group > button:not(:nth-child(1)):not(:nth-last-child(1)),
@@ -24,7 +22,7 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 0;
-  padding-left: calc(var(--mg-control-radius) / 2);
+ 
 }
 .mg-group > .mg-select:last-child > select,
 .mg-group > select:last-child,
@@ -36,10 +34,8 @@
 .mg-group > .mh-button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border-left: 0;
-  padding-right: calc(var(--mg-control-radius) / 2);
-}
-
+  border-left: 0; 
+} 
 .mg-group .mg-group--outline {
   box-shadow: $control-shadow;
 }
