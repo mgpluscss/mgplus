@@ -42,6 +42,7 @@
   },
   "scripts": {    
     "start": "gulp start",
-    "build": "gulp build & cd ./demo-app & yarn build" 
+    "build": "gulp build" ,
+    "build-all": "gulp build & cd ./demo-app & yarn build" 
   }
 }

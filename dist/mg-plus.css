@@ -783,7 +783,7 @@ input[type="range"] {
   --mg-color-tertiary: #a7a7a7;
   --mg-color-quaternary: #817f7f;
   --mg-color-quinary: #4e4e4e;
-  color-scheme: dark light; }
+  color-scheme: dark; }
 
 @media (prefers-color-scheme: dark) {
   :root[data-theme='system'] {
@@ -794,14 +794,6 @@ input[type="range"] {
     --mg-color-quinary: #4e4e4e;
     color: var(--mg-color-secondary);
     color-scheme: dark light system; } }
-
-.mg-theme--light {
-  --mg-color-initial: $color-initial;
-  --mg-color-secondary: $color-secondary;
-  --mg-color-tertiary: $color-tertiary;
-  --mg-color-quaternary: $color-quaternary;
-  --mg-color-quinary: $color-quinary;
-  color: var(--mg-color-initial); }
 
 .mg-theme--dark {
   --mg-color-initial: #302f2f;
@@ -1664,9 +1656,10 @@ input[type="range"] {
   /*hide original SELECT element: */ }
 
 .mg-dropdown--button {
+  position: relative;
   width: 100%;
   margin-bottom: 0;
-  padding-right: 2em;
+  margin-right: 1.6rem;
   text-overflow: ellipsis; }
 
 .mg-dropdown--button:after {
@@ -1708,6 +1701,8 @@ input[type="range"] {
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: none;
+  opacity: 0;
+  visibility: hidden;
   position: absolute;
   background-color: var(--mg-color-initial);
   top: 100%;
@@ -1727,7 +1722,9 @@ input[type="range"] {
   left: 0; }
 
 .mg-dropdown.opened > .mg-dropdown--content {
-  display: block; }
+  display: block;
+  opacity: 1;
+  visibility: visible; }
 
 .mg-tabs > ul {
   display: flex;
@@ -2057,11 +2054,9 @@ input[type="range"] {
   float: left; }
 
 .mg-group {
-  display: flex; }
-
-.mg-group > * {
-  flex: 0 0 1;
-  padding: 0; }
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap; }
 
 .mg-group > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
 .mg-group > input:not(:nth-child(1)):not(:nth-last-child(1)),
@@ -2081,8 +2076,7 @@ input[type="range"] {
 .mg-group > button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  border-right: 0;
-  padding-left: calc(var(--mg-control-radius) / 2); }
+  border-right: 0; }
 
 .mg-group > .mg-select:last-child > select,
 .mg-group > select:last-child,
@@ -2094,8 +2088,7 @@ input[type="range"] {
 .mg-group > .mh-button:last-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  border-left: 0;
-  padding-right: calc(var(--mg-control-radius) / 2); }
+  border-left: 0; }
 
 .mg-group .mg-group--outline {
   box-shadow: var(--mg-control-shadow); }
