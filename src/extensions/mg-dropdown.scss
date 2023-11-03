@@ -64,22 +64,16 @@
   position: absolute;
   background-color: $color-initial;
   top: 100%;
-  z-index: 1;
+  z-index: 999;
   border-color: $color-quaternary;
   border-radius: $input-radius;
   max-height: 50vh;
+  max-width: 90vw;
   overflow-y: auto;
-}
+  overflow-x: hidden;
 
-.mg-dropdown--content.mg-dropdown--content-fit {
-  min-width: 100%;
-}
-.mg-dropdown--content.mg-dropdown--content-right {
-  right: 0;
-}
-.mg-dropdown--content.mg-dropdown--content-left {
-  left: 0;
-}
+} 
+ 
 .mg-dropdown.opened > .mg-dropdown--content {
   display: block;
   opacity: 1;
