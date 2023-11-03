@@ -1706,20 +1706,13 @@ input[type="range"] {
   position: absolute;
   background-color: var(--mg-color-initial);
   top: 100%;
-  z-index: 1;
+  z-index: 999;
   border-color: var(--mg-color-quaternary);
   border-radius: var(--mg-input-radius);
   max-height: 50vh;
-  overflow-y: auto; }
-
-.mg-dropdown--content.mg-dropdown--content-fit {
-  min-width: 100%; }
-
-.mg-dropdown--content.mg-dropdown--content-right {
-  right: 0; }
-
-.mg-dropdown--content.mg-dropdown--content-left {
-  left: 0; }
+  max-width: 90vw;
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 .mg-dropdown.opened > .mg-dropdown--content {
   display: block;
@@ -2034,6 +2027,8 @@ input[type="range"] {
   border-bottom: 0.3rem solid var(--mg-color-primary); }
 
 .mg-nav ul > li > a {
+  width: 100%;
+  cursor: pointer;
   text-decoration: none;
   color: var(--mg-color-secondary); }
 
@@ -2810,6 +2805,9 @@ input[type="range"] {
 
 .mg-left {
   float: left; }
+
+.mg-fit {
+  min-width: 100%; }
 
 .mg-fixed-top {
   position: fixed;

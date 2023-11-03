@@ -40,9 +40,10 @@
     "node-sass": "^9.0.0",
     "sass": "^1.55.0"
   },
-  "scripts": {    
+  "scripts": {      
     "start": "gulp start",
     "build": "gulp build" ,
+    "install-all" : "yarn install && cd ./demo-app && yarn install",  
     "build-all": "gulp build & cd ./demo-app & yarn build" 
   }
 }

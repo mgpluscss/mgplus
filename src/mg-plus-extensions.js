@@ -43,7 +43,7 @@
     fn(elem, c);
   }
 
-  var classie = {
+  const classie = {
     // full names
     hasClass: hasClass,
     addClass: addClass,

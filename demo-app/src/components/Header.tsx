@@ -17,9 +17,9 @@ const Header = () => {
         rel="noopener noreferrer"
       > 
       </a>
-      <a href="https://github.com/medevod/mgplus">Github</a>
-      <h4>Extended version of Milligram</h4> 
-        <a href="https://github.com/milligram/milligram">Milligram</a> 
+      <a href="https://github.com/medevod/mgplus" class="mg-text-xl mg-light mg-text-underline">Github</a>
+      <p>Extended version of <a href="https://github.com/milligram/milligram" class="mg-light mg-text-underline">Milligram</a></p> 
+       
       <Waves></Waves>
     </header>
   );

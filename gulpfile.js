@@ -24,8 +24,8 @@ gulp.task("minify-js", (done) => {
         ignoreFiles: [],
       })
     )
-    .pipe(gulp.dest("demo")) 
-    .pipe(gulp.dest("dist/"));
+    .pipe(gulp.dest("demo-app"))  
+    .pipe(gulp.dest("dist/")) 
   done();
 });
 gulp.task("start", () => {
@@ -59,9 +59,7 @@ gulp.task("sass-compile", gulp.series(["clean", "sass"]));
 gulp.task("minify", (done) => {
   gulp
     .src("dist/mg-plus.css")
-    .pipe(gulp.dest("demo"))
-    .pipe(gulp.dest("demo-app"))
-    .pipe(gulp.dest("demo-app/dist"))
+    .pipe(gulp.dest("demo-app")) 
     .pipe(
       cleanCSS(
         {
@@ -75,7 +73,7 @@ gulp.task("minify", (done) => {
       )
     )
     .pipe(gulpRename("mg-plus.min.css"))
-    .pipe(gulp.dest("dist")) 
+    .pipe(gulp.dest("dist"))  
     .pipe(browserSync.stream());
   done();
 });

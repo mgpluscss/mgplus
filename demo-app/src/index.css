@@ -45,9 +45,7 @@ header {
   background: url("./assets/gears.svg"); 
 }
 
-.mg-icon--loader { 
-  background: url("./assets/loader.svg"); 
-}
+ 
 .mg-icon--fr { 
   background: url("./assets/fr.svg"); 
 }
@@ -63,4 +61,25 @@ header {
   background: url("./assets/search.svg"); 
 }
 
+
+.grid-cel {
+  width: 100%;
+  background-color: var(--mg-color-primary);
+  color: var(--mg-color-light); 
+}
  
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;   
+  padding-top: 1rem;
+  padding-bottom: 1rem; 
+
+}
+.hamburger > span {
+  display: block; 
+  width: 2.5rem;
+  height: 0;  
+  border-bottom: 0.2rem solid;
+  border-radius: 3px;
+} 

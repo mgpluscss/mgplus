@@ -1,10 +1,24 @@
-import { Component } from "solid-js";
+import { Component, createEffect, createSignal } from "solid-js";
 
-const LoaderSection:Component = ()=>     <section id="loader">
+const LoaderSection:Component = ()=>
+{
+const [isLoading, setLoading] = createSignal(false);
+const [isLoaded, setLoaded] = createSignal(false);
+
+const load = () => {
+  setLoading(true);
+  setLoaded(false);
+  setTimeout(() => { 
+    setLoading(false);
+    setLoaded(true);
+  }, 3000); 
+}
+
+return <section id="loader">
 <h2>Loader</h2>
 <div class="mg-container" id="loader-example">
-  <div class="mg-loader">
-    <button id="loader-button">
+  <div class="mg-loader" classList={{"mg-loader--loading" : isLoading(), "mg-loader--loaded" : isLoaded()}}>
+    <button id="loader-button" onClick={load}>
       Load
       <span class="mg-icon mg-icon--loader mg-loader--status"></span>
     </button>
@@ -20,5 +34,5 @@ const LoaderSection:Component = ()=>     <section id="loader">
   <pre class="prettyprint" data-toggle="prettify" data-source="loader-example"></pre>
 </div>
 </section>
-
+}
 export default LoaderSection;

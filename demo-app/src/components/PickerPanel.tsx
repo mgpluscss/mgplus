@@ -1,29 +1,23 @@
-import { Show, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
+import MgDropDown from "./MgDropdown";
+import { HexColorPicker, HexColorInput } from "solid-colorful"
+ 
 
 const PickerPanel = () => 
-{
-const [isVisible, setVisibility] = createSignal(false);
+{ 
+  const [color, setColor] = createSignal("#aabbcc")
 
-const toogleVisibility = ()=>{
-    console.log("toogleVisibility",isVisible() );    
-    setVisibility(!isVisible());
-    
+function updateColor(color: string) {
+
+  setColor(color);
+  const root = document.documentElement;
+  root.style.setProperty("--mg-color-primary", color); 
 }
 
-return <div id="pickerPanel" class="mg-dropdown" classList={{'opened': isVisible()}}>
-<button title="menu" data-toggle="dropdown" class="mg-dropdown--button  mg-button--small" onClick={toogleVisibility}>
-<span class="mg-icon mg-icon--colors" /> 
-</button>
-  <div class="mg-dropdown--content mg-dropdown--content-left" >
-  <div class="mg-row">
-    <label class="mg-toggle">
-      Dark theme
-      <input type="checkbox" id="theme-switcher" />
-      <span class="checkmark"></span>
-    </label>
-  </div> 
-  <div id="picker"></div>
-</div> 
-</div>
+return  <MgDropDown orientation="left" icon="colors" title="set theme color" text="" size="small">
+    <div class="mg-row">
+    <HexColorPicker color={color()} onChange={updateColor} /> 
+  </div>  
+</MgDropDown>
 }
 export default PickerPanel;
