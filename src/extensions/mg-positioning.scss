@@ -19,7 +19,6 @@
     padding-bottom: $value;
   }
 
-
   .mg-space#{$key} {
     margin: $value;
   }
@@ -39,8 +38,7 @@
   .mg-space-b#{$key} {
     margin-bottom: $value;
   }
-
-
+ 
 }
 
 .mg-space-auto {
