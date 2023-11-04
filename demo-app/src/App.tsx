@@ -1,4 +1,4 @@
-import { createEffect, type Component } from "solid-js";
+import { createEffect, type Component, onMount } from "solid-js";
 import styles from "./App.module.css";
 import Header from "./components/Header";
 import CoreSection from "./sections/CoreSection";
@@ -22,14 +22,16 @@ import mgDropdown from './plugins/mgDropdown';
 import mgModal from "./plugins/mgModal";
 import mgNav from "./plugins/mgNav";
 import mgTabs from "./plugins/mgTabs";
+import launchPrettifyer from "./plugins/Prettifyer";
 
 const App: Component = () => {
 
-  createEffect(() => {
+  onMount(() => {
     mgDropdown();
     mgModal();
     mgNav();
-    mgTabs();    
+    mgTabs();
+    launchPrettifyer()    
 
   });
   return (

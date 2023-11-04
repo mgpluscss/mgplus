@@ -46,7 +46,7 @@ const TimelineSection:Component = ()=>  <section id="timeline">
     </ul>
   </div>
 </div>
-<div class="example">
+<div class="example"> 
   <pre class="prettyprint" data-toggle="prettify" data-source="timeline-example"></pre>
 </div>
 </section> 
