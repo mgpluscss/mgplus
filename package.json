@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "mgplus",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "Minimalist CSS framework",
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",
@@ -29,21 +29,24 @@
     "stylus"
   ],
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
     "browser-sync": "2.27.10",
     "cjs-loader": "^0.1.0",
     "del": "7.0.0",
     "gulp": "4.0.2",
     "gulp-clean-css": "4.3.0",
-    "gulp-minify": "3.1.0",
     "gulp-rename": "2.0.0",
     "gulp-sass": "^5.1.0",
     "node-sass": "^9.0.0",
     "sass": "^1.55.0"
   },
-  "scripts": {      
+  "scripts": {
     "start": "gulp start",
-    "build": "gulp build" ,
-    "install-all" : "yarn install && cd ./demo-app && yarn install",  
-    "build-all": "gulp build & cd ./demo-app & yarn build" 
-  }
+    "build": "gulp build",
+    "install-all": "yarn install && cd ./demo-app && yarn install",
+    "build-all": "gulp build & cd ./demo-app & yarn build",
+    "dev-demo": "cd ./demo-app && yarn dev"
+  },
+  "dependencies": {}
 }

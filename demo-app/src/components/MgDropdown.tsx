@@ -16,8 +16,13 @@ const toggleOpened = ()=>{
     
 } 
     
-return <div class="mg-dropdown" classList={{'opened': isOpened()}}>
-<button title={props.title} class="mg-dropdown--button" classList={{'mg-button--small': props.size=="small",'mg-button--large': props.size=="large" }}  onClick={toggleOpened}>
+return <div class="mg-dropdown" >
+<button 
+ data-toggle="mg-dropdown"
+ title={props.title}
+ class="mg-dropdown--button"
+ classList={{'mg-button--small': props.size=="small",'mg-button--large': props.size=="large" }} 
+  >
 <Show when={props.icon}><span class={`mg-icon mg-icon--${props.icon}`} /> </Show>
 {props.text}
 </button>

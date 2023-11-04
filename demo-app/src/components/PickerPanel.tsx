@@ -1,6 +1,5 @@
-import { createSignal } from "solid-js";
-import MgDropDown from "./MgDropdown";
-import { HexColorPicker, HexColorInput } from "solid-colorful"
+import { createSignal } from "solid-js"; 
+import { HexColorPicker } from "solid-colorful"
  
 
 const PickerPanel = () => 
@@ -14,10 +13,15 @@ function updateColor(color: string) {
   root.style.setProperty("--mg-color-primary", color); 
 }
 
-return  <MgDropDown orientation="left" icon="colors" title="set theme color" text="" size="small">
-    <div class="mg-row">
+return  <div class="mg-dropdown">
+  <button  data-toggle="dropdown" class="mg-dropdown--button mg-button--small">
+    <span class="mg-icon mg-icon--colors"></span>
+  </button>
+    <div class="mg-dropdown--content">
+      <div class="mg-row">
     <HexColorPicker color={color()} onChange={updateColor} /> 
+    </div>
   </div>  
-</MgDropDown>
+  </div>
 }
 export default PickerPanel;

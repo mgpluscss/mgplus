@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { createEffect, type Component } from "solid-js";
 import styles from "./App.module.css";
 import Header from "./components/Header";
 import CoreSection from "./sections/CoreSection";
@@ -17,8 +17,20 @@ import ModalSection from "./sections/ModalSection";
 import FormSection from "./sections/FormSection";
 import LoaderSection from "./sections/LoaderSection";
 import TimelineSection from "./sections/TimelineSection";
+import mgDropdown from './plugins/mgDropdown';
+import mgModal from "./plugins/mgModal";
+import mgNav from "./plugins/mgNav";
+import mgTabs from "./plugins/mgTabs";
 
 const App: Component = () => {
+
+  createEffect(() => {
+    mgDropdown();
+    mgModal();
+    mgNav();
+    mgTabs();    
+
+  });
   return (
     <>
       <Header />
@@ -69,3 +81,5 @@ const App: Component = () => {
 };
 
 export default App;
+ 
+
