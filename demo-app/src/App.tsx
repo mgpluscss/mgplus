@@ -17,6 +17,7 @@ import ModalSection from "./sections/ModalSection";
 import FormSection from "./sections/FormSection";
 import LoaderSection from "./sections/LoaderSection";
 import TimelineSection from "./sections/TimelineSection";
+
 import mgDropdown from './plugins/mgDropdown';
 import mgModal from "./plugins/mgModal";
 import mgNav from "./plugins/mgNav";
