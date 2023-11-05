@@ -52,5 +52,7 @@ function prettify(el: any) {
 }
 
 export default function launchPrettifyer() {
+  
   document.querySelectorAll("[data-toggle~=prettify]").forEach(prettify);
+  
 }

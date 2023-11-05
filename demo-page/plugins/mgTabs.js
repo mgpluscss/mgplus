@@ -1,8 +1,6 @@
-export default function mgTabs()
-{
- 
+(function (window) {
     document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
-    function setupTabs(tabs:any) {
+    function setupTabs(tabs) {
       let items = tabs.getElementsByClassName("mg-tabs--item");
   
       for (let j = 0; j < items.length; j++) {
@@ -27,7 +25,7 @@ export default function mgTabs()
         }
       }
   
-      tabs.addEventListener("click", function (e:any) {
+      tabs.addEventListener("click", function (e) {
         let selector = e.target;
         if (e.target.parentNode.classList.contains("mg-tabs--item")) {
           selector = e.target.parentNode;
@@ -66,6 +64,5 @@ export default function mgTabs()
           }
         }
       });
-    } 
-}
-  
+    }
+})(window);

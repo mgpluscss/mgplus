@@ -1,18 +1,17 @@
-export default function mgDropdown()
-{
-   var currentDropdown:any = null; 
+ function registergDropdown() {
+   let currentDropdown = null; 
    document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
-   function setupDropdown(dropdownToggle:any) {
+   function setupDropdown(dropdownToggle) {
      dropdownToggle.setAttribute("aria-haspopup", "true");
      dropdownToggle.setAttribute("aria-expanded", "false");
 
-     var dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
+     const dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
 
      dropdownContent.setAttribute("aria-hidden", "true");
 
      dropdownToggle.onclick = toggleDropdown;
 
-     function toggleDropdown(e:any) {
+     function toggleDropdown(e) {
        e.preventDefault();
        e.stopPropagation();
        if (dropdownToggle.getAttribute("aria-expanded") === "true") {
@@ -40,11 +39,9 @@ export default function mgDropdown()
        currentDropdown = false;
      }
    }  
-
    
-    //register global handlers
     window.onclick = function (event) {
-      const element:any = event.target
+      const element = event.target
     
        if (!element.classList) return;
        if (element.classList.contains("mg-dropdown")) return;
@@ -52,5 +49,8 @@ export default function mgDropdown()
        if (element.classList.contains("mg-dropdown--content")) return;
        closeCurrent.call(undefined);  
      };
-   
+ 
 }
+
+export default registergDropdown;
+

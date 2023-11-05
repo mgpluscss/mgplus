@@ -1,8 +1,7 @@
-export default function mgNav()
+(function (window) {
 {
- 
     document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
-    function setupNav(nav:any) {
+    function setupNav(nav) {
       const items = nav.getElementsByTagName("li");
     
       for (let j = 0; j < items.length; j++) {
@@ -17,7 +16,7 @@ export default function mgNav()
         }
       }
     
-      nav.addEventListener("click", function (e:any) {
+      nav.addEventListener("click", function (e) {
         let selector = e.target;
         console.log(e.target.parentNode);
         if (e.target.parentNode.tagName == "LI") {
@@ -36,5 +35,7 @@ export default function mgNav()
           selector.setAttribute("data-active", "true");
         }
       });
-    } 
+    }
   }
+}
+  )(window);

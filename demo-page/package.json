@@ -1,0 +1,11 @@
+{
+  "name": "mgplus-demo-page",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"}
+}
