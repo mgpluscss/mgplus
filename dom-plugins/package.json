@@ -1,9 +1,10 @@
 {
-  "name": "dom-plugins",
+  "name": "mgplus-dom",
   "version": "1.0.0",
-  "main": "../dist/mgplus-dom.js",
+     
   "license": "MIT",
   "source": "src/index.js",  
+  "main": "../dist/mgplus-dom.js",  
   "devDependencies": {
     "@parcel/transformer-sass": "2.10.2",
     "parcel": "^2.10.2"
