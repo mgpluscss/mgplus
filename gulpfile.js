@@ -42,7 +42,7 @@ gulp.task("start", () => {
     watch: true,
     logLevel: "debug",
     server: {
-      baseDir: "./demo-page",
+      baseDir: "./",
     },
     injectChanges: true,
   });

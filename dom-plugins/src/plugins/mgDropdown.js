@@ -1,11 +1,11 @@
- function mgDropdown() {
-   var currentDropdown = null; 
+ export default function registergDropdowns() {
+   let currentDropdown = null; 
    document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
    function setupDropdown(dropdownToggle) {
      dropdownToggle.setAttribute("aria-haspopup", "true");
      dropdownToggle.setAttribute("aria-expanded", "false");
 
-     var dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
+     const dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
 
      dropdownContent.setAttribute("aria-hidden", "true");
 
@@ -39,9 +39,7 @@
        currentDropdown = false;
      }
    }  
-   function init(){
-   document.addEventListener("DOMContentLoaded", function () {
-    //register global handlers
+   
     window.onclick = function (event) {
       const element = event.target
     
@@ -51,8 +49,7 @@
        if (element.classList.contains("mg-dropdown--content")) return;
        closeCurrent.call(undefined);  
      };
-  });}
+ 
 }
-
-export {mgDropdown}
+ 
 

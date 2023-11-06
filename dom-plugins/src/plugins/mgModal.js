@@ -1,10 +1,11 @@
-(function (window) {
-{
+export default function registerModals() {
     // Select all elements with data-toggle attribute containing "modal" and setup modal for each
     document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
   
     // Function to setup modal for an element
     function setupModal(el) {
+
+      console.log("setting up modal")
       // Function to handle modal removal
       function removeModalHandler() {
         modal.classList.remove("mg-show");      
@@ -25,5 +26,6 @@
         ev.stopPropagation();
         removeModalHandler();
       });
-    }
-} })(window);
+    } 
+  }
+ 

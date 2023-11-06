@@ -1,4 +1,4 @@
-(function (window) {
+export default function registerTabs(){
     document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
     function setupTabs(tabs) {
       let items = tabs.getElementsByClassName("mg-tabs--item");
@@ -64,5 +64,5 @@
           }
         }
       });
-    }
-})(window);
+    } 
+  }
