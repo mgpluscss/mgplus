@@ -78,7 +78,7 @@ function registerDemoFeatures(){
   function prettify(el) {
     function indentHtml(el) {
 
-      return format(el, 0).innerHTML;
+      return format(el, 1).innerHTML;
     }
     
     function format(node, level) {
@@ -90,13 +90,13 @@ function registerDemoFeatures(){
     
       for (let i = 0; i < node.children.length; i++) {
     
-        textNode = document.createTextNode('\n' + indentBefore);
+        textNode = document.createTextNode('' + indentBefore);
         node.insertBefore(textNode, node.children[i]);
     
         format(node.children[i], level);
     
         if (node.lastElementChild == node.children[i]) {
-          textNode = document.createTextNode('\n' + indentAfter);
+          textNode = document.createTextNode('' + indentAfter);
           node.appendChild(textNode);
         }
       }
@@ -106,7 +106,8 @@ function registerDemoFeatures(){
   
     function htmlEscape(s) {
       return s
-        .replace(/\t/g, " ")
+        .replace(/\n\n/g, "")
+        .replace(/\t/g, "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
@@ -116,6 +117,7 @@ function registerDemoFeatures(){
    if (elSource)
    {
     // this page's own source code
+    indentHtml(elSource);
     var quineHtml = htmlEscape(elSource.outerHTML);
 
     // Highlight the operative parts:
@@ -125,8 +127,9 @@ function registerDemoFeatures(){
     );
     // insert into PRE
     el.innerHTML = quineHtml;
+    
   }
  }
   document.querySelectorAll("[data-toggle~=prettify]").forEach(prettify);
-
+  prettyPrint(); 
 }
