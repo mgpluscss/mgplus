@@ -1,5 +1,4 @@
-(function (window) {
-{
+export default function registerNavs(){
     document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
     function setupNav(nav) {
       const items = nav.getElementsByTagName("li");
@@ -37,5 +36,3 @@
       });
     }
   }
-}
-  )(window);

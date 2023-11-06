@@ -1,4 +1,4 @@
- function registergDropdown() {
+ export default function registergDropdowns() {
    let currentDropdown = null; 
    document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
    function setupDropdown(dropdownToggle) {
@@ -51,6 +51,5 @@
      };
  
 }
-
-export default registergDropdown;
+ 
 

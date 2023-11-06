@@ -73,4 +73,12 @@
     border-bottom: 0.2rem solid;
     border-radius: 3px;
   } 
-  
+  /*override*/
+code.prettyprint,
+pre.prettyprint {
+  width: auto !important;
+  white-space: pre !important;
+  font-size: smaller;
+  background-color: #081e40 !important;
+  border-radius: 0 !important;
+}
