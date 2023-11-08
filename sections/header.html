@@ -1,45 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="medevod" />
-  <meta name="description"
-    content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
-  <title>Milligram Plus | A micro CSS framework.</title>
-
-  <link rel="icon" href="/images/logo.svg" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-
-  <link rel="stylesheet" href="dist/mg-plus.css" />
-  <link rel="stylesheet" href="index.css" /> 
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
-
-  <link rel="import" href="sections/core-section.html" >
-  <link rel="import" href="sections/grid-section.html">  
-  <link rel="import" href="sections/dropdown-section.html" >
-  <link rel="import" href="sections/radio-section.html">
-  <link rel="import" href="sections/check-section.html">
-  <link rel="import" href="sections/toggle-section.html"> 
-  <link rel="import" href="sections/select-section.html">  
-  <link rel="import" href="sections/group-section.html">
-  <link rel="import" href="sections/form-section.html">
-  <link rel="import" href="sections/alert-section.html">  
-  <link rel="import" href="sections/badge-section.html">  
-  <link rel="import" href="sections/loader-section.html">
-  <link rel="import" href="sections/modal-section.html">
-  <link rel="import" href="sections/nav-section.html">
-  <link rel="import" href="sections/tab-section.html">
-  <link rel="import" href="sections/timeline-section.html">
-  
-</head>
-
-<body> 
-  <header>
-    <nav class="mg-fixed-top mg-w100">
-      <div class="mg-container mg-row mg-x--middle mg-x--between mg-pad-t1">
-        <div class="mg-group">
+<header>
+    <nav id="nav" class="mg-navbar mg-fixed-top mg-w100">
+      <div class="mg-container mg-row mg-x--between mg-pad-t1">
+        <span class="mg-group">
           <button title="theme-switcher" class="mg-button mg-button--small" id="theme-switcher">
             <span class="mg-icon mg-icon--darkmode"></span>
           </button>
@@ -53,9 +15,9 @@
               </div>
             </div>  
             </div>
-        </div> 
+        </span> 
         <div class="mg-dropdown mg-right">
-          <button title="menu" data-toggle="dropdown" class="mg-dropdown--button hamburger">
+          <button title="dropdown" data-toggle="dropdown" class="mg-dropdown--button hamburger">
             <span></span>
             <span></span>
             <span></span> 
@@ -83,9 +45,12 @@
               </li>
               <li>
                 <a href="#codes">Codes</a>
-              </li> 
+              </li>
               <li>
-                <a href="#nav">Nav (Menu)</a>
+                <a href="#range">Range</a>
+              </li>
+              <li>
+                <a href="#nav">Nav</a>
               </li>
               <li>
                 <a href="#nav-inline">Nav inline</a>
@@ -140,7 +105,7 @@
         </div>
       </div>
     </nav>
-    <img alt="logo" class="logo-animation" src="images/logo.svg" height="120" />
+    <img alt="logo" class="logo" src="images/logo.svg" height="120" />
     <h1 class="mg-text-bolder">Mg+</h1>
     <h2> Micro css library</h2>
     <a
@@ -154,33 +119,17 @@
     <p>Extended version of <a href="https://github.com/milligram/milligram" class="mg-light mg-text-underline">Milligram</a></p> 
      
     <!--Waves-->
-    <svg xmlns="http://www.w3.org/2000/svg"  class="waves"
+    <svg xmlns="http://www.w3.org/2000/svg"  class=""
     viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
     <defs>
       <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
     </defs>
-    <g class="animated-waves">
+    <g class="">
       <use href="#gentle-wave" x="48" y="0" />
       <use href="#gentle-wave" x="48" y="3" />
       <use href="#gentle-wave" x="48" y="5" />
       <use href="#gentle-wave" x="48" y="7" />
     </g>
     </svg>
+</header>
  
- </header>
- <main class="mg-container">
-  </main>
-  <footer class="mg-bg-secondary mg-h10">
-    <div class="mg-center-block">
-      <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">LICENSE</a>
-      |
-      <a href="https://github.com/medevod/mgplus">Github</a>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <script src="/dist/mgplus-dom.js?autorun=false"></script>
-  <script src="index.js"></script>  
-  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sunburst"></script>
-</body>
- 
-</html>

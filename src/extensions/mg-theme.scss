@@ -17,9 +17,9 @@
 
  :root[data-theme='dark'] {
    @include dark-colors;
-   color-scheme: dark light;
+   color-scheme: dark;
  }
-
+  
  @media (prefers-color-scheme: dark) {
 
    :root[data-theme='system'] {
@@ -28,12 +28,7 @@
      color-scheme: dark light system;
    }
  }
-
- .mg-theme--light {
-   @include light-colors;
-   color: var(--mg-color-initial);
- }
-
+ 
  .mg-theme--dark {
    @include dark-colors;
    color: var(--mg-color-secondary);

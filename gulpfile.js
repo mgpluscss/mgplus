@@ -4,36 +4,18 @@ import nodeSass from "node-sass";
 import { deleteAsync } from "del";
 import gulpRename from "gulp-rename";
 import cleanCSS from "gulp-clean-css";
-import browserSync from "browser-sync";
-import minify from "gulp-minify";
-
+import browserSync from "browser-sync";  
+ 
 const sass = gulpSass(nodeSass);
 
-browserSync.create();
-
-gulp.task("minify-js", (done) => {
-  gulp
-    .src("src/**/*.js")
-    .pipe(
-      minify({
-        ext: {
-          src: ".js",
-          min: ".min.js",
-        },
-        exclude: [],
-        ignoreFiles: [],
-      })
-    )
-    .pipe(gulp.dest("demo"))
-    .pipe(gulp.dest("dist/"));
-  done();
-});
+browserSync.create(); 
+  
 gulp.task("start", () => {
   browserSync.init({
     watch: true,
     logLevel: "debug",
     server: {
-      baseDir: "./demo",
+      baseDir: "./",
     },
     injectChanges: true,
   });
@@ -51,15 +33,14 @@ gulp.task("sass", () => {
 });
 
 gulp.task("clean", () => {
-  return deleteAsync(["dist/*.css", "dist/*.js"]);
+  return deleteAsync(["dist/*.css"]);
 });
 
 gulp.task("sass-compile", gulp.series(["clean", "sass"]));
 
-gulp.task("minify", (done) => {
+gulp.task("minify-css", (done) => {
   gulp
-    .src("dist/mg-plus.css")
-    .pipe(gulp.dest("demo"))
+    .src("dist/mg-plus.css")    
     .pipe(
       cleanCSS(
         {
@@ -73,14 +54,14 @@ gulp.task("minify", (done) => {
       )
     )
     .pipe(gulpRename("mg-plus.min.css"))
-    .pipe(gulp.dest("dist")) 
+    .pipe(gulp.dest("dist"))  
     .pipe(browserSync.stream());
   done();
 });
 
 gulp.task(
   "build",
-  gulp.series(["sass-compile", "minify", "minify-js"]),
+  gulp.series(["sass-compile", "minify-css"]),
   (done) => {
     done();
   }

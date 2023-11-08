@@ -12,6 +12,12 @@
   .mg-pad-r#{$key} {
     padding-right: $value;
   }
+  .mg-pad-t#{$key} {
+    padding-top: $value;
+  }
+  .mg-pad-b#{$key} {
+    padding-bottom: $value;
+  }
 
   .mg-space#{$key} {
     margin: $value;
@@ -25,6 +31,14 @@
     margin-right: $value;
   }
 
+  .mg-space-t#{$key} {
+    margin-top: $value;
+  }
+
+  .mg-space-b#{$key} {
+    margin-bottom: $value;
+  }
+ 
 }
 
 .mg-space-auto {
@@ -37,6 +51,9 @@
 
 .mg-left {
   float: left;
+}
+.mg-fit {
+  min-width: 100%;
 }
 
 .mg-fixed-top {

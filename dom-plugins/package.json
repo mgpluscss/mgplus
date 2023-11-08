@@ -1,0 +1,16 @@
+{
+  "name": "mgplus-dom",
+  "version": "1.0.0",
+     
+  "license": "MIT",
+  "source": "src/index.js",  
+  "main": "../dist/mgplus-dom.js",  
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.10.2",
+    "parcel": "^2.10.2"
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "parcel build"
+  }
+}

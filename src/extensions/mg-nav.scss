@@ -24,7 +24,9 @@
   border-bottom: 0.3rem solid $color-primary;
 }
 
-.mg-nav ul > li > a {
+.mg-nav ul > li > a { 
+  width: 100%;  
+  cursor: pointer;
   text-decoration: none;
   color: $color-secondary;
 }
@@ -44,5 +46,5 @@
   flex-wrap: nowrap;
 }
 .mg-nav--inline ul > li:not(.mg-right) {
-  float: left;
+  float: left; 
 }
