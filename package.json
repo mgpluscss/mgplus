@@ -35,9 +35,7 @@
     "cjs-loader": "^0.1.0",
     "del": "7.0.0",
     "gulp": "4.0.2",
-    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "4.3.0",
-    "gulp-minify": "^3.1.0",
     "gulp-rename": "2.0.0",
     "gulp-sass": "^5.1.0",
     "node-sass": "^9.0.0",
@@ -46,8 +44,8 @@
   "scripts": {
     "start": "gulp start",
     "build": "gulp build",
-    "install-all": "yarn install && cd ./demo-app && yarn install",
-    "build-all": "gulp build & cd ./demo-app & yarn build",
+    "install-all": "yarn install && cd ./dom-plugins && yarn install",
+    "build-all": "gulp build & cd ./dom-plugins & yarn build",
     "dev-demo": "cd ./demo-app && yarn dev"
   },
   "dependencies": {}

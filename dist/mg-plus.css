@@ -442,8 +442,8 @@ input[type="submit"] {
   input[type="button"].mg-button--small,
   input[type="reset"].mg-button--small,
   input[type="submit"].mg-button--small {
-    font-size: 0.8rem;
-    height: 2.8rem;
+    font-size: 75%;
+    height: 3rem;
     line-height: 2.6rem;
     padding: 0 1.5rem; }
   .mg-button.mg-button--large,
@@ -730,7 +730,8 @@ input[type="range"] {
   display: inline-flex;
   background-repeat: no-repeat;
   background-size: contain;
-  align-items: center; }
+  align-items: center;
+  background-position: center; }
 
 .mg-close {
   cursor: pointer;
@@ -2050,8 +2051,8 @@ input[type="range"] {
 
 .mg-group {
   display: inline-flex;
-  align-items: baseline;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  align-items: baseline; }
 
 .mg-group > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
 .mg-group > input:not(:nth-child(1)):not(:nth-last-child(1)),

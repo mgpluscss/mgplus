@@ -50,7 +50,6 @@ function $e2ea968a57da8a86$export$2e2bcd8739ae039() {
     document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
     // Function to setup modal for an element
     function setupModal(el) {
-        console.log("setting up modal");
         // Function to handle modal removal
         function removeModalHandler() {
             modal.classList.remove("mg-show");
@@ -154,25 +153,23 @@ function $a6a67ad7ed0be81b$export$2e2bcd8739ae039() {
 
 
 (function(window1) {
-    function registerDomPlugins() {
+    function registerDomPlugins(autorun) {
         (0, $2a551a86451a9d86$export$2e2bcd8739ae039)();
         (0, $e2ea968a57da8a86$export$2e2bcd8739ae039)();
         (0, $e49cd42f69d2521f$export$2e2bcd8739ae039)();
         (0, $a6a67ad7ed0be81b$export$2e2bcd8739ae039)();
+        console.log(`mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`);
     }
-    // extracts the params from the currently running (external) script 
+    // extracts the params from the currently running (external) script
     function getScriptUrl() {
         const scripts = document.getElementsByTagName("script");
         for(let i = 0; i < scripts.length; i++){
             const scriptUrl = scripts[i] && scripts[i].src;
-            if (scriptUrl.indexOf("mgplus-dom.js") > 0) {
-                console.log(scripts[i]);
-                return scriptUrl;
-            } else console.log(scriptUrl);
+            if (scriptUrl.indexOf("mgplus-dom.js") > 0) return scriptUrl;
         }
         return null;
     }
-    // gets the Query Params of a given query string 
+    // gets the Query Params of a given query string
     function getQueryParam(name, query) {
         name = name.replace(/[[]/, "\\[").replace(/[]]/, "\\]");
         var regexS = "[\\?&]" + name + "=([^&#]*)";
@@ -186,7 +183,7 @@ function $a6a67ad7ed0be81b$export$2e2bcd8739ae039() {
     };
     window1.addEventListener("DOMContentLoaded", ()=>{
         const autorun = getQueryParam("autorun", getScriptUrl());
-        if (autorun === true) registerDomPlugins();
+        if (autorun === "true") registerDomPlugins(true);
     });
 })(window);
 

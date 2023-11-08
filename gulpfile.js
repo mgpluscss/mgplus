@@ -5,38 +5,11 @@ import { deleteAsync } from "del";
 import gulpRename from "gulp-rename";
 import cleanCSS from "gulp-clean-css";
 import browserSync from "browser-sync";  
-import minify from "gulp-minify";
-import  babel from "gulp-babel";
+ 
 const sass = gulpSass(nodeSass);
 
 browserSync.create(); 
-
-gulp.task('build-js', () =>
-	gulp.src('src/plugins/*.js')
-		.pipe(babel({
-			presets: ['@babel/preset-env']
-		}))
-		.pipe(gulp.dest('dist'))
-    .pipe(gulp.dest('demo-page/plugins'))
-);
-
-gulp.task("minify-js", (done) => {
-  gulp
-    .src("src/plugins/*.js")
-    .pipe(
-      minify({
-        ext: {
-          src: ".js",
-          min: ".min.js",
-        },
-        exclude: [],
-        ignoreFiles: [],
-      })
-    )
-    .pipe(gulp.dest("dist/"));
-  done();
-});
-
+  
 gulp.task("start", () => {
   browserSync.init({
     watch: true,
@@ -67,8 +40,7 @@ gulp.task("sass-compile", gulp.series(["clean", "sass"]));
 
 gulp.task("minify-css", (done) => {
   gulp
-    .src("dist/mg-plus.css")
-    .pipe(gulp.dest("demo-app")) 
+    .src("dist/mg-plus.css")    
     .pipe(
       cleanCSS(
         {

@@ -3,9 +3,8 @@ export default function registerModals() {
     document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
   
     // Function to setup modal for an element
-    function setupModal(el) {
-
-      console.log("setting up modal")
+    function setupModal(el) { 
+     
       // Function to handle modal removal
       function removeModalHandler() {
         modal.classList.remove("mg-show");      

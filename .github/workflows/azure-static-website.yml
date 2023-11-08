@@ -41,7 +41,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: "build demo app"
         run: |
-          cd demo-page && npm install 
+          cd dom-plugins && npm install 
           npm run build --if-present
           npm run test --if-present  
       - name: azure login
@@ -56,7 +56,7 @@ jobs:
         env: 
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"
-         DEMO_SOURCE_DIR : demo-page/dist
+         DEMO_SOURCE_DIR : src
          DEMO_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/dist"
@@ -102,7 +102,7 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          ACCOUNT_NAME: stevodocs
-         DEMO_SOURCE_DIR : demo-page/dist
+         DEMO_SOURCE_DIR : src
          DEMO_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/dist"

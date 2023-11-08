@@ -17,14 +17,16 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
 
   <link rel="import" href="sections/core-section.html" >
+  <link rel="import" href="sections/grid-section.html">  
   <link rel="import" href="sections/dropdown-section.html" >
   <link rel="import" href="sections/radio-section.html">
-  <link rel="import" href="sections/toggle-section.html">
-  <link rel="import" href="sections/range-section.html">
+  <link rel="import" href="sections/check-section.html">
+  <link rel="import" href="sections/toggle-section.html"> 
   <link rel="import" href="sections/select-section.html">  
   <link rel="import" href="sections/group-section.html">
   <link rel="import" href="sections/form-section.html">
-  <link rel="import" href="sections/grid-section.html">  
+  <link rel="import" href="sections/alert-section.html">  
+  <link rel="import" href="sections/badge-section.html">  
   <link rel="import" href="sections/loader-section.html">
   <link rel="import" href="sections/modal-section.html">
   <link rel="import" href="sections/nav-section.html">
@@ -36,8 +38,8 @@
 <body>
  <header>
   <header>
-    <nav class="mg-navbar mg-fixed-top mg-w100">
-      <div class="mg-container mg-row mg-x--between mg-pad-t1">
+    <nav class="mg-fixed-top mg-w100">
+      <div class="mg-container mg-row mg-x--middle mg-x--between mg-pad-t1">
         <div class="mg-group">
           <button class="mg-button mg-button--small" id="theme-switcher">
             <span class="mg-icon mg-icon--darkmode"></span>
@@ -82,12 +84,9 @@
               </li>
               <li>
                 <a href="#codes">Codes</a>
-              </li>
+              </li> 
               <li>
-                <a href="#range">Range</a>
-              </li>
-              <li>
-                <a href="#nav">Nav</a>
+                <a href="#nav">Nav (Menu)</a>
               </li>
               <li>
                 <a href="#nav-inline">Nav inline</a>
@@ -180,7 +179,7 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <script src="dist/mgplus-dom.js?autorun=true"></script>
+  <script src="/dist/mgplus-dom.js?autorun=false"></script>
   <script src="index.js"></script>  
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sunburst"></script>
 </body>

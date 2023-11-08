@@ -23,29 +23,29 @@
   }
   
   .mg-icon--darkmode {  
-    background: url("images/darkmode.svg"); 
+    background-image: url("images/darkmode.svg"); 
   }
    
   
   .mg-icon--colors { 
-    background: url("images/colors.svg"); 
+    background-image: url("images/colors.svg"); 
   }
   
   .mg-icon--gears { 
-    background: url("images/gears.svg"); 
+    background-image: url("images/gears.svg"); 
   }
   
    
   .mg-icon--fr { 
-    background: url("images/fr.svg"); 
+    background-image: url("images/fr.svg"); 
   }
   
   .mg-icon--sp { 
-    background: url("images/sp.svg"); 
+    background-image: url("images/sp.svg"); 
   }
   
   .mg-icon--de { 
-    background: url("images/de.svg"); 
+    background-image: url("images/de.svg"); 
   }
   .mg-icon--search { 
     background: url("images/search.svg"); 
@@ -56,6 +56,8 @@
     width: 100%;
     background-color: var(--mg-color-primary);
     color: var(--mg-color-light); 
+    margin: 4px;
+    padding: 1rem;
   }
    
   .hamburger {
