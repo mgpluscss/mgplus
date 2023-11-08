@@ -18,13 +18,6 @@ async function loadDemoSections() {
   }
 }
 
-function registerMgPlugins() {
-  registerDropdown();
-  registerModals();
-  registerNavs();
-  registerTabs();
-}
-
 function registerDemoFeatures() {
   const theme = document.querySelector(":root");
 
