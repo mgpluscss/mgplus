@@ -57,7 +57,7 @@
     background-color: var(--mg-color-primary);
     color: var(--mg-color-light); 
     margin: 4px;
-    padding: 1rem;
+    padding: 4px;
   }
    
   .hamburger {
