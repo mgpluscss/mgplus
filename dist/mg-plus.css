@@ -3007,7 +3007,7 @@ input[type="range"] {
   visibility: visible; }
 
 .mg-clearfix {
-  *zoom: 1; }
+  zoom: 1; }
 
 .mg-clearfix:after,
 .mg-clearfix:before {

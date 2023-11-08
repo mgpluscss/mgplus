@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="medevod" />
   <meta name="description"
     content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
@@ -35,17 +35,16 @@
   
 </head>
 
-<body>
- <header>
+<body> 
   <header>
     <nav class="mg-fixed-top mg-w100">
       <div class="mg-container mg-row mg-x--middle mg-x--between mg-pad-t1">
         <div class="mg-group">
-          <button class="mg-button mg-button--small" id="theme-switcher">
+          <button title="theme-switcher" class="mg-button mg-button--small" id="theme-switcher">
             <span class="mg-icon mg-icon--darkmode"></span>
           </button>
           <div class="mg-dropdown">
-            <button  data-toggle="dropdown" class="mg-dropdown--button mg-button--small">
+            <button title="color-picker"  data-toggle="dropdown" class="mg-dropdown--button mg-button--small">
               <span class="mg-icon mg-icon--colors"></span>
             </button>
               <div class="mg-dropdown--content">
@@ -56,7 +55,7 @@
             </div>
         </div> 
         <div class="mg-dropdown mg-right">
-          <button data-toggle="dropdown" class="mg-dropdown--button hamburger">
+          <button title="menu" data-toggle="dropdown" class="mg-dropdown--button hamburger">
             <span></span>
             <span></span>
             <span></span> 
@@ -167,11 +166,11 @@
       <use href="#gentle-wave" x="48" y="7" />
     </g>
     </svg>
-</header>
+ 
  </header>
  <main class="mg-container">
   </main>
-  <footer>
+  <footer class="mg-bg-secondary mg-h10">
     <div class="mg-center-block">
       <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">LICENSE</a>
       |
