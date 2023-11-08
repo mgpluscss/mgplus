@@ -1,7 +1,7 @@
  .mg-group {
-  display: inline-flex;
-  align-items: baseline;
-  flex-wrap: nowrap;
+  display: inline-flex; 
+  flex-wrap: nowrap;  
+  align-items: baseline; 
  }
 .mg-group > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
 .mg-group > input:not(:nth-child(1)):not(:nth-last-child(1)),
