@@ -14,13 +14,14 @@ async function loadDemoSections() {
     const main = document.querySelector("main");
     const response = await fetch(link.href);
     const content = await response.text();
-    const sectionContainer = document.createElement("div");
-    sectionContainer.innerHTML = content;
-    main.appendChild(sectionContainer);
+    const section = document.createElement("section");
+    section.id = link.href.split("/").pop().split(".")[0];
+    section.innerHTML = content;
+    main.appendChild(section);
 
     const navLink = document.createElement("li");
-    const navLinkTitle = sectionContainer.querySelector("h2");
-    const section = sectionContainer.querySelector("section");
+    const navLinkTitle = section.querySelector("h2");
+    
     navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
     navLinks.appendChild(navLink);
   }
