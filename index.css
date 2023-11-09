@@ -1,11 +1,17 @@
 :root {
     --mg-color-primary: #475dca;
     --mg-color-secondary: #34237a; 
-    --mg-control-radius: 1.5rem;
+    --mg-control-radius: 1rem;
     --mg-input-radius: 1rem;
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
   }
-  
+  html {
+    scroll-behavior: smooth;
+  }
+  h2 {
+
+    padding-top: 10rem;
+  }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
