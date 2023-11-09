@@ -7,14 +7,22 @@
 
 async function loadDemoSections() {
   const imports = document.querySelectorAll("link[rel='import']");
+  const navLinks = document.querySelector("#nav_links");
+
   for (let i = 0; i < imports.length; i++) {
     const link = imports[i];
     const main = document.querySelector("main");
     const response = await fetch(link.href);
     const content = await response.text();
-    const section = document.createElement("div");
-    section.innerHTML = content;
-    main.appendChild(section);
+    const sectionContainer = document.createElement("div");
+    sectionContainer.innerHTML = content;
+    main.appendChild(sectionContainer);
+
+    const navLink = document.createElement("li");
+    const navLinkTitle = sectionContainer.querySelector("h2");
+    const section = sectionContainer.querySelector("section");
+    navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
+    navLinks.appendChild(navLink);
   }
 }
 
