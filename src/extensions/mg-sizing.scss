@@ -1,29 +1,7 @@
+
+//mg-w[0-100] { width: [0-100]% }
 @each $key, $value in $sizing-map {
-
-    .mg-min-#{$key}vh {
-        min-height: #{$key}vh;
-    }
-
-    .mg-max-#{$key}vh {
-        min-height: #{$key}vh;
-    }
-
-    .mg-#{$key}vh {
-        height: #{$key}vh;
-    }
-
-    .mg-#{$key}vw {
-        width: #{$key}vw;
-    }
-
-    .mg-min-#{$key}vw {
-        min-width: #{$key}vw;
-    }
-
-    .mg-max-#{$key}vw {
-        max-width: #{$key}vw;
-    }
-
+ 
     .mg-w#{$key} {
         width: #{$value};
     }
@@ -46,6 +24,32 @@
 
     .mg-max-h#{$key} {
         max-height: #{$value};
+    } 
+} 
+//mg-w[0-100]vh { width: [0-100]vh }
+@each $key, $value in $sizing-map {
+ 
+    .mg-w#{$key}vh {
+        width: #{$key}vh;
     }
 
-}
+    .mg-h#{$key}vh {
+        height: #{$key}vh;
+    }
+
+    .mg-min-w#{$key}vh {
+        min-width: #{$key}vh;
+    }
+
+    .mg-min-h#{$key}vh {
+        min-height: #{$key}vh;
+    }
+
+    .mg-max-w#{$key}vh {
+        max-width: #{$key}vh;
+    }
+
+    .mg-max-h#{$key}vh {
+        max-height: #{$key}vh;
+    } 
+} 
