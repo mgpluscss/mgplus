@@ -1,3 +1,4 @@
+import registergCollapses from "./plugins/mgCollapse.js";
 import registerDropdown from "./plugins/mgDropdown.js";
 import registerModals from "./plugins/mgModal.js";
 import registerNavs from "./plugins/mgNav.js";
@@ -10,12 +11,13 @@ import registerTabs from "./plugins/mgTabs.js";
     registerModals();
     registerNavs();
     registerTabs();
+    registergCollapses();
 
     console.log(
       `mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`
     );
 
-  }
+  } 
 
   // extracts the params from the currently running (external) script
   function getScriptUrl() {
