@@ -1,0 +1,11 @@
+ 
+ .mg-collapse {
+    position: absolute;
+ 
+ }
+  .mg-collapse.opened  { 
+    position: relative;
+    visibility: visible; 
+    transition:all 1s ease-in-out;
+  }
+  
