@@ -14,6 +14,7 @@
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
+  --mg-control-active-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
 }
 
 //
@@ -32,6 +33,7 @@ $color-quinary: var(--mg-color-quinary) !default;
 $control-radius: var(--mg-control-radius) !default;
 $input-radius: var(--mg-input-radius) !default;
 $control-shadow: var(--mg-control-shadow) !default;
+$control-active-shadow:  var(--mg-control-active-shadow) !default;
 $color-red: var(--mg-color-red);
 $color-orange: var(--mg-color-orange);
 $color-blue: var(--mg-color-blue);
