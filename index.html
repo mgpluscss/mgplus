@@ -12,11 +12,10 @@
   <link rel="icon" href="/images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
 
-  <link rel="stylesheet" href="dist/mg-plus.css" />
+  <link rel="stylesheet" href="dist/mg-plus.min.css" />
   <link rel="stylesheet" href="index.css" /> 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
 
-  <link rel="import" href="sections/collapse-section.html" >
   <link rel="import" href="sections/core-section.html" >
   <link rel="import" href="sections/grid-section.html">  
   <link rel="import" href="sections/dropdown-section.html" >
@@ -32,7 +31,9 @@
   <link rel="import" href="sections/modal-section.html">
   <link rel="import" href="sections/nav-section.html">
   <link rel="import" href="sections/tab-section.html">
+  <link rel="import" href="sections/collapse-section.html" >
   <link rel="import" href="sections/timeline-section.html">
+  
   
 </head>
 
@@ -45,7 +46,7 @@
             <span class="mg-icon mg-icon--darkmode"></span>
           </button>
           <div class="mg-dropdown">
-            <button title="color-picker"  data-toggle="dropdown" class="mg-dropdown--button mg-button--small">
+            <button title="color-picker"  data-toggle="dropdown" class="mg-arrow down mg-button--small">
               <span class="mg-icon mg-icon--colors"></span>
             </button>
               <div class="mg-dropdown--content">
@@ -55,8 +56,8 @@
             </div>  
             </div>
         </div> 
-        <div class="mg-dropdown mg-right">
-          <button title="menu" data-toggle="dropdown" class="mg-dropdown--button hamburger">
+        <div class="mg-right mg-dropdown ">
+          <button title="menu" data-toggle="dropdown" class="hamburger mg-arrow down">
             <span></span>
             <span></span>
             <span></span> 
