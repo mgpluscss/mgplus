@@ -55,8 +55,8 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          ACCOUNT_NAME: stevodocs
-         DEMO_ROOT_DIR : "$web"
-         DEMO_SOURCE_DIR : src
+         DEMO_ROOT_DIR : "$web"         
+         DEMO_SOURCE_DIR : /
          DEMO_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/dist"
@@ -64,9 +64,8 @@ jobs:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
-           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME
+           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME --pattern '[!node_modules&&src&&dom-plugins]'
            
            
   deploy_preview:

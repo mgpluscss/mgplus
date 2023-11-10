@@ -45,7 +45,7 @@ gulp.task("minify-css", (done) => {
       cleanCSS(
         {
           debug: true,
-          compatibility: "ie9,-properties.merging", // sets compatibility to IE9 mode with disabled property merging
+          compatibility: "ie9,-properties.merging" // sets compatibility to IE9 mode with disabled property merging                  
         },
         (details) => {
           console.log(`${details.name}: ${details.stats.originalSize}`);
