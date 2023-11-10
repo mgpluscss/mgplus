@@ -2015,7 +2015,8 @@ input[type="range"] {
   padding: 0.5rem 0.5rem;
   text-decoration: none;
   color: var(--mg-color-secondary);
-  justify-content: start; }
+  justify-content: start;
+  border-bottom: 1px solid var(--mg-color-quinary); }
 
 .mg-nav ul > li.active {
   color: var(--mg-color-initial);
@@ -2051,8 +2052,7 @@ input[type="range"] {
 
 .mg-group {
   display: inline-flex;
-  flex-wrap: nowrap;
-  align-items: baseline; }
+  flex-wrap: nowrap; }
 
 .mg-group > .mg-select:not(:nth-child(1)):not(:nth-last-child(1)) > select,
 .mg-group > input:not(:nth-child(1)):not(:nth-last-child(1)),
@@ -3613,3 +3613,11 @@ input[type="range"] {
 
 .mg-max-h100vh {
   max-height: 100vh; }
+
+.mg-collapse {
+  position: absolute; }
+
+.mg-collapse.opened {
+  position: relative;
+  visibility: visible;
+  transition: all 1s ease-in-out; }

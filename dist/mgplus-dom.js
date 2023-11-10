@@ -1,3 +1,29 @@
+function $2b5a1cd8b6e84d91$export$2e2bcd8739ae039() {
+    document.querySelectorAll("[data-toggle~=collapse]").forEach(setupCollapse);
+    function setupCollapse(collapseToggle) {
+        collapseToggle.setAttribute("aria-haspopup", "true");
+        collapseToggle.setAttribute("aria-expanded", "false");
+        const collapseContent = collapseToggle.nextElementSibling;
+        collapseContent.setAttribute("aria-hidden", "true");
+        collapseToggle.onclick = toggleCollapse;
+        function toggleCollapse(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (collapseToggle.getAttribute("aria-expanded") === "true") {
+                collapseToggle.setAttribute("aria-expanded", "false");
+                collapseToggle.setAttribute("aria-hidden", "true");
+                collapseContent.classList.remove("opened");
+                return;
+            }
+            collapseToggle.setAttribute("aria-expanded", "true");
+            collapseToggle.setAttribute("aria-hidden", "false");
+            collapseContent.classList.add("opened");
+            return;
+        }
+    }
+}
+
+
 function $2a551a86451a9d86$export$2e2bcd8739ae039() {
     let currentDropdown = null;
     document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
@@ -158,6 +184,7 @@ function $a6a67ad7ed0be81b$export$2e2bcd8739ae039() {
         (0, $e2ea968a57da8a86$export$2e2bcd8739ae039)();
         (0, $e49cd42f69d2521f$export$2e2bcd8739ae039)();
         (0, $a6a67ad7ed0be81b$export$2e2bcd8739ae039)();
+        (0, $2b5a1cd8b6e84d91$export$2e2bcd8739ae039)();
         console.log(`mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`);
     }
     // extracts the params from the currently running (external) script
