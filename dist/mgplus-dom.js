@@ -1,9 +1,10 @@
-function $2b5a1cd8b6e84d91$export$2e2bcd8739ae039() {
+function $8933deae030f729c$export$2e2bcd8739ae039() {
     document.querySelectorAll("[data-toggle~=collapse]").forEach(setupCollapse);
     function setupCollapse(collapseToggle) {
+        const targetToCollapse = collapseToggle.getAttribute("data-target");
         collapseToggle.setAttribute("aria-haspopup", "true");
         collapseToggle.setAttribute("aria-expanded", "false");
-        const collapseContent = collapseToggle.nextElementSibling;
+        const collapseContent = targetToCollapse ? document.getElementById(targetToCollapse) : collapseToggle.nextElementSibling;
         collapseContent.setAttribute("aria-hidden", "true");
         collapseToggle.onclick = toggleCollapse;
         function toggleCollapse(e) {
@@ -12,25 +13,25 @@ function $2b5a1cd8b6e84d91$export$2e2bcd8739ae039() {
             if (collapseToggle.getAttribute("aria-expanded") === "true") {
                 collapseToggle.setAttribute("aria-expanded", "false");
                 collapseToggle.setAttribute("aria-hidden", "true");
-                collapseContent.classList.remove("opened");
+                collapseToggle.classList.remove("opened");
                 return;
             }
             collapseToggle.setAttribute("aria-expanded", "true");
             collapseToggle.setAttribute("aria-hidden", "false");
-            collapseContent.classList.add("opened");
+            collapseToggle.classList.add("opened");
             return;
         }
     }
 }
 
 
-function $2a551a86451a9d86$export$2e2bcd8739ae039() {
+function $a85991d12898f726$export$2e2bcd8739ae039() {
     let currentDropdown = null;
     document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
     function setupDropdown(dropdownToggle) {
         dropdownToggle.setAttribute("aria-haspopup", "true");
         dropdownToggle.setAttribute("aria-expanded", "false");
-        const dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
+        const dropdownContent = dropdownToggle.nextElementSibling;
         dropdownContent.setAttribute("aria-hidden", "true");
         dropdownToggle.onclick = toggleDropdown;
         function toggleDropdown(e) {
@@ -39,14 +40,14 @@ function $2a551a86451a9d86$export$2e2bcd8739ae039() {
             if (dropdownToggle.getAttribute("aria-expanded") === "true") {
                 dropdownToggle.setAttribute("aria-expanded", "false");
                 dropdownContent.setAttribute("aria-hidden", "true");
-                dropdownToggle.parentNode.classList.remove("opened");
+                dropdownToggle.classList.remove("opened");
                 currentDropdown = null;
                 return;
             }
             closeCurrent.call(undefined);
             dropdownToggle.setAttribute("aria-expanded", "true");
             dropdownContent.setAttribute("aria-hidden", "false");
-            dropdownToggle.parentNode.classList.add("opened");
+            dropdownToggle.classList.add("opened");
             dropdownContent.children[0].focus();
             currentDropdown = dropdownToggle;
             return;
@@ -56,7 +57,7 @@ function $2a551a86451a9d86$export$2e2bcd8739ae039() {
         if (currentDropdown) {
             currentDropdown.setAttribute("aria-expanded", "false");
             currentDropdown.setAttribute("aria-hidden", "true");
-            currentDropdown.parentNode.classList.remove("opened");
+            currentDropdown.classList.remove("opened");
             currentDropdown = false;
         }
     }
@@ -64,14 +65,13 @@ function $2a551a86451a9d86$export$2e2bcd8739ae039() {
         const element = event.target;
         if (!element.classList) return;
         if (element.classList.contains("mg-dropdown")) return;
-        if (element.classList.contains("mg-dropdown--button")) return;
         if (element.classList.contains("mg-dropdown--content")) return;
         closeCurrent.call(undefined);
     };
 }
 
 
-function $e2ea968a57da8a86$export$2e2bcd8739ae039() {
+function $ff299efe8696674a$export$2e2bcd8739ae039() {
     // Select all elements with data-toggle attribute containing "modal" and setup modal for each
     document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
     // Function to setup modal for an element
@@ -96,7 +96,7 @@ function $e2ea968a57da8a86$export$2e2bcd8739ae039() {
 }
 
 
-function $e49cd42f69d2521f$export$2e2bcd8739ae039() {
+function $9782f4b967af497b$export$2e2bcd8739ae039() {
     document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
     function setupNav(nav) {
         const items = nav.getElementsByTagName("li");
@@ -128,7 +128,7 @@ function $e49cd42f69d2521f$export$2e2bcd8739ae039() {
 }
 
 
-function $a6a67ad7ed0be81b$export$2e2bcd8739ae039() {
+function $16526508bd9729ba$export$2e2bcd8739ae039() {
     document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
     function setupTabs(tabs) {
         let items = tabs.getElementsByClassName("mg-tabs--item");
@@ -180,11 +180,11 @@ function $a6a67ad7ed0be81b$export$2e2bcd8739ae039() {
 
 (function(window1) {
     function registerDomPlugins(autorun) {
-        (0, $2a551a86451a9d86$export$2e2bcd8739ae039)();
-        (0, $e2ea968a57da8a86$export$2e2bcd8739ae039)();
-        (0, $e49cd42f69d2521f$export$2e2bcd8739ae039)();
-        (0, $a6a67ad7ed0be81b$export$2e2bcd8739ae039)();
-        (0, $2b5a1cd8b6e84d91$export$2e2bcd8739ae039)();
+        (0, $a85991d12898f726$export$2e2bcd8739ae039)();
+        (0, $ff299efe8696674a$export$2e2bcd8739ae039)();
+        (0, $9782f4b967af497b$export$2e2bcd8739ae039)();
+        (0, $16526508bd9729ba$export$2e2bcd8739ae039)();
+        (0, $8933deae030f729c$export$2e2bcd8739ae039)();
         console.log(`mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`);
     }
     // extracts the params from the currently running (external) script
