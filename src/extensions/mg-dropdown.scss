@@ -4,12 +4,13 @@
   margin-bottom: 1rem;
   display: inline-block;
 }
+/*hide original SELECT element: */
 .mg-dropdown input {
-  display: none; /*hide original SELECT element: */
+  display: none; 
 }
 
 .mg-dropdown--content {
-  
+  width: max-content;
   box-shadow: $control-shadow; 
   margin-left: auto;
   margin-right: auto;

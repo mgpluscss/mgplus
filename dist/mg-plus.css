@@ -747,6 +747,10 @@ input[type="range"] {
 .mg-close:hover {
   opacity: 0.8; }
 
+.mg-arrow {
+  display: inline-flex;
+  align-items: center; }
+
 .mg-arrow::after {
   border: 2px solid transparent;
   border-color: var(--mg-color-light);
@@ -754,14 +758,19 @@ input[type="range"] {
   border-right: 0;
   border-top: 0;
   content: "";
-  display: block;
-  height: 1rem;
+  display: inline-block;
   pointer-events: none;
   position: absolute;
-  top: 25%;
   transform-origin: center;
   width: 1rem;
-  transition: all 0.2s; }
+  height: 1rem;
+  transition: all 0.2s;
+  margin-top: 0;
+  margin-bottom: 0.5rem; }
+
+.mg-arrow.opened::after {
+  margin-top: 0.5rem;
+  margin-bottom: 0; }
 
 .mg-arrow.down::after {
   -webkit-transform: rotate(-45deg);
@@ -780,22 +789,19 @@ input[type="range"] {
   transform: rotate(225deg); }
 
 .mg-arrow.opened.down::after {
-  transform: rotate(135deg);
-  top: 1.3rem; }
+  transform: rotate(135deg); }
 
 .mg-arrow.opened.up::after {
-  transform: rotate(135deg);
-  top: 1.3rem; }
+  transform: rotate(135deg); }
 
 .mg-arrow.opened.left::after {
-  transform: rotate(135deg);
-  top: 1.3rem; }
+  transform: rotate(135deg); }
 
 .mg-arrow.opened.right::after {
-  transform: rotate(135deg);
-  top: 1.3rem; }
+  transform: rotate(135deg); }
 
-.mg-arrow.mg-button--clear:after, .mg-arrow.mg-button--outline:after {
+.mg-arrow.mg-button--clear:after,
+.mg-arrow.mg-button--outline:after {
   border-color: var(--mg-color-secondary); }
 
 :root[data-theme='dark'] {
@@ -1672,11 +1678,12 @@ input[type="range"] {
   margin-bottom: 1rem;
   display: inline-block; }
 
+/*hide original SELECT element: */
 .mg-dropdown input {
-  display: none;
-  /*hide original SELECT element: */ }
+  display: none; }
 
 .mg-dropdown--content {
+  width: max-content;
   box-shadow: var(--mg-control-shadow);
   margin-left: auto;
   margin-right: auto;
@@ -1777,13 +1784,12 @@ input[type="range"] {
   border-right: 0;
   border-top: 0;
   content: "";
-  display: block;
-  height: 1rem;
+  display: inline-block;
   pointer-events: none;
   position: absolute;
-  top: 25%;
   transform-origin: center;
   width: 1rem;
+  height: 1rem;
   transition: all 0.2s; }
 
 /**/
