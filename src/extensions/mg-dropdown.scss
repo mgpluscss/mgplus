@@ -8,51 +8,9 @@
   display: none; /*hide original SELECT element: */
 }
 
-.mg-dropdown--button {
-  position: relative;
-  width: 100%;
-  margin-bottom: 0; 
-  margin-right: 1.2rem;
-  text-overflow: ellipsis;
-  
-}
-
-.mg-dropdown--button:after {
-  border: 2px solid transparent;
-  border-color: $color-light;
-  right: 0.8rem;
-  border-right: 0;
-  border-top: 0;
-  content: " ";
-  display: block;
-  height: 1rem;
-  margin-top: -0.7rem;
-  pointer-events: none;
-  position: absolute;
-  top: 50%;
-  transform: rotate(-45deg);
-  transform-origin: center;
-  width: 1rem;
-  transition: all 0.2s;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.mg-dropdown.opened > .mg-dropdown--button:after {
-  transform: rotate(135deg);
-  margin-top: -0.4rem;
-}
-.mg-dropdown--button.mg-button--clear:after {
-  border-color: $color-secondary;
-}
-
-.mg-dropdown--button.mg-button--outline:after {
-  border-color: $color-secondary;
-}
-
 .mg-dropdown--content {
-  width: max-content;
-  box-shadow: $control-shadow;
-  min-width: 100%;
+  
+  box-shadow: $control-shadow; 
   margin-left: auto;
   margin-right: auto;
   border: 1px solid;
@@ -74,7 +32,7 @@
 
 } 
  
-.mg-dropdown.opened > .mg-dropdown--content {
+.opened + .mg-dropdown--content {
   display: block;
   opacity: 1;
   visibility: visible;

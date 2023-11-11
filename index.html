@@ -12,7 +12,7 @@
   <link rel="icon" href="/images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
 
-  <link rel="stylesheet" href="dist/mg-plus.css" />
+  <link rel="stylesheet" href="dist/mg-plus.min.css" />
   <link rel="stylesheet" href="index.css" /> 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
 
@@ -31,7 +31,9 @@
   <link rel="import" href="sections/modal-section.html">
   <link rel="import" href="sections/nav-section.html">
   <link rel="import" href="sections/tab-section.html">
+  <link rel="import" href="sections/collapse-section.html" >
   <link rel="import" href="sections/timeline-section.html">
+  
   
 </head>
 
@@ -44,7 +46,7 @@
             <span class="mg-icon mg-icon--darkmode"></span>
           </button>
           <div class="mg-dropdown">
-            <button title="color-picker"  data-toggle="dropdown" class="mg-dropdown--button mg-button--small">
+            <button title="color-picker"  data-toggle="dropdown" class="mg-arrow down mg-button--small">
               <span class="mg-icon mg-icon--colors"></span>
             </button>
               <div class="mg-dropdown--content">
@@ -54,87 +56,15 @@
             </div>  
             </div>
         </div> 
-        <div class="mg-dropdown mg-right">
-          <button title="menu" data-toggle="dropdown" class="mg-dropdown--button hamburger">
+        <div class="mg-right mg-dropdown ">
+          <button title="menu" data-toggle="dropdown" class="hamburger mg-arrow down">
             <span></span>
             <span></span>
             <span></span> 
           </button>
           <div
             class="mg-dropdown--content mg-right mg-nav mg-w60vh">
-            <ul class="mg-text-bold mg-text-l">
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#typography">Typography</a>
-              </li>
-              <li>
-                <a href="#blockquotes">Blockquotes</a>
-              </li>
-              <li>
-                <a href="#buttons">Buttons</a>
-              </li>
-              <li>
-                <a href="#lists">Lists</a>
-              </li>
-              <li>
-                <a href="#tables">Tables</a>
-              </li>
-              <li>
-                <a href="#codes">Codes</a>
-              </li> 
-              <li>
-                <a href="#nav">Nav (Menu)</a>
-              </li>
-              <li>
-                <a href="#nav-inline">Nav inline</a>
-              </li>
-              <li>
-                <a href="#dropdown">Dropdown</a>
-              </li>
-              <li>
-                <a href="#select">Select</a>
-              </li>
-              <li>
-                <a href="#radio">Radio</a>
-              </li>
-              <li>
-                <a href="#check">Check</a>
-              </li>
-              <li>
-                <a href="#alert">Alert</a>
-              </li>
-              <li>
-                <a href="#badges">Badges</a>
-              </li>
-              <li>
-                <a href="#tabs">Tabs</a>
-              </li>
-              <li>
-                <a href="#group">Group</a>
-              </li>
-              <li>
-                <a href="#grid">Grids</a>
-              </li>
-              <li>
-                <a href="#modal">Modal</a>
-              </li>
-              <li>
-                <a href="#toggle">Toggle</a>
-              </li>
-              <li>
-                <a href="#forms">Forms</a>
-              </li>
-              <li>
-                <a href="#loader">Loader</a>
-              </li>
-              <li>
-                <a href="#timeline">Timeline</a>
-              </li>
-              <li>
-                <a href="#icons">Icons</a>
-              </li>
+            <ul class="mg-text-bold mg-text-l" id="nav_links"> 
             </ul>
           </div>
         </div>

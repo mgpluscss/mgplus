@@ -65,14 +65,9 @@
     visibility: visible;
 }
 
-.mg-invisible {
+.mg-hidden {
     visibility: hidden;
-}
-
-.mg-collapse {
-    visibility: collapse;
-}
-
+} 
 
 @each $key, $value in $rem-map {
 

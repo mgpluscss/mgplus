@@ -1,3 +1,26 @@
+@mixin mg-arrow-after {
+ 
+  border: 2px solid transparent;
+  border-color: $color-light;
+  right: 0.5rem;
+  border-right: 0;
+  border-top: 0;
+  content: "";
+  display: block;
+  height: 1rem;  
+  pointer-events: none;
+  position: absolute;
+  top: 25%;
+  transform-origin:center;
+  width: 1rem;
+  transition: all 0.2s;
+ 
+}
+@mixin mg-arrow-down-after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); 
+}
+
 .mg-icon {
   width: 2.2rem;
   height: 2.2rem;
@@ -25,43 +48,48 @@
 .mg-close:hover {
   opacity: 0.8;
 }
-
-.mg-arrow {
-  border: solid;
-  border-width: 0 0.2rem 0.2rem 0;
-  display: inline-block;
-  padding: 0.4rem;
+ 
+.mg-arrow::after {
+ @include mg-arrow-after;
+} 
+ 
+.mg-arrow.down::after {
+ @include mg-arrow-down-after
 }
 
-.mg-arrow>* {
-  -webkit-transform: rotate(0);
-  transform: rotate(0);
-}
-
-.mg-arrow.mg-arrow--right {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  margin-right: 0.1rem;
-  margin-left: 0.1rem;
-}
-
-.mg-arrow.mg-arrow--left {
+.mg-arrow.left::after {
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
 
-.mg-arrow.mg-arrow--up {
+.mg-arrow.up::after {
   -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  margin-right: 0.4rem;
-  margin-left: 0.4rem;
-  top: 2rem;
+  transform: rotate(-135deg); 
 }
 
-.mg-arrow.mg-arrow--down {
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+.mg-arrow.right::after {
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg); 
+} 
+   
+.mg-arrow.opened.down::after {
+  transform: rotate(135deg); 
+  top: 1.3rem;
+ }
+.mg-arrow.opened.up::after {
+  transform: rotate(135deg); 
+  top: 1.3rem;
+ }
+ .mg-arrow.opened.left::after {
+  transform: rotate(135deg); 
+  top: 1.3rem;
+ }
+ .mg-arrow.opened.right::after {
+  transform: rotate(135deg); 
+  top: 1.3rem;
+ }
+//fix arrow visibility when button is clear or outline
+ .mg-arrow.mg-button--clear:after, .mg-arrow.mg-button--outline:after  {
+  border-color: $color-secondary;
 }
  

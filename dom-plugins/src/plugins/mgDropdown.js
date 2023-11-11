@@ -3,12 +3,10 @@
    document.querySelectorAll("[data-toggle~=dropdown]").forEach(setupDropdown);
    function setupDropdown(dropdownToggle) {
      dropdownToggle.setAttribute("aria-haspopup", "true");
-     dropdownToggle.setAttribute("aria-expanded", "false");
+     dropdownToggle.setAttribute("aria-expanded", "false"); 
 
-     const dropdownContent = dropdownToggle.parentNode.querySelector(".mg-dropdown--content");
-
-     dropdownContent.setAttribute("aria-hidden", "true");
-
+     const dropdownContent = dropdownToggle.nextElementSibling; 
+     dropdownContent.setAttribute("aria-hidden", "true"); 
      dropdownToggle.onclick = toggleDropdown;
 
      function toggleDropdown(e) {
@@ -17,7 +15,7 @@
        if (dropdownToggle.getAttribute("aria-expanded") === "true") {
          dropdownToggle.setAttribute("aria-expanded", "false");
          dropdownContent.setAttribute("aria-hidden", "true");
-         dropdownToggle.parentNode.classList.remove("opened");
+         dropdownToggle.classList.remove("opened");
          currentDropdown = null;
          return;
        }
@@ -25,7 +23,7 @@
 
        dropdownToggle.setAttribute("aria-expanded", "true");
        dropdownContent.setAttribute("aria-hidden", "false");
-       dropdownToggle.parentNode.classList.add("opened");
+       dropdownToggle.classList.add("opened");
        dropdownContent.children[0].focus();
        currentDropdown = dropdownToggle;
        return;
@@ -35,7 +33,7 @@
      if (currentDropdown) {
        currentDropdown.setAttribute("aria-expanded", "false");
        currentDropdown.setAttribute("aria-hidden", "true");
-       currentDropdown.parentNode.classList.remove("opened");
+       currentDropdown.classList.remove("opened");
        currentDropdown = false;
      }
    }  
@@ -44,8 +42,7 @@
       const element = event.target
     
        if (!element.classList) return;
-       if (element.classList.contains("mg-dropdown")) return;
-       if (element.classList.contains("mg-dropdown--button")) return;
+       if (element.classList.contains("mg-dropdown")) return; 
        if (element.classList.contains("mg-dropdown--content")) return;
        closeCurrent.call(undefined);  
      };

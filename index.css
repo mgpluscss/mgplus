@@ -8,8 +8,8 @@
   html {
     scroll-behavior: smooth;
   }
-  h2 {
-
+ 
+  section > h2 {
     padding-top: 10rem;
   }
   code {
@@ -61,8 +61,8 @@
   .grid-cel {
     width: 100%;
     background-color: var(--mg-color-primary);
-    color: var(--mg-color-light); 
-    margin: 4px;
+    color: var(--mg-color-light);  
+    border: 1px solid var(--mg-color-initial);
     padding: 4px;
   }
    
