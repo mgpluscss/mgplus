@@ -16,8 +16,8 @@
 
 }
 
-@mixin mg-arrow-down-after {
-  -webkit-transform: rotate(-45deg);
+@mixin mg-arrow-down-after { 
+  
   transform: rotate(-45deg);
 }
 
@@ -71,19 +71,18 @@
   @include mg-arrow-down-after
 }
 
-.mg-arrow.left::after {
-  -webkit-transform: rotate(135deg);
+.mg-arrow.left::after { 
   transform: rotate(135deg);
+  margin-bottom: 0rem;
 }
 
-.mg-arrow.up::after {
-  -webkit-transform: rotate(-135deg);
+.mg-arrow.up::after { 
   transform: rotate(-135deg);
 }
 
-.mg-arrow.right::after {
-  -webkit-transform: rotate(225deg);
+.mg-arrow.right::after { 
   transform: rotate(225deg);
+  margin-bottom: 0rem;
 }
 
 .mg-arrow.opened.down::after {
@@ -103,6 +102,7 @@
 }
 
 //fix arrow visibility when button is clear or outline
+.mg-arrow.mg-button--link:after,
 .mg-arrow.mg-button--clear:after,
 .mg-arrow.mg-button--outline:after {
   border-color: $color-secondary;

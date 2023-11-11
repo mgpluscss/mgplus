@@ -773,20 +773,18 @@ input[type="range"] {
   margin-bottom: 0; }
 
 .mg-arrow.down::after {
-  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg); }
 
 .mg-arrow.left::after {
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg); }
+  transform: rotate(135deg);
+  margin-bottom: 0rem; }
 
 .mg-arrow.up::after {
-  -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg); }
 
 .mg-arrow.right::after {
-  -webkit-transform: rotate(225deg);
-  transform: rotate(225deg); }
+  transform: rotate(225deg);
+  margin-bottom: 0rem; }
 
 .mg-arrow.opened.down::after {
   transform: rotate(135deg); }
@@ -800,6 +798,7 @@ input[type="range"] {
 .mg-arrow.opened.right::after {
   transform: rotate(135deg); }
 
+.mg-arrow.mg-button--link:after,
 .mg-arrow.mg-button--clear:after,
 .mg-arrow.mg-button--outline:after {
   border-color: var(--mg-color-secondary); }
