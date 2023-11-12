@@ -10,7 +10,8 @@
 }
 
 .mg-dropdown--content {
-  width: max-content;
+  width: 100%;
+  min-width: max-content;
   box-shadow: $control-shadow; 
   margin-left: auto;
   margin-right: auto;
