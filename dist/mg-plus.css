@@ -1666,7 +1666,8 @@ input[type="range"] {
   display: none; }
 
 .mg-dropdown--content {
-  width: max-content;
+  width: 100%;
+  min-width: max-content;
   box-shadow: var(--mg-control-shadow);
   margin-left: auto;
   margin-right: auto;
@@ -3585,6 +3586,3 @@ input[type="range"] {
 
 .mg-collapse.opened + * {
   display: block; }
-
-.mg-collapse.opened > .mg-arrow--right {
-  transform: rotate(45deg); }

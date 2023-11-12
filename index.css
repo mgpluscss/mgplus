@@ -233,7 +233,8 @@ content: "❯";
 }  
 .icon-menu::after {
   content: '\2630'; 
-  font-weight:100;
+  
+    
 }
 
  
