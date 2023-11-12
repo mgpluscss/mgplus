@@ -1753,7 +1753,8 @@ input[type="range"] {
   clear: both; }
 
 .mg-select {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 100%;
   position: relative;
   vertical-align: top;
@@ -1765,7 +1766,7 @@ input[type="range"] {
   -moz-appearance: none;
   text-overflow: ellipsis;
   width: 100%;
-  padding-right: 1em;
+  padding-right: 3em;
   cursor: pointer; }
 
 .mg-select:not(.is-multiple) {
@@ -1789,9 +1790,11 @@ input[type="range"] {
   transform-origin: center;
   width: 1rem;
   height: 1rem;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  transform: rotate(-45deg);
+  /*fix arrow position in center by compensating default margin bottom for inputs*/
+  margin-bottom: 1.5rem; }
 
-/**/
 .mg-select--selected {
   background-color: var(--mg-color-initial);
   border-radius: var(--mg-input-radius); }

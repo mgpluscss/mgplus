@@ -16,8 +16,8 @@
 
 }
 
-@mixin mg-arrow-down-after { 
-  
+@mixin mg-arrow-down-after {
+
   transform: rotate(-45deg);
 }
 
@@ -71,16 +71,16 @@
   @include mg-arrow-down-after
 }
 
-.mg-arrow.left::after { 
+.mg-arrow.left::after {
   transform: rotate(135deg);
   margin-bottom: 0rem;
 }
 
-.mg-arrow.up::after { 
+.mg-arrow.up::after {
   transform: rotate(-135deg);
 }
 
-.mg-arrow.right::after { 
+.mg-arrow.right::after {
   transform: rotate(225deg);
   margin-bottom: 0rem;
 }

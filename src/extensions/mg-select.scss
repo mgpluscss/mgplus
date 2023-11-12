@@ -1,5 +1,6 @@
 .mg-select {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   width: 100%;
   position: relative;
   vertical-align: top;
@@ -11,7 +12,7 @@
   -moz-appearance: none;
   text-overflow: ellipsis;
   width: 100%;
-  padding-right: 1em;
+  padding-right: 3em;
   cursor: pointer;
 }
 
@@ -26,9 +27,10 @@
 }
 .mg-select::after {
   @include mg-arrow-after;
-}
-
-/**/
+  @include mg-arrow-down-after;
+  /*fix arrow position in center by compensating default margin bottom for inputs*/
+  margin-bottom: 1.5rem;
+} 
 
 .mg-select--selected {
   background-color: $color-initial;
