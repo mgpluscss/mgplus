@@ -753,13 +753,14 @@ input[type="range"] {
   pointer-events: none;
   transform-origin: center;
   transition: all 0.2s;
-  margin-right: -0.9rem;
+  margin-right: -0.1rem;
   margin-top: 0; }
 
 .mg-arrow {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: nowrap; }
 
 .mg-arrow.opened::after {
   transform: rotate(180deg);
@@ -1767,7 +1768,7 @@ input[type="range"] {
   pointer-events: none;
   transform-origin: center;
   transition: all 0.2s;
-  margin-right: -0.9rem;
+  margin-right: -0.1rem;
   content: "▾";
   position: absolute;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
@@ -1982,6 +1983,7 @@ input[type="range"] {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: nowrap;
   padding: 0.5rem 0.5rem;
   text-decoration: none;
   color: var(--mg-color-secondary);
@@ -3581,8 +3583,8 @@ input[type="range"] {
 .mg-max-h100vh {
   max-height: 100vh; }
 
-.mg-collapse + * {
+.mg-collapse + .mg-collapse--content {
   display: none; }
 
-.mg-collapse.opened + * {
+.mg-collapse.opened + .mg-collapse--content {
   display: block; }

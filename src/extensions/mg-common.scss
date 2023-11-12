@@ -35,7 +35,7 @@
   pointer-events: none; 
   transform-origin: center; 
   transition: all 0.2s;
-  margin-right: -0.9rem;
+  margin-right: -0.1rem;
   
 }
 
@@ -53,6 +53,7 @@
   display: inline-flex;
   align-items: center; 
   justify-content: space-between; 
+  flex-wrap: nowrap;
 }
 .mg-arrow.opened::after {
   transform: rotate(180deg);

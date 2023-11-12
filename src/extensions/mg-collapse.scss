@@ -1,9 +1,7 @@
   
- .mg-collapse + *  {   
+ .mg-collapse + .mg-collapse--content   {   
   display: none;  
 }
-.mg-collapse.opened + *  { 
+.mg-collapse.opened + .mg-collapse--content   { 
   display: block;  
 }
-
- 

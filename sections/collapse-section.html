@@ -1,13 +1,27 @@
 <h2>Collapse</h2>
 <div class="mg-col mg-x3" id="collapse-example">
   <button class="mg-button mg-button--outline mg-collapse mg-arrow right" data-toggle="collapse">toggle 1</button>
-  <div>
+  <div class="mg-collapse--content">
     Content 1
   </div>
   <button class="mg-button mg-collapse mg-arrow right" data-toggle="collapse">toggle 2 </button>
-  <div>
+  <div class="mg-collapse--content">
     Content 2
   </div>
+
+    <div class="mg-nav" id="nav-vertical-example" data-toggle="nav">
+            <ul>
+              <li class="active"><a href="#home">Home</a></li>
+              <li data-toggle="collapse" class="mg-row mg-collapse mg-arrow right">
+                  <a href="#news">News</a>
+              </li>
+              <li class="mg-collapse--content">
+                <div class="">tests</div>
+              </li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
 </div>
 
 <div class="example"><button class="mg-button mg-button--link mg-collapse mg-arrow right" data-toggle="collapse">View
