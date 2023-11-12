@@ -724,11 +724,6 @@ input[type="range"] {
     input[type="range"]:disabled::-webkit-slider-thumb {
       background: var(--mg-color-quaternary); }
 
-.mg-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between; }
-
 .mg-icon {
   width: 2.2rem;
   height: 2.2rem;
@@ -761,7 +756,13 @@ input[type="range"] {
   margin-right: -0.9rem;
   margin-top: 0; }
 
+.mg-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .mg-arrow.opened::after {
+  transform: rotate(180deg);
   margin-top: 0.5rem;
   margin-bottom: 0; }
 
@@ -769,27 +770,17 @@ input[type="range"] {
   content: "▾"; }
 
 .mg-arrow.left::after {
-  transform: rotate(135deg);
+  transform: rotate(-90deg);
   margin-bottom: 0rem; }
 
-.mg-arrow.up::after {
-  transform: rotate(-135deg); }
-
-.mg-arrow.right::after {
-  content: "▸"; }
-
-.mg-arrow.opened.down::after {
-  content: "▴";
+.mg-arrow.up::after, .mg-arrow.opened::after {
+  transform: rotate(180deg);
   margin-bottom: 0.9rem; }
 
-.mg-arrow.opened.up::after {
-  content: "▾"; }
-
-.mg-arrow.opened.left::after {
-  content: "▾"; }
-
-.mg-arrow.opened.right::after {
-  content: "▾"; }
+.mg-arrow.right::after {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  content: '❯'; }
 
 .mg-arrow.mg-button--link:after,
 .mg-arrow.mg-button--clear:after,
