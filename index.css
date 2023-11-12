@@ -11,6 +11,7 @@
  
   section > h2 {
     padding-top: 10rem;
+    border-bottom: var(--mg-color-primary) 3px solid;
   }
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -183,3 +184,56 @@ pre.prettyprint {
     transform: scale(1, 1) translateY(0);
   }
 }
+
+.arrow-left0::after
+{
+content: "❮";
+}
+
+.arrow-right0::after
+{
+content: "❯";
+} 
+
+.arrow-left::after {
+  content :"◄";
+}
+.arrow-right::after {
+  content :"►";
+}
+.arrow-up::after {
+  content :"▲";
+}
+.arrow-down::after {
+  content :"▼";
+}
+.arrow-up2::after {
+  content :"▴";
+} 
+.arrow-down2::after {
+  content :"▾"; 
+}
+.arrow-left2::after {
+  content :"◂";
+}
+.arrow-right2::after {
+  content :"▸";
+} 
+.arrow-left5::after {
+  content :"⬅";
+}
+.arrow-right5::after {
+  content :"➡";
+}
+.arrow-up5::after {
+  content :"⬆";
+}
+.arrow-down5::after {
+  content :"⬇";
+}  
+.icon-menu::after {
+  content: '\2630'; 
+  font-weight:100;
+}
+
+ 

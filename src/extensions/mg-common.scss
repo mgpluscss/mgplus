@@ -1,24 +1,16 @@
 @mixin mg-arrow-after {
-
-  border: 2px solid transparent;
-  border-color: $color-light;
-  right: 0.5rem;
-  border-right: 0;
-  border-top: 0;
-  content: "";
-  display: inline-block;
-  pointer-events: none;
-  position: absolute;
-  transform-origin: center;
-  width: 1rem;
-  height: 1rem;
+ 
+  font-size: 2.5rem; 
+  pointer-events: none; 
+  transform-origin: center; 
   transition: all 0.2s;
-
+  margin-right: -0.9rem;
+  
 }
 
 @mixin mg-arrow-down-after {
 
-  transform: rotate(-45deg);
+  content :"▾"; 
 }
 
 .mg-icon {
@@ -51,14 +43,14 @@
 
 .mg-arrow {
   display: inline-flex;
-  align-items: center;
-
+  align-items: center; 
+  justify-content: space-between;
 }
 
 .mg-arrow::after {
   @include mg-arrow-after;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+ 
 }
 
 .mg-arrow.opened::after {
@@ -81,24 +73,24 @@
 }
 
 .mg-arrow.right::after {
-  transform: rotate(225deg);
-  margin-bottom: 0rem;
+  content :"▸"; 
 }
 
 .mg-arrow.opened.down::after {
-  transform: rotate(135deg);
+  content :"▴";
+  margin-bottom: 0.9rem;
 }
 
 .mg-arrow.opened.up::after {
-  transform: rotate(135deg);
+  content :"▾";
 }
 
 .mg-arrow.opened.left::after {
-  transform: rotate(135deg);
+  content :"▾"; 
 }
 
 .mg-arrow.opened.right::after {
-  transform: rotate(135deg);
+  content :"▾"; 
 }
 
 //fix arrow visibility when button is clear or outline

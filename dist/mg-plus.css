@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --mg-color-dark: #000000;
   --mg-color-light: #fcfcfc;
@@ -749,31 +750,23 @@ input[type="range"] {
 
 .mg-arrow {
   display: inline-flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
 
 .mg-arrow::after {
-  border: 2px solid transparent;
-  border-color: var(--mg-color-light);
-  right: 0.5rem;
-  border-right: 0;
-  border-top: 0;
-  content: "";
-  display: inline-block;
+  font-size: 2.5rem;
   pointer-events: none;
-  position: absolute;
   transform-origin: center;
-  width: 1rem;
-  height: 1rem;
   transition: all 0.2s;
-  margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-right: -0.9rem;
+  margin-top: 0; }
 
 .mg-arrow.opened::after {
   margin-top: 0.5rem;
   margin-bottom: 0; }
 
 .mg-arrow.down::after {
-  transform: rotate(-45deg); }
+  content: "▾"; }
 
 .mg-arrow.left::after {
   transform: rotate(135deg);
@@ -783,20 +776,20 @@ input[type="range"] {
   transform: rotate(-135deg); }
 
 .mg-arrow.right::after {
-  transform: rotate(225deg);
-  margin-bottom: 0rem; }
+  content: "▸"; }
 
 .mg-arrow.opened.down::after {
-  transform: rotate(135deg); }
+  content: "▴";
+  margin-bottom: 0.9rem; }
 
 .mg-arrow.opened.up::after {
-  transform: rotate(135deg); }
+  content: "▾"; }
 
 .mg-arrow.opened.left::after {
-  transform: rotate(135deg); }
+  content: "▾"; }
 
 .mg-arrow.opened.right::after {
-  transform: rotate(135deg); }
+  content: "▾"; }
 
 .mg-arrow.mg-button--link:after,
 .mg-arrow.mg-button--clear:after,
@@ -1778,20 +1771,12 @@ input[type="range"] {
   right: 0.6em; }
 
 .mg-select::after {
-  border: 2px solid transparent;
-  border-color: var(--mg-color-light);
-  right: 0.5rem;
-  border-right: 0;
-  border-top: 0;
-  content: "";
-  display: inline-block;
+  font-size: 2.5rem;
   pointer-events: none;
-  position: absolute;
   transform-origin: center;
-  width: 1rem;
-  height: 1rem;
   transition: all 0.2s;
-  transform: rotate(-45deg);
+  margin-right: -0.9rem;
+  content: "▾";
   /*fix arrow position in center by compensating default margin bottom for inputs*/
   margin-bottom: 1.5rem; }
 
