@@ -28,8 +28,9 @@
 .mg-select::after {
   @include mg-arrow-after;
   @include mg-arrow-down-after;
+  position: absolute;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem; 
 } 
 
 .mg-select--selected {

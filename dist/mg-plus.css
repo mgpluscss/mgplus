@@ -724,6 +724,11 @@ input[type="range"] {
     input[type="range"]:disabled::-webkit-slider-thumb {
       background: var(--mg-color-quaternary); }
 
+.mg-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .mg-icon {
   width: 2.2rem;
   height: 2.2rem;
@@ -747,11 +752,6 @@ input[type="range"] {
 
 .mg-close:hover {
   opacity: 0.8; }
-
-.mg-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between; }
 
 .mg-arrow::after {
   font-size: 2.5rem;
@@ -1777,6 +1777,7 @@ input[type="range"] {
   transition: all 0.2s;
   margin-right: -0.9rem;
   content: "▾";
+  position: absolute;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
   margin-bottom: 1.5rem; }
 

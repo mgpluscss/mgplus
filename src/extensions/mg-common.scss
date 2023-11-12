@@ -1,3 +1,9 @@
+.mg-arrow {
+  display: inline-flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+
 @mixin mg-arrow-after {
  
   font-size: 2.5rem; 
@@ -41,11 +47,7 @@
   opacity: 0.8;
 }
 
-.mg-arrow {
-  display: inline-flex;
-  align-items: center; 
-  justify-content: space-between;
-}
+
 
 .mg-arrow::after {
   @include mg-arrow-after;
