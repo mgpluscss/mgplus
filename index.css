@@ -57,8 +57,7 @@
   .mg-icon--search { 
     background: url("images/search.svg"); 
   }
-  
-  
+
   .grid-cel {
     width: 100%;
     background-color: var(--mg-color-primary);
@@ -231,10 +230,8 @@ content: "❯";
 .arrow-down5::after {
   content :"⬇";
 }  
-.icon-menu::after {
+/* .icon-menu::after {
   content: '\2630'; 
-  
-    
 }
 
- 
+  */

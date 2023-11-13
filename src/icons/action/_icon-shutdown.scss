@@ -1,0 +1,9 @@
+// Icon shutdown
+.icon-shutdown {
+  border: $icon-border-width solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  &::before {
+    background: currentColor;
+  }
+}

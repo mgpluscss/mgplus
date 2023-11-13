@@ -2000,6 +2000,7 @@ input[type="range"] {
   text-decoration: none;
   color: var(--mg-color-secondary);
   justify-content: start;
+  align-items: center;
   border-bottom: 1px solid var(--mg-color-quinary); }
 
 .mg-nav ul > li.active {
@@ -3600,3 +3601,189 @@ input[type="range"] {
 
 .mg-collapse.opened + .mg-collapse--content {
   display: block; }
+
+/*! Icons.css v0.1.0 | MIT License | github.com/picturepan2/icons.css */
+.icon {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: inherit;
+  font-style: normal;
+  height: 1em;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+  width: 1em; }
+  .icon::before, .icon::after {
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  .icon.icon-2x {
+    font-size: 32px; }
+  .icon.icon-3x {
+    font-size: 48px; }
+  .icon.icon-4x {
+    font-size: 64px; }
+
+.icon-apps::before {
+  background: currentColor;
+  box-shadow: -.35em -.35em, -.35em 0, -.35em .35em, 0 -.35em, 0 .35em, .35em -.35em, .35em 0, .35em .35em;
+  height: .15em;
+  width: .15em; }
+
+.icon-arrow-down::before,
+.icon-arrow-left::before,
+.icon-arrow-right::before,
+.icon-arrow-up::before,
+.icon-downward::before,
+.icon-back::before,
+.icon-forward::before,
+.icon-upward::before {
+  border: 0.1rem solid currentColor;
+  border-bottom: 0;
+  border-right: 0;
+  height: .65em;
+  width: .65em; }
+
+.icon-arrow-down::before {
+  transform: translate(-50%, -75%) rotate(225deg); }
+
+.icon-arrow-left::before {
+  transform: translate(-25%, -50%) rotate(-45deg); }
+
+.icon-arrow-right::before {
+  transform: translate(-75%, -50%) rotate(135deg); }
+
+.icon-arrow-up::before {
+  transform: translate(-50%, -25%) rotate(45deg); }
+
+.icon-back::after,
+.icon-forward::after {
+  background: currentColor;
+  height: 0.1rem;
+  width: .8em; }
+
+.icon-downward::after,
+.icon-upward::after {
+  background: currentColor;
+  height: .8em;
+  width: 0.1rem; }
+
+.icon-back::after {
+  left: 55%; }
+
+.icon-back::before {
+  transform: translate(-50%, -50%) rotate(-45deg); }
+
+.icon-downward::after {
+  top: 45%; }
+
+.icon-downward::before {
+  transform: translate(-50%, -50%) rotate(-135deg); }
+
+.icon-forward::after {
+  left: 45%; }
+
+.icon-forward::before {
+  transform: translate(-50%, -50%) rotate(135deg); }
+
+.icon-upward::after {
+  top: 55%; }
+
+.icon-upward::before {
+  transform: translate(-50%, -50%) rotate(45deg); }
+
+.icon-caret::before {
+  border-top: .3em solid currentColor;
+  border-right: .3em solid transparent;
+  border-left: .3em solid transparent;
+  height: 0;
+  transform: translate(-50%, -25%);
+  width: 0; }
+
+.icon-menu::before {
+  background: currentColor;
+  box-shadow: 0 -.35em, 0 .35em;
+  height: 0.1rem;
+  width: 100%; }
+
+.icon-more-horiz::before,
+.icon-more-vert::before {
+  background: currentColor;
+  box-shadow: -.4em 0, .4em 0;
+  border-radius: 50%;
+  height: .2em;
+  width: .2em; }
+
+.icon-more-vert::before {
+  box-shadow: 0 -.4em, 0 .4em; }
+
+.icon-check::before {
+  border: 0.1rem solid currentColor;
+  border-right: 0;
+  border-top: 0;
+  height: .5em;
+  width: .9em;
+  transform: translate(-50%, -0.375em) rotate(-45deg); }
+
+.icon-close::before {
+  background: currentColor;
+  height: 0.1rem;
+  width: 100%; }
+
+.icon-close::after {
+  background: currentColor;
+  height: 100%;
+  width: 0.1rem; }
+
+.icon-close::before, .icon-close::after {
+  transform: translate(-50%, -50%) rotate(45deg); }
+
+.icon-delete::before {
+  border: 0.1rem solid currentColor;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  border-top: 0;
+  height: .6em;
+  top: 70%;
+  width: .75em; }
+
+.icon-delete::after {
+  background: currentColor;
+  box-shadow: -.2em .2em, .2em .2em;
+  height: 0.1rem;
+  top: 0.05rem;
+  width: .5em; }
+
+.icon-minus::before {
+  background: currentColor;
+  height: 0.1rem;
+  width: 100%; }
+
+.icon-plus::before {
+  background: currentColor;
+  height: 0.1rem;
+  width: 100%; }
+
+.icon-plus::after {
+  background: currentColor;
+  height: 100%;
+  width: 0.1rem; }
+
+.icon-shutdown {
+  border: 0.1rem solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent; }
+  .icon-shutdown::before {
+    background: currentColor; }
+
+.icon-stop {
+  border: 0.1rem solid currentColor;
+  border-radius: 50%; }
+  .icon-stop::before {
+    background: currentColor;
+    height: 0.1rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 1em; }
