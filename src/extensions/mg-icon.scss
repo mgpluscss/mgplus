@@ -1,0 +1,75 @@
+/*
+ content:'❯'; // this is the  nav arrow
+ content: "▸"; // this is the caret arrow 
+ content: "➡"; // this is the dir arrow 
+*/
+
+
+
+@mixin mg-arrow-after {
+   
+    font-size: 2.5rem; 
+    pointer-events: none; 
+    transform-origin: center; 
+    transition: all 0.2s;
+    margin-right: -0.1rem;
+    font-style: normal;
+    font-weight: lighter;
+    
+  }
+  
+  @mixin mg-arrow-down-after {
+    content :"▾";  
+  } 
+  
+  
+  .mg-arrow::after {
+    @include mg-arrow-after;
+    margin-top: 0;
+   
+  }
+  .mg-arrow {
+    display: inline-flex;
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: nowrap;
+  }
+  .mg-arrow.opened::after {
+    transform: rotate(180deg);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  
+  
+  .mg-arrow.down::after {
+    @include mg-arrow-down-after
+  }
+  
+  .mg-arrow.left::after {
+    transform: rotate(-90deg);
+    margin-bottom: 0rem;
+  }
+  
+  .mg-arrow.up::after, .mg-arrow.opened::after {
+    transform: rotate(180deg);
+    margin-bottom: 0.9rem;
+  }
+  
+  
+  .mg-arrow.right.opened::after { 
+    transform: rotate(90deg);
+  }
+  
+  .mg-arrow.right::after {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    content:'❯';
+  }
+   
+  
+  //fix arrow visibility when button is clear or outline
+  .mg-arrow.mg-button--link:after,
+  .mg-arrow.mg-button--clear:after,
+  .mg-arrow.mg-button--outline:after {
+    border-color: $color-secondary;
+  }

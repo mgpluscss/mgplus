@@ -748,12 +748,19 @@ input[type="range"] {
 .mg-close:hover {
   opacity: 0.8; }
 
+/*
+ content:'❯'; // this is the  nav arrow
+ content: "▸"; // this is the caret arrow 
+ content: "➡"; // this is the dir arrow 
+*/
 .mg-arrow::after {
   font-size: 2.5rem;
   pointer-events: none;
   transform-origin: center;
   transition: all 0.2s;
   margin-right: -0.1rem;
+  font-style: normal;
+  font-weight: lighter;
   margin-top: 0; }
 
 .mg-arrow {
@@ -777,6 +784,9 @@ input[type="range"] {
 .mg-arrow.up::after, .mg-arrow.opened::after {
   transform: rotate(180deg);
   margin-bottom: 0.9rem; }
+
+.mg-arrow.right.opened::after {
+  transform: rotate(90deg); }
 
 .mg-arrow.right::after {
   font-size: 1.5rem;
@@ -1769,6 +1779,8 @@ input[type="range"] {
   transform-origin: center;
   transition: all 0.2s;
   margin-right: -0.1rem;
+  font-style: normal;
+  font-weight: lighter;
   content: "▾";
   position: absolute;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
