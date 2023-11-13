@@ -724,18 +724,6 @@ input[type="range"] {
     input[type="range"]:disabled::-webkit-slider-thumb {
       background: var(--mg-color-quaternary); }
 
-.mg-icon {
-  width: 2.2rem;
-  height: 2.2rem;
-  vertical-align: middle;
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
-  display: inline-flex;
-  background-repeat: no-repeat;
-  background-size: contain;
-  align-items: center;
-  background-position: center; }
-
 .mg-close {
   cursor: pointer;
   transition: 0.3s;
@@ -754,11 +742,12 @@ input[type="range"] {
  content: "➡"; // this is the dir arrow 
 */
 .mg-arrow::after {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   pointer-events: none;
   transform-origin: center;
   transition: all 0.2s;
-  margin-right: -0.1rem;
+  margin-right: 0rem;
+  margin-left: 0.5rem;
   font-style: normal;
   font-weight: lighter;
   margin-top: 0; }
@@ -775,7 +764,8 @@ input[type="range"] {
   margin-bottom: 0; }
 
 .mg-arrow.down::after {
-  content: "▾"; }
+  content: '❯';
+  rotate: 90deg; }
 
 .mg-arrow.left::after {
   transform: rotate(-90deg);
@@ -1774,14 +1764,16 @@ input[type="range"] {
   right: 0.6em; }
 
 .mg-select::after {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   pointer-events: none;
   transform-origin: center;
   transition: all 0.2s;
-  margin-right: -0.1rem;
+  margin-right: 0rem;
+  margin-left: 0.5rem;
   font-style: normal;
   font-weight: lighter;
-  content: "▾";
+  content: '❯';
+  rotate: 90deg;
   position: absolute;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
   margin-bottom: 1.5rem; }
@@ -1999,7 +1991,6 @@ input[type="range"] {
   padding: 0.5rem 0.5rem;
   text-decoration: none;
   color: var(--mg-color-secondary);
-  justify-content: start;
   align-items: center;
   border-bottom: 1px solid var(--mg-color-quinary); }
 
@@ -3596,6 +3587,11 @@ input[type="range"] {
 .mg-max-h100vh {
   max-height: 100vh; }
 
+.mg-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .mg-collapse + .mg-collapse--content {
   display: none; }
 
@@ -3603,28 +3599,30 @@ input[type="range"] {
   display: block; }
 
 /*! Icons.css v0.1.0 | MIT License | github.com/picturepan2/icons.css */
-.icon {
+.mg-icon {
   box-sizing: border-box;
   display: inline-block;
   font-size: inherit;
   font-style: normal;
-  height: 1em;
+  height: 2rem;
   position: relative;
   text-indent: -9999px;
   vertical-align: middle;
-  width: 1em; }
-  .icon::before, .icon::after {
+  width: 2rem; }
+  .mg-icon::before, .mg-icon::after {
     content: "";
     display: block;
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%); }
-  .icon.icon-2x {
+  .mg-icon.icon-bold {
+    border-width: 0.12rem; }
+  .mg-icon.icon-2x {
     font-size: 32px; }
-  .icon.icon-3x {
+  .mg-icon.icon-3x {
     font-size: 48px; }
-  .icon.icon-4x {
+  .mg-icon.icon-4x {
     font-size: 64px; }
 
 .icon-apps::before {
@@ -3703,11 +3701,13 @@ input[type="range"] {
   transform: translate(-50%, -25%);
   width: 0; }
 
-.icon-menu::before {
-  background: currentColor;
-  box-shadow: 0 -.35em, 0 .35em;
-  height: 0.1rem;
-  width: 100%; }
+.icon-menu {
+  width: 1.5em; }
+  .icon-menu::before {
+    background: currentColor;
+    box-shadow: 0 -.5em, 0 .5em;
+    height: 0.1rem;
+    width: 100%; }
 
 .icon-more-horiz::before,
 .icon-more-vert::before {

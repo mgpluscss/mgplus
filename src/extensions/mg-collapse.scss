@@ -1,4 +1,10 @@
   
+.mg-collapse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
  .mg-collapse + .mg-collapse--content   {   
   display: none;  
 }

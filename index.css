@@ -6,7 +6,7 @@
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
   }
  
   section > h2 {
