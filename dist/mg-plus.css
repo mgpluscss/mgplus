@@ -736,11 +736,6 @@ input[type="range"] {
 .mg-close:hover {
   opacity: 0.8; }
 
-/*
- content:'❯'; // this is the  nav arrow
- content: "▸"; // this is the caret arrow 
- content: "➡"; // this is the dir arrow 
-*/
 .mg-arrow::after {
   font-size: 1.5rem;
   pointer-events: none;
@@ -3616,14 +3611,14 @@ input[type="range"] {
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%); }
-  .mg-icon.icon-bold {
-    border-width: 0.12rem; }
-  .mg-icon.icon-2x {
-    font-size: 32px; }
-  .mg-icon.icon-3x {
-    font-size: 48px; }
-  .mg-icon.icon-4x {
-    font-size: 64px; }
+  .mg-icon.icon-s {
+    font-size: 1.5rem; }
+  .mg-icon.icon-m {
+    font-size: 2rem; }
+  .mg-icon.icon-x {
+    font-size: inherit; }
+  .mg-icon.icon-l {
+    font-size: 2.5rem; }
 
 .icon-apps::before {
   background: currentColor;
@@ -3639,7 +3634,7 @@ input[type="range"] {
 .icon-back::before,
 .icon-forward::before,
 .icon-upward::before {
-  border: 0.1rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-bottom: 0;
   border-right: 0;
   height: .65em;
@@ -3660,14 +3655,14 @@ input[type="range"] {
 .icon-back::after,
 .icon-forward::after {
   background: currentColor;
-  height: 0.1rem;
+  height: 0.15rem;
   width: .8em; }
 
 .icon-downward::after,
 .icon-upward::after {
   background: currentColor;
   height: .8em;
-  width: 0.1rem; }
+  width: 0.15rem; }
 
 .icon-back::after {
   left: 55%; }
@@ -3706,7 +3701,7 @@ input[type="range"] {
   .icon-menu::before {
     background: currentColor;
     box-shadow: 0 -.5em, 0 .5em;
-    height: 0.1rem;
+    height: 0.15rem;
     width: 100%; }
 
 .icon-more-horiz::before,
@@ -3721,7 +3716,7 @@ input[type="range"] {
   box-shadow: 0 -.4em, 0 .4em; }
 
 .icon-check::before {
-  border: 0.1rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-right: 0;
   border-top: 0;
   height: .5em;
@@ -3730,19 +3725,19 @@ input[type="range"] {
 
 .icon-close::before {
   background: currentColor;
-  height: 0.1rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-close::after {
   background: currentColor;
   height: 100%;
-  width: 0.1rem; }
+  width: 0.15rem; }
 
 .icon-close::before, .icon-close::after {
   transform: translate(-50%, -50%) rotate(45deg); }
 
 .icon-delete::before {
-  border: 0.1rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-bottom-left-radius: 0.1rem;
   border-bottom-right-radius: 0.1rem;
   border-top: 0;
@@ -3753,37 +3748,37 @@ input[type="range"] {
 .icon-delete::after {
   background: currentColor;
   box-shadow: -.2em .2em, .2em .2em;
-  height: 0.1rem;
-  top: 0.05rem;
+  height: 0.15rem;
+  top: 0.075rem;
   width: .5em; }
 
 .icon-minus::before {
   background: currentColor;
-  height: 0.1rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-plus::before {
   background: currentColor;
-  height: 0.1rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-plus::after {
   background: currentColor;
   height: 100%;
-  width: 0.1rem; }
+  width: 0.15rem; }
 
 .icon-shutdown {
-  border: 0.1rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-radius: 50%;
   border-top-color: transparent; }
   .icon-shutdown::before {
     background: currentColor; }
 
 .icon-stop {
-  border: 0.1rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-radius: 50%; }
   .icon-stop::before {
     background: currentColor;
-    height: 0.1rem;
+    height: 0.15rem;
     transform: translate(-50%, -50%) rotate(45deg);
     width: 1em; }

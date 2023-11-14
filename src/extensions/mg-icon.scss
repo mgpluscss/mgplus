@@ -1,8 +1,6 @@
-/*
- content:'❯'; // this is the  nav arrow
- content: "▸"; // this is the caret arrow 
- content: "➡"; // this is the dir arrow 
-*/
+ 
+
+
 @mixin mg-arrow-after {
    
     font-size: 1.5rem; 
@@ -20,8 +18,7 @@
     content:'❯';
     rotate: 90deg;
   } 
-  
-  
+   
   .mg-arrow::after {
     @include mg-arrow-after;
     margin-top: 0;
@@ -64,8 +61,7 @@
     margin-left: 0.5rem;
     content:'❯';
   }
-   
-  
+    
   //fix arrow visibility when button is clear or outline
   .mg-arrow.mg-button--link:after,
   .mg-arrow.mg-button--clear:after,
