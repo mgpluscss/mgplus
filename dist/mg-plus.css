@@ -3595,15 +3595,20 @@ input[type="range"] {
 
 /*! Icons.css v0.1.0 | MIT License | github.com/picturepan2/icons.css */
 .mg-icon {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   box-sizing: border-box;
   display: inline-block;
   font-size: inherit;
   font-style: normal;
   height: 2rem;
+  width: 2rem;
   position: relative;
   text-indent: -9999px;
-  vertical-align: middle;
-  width: 2rem; }
+  vertical-align: middle; }
   .mg-icon::before, .mg-icon::after {
     content: "";
     display: block;
@@ -3619,6 +3624,10 @@ input[type="range"] {
     font-size: inherit; }
   .mg-icon.icon-l {
     font-size: 2.5rem; }
+  .mg-icon.icon-xl {
+    height: 3rem;
+    width: 3rem;
+    font-size: 3rem; }
 
 .icon-apps::before {
   background: currentColor;
@@ -3634,7 +3643,7 @@ input[type="range"] {
 .icon-back::before,
 .icon-forward::before,
 .icon-upward::before {
-  border: 0.15rem solid currentColor;
+  border: 0.16rem solid currentColor;
   border-bottom: 0;
   border-right: 0;
   height: .65em;
@@ -3655,14 +3664,14 @@ input[type="range"] {
 .icon-back::after,
 .icon-forward::after {
   background: currentColor;
-  height: 0.15rem;
+  height: 0.16rem;
   width: .8em; }
 
 .icon-downward::after,
 .icon-upward::after {
   background: currentColor;
   height: .8em;
-  width: 0.15rem; }
+  width: 0.16rem; }
 
 .icon-back::after {
   left: 55%; }
@@ -3697,11 +3706,12 @@ input[type="range"] {
   width: 0; }
 
 .icon-menu {
-  width: 1.5em; }
+  width: 2.5rem;
+  margin-bottom: 0.3rem; }
   .icon-menu::before {
     background: currentColor;
-    box-shadow: 0 -.5em, 0 .5em;
-    height: 0.15rem;
+    box-shadow: 0 -.3em, 0 .3em;
+    height: 0.16rem;
     width: 100%; }
 
 .icon-more-horiz::before,
@@ -3716,7 +3726,7 @@ input[type="range"] {
   box-shadow: 0 -.4em, 0 .4em; }
 
 .icon-check::before {
-  border: 0.15rem solid currentColor;
+  border: 0.16rem solid currentColor;
   border-right: 0;
   border-top: 0;
   height: .5em;
@@ -3725,19 +3735,19 @@ input[type="range"] {
 
 .icon-close::before {
   background: currentColor;
-  height: 0.15rem;
+  height: 0.16rem;
   width: 100%; }
 
 .icon-close::after {
   background: currentColor;
   height: 100%;
-  width: 0.15rem; }
+  width: 0.16rem; }
 
 .icon-close::before, .icon-close::after {
   transform: translate(-50%, -50%) rotate(45deg); }
 
 .icon-delete::before {
-  border: 0.15rem solid currentColor;
+  border: 0.16rem solid currentColor;
   border-bottom-left-radius: 0.1rem;
   border-bottom-right-radius: 0.1rem;
   border-top: 0;
@@ -3748,37 +3758,37 @@ input[type="range"] {
 .icon-delete::after {
   background: currentColor;
   box-shadow: -.2em .2em, .2em .2em;
-  height: 0.15rem;
-  top: 0.075rem;
+  height: 0.16rem;
+  top: 0.08rem;
   width: .5em; }
 
 .icon-minus::before {
   background: currentColor;
-  height: 0.15rem;
+  height: 0.16rem;
   width: 100%; }
 
 .icon-plus::before {
   background: currentColor;
-  height: 0.15rem;
+  height: 0.16rem;
   width: 100%; }
 
 .icon-plus::after {
   background: currentColor;
   height: 100%;
-  width: 0.15rem; }
+  width: 0.16rem; }
 
 .icon-shutdown {
-  border: 0.15rem solid currentColor;
+  border: 0.16rem solid currentColor;
   border-radius: 50%;
   border-top-color: transparent; }
   .icon-shutdown::before {
     background: currentColor; }
 
 .icon-stop {
-  border: 0.15rem solid currentColor;
+  border: 0.16rem solid currentColor;
   border-radius: 50%; }
   .icon-stop::before {
     background: currentColor;
-    height: 0.15rem;
+    height: 0.16rem;
     transform: translate(-50%, -50%) rotate(45deg);
     width: 1em; }

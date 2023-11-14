@@ -68,39 +68,43 @@ function registerDemoFeatures() {
     false
   );
 
-  function prettify(el) {
-    function indentHtml(el) {
-      return format(el, 1).innerHTML;
-    }
+  function indentHtml(el) {
+    return format(el, 1).innerHTML;
+  }
 
-    function format(node, level) {
-      let indentBefore = new Array(level++ + 1).join("  "),
-        indentAfter = new Array(level - 1).join("  "),
-        textNode;
+  function format(node, level) {
+    let indentBefore = new Array(level++ + 1).join("  "),
+      indentAfter = new Array(level - 1).join("  "),
+      textNode;
 
-      for (let i = 0; i < node.children.length; i++) {
-        textNode = document.createTextNode("" + indentBefore);
-        node.insertBefore(textNode, node.children[i]);
+    for (let i = 0; i < node.children.length; i++) {
+      textNode = document.createTextNode("" + indentBefore);
+      node.insertBefore(textNode, node.children[i]);
 
-        format(node.children[i], level);
+      format(node.children[i], level);
 
-        if (node.lastElementChild == node.children[i]) {
-          textNode = document.createTextNode("" + indentAfter);
-          node.appendChild(textNode);
-        }
+      if (node.lastElementChild == node.children[i]) {
+        textNode = document.createTextNode("" + indentAfter);
+        node.appendChild(textNode);
       }
-
-      return node;
     }
 
-    function htmlEscape(s) {
-      return s
-        .replace(/\n\n/g, "")
-        .replace(/\t/g, "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-    }
+    return node;
+  }
+  
+
+  function htmlEscape(s) {
+    return s
+      .replace(/\n\n/g, "")
+      .replace(/\t/g, "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+  function prettify(el) {
+   
+
+
 
     var elSource = document.getElementById(el.getAttribute("data-source"));
     if (elSource) {
@@ -117,6 +121,46 @@ function registerDemoFeatures() {
       el.innerHTML = quineHtml;
     }
   }
+
+  function buildHtmlPreview(elSource){
+      
+    if (elSource) {
+      // this page's own source code
+      indentHtml(elSource);
+      var quineHtml = htmlEscape(elSource.outerHTML);
+
+      // Highlight the operative parts:
+      quineHtml = quineHtml.replace(
+        /&lt;script src[\s\S]*?&gt;&lt;\/script&gt;|&lt;!--\?[\s\S]*?--&gt;|&lt;pre\b[\s\S]*?&lt;\/pre&gt;/g,
+        '<span class="operative">$&</span>'
+      );
+      var previewPan = document.createElement("div");
+      var buttonCollapse = document.createElement("button");
+     const preContent= document.createElement("pre");
+
+     elSource.parentNode.insertBefore(previewPan,elSource.nextSibling);
+     previewPan.appendChild(buttonCollapse);
+     previewPan.appendChild(preContent);
+
+     previewPan.classList.add("mg-pad3");
+     buttonCollapse.classList.add("mg-button",
+     "mg-button--clear",
+      "mg-button--primary",
+      "mg-button--small", 
+      "mg-arrow", 
+      "down", 
+      "mg-collapse");
+
+      buttonCollapse.setAttribute("data-toggle","collapse");
+
+     buttonCollapse.textContent="view html"
+     preContent.classList.add("prettyprint", "mg-collapse--content");
+     preContent.innerHTML=quineHtml;
+
+    }
+
+  }
   document.querySelectorAll("[data-toggle~=prettify]").forEach(prettify);
+  document.querySelectorAll("[data-toggle~=htmlpreview]").forEach(buildHtmlPreview);
   prettyPrint();
 }
