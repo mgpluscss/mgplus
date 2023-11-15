@@ -1,6 +1,12 @@
+
+.mg-arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 @mixin mg-arrow-after {
    
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     pointer-events: none; 
     transform-origin: center; 
     transition: all 0.2s;
@@ -13,7 +19,7 @@
   
   @mixin mg-arrow-down-after {
     content:'❯';
-    rotate: 90deg;
+    rotate: 90deg; 
   } 
    
   .mg-arrow::after {
@@ -21,12 +27,7 @@
     margin-top: 0;
    
   }
-  .mg-arrow {
-    display: inline-flex;
-    align-items: center; 
-    justify-content: center;; 
-    flex-wrap: nowrap;
-  }
+  
   .mg-arrow.opened::after {
     transform: rotate(180deg);
     margin-top: 0.5rem;
@@ -53,9 +54,8 @@
     transform: rotate(90deg);
   }
   
-  .mg-arrow.right::after {
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
+  .mg-arrow.right::after { 
+    margin-left: 0.5rem; 
     content:'❯';
   }
     
