@@ -45,10 +45,10 @@
 /* Create the checkmark/indicator (hidden when not checked) */
 .mg-toggle .checkmark:after {
   content: "";
-  border-radius: 50%;
+  border-radius: $control-radius;
   position: absolute;
   content: "";
-  height: 1.5em;
+  height: 1.6em;
   width: 1.4em;
   left: 0;
   background-color: $color-light;

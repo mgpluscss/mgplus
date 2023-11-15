@@ -19,21 +19,6 @@
   ~ .mg-loader--status {
   display: none !important;
 }
-.mg-icon--loader {
-  opacity: 0.8;
-  border: 2px solid;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: mg-rotate 1s linear infinite;
-}
+ 
 
-@keyframes mg-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+

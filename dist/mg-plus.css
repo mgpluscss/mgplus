@@ -1,9 +1,10 @@
 @charset "UTF-8";
+/*! mgplus.css v1.2.1 | MIT License | github.com/evodim/mgplus */
 :root {
   --mg-color-dark: #000000;
   --mg-color-light: #fcfcfc;
   --mg-color-initial: #ffffff;
-  --mg-color-primary: #9b4dca;
+  --mg-color-primary: #475dca;
   --mg-color-secondary: #302f2f;
   --mg-color-tertiary: #797979;
   --mg-color-quaternary: #a7a7a7;
@@ -640,8 +641,7 @@ h5,
 h6 {
   font-weight: 300;
   letter-spacing: -.1rem;
-  margin-bottom: 2.0rem;
-  margin-top: 0; }
+  margin-bottom: 2.0rem; }
 
 h1 {
   font-size: 5rem;
@@ -736,6 +736,12 @@ input[type="range"] {
 .mg-close:hover {
   opacity: 0.8; }
 
+@keyframes mg-rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 .mg-arrow::after {
   font-size: 1.5rem;
   pointer-events: none;
@@ -750,7 +756,7 @@ input[type="range"] {
 .mg-arrow {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: nowrap; }
 
 .mg-arrow.opened::after {
@@ -2160,10 +2166,10 @@ input[type="range"] {
 /* Create the checkmark/indicator (hidden when not checked) */
 .mg-toggle .checkmark:after {
   content: "";
-  border-radius: 50%;
+  border-radius: var(--mg-control-radius);
   position: absolute;
   content: "";
-  height: 1.5em;
+  height: 1.6em;
   width: 1.4em;
   left: 0;
   background-color: var(--mg-color-light);
@@ -2204,21 +2210,6 @@ input[type="range"] {
 .mg-loader--loaded
 ~ .mg-loader--status {
   display: none !important; }
-
-.mg-icon--loader {
-  opacity: 0.8;
-  border: 2px solid;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: mg-rotate 1s linear infinite; }
-
-@keyframes mg-rotate {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
 
 .mg-timeline, .mg-timeline-inline {
   line-height: normal; }
@@ -3593,7 +3584,7 @@ input[type="range"] {
 .mg-collapse.opened + .mg-collapse--content {
   display: block; }
 
-/*! Icons.css v0.1.0 | MIT License | github.com/picturepan2/icons.css */
+/*! Forked from Icons.css | MIT License | github.com/picturepan2/icons.css */
 .mg-icon {
   margin-left: 0.2rem;
   margin-right: 0.2rem;
@@ -3629,6 +3620,75 @@ input[type="range"] {
     width: 3rem;
     font-size: 3rem; }
 
+.icon-check::before {
+  border: 0.17rem solid currentColor;
+  border-right: 0;
+  border-top: 0;
+  height: .5em;
+  width: .9em;
+  transform: translate(-50%, -0.375em) rotate(-45deg); }
+
+.icon-close::before {
+  background: currentColor;
+  height: 0.17rem;
+  width: 100%; }
+
+.icon-close::after {
+  background: currentColor;
+  height: 100%;
+  width: 0.17rem; }
+
+.icon-close::before, .icon-close::after {
+  transform: translate(-50%, -50%) rotate(45deg); }
+
+.icon-delete::before {
+  border: 0.17rem solid currentColor;
+  border-bottom-left-radius: 0.1em;
+  border-bottom-right-radius: 0.1em;
+  border-top: 0;
+  height: .6em;
+  top: 70%;
+  width: .75em; }
+
+.icon-delete::after {
+  background: currentColor;
+  box-shadow: -.2em .2em, .2em .2em;
+  height: 0.17rem;
+  top: 0.085rem;
+  width: .5em; }
+
+.icon-minus::before {
+  background: currentColor;
+  height: 0.17rem;
+  width: 100%; }
+
+.icon-plus::before {
+  background: currentColor;
+  height: 0.17rem;
+  width: 100%; }
+
+.icon-plus::after {
+  background: currentColor;
+  height: 100%;
+  width: 0.17rem; }
+
+.icon-spinner {
+  border: 0.17rem solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: mg-rotate 1s linear infinite; }
+  .icon-spinner::before {
+    background: currentColor; }
+
+.icon-stop {
+  border: 0.17rem solid currentColor;
+  border-radius: 50%; }
+  .icon-stop::before {
+    background: currentColor;
+    height: 0.17rem;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 1em; }
+
 .icon-apps::before {
   background: currentColor;
   box-shadow: -.35em -.35em, -.35em 0, -.35em .35em, 0 -.35em, 0 .35em, .35em -.35em, .35em 0, .35em .35em;
@@ -3643,7 +3703,7 @@ input[type="range"] {
 .icon-back::before,
 .icon-forward::before,
 .icon-upward::before {
-  border: 0.16rem solid currentColor;
+  border: 0.17rem solid currentColor;
   border-bottom: 0;
   border-right: 0;
   height: .65em;
@@ -3664,14 +3724,14 @@ input[type="range"] {
 .icon-back::after,
 .icon-forward::after {
   background: currentColor;
-  height: 0.16rem;
+  height: 0.17rem;
   width: .8em; }
 
 .icon-downward::after,
 .icon-upward::after {
   background: currentColor;
   height: .8em;
-  width: 0.16rem; }
+  width: 0.17rem; }
 
 .icon-back::after {
   left: 55%; }
@@ -3711,7 +3771,7 @@ input[type="range"] {
   .icon-menu::before {
     background: currentColor;
     box-shadow: 0 -.3em, 0 .3em;
-    height: 0.16rem;
+    height: 0.17rem;
     width: 100%; }
 
 .icon-more-horiz::before,
@@ -3724,71 +3784,3 @@ input[type="range"] {
 
 .icon-more-vert::before {
   box-shadow: 0 -.4em, 0 .4em; }
-
-.icon-check::before {
-  border: 0.16rem solid currentColor;
-  border-right: 0;
-  border-top: 0;
-  height: .5em;
-  width: .9em;
-  transform: translate(-50%, -0.375em) rotate(-45deg); }
-
-.icon-close::before {
-  background: currentColor;
-  height: 0.16rem;
-  width: 100%; }
-
-.icon-close::after {
-  background: currentColor;
-  height: 100%;
-  width: 0.16rem; }
-
-.icon-close::before, .icon-close::after {
-  transform: translate(-50%, -50%) rotate(45deg); }
-
-.icon-delete::before {
-  border: 0.16rem solid currentColor;
-  border-bottom-left-radius: 0.1rem;
-  border-bottom-right-radius: 0.1rem;
-  border-top: 0;
-  height: .6em;
-  top: 70%;
-  width: .75em; }
-
-.icon-delete::after {
-  background: currentColor;
-  box-shadow: -.2em .2em, .2em .2em;
-  height: 0.16rem;
-  top: 0.08rem;
-  width: .5em; }
-
-.icon-minus::before {
-  background: currentColor;
-  height: 0.16rem;
-  width: 100%; }
-
-.icon-plus::before {
-  background: currentColor;
-  height: 0.16rem;
-  width: 100%; }
-
-.icon-plus::after {
-  background: currentColor;
-  height: 100%;
-  width: 0.16rem; }
-
-.icon-shutdown {
-  border: 0.16rem solid currentColor;
-  border-radius: 50%;
-  border-top-color: transparent; }
-  .icon-shutdown::before {
-    background: currentColor; }
-
-.icon-stop {
-  border: 0.16rem solid currentColor;
-  border-radius: 50%; }
-  .icon-stop::before {
-    background: currentColor;
-    height: 0.16rem;
-    transform: translate(-50%, -50%) rotate(45deg);
-    width: 1em; }

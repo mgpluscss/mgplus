@@ -2,8 +2,8 @@
 .icon-delete {
   &::before {
     border: $icon-border-width solid currentColor;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $icon-border-radius;
+    border-bottom-right-radius: $icon-border-radius;
     border-top: 0;
     height: .6em;
     top: 70%;

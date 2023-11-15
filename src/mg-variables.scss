@@ -1,8 +1,10 @@
+$version: "1.2.1";
+/*! mgplus.css v#{$version} | MIT License | github.com/evodim/mgplus */
 :root {
   --mg-color-dark: #000000;
   --mg-color-light: #fcfcfc;
   --mg-color-initial: #ffffff;
-  --mg-color-primary: #9b4dca;
+  --mg-color-primary: #475dca;
   --mg-color-secondary: #302f2f;
   --mg-color-tertiary: #797979;
   --mg-color-quaternary: #a7a7a7;
@@ -43,6 +45,17 @@ $color-warning: $color-orange;
 $color-success: $color-green;
 $grid__columns: 12;
 $grid__gutter: 0.5rem;
+
+//css icons
+$icon-border-radius: .1rem !default;
+$icon-border-width: .05rem !default;
+ 
+// Z-index
+$zindex-0: 1 !default;
+$zindex-1: 100 !default;
+$zindex-2: 200 !default;
+$zindex-3: 300 !default;
+$zindex-4: 400 !default; 
 
 $name--X: mg-x;
 $name--S: mg-s;

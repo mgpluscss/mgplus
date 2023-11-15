@@ -1,9 +1,19 @@
-// Variables and mixins
-@import "variables";
-
-/*! Icons.css v#{$version} | MIT License | github.com/picturepan2/icons.css */
+/*! Forked from Icons.css | MIT License | github.com/picturepan2/icons.css */
 // Icons
 @import "core";
-@import "navigation";
-@import "actions";
  
+// Icons action
+@import "action/icon-check";
+@import "action/icon-close";
+@import "action/icon-delete";
+@import "action/icon-minus";
+@import "action/icon-plus";
+@import "action/icon-spinner";
+@import "action/icon-stop";  
+
+// Icons navigation
+@import "navigation/icon-apps";
+@import "navigation/icon-arrows";
+@import "navigation/icon-caret";
+@import "navigation/icon-menu";
+@import "navigation/icon-more";
