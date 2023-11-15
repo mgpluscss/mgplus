@@ -1,6 +1,6 @@
 // Icon variables
-$icon-border-radius: .1em;
-$icon-border-width: .17rem;
+$icon-border-radius: 0;
+$icon-border-width: .15rem;
 $icon-prefix: "mg-icon";
 
 // Icon base style
@@ -30,22 +30,13 @@ $icon-prefix: "mg-icon";
     top: 50%;
     transform: translate(-50%, -50%); 
   }
+
   // Icon sizes 
-  &.icon-s {
-    font-size: 1.5rem; 
-  }
-  &.icon-m {
-    font-size: 2rem; 
-  } 
-  &.icon-x {
-    font-size: inherit; 
-  } 
-  &.icon-l {
-    font-size: 2.5rem;
-  } 
-  &.icon-xl {
-    height: 3rem;
-    width: 3rem;
-    font-size: 3rem;
+  @each $key, $value in $font-sizes {
+    &.icon-#{$key} {
+      font-size: $value; 
+      width: 0.5rem+($value/1.5);
+      height: 0.5rem+( $value/1.5);
+    } 
   } 
 }

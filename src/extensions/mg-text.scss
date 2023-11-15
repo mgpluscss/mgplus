@@ -68,7 +68,7 @@
     white-space: nowrap;
 }
 
-@each $key, $value in $text-map {
+@each $key, $value in $font-sizes {
     .mg-text-#{$key} {
         font-size: $value; 
     }

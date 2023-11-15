@@ -1,5 +1,9 @@
 $version: "1.2.1";
 /*! mgplus.css v#{$version} | MIT License | github.com/evodim/mgplus */
+//
+//  exposed variables
+//  _____________________________________________
+
 :root {
   --mg-color-dark: #000000;
   --mg-color-light: #fcfcfc;
@@ -86,7 +90,7 @@ $rem-map: (
   9: 9rem,
   10: 10rem,
 );
-$text-map: (
+$font-sizes: (
   s: $base-font-size*0.1 + 1rem,
   m: $base-font-size*0.3 + 1rem,
   x: $base-font-size,
@@ -112,3 +116,4 @@ $sizing-map: (
   90:90%,
   100:100%
 );
+

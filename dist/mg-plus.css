@@ -3608,20 +3608,44 @@ input[type="range"] {
     top: 50%;
     transform: translate(-50%, -50%); }
   .mg-icon.icon-s {
-    font-size: 1.5rem; }
+    font-size: 1.16rem;
+    width: 1.27333rem;
+    height: 1.27333rem; }
   .mg-icon.icon-m {
-    font-size: 2rem; }
+    font-size: 1.48rem;
+    width: 1.48667rem;
+    height: 1.48667rem; }
   .mg-icon.icon-x {
-    font-size: inherit; }
+    font-size: 1.6rem;
+    width: 1.56667rem;
+    height: 1.56667rem; }
   .mg-icon.icon-l {
-    font-size: 2.5rem; }
+    font-size: 1.92rem;
+    width: 1.78rem;
+    height: 1.78rem; }
   .mg-icon.icon-xl {
-    height: 3rem;
-    width: 3rem;
-    font-size: 3rem; }
+    font-size: 2.4rem;
+    width: 2.1rem;
+    height: 2.1rem; }
+  .mg-icon.icon-2xl {
+    font-size: 3.04rem;
+    width: 2.52667rem;
+    height: 2.52667rem; }
+  .mg-icon.icon-3xl {
+    font-size: 3.84rem;
+    width: 3.06rem;
+    height: 3.06rem; }
+  .mg-icon.icon-4xl {
+    font-size: 4.8rem;
+    width: 3.7rem;
+    height: 3.7rem; }
+  .mg-icon.icon-5xl {
+    font-size: 6.08rem;
+    width: 4.55333rem;
+    height: 4.55333rem; }
 
 .icon-check::before {
-  border: 0.17rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-right: 0;
   border-top: 0;
   height: .5em;
@@ -3630,21 +3654,21 @@ input[type="range"] {
 
 .icon-close::before {
   background: currentColor;
-  height: 0.17rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-close::after {
   background: currentColor;
   height: 100%;
-  width: 0.17rem; }
+  width: 0.15rem; }
 
 .icon-close::before, .icon-close::after {
   transform: translate(-50%, -50%) rotate(45deg); }
 
 .icon-delete::before {
-  border: 0.17rem solid currentColor;
-  border-bottom-left-radius: 0.1em;
-  border-bottom-right-radius: 0.1em;
+  border: 0.15rem solid currentColor;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   border-top: 0;
   height: .6em;
   top: 70%;
@@ -3653,27 +3677,27 @@ input[type="range"] {
 .icon-delete::after {
   background: currentColor;
   box-shadow: -.2em .2em, .2em .2em;
-  height: 0.17rem;
-  top: 0.085rem;
+  height: 0.15rem;
+  top: 0.075rem;
   width: .5em; }
 
 .icon-minus::before {
   background: currentColor;
-  height: 0.17rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-plus::before {
   background: currentColor;
-  height: 0.17rem;
+  height: 0.15rem;
   width: 100%; }
 
 .icon-plus::after {
   background: currentColor;
   height: 100%;
-  width: 0.17rem; }
+  width: 0.15rem; }
 
 .icon-spinner {
-  border: 0.17rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-radius: 50%;
   border-top-color: transparent;
   animation: mg-rotate 1s linear infinite; }
@@ -3681,11 +3705,11 @@ input[type="range"] {
     background: currentColor; }
 
 .icon-stop {
-  border: 0.17rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-radius: 50%; }
   .icon-stop::before {
     background: currentColor;
-    height: 0.17rem;
+    height: 0.15rem;
     transform: translate(-50%, -50%) rotate(45deg);
     width: 1em; }
 
@@ -3703,7 +3727,7 @@ input[type="range"] {
 .icon-back::before,
 .icon-forward::before,
 .icon-upward::before {
-  border: 0.17rem solid currentColor;
+  border: 0.15rem solid currentColor;
   border-bottom: 0;
   border-right: 0;
   height: .65em;
@@ -3724,14 +3748,14 @@ input[type="range"] {
 .icon-back::after,
 .icon-forward::after {
   background: currentColor;
-  height: 0.17rem;
+  height: 0.15rem;
   width: .8em; }
 
 .icon-downward::after,
 .icon-upward::after {
   background: currentColor;
   height: .8em;
-  width: 0.17rem; }
+  width: 0.15rem; }
 
 .icon-back::after {
   left: 55%; }
@@ -3771,7 +3795,7 @@ input[type="range"] {
   .icon-menu::before {
     background: currentColor;
     box-shadow: 0 -.3em, 0 .3em;
-    height: 0.17rem;
+    height: 0.15rem;
     width: 100%; }
 
 .icon-more-horiz::before,

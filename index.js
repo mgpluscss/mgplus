@@ -69,31 +69,7 @@ function registerDemoFeatures() {
   );
   
   function buildHtmlPreview(elSource){
-    function indentHtml(el) {
-      return format(el, 1).innerHTML;
-    }
-  
-    function format(node, level) {
-      let indentBefore = new Array(level++ + 1).join("  "),
-        indentAfter = new Array(level - 1).join("  "),
-        textNode;
-  
-      for (let i = 0; i < node.children.length; i++) {
-        textNode = document.createTextNode("" + indentBefore);
-        node.insertBefore(textNode, node.children[i]);
-  
-        format(node.children[i], level);
-  
-        if (node.lastElementChild == node.children[i]) {
-          textNode = document.createTextNode("" + indentAfter);
-          node.appendChild(textNode);
-        }
-      }
-  
-      return node;
-    }
-    
-  
+   
     function htmlEscape(s) {
       return s
         .replace(/\n\n/g, "")
@@ -104,7 +80,7 @@ function registerDemoFeatures() {
     }
     if (elSource) {
       // this page's own source code
-      indentHtml(elSource);
+       
       var quineHtml = htmlEscape(elSource.outerHTML);
 
       // Highlight the operative parts:
@@ -120,7 +96,7 @@ function registerDemoFeatures() {
      previewPan.appendChild(buttonCollapse);
      previewPan.appendChild(preContent);
 
-     previewPan.classList.add("mg-pad3");
+     previewPan.classList.add("mg-pad-t3");
      buttonCollapse.classList.add(
       "mg-button",
       "mg-button--clear",
