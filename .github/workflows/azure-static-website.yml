@@ -65,7 +65,7 @@ jobs:
           inlineScript: |
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME --pattern '[!node_modules&&src&&dom-plugins]'
+           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME --pattern '[!node_modules]'
            
            
   deploy_preview:
