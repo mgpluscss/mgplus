@@ -1,8 +1,8 @@
-import registergCollapses from "./plugins/mgCollapse.js";
-import registerDropdown from "./plugins/mgDropdown.js";
-import registerModals from "./plugins/mgModal.js";
-import registerNavs from "./plugins/mgNav.js";
-import registerTabs from "./plugins/mgTabs.js";
+import registergCollapses from "./mgCollapse.js";
+import registerDropdown from "./mgDropdown.js";
+import registerModals from "./mgModal.js";
+import registerNavs from "./mgNav.js";
+import registerTabs from "./mgTabs.js";
 
 (function (window) {
   function registerDomPlugins(autorun) {
