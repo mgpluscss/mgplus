@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+ 
  .mg-collapse + .mg-collapse--content   {   
   display: none;  
 }
-.mg-collapse.opened + .mg-collapse--content   { 
+.mg-collapse.opened + .mg-collapse--content   {  
   display: block;  
 }

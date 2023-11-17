@@ -27,7 +27,7 @@
 }
 .mg-select::after {
   @include mg-inline-css-icon;
-  @include mg-dropdown-icon;
+  @include mg-icon-dropdown;
   top: 20%;
   /*fix arrow position in center by compensating default margin bottom for inputs*/
   margin-bottom: 1.5rem; 
