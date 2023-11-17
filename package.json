@@ -10,7 +10,7 @@
   "targets": {
      "site": {
       "source": "./index.html",
-      "distDir": "dist/demo"
+      "distDir": "demo"
     },
     "plugins": {
       "source": "src/plugins/mgplus-dom.js",
