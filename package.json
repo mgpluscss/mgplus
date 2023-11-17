@@ -8,6 +8,10 @@
   "license": "MIT",
   "author": "evodim",
   "targets": {
+     "site": {
+      "source": "./index.html",
+      "distDir": "dist/demo"
+    },
     "plugins": {
       "source": "src/plugins/mgplus-dom.js",
       "distDir": "dist/js"
