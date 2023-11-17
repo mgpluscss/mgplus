@@ -26,7 +26,7 @@
     "parcel": "^2.10.2"
   },
   "scripts": {
-    "start": "parcel serve ./index.html --dist-dir ./tmp",
+    "start": "parcel serve ./index.html --dist-dir demo",
     "watch": "parcel watch",
     "build": "parcel build"
   }
