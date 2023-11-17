@@ -56,7 +56,7 @@ jobs:
         env: 
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"         
-         DEMO_SOURCE_DIR : /
+         DEMO_SOURCE_DIR : tmp
          DEMO_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/dist"
