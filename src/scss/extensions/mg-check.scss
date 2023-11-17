@@ -8,8 +8,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-  
+  user-select: none; 
 }
 /* Hide the browser's default checkbox */
 .mg-check input {
@@ -31,6 +30,7 @@
   border-color: $color-quaternary;
   border-width: thin;
   transition: all 0.3s;  
+  border-radius: 0.3rem;
 }
 
 /* On mouse-over, add a grey background color */

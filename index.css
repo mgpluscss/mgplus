@@ -29,32 +29,31 @@
     color: var(--mg-color-light);
   }
   
-  .mg-icon--darkmode {  
+  .svg-icon-darkmode {  
     background-image: url("images/darkmode.svg"); 
   }
-   
-  
-  .mg-icon--colors { 
+    
+  .svg-icon-colors { 
     background-image: url("images/colors.svg"); 
   }
   
-  .mg-icon--gears { 
+  .svg-icon-gears { 
     background-image: url("images/gears.svg"); 
   }
   
    
-  .mg-icon--fr { 
+  .svg-icon-fr { 
     background-image: url("images/fr.svg"); 
   }
   
-  .mg-icon--sp { 
+  .svg-icon-sp { 
     background-image: url("images/sp.svg"); 
   }
   
-  .mg-icon--de { 
+  .svg-icon-de { 
     background-image: url("images/de.svg"); 
   }
-  .mg-icon--search { 
+  .svg-icon-search { 
     background: url("images/search.svg"); 
   }
 
@@ -184,49 +183,3 @@ pre.prettyprint {
   }
 }
 
-.arrow-left0::after
-{
-content: "❮";
-}
-
-.arrow-right0::after
-{
-content: "❯";
-} 
-
-.arrow-left::after {
-  content :"◄";
-}
-.arrow-right::after {
-  content :"►";
-}
-.arrow-up::after {
-  content :"▲";
-}
-.arrow-down::after {
-  content :"▼";
-}
-.arrow-up2::after {
-  content :"▴";
-} 
-.arrow-down2::after {
-  content :"▾"; 
-}
-.arrow-left2::after {
-  content :"◂";
-}
-.arrow-right2::after {
-  content :"▸";
-} 
-.arrow-left5::after {
-  content :"⬅";
-}
-.arrow-right5::after {
-  content :"➡";
-}
-.arrow-up5::after {
-  content :"⬆";
-}
-.arrow-down5::after {
-  content :"⬇";
-}  

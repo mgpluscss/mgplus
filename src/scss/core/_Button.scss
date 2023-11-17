@@ -21,10 +21,12 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  text-overflow: ellipsis;
   white-space: nowrap;
   opacity: 1;
   box-shadow: $control-shadow;
   position: relative;    
+  overflow: hidden;
 
   &:focus,
   &:hover {

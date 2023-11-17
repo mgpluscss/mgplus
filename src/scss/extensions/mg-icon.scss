@@ -51,5 +51,22 @@
   }
       
 } 
+ 
+.mg-icon-close {
+  font-family: default;
+  font-style: normal;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: calc(100% + 1rem);
+  margin-top: -1rem;
+}
+
+.mg-icon-close::after {
+  content: "\D7";
+}
+
+.mg-icon-close:hover {
+  opacity: 0.8;
+}
 
   

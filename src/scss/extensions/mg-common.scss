@@ -1,21 +1,5 @@
 
 
-
-.mg-close {
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: calc(100% + 1rem);
-  margin-top: -1rem;
-}
-
-.mg-close::after {
-  content: "\D7";
-}
-
-.mg-close:hover {
-  opacity: 0.8;
-}
-
 @keyframes mg-rotate {
   0% {
     transform: rotate(0deg);
