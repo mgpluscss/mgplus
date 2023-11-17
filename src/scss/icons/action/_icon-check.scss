@@ -1,11 +1,13 @@
 // Icon check
 .icon-check {
+  border: $icon-border-width solid currentColor;
+  border-radius: 50%;
   &::before {
     border: $icon-border-width solid currentColor;
     border-right: 0;
     border-top: 0;
     height: .5em;
-    width: .9em;
+    width: .7em;
     transform: translate(-50%, -.375em) rotate(-45deg);
   }
 }
