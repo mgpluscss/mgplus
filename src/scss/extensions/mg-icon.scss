@@ -1,53 +1,55 @@
-
-.mg-arrow { 
-  //force padding to container element to reserve space for arrow
-   padding-right: 2.5rem!important;
-} 
-@mixin mg-arrow-after {  
+@mixin mg-inline-css-icon {  
   vertical-align: middle;
   box-sizing: border-box;
   border: 2px solid transparent;
-  border-color: $color-initial;
+  border-color: currentColor;
   right: 1rem;
   border-right: 0;
   border-top: 0;
   content: ""; 
   display: inline-block;  
   pointer-events: none;
-  position: absolute;
-  top: 30%;   
+  position: absolute; 
   transform-origin:center;
-  height: 0.8rem;  
-  width: 0.8rem;
+  height: 0.7rem;  
+  width: 0.7rem;
   transition: all 0.2s; 
   }
   
-  @mixin mg-arrow-down-after {     
-    -webkit-transform: rotate(-45deg); 
+  @mixin mg-dropdown-icon {     
+    transform: rotate(-45deg);   
+    top: calc(50% - 0.5rem);   
+  } 
+
+.mg-collapse-icon {
+   //force padding to container element to reserve space for arrow
+   padding-right: 2.5rem!important;
+   position: relative;
+  &::after {
+    @include mg-inline-css-icon; 
+    transform: rotate(-135deg);
+    top: calc(50% - 0.3rem);   
+  } 
+ 
+  &.opened::after {
     transform: rotate(-45deg);  
-    
+    top: 40%;   
   } 
-   
-  .mg-arrow::after {
-    @include mg-arrow-after;
-    margin-top: 0;
-   
-  } 
-  
-  .mg-arrow.down::after {
-    @include mg-arrow-down-after
-  }
+}  
+.mg-dropdown-icon { 
+  //force padding to container element to reserve space for arrow
+   padding-right: 2.5rem!important;
     
-  .mg-arrow.up::after, .mg-arrow.down.opened::after {
+  &::after {
+    @include mg-inline-css-icon; 
+    @include mg-dropdown-icon;
+  } 
+ 
+  &.opened::after {
     transform: rotate(-225deg);
-    top: 40%;  
-    
+    top: 40%;   
   }
-    
-    
-  //fix arrow visibility when button is clear or outline
-  .mg-arrow.mg-button--link:after,
-  .mg-arrow.mg-button--clear:after,
-  .mg-arrow.mg-button--outline:after {
-    border-color: $color-secondary;
-  }
+      
+} 
+
+  
