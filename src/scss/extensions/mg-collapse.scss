@@ -1,14 +1,17 @@
-  .mg-collapse {
+ 
+.mg-collapse {
     display: inline-flex;
     align-items: center;
     justify-content: space-between; 
 
-    &+.mg-collapse--content {
+    &+.mg-collapse--content { 
       display: none;
+      
     }
 
-    &.opened+.mg-collapse--content {
+    &.opened+.mg-collapse--content { 
       display: block;
+    
     }
 
   }

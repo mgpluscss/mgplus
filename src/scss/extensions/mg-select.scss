@@ -6,94 +6,20 @@
   vertical-align: top;
   margin-bottom: 1.5rem;
 
-  &>select {
+  &>select {     
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     text-overflow: ellipsis;
     width: 100%;
     padding-right: 3rem;
     cursor: pointer;
-  }
-
-  &t:not(.is-multiple) {
-    height: 2.5em;
-  }
-
-  &:not(.is-multiple):not(.is-loading)::after {
-    border-color: $color-primary;
-    z-index: 4;
-    right: 1.4rem;
-  }
-
+  } 
   &::after {
     @include mg-inline-css-icon;
     @include mg-icon-dropdown;
+    color: currentColor;
     top: 25%;
     /*fix arrow position in center by compensating default margin bottom for inputs*/
     margin-bottom: 1.5rem;
   }
 
-}
-
-.mg-select--selected {
-  background-color: $color-initial;
-  border-radius: var(--mg-input-radius);
-
-  /* Style the arrow inside the select element: */
-  &:after {
-    margin-right: 0.5em;
-    font-family: Arial;
-    position: absolute;
-    content: "";
-    top: 50%;
-    right: 0.2em;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: $color-secondary transparent transparent transparent;
-  }
-
-  /* Point the arrow upwards when the select box is open (active): */
-  &.mg-select--arrow-active:after {
-    font-family: Arial;
-    border-color: transparent transparent $color-secondary transparent;
-  }
-}
-
-
-/* style the items (options), including the selected item: */
-.mg-select--items div,
-.mg-select--selected {
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: $color-quaternary;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Style items (options): */
-.mg-select--items {
-  position: absolute;
-  background-color: $color-initial;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  max-height: 10em;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-radius: var(--mg-input-radius);
-}
-
-/* Hide the items when the select box is closed: */
-.mg-select--hide {
-  display: none;
-}
-
-.mg-select--items div:hover,
-.same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+} 

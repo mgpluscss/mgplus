@@ -14,9 +14,7 @@ input[type="range"] {
   padding: 0;
   position: relative;
   transition: opacity 0.2s;
-  vertical-align: top;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  vertical-align: top;  
   width: 100%;
 
   &:hover {
