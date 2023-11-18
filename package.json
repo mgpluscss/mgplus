@@ -1,4 +1,4 @@
-{ 
+{
   "type": "module",
   "name": "mgplus",
   "version": "1.2.1",
@@ -6,28 +6,29 @@
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",
   "license": "MIT",
-  "author": "evodim",
+  "author": "evodim", 
   "targets": {
-     "site": {
+    "site": { 
       "source": "./index.html",
       "distDir": "demo"
     },
-    "plugins": {
+    "plugins": { 
       "source": "src/plugins/mgplus-dom.js",
       "distDir": "dist/js"
     },
-    "library": {
+    "library": { 
       "source": "src/scss/mgplus.scss",
       "distDir": "dist/css"
     }
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.3",
-    "parcel": "^2.10.2"
+    "parcel": "^2.10.2",
+    "posthtml-include": "^1.7.4"
   },
   "scripts": {
-    "start": "parcel serve ./index.html --dist-dir demo",
+    "start": "parcel serve --dist-dir demo --open",
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build --no-source-maps"
   }
 }

@@ -5,13 +5,15 @@
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
   background-color: $color-quinary;
+  
+  &.danger {
+    border-left-color: $color-danger;
+  }
+  &.success {
+    border-left-color: $color-success;
+  }
+  &.warning {
+    border-left-color: $color-warning; 
+  }
 }
-.mg-alert.danger {
-  border-left-color: $color-danger;
-}
-.mg-alert.success {
-  border-left-color: $color-success;
-}
-.mg-alert.warning {
-  border-left-color: $color-warning;
-}
+ 

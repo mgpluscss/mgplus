@@ -1,3 +1,8 @@
+.mg-modal--content {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;  
+}
 .mg-modal {
   position: fixed;
   display: flex;
@@ -14,14 +19,9 @@
   z-index: 1000;
   opacity: 0;
   background: rgba(0, 0, 0, 0.7); 
-  transition: all 0.3s;
-}
-.mg-modal--content {
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;  
-}
-.mg-modal > .mg-modal--content {
+  transition: all 0.3s; 
+  
+& > .mg-modal--content {
   background-color: $color-initial;
   border-radius: $control-radius;
   color: $color-secondary;
@@ -33,31 +33,33 @@
 }
 
 
-.mg-modal > .mg-modal--content > .mg-modal--body {
+& > .mg-modal--content > .mg-modal--body {
   max-height: 80vh;
   overflow-y: auto;
 }
 
-.mg-modal.mg-bottom > .mg-modal--content {
+&.mg-bottom > .mg-modal--content {
   bottom: 0; 
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.mg-modal.mg-top > .mg-modal--content {
+&.mg-top > .mg-modal--content {
   top: 0; 
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.mg-modal.mg-right > .mg-modal--content {
+&.mg-right > .mg-modal--content {
    
   right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.mg-modal.mg-left > .mg-modal--content {
+&.mg-left > .mg-modal--content {
   
   left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+}
+

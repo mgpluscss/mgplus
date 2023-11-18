@@ -1,13 +1,14 @@
-  
-.mg-collapse {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-}
- 
- .mg-collapse + .mg-collapse--content   {   
-  display: none;  
-}
-.mg-collapse.opened + .mg-collapse--content   {  
-  display: block;  
-}
+  .mg-collapse {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between; 
+
+    &+.mg-collapse--content {
+      display: none;
+    }
+
+    &.opened+.mg-collapse--content {
+      display: block;
+    }
+
+  }

@@ -334,3 +334,5 @@ ASALocalRun/
 yarn.lock
 node_modules
 demo
+dist/*.map
+yarn.lock
