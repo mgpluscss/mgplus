@@ -1,8 +1,9 @@
 .mg-modal--content {
   position: fixed;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
 }
+
 .mg-modal {
   position: fixed;
   display: flex;
@@ -18,48 +19,50 @@
   backface-visibility: hidden;
   z-index: 1000;
   opacity: 0;
-  background: rgba(0, 0, 0, 0.7); 
-  transition: all 0.3s; 
-  
-& > .mg-modal--content {
-  background-color: $color-initial;
-  border-radius: $control-radius;
-  color: $color-secondary;
-  padding: 3rem 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 0;
-  z-index: 2000;
-  box-shadow: $control-shadow;
-}
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s;
+
+  &>.mg-modal--content {
+    background-color: $color-initial;
+    border-radius: $control-radius;
+    color: $color-secondary;
+    padding: 2rem 1.5rem;    
+    margin-top: 0;
+    z-index: 2000;
+    box-shadow: $control-shadow;
+  }
 
 
-& > .mg-modal--content > .mg-modal--body {
-  max-height: 80vh;
-  overflow-y: auto;
-}
+  &>.mg-modal--content>.mg-modal--body {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
 
-&.mg-bottom > .mg-modal--content {
-  bottom: 0; 
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-&.mg-top > .mg-modal--content {
-  top: 0; 
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+  &.mg-bottom>.mg-modal--content {
+    bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-&.mg-right > .mg-modal--content {
-   
-  right: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-&.mg-left > .mg-modal--content {
-  
-  left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-}
+  &.mg-top>.mg-modal--content {
+    top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 
+  &.mg-right>.mg-modal--content {
+
+    right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1rem;
+  }
+
+  &.mg-left>.mg-modal--content {
+
+    left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1rem;
+  }
+}
