@@ -1,8 +1,7 @@
 {
   "extends": "@parcel/config-default",
   "transformers": {
-    "*.html": [
-      "@futureportal/parcel-transformer-package-version",
+    "*.html": [      
       "@plasmohq/parcel-transformer-inject-env",
       "..."
     ]

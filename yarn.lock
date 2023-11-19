@@ -24,13 +24,6 @@
     chalk "^2.4.2"
     js-tokens "^4.0.0"
 
-"@futureportal/parcel-transformer-package-version@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@futureportal/parcel-transformer-package-version/-/parcel-transformer-package-version-1.0.0.tgz#b1a1604c742fc1bd193f24a9f15b41132eb81177"
-  integrity sha512-pB+sG8q/BqKb7DlbpfvAk/Ga7tKwA33eqbmrMJ7QigS79TRQPA1N/opdiHzHGHpWzh05uBgRjvPU/DVQ/tkoDQ==
-  dependencies:
-    "@parcel/plugin" "^2.3.2"
-
 "@lezer/common@^1.0.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@lezer/common/-/common-1.1.1.tgz#4a06a0e1b9214d7eb2ea4a9354d47a63044cee49"
@@ -577,7 +570,7 @@
   dependencies:
     "@parcel/plugin" "2.10.3"
 
-"@parcel/plugin@2.10.3", "@parcel/plugin@^2.3.2":
+"@parcel/plugin@2.10.3":
   version "2.10.3"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.10.3.tgz#c8055dded9beee2c0269edfdb7acdfb7df64469b"
   integrity sha512-FgsfGKSdtSV1EcO2NWFCZaY14W0PnEEF8vZaRCTML3vKfUbilYs/biaqf5geFOu4DwRuCC8unOTqFy7dLwcK/A==

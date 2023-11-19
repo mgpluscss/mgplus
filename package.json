@@ -25,7 +25,6 @@
     }
   },
   "devDependencies": {
-    "@futureportal/parcel-transformer-package-version": "^1.0.0",
     "@parcel/transformer-sass": "^2.10.3",
     "@plasmohq/parcel-transformer-inject-env": "^0.2.11",
     "parcel": "^2.10.2",
