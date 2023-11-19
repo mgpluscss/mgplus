@@ -45,9 +45,10 @@
   border-radius: $control-radius;
   position: absolute;
   content: "";
-  height: 1.6em;
-  width: 1.4em;
+  height: 1.4em;
+  width: 1.5em;
   left: 0;
+  top: 0.1rem;
   background-color: $color-light;
   transition: 0.3s;
   box-shadow: $control-shadow;
@@ -55,7 +56,7 @@
 
 /* Show the checkmark when checked */
 .mg-toggle input:checked ~ .checkmark:after {
-  left: 1.5em;
+  left: 1.4em;
 }
 
 /*disabled state*/

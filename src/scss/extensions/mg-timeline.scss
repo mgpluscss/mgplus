@@ -30,7 +30,7 @@
   left: -3rem;
   height: 100%;
   width: 10px;
-  border-left: 0.3rem solid var(--mg-color-quaternary);
+  border-left: 0.3rem solid $color-quaternary;
 }
 .mg-timeline > ul li:last-child::before {
   border-color: none;
@@ -43,12 +43,12 @@
   left: -3.6rem;
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.3rem solid var(--mg-color-quaternary);
+  border: 0.3rem solid $color-quaternary;
   border-radius: 50%;
-  background-color: var(--mg-color-initial);
+  background-color: $color-initial;
 }
 .mg-timeline > ul li.active::before {
-  border-left: 0.3rem solid var(--mg-color-primary);
+  border-left: 0.3rem solid $color-primary;
 }
 .mg-timeline > ul li:last-of-type::before {
   border-left: 0.3rem solid transparent !important;
@@ -57,11 +57,11 @@
 .mg-timeline > ul li.active::after {
   font-size: 1rem;
   text-align: center;
-  border: 0.3rem solid var(--mg-color-primary);
-  background-color: var(--mg-color-primary);
+  border: 0.3rem solid $color-primary;
+  background-color: $color-primary;
 }
 .mg-timeline > ul li.current::after {
-  border: 0.3rem solid var(--mg-color-primary);
+  border: 0.3rem solid $color-primary;
   width: 1.5rem;
   height: 1.5rem;
   left: -3.6rem;
@@ -74,21 +74,21 @@
   flex-direction: row;
 }
 .mg-timeline-inline > ul li {
-  border-top: 0.3rem solid var(--mg-color-quaternary);
+  border-top: 0.3rem solid $color-quaternary;
   flex: 1 1 0px;
 }
 
 .mg-timeline-inline > ul li.active {
-  border-color: var(--mg-color-primary);
+  border-color: $color-primary;
 }
 .mg-timeline-inline > ul li.active::before {
   font-size: 1rem;
   text-align: center;
-  border-color: var(--mg-color-primary);
-  background-color: var(--mg-color-primary);
+  border-color: $color-primary;
+  background-color: $color-primary;
 }
 .mg-timeline-inline > ul li.current::before {
-  border: 0.3rem solid var(--mg-color-primary);
+  border: 0.3rem solid $color-primary;
   border-radius: 50%;
 }
 .mg-timeline-inline > ul li::before {
@@ -101,9 +101,9 @@
   bottom:calc(1.5rem/2); 
   width: 1.5rem;
   height: 1.5rem;
-  border: 0.3rem solid var(--mg-color-quaternary);
+  border: 0.3rem solid $color-quaternary;
   border-radius: 50%;
-  background-color: var(--mg-color-initial);
+  background-color: $color-initial;
 }
 .mg-timeline-inline > ul li:last-of-type {
   border-top: 0.3rem solid transparent;

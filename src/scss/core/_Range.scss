@@ -26,22 +26,22 @@ input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     background: $color-primary;
-    border-radius: 50%;
+    border-radius: $control-radius;
     border: none;
-    box-shadow: var(--mg-control-shadow);
+    box-shadow: $control-shadow;
     cursor: pointer;
-    height: 2.7rem;
+    height: 2.5rem;
     width: 2.7rem;
   }
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     background: $color-primary;
-    border-radius: 50%;
+    border-radius: $control-radius;
     border: none;
-    box-shadow: var(--mg-control-shadow);
+    box-shadow: $control-shadow;
     cursor: pointer;
-    height: 2.7rem;
+    height: 2.5rem;
     width: 2.7rem;
   }
   &:disabled {

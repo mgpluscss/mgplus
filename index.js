@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
 (async function loadContent(link) {
   //get all imported html files from header
   await loadDemoSections();
@@ -5,19 +6,19 @@
   window.mgplus.registerDomPlugins();
 })();
 
+});
 async function loadDemoSections() {
-  const imports = document.querySelectorAll("link[rel='import']");
+  const sections = document.querySelectorAll("section");
   const navLinks = document.querySelector("#nav_links");
 
-  for (let i = 0; i < imports.length; i++) {
-    const link = imports[i];
-    const main = document.querySelector("main");
-    const response = await fetch(link.href);
-    const content = await response.text();
-    const section = document.createElement("section");
-    section.id = link.href.split("/").pop().split(".")[0];
-    section.innerHTML = content;
-    main.appendChild(section);
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+
+    //ignore section not marked with id
+    if (!section.id)
+    {
+      continue;
+    }
 
     const navLink = document.createElement("li");
     const navLinkTitle = section.querySelector("h2");

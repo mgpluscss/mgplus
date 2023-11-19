@@ -64,22 +64,7 @@
     border: 1px solid var(--mg-color-initial);
     padding: 4px;
   }
-   
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;   
-    padding-top: 1rem;
-    padding-bottom: 1rem; 
-  
-  }
-  .hamburger > span {
-    display: block; 
-    width: 2.5rem;
-    height: 0;  
-    border-bottom: 0.2rem solid;
-    border-radius: 3px;
-  } 
+    
   /*override*/
 code.prettyprint,
 pre.prettyprint {
@@ -183,3 +168,6 @@ pre.prettyprint {
   }
 }
 
+ #picker {
+  padding: 1rem;
+ }

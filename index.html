@@ -14,28 +14,7 @@
 
   <link rel="stylesheet" href="dist/css/mgplus.css" />
   <link rel="stylesheet" href="index.css" /> 
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
-
-  <link rel="import" href="sections/core-section.html">
-  <link rel="import" href="sections/grid-section.html">  
-  <link rel="import" href="sections/dropdown-section.html" >
-  <link rel="import" href="sections/radio-section.html">
-  <link rel="import" href="sections/check-section.html">
-  <link rel="import" href="sections/toggle-section.html"> 
-  <link rel="import" href="sections/select-section.html">  
-  <link rel="import" href="sections/group-section.html">
-  <link rel="import" href="sections/range-section.html">
-  <link rel="import" href="sections/form-section.html">
-  <link rel="import" href="sections/alert-section.html">  
-  <link rel="import" href="sections/badge-section.html">  
-  <link rel="import" href="sections/loader-section.html">
-  <link rel="import" href="sections/modal-section.html">
-  <link rel="import" href="sections/nav-section.html">
-  <link rel="import" href="sections/tab-section.html">
-  <link rel="import" href="sections/collapse-section.html" >
-  <link rel="import" href="sections/timeline-section.html"> 
-  <link rel="import" href="sections/icons-section.html">
-  
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css"> 
 </head> 
 <body> 
   <header>
@@ -59,8 +38,8 @@
         <div class="mg-right mg-dropdown ">
           <button title="menu" data-toggle="dropdown" class="mg-button--large"><i class="mg-icon icon-l icon-menu icon-bold"></i></button>
           <div
-            class="mg-dropdown--content mg-right mg-nav mg-w60vh">
-            <ul class="mg-text-l" id="nav_links"> 
+            class="mg-dropdown--content mg-right mg-nav mg-w50vh mg-max-h80vh">
+            <ul class="mg-text-l mg-text-bold" id="nav_links"> 
             </ul>
           </div>
         </div>
@@ -95,7 +74,26 @@
     </svg>
  
  </header>
- <main class="mg-container">
+ <main class="mg-container"> 
+  <include src="sections/core-section.html"></include>
+  <include src="sections/grid-section.html">  </include>
+  <include src="sections/dropdown-section.html" ></include>
+  <include src="sections/radio-section.html"></include>
+  <include src="sections/check-section.html"></include>
+  <include src="sections/toggle-section.html"> </include>
+  <include src="sections/select-section.html">  </include>
+  <include src="sections/group-section.html"></include>
+  <include src="sections/range-section.html"></include>
+  <include src="sections/form-section.html"></include>
+  <include src="sections/alert-section.html">  </include>
+  <include src="sections/badge-section.html">  </include>
+  <include src="sections/loader-section.html"></include>
+  <include src="sections/modal-section.html"></include>
+  <include src="sections/nav-section.html"></include>
+  <include src="sections/tab-section.html"></include>
+  <include src="sections/collapse-section.html" ></include>
+  <include src="sections/timeline-section.html"> </include>
+  <include src="sections/icons-section.html"></include>
   </main>
   <footer>
     <div class="mg-center-block">

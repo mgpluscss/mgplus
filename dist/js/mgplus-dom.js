@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"8IOmA":[function(require,module,exports) {
+})({"9xRvl":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
-var HMR_PORT = 58756;
+var HMR_PORT = 64135;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "355ca468148786b3";
+var HMR_ENV_HASH = "febfef3c5b467b16";
+module.bundle.HMR_BUNDLE_ID = "f91a1216010b4c4a";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -574,7 +574,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"bfd6L":[function(require,module,exports) {
+},{}],"ZZZO9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _mgCollapseJs = require("./mgCollapse.js");
 var _mgCollapseJsDefault = parcelHelpers.interopDefault(_mgCollapseJs);
@@ -622,7 +622,7 @@ var _mgTabsJsDefault = parcelHelpers.interopDefault(_mgTabsJs);
     });
 })(window);
 
-},{"./mgCollapse.js":"1mZPD","./mgDropdown.js":"al7Tw","./mgModal.js":"k5vjH","./mgNav.js":"e1rrJ","./mgTabs.js":"2gpOB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1mZPD":[function(require,module,exports) {
+},{"./mgCollapse.js":"eme7T","./mgDropdown.js":"kbLsk","./mgModal.js":"isko3","./mgNav.js":"gHcUv","./mgTabs.js":"i2KZB","@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}],"eme7T":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>registergCollapses);
@@ -652,7 +652,7 @@ function registergCollapses() {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}],"1cdyk":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -682,7 +682,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"al7Tw":[function(require,module,exports) {
+},{}],"kbLsk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>registergDropdowns);
@@ -731,7 +731,7 @@ function registergDropdowns() {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k5vjH":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}],"isko3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>registerModals);
@@ -759,7 +759,7 @@ function registerModals() {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"e1rrJ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}],"gHcUv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>registerNavs);
@@ -794,7 +794,7 @@ function registerNavs() {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2gpOB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}],"i2KZB":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>registerTabs);
@@ -847,6 +847,6 @@ function registerTabs() {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["8IOmA","bfd6L"], "bfd6L", "parcelRequirecab2")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"1cdyk"}]},["9xRvl","ZZZO9"], "ZZZO9", "parcelRequirecab2")
 
 //# sourceMappingURL=mgplus-dom.js.map
