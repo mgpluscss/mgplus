@@ -8,12 +8,10 @@
   <meta name="description"
     content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
   <title>Milligram Plus | A micro CSS framework.</title>
-
-  <link rel="icon" href="/images/logo.svg" />
+  <link rel="icon" href="./images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-
-  <link rel="stylesheet" href="dist/css/mgplus.css" />
-  <link rel="stylesheet" href="index.css" /> 
+  <link rel="stylesheet" href="../dist/css/mgplus.css" />
+  <link rel="stylesheet" href="./index.css" /> 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css"> 
 </head> 
 <body> 
@@ -45,9 +43,10 @@
         </div>
       </div>
     </nav>
-    <img alt="logo" class="logo-animation" src="images/logo.svg" height="120" />
+    <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
     <h1 class="mg-text-bolder">Mg+</h1>
-    <h2> Micro css library</h2>
+    <h2> Micro css library <span class="mg-text-m mg-badge">v PACKAGE_VERSION</span></h2>
+    
     <span id="counter_size"></span> 
     <a
       class="mg-text-xl mg-text-bolder mg-light"
@@ -75,25 +74,25 @@
  
  </header>
  <main class="mg-container"> 
-  <include src="sections/core-section.html"></include>
-  <include src="sections/grid-section.html">  </include>
-  <include src="sections/dropdown-section.html" ></include>
-  <include src="sections/radio-section.html"></include>
-  <include src="sections/check-section.html"></include>
-  <include src="sections/toggle-section.html"> </include>
-  <include src="sections/select-section.html">  </include>
-  <include src="sections/group-section.html"></include>
-  <include src="sections/range-section.html"></include>
-  <include src="sections/form-section.html"></include>
-  <include src="sections/alert-section.html">  </include>
-  <include src="sections/badge-section.html">  </include>
-  <include src="sections/loader-section.html"></include>
-  <include src="sections/modal-section.html"></include>
-  <include src="sections/nav-section.html"></include>
-  <include src="sections/tab-section.html"></include>
-  <include src="sections/collapse-section.html" ></include>
-  <include src="sections/timeline-section.html"> </include>
-  <include src="sections/icons-section.html"></include>
+  <include src="demo/sections/core-section.html"></include>
+  <include src="demo/sections/grid-section.html">  </include>
+  <include src="demo/sections/dropdown-section.html" ></include>
+  <include src="demo/sections/radio-section.html"></include>
+  <include src="demo/sections/check-section.html"></include>
+  <include src="demo/sections/toggle-section.html"> </include>
+  <include src="demo/sections/select-section.html">  </include>
+  <include src="demo/sections/group-section.html"></include>
+  <include src="demo/sections/range-section.html"></include>
+  <include src="demo/sections/form-section.html"></include>
+  <include src="demo/sections/alert-section.html">  </include>
+  <include src="demo/sections/badge-section.html">  </include>
+  <include src="demo/sections/loader-section.html"></include>
+  <include src="demo/sections/modal-section.html"></include>
+  <include src="demo/sections/nav-section.html"></include>
+  <include src="demo/sections/tab-section.html"></include>
+  <include src="demo/sections/collapse-section.html" ></include>
+  <include src="demo/sections/timeline-section.html"> </include>
+  <include src="demo/sections/icons-section.html"></include>
   </main>
   <footer>
     <div class="mg-center-block">
@@ -103,8 +102,8 @@
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
-  <script src="dist/js/mgplus-dom.js?autorun=false"></script>
-  <script src="index.js"></script>  
+  <script src="../dist/js/mgplus-dom.js?autorun=false"></script>
+  <script src="./index.js"></script>  
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sunburst"></script>
 </body> 
 </html>

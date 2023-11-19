@@ -31,10 +31,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: "build main css library"
+      - name: "build minified main css library, js plugins and demo in standalone mode"
         run: |
           npm install 
-          npm run build --if-present
+          npm run build
+          npm run build_demo
           npm run test --if-present 
       - name: get-npm-version
         id: package-version
@@ -51,7 +52,7 @@ jobs:
         env: 
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"         
-         DEMO_SOURCE_DIR : demo
+         DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/dist"
@@ -77,11 +78,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.x"
-      - name: "npm install, build, and test"
+      - name: "build minified main css library, js plugins and demo in standalone mode"
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          npm install 
+          npm run build
+          npm run build_demo
+          npm run test --if-present 
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
@@ -96,7 +98,7 @@ jobs:
         uses: azure/CLI@v1     
         env: 
          ACCOUNT_NAME: stevodocs
-         DEMO_SOURCE_DIR : demo
+         DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/dist"

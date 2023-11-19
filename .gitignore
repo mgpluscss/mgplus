@@ -333,5 +333,6 @@ ASALocalRun/
 .parcel-cache
 yarn.lock
 node_modules
-demo
+demo_build
+demo_temp
 dist/*.map

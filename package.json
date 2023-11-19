@@ -6,32 +6,36 @@
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",
   "license": "MIT",
-  "author": "evodim", 
+  "author": "evodim",
   "browserslist": [
     "defaults"
   ],
   "targets": {
-    "site": { 
-      "source": "./index.html",
-      "distDir": "demo"
+    "demo": {
+      "source": "demo/index.html",
+      "distDir": "demo_build"
     },
-    "plugins": { 
+    "plugins": {
       "source": "src/plugins/mgplus-dom.js",
       "distDir": "dist/js"
     },
-    "library": { 
+    "library": {
       "source": "src/scss/mgplus.scss",
       "distDir": "dist/css"
     }
   },
   "devDependencies": {
+    "@futureportal/parcel-transformer-package-version": "^1.0.0",
     "@parcel/transformer-sass": "^2.10.3",
+    "@plasmohq/parcel-transformer-inject-env": "^0.2.11",
     "parcel": "^2.10.2",
     "posthtml-include": "^1.7.4"
   },
   "scripts": {
-    "start": "parcel serve --dist-dir demo --open",
+    "start": "parcel serve --dist-dir demo_temp --open",
     "watch": "parcel watch",
-    "build": "parcel build --no-source-maps"
-  }
+    "build": "parcel build --target plugins --target library --no-source-maps",
+    "build_demo": "parcel build --target demo --no-source-maps --no-optimize"
+  },
+  "dependencies": {}
 }
