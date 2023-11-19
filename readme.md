@@ -7,7 +7,9 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 
 ***_Only one css file, 50KB minified_***
 
-**[LIVE DEMO](https://evodim.github.io/mgplus)**
+*This library is in active development, some breaking may occurs until next stable release including a new documentation portal*
+
+**[DEMO (1.2.1-preview)](https://mgplus.azureedge.net)**
 
 ### Features
 
