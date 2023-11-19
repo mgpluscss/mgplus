@@ -27,22 +27,20 @@ jobs:
     steps:
       - name: "Checkout Github Action"
         uses: actions/checkout@master
-      - name: Setup Node 14.x
+      - name: Setup Node 18.x
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
-      - name: "build main css library"
-        run: |
-          npm install 
-          npm run build --if-present
-          npm run test --if-present 
+          node-version: "18.x"
       - name: get-npm-version
         id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-      - name: "build demo app"
+        uses: martinbeentjes/npm-get-version-action@v1.3.1      
+      - name: "build minified main css library, js plugins and demo in standalone mode"
+        env:
+          PACKAGE_VERSION: "pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}"
         run: |
-          cd dom-plugins && npm install 
-          npm run build --if-present
+          npm install 
+          npm run build
+          npm run build_demo
           npm run test --if-present  
       - name: azure login
         uses: azure/login@v1
@@ -54,9 +52,10 @@ jobs:
       - name: deploy demo app to Azure static website
         uses: azure/CLI@v1     
         env: 
+         PACKAGE_VERSION: "pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}"
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"         
-         DEMO_SOURCE_DIR : /
+         DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}/dist"
@@ -65,7 +64,7 @@ jobs:
           inlineScript: |
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME --pattern '[!node_modules&&src&&dom-plugins]'
+           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_ROOT_DIR --account-name $ACCOUNT_NAME
            
            
   deploy_preview:
@@ -78,18 +77,21 @@ jobs:
     steps:
       - name: "Checkout Github Action"
         uses: actions/checkout@master
-      - name: Setup Node 14.x
+      - name: Setup Node 18.x
         uses: actions/setup-node@v1
         with:
-          node-version: "14.x"
-      - name: "npm install, build, and test"
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          node-version: "18.x"
       - name: get-npm-version
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
+      - name: "build minified main css library, js plugins and demo in standalone mode"
+        env:
+          PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version}}-preview
+        run: |
+          npm install 
+          npm run build
+          npm run build_demo
+          npm run test --if-present     
       - name: azure login
         uses: azure/login@v1
         with:
@@ -100,13 +102,14 @@ jobs:
       - name: deploy demo site to Azure static website
         uses: azure/CLI@v1     
         env: 
+         PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version}}-preview        
          ACCOUNT_NAME: stevodocs
-         DEMO_SOURCE_DIR : src
+         DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/demo"
          DIST_SOURCE_DIR : dist
          DIST_DEST_DIR : "$web/mgplus/${{ steps.package-version.outputs.current-version}}-preview/dist"
         with:
-          azcliversion: 2.30.0
+          azcliversion: 2.30.0 
           inlineScript: |
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME

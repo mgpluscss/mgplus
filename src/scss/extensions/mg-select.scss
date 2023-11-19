@@ -1,0 +1,25 @@
+.mg-select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  vertical-align: top;
+  margin-bottom: 1.5rem;
+
+  &>select {     
+    appearance: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-right: 3rem;
+    cursor: pointer;
+  } 
+  &::after {
+    @include mg-inline-css-icon;
+    @include mg-icon-dropdown;
+    color: currentColor;
+    top: 25%;
+    /*fix arrow position in center by compensating default margin bottom for inputs*/
+    margin-bottom: 1.5rem;
+  }
+
+} 

@@ -1,0 +1,41 @@
+// Icon variables 
+$icon-border-width: .2rem;
+$icon-prefix: "mg-icon";
+
+// Icon base style
+.#{$icon-prefix} {
+
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  box-sizing: border-box;
+  display: inline-block;   
+  font-size: inherit;
+  font-style: normal;
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: middle;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+  }
+
+  // Icon sizes 
+  @each $key, $value in $font-sizes {
+    &.icon-#{$key} {
+      font-size: $value; 
+      width: 0.5rem+($value/1.5);
+      height: 0.5rem+( $value/1.5);
+    } 
+  } 
+}

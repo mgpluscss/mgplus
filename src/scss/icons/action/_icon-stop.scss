@@ -1,0 +1,28 @@
+// Icon stop
+.icon-stop {
+  border: $icon-border-width solid currentColor;
+  border-radius: 50%;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 2px;
+    background: currentColor;
+    left: 8px;
+    margin-top: 4px;
+  }
+
+  &::after {
+    top: 2px;
+    height: 8px
+  }
+
+  &::before {
+    height: 2px;
+    bottom: 2px
+  }
+}

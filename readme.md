@@ -20,14 +20,14 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 Usefull components was included in this library:
 
 * Custom variables
-* Theming
+* Theming (dark theme) 
 * Navs
 * Tabs
 * Forms inputs
 * Badges
 * Modals
 * Grid system 
-* Icon helper
+* Icon helper including some css icons
 * Styling helpers like tailwindcss
 * Optionnal vanilla js plugin to handle ui interaction with some css components
 
@@ -47,12 +47,12 @@ $ npm install mgplus
 $ yarn add mgplus
 ```
 
-### Finaly import mg-plus.css file to your project
+### Finaly import mgplus.css file to your project
 
 
 ### Alternatively, you can import directly the css library without nodejs stack :
 
-**_[mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mg-plus.min.css)_**
+**_[mgplus.min.css](https://github.com/Evodim/mgplus/blob/master/dist/mgplus.min.css)_**
 
 Optionaly: use vanilla js plugin to handle UI interaction for some components (toggle classes on dom events)
 
@@ -75,13 +75,18 @@ $ git clone https://github.com/Evodim/mgplus.git
 $ npm install
 ```
 
-* To start demo page in debug :
+* To start demo page:
 
 ```sh
 $ npm run start 
 ```
-_Hot reload already configured with node sass compiler and browser sync_
+* Debugging:
+Run watch command to enable hot reload for the scss library
 
+```sh
+$ npm run watch 
+```
+*In order to start watch command, you should launch demo page with start command in another process*
  
 * To build only the library :
  

@@ -1,0 +1,41 @@
+/* The container must be positioned relative: */
+.mg-dropdown {
+  position: relative;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+/*hide original SELECT element: */
+.mg-dropdown input {
+  display: none; 
+}
+
+.mg-dropdown--content {
+  width: 100%;
+  min-width: max-content;
+  box-shadow: $control-shadow; 
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  background-color: $color-initial;
+  top: 100%;
+  z-index: 999;
+  border-color: $color-quaternary;
+  border-radius: $input-radius;
+  max-height: 50vh;
+  max-width: 90vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+} 
+ 
+.opened + .mg-dropdown--content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}

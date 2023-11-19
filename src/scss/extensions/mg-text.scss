@@ -1,0 +1,99 @@
+.mg-text-left {
+    text-align: left;
+}
+
+.mg-text-right {
+    text-align: right;
+}
+
+.mg-text-center {
+    text-align: center;
+}
+
+.mg-text-justify {
+    text-align: justify;
+}
+
+.mg-text-nowrap {
+    white-space: nowrap;
+}
+
+.mg-text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mg-text-lowercase {
+    text-transform: lowercase;
+}
+
+.mg-text-uppercase {
+    text-transform: uppercase;
+}
+
+.mg-text-capitalize {
+    text-transform: capitalize;
+}
+
+.mg-text-underline {
+    text-decoration: underline;
+}
+
+.mg-text-linethrough {
+    text-decoration: line-through;
+}
+
+.mg-text-overline {
+    text-decoration: overline;
+}
+
+.mg-text-none {
+    text-decoration: none;
+}
+
+.mg-text-break {
+    word-break: break-all;
+}
+
+.mg-text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mg-text-clip {
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+@each $key, $value in $font-sizes {
+    .mg-text-#{$key} {
+        font-size: $value; 
+    }
+}
+
+.mg-text-bold {
+    font-weight: bold;
+}
+
+
+.mg-text-bolder {
+    font-weight: bolder;
+}
+
+
+.mg-text-lighter {
+    font-weight: lighter;
+}
+
+//deprecated in next version
+
+.mg-bolder {
+    font-weight: bolder;
+}
+
+.mg-lighter {
+    font-weight: lighter;
+}
