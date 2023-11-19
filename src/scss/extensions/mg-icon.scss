@@ -28,7 +28,7 @@
   &::after {
     @include mg-inline-css-icon; 
     transform: rotate(-135deg);
-    top: calc(50% - 0.3rem);   
+    top: calc(50% - 0.5rem);   
   } 
  
   &.opened::after {
@@ -42,7 +42,7 @@
     
   &::after {
     @include mg-inline-css-icon; 
-    @include mg-icon-dropdown;
+    @include mg-icon-dropdown; 
   } 
  
   &.opened::after {
