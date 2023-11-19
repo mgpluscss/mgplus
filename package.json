@@ -33,7 +33,7 @@
   "scripts": {
     "start": "parcel serve --dist-dir demo_temp --open",
     "watch": "parcel watch",
-    "build": "parcel build --target plugins --target library --no-source-maps",
+    "build": "parcel build",
     "build_demo": "parcel build --target demo --no-source-maps --no-optimize"
   },
   "dependencies": {}
