@@ -19,7 +19,7 @@ $icon-prefix: "mg-icon";
   position: relative;
   text-indent: -9999px;
   vertical-align: middle;
-
+ 
   &::before,
   &::after {
     content: "";
@@ -29,13 +29,13 @@ $icon-prefix: "mg-icon";
     top: 50%;
     transform: translate(-50%, -50%); 
   }
-
+  
   // Icon sizes 
   @each $key, $value in $font-sizes {
-    &.icon-#{$key} {
+    &.#{$icon-prefix}--#{$key} {
       font-size: $value; 
-      width: 0.5rem+($value/1.5);
-      height: 0.5rem+( $value/1.5);
+      width: 1rem+($value/2);
+      height: 1rem+( $value/2);
     } 
-  } 
-}
+  }  
+} 
