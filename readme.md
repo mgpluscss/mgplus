@@ -9,8 +9,6 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 
 *This library is in active development, some breaking may occurs until next stable release including a new documentation portal*
 
-**[DEMO (beta version)](https://mgplus-beta.azureedge.net)**
-
 **[DEMO (preview version)](https://mgplus-preview.azureedge.net)**
 
 ### Features
