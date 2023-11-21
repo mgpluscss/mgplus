@@ -52,7 +52,7 @@ jobs:
       - name: deploy demo app to Azure static website
         uses: azure/CLI@v1     
         env: 
-         PACKAGE_VERSION: "pr-${{ steps.package-version.outputs.current-version}}-${{ github.event.pull_request.number }}"
+         PACKAGE_VERSION: "v-${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"         
          DEMO_SOURCE_DIR : demo_build
@@ -87,7 +87,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: "build minified main css library, js plugins and demo in standalone mode"
         env:
-          PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version}}-preview
+          PACKAGE_VERSION: "v-${{ steps.package-version.outputs.current-version}}-preview"
         run: |
           npm install 
           npm run build
@@ -103,7 +103,6 @@ jobs:
       - name: deploy demo site to Azure static website
         uses: azure/CLI@v1     
         env: 
-         PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version}}-preview        
          ACCOUNT_NAME: stevodocs
          DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/preview"
