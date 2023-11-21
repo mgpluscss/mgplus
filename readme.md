@@ -50,13 +50,13 @@ $ yarn add mgplus
 ### Finaly import mgplus.css file to your project
 
 
-### Alternatively, you can import directly the css library without nodejs stack :
+### Alternatively, you can import directly css library from official cdn resources without nodejs stack:
 
-**_[mgplus.css](https://github.com/Evodim/mgplus/blob/master/dist/css/mgplus.css)_**
+**[mgplus.css](https://cdn.mgpluscss.com/dist/css/mgplus.css)**
 
 Optionaly: use vanilla js plugin to handle UI interaction for some components (toggle classes on dom events)
 
-[mgplus-dom.js](https://github.com/Evodim/mgplus/blob/master/dist/js/mgplus-dom.js)
+**[mgplus-dom.js from](https://cdn.mgpluscss.com/dist/js/mgplus-dom.js)**
 
 _Js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
 It could be replaced by creating wrapped UI components with react, angular or other any UI framework_
