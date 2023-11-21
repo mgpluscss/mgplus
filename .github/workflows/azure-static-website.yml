@@ -52,22 +52,19 @@ jobs:
       - name: deploy demo app to Azure static website
         uses: azure/CLI@v1     
         env: 
-         PACKAGE_VERSION: "v-${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
+         PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
          ACCOUNT_NAME: stevodocs
          DEMO_ROOT_DIR : "$web"         
          DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/beta"
          DIST_SOURCE_DIR : dist
-         DIST_DEST_DIR : "$web/mgplus/beta/dist"
+         DIST_DEST_DIR : "$web/mgplus/dist/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           
-           
-           
   deploy_preview:
     if: github.event_name == 'push' && !startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
@@ -87,7 +84,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: "build minified main css library, js plugins and demo in standalone mode"
         env:
-          PACKAGE_VERSION: "v-${{ steps.package-version.outputs.current-version}}-preview"
+          PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}-preview"
         run: |
           npm install 
           npm run build
@@ -107,7 +104,7 @@ jobs:
          DEMO_SOURCE_DIR : demo_build
          DEMO_DEST_DIR : "$web/mgplus/preview"
          DIST_SOURCE_DIR : dist
-         DIST_DEST_DIR : "$web/mgplus/preview/dist"
+         DIST_DEST_DIR : "$web/mgplus/dist/v${{ steps.package-version.outputs.current-version}}-preview"
         with:
           azcliversion: 2.30.0 
           inlineScript: |
