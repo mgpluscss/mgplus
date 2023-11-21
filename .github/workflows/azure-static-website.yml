@@ -3,14 +3,11 @@
 name: CI
 env:
   AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
-  AZURE_STORAGE_AUTH_MODE: login
-  AZURE_STORAGE_ACCOUNT_NAME: stevodocs
-  AZURE_INDEX_DOCUMENT_NAME: index.html
-  SOURCE_DIR: ./dist
+  AZURE_STORAGE_AUTH_MODE: login 
 on:
   push:
     tags:
-      - v*.*.*
+      - v[0-9]+.[0-9]+.[0-9]+*
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -111,12 +108,53 @@ jobs:
            az extension add -n storage-preview -y
            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-           
-  
-        
-           
+  deploy_release:  
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    name: build and deploy release version
+    permissions:
+      contents: read            
+      id-token: write 
+    steps:
+      - name: "Checkout Github Action"
+        uses: actions/checkout@master
+      - name: Setup Node 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18.x"
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV        
+      - name: "build-library"
+        if : ${{ env.RELEASE_VERSION }} == "v${{ steps.package-version.outputs.current-version}}"
+        env:
+          PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}"
+        run: |
+          npm install 
+          npm run build
+          npm run build_demo
+          npm run test --if-present     
+      - name: azure login       
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} 
+          enable-AzPSSession: true 
+      - name: deploy demo site to Azure static website
+        uses: azure/CLI@v1     
+        env: 
+          ACCOUNT_NAME: stevodocs
+          DEMO_SOURCE_DIR : demo_build
+          DEMO_DEST_DIR : "$web/mgplus"
+          DIST_SOURCE_DIR : dist
+          DIST_DEST_DIR : "$web/mgplus/dist/v${{ steps.package-version.outputs.current-version}}"
+        with:
+          azcliversion: 2.30.0 
+          inlineScript: |
+            az extension add -n storage-preview -y
+            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
+            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
 
-
-
-            
-        
