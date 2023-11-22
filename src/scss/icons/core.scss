@@ -10,7 +10,7 @@ $icon-prefix: "mg-icon";
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  box-sizing: border-box;
+  box-sizing: content-box;
   display: inline-block;   
   font-size: inherit;
   font-style: normal;
@@ -34,8 +34,9 @@ $icon-prefix: "mg-icon";
   @each $key, $value in $font-sizes {
     &.#{$icon-prefix}--#{$key} {
       font-size: $value; 
-      width: 1rem+($value/2);
-      height: 1rem+( $value/2);
+      width: $value;
+      height:  $value; 
     } 
   }  
-} 
+}
+ 
