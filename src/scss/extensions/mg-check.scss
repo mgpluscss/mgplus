@@ -17,7 +17,7 @@
 }
 
 /* Create a custom checkbox */
-.mg-check .checkmark {
+.mg-check .mg-check--icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,29 +31,29 @@
 }
 
 /* On mouse-over, add a grey background color */
-.mg-check:hover input ~ .checkmark {
+.mg-check:hover input ~ .mg-check--icon {
   background-color: $color-secondary;
 }
 
 /* When the checkbox is checked, add a blue background */
-.mg-check input:checked ~ .checkmark {
+.mg-check input:checked ~ .mg-check--icon {
   background-color: $color-primary;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
-.mg-check .checkmark:after {
+/* Create the mg-check--icon/indicator (hidden when not checked) */
+.mg-check .mg-check--icon:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
-.mg-check input:checked ~ .checkmark:after {
+/* Show the mg-check--icon when checked */
+.mg-check input:checked ~ .mg-check--icon:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
-.mg-check .checkmark:after {
+/* Style the mg-check--icon/indicator */
+.mg-check .mg-check--icon:after {
   left: 0.5em;
   top: 0.1em;
   width: 0.5em;
@@ -64,11 +64,11 @@
 }
 
 /*disabled state*/
-.mg-check input:disabled ~ .checkmark {
+.mg-check input:disabled ~ .mg-check--icon {
   background-color: $color-quinary;
 }
 
-.mg-check input:focus ~ .checkmark {
+.mg-check input:focus ~ .mg-check--icon {
   border-color: $color-primary;
   border-style: dotted;
   border-width: thin;

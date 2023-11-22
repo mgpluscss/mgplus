@@ -9,7 +9,7 @@
 }
 
 /* Create a custom radio button */
-.mg-radio .checkmark {
+.mg-radio .mg-radio--icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -23,29 +23,29 @@
 }
 
 /* On mouse-over, add a grey background color */
-.mg-radio:hover input ~ .checkmark {
+.mg-radio:hover input ~ .mg-radio--icon {
   background-color: $color-secondary;
 }
 
 /* When the radio button is checked, add a blue background */
-.mg-radio input:checked ~ .checkmark {
+.mg-radio input:checked ~ .mg-radio--icon {
   background-color: var(--mg-color-primary);
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.mg-radio .checkmark:after {
+.mg-radio .mg-radio--icon:after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.mg-radio input:checked ~ .checkmark:after {
+.mg-radio input:checked ~ .mg-radio--icon:after {
   display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.mg-radio .checkmark:after {
+.mg-radio .mg-radio--icon:after {
   top: 0.5em;
   left: 0.5em;
   width: 0.4em;
@@ -54,11 +54,11 @@
   background-color: var(--mg-color-light);
 }
 
-.mg-radio input:disabled ~ .checkmark {
+.mg-radio input:disabled ~ .mg-radio--icon {
   background-color: var(--mg-color-quinary);
 }
 
-.mg-radio input:focus ~ .checkmark {
+.mg-radio input:focus ~ .mg-radio--icon {
   border-color: var(--mg-color-primary);
   border-style: dotted;
   border-width: thin;
