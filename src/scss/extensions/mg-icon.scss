@@ -16,42 +16,11 @@
   transition: all 0.2s; 
   }
   
-  @mixin mg-icon-dropdown {     
+  @mixin mg-dropdown--icon {     
     transform: rotate(-45deg);   
     top: calc(50% - 0.5rem);   
   } 
 
-.mg-icon-collapse {
-   //force padding to container element to reserve space for arrow
-   padding-right: 2.5rem!important;
-   position: relative;
-  &::after {
-    @include mg-inline-css-icon; 
-    transform: rotate(-135deg);
-    top: calc(50% - 0.5rem);   
-  } 
- 
-  &.opened::after {
-    transform: rotate(-45deg);  
-    top: 40%;   
-  } 
-}  
-.mg-icon-dropdown { 
-  //force padding to container element to reserve space for arrow
-   padding-right: 2.5rem!important;
-    
-  &::after {
-    @include mg-inline-css-icon; 
-    @include mg-icon-dropdown; 
-  } 
- 
-  &.opened::after {
-    transform: rotate(-225deg);
-    top: 40%;   
-  }
-      
-} 
- 
 .mg-icon-close {
   font-family: default;
   font-style: normal;

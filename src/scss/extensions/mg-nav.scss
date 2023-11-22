@@ -4,6 +4,9 @@
   margin-left: 0;
   margin-top: 0;
 }
+.mg-nav ul {
+  overflow-y: auto;
+}
 .mg-nav ul > li {
   list-style-type: none;
   margin: 0;
@@ -18,9 +21,8 @@
 }
 
 .mg-nav ul > li.active {
-  color: $color-initial;
-  border-left: 0.3rem solid $color-primary;
-  overflow-y: hidden;
+  color: currentColor;
+  border-left: 0.3rem solid $color-primary; 
   font-weight: bold;
 }
 
@@ -45,6 +47,7 @@
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: baseline;
+  overflow-x: auto;
 }
 .mg-nav--inline ul > li {
   display: flex;

@@ -15,7 +15,7 @@
   } 
   &::after {
     @include mg-inline-css-icon;
-    @include mg-icon-dropdown;
+    @include mg-dropdown--icon;
     color: currentColor;
     top: 25%;
     /*fix arrow position in center by compensating default margin bottom for inputs*/

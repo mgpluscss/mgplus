@@ -38,4 +38,20 @@
   display: block;
   opacity: 1;
   visibility: visible;
-}
+} 
+.mg-dropdown--icon { 
+  //force padding to container element to reserve space for arrow
+   padding-right: 2.5rem!important;
+    
+  &::after {
+    @include mg-inline-css-icon; 
+    @include mg-dropdown--icon; 
+  } 
+ 
+  &.opened::after {
+    transform: rotate(-225deg);
+    top: 40%;   
+  }
+      
+} 
+ 
