@@ -103,7 +103,7 @@ function registerDemoFeatures() {
       "mg-button--clear",
       "mg-button--primary",
       "mg-button--small", 
-      "mg-icon-dropdown",       
+      "mg-dropdown--icon",       
       "mg-collapse");
 
       buttonCollapse.setAttribute("data-toggle","collapse");
