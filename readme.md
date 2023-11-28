@@ -1,6 +1,6 @@
 # MgPlus (*Mg+*)
 
-![](/images/logo.svg)
+![](/demp/images/logo.svg)
 
 ## Mg+ is a micro CSS library 
 Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point
