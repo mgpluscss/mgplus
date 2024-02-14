@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.mgplus.registerDomPlugins();
 })();
 
+const mgplus = window.mgplus;
+mgplus.registerThemeSwitcherPlugin();
 });
 async function loadDemoSections() {
   const sections = document.querySelectorAll("section");
