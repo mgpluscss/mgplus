@@ -1,10 +1,12 @@
+ 
 :root {
     --mg-color-primary: #475dca;
-    --mg-color-secondary: #34237a; 
+    --mg-color-secondary: #34237a;  
     --mg-control-radius: 1rem;
     --mg-input-radius: 1rem;
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
   }
+  
   html {
     scroll-behavior: smooth; 
   }

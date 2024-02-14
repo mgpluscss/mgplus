@@ -1,35 +1,47 @@
- @mixin dark-colors {
-   --mg-color-initial: #302f2f;
-   --mg-color-secondary: #dadada;
-   --mg-color-tertiary: #a7a7a7;
-   --mg-color-quaternary: #817f7f;
-   --mg-color-quinary: #4e4e4e;
+@import "../mg-variables";
 
- }
+@mixin dark-colors {
+  --mg-color-initial: #302f2f;
+  --mg-color-secondary: #dadada;
+  --mg-color-tertiary: #a7a7a7;
+  --mg-color-quaternary: #817f7f;
+  --mg-color-quinary: #4e4e4e;
 
- @mixin light-colors {
-   --mg-color-initial: $color-initial;
-   --mg-color-secondary: $color-secondary;
-   --mg-color-tertiary: $color-tertiary;
-   --mg-color-quaternary: $color-quaternary;
-   --mg-color-quinary: $color-quinary;
- }
+}
 
- :root[data-theme='dark'] {
-   @include dark-colors;
-   color-scheme: dark;
- }
-  
- @media (prefers-color-scheme: dark) {
+@mixin light-colors {
+  --mg-color-initial: #ffffff;
+  --mg-color-tertiary: #797979;
+  --mg-color-quaternary: #a7a7a7;
+  --mg-color-quinary: #dadada;
+}
 
-   :root[data-theme='system'] {
-     @include dark-colors;
-     color: var(--mg-color-secondary);
-     color-scheme: dark light system;
-   }
- }
- 
- .mg-theme--dark {
-   @include dark-colors;
-   color: var(--mg-color-secondary);
- }
+:root {
+  color-scheme: system dark light;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    @include dark-colors;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  :root {
+    @include light-colors;
+  }
+
+}
+
+.mg-theme--dark,
+:root[data-theme='dark'] {
+  @include dark-colors;
+}
+
+.mg-theme--light,
+:root[data-theme='light'] {
+  @include light-colors;
+
+}
