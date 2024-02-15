@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   await loadDemoSections();
   registerDemoFeatures();
   window.mgplus.registerDomPlugins();
-})();
-
-const mgplus = window.mgplus;
-mgplus.registerThemeSwitcherPlugin();
+  window.mgplus.registerThemeSwitcherPlugin();
+})(); 
 });
 async function loadDemoSections() {
   const sections = document.querySelectorAll("section");
