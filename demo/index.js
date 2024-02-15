@@ -50,7 +50,7 @@ function registerDemoFeatures() {
     "click",
     function () {
       let requiredTheme = document.querySelector("html").getAttribute("data-theme");
-      requiredTheme = "dark" ? "light" : "dark";
+      requiredTheme = requiredTheme === "dark" ? "light" : "dark";
       document
         .querySelector("html")
         .setAttribute("data-theme", requiredTheme);         
