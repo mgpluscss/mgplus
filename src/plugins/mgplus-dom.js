@@ -6,8 +6,8 @@ import registerTabs from "./mgTabs.js";
 import registerThemeSwitcher from "./mgThemeSwitcher.js";
 
 (function (window) {
-  function registerThemeSwitcherPlugin(){
-    registerThemeSwitcher();
+  function registerThemeSwitcherPlugin(forceTheme){
+    registerThemeSwitcher(forceTheme);
     console.log(
       "mgplus - registered theme switcher plugin");
     
