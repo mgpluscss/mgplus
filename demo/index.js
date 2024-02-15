@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   //get all imported html files from header
   await loadDemoSections();
   registerDemoFeatures();
+
+  const theme = localStorage.getItem("theme") || false;
   window.mgplus.registerDomPlugins();
-  window.mgplus.registerThemeSwitcherPlugin();
+  window.mgplus.registerThemeSwitcherPlugin(theme);
 })(); 
 });
 async function loadDemoSections() {
@@ -47,10 +49,12 @@ function registerDemoFeatures() {
   document.querySelector("#theme-switcher").addEventListener(
     "click",
     function () {
-      var current = document.querySelector("html").getAttribute("data-theme");
+      let requiredTheme = document.querySelector("html").getAttribute("data-theme");
+      requiredTheme = requiredTheme === "dark" ? "light" : "dark";
       document
         .querySelector("html")
-        .setAttribute("data-theme", current == "dark" ? "light" : "dark");
+        .setAttribute("data-theme", requiredTheme);         
+        localStorage.setItem( "theme" , requiredTheme); 
     },
     false
   );
