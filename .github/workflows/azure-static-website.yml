@@ -35,7 +35,7 @@ jobs:
         uses: martinbeentjes/npm-get-version-action@v1.3.1      
       - name: "build minified main css library, js plugins and demo in standalone mode"
         env:
-          PACKAGE_VERSION: "v-${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
+          PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         run: |
           npm install 
           npm run build
