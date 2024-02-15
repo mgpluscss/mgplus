@@ -7,12 +7,7 @@ $version: "1.2.1";
 :root {
   --mg-color-dark: #000000;
   --mg-color-light: #fcfcfc;
-  --mg-color-initial: #ffffff;
   --mg-color-primary: #475dca;
-  --mg-color-secondary: #302f2f;
-  --mg-color-tertiary: #797979;
-  --mg-color-quaternary: #a7a7a7;
-  --mg-color-quinary: #dadada;
   --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
   --mg-color-red: #dc3545;
@@ -21,7 +16,10 @@ $version: "1.2.1";
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-control-active-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+
 }
+
+
 
 //
 //  Variables
@@ -39,7 +37,7 @@ $color-quinary: var(--mg-color-quinary) !default;
 $control-radius: var(--mg-control-radius) !default;
 $input-radius: var(--mg-input-radius) !default;
 $control-shadow: var(--mg-control-shadow) !default;
-$control-active-shadow:  var(--mg-control-active-shadow) !default;
+$control-active-shadow: var(--mg-control-active-shadow) !default;
 $color-red: var(--mg-color-red);
 $color-orange: var(--mg-color-orange);
 $color-blue: var(--mg-color-blue);
@@ -52,13 +50,13 @@ $grid__gutter: 0.5rem;
 
 //css icons
 $icon-border-width: .05rem !default;
- 
+
 // Z-index
 $zindex-0: 1 !default;
 $zindex-1: 100 !default;
 $zindex-2: 200 !default;
 $zindex-3: 300 !default;
-$zindex-4: 400 !default; 
+$zindex-4: 400 !default;
 
 $name--X: mg-x;
 $name--S: mg-s;
@@ -101,9 +99,8 @@ $font-sizes: (
   5xl: $base-font-size*3.8,
 );
 
-
 $sizing-map: (
-  0:0%,                
+  0:0%,
   10:10%,
   20:20%,
   30:30%,
@@ -115,4 +112,3 @@ $sizing-map: (
   90:90%,
   100:100%
 );
-

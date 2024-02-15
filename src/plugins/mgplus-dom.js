@@ -3,8 +3,15 @@ import registerDropdown from "./mgDropdown.js";
 import registerModals from "./mgModal.js";
 import registerNavs from "./mgNav.js";
 import registerTabs from "./mgTabs.js";
+import registerThemeSwitcher from "./mgThemeSwitcher.js";
 
 (function (window) {
+  function registerThemeSwitcherPlugin(){
+    registerThemeSwitcher();
+    console.log(
+      "mgplus - registered theme switcher plugin");
+    
+  }
   function registerDomPlugins(autorun) {
    
     registerDropdown();
@@ -43,11 +50,12 @@ import registerTabs from "./mgTabs.js";
     if (results == null) return "";
     else return results[1];
   }
-  window.mgplus = { registerDomPlugins };
+  window.mgplus = { registerDomPlugins, registerThemeSwitcherPlugin };
   window.addEventListener("DOMContentLoaded", () => {
     const autorun = getQueryParam("autorun", getScriptUrl());
 
     if (autorun === "true") {
+      registerThemeSwitcherPlugin();
       registerDomPlugins(true);
     }
   });
