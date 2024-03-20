@@ -16,6 +16,7 @@ import registerThemeSwitcher from "./mgThemeSwitcher.js";
     registerNavs();
     registerTabs();
     registergCollapses();
+    registerThemeSwitcherPlugin();
 
     console.log(
       `mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`
