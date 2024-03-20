@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
-(async function loadContent(link) {
-  //get all imported html files from header
-  await loadDemoSections();
-  registerDemoFeatures();
-
-  const theme = localStorage.getItem("theme") || false;
-  window.mgplus.registerDomPlugins();
-  window.mgplus.registerThemeSwitcherPlugin(theme);
-})(); 
+  (async function loadContent(link) {
+    //get all imported html files from header
+    await loadDemoSections();
+    registerDemoFeatures();
+    window.mgplus.registerDomPlugins();
+    window.mgplus.registerThemeSwitcherPlugin("auto");
+  })();
 });
 async function loadDemoSections() {
   const sections = document.querySelectorAll("section");
@@ -17,14 +15,13 @@ async function loadDemoSections() {
     const section = sections[i];
 
     //ignore section not marked with id
-    if (!section.id)
-    {
+    if (!section.id) {
       continue;
     }
 
     const navLink = document.createElement("li");
     const navLinkTitle = section.querySelector("h2");
-    
+
     navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
     navLinks.appendChild(navLink);
   }
@@ -45,19 +42,6 @@ function registerDemoFeatures() {
     theme.style.setProperty("--mg-color-primary", color.hexString);
   });
 
-  //theme switcher interaction
-  document.querySelector("#theme-switcher").addEventListener(
-    "click",
-    function () {
-      let requiredTheme = document.querySelector("html").getAttribute("data-theme");
-      requiredTheme = requiredTheme === "dark" ? "light" : "dark";
-      document
-        .querySelector("html")
-        .setAttribute("data-theme", requiredTheme);         
-        localStorage.setItem( "theme" , requiredTheme); 
-    },
-    false
-  );
   //loader interaction
   document.querySelector("#loader-button").addEventListener(
     "click",
@@ -72,9 +56,8 @@ function registerDemoFeatures() {
     },
     false
   );
-  
-  function buildHtmlPreview(elSource){
-   
+
+  function buildHtmlPreview(elSource) {
     function htmlEscape(s) {
       return s
         .replace(/\n\n/g, "")
@@ -85,7 +68,7 @@ function registerDemoFeatures() {
     }
     if (elSource) {
       // this page's own source code
-       
+
       var quineHtml = htmlEscape(elSource.outerHTML);
 
       // Highlight the operative parts:
@@ -95,32 +78,31 @@ function registerDemoFeatures() {
       );
       var previewPan = document.createElement("div");
       var buttonCollapse = document.createElement("button");
-     const preContent= document.createElement("pre");
+      const preContent = document.createElement("pre");
 
-     elSource.parentNode.insertBefore(previewPan,elSource.nextSibling);
-     previewPan.appendChild(buttonCollapse);
-     previewPan.appendChild(preContent);
+      elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
+      previewPan.appendChild(buttonCollapse);
+      previewPan.appendChild(preContent);
 
-     previewPan.classList.add("mg-pad-t3");
-     buttonCollapse.classList.add(
-      "mg-button",
-      "mg-button--clear",
-      "mg-button--primary",
-      "mg-button--small", 
-      "mg-dropdown--icon",       
-      "mg-collapse");
+      previewPan.classList.add("mg-pad-t3");
+      buttonCollapse.classList.add(
+        "mg-button",
+        "mg-button--clear",
+        "mg-button--primary",
+        "mg-button--small",
+        "mg-dropdown--icon",
+        "mg-collapse"
+      );
 
-      buttonCollapse.setAttribute("data-toggle","collapse");
+      buttonCollapse.setAttribute("data-toggle", "collapse");
 
-     buttonCollapse.textContent="view html"
-     preContent.classList.add(
-      "prettyprint",
-      "mg-collapse--content");
-     preContent.innerHTML=quineHtml;
-
+      buttonCollapse.textContent = "view html";
+      preContent.classList.add("prettyprint", "mg-collapse--content");
+      preContent.innerHTML = quineHtml;
     }
-
-  } 
-  document.querySelectorAll("[data-toggle~=htmlpreview]").forEach(buildHtmlPreview);
+  }
+  document
+    .querySelectorAll("[data-toggle~=htmlpreview]")
+    .forEach(buildHtmlPreview);
   prettyPrint();
 }

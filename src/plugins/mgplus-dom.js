@@ -6,14 +6,11 @@ import registerTabs from "./mgTabs.js";
 import registerThemeSwitcher from "./mgThemeSwitcher.js";
 
 (function (window) {
-  function registerThemeSwitcherPlugin(forceTheme){
+  function registerThemeSwitcherPlugin(forceTheme) {
     registerThemeSwitcher(forceTheme);
-    console.log(
-      "mgplus - registered theme switcher plugin");
-    
+    console.log("mgplus - registered theme switcher plugin");
   }
   function registerDomPlugins(autorun) {
-   
     registerDropdown();
     registerModals();
     registerNavs();
@@ -23,8 +20,7 @@ import registerThemeSwitcher from "./mgThemeSwitcher.js";
     console.log(
       `mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`
     );
-
-  } 
+  }
 
   // extracts the params from the currently running (external) script
   function getScriptUrl() {
