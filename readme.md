@@ -54,7 +54,7 @@ $ yarn add mgplus
 
 ### Alternatively, you can import directly css library from official cdn resources without nodejs stack:
 
-**[mgplus.css](https://cdn.mgpluscss.com/dist/latest/css/mgplus.css)](https://cdn.mgpluscss.com/dist/latest/css/mgplus.css)**
+**[mgplus.css](https://cdn.mgpluscss.com/dist/latest/css/mgplus.css)(https://cdn.mgpluscss.com/dist/latest/css/mgplus.css)**
 
 Optionaly: use vanilla js plugin to handle UI interaction for some components (toggle classes on dom events)
 
