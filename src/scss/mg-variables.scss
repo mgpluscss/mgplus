@@ -17,9 +17,20 @@ $version: "1.2.1";
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-control-active-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
 
+  //light-colors 
+  --mg-color-initial: #ffffff;
+  --mg-color-secondary: #363333;
+  --mg-color-tertiary: #797979;
+  --mg-color-quaternary: #a7a7a7;
+  --mg-color-quinary: #dadada;
+
+  //dark-colors 
+  --mg-dark-color-initial: #302f2f;
+  --mg-dark-color-secondary: #dadada;
+  --mg-dark-color-tertiary: #a7a7a7;
+  --mg-dark-color-quaternary: #817f7f;
+  --mg-dark-color-quinary: #4e4e4e;
 }
-
-
 
 //
 //  Variables
