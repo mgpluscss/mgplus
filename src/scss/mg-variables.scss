@@ -5,8 +5,8 @@ $version: "1.2.1";
 //  _____________________________________________
 
 :root {
-  --mg-color-dark: #000000;
-  --mg-color-light: #fcfcfc;
+  --mg-color-dark: hsl(255, 0%, 10%);
+  --mg-color-light: hsl(255, 0%, 90%);
   --mg-color-primary: #475dca;
   --mg-control-radius: 0.4rem;
   --mg-input-radius: 0.1rem;
@@ -17,19 +17,20 @@ $version: "1.2.1";
   --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
   --mg-control-active-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
 
-  //light-colors 
-  --mg-color-initial: #ffffff;
-  --mg-color-secondary: #363333;
-  --mg-color-tertiary: #797979;
-  --mg-color-quaternary: #a7a7a7;
-  --mg-color-quinary: #dadada;
+
+  //default secondary colors 
+  --mg-color-initial: var(--mg-color-light);
+  --mg-color-secondary: hsl(255, 0%, 20%);
+  --mg-color-tertiary: hsl(255, 0%, 40%);
+  --mg-color-quaternary: hsl(255, 0%, 60%);
+  --mg-color-quinary: hsl(255, 0%, 80%);
 
   //dark-colors 
-  --mg-dark-color-initial: #302f2f;
-  --mg-dark-color-secondary: #dadada;
-  --mg-dark-color-tertiary: #a7a7a7;
-  --mg-dark-color-quaternary: #817f7f;
-  --mg-dark-color-quinary: #4e4e4e;
+  --mg-dark-color-initial: var(--mg-color-dark);
+  --mg-dark-color-secondary: hsl(255, 0%, 80%);
+  --mg-dark-color-tertiary: hsl(255, 0%, 70%);
+  --mg-dark-color-quaternary: hsl(255, 0%, 50%);
+  --mg-dark-color-quinary: hsl(255, 0%, 30%);
 }
 
 //

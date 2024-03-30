@@ -1,22 +1,32 @@
-@mixin dark-colors {
-  --mg-color-initial: var(--mg-dark-color-initial);
-  --mg-color-secondary: var(--mg-dark-color-secondary);
-  --mg-color-tertiary: var(--mg-dark-color-tertiary);
-  --mg-color-quaternary: var(--mg-dark-color-quaternary);
-  --mg-color-quinary: var(--mg-dark-color-quinary);
-}
+ @mixin dark-colors {
+   --mg-color-initial: var(--mg-dark-color-initial);
+   --mg-color-secondary: var(--mg-dark-color-secondary);
+   --mg-color-tertiary: var(--mg-dark-color-tertiary);
+   --mg-color-quaternary: var(--mg-dark-color-quaternary);
+   --mg-color-quinary: var(--mg-dark-color-quinary);
+ }
 
-:root {
-  color-scheme: light;
-}
+ :root {
+   color-scheme: light;
+ }
 
-.mg-theme--dark,
-:root[data-theme='dark'] {
-  @include dark-colors;
-  color-scheme: dark;
-}
 
-.mg-theme--light,
-:root[data-theme='light'] {
-  color-scheme: light;
-}
+ :root[data-theme='dark'],
+ .mg-theme--dark {
+   @include dark-colors;
+   color-scheme: dark;
+
+   .mg-hidden-dark {
+     display: none;
+   }
+ }
+
+ :root[data-theme='light'],
+ .mg-theme--light {
+   color-scheme: light;
+
+   .mg-hidden-light {
+     display: none;
+   }
+
+ }
