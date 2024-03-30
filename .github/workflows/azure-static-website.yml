@@ -57,7 +57,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/beta"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "cdn/mgplus/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -103,7 +103,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/preview"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "cdn/mgplus/v${{ steps.package-version.outputs.current-version}}-preview"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-preview"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -152,7 +152,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "cdn/mgplus/v${{ steps.package-version.outputs.current-version}}"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
