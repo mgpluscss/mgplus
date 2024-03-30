@@ -10,6 +10,10 @@
    color-scheme: light;
  }
 
+ .mg-hidden-light {
+   display: none;
+ }
+
 
  :root[data-theme='dark'],
  .mg-theme--dark {
@@ -19,6 +23,10 @@
    .mg-hidden-dark {
      display: none;
    }
+
+   .mg-hidden-light {
+     display: block;
+   }
  }
 
  :root[data-theme='light'],
@@ -27,6 +35,10 @@
 
    .mg-hidden-light {
      display: none;
+   }
+
+   .mg-hidden-dark {
+     display: block;
    }
 
  }
