@@ -1,5 +1,7 @@
-export default function registerThemeSwitcher(forceTheme) {
-  applyTheme(forceTheme);
+export default function registerThemeSwitcher() {
+  const current = document.documentElement.getAttribute("data-theme");
+
+  applyTheme(current ? current : "light");
 
   window
     .matchMedia("(prefers-color-scheme: dark)")
@@ -8,7 +10,7 @@ export default function registerThemeSwitcher(forceTheme) {
       document.documentElement.setAttribute("data-theme", newTheme);
       console.log("mgplus - theme changed:", newTheme);
     });
-  // Select all elements with data-toggle attribute containing "modal" and setup modal for each
+  // Select all elements with data-toggle attribute containing "theme" and setup theme for each
   document.querySelectorAll("[data-toggle~=theme]").forEach(setupTheme);
 
   function applyTheme(customTheme) {
@@ -19,17 +21,17 @@ export default function registerThemeSwitcher(forceTheme) {
       const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
-        : false;
+        : "light";
 
       document.documentElement.setAttribute("data-theme", defaultTheme);
       console.log("mgplus - theme applied (system):", defaultTheme);
     }
   }
-  // Function to setup modal for an element
+  // Function to setup theme for an element
   function setupTheme(el) {
-    // Select the modal and close button elements
+    // Select target theme
     const newTheme = el.getAttribute("data-value");
-    // Add event listener to the element to show modal on click
+    // Add event listener to the element to theme switcher
     el.addEventListener("click", function () {
       applyTheme(newTheme);
     });
