@@ -1,34 +1,44 @@
+ @mixin dark-colors {
+   --mg-color-initial: var(--mg-dark-color-initial);
+   --mg-color-secondary: var(--mg-dark-color-secondary);
+   --mg-color-tertiary: var(--mg-dark-color-tertiary);
+   --mg-color-quaternary: var(--mg-dark-color-quaternary);
+   --mg-color-quinary: var(--mg-dark-color-quinary);
+ }
 
-@mixin dark-colors {
-  --mg-color-initial: #302f2f;
-  --mg-color-secondary: #dadada;
-  --mg-color-tertiary: #a7a7a7;
-  --mg-color-quaternary: #817f7f;
-  --mg-color-quinary: #4e4e4e;
+ :root {
+   color-scheme: light;
+ }
 
-}
+ .mg-hidden-light {
+   display: none;
+ }
 
-@mixin light-colors {
-  --mg-color-initial: #ffffff;
-  --mg-color-tertiary: #797979;
-  --mg-color-quaternary: #a7a7a7;
-  --mg-color-quinary: #dadada;
-} 
 
-:root {
-  @include light-colors; 
-  color-scheme: light;
+ :root[data-theme='dark'],
+ .mg-theme--dark {
+   @include dark-colors;
+   color-scheme: dark;
 
-} 
+   .mg-hidden-dark {
+     display: none;
+   }
 
-.mg-theme--dark,
-:root[data-theme='dark'] {
-  @include dark-colors;  
-  color-scheme: dark;
-}
+   .mg-hidden-light {
+     display: block;
+   }
+ }
 
-.mg-theme--light,
-:root[data-theme='light'] {
-  @include light-colors;
-  color-scheme: light;
-}
+ :root[data-theme='light'],
+ .mg-theme--light {
+   color-scheme: light;
+
+   .mg-hidden-light {
+     display: none;
+   }
+
+   .mg-hidden-dark {
+     display: block;
+   }
+
+ }

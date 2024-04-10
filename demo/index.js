@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     await loadDemoSections();
     registerDemoFeatures();
     window.mgplus.registerDomPlugins();
-    window.mgplus.registerThemeSwitcherPlugin("auto");
+    window.mgplus.registerThemeSwitcherPlugin();
   })();
 });
 async function loadDemoSections() {
