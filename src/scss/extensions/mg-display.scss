@@ -10,7 +10,7 @@
     display: inline;
 }
 
-.mg-hidden {
+.mg-none {
     display: none;
 }
 
@@ -67,7 +67,7 @@
 
 .mg-hidden {
     visibility: hidden;
-} 
+}
 
 @each $key, $value in $rem-map {
 
@@ -92,7 +92,7 @@
     }
 }
 
-.mg-rounder-none {
+.mg-rounded-none {
     border-radius: 0;
 }
 
