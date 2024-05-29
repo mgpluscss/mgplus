@@ -13,9 +13,7 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 
 **[Latest preview](https://demo-preview.mgpluscss.com)**
 
-**[full featured insurance company](https://www.redassurances.com)**
-
-**[business portal](https://www.evodim.com)**
+**[integration example](https://www.evodim.com)**
 
 
 ### Features
