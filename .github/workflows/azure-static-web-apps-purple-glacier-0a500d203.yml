@@ -30,7 +30,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          deployment_environment: ${{ startsWith(github.ref, 'refs/tags/v') && 'prod' || ((github.event_name == 'pull_request' && github.event.action != 'closed') && 'beta' || 'preview') }}
+          deployment_environment: ${{ startsWith(github.ref, 'refs/tags/v') && 'prod' ||  'preview' }}
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0A500D203 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
