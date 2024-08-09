@@ -2,6 +2,8 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
+    tags:
+      - v*.*.*
     branches:
       - master
   pull_request:
@@ -11,7 +13,7 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push' || startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
@@ -19,10 +21,16 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: Build And Deploy
+        env:
+          PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}${{ startsWith(github.ref, 'refs/tags/v') && '' || '-preview' }}"
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
+          deployment_environment: ${{ startsWith(github.ref, 'refs/tags/v') && 'prod' ||  'preview' }}
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PURPLE_GLACIER_0A500D203 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
