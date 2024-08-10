@@ -58,7 +58,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         run: echo "PACKAGE_VERSION=v${{ steps.package-version.outputs.current-version}}" >> $GITHUB_ENV
       - name: Set preview version
-        if: ! startsWith(github.ref, 'refs/tags/v')
+        if: startsWith(github.ref, 'refs/tags/v') != true
         run: echo "PACKAGE_VERSION=v${{ steps.package-version.outputs.current-version}}-preview" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
