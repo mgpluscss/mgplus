@@ -81,3 +81,24 @@ input[type="checkbox"],
 input[type="radio"] {
   display: inline;
 }
+
+.mg-input {
+  display: inline-flex;
+  align-items: center;
+
+}
+
+.mg-input>* {
+  margin: 0.1rem;
+  padding: 0.1rem;
+}
+
+.mg-input>input {
+  appearance: none;
+  border: 0;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+}
