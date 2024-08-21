@@ -43,7 +43,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   build_deploy_rc:
-    if: github.event_name == 'push' && github.event_name != 'pull_request'
+    if: github.event_name == 'push' && github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/v') != true
     runs-on: ubuntu-latest
     name: Build and Deploy RC preview
     steps:

@@ -1,6 +1,6 @@
 # mgplus workflow
 
-name: CI
+name: CDN CI/CD
 env:
   AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
   AZURE_STORAGE_AUTH_MODE: login
@@ -19,7 +19,7 @@ jobs:
   deploy_pullrequest:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
-    name: build and deploy PR version
+    name: CDN - build and deploy PR version
     permissions:
       contents: read
       id-token: write
@@ -67,7 +67,7 @@ jobs:
   deploy_preview:
     if: github.event_name == 'push' && !startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
-    name: build and deploy preview version
+    name: CDN - build and deploy preview version
     permissions:
       contents: read
       id-token: write
