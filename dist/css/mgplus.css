@@ -443,6 +443,26 @@ input[type="checkbox"], input[type="radio"] {
   display: inline;
 }
 
+.mg-input {
+  align-items: center;
+  display: inline-flex;
+}
+
+.mg-input > * {
+  margin: .1rem;
+  padding: .1rem;
+}
+
+.mg-input > input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 a {
   color: var(--mg-color-primary);
   text-decoration: none;
