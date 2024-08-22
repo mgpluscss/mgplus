@@ -11,7 +11,7 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 
 ### Demo and production ready integrations
 
-**[Latest preview](https://demo-preview.mgpluscss.com)**
+**[Latest release demo page](https://demo.mgpluscss.com)**
 
 **[integration example](https://www.evodim.com)**
 
