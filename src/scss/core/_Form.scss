@@ -1,5 +1,6 @@
 // Form
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
+.mg-input,
 input[type="range"],
 input[type="email"],
 input[type="number"],
@@ -21,20 +22,39 @@ select {
   padding: 0.6rem 0.7rem; // The .6rem vertically centers text on FF, ignored by Webkit
   width: 100%;
   color: $color-secondary;
+
   &:focus {
     border-color: $color-primary;
     outline: 0;
   }
+
+  &.mg-input--small {
+    font-size: map-get($font-sizes, "x");
+    height: 3rem;
+    line-height: 2.6rem;
+    padding: 0 1.5rem;
+  }
+
+  &.mg-input--large {
+    font-size: map-get($font-sizes, "l");
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+  }
+
 }
+
 select {
   background-color: $color-initial;
 }
+
 //Hide spin to input numbers
 //Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+
 //Mozilla
 input[type="number"] {
   appearance: textfield;
@@ -60,4 +80,20 @@ fieldset {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
+}
+
+.mg-input {
+  display: inline-flex;
+  align-items: center;
+
+}
+
+.mg-input>input {
+  appearance: none;
+  border: 0;
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
 }

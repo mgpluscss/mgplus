@@ -1,4 +1,4 @@
-@mixin mg-inline-css-icon {  
+@mixin mg-inline-css-icon {
   vertical-align: middle;
   box-sizing: border-box;
   border: 2px solid transparent;
@@ -6,36 +6,26 @@
   right: 1rem;
   border-right: 0;
   border-top: 0;
-  content: ""; 
-  display: inline-block;  
+  content: "";
+  display: inline-block;
   pointer-events: none;
-  position: absolute; 
-  transform-origin:center;
-  height: 0.8rem;  
+  position: absolute;
+  transform-origin: center;
+  height: 0.8rem;
   width: 0.8rem;
-  transition: all 0.2s; 
-  }
-  
-  @mixin mg-dropdown--icon {     
-    transform: rotate(-45deg);   
-    top: calc(50% - 0.5rem);   
-  } 
+  transition: all 0.2s;
+}
 
-.mg-icon-close {
-  font-family: default;
-  font-style: normal;
+@mixin mg-dropdown--icon {
+  transform: rotate(-45deg);
+  top: calc(50% - 0.5rem);
+}
+
+.mg-icon--action {
   cursor: pointer;
   transition: 0.3s;
-  font-size: calc(100% + 1rem);
-  margin-top: -1rem;
 }
 
-.mg-icon-close::after {
-  content: "\D7";
+.mg-icon--action:hover {
+  opacity: 0.7;
 }
-
-.mg-icon-close:hover {
-  opacity: 0.8;
-}
-
-  

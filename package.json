@@ -1,8 +1,8 @@
 {
   "type": "module",
   "name": "mgplus",
-  "version": "1.2.6",
-  "description": "Micro CSS library",
+  "version": "1.2.7",
+  "description": "mgplus a micro CSS library",
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",
   "license": "MIT",
