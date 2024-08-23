@@ -75,7 +75,7 @@ import registerDarkMode from "./mgDarkMode.js";
     registerPlugins,
   };
   window.addEventListener("DOMContentLoaded", () => {
-    const plugins = getQueryParam("plugins", getScriptUrl());
+    const plugins = getQueryParam("register_plugins", getScriptUrl());
     registerPlugins(true, plugins ? plugins.split(",") : []);
   });
 })(window);
