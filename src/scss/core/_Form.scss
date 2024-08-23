@@ -11,7 +11,7 @@ input[type="text"],
 input[type="url"],
 textarea,
 select {
-  appearance: none; // Removes awkward default styles on some inputs for iOS
+  -webkit-appearance: none; // Removes awkward default styles on some inputs for iOS
   appearance: none;
   background-color: transparent;
   border: 0.1rem solid $color-quaternary;
@@ -32,14 +32,14 @@ select {
     font-size: map-get($font-sizes, "x");
     height: 3rem;
     line-height: 2.6rem;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
   }
 
   &.mg-input--large {
     font-size: map-get($font-sizes, "l");
     height: 4.5rem;
     line-height: 4.5rem;
-    padding: 0 2rem;
+    padding: 0 1.2rem;
   }
 
 }
