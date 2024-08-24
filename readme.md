@@ -59,14 +59,14 @@ yarn add mgplus
 
 ### Alternatively, you can import directly css library from official cdn resources without nodejs stack
 
-**[mgplus.css](https://cdn.mgpluscss.com/latest/css/mgplus.css)**
+**[mgplus.css](https://cdn.mgpluscss.com/v1.2.8/css/mgplus.css)**
 
 ### JS plugins
 
 Optionaly: include mgplus-dom.js plugin to handle UI interaction for some components (toggle classes on dom events)
 They are mainly used to toggle visibility of content inside a component
 
-**[mgplus-dom.js](https://cdn.mgpluscss.com/latest/js/mgplus-dom.js)**
+**[mgplus-dom.js](https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js)**
 
 To register specifics plugins:
 
@@ -77,14 +77,14 @@ To register automatically plugins on page load, use "register_plugins" query par
 ##### Register all plugins
 
 ```html
-<script src="https://cdn.mgpluscss.com/v2.0.8/js/mgplus-dom.js?
+<script src="https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js?
 register_plugins=dropdowns,tabs,modals,collapses,darkmode" ></script>
 ```
 
 ##### Register only darkmode
 
 ```html
-<script src="https://cdn.mgpluscss.com/v2.0.8/js/mgplus-dom.js?
+<script src="https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js?
 register_plugins=darkmode" ></script>
 ```
 
