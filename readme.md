@@ -2,17 +2,15 @@
 
 ![](/demp/images/logo.svg)
 
-## Mg+ is a micro CSS library
+## Mg+ is a micro CSS library with many features
+
+### Striking the perfect balance in CSS
 
 Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point
 
-**Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity**
+Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
 ****Only one css file, around 55 KB minified****
-
-*This library is in active development, some breaking may occurs until next stable release including a new documentation portal*
-
-A complete documentation page will be available soon
 
 ### Demo page and production ready integrations
 
@@ -20,17 +18,18 @@ A complete documentation page will be available soon
 
 **[Corporate website integration](https://www.evodim.com)**
 
-### Features
+### Advantages
 
-* Lightweight and many components
+* Lightweight and many components implemented
 * Reponsive and mobile first design
 * Sass sources could be extended or composed for your custom needs
-* JS plugins to interact with some component (optional)
+* JS plugins to interact with some component (optional and no custom js code is required)
+* Components could be integrated easily in php, react, angular, it is just html markups
 
-Usefull components was included in this library:
+#### Features
 
 * Custom variables
-* Theming (dark theme)
+* Theming (dark mode)
 * Navs
 * Tabs
 * Forms inputs
@@ -64,33 +63,32 @@ yarn add mgplus
 
 ### JS plugins
 
-Optionaly: use vanilla js plugin to handle UI interaction for some components (toggle classes on dom events)
+Optionaly: include mgplus-dom.js plugin to handle UI interaction for some components (toggle classes on dom events)
 They are mainly used to toggle visibility of content inside a component
 
 **[mgplus-dom.js](https://cdn.mgpluscss.com/latest/js/mgplus-dom.js)**
 
-Register specifics plugins:
+To register specifics plugins:
 
-To register automatically plugins on page load, use following query param when you import mgplus-dom.js :
+To register automatically plugins on page load, use "register_plugins" query param when you import mgplus-dom.js
 
-```html
-?register_plugins="dropdowns,tabs,modals,collaspses,darkmode"
-```
+#### Example
 
-of only one of them
+##### Register all plugins
 
 ```html
-?register_plugins="darkmode"
+<script src="https://cdn.mgpluscss.com/v2.0.8/js/mgplus-dom.js?
+register_plugins=dropdowns,tabs,modals,collapses,darkmode" ></script>
 ```
 
-Example:
+##### Register only darkmode
 
 ```html
-<script src="https://cdn.mgpluscss.com/latest/js/mgplus-dom.js?register_plugins="dropdowns,tabs,modals,collaspses,darkmode" >
-</script>
+<script src="https://cdn.mgpluscss.com/v2.0.8/js/mgplus-dom.js?
+register_plugins=darkmode" ></script>
 ```
 
-#### To use plugin for your mgplus css components
+#### To allow plugin works for your mgplus css components
 
 Add html attribute data-toggle=["plugin_name"] in your html components
 
@@ -170,3 +168,7 @@ npm run build
 ## License
 
 Licensed under the [MIT License](https://raw.githubusercontent.com/Evodim/mgplus/master/LICENSE).
+
+*This library is in active development, some breaking may occurs until next major release including a new documentation portal.*
+
+A complete documentation page will be available soon
