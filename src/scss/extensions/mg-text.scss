@@ -70,7 +70,7 @@
 
 @each $key, $value in $font-sizes {
     .mg-text-#{$key} {
-        font-size: $value; 
+        font-size: $value;
     }
 }
 
@@ -83,17 +83,6 @@
     font-weight: bolder;
 }
 
-
 .mg-text-lighter {
-    font-weight: lighter;
-}
-
-//deprecated in next version
-
-.mg-bolder {
-    font-weight: bolder;
-}
-
-.mg-lighter {
     font-weight: lighter;
 }

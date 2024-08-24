@@ -1,26 +1,50 @@
 import registergCollapses from "./mgCollapse.js";
-import registerDropdown from "./mgDropdown.js";
+import registerDropdowns from "./mgDropdown.js";
 import registerModals from "./mgModal.js";
 import registerNavs from "./mgNav.js";
 import registerTabs from "./mgTabs.js";
-import registerThemeSwitcher from "./mgThemeSwitcher.js";
+import registerDarkMode from "./mgDarkMode.js";
 
 (function (window) {
-  function registerThemeSwitcherPlugin() {
-    registerThemeSwitcher();
-    console.log("mgplus - registered theme switcher plugin");
+  function registerDarkModePlugin() {
+    registerDarkMode();
   }
-  function registerDomPlugins(autorun) {
-    registerDropdown();
-    registerModals();
-    registerNavs();
-    registerTabs();
-    registergCollapses();
-    registerThemeSwitcherPlugin();
-
+  //autorun : true or false
+  //plugins : ["dropdowns", "modals", "navs", "collapses", "darkmode"]
+  function registerPlugins(autorun, plugins) {
+    const pluginsArgs = plugins ? plugins : [];
     console.log(
-      `mgplus - registered DOM plugins (autorun=${autorun ? "true" : "false"})`
+      `mgplus - registering DOM plugins (autorun=${
+        autorun ? "true" : "false"
+      })`,
+      plugins
     );
+    pluginsArgs.map(function (pluginName) {
+      switch (pluginName) {
+        case "dropdowns":
+          registerDropdowns();
+          break;
+        case "modals":
+          registerModals();
+          break;
+        case "navs":
+          registerNavs();
+          break;
+        case "tabs":
+          registerTabs();
+          break;
+        case "collapses":
+          registergCollapses();
+          break;
+        case "darkmode":
+          registerDarkModePlugin();
+          break;
+        default:
+          console.log(`mgplus - plugin not found: ${pluginName}`);
+          return;
+      }
+      console.log(`mgplus - registered plugin: ${pluginName}`);
+    });
   }
 
   // extracts the params from the currently running (external) script
@@ -47,13 +71,11 @@ import registerThemeSwitcher from "./mgThemeSwitcher.js";
     if (results == null) return "";
     else return results[1];
   }
-  window.mgplus = { registerDomPlugins, registerThemeSwitcherPlugin };
+  window.mgplus = {
+    registerPlugins,
+  };
   window.addEventListener("DOMContentLoaded", () => {
-    const autorun = getQueryParam("autorun", getScriptUrl());
-
-    if (autorun === "true") {
-      registerThemeSwitcherPlugin();
-      registerDomPlugins(true);
-    }
+    const plugins = getQueryParam("register_plugins", getScriptUrl());
+    registerPlugins(true, plugins ? plugins.split(",") : []);
   });
 })(window);

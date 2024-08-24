@@ -3,8 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     //get all imported html files from header
     await loadDemoSections();
     registerDemoFeatures();
-    window.mgplus.registerDomPlugins();
-    window.mgplus.registerThemeSwitcherPlugin();
+    window.mgplus.registerPlugins(false, [
+      "dropdowns",
+      "modals",
+      "tabs",
+      "navs",
+      "collapses",
+      "darkmode",
+    ]);
   })();
 });
 async function loadDemoSections() {
