@@ -4,15 +4,16 @@
   margin-bottom: 1rem;
   display: inline-block;
 }
+
 /*hide original SELECT element: */
 .mg-dropdown input {
-  display: none; 
+  display: none;
 }
 
 .mg-dropdown--content {
   width: 100%;
   min-width: max-content;
-  box-shadow: $control-shadow; 
+  box-shadow: $control-shadow;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid;
@@ -32,26 +33,10 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-} 
- 
-.opened + .mg-dropdown--content {
+}
+
+.opened+.mg-dropdown--content {
   display: block;
   opacity: 1;
   visibility: visible;
-} 
-.mg-dropdown--icon { 
-  //force padding to container element to reserve space for arrow
-   padding-right: 2.5rem!important;
-    
-  &::after {
-    @include mg-inline-css-icon; 
-    @include mg-dropdown--icon; 
-  } 
- 
-  &.opened::after {
-    transform: rotate(-225deg);
-    top: 40%;   
-  }
-      
-} 
- 
+}

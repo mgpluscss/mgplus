@@ -1,23 +1,5 @@
  .mg-collapse {
    &:not(.opened)+.mg-collapse--content {
      display: none;
-
-   }
- }
-
- .mg-collapse--icon {
-   //force padding to container element to reserve space for arrow
-   padding-right: 2.5rem !important;
-   position: relative;
-
-   &::after {
-     @include mg-inline-css-icon;
-     transform: rotate(-135deg);
-     top: calc(50% - 0.4rem);
-   }
-
-   &.opened::after {
-     transform: rotate(-45deg);
-     top: 40%;
    }
  }

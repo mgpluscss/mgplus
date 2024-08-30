@@ -16,9 +16,27 @@
   transition: all 0.2s;
 }
 
-@mixin mg-dropdown--icon {
+@mixin mg-toggle-icon {
   transform: rotate(-45deg);
   top: calc(50% - 0.5rem);
+}
+
+.mg-toggle-icon,
+.mg-dropdown--icon,
+.mg-collapse--icon {
+  //force padding to container element to reserve space for arrow
+  padding-right: 2.5rem !important;
+  position: relative;
+
+  &::after {
+    @include mg-inline-css-icon;
+    @include mg-toggle-icon;
+  }
+
+  &.opened::after {
+    transform: rotate(-225deg);
+    top: 45%;
+  }
 }
 
 .mg-icon--action {

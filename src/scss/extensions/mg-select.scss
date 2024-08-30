@@ -6,20 +6,21 @@
   vertical-align: top;
   margin-bottom: 1.5rem;
 
-  &>select {     
+  &>select {
     appearance: none;
     text-overflow: ellipsis;
     width: 100%;
     padding-right: 3rem;
     cursor: pointer;
-  } 
+  }
+
   &::after {
     @include mg-inline-css-icon;
-    @include mg-dropdown--icon;
+    @include mg-toggle-icon;
     color: currentColor;
     top: 25%;
     /*fix arrow position in center by compensating default margin bottom for inputs*/
     margin-bottom: 1.5rem;
   }
 
-} 
+}
