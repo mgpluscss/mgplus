@@ -84,11 +84,10 @@ function registerDemoFeatures() {
       );
       var previewPan = document.createElement("div");
       var buttonCollapse = document.createElement("button");
+      var collapseContent = document.createElement("div");
       const preContent = document.createElement("pre");
-
-      elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
-      previewPan.appendChild(buttonCollapse);
-      previewPan.appendChild(preContent);
+      const clipboardButton = document.createElement("button");
+      const clipboardButtonIcon = document.createElement("i");
 
       previewPan.classList.add("mg-pad-t3");
       buttonCollapse.classList.add(
@@ -100,11 +99,29 @@ function registerDemoFeatures() {
         "mg-collapse"
       );
 
-      buttonCollapse.setAttribute("data-toggle", "collapse");
+      clipboardButton.classList.add("mg-button--clear", "mg-button--small");
+      clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
 
+      buttonCollapse.setAttribute("data-toggle", "collapse");
       buttonCollapse.textContent = "view html";
-      preContent.classList.add("prettyprint", "mg-collapse--content");
+
+      collapseContent.classList.add(
+        "mg-collapse--content",
+        "mg-col",
+        "mg-x--end"
+      );
+
+      preContent.classList.add("prettyprint");
       preContent.innerHTML = quineHtml;
+
+      clipboardButton.appendChild(clipboardButtonIcon);
+      previewPan.appendChild(buttonCollapse);
+      previewPan.appendChild(collapseContent);
+
+      collapseContent.appendChild(clipboardButton);
+      collapseContent.appendChild(preContent);
+
+      elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
     }
   }
   document

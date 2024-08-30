@@ -58,6 +58,9 @@ header {
 .svg-icon-search {
   background: url("images/search.svg");
 }
+.svg-icon-clipboard {
+  background: url("images/clipboard.svg");
+}
 
 .grid-cel {
   width: 100%;
