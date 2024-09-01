@@ -1,0 +1,14 @@
+.mg-progress {
+    display: inline-block;
+    background-color: $color-quinary;
+    border-radius: $control-radius;
+    box-shadow: $control-shadow;
+    width: 100%;
+    height: 2rem;
+
+    &>.mg-progress--bar {
+        border-radius: $control-radius;
+        background-color: $color-primary;
+        height: 100%;
+    }
+}
