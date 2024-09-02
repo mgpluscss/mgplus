@@ -2,13 +2,21 @@
     display: inline-block;
     background-color: $color-quinary;
     border-radius: $control-radius;
-    box-shadow: $control-shadow;
     width: 100%;
-    height: 2rem;
+    height: map-get($font-sizes, "m");
+    margin-bottom: 1.2rem;
 
     &>.mg-progress--bar {
         border-radius: $control-radius;
         background-color: $color-primary;
         height: 100%;
+    }
+
+    &.mg-progress--small {
+        height: map-get($font-sizes, "s");
+    }
+
+    &.mg-progress--large {
+        height: map-get($font-sizes, "l");
     }
 }
