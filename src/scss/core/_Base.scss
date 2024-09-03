@@ -230,6 +230,27 @@ progress {
   vertical-align: baseline;
   box-sizing: 0;
   box-shadow: 0;
+  background-color: $color-quaternary;
+  border-radius: $input-radius;
+  height: map-get($font-sizes, 's');
+
+}
+
+progress::-webkit-progress-bar {
+  background-color: $color-quaternary;
+  border-radius: $input-radius;
+
+}
+
+progress::-webkit-progress-value {
+  background-color: $color-primary;
+  border-radius: $input-radius;
+  min-width: calc($input-radius);
+}
+
+progress::-moz-progress-bar {
+  background-color: $color-quaternary;
+  border-radius: $input-radius;
 }
 
 /**
@@ -339,4 +360,20 @@ template {
 
 [hidden] {
   display: none;
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid $color-primary;
+  -webkit-text-fill-color: $color-secondary;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
