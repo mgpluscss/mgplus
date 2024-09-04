@@ -1,7 +1,6 @@
-
 //mg-w[0-100] { width: [0-100]% }
 @each $key, $value in $sizing-map {
- 
+
     .mg-w#{$key} {
         width: #{$value};
     }
@@ -24,11 +23,12 @@
 
     .mg-max-h#{$key} {
         max-height: #{$value};
-    } 
-} 
+    }
+}
+
 //mg-w[0-100]vh { width: [0-100]vh }
 @each $key, $value in $sizing-map {
- 
+
     .mg-w#{$key}vh {
         width: #{$key}vh;
     }
@@ -51,5 +51,31 @@
 
     .mg-max-h#{$key}vh {
         max-height: #{$key}vh;
-    } 
-} 
+    }
+}
+
+@each $key, $value in $rem-map {
+    .mg-h#{$key}rem {
+        height: $value;
+    }
+
+    .mg-w#{$key}rem {
+        width: $value;
+    }
+
+    .mg-min-h#{$key}rem {
+        min-height: $value;
+    }
+
+    .mg-max-h#{$key}rem {
+        max-height: $value;
+    }
+
+    .mg-min-w#{$key}rem {
+        min-width: $value;
+    }
+
+    .mg-max-w#{$key}rem {
+        max-width: $value;
+    }
+}
