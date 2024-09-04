@@ -228,30 +228,24 @@ legend {
 
 progress {
   vertical-align: baseline;
-  box-sizing: 0;
-  box-shadow: 0;
-  background-color: $color-quaternary;
   border-radius: $input-radius;
   height: map-get($font-sizes, 's');
-
 }
 
-progress::-webkit-progress-bar {
+progress::-webkit-progress-bar,
+progress::-moz-progress-bar {
   background-color: $color-quaternary;
   border-radius: $input-radius;
-
 }
 
-progress::-webkit-progress-value {
+progress::-webkit-progress-value,
+progress::-moz-progress-value {
   background-color: $color-primary;
   border-radius: $input-radius;
   min-width: calc($input-radius);
 }
 
-progress::-moz-progress-bar {
-  background-color: $color-quaternary;
-  border-radius: $input-radius;
-}
+
 
 /**
    * Remove the default vertical scrollbar in IE 10+.
