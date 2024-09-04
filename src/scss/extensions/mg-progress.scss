@@ -3,20 +3,12 @@
     background-color: $color-quinary;
     border-radius: $control-radius;
     width: 100%;
-    height: map-get($font-sizes, "m");
+    height: map-get($font-sizes, "s");
     margin-bottom: 1.2rem;
 
     &>.mg-progress--bar {
         border-radius: $control-radius;
         background-color: $color-primary;
         height: 100%;
-    }
-
-    &.mg-progress--small {
-        height: map-get($font-sizes, "s");
-    }
-
-    &.mg-progress--large {
-        height: map-get($font-sizes, "l");
     }
 }
