@@ -99,7 +99,11 @@ function registerDemoFeatures() {
         "mg-collapse"
       );
 
-      clipboardButton.classList.add("mg-button--clear", "mg-button--small");
+      clipboardButton.classList.add(
+        "mg-button--link",
+        "mg-button--small",
+        "mg-absolute"
+      );
       clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
 
       buttonCollapse.setAttribute("data-toggle", "collapse");
@@ -108,6 +112,7 @@ function registerDemoFeatures() {
       collapseContent.classList.add(
         "mg-collapse--content",
         "mg-col",
+        "mg-overflow-x-auto",
         "mg-x--end"
       );
 
