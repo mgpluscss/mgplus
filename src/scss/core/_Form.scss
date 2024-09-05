@@ -60,22 +60,6 @@ input[type="number"] {
   appearance: textfield;
 }
 
-textarea {
-  min-height: 6.5rem;
-}
-
-label,
-legend {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-fieldset {
-  border-width: 0;
-  padding: 0;
-}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -95,5 +79,26 @@ input[type="radio"] {
   margin-top: 0;
   padding-bottom: 0;
   margin-bottom: 0;
+}
 
+div.mg-input:focus-within {
+  border-color: $color-primary;
+  outline: 0;
+}
+
+textarea {
+  min-height: 6.5rem;
+}
+
+label,
+legend {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
 }
