@@ -3,8 +3,8 @@
   --mg-color-secondary: #34237a;
   --mg-dark-color-initial: #302f2f;
 
-  --mg-control-radius: 1rem;
-  --mg-input-radius: 1rem;
+  --mg-control-radius: 1.5rem;
+  --mg-input-radius: 1.5rem;
   --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }
 
