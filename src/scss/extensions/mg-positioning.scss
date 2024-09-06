@@ -47,13 +47,6 @@
   margin: auto;
 }
 
-.mg-right {
-  float: right;
-}
-
-.mg-left {
-  float: left;
-}
 
 .mg-fit {
   min-width: 100%;
@@ -77,9 +70,6 @@
   vertical-align: middle;
 }
 
-
-// Path: src/extensions/mg-position.scss
-// Compare this snippet from src/extensions/mg-position.scss:
 .mg-relative {
   position: relative;
 }
@@ -100,20 +90,22 @@
   position: sticky;
 }
 
-//Compare this snippet from src/extensions/mg-position.scss:
+
 .mg-top {
   top: 0;
-}
-
-.mg-right {
-  right: 0;
 }
 
 .mg-bottom {
   bottom: 0;
 }
 
+.mg-right {
+  float: right;
+  right: 0;
+}
+
 .mg-left {
+  float: left;
   left: 0;
 }
 
@@ -127,7 +119,7 @@
   transform: translateY(-50%);
 }
 
-//Compare this snippet from src/extensions/mg-position.scss:
+
 .mg-top-left {
   top: 0;
   left: 0;
@@ -148,27 +140,14 @@
   right: 0;
 }
 
-
-//Deprecated to be removed in next version
-.mg-center-block {
-  display: block;
+.mg-text-center {
   text-align: center;
 }
 
-.mg-right-block {
-  display: block;
+.mg-text-right {
   text-align: right;
 }
 
-.mg-left-block {
-  display: block;
+.mg-text-left {
   text-align: left;
-}
-
-.mg-box-border {
-  box-sizing: border-box;
-}
-
-.mg-box-content {
-  box-sizing: content-box;
 }
