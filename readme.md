@@ -10,11 +10,15 @@ Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/
 
 Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
-****Only one css file, around 55 KB minified****
+### Available package on NPM
 
-### Demo page and production ready integrations
+![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-**[Demo page](https://demo.mgpluscss.com)**
+****Only one css file, around 57 KB minified****
+
+### Demo
+
+**[Test page](https://demo.mgpluscss.com)**
 
 **[Corporate website integration](https://www.evodim.com)**
 
