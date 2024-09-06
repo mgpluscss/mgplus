@@ -102,19 +102,19 @@ function registerDemoFeatures() {
       clipboardButton.classList.add(
         "mg-button--link",
         "mg-button--small",
-        "mg-absolute"
+        "mg-relative",
+        "mg-right"
       );
+
+      clipboardButton.addEventListener("click", (ev) => {
+        navigator.clipboard.writeText(elSource.outerHTML);
+      });
       clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
 
       buttonCollapse.setAttribute("data-toggle", "collapse");
       buttonCollapse.textContent = "view html";
 
-      collapseContent.classList.add(
-        "mg-collapse--content",
-        "mg-col",
-        "mg-overflow-x-auto",
-        "mg-x--end"
-      );
+      collapseContent.classList.add("mg-collapse--content");
 
       preContent.classList.add("prettyprint");
       preContent.innerHTML = quineHtml;
