@@ -36,6 +36,19 @@
             </div>
           </div>
           <div class="mg-dropdown">
+            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
+              <i class="mg-icon svg-icon-gears"></i>
+            </button>
+            <div class="mg-dropdown--content mg-pad-r3 mg-pad-l1">
+              <div class="mg-col  mg-x--start">
+                <label for="range1">Input radius</label>
+                <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
+                <label for="range2">Control radius</label>
+                <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
+              </div>
+            </div>
+          </div>
+          <div class="mg-dropdown">
             <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
               <i class="mg-icon svg-icon-colors"></i>
             </button>
@@ -57,17 +70,15 @@
       </div>
     </nav>
     <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
-    <h1 class="mg-text-bolder">Mg+</h1>
-    <h2> Micro css library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
+    <div class="mg-light">
+      <h1 class="mg-text-bolder">Mg+</h1>
+      <h2> Micro css library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
 
-    <span id="counter_size"></span>
-    <a class="mg-text-xl mg-text-bolder mg-light" href="https://github.com/solidjs/solid" target="_blank"
-      rel="noopener noreferrer">
-    </a>
-    <a href="https://github.com/medevod/mgplus" class="mg-text-xl mg-light mg-text-underline">Github</a>
-    <p>Extended version of <a href="https://github.com/milligram/milligram"
-        class="mg-light mg-text-underline">Milligram</a></p>
-
+      <span id="counter_size"></span>
+      <a class="mg-text-xl mg-text-bolder mg-light" href="https://github.com/solidjs/solid" target="_blank"
+        rel="noopener noreferrer">
+      </a>
+    </div>
     <!--Waves-->
     <svg xmlns="http://www.w3.org/2000/svg" class="waves" viewBox="0 24 150 28" preserveAspectRatio="none"
       shape-rendering="auto">

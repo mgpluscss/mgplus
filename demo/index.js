@@ -48,6 +48,20 @@ function registerDemoFeatures() {
     theme.style.setProperty("--mg-color-primary", color.hexString);
   });
 
+  const inputRadiusSelector = document.querySelector("#input-radius-selector");
+
+  inputRadiusSelector.addEventListener("change", (ev) => {
+    theme.style.setProperty("--mg-input-radius", `${ev.target.value / 10}rem`);
+  });
+  const controlRadiusSelector = document.querySelector(
+    "#control-radius-selector"
+  );
+  controlRadiusSelector.addEventListener("change", (ev) => {
+    theme.style.setProperty(
+      "--mg-control-radius",
+      `${ev.target.value / 10}rem`
+    );
+  });
   //loader interaction
   document.querySelector("#loader-button").addEventListener(
     "click",

@@ -2,17 +2,15 @@
 
 ![](/demp/images/logo.svg)
 
-## Mg+ is a micro CSS library with many features
+## Mg+ is a micro CSS library with essential features
+
+![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
 ### Striking the perfect balance in CSS
 
 Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point
 
 Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
-
-### Available package on NPM
-
-![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
 ****Only one css file, around 57 KB minified****
 

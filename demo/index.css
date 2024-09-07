@@ -29,7 +29,6 @@ header {
   position: relative;
   text-align: center;
   background: linear-gradient(360deg, transparent 1%, #34237a 0%, #00acc1 90%);
-  color: var(--mg-color-light);
 }
 
 .svg-icon-darkmode {
