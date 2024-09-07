@@ -10,6 +10,9 @@
   "browserslist": [
     "defaults"
   ],
+  "autoprefixer": {
+  "remove": true
+}, 
   "main": "dist/css/mgplus.css",
   "targets": {
     "demo": {
