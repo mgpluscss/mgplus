@@ -5,11 +5,6 @@
   display: inline-block;
 }
 
-/*hide original SELECT element: */
-.mg-dropdown input {
-  display: none;
-}
-
 .mg-dropdown--content {
   width: 100%;
   min-width: max-content;
