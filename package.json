@@ -8,8 +8,10 @@
   "license": "MIT",
   "author": "evodim",
   "browserslist": [
-    "defaults"
-  ],
+  "last 2 versions",
+  "Safari >= 8",
+  "iOS >= 8"
+], 
   "autoprefixer": {
   "remove": true
 }, 
