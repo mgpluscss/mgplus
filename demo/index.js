@@ -113,12 +113,7 @@ function registerDemoFeatures() {
         "mg-collapse"
       );
 
-      clipboardButton.classList.add(
-        "mg-button--link",
-        "mg-button--small",
-        "mg-relative",
-        "mg-right"
-      );
+      clipboardButton.classList.add("mg-button--link", "mg-button--small");
 
       clipboardButton.addEventListener("click", (ev) => {
         navigator.clipboard.writeText(elSource.outerHTML);
@@ -128,9 +123,17 @@ function registerDemoFeatures() {
       buttonCollapse.setAttribute("data-toggle", "collapse");
       buttonCollapse.textContent = "view html";
 
-      collapseContent.classList.add("mg-collapse--content");
+      collapseContent.classList.add(
+        "mg-collapse--content",
+        "mg-col",
+        "mg-x--end"
+      );
 
-      preContent.classList.add("prettyprint");
+      preContent.classList.add(
+        "prettyprint",
+        "mg-overflow-x-auto",
+        "mg-max-w100"
+      );
       preContent.innerHTML = quineHtml;
 
       clipboardButton.appendChild(clipboardButtonIcon);

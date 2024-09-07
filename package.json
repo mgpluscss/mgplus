@@ -35,7 +35,7 @@
     "start": "parcel serve --dist-dir demo_temp --open",
     "watch": "parcel watch",
     "build": "parcel build --no-source-maps --target library --target plugins ",
-    "build_debug": "parcel build --no-source-maps --target library --target plugins --no-optimize",
+    "build_debug": "parcel build --target library --target plugins --no-optimize",
     "build_demo": "parcel build --target demo --no-source-maps --no-optimize"
   },
   "dependencies": {}
