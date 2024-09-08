@@ -7,13 +7,13 @@
   <meta name="author" content="medevod" />
   <meta name="description"
     content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
-  <title>Milligram Plus | A micro CSS framework.</title>
+  <title>MgPlus | A micro CSS library.</title>
   <link rel="icon" href="./images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
   <link rel="stylesheet" href="../dist/css/mgplus.css" />
   <link rel="stylesheet" href="./index.css" />
   <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css">
+    href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css" />
 </head>
 
 <body>
@@ -32,6 +32,19 @@
                   <li data-toggle="theme" data-value="dark">Dark</li>
                   <li data-toggle="theme" data-value="auto">Auto</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mg-dropdown">
+            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
+              <i class="mg-icon svg-icon-gears"></i>
+            </button>
+            <div class="mg-dropdown--content mg-pad-r3 mg-pad-l1">
+              <div class="mg-col  mg-x--start">
+                <label for="range2">Control radius</label>
+                <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
+                <label for="range1">Input radius</label>
+                <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
               </div>
             </div>
           </div>
@@ -57,17 +70,13 @@
       </div>
     </nav>
     <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
-    <h1 class="mg-text-bolder">Mg+</h1>
-    <h2> Micro css library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
+    <div class="mg-light">
+      <h1 class="mg-text-bolder">Mg+</h1>
+      <h2>A micro CSS library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
+      <h3>Build websites with just a few drops of CSS</h3>
+      <a class="mg-button" href="https://github.com/mgpluscss/mgplus">Github <i class="mg-icon svg-icon-github"></i>
 
-    <span id="counter_size"></span>
-    <a class="mg-text-xl mg-text-bolder mg-light" href="https://github.com/solidjs/solid" target="_blank"
-      rel="noopener noreferrer">
-    </a>
-    <a href="https://github.com/medevod/mgplus" class="mg-text-xl mg-light mg-text-underline">Github</a>
-    <p>Extended version of <a href="https://github.com/milligram/milligram"
-        class="mg-light mg-text-underline">Milligram</a></p>
-
+    </div>
     <!--Waves-->
     <svg xmlns="http://www.w3.org/2000/svg" class="waves" viewBox="0 24 150 28" preserveAspectRatio="none"
       shape-rendering="auto">
@@ -85,6 +94,7 @@
   </header>
   <main class="mg-container">
     <include src="demo/sections/intro-section.html"></include>
+    <include src="demo/sections/getting-started.html"></include>
     <include src="demo/sections/core-section.html"></include>
     <include src="demo/sections/grid-section.html"> </include>
     <include src="demo/sections/dropdown-section.html"></include>
@@ -94,6 +104,7 @@
     <include src="demo/sections/select-section.html"> </include>
     <include src="demo/sections/group-section.html"></include>
     <include src="demo/sections/range-section.html"></include>
+    <include src="demo/sections/progress-section.html"></include>
     <include src="demo/sections/input-section.html"></include>
     <include src="demo/sections/form-section.html"></include>
     <include src="demo/sections/alert-section.html"> </include>
@@ -109,10 +120,10 @@
     <include src="demo/sections/helpers-section.html"></include>
   </main>
   <footer>
-    <div class="mg-center-block">
-      <a href="https://raw.githubusercontent.com/medevod/mgplus/master/LICENSE">LICENSE</a>
+    <div class="mg-block mg-text-center">
+      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">LICENSE</a>
       |
-      <a href="https://github.com/medevod/mgplus">Github</a>
+      <a href="https://github.com/mgpluscss/mgplus">Github</a>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>

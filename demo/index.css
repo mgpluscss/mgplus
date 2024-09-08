@@ -3,8 +3,8 @@
   --mg-color-secondary: #34237a;
   --mg-dark-color-initial: #302f2f;
 
-  --mg-control-radius: 1rem;
-  --mg-input-radius: 1rem;
+  --mg-control-radius: 1.5rem;
+  --mg-input-radius: 1.5rem;
   --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }
 
@@ -29,7 +29,6 @@ header {
   position: relative;
   text-align: center;
   background: linear-gradient(360deg, transparent 1%, #34237a 0%, #00acc1 90%);
-  color: var(--mg-color-light);
 }
 
 .svg-icon-darkmode {
@@ -56,7 +55,14 @@ header {
   background-image: url("images/de.svg");
 }
 .svg-icon-search {
-  background: url("images/search.svg");
+  background-image: url("images/search.svg");
+}
+.svg-icon-clipboard {
+  background-image: url("images/clipboard.svg");
+}
+
+.svg-icon-github {
+  background-image: url("images/github.svg");
 }
 
 .grid-cel {

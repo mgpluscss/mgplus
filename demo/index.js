@@ -48,6 +48,20 @@ function registerDemoFeatures() {
     theme.style.setProperty("--mg-color-primary", color.hexString);
   });
 
+  const inputRadiusSelector = document.querySelector("#input-radius-selector");
+
+  inputRadiusSelector.addEventListener("change", (ev) => {
+    theme.style.setProperty("--mg-input-radius", `${ev.target.value / 10}rem`);
+  });
+  const controlRadiusSelector = document.querySelector(
+    "#control-radius-selector"
+  );
+  controlRadiusSelector.addEventListener("change", (ev) => {
+    theme.style.setProperty(
+      "--mg-control-radius",
+      `${ev.target.value / 10}rem`
+    );
+  });
   //loader interaction
   document.querySelector("#loader-button").addEventListener(
     "click",
@@ -84,11 +98,10 @@ function registerDemoFeatures() {
       );
       var previewPan = document.createElement("div");
       var buttonCollapse = document.createElement("button");
+      var collapseContent = document.createElement("div");
       const preContent = document.createElement("pre");
-
-      elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
-      previewPan.appendChild(buttonCollapse);
-      previewPan.appendChild(preContent);
+      const clipboardButton = document.createElement("button");
+      const clipboardButtonIcon = document.createElement("i");
 
       previewPan.classList.add("mg-pad-t3");
       buttonCollapse.classList.add(
@@ -100,11 +113,37 @@ function registerDemoFeatures() {
         "mg-collapse"
       );
 
-      buttonCollapse.setAttribute("data-toggle", "collapse");
+      clipboardButton.classList.add("mg-button--link", "mg-button--small");
 
+      clipboardButton.addEventListener("click", (ev) => {
+        navigator.clipboard.writeText(elSource.outerHTML);
+      });
+      clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
+
+      buttonCollapse.setAttribute("data-toggle", "collapse");
       buttonCollapse.textContent = "view html";
-      preContent.classList.add("prettyprint", "mg-collapse--content");
+
+      collapseContent.classList.add(
+        "mg-collapse--content",
+        "mg-col",
+        "mg-x--end"
+      );
+
+      preContent.classList.add(
+        "prettyprint",
+        "mg-overflow-x-auto",
+        "mg-max-w100"
+      );
       preContent.innerHTML = quineHtml;
+
+      clipboardButton.appendChild(clipboardButtonIcon);
+      previewPan.appendChild(buttonCollapse);
+      previewPan.appendChild(collapseContent);
+
+      collapseContent.appendChild(clipboardButton);
+      collapseContent.appendChild(preContent);
+
+      elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
     }
   }
   document

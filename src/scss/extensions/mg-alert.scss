@@ -1,19 +1,22 @@
 .mg-alert {
+  border-top-right-radius: $control-radius;
+  border-bottom-right-radius: $control-radius;
   border-left: 0.3rem solid $color-primary;
   margin-left: 0;
   margin-right: 0;
   padding: 1rem 1.5rem;
   margin-bottom: 2.5rem;
   background-color: $color-quinary;
-  
+
   &.danger {
     border-left-color: $color-danger;
   }
+
   &.success {
     border-left-color: $color-success;
   }
+
   &.warning {
-    border-left-color: $color-warning; 
+    border-left-color: $color-warning;
   }
 }
- 
