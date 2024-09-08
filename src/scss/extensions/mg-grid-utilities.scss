@@ -8,8 +8,8 @@
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left: ($_gutter / 2);
-  padding-right: ($_gutter / 2);
+  padding-left: calc($_gutter / 2);
+  padding-right: calc($_gutter / 2);
 }
 
 //  Centered container element
@@ -17,7 +17,7 @@
   margin-right: auto;
   margin-left: auto;
   padding-right: 0.8rem;
-  padding-left:  0.8rem; 
+  padding-left: 0.8rem;
   width: 100%;
 }
 
@@ -32,11 +32,11 @@
 //  Generate default columns
 @mixin create-X($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
-  max-width: percentage(($_columns / $grid__columns));
+  max-width: percentage(calc($_columns / $grid__columns));
 }
 
 @mixin create-X--offset($_columns) {
-  margin-left: percentage(($_columns / $grid__columns));
+  margin-left: percentage(calc($_columns / $grid__columns));
 }
 
 //  Generate small columns
@@ -44,13 +44,13 @@
   @include grid-column($_gutter);
 
   @media (min-width: $screen--S) {
-    max-width: percentage(($_columns / $grid__columns));
+    max-width: percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-S--offset($_columns) {
   @media (min-width: $screen--S) {
-    margin-left: percentage(($_columns / $grid__columns));
+    margin-left: percentage(calc($_columns / $grid__columns));
   }
 }
 
@@ -59,13 +59,13 @@
   @include grid-column($_gutter);
 
   @media (min-width: $screen--M) {
-    max-width: percentage(($_columns / $grid__columns));
+    max-width: percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-M--offset($_columns) {
   @media (min-width: $screen--M) {
-    margin-left: percentage(($_columns / $grid__columns));
+    margin-left: percentage(calc($_columns / $grid__columns));
   }
 }
 
@@ -74,44 +74,46 @@
   @include grid-column($_gutter);
 
   @media (min-width: $screen--L) {
-    max-width: percentage(($_columns / $grid__columns));
+    max-width: percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-L--offset($_columns) {
   @media (min-width: $screen--L) {
-    margin-left: percentage(($_columns / $grid__columns));
+    margin-left: percentage(calc($_columns / $grid__columns));
   }
 }
 
 //  Grid generation
 
-@mixin create-all-grid-columns(
-  $i: 1,
-  $list:
-    ".#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}"
+@mixin create-all-grid-columns($i: 1,
+  $list: ".#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}"
+
 ) {
   @for $i from (1 + 1) through $grid__columns {
     $list: "#{$list}, .#{$name--X}#{$i}, .#{$name--S}#{$i}, .#{$name--M}#{$i}, .#{$name--L}#{$i}, .#{$name--XL}#{$i}";
   }
+
   #{$list} {
     @include grid-column();
   }
 }
 
 @mixin calc-grid-column($index, $class, $type) {
-  @if ($type == width) and ($index > 0) {
+  @if ($type ==width) and ($index > 0) {
     .#{$class}#{$index} {
-      flex-basis: percentage(($index / $grid__columns));
-      max-width: percentage(($index / $grid__columns));
+      flex-basis: percentage(calc($index / $grid__columns));
+      max-width: percentage(calc($index / $grid__columns));
     }
   }
-  @if ($type == offset) {
+
+  @if ($type ==offset) {
     .#{$class}--offset#{$index} {
-      margin-left: percentage(($index / $grid__columns));
+      margin-left: percentage(calc($index / $grid__columns));
     }
   }
-  @if ($type == order) {
+
+  @if ($type ==order) {
     .#{$class}--order#{$index} {
       order: $index;
     }
@@ -123,41 +125,53 @@
     @include calc-grid-column($i, $class, $type);
   }
 }
+
 // Create positioning classes
 @mixin create-positioning-col($_class) {
   .mg-col.#{$_class}--start {
     align-items: flex-start;
   }
+
   .mg-col.#{$_class}--center {
     align-items: center;
   }
+
   .mg-col.#{$_class}--end {
     align-items: flex-end;
   }
+
   .mg-col.#{$_class}--around {
     justify-content: space-around;
   }
+
   .mg-col.#{$_class}--between {
     justify-content: space-between;
   }
+
   .mg-col.#{$_class}--evenly {
     justify-content: space-evenly;
   }
+
   .mg-col.#{$_class}--top {
     justify-content: flex-start;
   }
+
   .mg-col.#{$_class}--middle {
     justify-content: center;
   }
+
   .mg-col.#{$_class}--bottom {
     justify-content: flex-end;
   }
+
   .mg-col.#{$_class}--stretch {
     justify-content: stretch;
   }
+
   .mg-col.#{$_class}--baseline {
     justify-content: baseline;
   }
+
   .mg-col.#{$_class}--reverse {
     flex-direction: column-reverse;
   }
@@ -168,46 +182,58 @@
   .mg-row.#{$_class}--start {
     justify-content: flex-start;
   }
+
   .mg-row.#{$_class}--center {
     justify-content: center;
   }
+
   .mg-row.#{$_class}--end {
     justify-content: flex-end;
   }
+
   .mg-row.#{$_class}--around {
     justify-content: space-around;
   }
+
   .mg-row.#{$_class}--between {
     justify-content: space-between;
   }
+
   .mg-row.#{$_class}--evenly {
     justify-content: space-evenly;
   }
+
   .mg-row.#{$_class}--top {
     align-items: flex-start;
   }
+
   .mg-row.#{$_class}--middle {
     align-items: center;
   }
+
   .mg-row.#{$_class}--bottom {
     align-items: flex-end;
   }
+
   .mg-row.#{$_class}--stretch {
     align-items: stretch;
   }
+
   .mg-row.#{$_class}--baseline {
     align-items: baseline;
   }
+
   .mg-row.#{$_class}--reverse {
     flex-direction: row-reverse;
-  }  
+  }
 }
 
 @mixin create-growing-effects($_class) {
-  .#{$_class}--grow { 
+  .#{$_class}--grow {
     flex: 1 1 auto;
   }
-  .#{$_class}--ungrow { 
+
+  .#{$_class}--ungrow {
     flex: 0;
   }
 }
@@ -234,5 +260,5 @@
   @include create-positioning-row($_class);
   @include create-positioning-col($_class);
   @include create-growing-effects($_class);
- 
+
 }
