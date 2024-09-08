@@ -2,13 +2,15 @@
 
 ![](/demp/images/logo.svg)
 
-## Mg+ is a micro CSS library with essential features
+## Mg+ A micro CSS library
+
+### Build websites with just a few drops of css
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-### Striking the perfect balance in CSS
+Striking the perfect balance between features and simplicity
 
-Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) which provides a minimal setup of styles for a fast and clean starting point
+Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) and provides a minimal setup of styles for a fast and clean starting point
 
 Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
@@ -16,7 +18,7 @@ Mg+ is specially designed to quickly create a website or a small page with minim
 
 ### Demo
 
-**[Test page](https://demo.mgpluscss.com)**
+**[Demo page](https://demo.mgpluscss.com)**
 
 **[Corporate website integration](https://www.evodim.com)**
 
@@ -25,8 +27,8 @@ Mg+ is specially designed to quickly create a website or a small page with minim
 * Lightweight and many components implemented
 * Reponsive and mobile first design
 * Sass sources could be extended or composed for your custom needs
-* JS plugins to interact with some component (optional and no custom js code is required)
-* Components could be integrated easily in php, react, angular, it is just html markups
+* Optional: use js plugins to interact with some component, it's straightforward: you don't have to run any custom js code in your website
+* Components are juste html markups, it could be integrated easily in any web framework like php, react, vue or angular
 
 #### Features
 
@@ -34,16 +36,34 @@ Mg+ is specially designed to quickly create a website or a small page with minim
 * Theming (dark mode)
 * Navs
 * Tabs
-* Forms inputs
+* Pretty forms inputs
 * Badges
 * Modals
-* Grid system
+* Responsive grid system
 * Icon helper including some css icons
-* Styling helpers like tailwindcss
+* Styling helpers like tailwindcss for positionning and sizing
 
 ## Getting started
 
-### Install dependencies from [npm](https://www.npmjs.com/package/mgplus)
+### Quick start
+
+Import the css library on your website for our CDN
+
+```html
+ <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.2.9/css/mgplus.css" />
+```
+
+Import the js plugin on your website with required components as query params
+
+```html
+<script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?register_plugins=dropdowns,tabs,modals,collapses,darkmode"></script>
+```
+
+That's all
+
+### Import mgplus from NPM
+
+Install dependencies from [npm](https://www.npmjs.com/package/mgplus)
 
 ***npm***
 
@@ -57,22 +77,20 @@ npm install mgplus
 yarn add mgplus
 ```
 
-### Finaly import mgplus.css file to your project
+***pnpm***
 
-### Alternatively, you can import directly css library from official cdn resources without nodejs stack
+```sh
+pnpm install mgplus
+```
 
-**[mgplus.css](https://cdn.mgpluscss.com/v1.2.8/css/mgplus.css)**
+Finaly import mgplus.css from your node_modules folder
 
-### JS plugins
+### Use JS plugins without additional coding
 
-Optionaly: include mgplus-dom.js plugin to handle UI interaction for some components (toggle classes on dom events)
+mgplus-dom.js plugin allows to handle UI interaction for some components (toggle classes on dom events)
 They are mainly used to toggle visibility of content inside a component
 
-**[mgplus-dom.js](https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js)**
-
-To register specifics plugins:
-
-To register automatically plugins on page load, use "register_plugins" query param when you import mgplus-dom.js
+To register automatically all or specific plugins on page load, use "register_plugins"  query param when you import mgplus-dom.js
 
 #### Example
 
@@ -130,7 +148,9 @@ In your main html document page, add attribute data-theme=["dark" | "light" |  "
 *Js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
 It could be replaced by creating a wrapped UI components with react, angular or other any UI framework*
 
-### For debugging run demo site directly from the repository
+## Debugging
+
+### Debugging demo page locally
 
 * Clone the repository
 
@@ -138,34 +158,35 @@ It could be replaced by creating a wrapped UI components with react, angular or 
 git clone https://github.com/Evodim/mgplus.git
 ```
 
-* Install packages
+Install packages
 
 ```sh
 npm install
 ```
 
-* To start demo page:
-
+Start demo page
+  
 ```sh
-npm run start 
+npm run start
 ```
 
-* Debugging:
+### Debugging with auto reload
+
 Run watch command to enable hot reload for the scss library
 
 ```sh
-npm run watch 
+npm run watch
 ```
 
-*In order to start watch command, you should launch demo page with start command in another process*
+In order to start watch command, you should launch demo page with start command in another process
 
-* To build only the library :
+### Build only the library
 
 ```sh
 npm run build
 ```
 
-*yarn commands are also supported*
+*yarn, pnpm commands are also supported*
 
 ## License
 
