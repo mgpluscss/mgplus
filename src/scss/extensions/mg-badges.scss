@@ -10,7 +10,6 @@
     vertical-align: baseline;
     background-color: $color-primary;
     color: $color-light;
-    font-size: map-get($font-sizes , "s");
 
     &.success {
         background-color: $color-success;
