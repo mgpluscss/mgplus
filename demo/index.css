@@ -55,10 +55,14 @@ header {
   background-image: url("images/de.svg");
 }
 .svg-icon-search {
-  background: url("images/search.svg");
+  background-image: url("images/search.svg");
 }
 .svg-icon-clipboard {
-  background: url("images/clipboard.svg");
+  background-image: url("images/clipboard.svg");
+}
+
+.svg-icon-github {
+  background-image: url("images/github.svg");
 }
 
 .grid-cel {

@@ -47,19 +47,17 @@ Mg+ is specially designed to quickly create a website or a small page with minim
 
 ### Quick start
 
-Import the css library on your website for our CDN
+Import mgplus.css to your website from our CDN
 
 ```html
  <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.2.9/css/mgplus.css" />
 ```
 
-Import the js plugin on your website with required components as query params
+Import mgplus-dom.js to your website from our CDN and register required components as query params
 
 ```html
 <script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?register_plugins=dropdowns,tabs,modals,collapses,darkmode"></script>
 ```
-
-That's all
 
 ### Import mgplus from NPM
 
@@ -97,14 +95,14 @@ To register automatically all or specific plugins on page load, use "register_pl
 ##### Register all plugins
 
 ```html
-<script src="https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js?
+<script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?
 register_plugins=dropdowns,tabs,modals,collapses,darkmode" ></script>
 ```
 
 ##### Register only darkmode
 
 ```html
-<script src="https://cdn.mgpluscss.com/v1.2.8/js/mgplus-dom.js?
+<script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?
 register_plugins=darkmode" ></script>
 ```
 
