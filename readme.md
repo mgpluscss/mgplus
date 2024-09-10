@@ -10,7 +10,7 @@
 
 Striking the perfect balance between features and simplicity
 
-Formerly called Milligram Plus, Mg+ was based on [milligram](https://github.com/milligram/milligram) and provides a minimal setup of styles for a fast and clean starting point without any dependencies
+Mg+ (Milligram Plus) was based on [milligram](https://github.com/milligram/milligram) and provides a minimal setup of styles for a fast and clean starting point without any dependencies
 
 Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
