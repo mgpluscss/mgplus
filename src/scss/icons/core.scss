@@ -33,8 +33,8 @@ $icon-prefix: "mg-icon";
   @each $key, $value in $font-sizes {
     &.#{$icon-prefix}--#{$key} {
       font-size: $value;
-      width: $value;
-      height: $value;
+      min-width: $value;
+      min-height: $value;
     }
   }
 }
