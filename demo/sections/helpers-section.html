@@ -1,123 +1,125 @@
 <section id="helpers">
-    <h2>Css helpers</h2>
-    <p>This section showcases the functionality of CSS helpers in our design system. CSS helpers are used to quickly
-        apply styles to elements. Below, you will find examples of how to use CSS helpers to style various elements
-        and components.</p>
-    <h3>Positioning</h3>
-    <h4>Padding</h4>
-    <div class="mg-col">
-        <span><b>.mg-pad</b>[0-10] <code>{ padding: [0-10]rem; }</code></span>
-        <span><b>.mg-pad-l</b>[0-10] <code>{ padding-left: [0-10]rem; }</code></span>
-        <span><b>.mg-pad-r</b>[0-10] <code>{ padding-right: [0-10]rem; }</code></span>
-        <span><b>.mg-pad-b</b>[0-10] <code>{ padding-bottom: [0-10]rem; }</code></span>
-        <span><b>.mg-pad-t</b>[0-10] <code>{ padding-top: [0-10]rem; }</code></span>
-    </div>
-    <h4>Marging</h4>
-    <div class="mg-col">
-        <span><b>.mg-space</b>[0-10] <code>{ margin: [0-10]rem; }</code></span>
-        <span><b>.mg-space-l</b>[0-10] <code>{ margin-left: [0-10]rem; }</code></span>
-        <span><b>.mg-space-r</b>[0-10] <code>{ margin-right: [0-10]rem; }</code></span>
-        <span><b>.mg-space-b</b>[0-10] <code>{ margin-bottom: [0-10]rem; }</code></span>
-        <span><b>.mg-space-t</b>[0-10] <code>{ margin-top: [0-10]rem; }</code></span>
-        <span><b>.mg-space-auto</b><code>{ margin: auto; }</code></span>
-    </div>
-    <h4>Placing</h4>
-    <div class="mg-col">
-        <span><b>.mg-fit</b><code>{ min-width: 100%; }</code></span>
-        <span><b>.mg-fixed-top</b><code>{ vertical-align: middle; }</code></span>
-        <span><b>.mg-valign-middle</b><code>{ position: fixed; bottom: 0; left: 0; z-index: 999; }</code></span>
-        <span><b>.mg-relative</b><code>{ position: relative; }</code></span>
-        <span><b>.mg-fixed</b><code>{ position: fixed; }</code></span>
-        <span><b>.mg-static</b><code>{ position: static; }</code></span>
-        <span><b>.mg-sticky</b><code>{ position: sticky; }</code></span>
-        <span><b>.mg-fixed-top</b><code>{ position: fixed; top: 0; left: 0; z-index: 999; }</code></span>
-        <span><b>.mg-fixed-bottom</b><code>{ position: fixed; bottom: 0; left: 0; z-index: 999; }</code></span>
-        <span><b>.mg-top</b><code>{ top: 0; }</code></span>
-        <span><b>.mg-bottom</b><code>{ bottom: 0; }</code></span>
-        <span><b>.mg-right</b><code>{ float: right; right: 0; }</code></span>
-        <span><b>.mg-left</b><code>{ float: left; left: 0; }</code></span>
-        <span><b>.mg-center</b><code>{ left: 50%; transform: translateX(-50%);}</code></span>
-        <span><b>.mg-middle</b><code>{ top: 50%; transform: translateY(-50%); }</code></span>
-        <span><b>.mg-top-left</b><code>{ top: 0; left:0; }</code></span>
-        <span><b>.mg-top-right</b><code>{ top: 0; right:0; }</code></span>
-        <span><b>.mg-bottom-left</b><code>{ bottom: 0; left:0; }</code></span>
-        <span><b>.mg-bottom-right</b><code>{ bottom: 0; right:0; }</code></span>
-        <span><b>.mg-text-center</b><code>{ text-align: center; }</code></span>
-        <span><b>.mg-text-right</b><code>{ text-align: right; }</code></span>
-        <span><b>.mg-text-left</b><code>{ text-align: left; }</code></span>
-    </div>
+    <div class="mg-container">
+        <h2>Css helpers</h2>
+        <p>This section showcases the functionality of CSS helpers in our design system. CSS helpers are used to quickly
+            apply styles to elements. Below, you will find examples of how to use CSS helpers to style various elements
+            and components.</p>
+        <h3>Positioning</h3>
+        <h4>Padding</h4>
+        <div class="mg-col">
+            <span><code>.mg-pad</code>[0-10] { padding: [0-10]rem; }</span>
+            <span><code>.mg-pad-l</code>[0-10] { padding-left: [0-10]rem; }</span>
+            <span><code>.mg-pad-r</code>[0-10] { padding-right: [0-10]rem; }</span>
+            <span><code>.mg-pad-b</code>[0-10] { padding-bottom: [0-10]rem; }</span>
+            <span><code>.mg-pad-t</code>[0-10] { padding-top: [0-10]rem; }</span>
+        </div>
+        <h4>Marging</h4>
+        <div class="mg-col">
+            <span><code>.mg-space</code>[0-10] { margin: [0-10]rem; }</span>
+            <span><code>.mg-space-l</code>[0-10] { margin-left: [0-10]rem; }</span>
+            <span><code>.mg-space-r</code>[0-10] { margin-right: [0-10]rem; }</span>
+            <span><code>.mg-space-b</code>[0-10] { margin-bottom: [0-10]rem; }</span>
+            <span><code>.mg-space-t</code>[0-10] { margin-top: [0-10]rem; }</span>
+            <span><code>.mg-space-auto</code> { margin: auto; }</span>
+        </div>
+        <h4>Placing</h4>
+        <div class="mg-col">
+            <span><code>.mg-fit</code> { min-width: 100%; } </span>
+            <span><code>.mg-fixed-top</code> { vertical-align: middle; }</span>
+            <span><code>.mg-valign-middle</code> { position: fixed; bottom: 0; left: 0; z-index: 999; }</span>
+            <span><code>.mg-relative</code> { position: relative; }</span>
+            <span><code>.mg-fixed</code> { position: fixed; }</span>
+            <span><code>.mg-static</code> { position: static; }</span>
+            <span><code>.mg-sticky</code> { position: sticky; }</span>
+            <span><code>.mg-fixed-top</code> { position: fixed; top: 0; left: 0; z-index: 999; }</span>
+            <span><code>.mg-fixed-bottom</code> { position: fixed; bottom: 0; left: 0; z-index: 999; }</span>
+            <span><code>.mg-top</code> { top: 0; }</span>
+            <span><code>.mg-bottom</code> { bottom: 0; }</span>
+            <span><code>.mg-right</code> { float: right; right: 0; }</span>
+            <span><code>.mg-left</code> { float: left; left: 0; }</span>
+            <span><code>.mg-center</code> { left: 50%; transform: translateX(-50%);}</span>
+            <span><code>.mg-middle</code> { top: 50%; transform: translateY(-50%); }</span>
+            <span><code>.mg-top-left</code> { top: 0; left:0; }</span>
+            <span><code>.mg-top-right</code> { top: 0; right:0; }</span>
+            <span><code>.mg-bottom-left</code> { bottom: 0; left:0; }</span>
+            <span><code>.mg-bottom-right</code> { bottom: 0; right:0; }</span>
+            <span><code>.mg-text-center</code> { text-align: center; }</span>
+            <span><code>.mg-text-right</code> { text-align: right; }</span>
+            <span><code>.mg-text-left</code> { text-align: left; }</span>
+        </div>
 
 
-    <h3>Sizing</h3>
-    <h4>width and height</h4>
-    <div class="mg-col">
-        <span><b>.mg-w</b>[0-10] <code>{ width: [0-10]rem; }</code></span>
-        <span><b>.mg-h</b>[0-10] <code>{ height: [0-10]rem; }</code></span>
-        <span><b>.mg-min-w</b>[0-10] <code>{ min-witdh: [0-10]rem; }</code></span>
-        <span><b>.mg-min-h</b>[0-10] <code>{ min-height: [0-10]rem; }</code></span>
-        <span><b>.mg-max-w</b>[0-10] <code>{ max-width: [0-10]rem; }</code></span>
-        <span><b>.mg-max-h</b>[0-10] <code>{ max-height: [0-10]rem; }</code></span>
-    </div>
-    <div class="mg-col">
-        <span><b>.mg-w</b>[0-10]vh <code>{ width: [0-10]vh; }</code></span>
-        <span><b>.mg-h</b>[0-10]vh <code>{ height: [0-10]vh; }</code></span>
-        <span><b>.mg-min-w</b>[0-10]vh <code>{ min-witdh: [0-10]vh; }</code></span>
-        <span><b>.mg-min-h</b>[0-10]vh <code>{ min-height: [0-10]vh; }</code></span>
-        <span><b>.mg-max-w</b>[0-10]vh <code>{ max-width: [0-10]vh; }</code></span>
-        <span><b>.mg-max-h</b>[0-10]vh <code>{ max-height: [0-10]vh; }</code></span>
-    </div>
-    <p></p>
-    <h3>Visibility</h3>
-    <div class="mg-col">
-        <span><b>.mg-block</b> <code>{ display: block; }</code></span>
-        <span><b>.mg-inline-block</b> <code>{ display: inline-block; }</code></span>
-        <span><b>.mg-inline</b> <code>{ display: inline; }</code></span>
-        <span><b>.mg-none</b> <code>{ display: none; }</code></span>
+        <h3>Sizing</h3>
+        <h4>width and height</h4>
+        <div class="mg-col">
+            <span><code>.mg-w</code>[0-10] { width: [0-10]rem; }</span>
+            <span><code>.mg-h</code>[0-10] { height: [0-10]rem; }</span>
+            <span><code>.mg-min-w</code>[0-10] { min-witdh: [0-10]rem; }</span>
+            <span><code>.mg-min-h</code>[0-10] { min-height: [0-10]rem; }</code></span>
+            <span><code>.mg-max-w</code>[0-10] { max-width: [0-10]rem; }</code></span>
+            <span><code>.mg-max-h</code>[0-10] { max-height: [0-10]rem; }</code></span>
+        </div>
+        <div class="mg-col">
+            <span><code>.mg-w</code>[0-10]vh { width: [0-10]vh; }</span>
+            <span><code>.mg-h</code>[0-10]vh { height: [0-10]vh; }</span>
+            <span><code>.mg-min-w</code>[0-10]vh { min-witdh: [0-10]vh; }</span>
+            <span><code>.mg-min-h</code>[0-10]vh { min-height: [0-10]vh; }</span>
+            <span><code>.mg-max-w</code>[0-10]vh { max-width: [0-10]vh; }</span>
+            <span><code>.mg-max-h</code>[0-10]vh { max-height: [0-10]vh; }</span>
+        </div>
+        <p></p>
+        <h3>Visibility</h3>
+        <div class="mg-col">
+            <span><code>.mg-block</code> { display: block; }</span>
+            <span><code>.mg-inline-block</code> { display: inline-block; }</span>
+            <span><code>.mg-inline</code> { display: inline; }</span>
+            <span><code>.mg-none</code> { display: none; }</span>
 
-        <span><b>.mg-show</b> <code>{ visibility: visible; opacity:1; }</code></span>
-        <span><b>.mg-clearfix</b> <code>{ transform: scale(1); }</code></span>
-        <span><b>.mg-shadow</b> <code>{ box-shadow: $control-shadow; }</code></span>
+            <span><code>.mg-show</code> { visibility: visible; opacity:1; }</span>
+            <span><code>.mg-clearfix</code> { transform: scale(1); }</span>
+            <span><code>.mg-shadow</code> { box-shadow: $control-shadow; }</span>
 
-        <span><b>.mg-overflow-auto</b> <code>{ overflow: auto; }</code></span>
-        <span><b>.mg-overflow-x-auto</b> <code>{ overflow-x: auto; }</code></span>
-        <span><b>.mg-overflow-y-auto</b> <code>{ overflow-y: auto; }</code></span>
-        <span><b>.mg-overflow-x-hidden</b> <code>{ overflow-x: hidden; }</code></span>
-        <span><b>.mg-overflow-y-hidden</b> <code>{ overflow-y: hidden; }</code></span>
+            <span><code>.mg-overflow-auto</code> { overflow: auto; }</span>
+            <span><code>.mg-overflow-x-auto</code> { overflow-x: auto; }</span>
+            <span><code>.mg-overflow-y-auto</code> { overflow-y: auto; }</span>
+            <span><code>.mg-overflow-x-hidden</code> { overflow-x: hidden; }</span>
+            <span><code>.mg-overflow-y-hidden</code> { overflow-y: hidden; }</span>
 
-        <span><b>.mg-visible</b> <code>{ visibility: visible; }</code></span>
-        <span><b>.mg-hidden</b> <code>{ visibility: hidden;}</code></span>
+            <span><code>.mg-visible</code> { visibility: visible; }</span>
+            <span><code>.mg-hidden</code> { visibility: hidden;}</span>
 
-        <span><b>.mg-rounded[0-10]</b> <code>{ border-radius: [0-10]rem;}</code></span>
-        <span><b>.mg-rounded-tl[0-10]</b> <code>{ border-top-left-radius: [0-10]rem;}</code></span>
-        <span><b>.mg-rounded-tr[0-10]</b> <code>{ border-top-right-radius: [0-10]rem;}</code></span>
-        <span><b>.mg-rounded-br[0-10]</b> <code>{ border-bottom-right-radius: [0-10]rem;}</code></span>
-        <span><b>.mg-rounded-bl[0-10]</b> <code>{ border-bottom-left-radius: [0-10]rem;}</code></span>
+            <span><code>.mg-rounded[0-10]</code> { border-radius: [0-10]rem;}</span>
+            <span><code>.mg-rounded-tl[0-10]</code> { border-top-left-radius: [0-10]rem;}</span>
+            <span><code>.mg-rounded-tr[0-10]</code> { border-top-right-radius: [0-10]rem;}</span>
+            <span><code>.mg-rounded-br[0-10]</code> { border-bottom-right-radius: [0-10]rem;}</span>
+            <span><code>.mg-rounded-bl[0-10]</code> { border-bottom-left-radius: [0-10]rem;}</span>
 
-        <span><b>.mg-rounded-none</b> <code>{ border-radius: 0;}</code></span>
-        <span><b>.mg-rounded-full</b> <code>{ border-radius: 100%;}</code></span>
+            <span><code>.mg-rounded-none</code> { border-radius: 0;}</span>
+            <span><code>.mg-rounded-full</code> { border-radius: 100%;}</span>
 
-    </div>
+        </div>
 
-    <h3>Text</h3>
-    <div class="mg-col mg-x--between">
-        <span><b>.mg-text-left</b><code>{ text-align: left; }</code></span>
-        <span><b>.mg-text-right</b> <code>{ text-align: right; }</code></span>
-        <span><b>.mg-text-center</b> <code>{ text-align: center; }</code></span>
-        <span><b>.mg-text-justify</b> <code>{ text-align: justify; }</code></span>
-        <span><b>.mg-text-nowrap</b> <code>{ white-space: nowrap; }</code></span>
-        <span><b>.mg-text-lowercase</b> <code>{ text-transform: lowercase; }</code></span>
-        <span><b>.mg-text-uppercase</b> <code>{ text-transform: uppercase; }</code></span>
-        <span><b>.mg-text-capitalize</b> <code>{ text-transform: capitalize; }</code></span>
-        <span><b>.mg-text-underline</b> <code>{ text-decoration: underline; }</code></span>
-        <span><b>.mg-text-linethrough</b> <code>{ text-decoration: linethrough; }</code></span>
-        <span><b>.mg-text-overline</b> <code>{ text-decoration: overline; }</code></span>
-        <span><b>.mg-text-none</b> <code>{ text-decoration: none; }</code></span>
-        <span><b>.mg-text-break</b> <code>{ word-break: break-all; }</code></span>
-        <span><b>.mg-text-ellipsis</b><code>{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }</code></span>
-        <span><b>.mg-text-clip</b><code>{ overflow: hidden; text-overflow: clip; white-space: nowrap; }</code></span>
-        <span><b>.mg-text-</b>[s-m-l-xl-2xl-3xl-4xl-5xl] <code>{ font-size: $base-font-size*N; }</code></span>
-        <span><b>.mg-text-bold</b><code>{ font-weight: bold; }</code></span>
-        <span><b>.mg-text-bolder</b><code>{ font-weight: bolder; }</code></span>
-        <span><b>.mg-text-lighter</b><code>{ font-weight: lighter; }</code></span>
-    </div>
+        <h3>Text</h3>
+        <div class="mg-col mg-x--between">
+            <span><code>.mg-text-left</code> { text-align: left; }</span>
+            <span><code>.mg-text-right</code> { text-align: right; }</span>
+            <span><code>.mg-text-center</code> { text-align: center; }</span>
+            <span><code>.mg-text-justify</code> { text-align: justify; }</span>
+            <span><code>.mg-text-nowrap</code> { white-space: nowrap; }</span>
+            <span><code>.mg-text-lowercase</code> { text-transform: lowercase; }</span>
+            <span><code>.mg-text-uppercase</code> { text-transform: uppercase; }</span>
+            <span><code>.mg-text-capitalize</code> { text-transform: capitalize; }</span>
+            <span><code>.mg-text-underline</code> { text-decoration: underline; }</span>
+            <span><code>.mg-text-linethrough</code> { text-decoration: linethrough; }</span>
+            <span><code>.mg-text-overline</code> { text-decoration: overline; }</span>
+            <span><code>.mg-text-none</code> { text-decoration: none; }</span>
+            <span><code>.mg-text-break</code> { word-break: break-all; }</span>
+            <span><code>.mg-text-ellipsis</code> { overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+                }</span>
+            <span><code>.mg-text-clip</code> { overflow: hidden; text-overflow: clip; white-space: nowrap; }</span>
+            <span><code>.mg-text-</code>[s-m-l-xl-2xl-3xl-4xl-5xl] { font-size: $base-font-size*N; }</span>
+            <span><code>.mg-text-bold</code> { font-weight: bold; }</span>
+            <span><code>.mg-text-bolder</code> { font-weight: bolder; }</span>
+            <span><code>.mg-text-lighter</code> { font-weight: lighter; }</span>
+        </div>
 </section>
