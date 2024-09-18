@@ -4,7 +4,7 @@
 
 ## Mg+ micro CSS library
 
-### Build websites with just a few drops of css
+### Build pretty websites with just a few drops of css
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
@@ -14,7 +14,7 @@ Mg+ (Milligram Plus) was built on top of [milligram](https://github.com/milligra
 
 Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
-****Only one css file, around 57 KB minified****
+****Only one css file, around 58 KB minified****
 
 ### Live integration
 
@@ -58,30 +58,6 @@ Import mgplus-dom.js to your website from our CDN and register required componen
 ```html
 <script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?register_plugins=dropdowns,tabs,modals,collapses,darkmode"></script>
 ```
-
-### Import mgplus from NPM
-
-Install dependencies from [npm](https://www.npmjs.com/package/mgplus)
-
-***npm***
-
-```sh
-npm install mgplus
-```
-
-***yarn***
-
-```sh
-yarn add mgplus
-```
-
-***pnpm***
-
-```sh
-pnpm install mgplus
-```
-
-Finaly import mgplus.css from your node_modules folder
 
 ### Use JS plugins without additional coding
 
