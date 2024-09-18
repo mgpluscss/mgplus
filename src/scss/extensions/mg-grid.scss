@@ -1,13 +1,14 @@
 //  Make all grid columns
 //  ---------------------------------------------
- 
+
 .mg-col {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
 }
-.mg-col > * {
+
+.mg-col>* {
   flex: 0 0 auto;
 }
 
@@ -45,6 +46,7 @@
 @media (min-width: $screen--XL) {
   @include create-grid-columns($name--XL);
 }
+
 //
 //  Grid
 //  _____________________________________________
@@ -54,12 +56,15 @@
 @media (max-width: $screen--S) {
   @include create-conditional-hidden($name--S);
 }
+
 @media (max-width: $screen--M) {
   @include create-conditional-hidden($name--M);
 }
+
 @media (max-width: $screen--L) {
   @include create-conditional-hidden($name--L);
 }
+
 @media (max-width: $screen--XL) {
   @include create-conditional-hidden($name--XL);
 }
@@ -68,12 +73,15 @@
 @media (min-width: $screen--S) {
   @include create-conditional-display($name--S);
 }
+
 @media (min-width: $screen--M) {
   @include create-conditional-display($name--M);
 }
+
 @media (min-width: $screen--L) {
   @include create-conditional-display($name--L);
 }
+
 @media (min-width: $screen--XL) {
   @include create-conditional-display($name--XL);
 }
@@ -82,6 +90,7 @@
   @include init-container();
   max-width: $screen--L;
 }
+
 .mg-container-fluid {
   @include init-container();
   max-width: width auto;
@@ -91,6 +100,4 @@
   @include init-row();
 }
 
-
-
-
+@include create-gap-utilities($rem-map);
