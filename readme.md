@@ -2,7 +2,7 @@
 
 ![](/demo/images/logo.svg)
 
-## Mgplus minimalist CSS library
+## Mgplus mini CSS library
 
 ### Build pretty websites with just a few drops of css
 
@@ -24,11 +24,11 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 ### Advantages
 
-* Lightweight and many components implemented
-* Reponsive and mobile first design
-* Sass sources could be extended or composed for your custom needs
-* Optional: use js plugins to interact with some component, it's straightforward: you don't have to run any custom js code in your website
-* Components are juste html markups, it could be integrated easily in any web framework like php, react, vue or angular
+* Easy to use: Components are just html markups 
+* Easy to integrate: Just put only one css file in your page
+* Easy to extend
+* Lightweight but many features included
+* Responsive and mobile first design
 
 #### Features
 
@@ -39,7 +39,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Pretty forms inputs
 * Badges
 * Modals
-* Responsive grid system
+* Responsive flex grid system
 * Icon helper including some css icons
 * Styling helpers like tailwindcss for positionning and sizing
 
