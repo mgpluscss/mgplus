@@ -2,7 +2,7 @@
 
 ![](/demo/images/logo.svg)
 
-## Mg+ micro CSS library
+## Mgplus minimalist CSS library
 
 ### Build pretty websites with just a few drops of css
 
@@ -10,9 +10,9 @@
 
 Striking the perfect balance between features and simplicity
 
-Mg+ (Milligram Plus) was built on top of [milligram](https://github.com/milligram/milligram) and provides a minimal setup of styles for a fast and clean starting point without any dependencies
+Mgplus was built on top of [milligram](https://github.com/milligram/milligram) and provides a minimal setup of styles for a fast and clean starting point without any dependencies
 
-Mg+ is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
+Mgplus is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
 ****Only one css file, around 58 KB minified****
 
