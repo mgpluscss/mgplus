@@ -59,7 +59,7 @@ Import mgplus-dom.js to your website from our CDN and register required componen
 <script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js?register_plugins=dropdowns,tabs,modals,collapses,darkmode"></script>
 ```
 
-### Use JS plugins without additional coding
+### JS plugins (optionnal)
 
 mgplus-dom.js plugin allows to handle UI interaction for some components (toggle classes on dom events)
 They are mainly used to toggle visibility of content inside a component
