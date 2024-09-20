@@ -262,3 +262,19 @@
   @include create-growing-effects($_class);
 
 }
+
+@mixin create-gap-utilities($rem-map) {
+  @each $key, $value in $rem-map {
+    .mg-gap#{$key} {
+      gap: #{$value};
+    }
+
+    .mg-col-gap#{$key} {
+      column-gap: #{$value};
+    }
+
+    .mg-row-gap#{$key} {
+      row-gap: #{$value};
+    }
+  }
+}

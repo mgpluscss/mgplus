@@ -1,27 +1,90 @@
 <section id="getting-started">
-    <h2>Getting started</h2>
+    <h2>Getting Started</h2>
+    <p>To get started with Mg+, include this CSS file from our CDN in your project and start using the predefined
+        classes to style
+        your elements. You can also customize the styles to fit your needs.</p>
+
     <h3>Quick start</h3>
-    <div class="mg-container" id="timeline-example">
-        <div class="mg-timeline">
-            <ul>
-                <li class="active">
-                    <div>Import mgplus css file</div>
-                    <a href="https://cdn.mgpluscss.com/v1.2.9/css/mgplus.css">mgplus.css</a>
-                </li>
-                <li class="active">
-                    <div>Optionaly import js plugin</div>
-                    <a href="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js">mgplus-dom.js</a>
-                </li>
-                <li class="active">
-                    <div>Add any mg component</div>
-                    <span>It was just html markup</span>
-                </li>
-                <li class="active">
-                    <div>Reload the page</div>
-                    <div>That's it !</div>
-                </li>
-            </ul>
-        </div>
+    <p>To quickly get started with Mg+, follow these steps:</p>
+    <div class="mg-timeline">
+        <ol>
+            <li>Include the Mg+ CSS file in the <code>&lt;head&gt;</code> section of your HTML file to apply the default
+                styles:</li>
+            <pre><code>&lt;link rel="stylesheet" href="https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css"&gt;</code></pre>
+            <li>Include the Mg+ JavaScript file before the closing <code>&lt;/body&gt;</code> to enable interactive
+                components</li>
+            <pre><code>&lt;script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js"&gt;&lt;/script&gt;</code></pre>
+            <li>Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
+            </li>
+            <pre><code>&lt;button class="mg-button"&gt;Click me&lt;/button&gt;</code></pre>
+            </li>
+        </ol>
     </div>
-    <a href="https://github.com/mgpluscss/mgplus?tab=readme-ov-file#getting-started">Detailed instructions here</a>
+
+    <h3>Customizable css variables</h3>
+    <p>To customize Mg+ variables, just override the root variables. For example:
+    <pre><code>:root {
+    --mg-primary-color: #3498db;
+    --mg-secondary-color: #2ecc71;
+    --mg-control-radius: 1.5rem;
+    --mg-input-radius: 1.5rem;
+    --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+}</code></pre>
+    </p>
+    <h3>JS Plugin configuration</h3>
+    <h4>Default configuration</h4>
+    <p>By default, all available plugins are registered</p>
+    <p>
+    <pre><code>&lt;script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js"&gt;&lt;/script&gt;</code></pre>
+    </p>
+    <h4>Custom configuration</h4>
+    <p>Register only specific plugins by using inline query param</p>
+    </p>
+    <p>
+    <pre><code>&lt;script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js?<b>register_plugins=dropdowns,tabs,modals,collapses</b>"&gt;&lt;/script&gt;</code></pre>
+    </p>
+
+    <p>To allow plugin works for your mgplus css components
+        Add html attribute data-toggle=["plugin_name"] in your html components</p>
+
+    Example:
+
+    <pre><code>&lt;div class="mg-dropdown"&gt;
+        &lt;button title="choose a car" class="mg-dropdown--icon" <b>data-toggle="dropdown"</b>&gt;
+            Choose a car
+        &lt;/button&gt;
+        &lt;div class="mg-dropdown--content"&gt;
+            &lt;div class="mg-nav"&gt;
+                &lt;ul&gt;
+                    &lt;li data-value="audi"&gt;Audi&lt;/li&gt;
+                    &lt;li data-value="bmw"&gt;BMW&lt;/li&gt;
+                    &lt;li data-value="toyota"&gt;Toyota&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+
+    <h4>List of available plugins</h4>
+    <p>
+    <ul>
+        <li>dropdowns</li>
+        <li>tabs</li>
+        <li>modals</li>
+        <li>collapses</li>
+    </ul>
+    </p>
+    <h4>Configure DarkMode</h4>
+    <p>
+        In your main html document page, add attribute <b>data-theme="dark"</b> or <b>data-theme="light"</b> or
+        <b>data-theme="auto"</b>
+    </p>
+    <p>
+        <code>&lt;html lang="en" data-theme="auto"&gt;...</code>
+    </p>
+
+    <p>"auto" mode will use your system browser preference to choose dark or light mode</p>
+
+    <i>Js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns, modals, etc.
+        It could be replaced by creating a wrapped UI components with react, angular or other any UI framework</i>
+
 </section>

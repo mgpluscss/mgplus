@@ -66,6 +66,7 @@ header {
 }
 
 .grid-cel {
+  font-weight: bold;
   width: 100%;
   background-color: var(--mg-color-primary);
   color: var(--mg-color-light);
