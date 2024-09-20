@@ -50,13 +50,13 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Import mgplus.css to your website from our CDN
 
 ```html
- <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.2.9/css/mgplus.css" />
+ <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css" />
 ```
 
 * Import mgplus-dom.js to your website from our CDN
 
 ```html
-<script src="https://cdn.mgpluscss.com/v1.2.9/js/mgplus-dom.js"></script>
+<script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js"></script>
 ```
 
 ## Debugging
