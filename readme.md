@@ -42,7 +42,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Responsive flex grid system
 * Icon helper including ready to use css icons
 * Styling helpers like tailwindcss for positionning and sizing
-* and more ...
+* And more ...
 
 ## Getting started
 
