@@ -18,30 +18,31 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 ### Live integration
 
-**[Demo page](https://demo.mgpluscss.com)**
+**[mgplus portal](https://www.mgpluscss.com)**
 
-**[Corporate website integration](https://www.evodim.com)**
+**[corporate website integration](https://www.evodim.com)**
 
 ### Advantages
 
-* Easy to use: Components are just html markups
-* Easy to integrate: Just put only one css file in your page
+* Easy to use: components are just html markups
+* Easy to integrate: just add only one css file in your page
 * Easy to extend
-* Lightweight but many features included
+* Lightweight with only essentials features
 * Responsive and mobile first design
 
 #### Features
 
-* Custom variables
-* Theming (dark mode)
+* Theming with css variables
+* Dark mode
 * Navs
 * Tabs
 * Pretty forms inputs
 * Badges
 * Modals
 * Responsive flex grid system
-* Icon helper including some css icons
+* Icon helper including ready to use css icons
 * Styling helpers like tailwindcss for positionning and sizing
+* and more ...
 
 ## Getting started
 
