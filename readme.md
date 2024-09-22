@@ -4,6 +4,8 @@
 
 ## Mgplus mini CSS library
 
+**[see full featured demo here](https://demo.mgpluscss.com)**
+
 ### Build pretty websites with just a few drops of css
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
@@ -16,7 +18,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 ****Only one css file, around 58 KB minified****
 
-### Live integration
+### Integration example
 
 **[mgplus portal](https://www.mgpluscss.com)**
 
