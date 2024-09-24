@@ -24,7 +24,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 **[corporate website integration](https://www.evodim.com)**
 
-### Advantages
+### Why mgplus ?
 
 * Easy to use: components are just html markups
 * Easy to integrate: just add only one css file in your page
@@ -32,7 +32,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Lightweight with only essentials features
 * Responsive and mobile first design
 
-#### Features
+### Features
 
 * Theming with css variables
 * Dark mode
@@ -56,7 +56,8 @@ Mgplus is specially designed to quickly create a website or a small page with mi
  <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css" />
 ```
 
-* Import mgplus-dom.js to your website from our CDN
+* Optional: In order to use collapsible components or darkmode, import mgplus-dom.js to your website from our CDN
+
 
 ```html
 <script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js"></script>
