@@ -4,7 +4,7 @@
 
 ## Mgplus mini CSS library
 
-**[see full featured demo here](https://demo.mgpluscss.com)**
+**[portal and demo](https://www.mgpluscss.com)**
 
 ### Build pretty websites with just a few drops of css
 
