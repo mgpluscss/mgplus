@@ -21,23 +21,23 @@
     padding-bottom: $value;
   }
 
-  .mg-space#{$key} {
+  .mg-margin#{$key} {
     margin: $value;
   }
 
-  .mg-space-l#{$key} {
+  .mg-margin-l#{$key} {
     margin-left: $value;
   }
 
-  .mg-space-r#{$key} {
+  .mg-margin-r#{$key} {
     margin-right: $value;
   }
 
-  .mg-space-t#{$key} {
+  .mg-margin-t#{$key} {
     margin-top: $value;
   }
 
-  .mg-space-b#{$key} {
+  .mg-margin-b#{$key} {
     margin-bottom: $value;
   }
 
