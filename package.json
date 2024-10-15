@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "mgplus",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "mgplus a micro CSS library",
   "homepage": "https://evodim.github.io/mgplus",
   "repository": "https://github.com/Evodim/mgplus",
@@ -33,14 +33,18 @@
     "@parcel/transformer-sass": "^2.10.3",
     "@plasmohq/parcel-transformer-inject-env": "^0.2.11",
     "parcel": "^2.10.2",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "stylelint": "^16.10.0"
   },
   "scripts": {
+    "lint:scss": "stylelint **/*.scss --fix",
     "start": "parcel serve --dist-dir demo_temp --open",
     "watch": "parcel watch",
     "build": "parcel build --no-source-maps --target library --target plugins ",
     "build_debug": "parcel build --target library --target plugins --no-optimize",
     "build_demo": "parcel build --target demo --no-source-maps --no-optimize"
   },
-  "dependencies": {}
+  "dependencies": {
+    "stylelint-config-standard-scss": "^13.1.0"
+  }
 }
