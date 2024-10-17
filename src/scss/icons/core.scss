@@ -1,8 +1,7 @@
-// Icon variables 
 $icon-border-width: .2rem;
 $icon-prefix: "mg-icon";
 
-// Icon base style
+
 .#{$icon-prefix} {
   box-sizing: content-box;
   margin-left: 0.4rem;
@@ -29,7 +28,7 @@ $icon-prefix: "mg-icon";
     transform: translate(-50%, -50%);
   }
 
-  // Icon sizes 
+
   @each $key, $value in $font-sizes {
     &.#{$icon-prefix}--#{$key} {
       font-size: $value;

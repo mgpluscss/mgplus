@@ -12,7 +12,7 @@
   flex: 0 0 auto;
 }
 
-@include create-all-grid-columns();
+@include create-all-grid-columns;
 
 //  Columns X
 //  ---------------------------------------------
@@ -52,7 +52,7 @@
 //  _____________________________________________
 
 
-//Adaptative hide
+// Adaptative hide
 @media (max-width: $screen--S) {
   @include create-conditional-hidden($name--S);
 }
@@ -69,7 +69,7 @@
   @include create-conditional-hidden($name--XL);
 }
 
-//Adaptative display
+// Adaptative display
 @media (min-width: $screen--S) {
   @include create-conditional-display($name--S);
 }
@@ -87,17 +87,19 @@
 }
 
 .mg-container {
-  @include init-container();
+  @include init-container;
+
   max-width: $screen--L;
 }
 
 .mg-container-fluid {
-  @include init-container();
+  @include init-container;
+
   max-width: width auto;
 }
 
 .mg-row {
-  @include init-row();
+  @include init-row;
 }
 
 @include create-gap-utilities($rem-map);

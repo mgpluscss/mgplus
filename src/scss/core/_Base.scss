@@ -3,8 +3,8 @@
 
 // Set box-sizing globally to handle padding and border widths
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: inherit;
 }
 
@@ -21,10 +21,10 @@ body {
 body {
   background-color: $color-initial;
   color: $color-secondary;
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $base-font-size; // Currently ems cause chrome bug misinterpreting rems on body element
   font-weight: 300;
-  letter-spacing: .01em;
+  letter-spacing: 0.016rem; // Converted from 0.01em to rem
   line-height: 1.6;
   margin: 0;
 }
@@ -35,10 +35,13 @@ main {
 
 hr {
   box-sizing: content-box;
+
   /* 1 */
   height: 0;
+
   /* 1 */
   overflow: visible;
+
   /* 2 */
 }
 
@@ -49,8 +52,10 @@ hr {
 
 pre {
   font-family: monospace, monospace;
+
   /* 1 */
   font-size: 1em;
+
   /* 2 */
 }
 
@@ -61,10 +66,13 @@ pre {
 
 abbr[title] {
   border-bottom: none;
+
   /* 1 */
   text-decoration: underline;
+
   /* 2 */
   text-decoration: underline dotted;
+
   /* 2 */
 }
 
@@ -86,8 +94,10 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace;
+
   /* 1 */
   font-size: 1em;
+
   /* 2 */
 }
 
@@ -113,11 +123,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -0.4rem; // Converted from -0.25em to rem
 }
 
 sup {
-  top: -0.5em;
+  top: -0.8rem; // Converted from -0.5em to rem
 }
 
 /* Embedded content
@@ -145,12 +155,16 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+
   /* 1 */
   font-size: 100%;
+
   /* 1 */
   line-height: 1.15;
+
   /* 1 */
   margin: 0;
+
   /* 2 */
 }
 
@@ -209,16 +223,22 @@ button::-moz-focus-inner,
 
 legend {
   box-sizing: border-box;
+
   /* 1 */
   color: inherit;
+
   /* 2 */
   display: table;
+
   /* 1 */
   max-width: 100%;
+
   /* 1 */
   padding: 0;
+
   /* 3 */
   white-space: normal;
+
   /* 1 */
 }
 
@@ -273,8 +293,10 @@ h6 {
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
+
   /* 1 */
   padding: 0;
+
   /* 2 */
 }
 
@@ -295,6 +317,7 @@ h6 {
 [type="search"] {
   appearance: textfield;
   outline-offset: -2px;
+
   /* 2 */
 }
 
@@ -303,7 +326,7 @@ h6 {
    */
 
 [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 /**
@@ -312,9 +335,11 @@ h6 {
    */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
+  appearance: button;
+
   /* 1 */
   font: inherit;
+
   /* 2 */
 }
 

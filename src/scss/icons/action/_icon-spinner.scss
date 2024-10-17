@@ -1,10 +1,11 @@
-// Icon shutdown
 .icon-spinner {
   border: $icon-border-width solid currentColor;
   border-radius: 50%;
   border-top-color: transparent;
+
   &::before {
-    background: currentColor;
+    background: currentcolor;
   }
-  animation: mg-rotate 1s linear infinite; 
+
+  animation: mg-rotate 1s linear infinite;
 }

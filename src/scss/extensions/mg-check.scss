@@ -1,19 +1,20 @@
 .mg-check,
 .mg-radio {
   position: relative;
-  padding-left: 1.8em;
-  margin-right: 1.1em;
+  padding-left: 2.88rem; // Converted from 1.8em to rem
+  margin-right: 1.76rem; // Converted from 1.1em to rem
   margin-bottom: 1.5rem;
   cursor: pointer;
-  user-select: none; 
+  user-select: none;
 }
+
 /* Hide the browser's default checkbox */
 .mg-check input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
-  width: 0;  
+  width: 0;
 }
 
 /* Create a custom checkbox */
@@ -21,54 +22,54 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.5em;
-  width: 1.5em;
+  height: 2.4rem; // Converted from 1.5em to rem
+  width: 2.4rem; // Converted from 1.5em to rem
   border-style: solid;
   border-color: $color-quaternary;
   border-width: thin;
-  transition: all 0.3s;  
+  transition: all 0.3s;
   border-radius: 0.3rem;
 }
 
 /* On mouse-over, add a grey background color */
-.mg-check:hover input ~ .mg-check--icon {
+.mg-check:hover input~.mg-check--icon {
   background-color: $color-secondary;
 }
 
 /* When the checkbox is checked, add a blue background */
-.mg-check input:checked ~ .mg-check--icon {
+.mg-check input:checked~.mg-check--icon {
   background-color: $color-primary;
 }
 
 /* Create the mg-check--icon/indicator (hidden when not checked) */
-.mg-check .mg-check--icon:after {
+.mg-check .mg-check--icon::after {
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the mg-check--icon when checked */
-.mg-check input:checked ~ .mg-check--icon:after {
+.mg-check input:checked~.mg-check--icon::after {
   display: block;
 }
 
 /* Style the mg-check--icon/indicator */
-.mg-check .mg-check--icon:after {
-  left: 0.5em;
-  top: 0.1em;
-  width: 0.5em;
-  height: 1em;
+.mg-check .mg-check--icon::after {
+  left: 0.8rem; // Converted from 0.5em to rem
+  top: 0.16rem; // Converted from 0.1em to rem
+  width: 0.8rem; // Converted from 0.5em to rem
+  height: 1.6rem; // Converted from 1em to rem
   border: solid $color-light;
-  border-width: 0 2px 3px 0;
+  border-width: 0 0.25rem 0.3rem 0;
   transform: rotate(45deg);
 }
 
-/*disabled state*/
-.mg-check input:disabled ~ .mg-check--icon {
+/* disabled state */
+.mg-check input:disabled~.mg-check--icon {
   background-color: $color-quinary;
 }
 
-.mg-check input:focus ~ .mg-check--icon {
+.mg-check input:focus~.mg-check--icon {
   border-color: $color-primary;
   border-style: dotted;
   border-width: thin;

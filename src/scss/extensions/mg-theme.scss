@@ -14,10 +14,10 @@
    display: none;
  }
 
-
  :root[data-theme='dark'],
  .mg-theme--dark {
    @include dark-colors;
+
    color-scheme: dark;
 
    .mg-hidden-dark {

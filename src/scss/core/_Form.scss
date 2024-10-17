@@ -10,8 +10,7 @@ input[type="tel"],
 input[type="text"],
 input[type="url"],
 textarea,
-select {
-  -webkit-appearance: none; // Removes awkward default styles on some inputs for iOS
+select { // Removes awkward default styles on some inputs for iOS
   appearance: none;
   background-color: transparent;
   border: 0.1rem solid $color-quaternary;
@@ -19,7 +18,7 @@ select {
   box-shadow: none;
   box-sizing: inherit; // Forced to replace inherit values of the normalize.css
   height: 3.8rem;
-  padding: 1rem 1rem;
+  padding: 1rem;
   width: 100%;
   color: $color-secondary;
 
@@ -52,7 +51,7 @@ select {
 //Chrome, Safari, Edge, Opera
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 //Mozilla

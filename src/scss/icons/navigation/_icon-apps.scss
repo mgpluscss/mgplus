@@ -1,10 +1,8 @@
-// Icon apps
 .icon-apps {
-    &::before {
-      background: currentColor;
-      box-shadow: -.35em -.35em, -.35em 0, -.35em .35em, 0 -.35em, 0 .35em, .35em -.35em, .35em 0, .35em .35em;
-      height: .2em;
-      width: .2em;
-    }
+  &::before {
+    background: currentcolor;
+    box-shadow: -0.56rem -0.56rem, -0.56rem 0, -0.56rem 0.56rem, 0 -0.56rem, 0 0.56rem, 0.56rem -0.56rem, 0.56rem 0, 0.56rem 0.56rem;
+    height: 0.32rem;
+    width: 0.32rem;
   }
-  
+}

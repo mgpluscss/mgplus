@@ -1,12 +1,12 @@
-//
-//  Utilities -> Grid
-//  _____________________________________________
+@use "sass:math";
 
 @mixin grid-column($_gutter: $grid__gutter) {
   flex: 0 0 100%;
   max-width: 100%;
+
   // Prevent columns from collapsing when empty
-  min-height: 1px;
+  min-height: 0.125rem;
+
   // Inner gutter via padding
   padding-left: calc($_gutter / 2);
   padding-right: calc($_gutter / 2);
@@ -25,62 +25,62 @@
 @mixin init-row($_gutter: $grid__gutter) {
   display: flex;
   flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
 //  Generate default columns
-@mixin create-X($_columns, $_gutter: $grid__gutter) {
+@mixin create-x($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
-  max-width: percentage(calc($_columns / $grid__columns));
+
+  max-width: math.percentage(calc($_columns / $grid__columns));
 }
 
-@mixin create-X--offset($_columns) {
-  margin-left: percentage(calc($_columns / $grid__columns));
+@mixin create-x--offset($_columns) {
+  margin-left: math.percentage(calc($_columns / $grid__columns));
 }
 
 //  Generate small columns
-@mixin create-S($_columns, $_gutter: $grid__gutter) {
+@mixin create-s($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
   @media (min-width: $screen--S) {
-    max-width: percentage(calc($_columns / $grid__columns));
+    max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
-@mixin create-S--offset($_columns) {
+@mixin create-s--offset($_columns) {
   @media (min-width: $screen--S) {
-    margin-left: percentage(calc($_columns / $grid__columns));
+    margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
 //  Generate medium columns
-@mixin create-M($_columns, $_gutter: $grid__gutter) {
+@mixin create-m($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
   @media (min-width: $screen--M) {
-    max-width: percentage(calc($_columns / $grid__columns));
+    max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
-@mixin create-M--offset($_columns) {
+@mixin create-m--offset($_columns) {
   @media (min-width: $screen--M) {
-    margin-left: percentage(calc($_columns / $grid__columns));
+    margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
 //  Generate large columns
-@mixin create-L($_columns, $_gutter: $grid__gutter) {
+@mixin create-l($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
   @media (min-width: $screen--L) {
-    max-width: percentage(calc($_columns / $grid__columns));
+    max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
-@mixin create-L--offset($_columns) {
+@mixin create-l--offset($_columns) {
   @media (min-width: $screen--L) {
-    margin-left: percentage(calc($_columns / $grid__columns));
+    margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
@@ -95,25 +95,25 @@
   }
 
   #{$list} {
-    @include grid-column();
+    @include grid-column;
   }
 }
 
 @mixin calc-grid-column($index, $class, $type) {
-  @if ($type ==width) and ($index > 0) {
+  @if $type ==width and $index >0 {
     .#{$class}#{$index} {
-      flex-basis: percentage(calc($index / $grid__columns));
-      max-width: percentage(calc($index / $grid__columns));
+      flex-basis: math.percentage(calc($index / $grid__columns));
+      max-width: math.percentage(calc($index / $grid__columns));
     }
   }
 
-  @if ($type ==offset) {
+  @if $type ==offset {
     .#{$class}--offset#{$index} {
-      margin-left: percentage(calc($index / $grid__columns));
+      margin-left: math.percentage(calc($index / $grid__columns));
     }
   }
 
-  @if ($type ==order) {
+  @if $type ==order {
     .#{$class}--order#{$index} {
       order: $index;
     }

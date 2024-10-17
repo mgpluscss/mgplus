@@ -17,9 +17,11 @@
   &::after {
     @include mg-inline-css-icon;
     @include mg-toggle-icon;
-    color: currentColor;
+
+    color: currentcolor;
     top: 25%;
-    /*fix arrow position in center by compensating default margin bottom for inputs*/
+
+    /* fix arrow position in center by compensating default margin bottom for inputs */
     margin-bottom: 1.5rem;
   }
 

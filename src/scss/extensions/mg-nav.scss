@@ -4,16 +4,17 @@
   margin-left: 0;
   margin-top: 0;
 }
+
 .mg-nav ul {
   overflow-y: auto;
 }
+
 .mg-nav ul > li {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: nowrap;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   text-decoration: none;
   color: $color-secondary;
   align-items: center; 
@@ -21,7 +22,7 @@
 }
 
 .mg-nav ul > li.active {
-  color: currentColor;
+  color: currentcolor;
   border-left: 0.3rem solid $color-primary; 
   font-weight: bold;
 }
@@ -44,15 +45,16 @@
   
 .mg-nav--inline ul {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: baseline;
   overflow-x: auto;
 }
+
 .mg-nav--inline ul > li {
   display: flex;
   flex-wrap: nowrap;
 }
+
 .mg-nav--inline ul > li:not(.mg-right) {
   float: left; 
 }
