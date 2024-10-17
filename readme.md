@@ -2,7 +2,8 @@
 
 ![](/demo/images/logo.svg)
 
-## Mgplus mini CSS library
+## Do You Enjoy Using the Milligram framework? Check Out Mg+
+### Mgplus mini CSS library
 
 **[portal and demo](https://www.mgpluscss.com)**
 
