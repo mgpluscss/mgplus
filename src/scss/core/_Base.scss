@@ -1,6 +1,7 @@
+@use 'sass:map';
+
 // Base
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
-
 // Set box-sizing globally to handle padding and border widths
 *,
 *::after,
@@ -51,10 +52,10 @@ hr {
    */
 
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
 
   /* 1 */
-  font-size: 1em;
+  font-size: 0.125rem;
 
   /* 2 */
 }
@@ -93,10 +94,10 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
 
   /* 1 */
-  font-size: 1em;
+  font-size: 1.6rem; // Converted from 1em to rem
 
   /* 2 */
 }
@@ -106,7 +107,7 @@ samp {
    */
 
 small {
-  font-size: 80%;
+  font-size: 1.28rem; // Converted from 80% to rem
 }
 
 /**
@@ -249,7 +250,7 @@ legend {
 progress {
   vertical-align: baseline;
   border-radius: $input-radius;
-  height: map-get($font-sizes, 's');
+  height: map.get($font-sizes, 's');
 }
 
 progress::-webkit-progress-bar,
@@ -316,7 +317,7 @@ h6 {
 
 [type="search"] {
   appearance: textfield;
-  outline-offset: -2px;
+  outline-offset: -0.25rem;
 
   /* 2 */
 }

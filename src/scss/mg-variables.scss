@@ -1,10 +1,8 @@
 $version: "1.2.9";
 
 /*! mgplus.css v#{$version} | MIT License | github.com/mgpluscss/mgplus */
-//
-//  exposed variables
-//  _____________________________________________
-
+// exposed variables 
+/* stylelint-disable */
 :root {
   --mg-color-dark: hsl(255deg 0% 5%);
   --mg-color-light: hsl(255deg 0% 95%);
@@ -70,19 +68,19 @@ $zindex-1: 100 !default;
 $zindex-2: 200 !default;
 $zindex-3: 300 !default;
 $zindex-4: 400 !default;
-$name--X: mg-x;
-$name--S: mg-s;
-$name--M: mg-m;
-$name--L: mg-l;
-$name--XL: mg-xl;
-$break--S: 480px;
-$break--M: 768px;
-$break--L: 1024px;
-$break--XL: 1440px;
-$screen--S: $break--S + 1;
-$screen--M: $break--M + 1;
-$screen--L: $break--L + 1;
-$screen--XL: $break--XL + 1;
+$name-x: mg-x;
+$name-s: mg-s;
+$name-m: mg-m;
+$name-l: mg-l;
+$name-xl: mg-xl;
+$break-s: 480px;
+$break-m: 768px;
+$break-l: 1024px;
+$break-xl: 1440px;
+$screen-s: $break-s + 1;
+$screen-m: $break-m + 1;
+$screen-l: $break-l + 1;
+$screen-xl: $break-xl + 1;
 $rem-map: (
   0: 0,
   1: 1rem,

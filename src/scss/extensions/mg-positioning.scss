@@ -1,4 +1,4 @@
-//.mg-pad[0-10] { padding: [0-10]rem; }
+// .mg-pad[0-10] { padding: [0-10]rem; }
 @each $key, $value in $rem-map {
 
   .mg-pad#{$key} {

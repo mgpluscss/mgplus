@@ -7,7 +7,7 @@
         "message": "Expected class selector to be kebab-case or -- modifier"
       }
     ],
-    "scss/operator-no-unspaced": false,
+    "scss/operator-no-unspaced": null,
     "unit-allowed-list": ["rem", "%", "deg", "s", "vw", "vh"],
     "max-nesting-depth": 3,
     "selector-max-id": 0

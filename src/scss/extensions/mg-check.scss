@@ -46,15 +46,6 @@
   content: "";
   position: absolute;
   display: none;
-}
-
-/* Show the mg-check--icon when checked */
-.mg-check input:checked~.mg-check--icon::after {
-  display: block;
-}
-
-/* Style the mg-check--icon/indicator */
-.mg-check .mg-check--icon::after {
   left: 0.8rem; // Converted from 0.5em to rem
   top: 0.16rem; // Converted from 0.1em to rem
   width: 0.8rem; // Converted from 0.5em to rem
@@ -63,6 +54,14 @@
   border-width: 0 0.25rem 0.3rem 0;
   transform: rotate(45deg);
 }
+
+
+/* Show the mg-check--icon when checked */
+.mg-check input:checked~.mg-check--icon::after {
+  display: block;
+}
+
+
 
 /* disabled state */
 .mg-check input:disabled~.mg-check--icon {

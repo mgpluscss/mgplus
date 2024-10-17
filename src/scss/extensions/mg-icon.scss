@@ -1,7 +1,7 @@
 @mixin mg-inline-css-icon {
   vertical-align: middle;
   box-sizing: border-box;
-  border: 2px solid transparent;
+  border: 0.25rem solid transparent;
   border-color: currentcolor;
   right: 1rem;
   border-right: 0;
@@ -24,7 +24,7 @@
 .mg-toggle-icon,
 .mg-dropdown--icon,
 .mg-collapse--icon {
-  //force padding to container element to reserve space for arrow
+  // force padding to container element to reserve space for arrow
   padding-right: 2.5rem !important;
   position: relative;
 
