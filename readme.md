@@ -10,7 +10,8 @@
 ### Build pretty websites with just a few drops of css
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
-![From our CDN](https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css)
+
+[CDN direct link](https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css)
 
 Striking the perfect balance between features and simplicity
 
