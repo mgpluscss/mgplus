@@ -109,7 +109,7 @@ function registerDemoFeatures() {
         "mg-button--clear",
         "mg-button--primary",
         "mg-button--small",
-        "mg-dropdown--icon",
+        "mg-icon-dropdown",
         "mg-collapse"
       );
 

@@ -16,7 +16,7 @@
 
   &::after {
     @include mg-inline-css-icon;
-    @include mg-toggle-icon;
+    @include mg-icon-toggle;
 
     color: currentcolor;
     top: 25%;
