@@ -3,16 +3,7 @@
   flex-wrap: nowrap;
 }
 
-.mg-group>select:not(:nth-child(1), :nth-last-child(1)),
-.mg-group>input:not(:nth-child(1), :nth-last-child(1)),
-.mg-group>button:not(:nth-child(1), :nth-last-child(1)),
-.mg-group>textarea:not(:nth-child(1), :nth-last-child(1)),
-.mg-group>.mg-button:not(:nth-child(1), :nth-last-child(1)),
-.mg-group>.mg-dropdown:not(:nth-child(1), :nth-last-child(1))>button,
-.mg-group>.mg-select:not(:nth-child(1), :nth-last-child(1))>select {
-  border-radius: 0;
-}
-
+/* stylelint-disable */
 .mg-group>select:nth-child(1),
 .mg-group>input:nth-child(1),
 .mg-group>button:nth-child(1),
@@ -25,6 +16,15 @@
   border-right: 0;
 }
 
+.mg-group>select:not(:nth-child(1), :nth-last-child(1)),
+.mg-group>input:not(:nth-child(1), :nth-last-child(1)),
+.mg-group>button:not(:nth-child(1), :nth-last-child(1)),
+.mg-group>textarea:not(:nth-child(1), :nth-last-child(1)),
+.mg-group>.mg-button:not(:nth-child(1), :nth-last-child(1)),
+.mg-group>.mg-dropdown:not(:nth-child(1), :nth-last-child(1))>button,
+.mg-group>.mg-select:not(:nth-child(1), :nth-last-child(1))>select {
+  border-radius: 0;
+}
 
 .mg-group>.mg-select:last-child>select,
 .mg-group>input:last-child,
@@ -38,6 +38,7 @@
   border-left: 0;
 }
 
+/* stylelint-enable */
 .mg-group .mg-group--outline {
   box-shadow: $control-shadow;
 }

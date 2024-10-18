@@ -6,6 +6,7 @@
    --mg-color-quinary: var(--mg-dark-color-quinary);
  }
 
+ /* stylelint-disable */
  :root {
    color-scheme: light;
  }
@@ -14,8 +15,8 @@
    display: none;
  }
 
- :root[data-theme='dark'],
- .mg-theme--dark {
+ .mg-theme--dark,
+ :root[data-theme='dark'] {
    @include dark-colors;
 
    color-scheme: dark;
@@ -29,8 +30,8 @@
    }
  }
 
- :root[data-theme='light'],
- .mg-theme--light {
+ .mg-theme--light,
+ :root[data-theme='light'] {
    color-scheme: light;
 
    .mg-hidden-light {
@@ -42,3 +43,5 @@
    }
 
  }
+
+ /* stylelint-enable */
