@@ -1,4 +1,4 @@
-//mg-w[0-100] { width: [0-100]% }
+// mg-w[0-100] { width: [0-100]% }
 @each $key, $value in $sizing-map {
 
     .mg-w#{$key} {
@@ -26,7 +26,7 @@
     }
 }
 
-//mg-w[0-100]vh { width: [0-100]vh }
+// mg-w[0-100]vh { width: [0-100]vh }
 @each $key, $value in $sizing-map {
 
     .mg-w#{$key}vh {

@@ -1,11 +1,10 @@
-
-// Icon menu
-.icon-menu {  
+.icon-menu {
   margin-bottom: 0.3rem;
+
   &::before {
-    background: currentColor;
-    box-shadow: 0 -.3em, 0 .3em;
-        height: $icon-border-width;
-    width: 100% ;
+    background: currentcolor;
+    box-shadow: 0 -0.48rem, 0 0.48rem;
+    height: $icon-border-width;
+    width: 100%;
   }
 }

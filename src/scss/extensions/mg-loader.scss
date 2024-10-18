@@ -1,14 +1,17 @@
 .mg-loader--loading {
   opacity: 0.7;
 }
+
 .mg-loader:not(.mg-loader--loaded) ~ .mg-loader--result,
 .mg-loader:not(.mg-loader--loading) ~ .mg-loader--status {
   display: none !important;
 }
+
 .mg-loader:not(.mg-loader--loaded) .mg-loader--result,
 .mg-loader:not(.mg-loader--loading) .mg-loader--status {
   display: none !important;
 }
+
 .mg-loader--loading .mg-loader--result .mg-loader--loaded .mg-loader--status {
   display: none !important;
 }

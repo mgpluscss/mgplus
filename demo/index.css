@@ -64,6 +64,25 @@ header {
 .svg-icon-github {
   background-image: url("images/github.svg");
 }
+.svg-icon-night {
+  background-image: url("images/night-fog.svg");
+}
+.svg-icon-sun {
+  background-image: url("images/sun-fog.svg");
+}
+
+.svg-icon-screen-s {
+  background-image: url("images/screen-s.svg");
+}
+.svg-icon-screen-m {
+  background-image: url("images/screen-m.svg");
+}
+.svg-icon-screen-l {
+  background-image: url("images/screen-l.svg");
+}
+.svg-icon-screen-xl {
+  background-image: url("images/screen-xl.svg");
+}
 
 .grid-cel {
   font-weight: bold;

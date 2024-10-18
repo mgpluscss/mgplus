@@ -1,4 +1,5 @@
 /* Customize the label (the container) */
+
 /* Hide the browser's default radio button */
 .mg-radio input {
   position: absolute;
@@ -13,8 +14,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.5em;
-  width: 1.5em;
+  height: 2.4rem; // Converted from 1.5em to rem
+  width: 2.4rem; // Converted from 1.5em to rem
   border-radius: 50%;
   border-style: solid;
   border-color: var(--mg-color-quaternary);
@@ -23,42 +24,39 @@
 }
 
 /* On mouse-over, add a grey background color */
-.mg-radio:hover input ~ .mg-radio--icon {
+.mg-radio:hover input~.mg-radio--icon {
   background-color: $color-secondary;
 }
 
 /* When the radio button is checked, add a blue background */
-.mg-radio input:checked ~ .mg-radio--icon {
+.mg-radio input:checked~.mg-radio--icon {
   background-color: var(--mg-color-primary);
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.mg-radio .mg-radio--icon:after {
+/* Style the indicator (dot/circle) */
+.mg-radio .mg-radio--icon::after {
+  top: 0.8rem; // Converted from 0.5em to rem
+  left: 0.8rem; // Converted from 0.5em to rem
+  width: 0.64rem; // Converted from 0.4em to rem
+  height: 0.64rem; // Converted from 0.4em to rem
+  border-radius: 50%;
+  background-color: var(--mg-color-light);
   content: "";
   position: absolute;
   display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.mg-radio input:checked ~ .mg-radio--icon:after {
+.mg-radio input:checked~.mg-radio--icon::after {
   display: block;
 }
 
-/* Style the indicator (dot/circle) */
-.mg-radio .mg-radio--icon:after {
-  top: 0.5em;
-  left: 0.5em;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 50%;
-  background-color: var(--mg-color-light);
-}
 
-.mg-radio input:disabled ~ .mg-radio--icon {
+.mg-radio input:disabled~.mg-radio--icon {
   background-color: var(--mg-color-quinary);
 }
 
-.mg-radio input:focus ~ .mg-radio--icon {
+.mg-radio input:focus~.mg-radio--icon {
   border-color: var(--mg-color-primary);
   border-style: dotted;
   border-width: thin;

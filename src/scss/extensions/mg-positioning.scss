@@ -1,4 +1,4 @@
-//.mg-pad[0-10] { padding: [0-10]rem; }
+// .mg-pad[0-10] { padding: [0-10]rem; }
 @each $key, $value in $rem-map {
 
   .mg-pad#{$key} {
@@ -21,29 +21,29 @@
     padding-bottom: $value;
   }
 
-  .mg-space#{$key} {
+  .mg-mrg#{$key} {
     margin: $value;
   }
 
-  .mg-space-l#{$key} {
+  .mg-mrg-l#{$key} {
     margin-left: $value;
   }
 
-  .mg-space-r#{$key} {
+  .mg-mrg-r#{$key} {
     margin-right: $value;
   }
 
-  .mg-space-t#{$key} {
+  .mg-mrg-t#{$key} {
     margin-top: $value;
   }
 
-  .mg-space-b#{$key} {
+  .mg-mrg-b#{$key} {
     margin-bottom: $value;
   }
 
 }
 
-.mg-space-auto {
+.mg-mrg-auto {
   margin: auto;
 }
 
