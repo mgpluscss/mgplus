@@ -40,7 +40,7 @@ jobs:
           npm install 
           npm run lint
           npm run build
-          npm run build_demo
+          npm run build:demo
           npm run test --if-present
       - name: azure login
         uses: azure/login@v1
@@ -89,7 +89,7 @@ jobs:
           npm install
           npm run lint 
           npm run build
-          npm run build_demo
+          npm run build:demo
           npm run test --if-present
       - name: azure login
         uses: azure/login@v1
