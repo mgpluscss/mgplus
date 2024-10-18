@@ -34,7 +34,7 @@ select {
   // Removes awkward default styles on some inputs for iOS
   appearance: none;
   -webkit-appearance: none;
-  background-color: $color-initial;
+  background-color: transparent;
   border: 0.1rem solid $color-quaternary;
   border-radius: $input-radius;
   box-shadow: none;
@@ -65,7 +65,24 @@ select {
 
 }
 
+/* stylelint-disable */
+select {
+  background-color: $color-initial;
+}
 
+/* stylelint-enable */
+.mg-input>input {
+  appearance: none;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
 
 // Hide spin to input numbers
 // Chrome, Safari, Edge, Opera
@@ -75,27 +92,15 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-}
-
-
-.mg-input>input {
-  appearance: none;
-  border: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
 }
 
 div.mg-input:focus-within {
   border-color: $color-primary;
   outline: 0;
 }
-
-
 
 label,
 legend {
