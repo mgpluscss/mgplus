@@ -2,9 +2,7 @@
 
 // Form
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
-select {
-  background-color: $color-initial;
-}
+
 
 // Mozilla
 input[type="number"] {
@@ -36,7 +34,7 @@ select {
   // Removes awkward default styles on some inputs for iOS
   appearance: none;
   -webkit-appearance: none;
-  background-color: transparent;
+  background-color: $color-initial;
   border: 0.1rem solid $color-quaternary;
   border-radius: $input-radius;
   box-shadow: none;
