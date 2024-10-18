@@ -7,10 +7,7 @@
   "repository": "https://github.com/Evodim/mgplus",
   "license": "MIT",
   "author": "evodim",
-  "browserslist": [
-    "Safari >= 12",
-    "iOS >= 10"
-  ],
+  "browserslist": [],
   "autoprefixer": {
     "remove": false
   },
