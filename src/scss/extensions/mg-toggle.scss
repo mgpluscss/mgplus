@@ -42,6 +42,7 @@
 
 /* Create the mg-icon-toggle/indicator (hidden when not checked) */
 .mg-toggle .mg-icon-toggle::after {
+  border: none;
   border-radius: $control-radius;
   position: absolute;
   content: "";

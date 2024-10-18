@@ -1,7 +1,7 @@
 .icon-rounded-check,
 .icon-check {
   &::before {
-    border: $icon-border-width solid currentColor;
+    border: $icon-border-width solid currentcolor;
     border-right: 0;
     border-top: 0;
     height: 0.8rem;
@@ -12,6 +12,6 @@
 
 .icon-rounded-check {
   padding: 0.1rem;
-  border: $icon-border-width solid currentColor;
+  border: $icon-border-width solid currentcolor;
   border-radius: 50%;
 }

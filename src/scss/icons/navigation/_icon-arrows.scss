@@ -7,7 +7,7 @@
 .icon-forward,
 .icon-upward {
   &::before {
-    border: $icon-border-width solid currentColor;
+    border: $icon-border-width solid currentcolor;
     border-bottom: 0;
     border-right: 0;
     height: 1.04rem;

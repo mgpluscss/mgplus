@@ -53,11 +53,7 @@ hr {
 
 pre {
   font-family: monospace;
-
-  /* 1 */
-  font-size: 0.125rem;
-
-  /* 2 */
+  font-size: map.get($font-sizes, 'm');
 }
 
 /**
@@ -95,25 +91,12 @@ code,
 kbd,
 samp {
   font-family: monospace;
-
-  /* 1 */
-  font-size: 1.6rem; // Converted from 1em to rem
-
-  /* 2 */
+  font-size: map.get($font-sizes, 'm')
 }
-
-/**
-   * Add the correct font size in all browsers.
-   */
 
 small {
-  font-size: 1.28rem; // Converted from 80% to rem
+  font-size: map.get($font-sizes, 's');
 }
-
-/**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
 
 sub,
 sup {

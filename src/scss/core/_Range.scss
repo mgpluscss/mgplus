@@ -26,5 +26,33 @@ input[type="range"] {
     border: none;
     box-shadow: $control-shadow;
     cursor: pointer;
+    height: 2.5rem;
+    width: 2.7rem;
   }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: $color-primary;
+    border-radius: 100%;
+    ;
+    border: none;
+    box-shadow: $control-shadow;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.7rem;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+
+    &::-moz-range-thumb {
+      background: $color-quaternary;
+    }
+
+    &::-webkit-slider-thumb {
+      background: $color-quaternary;
+    }
+  }
+
 }
