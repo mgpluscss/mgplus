@@ -22,28 +22,28 @@
 //  Columns S
 //  ---------------------------------------------
 
-@media (min-width: $screen-s) {
+@media screen and (min-width: $screen-s) {
   @include create-grid-columns($name-s);
 }
 
 //  Columns M
 //  ---------------------------------------------
 
-@media (min-width: $screen-m) {
+@media screen and (min-width: $screen-m) {
   @include create-grid-columns($name-m);
 }
 
 //  Columns L
 //  ---------------------------------------------
 
-@media (min-width: $screen-l) {
+@media screen and (min-width: $screen-l) {
   @include create-grid-columns($name-l);
 }
 
 //  Columns XL
 //  ---------------------------------------------
 
-@media (min-width: $screen-xl) {
+@media screen and (min-width: $screen-xl) {
   @include create-grid-columns($name-xl);
 }
 
@@ -52,36 +52,36 @@
 
 
 // Adaptative hide
-@media (max-width: $screen-s) {
+@media screen and (max-width: $screen-s) {
   @include create-conditional-hidden($name-s);
 }
 
-@media (max-width: $screen-m) {
+@media screen and (max-width: $screen-m) {
   @include create-conditional-hidden($name-m);
 }
 
-@media (max-width: $screen-l) {
+@media screen and (max-width: $screen-l) {
   @include create-conditional-hidden($name-l);
 }
 
-@media (max-width: $screen-xl) {
+@media screen and (max-width: $screen-xl) {
   @include create-conditional-hidden($name-xl);
 }
 
 // Adaptative display
-@media (min-width: $screen-s) {
+@media screen and (min-width: $screen-s) {
   @include create-conditional-display($name-s);
 }
 
-@media (min-width: $screen-m) {
+@media screen and (min-width: $screen-m) {
   @include create-conditional-display($name-m);
 }
 
-@media (min-width: $screen-l) {
+@media screen and (min-width: $screen-l) {
   @include create-conditional-display($name-l);
 }
 
-@media (min-width: $screen-xl) {
+@media screen and (min-width: $screen-xl) {
   @include create-conditional-display($name-xl);
 }
 

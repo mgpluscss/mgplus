@@ -43,13 +43,13 @@
 @mixin create-s($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
-  @media (min-width: $screen-s) {
+  @media screen and (min-width: $screen-s) {
     max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-s-offset($_columns) {
-  @media (min-width: $screen-s) {
+  @media screen and (min-width: $screen-s) {
     margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
@@ -58,13 +58,13 @@
 @mixin create-m($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
-  @media (min-width: $screen-m) {
+  @media screen and (min-width: $screen-m) {
     max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-m-offset($_columns) {
-  @media (min-width: $screen-m) {
+  @media screen and (min-width: $screen-m) {
     margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
@@ -73,13 +73,13 @@
 @mixin create-l($_columns, $_gutter: $grid__gutter) {
   @include grid-column($_gutter);
 
-  @media (min-width: $screen-l) {
+  @media screen and (min-width: $screen-l) {
     max-width: math.percentage(calc($_columns / $grid__columns));
   }
 }
 
 @mixin create-l-offset($_columns) {
-  @media (min-width: $screen-l) {
+  @media screen and (min-width: $screen-l) {
     margin-left: math.percentage(calc($_columns / $grid__columns));
   }
 }
