@@ -336,3 +336,4 @@ node_modules
 demo_build
 demo_temp
 dist/*.map
+.env

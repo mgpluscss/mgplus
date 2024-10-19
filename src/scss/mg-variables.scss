@@ -1,12 +1,11 @@
-$version: "1.2.9";
-/*! mgplus.css v#{$version} | MIT License | github.com/mgpluscss/mgplus */
-//
-//  exposed variables
-//  _____________________________________________
+$version: "$PACKAGE_VERSION";
 
+/*! mgplus.css #{$version} | MIT License | github.com/mgpluscss/mgplus */
+// exposed variables 
+/* stylelint-disable */
 :root {
-  --mg-color-dark: hsl(255, 0%, 5%);
-  --mg-color-light: hsl(255, 0%, 95%);
+  --mg-color-dark: hsl(255deg 0% 5%);
+  --mg-color-light: hsl(255deg 0% 95%);
   --mg-color-primary: #475dca;
   --mg-control-radius: 1rem;
   --mg-input-radius: 1rem;
@@ -14,23 +13,23 @@ $version: "1.2.9";
   --mg-color-orange: #fd7e14;
   --mg-color-blue: #007bff;
   --mg-color-green: #28a745;
-  --mg-control-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.15);
-  --mg-control-active-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.1);
+  --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
+  --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
 
 
   //default secondary colors 
   --mg-color-initial: var(--mg-color-light);
-  --mg-color-secondary: hsl(255, 0%, 20%);
-  --mg-color-tertiary: hsl(255, 0%, 40%);
-  --mg-color-quaternary: hsl(255, 0%, 60%);
-  --mg-color-quinary: hsl(255, 0%, 80%);
+  --mg-color-secondary: hsl(255deg 0% 20%);
+  --mg-color-tertiary: hsl(255deg 0% 40%);
+  --mg-color-quaternary: hsl(255deg 0% 60%);
+  --mg-color-quinary: hsl(255deg 0% 80%);
 
   //dark-colors 
   --mg-dark-color-initial: var(--mg-color-dark);
-  --mg-dark-color-secondary: hsl(255, 0%, 80%);
-  --mg-dark-color-tertiary: hsl(255, 0%, 70%);
-  --mg-dark-color-quaternary: hsl(255, 0%, 50%);
-  --mg-dark-color-quinary: hsl(255, 0%, 30%);
+  --mg-dark-color-secondary: hsl(255deg 0% 80%);
+  --mg-dark-color-tertiary: hsl(255deg 0% 70%);
+  --mg-dark-color-quaternary: hsl(255deg 0% 50%);
+  --mg-dark-color-quinary: hsl(255deg 0% 30%);
 }
 
 //
@@ -69,23 +68,19 @@ $zindex-1: 100 !default;
 $zindex-2: 200 !default;
 $zindex-3: 300 !default;
 $zindex-4: 400 !default;
-
-$name--X: mg-x;
-$name--S: mg-s;
-$name--M: mg-m;
-$name--L: mg-l;
-$name--XL: mg-xl;
-
-$break--S: 480px;
-$break--M: 768px;
-$break--L: 1024px;
-$break--XL: 1440px;
-
-$screen--S: $break--S + 1;
-$screen--M: $break--M + 1;
-$screen--L: $break--L + 1;
-$screen--XL: $break--XL + 1;
-
+$name-x: mg-x;
+$name-s: mg-s;
+$name-m: mg-m;
+$name-l: mg-l;
+$name-xl: mg-xl;
+$break-s: 480px;
+$break-m: 768px;
+$break-l: 1024px;
+$break-xl: 1440px;
+$screen-s: $break-s + 1;
+$screen-m: $break-m + 1;
+$screen-l: $break-l + 1;
+$screen-xl: $break-xl + 1;
 $rem-map: (
   0: 0,
   1: 1rem,
@@ -110,7 +105,6 @@ $font-sizes: (
   4xl: $base-font-size*3,
   5xl: $base-font-size*3.8,
 );
-
 $sizing-map: (
   0:0%,
   10:10%,

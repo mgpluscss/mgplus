@@ -2,11 +2,12 @@
   "extends": "@parcel/config-default",
   "transformers": {
     "*.css": [
+      "@plasmohq/parcel-transformer-inject-env",
       "@parcel/transformer-css"
     ],
     "*.html": [
-      "@plasmohq/parcel-transformer-inject-env",
-      "..."
+      "...",
+      "@plasmohq/parcel-transformer-inject-env"
     ]
   }
 }

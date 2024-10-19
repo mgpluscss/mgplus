@@ -23,13 +23,13 @@
     transform: scale(1);
 }
 
-.mg-clearfix:after,
-.mg-clearfix:before {
+.mg-clearfix::after,
+.mg-clearfix::before {
     content: "";
     display: table;
 }
 
-.mg-clearfix:after {
+.mg-clearfix::after {
     clear: both;
 }
 

@@ -1,8 +1,6 @@
 /*! Forked from Icons.css | MIT License | github.com/picturepan2/icons.css */
-// Icons
-@import "core";
 
-// Icons action
+@import "core";
 @import "action/icon-check";
 @import "action/icon-close";
 @import "action/icon-minus";
@@ -10,8 +8,6 @@
 @import "action/icon-spinner";
 @import "action/icon-stop";
 @import "action/icon-search";
-
-// Icons navigation 
 @import "navigation/icon-arrows";
 @import "navigation/icon-caret";
 @import "navigation/icon-menu";

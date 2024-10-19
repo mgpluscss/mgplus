@@ -1,17 +1,16 @@
-// Icon more
 .icon-more-inline,
 .icon-more {
   &::before {
-    background: currentColor;
-    box-shadow: -.4em 0, .4em 0;
+    background: currentcolor;
+    box-shadow: -0.64rem 0, 0.64rem 0;
     border-radius: 50%;
-    height: .2em;
-    width: .2em;
+    height: 0.32rem;
+    width: 0.32rem;
   }
 }
 
 .icon-more {
   &::before {
-    box-shadow: 0 -.4em, 0 .4em; 
+    box-shadow: 0 -0.64rem, 0 0.64rem;
   }
 }
