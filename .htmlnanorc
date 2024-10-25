@@ -1,15 +1,15 @@
 {
-    "collapseAttributeWhitespace": false,
-    "collapseBooleanAttributes": false,
-    "collapseWhitespace": "conservative",
-    "custom": [],
-    "deduplicateAttributeValues": false,
-    "mergeScripts": false,
-    "mergeStyles": false,
-    "removeUnusedCss": false,
-    "minifyJson": true,
-    "minifySvg": true,    
-    "removeEmptyAttributes": false,
-    "removeRedundantAttributes": false,
-    "removeComments": true
+  "collapseAttributeWhitespace": false,
+  "collapseBooleanAttributes": false,
+  "collapseWhitespace": "conservative",
+  "custom": [],
+  "deduplicateAttributeValues": false,
+  "mergeScripts": false,
+  "mergeStyles": false,
+  "removeUnusedCss": false,
+  "minifyJson": true,
+  "minifySvg": true,
+  "removeEmptyAttributes": false,
+  "removeRedundantAttributes": false,
+  "removeComments": true
 }
