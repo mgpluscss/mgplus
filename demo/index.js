@@ -31,6 +31,11 @@ async function loadDemoSections() {
     navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
     navLinks.appendChild(navLink);
   }
+  const download_button = document.getElementById("download_button");
+
+  //workaround to set the package version, this should be done in the build process
+  const dataLastCdnUri = download_button.getAttribute("data-last-cdn-uri");
+  download_button.setAttribute("href", dataLastCdnUri);
 }
 
 function registerDemoFeatures() {

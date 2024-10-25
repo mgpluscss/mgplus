@@ -10,7 +10,7 @@
   <title>MgPlus | A micro CSS library.</title>
   <link rel="icon" href="./images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-  <link rel="stylesheet" href="../dist/css/mgplus.css" />
+  <link rel="stylesheet" href="../src/scss/mgplus.scss" />
   <link rel="stylesheet" href="./index.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css" />
@@ -72,12 +72,11 @@
     <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
     <div class="mg-light">
       <h1 class="mg-text-bolder">Mg+</h1>
-      <h2>A micro CSS library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
+      <h2>A micro CSS library <span class="mg-text-m mg-badge">$PACKAGE_VERSION</span></h2>
       <h3>Build pretty websites with just a few drops of CSS</h3>
-      <a class="mg-button" href="#getting-started">Getting started<i
-          class="mg-icon icon-arrow-right mg-icon--s"></i></a>
-      <a class="mg-button" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css">Download<i
-          class="mg-icon icon-downward"></i></a>
+      <a class="mg-button" href="#getting-started">Getting started</a>
+      <a id="download_button" data-last-cdn-uri="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css"
+        class="mg-button" download="cdn">Download</a>
       <a class="mg-button" href="https://github.com/mgpluscss/mgplus">Github <i class="mg-icon svg-icon-github"></i></a>
 
 
