@@ -56,19 +56,18 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Import mgplus.css to your website from our CDN
 
 ```html
- <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css" />
+ <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css" />
 ```
 
 * Optional: In order to use collapsible components or darkmode, import mgplus-dom.js to your website from our CDN
 
-
 ```html
-<script src="https://cdn.mgpluscss.com/v1.3.0/js/mgplus-dom.js"></script>
+<script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/js/mgplus-dom.js"></script>
 ```
 
-## Debugging
+## Developing
 
-### Debugging demo page locally
+### Start demo page locally with enabled hot reload
 
 * Clone the repository
 
@@ -82,26 +81,32 @@ Install packages
 npm install
 ```
 
-Start demo page
+Build demo page
+
+```sh
+npm run build:demo
+```
+
+Start demo page (hot reload enabled on any change)
   
 ```sh
 npm run start
 ```
 
-### Debugging with auto reload
-
-Run watch command to enable hot reload for the scss library
-
-```sh
-npm run watch
-```
-
-In order to start watch command, you should launch demo page with start command in another process
-
 ### Build only the library
+
+Output library will be copied in dist folder
 
 ```sh
 npm run build
+```
+
+### Build debug version of the library
+
+Build unminified version with sourcemaps
+
+```sh
+npm run build:debug
 ```
 
 *yarn, pnpm commands are also supported*

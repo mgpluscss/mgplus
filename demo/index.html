@@ -10,7 +10,7 @@
   <title>MgPlus | A micro CSS library.</title>
   <link rel="icon" href="./images/logo.svg" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
-  <link rel="stylesheet" href="../dist/css/mgplus.css" />
+  <link rel="stylesheet" href="../src/scss/mgplus.scss" />
   <link rel="stylesheet" href="./index.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css" />
@@ -19,10 +19,10 @@
 <body>
   <header>
     <nav class="mg-fixed-top mg-w100">
-      <div class="mg-container mg-row mg-x--middle mg-x--between mg-pad-t1">
+      <div class="mg-container mg-row mg-x--middle mg-x--between  mg-p-t1">
         <div class="mg-group">
           <div class="mg-dropdown">
-            <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
+            <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
               <i class="mg-icon svg-icon-darkmode"></i>
             </button>
             <div class="mg-dropdown--content">
@@ -36,10 +36,10 @@
             </div>
           </div>
           <div class="mg-dropdown">
-            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
+            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
               <i class="mg-icon svg-icon-gears"></i>
             </button>
-            <div class="mg-dropdown--content mg-pad-r3 mg-pad-l1">
+            <div class="mg-dropdown--content  mg-p-r3  mg-p-l1">
               <div class="mg-col  mg-x--start">
                 <label for="range2">Control radius</label>
                 <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
@@ -49,7 +49,7 @@
             </div>
           </div>
           <div class="mg-dropdown">
-            <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-dropdown--icon">
+            <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
               <i class="mg-icon svg-icon-colors"></i>
             </button>
             <div class="mg-dropdown--content">
@@ -72,9 +72,11 @@
     <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
     <div class="mg-light">
       <h1 class="mg-text-bolder">Mg+</h1>
-      <h2>A micro CSS library <span class="mg-text-m mg-badge"> $PACKAGE_VERSION</span></h2>
+      <h2>A micro CSS library <span class="mg-text-m mg-badge">$PACKAGE_VERSION</span></h2>
       <h3>Build pretty websites with just a few drops of CSS</h3>
       <a class="mg-button" href="#getting-started">Getting started</a>
+      <a id="download_button" data-last-cdn-uri="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css"
+        class="mg-button" download="cdn">Download</a>
       <a class="mg-button" href="https://github.com/mgpluscss/mgplus">Github <i class="mg-icon svg-icon-github"></i></a>
 
 

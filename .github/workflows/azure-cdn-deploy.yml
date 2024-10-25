@@ -38,8 +38,9 @@ jobs:
           PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         run: |
           npm install 
+          npm run lint
           npm run build
-          npm run build_demo
+          npm run build:demo
           npm run test --if-present
       - name: azure login
         uses: azure/login@v1
@@ -85,9 +86,10 @@ jobs:
         env:
           PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}-preview"
         run: |
-          npm install 
+          npm install
+          npm run lint 
           npm run build
-          npm run build_demo
+          npm run build:demo
           npm run test --if-present
       - name: azure login
         uses: azure/login@v1

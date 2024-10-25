@@ -1,6 +1,5 @@
-// Icon stop
 .icon-stop {
-  border: $icon-border-width solid currentColor;
+  border: $icon-border-width solid currentcolor;
   border-radius: 50%;
 
   &::after,
@@ -9,20 +8,20 @@
     display: block;
     box-sizing: border-box;
     position: absolute;
-    border-radius: 3px;
-    width: 2px;
-    background: currentColor;
+    border-radius: 80.17rem;
+    width: 0.25rem;
+    background: currentcolor;
     text-align: center;
-    margin-top: calc(100%/4);
+    margin-top: calc(100% / 4);
   }
 
   &::after {
-    top: 2px;
-    height: calc(100%/2.5);
+    top: 0.25rem;
+    height: calc(100% / 2.5);
   }
 
   &::before {
-    height: 2px;
-    bottom: 2px
+    height: 0.25rem;
+    bottom: 0.25rem;
   }
 }

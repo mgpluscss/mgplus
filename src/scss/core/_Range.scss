@@ -6,7 +6,7 @@ input[type="range"] {
   border-radius: $input-radius;
   display: inline-block;
   height: 0.8rem;
-  margin-right: 1.1em;
+  margin-right: 1.76rem; // Converted from 1.1em to rem
   opacity: 0.9;
   outline: none;
   padding: 0;
@@ -17,11 +17,9 @@ input[type="range"] {
 
   &:hover {
     opacity: 1;
-
   }
 
   &::-moz-range-thumb {
-    -webkit-appearance: none;
     appearance: none;
     background: $color-primary;
     border-radius: 100%;
@@ -56,4 +54,5 @@ input[type="range"] {
       background: $color-quaternary;
     }
   }
+
 }

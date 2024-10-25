@@ -1,0 +1,16 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(-{1,2}[a-z0-9]+)*$",
+      {
+        "message": "Expected class selector to be kebab-case or -- modifier"
+      }
+    ],
+    "property-no-vendor-prefix": null,
+    "scss/operator-no-unspaced": null,
+    "unit-allowed-list": ["rem", "%", "deg", "s", "vw", "vh"],
+    "max-nesting-depth": 3,
+    "selector-max-id": 0
+  }
+}

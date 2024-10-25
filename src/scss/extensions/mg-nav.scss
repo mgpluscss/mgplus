@@ -1,58 +1,59 @@
 .mg-nav ul {
   margin-bottom: 0;
-  padding: 0.5rem;  
+  padding: 0.5rem;
   margin-left: 0;
   margin-top: 0;
-}
-.mg-nav ul {
   overflow-y: auto;
 }
-.mg-nav ul > li {
+
+.mg-nav ul>li {
   list-style-type: none;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-wrap: nowrap;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
   text-decoration: none;
   color: $color-secondary;
-  align-items: center; 
-  border-bottom: 1px solid $color-quinary;
+  align-items: center;
+  border-bottom: 0.125rem solid $color-quinary;
 }
 
-.mg-nav ul > li.active {
-  color: currentColor;
-  border-left: 0.3rem solid $color-primary; 
+.mg-nav ul>li.active {
+  color: currentcolor;
+  border-left: 0.3rem solid $color-primary;
   font-weight: bold;
 }
 
-.mg-nav.mg-nav--inline > ul > li.active {
+.mg-nav.mg-nav--inline>ul>li.active {
   border: none;
   border-bottom: 0.3rem solid $color-primary;
-} 
+}
 
-.mg-nav ul > li > a { 
-  width: 100%;  
+.mg-nav ul>li>a {
+  width: 100%;
   cursor: pointer;
   text-decoration: none;
   color: $color-secondary;
 }
 
+.mg-nav--inline ul>li {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 .mg-nav li:hover {
   background-color: $color-quinary;
 }
-  
+
 .mg-nav--inline ul {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  flex-flow: row nowrap;
   align-items: baseline;
   overflow-x: auto;
 }
-.mg-nav--inline ul > li {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.mg-nav--inline ul > li:not(.mg-right) {
-  float: left; 
+
+
+
+.mg-nav--inline ul>li:not(.mg-right) {
+  float: left;
 }
