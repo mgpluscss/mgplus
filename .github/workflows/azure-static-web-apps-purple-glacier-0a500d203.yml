@@ -78,7 +78,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   build_deploy_release:
-    if: (startsWith(github.ref, 'refs/tags/v') && github.event_name != 'pull_request') || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish_demo_only == true)
+    if: (startsWith(github.ref, 'refs/tags/v') && github.event_name != 'pull_request') || (github.event.inputs.publish_demo_only == true)
     runs-on: ubuntu-latest
     name: Build and Deploy Release
     steps:
