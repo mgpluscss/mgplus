@@ -1,6 +1,12 @@
 name: Azure Static Web Apps CI/CD
 
 on:
+  workflow_dispatch:
+    inputs:
+      publish_demo_only:
+        description: "Publish demo page only?"
+        required: true
+        type: boolean
   push:
     tags:
       - v[0-9]+.[0-9]+.[0-9]+*
@@ -72,7 +78,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
 
   build_deploy_release:
-    if: startsWith(github.ref, 'refs/tags/v') && github.event_name != 'pull_request'
+    if: (startsWith(github.ref, 'refs/tags/v') && github.event_name != 'pull_request') || (github.event_name == 'workflow_dispatch' && github.event.inputs.publish_demo_only == true)
     runs-on: ubuntu-latest
     name: Build and Deploy Release
     steps:
@@ -84,7 +90,6 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: Set release version
-        if: startsWith(github.ref, 'refs/tags/v')
         run: echo "PACKAGE_VERSION=v${{ steps.package-version.outputs.current-version}}" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
