@@ -1,6 +1,6 @@
 # mgplus workflow
 
-name: CDN CI/CD
+name: Azure CDN CI/CD
 env:
   AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
   AZURE_STORAGE_AUTH_MODE: login
@@ -14,6 +14,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
+    paths: ["dist/**"]
 jobs:
   # deploy pullrequest version of demo site
   deploy_pullrequest:
