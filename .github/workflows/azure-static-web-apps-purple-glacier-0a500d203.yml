@@ -12,10 +12,12 @@ on:
       - v[0-9]+.[0-9]+.[0-9]+*
     branches:
       - master
+    paths: ["demo/**"]
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
+    paths: ["demo/**"]
 
 jobs:
   build_deploy_pullrequest:
