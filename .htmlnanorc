@@ -7,8 +7,9 @@
   "mergeScripts": false,
   "mergeStyles": false,
   "removeUnusedCss": false,
-  "minifyJson": true,
-  "minifySvg": true,
+  "minifyJson": false,
+  "minifySvg": false,
+  "minifyUrls": false,
   "removeEmptyAttributes": false,
   "removeRedundantAttributes": false,
   "removeComments": true
