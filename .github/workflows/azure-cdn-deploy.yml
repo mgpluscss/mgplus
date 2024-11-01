@@ -1,6 +1,6 @@
 # mgplus workflow
 
-name: Azure CDN CI/CD
+name: Azure CDN and Demo CI/CD
 env:
   AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
   AZURE_STORAGE_AUTH_MODE: login
@@ -56,7 +56,7 @@ jobs:
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
+          DEMO_DEST_DIR: "beta"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         with:
@@ -103,7 +103,7 @@ jobs:
         env:
           ACCOUNT_NAME: stevodocs
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}-preview"
+          DEMO_DEST_DIR: "preview"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-preview"
         with:
@@ -150,7 +150,7 @@ jobs:
         env:
           ACCOUNT_NAME: stevodocs
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}"
+          DEMO_DEST_DIR: "$web/mgplus/release"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}"
         with:
