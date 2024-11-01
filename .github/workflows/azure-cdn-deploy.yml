@@ -14,7 +14,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
-    paths: ["dist/**"]
+    paths: ["src/**"]
 jobs:
   # deploy pullrequest version of demo site
   deploy_pullrequest:
@@ -57,7 +57,7 @@ jobs:
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/beta"
+          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-beta-${{ github.event.pull_request.number }}"
         with:
@@ -67,7 +67,7 @@ jobs:
             az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
             az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
   deploy_preview:
-    if: github.event_name == 'push' && !startsWith(github.ref, 'refs/tags/v')
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
     runs-on: ubuntu-latest
     name: CDN - build and deploy preview version
     permissions:
@@ -104,7 +104,54 @@ jobs:
         env:
           ACCOUNT_NAME: stevodocs
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/preview"
+          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}-preview"
+          DIST_SOURCE_DIR: dist
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}-preview"
+        with:
+          azcliversion: 2.30.0
+          inlineScript: |
+            az extension add -n storage-preview -y
+            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
+            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+  deploy_release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') == true
+    runs-on: ubuntu-latest
+    name: CDN - build and deploy release version
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: "Checkout Github Action"
+        uses: actions/checkout@master
+      - name: Setup Node 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18.x"
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
+      - name: "build minified main css library, js plugins and demo in standalone mode"
+        env:
+          PACKAGE_VERSION: "v${{ steps.package-version.outputs.current-version}}"
+        run: |
+          npm install
+          npm run lint 
+          npm run build
+          npm run build:demo
+          npm run test --if-present
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          enable-AzPSSession: true
+      - name: deploy demo site to Azure static website
+        uses: azure/CLI@v1
+        env:
+          ACCOUNT_NAME: stevodocs
+          DEMO_SOURCE_DIR: demo_build
+          DEMO_DEST_DIR: "$web/mgplus/v${{ steps.package-version.outputs.current-version}}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/v${{ steps.package-version.outputs.current-version}}"
         with:
