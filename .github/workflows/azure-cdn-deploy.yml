@@ -14,7 +14,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
-    paths: ["src/**"]
 jobs:
   # deploy pullrequest version of demo site
   deploy_pullrequest:
