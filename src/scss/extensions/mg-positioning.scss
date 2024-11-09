@@ -21,29 +21,29 @@
     padding-bottom: $value;
   }
 
-  .mg-mrg#{$key} {
+  .mg-marg#{$key} {
     margin: $value;
   }
 
-  .mg-mrg-l#{$key} {
+  .mg-marg-l#{$key} {
     margin-left: $value;
   }
 
-  .mg-mrg-r#{$key} {
+  .mg-marg-r#{$key} {
     margin-right: $value;
   }
 
-  .mg-mrg-t#{$key} {
+  .mg-marg-t#{$key} {
     margin-top: $value;
   }
 
-  .mg-mrg-b#{$key} {
+  .mg-marg-b#{$key} {
     margin-bottom: $value;
   }
 
 }
 
-.mg-mrg-auto {
+.mg-marg-auto {
   margin: auto;
 }
 
