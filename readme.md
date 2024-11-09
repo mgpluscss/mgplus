@@ -11,7 +11,7 @@
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-[CDN direct link](https://cdn.mgpluscss.com/v1.3.0/css/mgplus.css)
+[CDN direct link](https://cdn.mgpluscss.com/v1.3.2/css/mgplus.css)
 
 Striking the perfect balance between features and simplicity
 
@@ -19,7 +19,7 @@ The project began in early 2021 with the goal of providing a more robust and fea
 
 Mgplus is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
-****Only one css file, around 58 KB minified****
+****Only one css file, around 60 KB minified****
 
 ### Integration example
 
