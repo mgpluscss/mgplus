@@ -20,7 +20,7 @@
           ">1%",
           "Safari >= 12",
           "iOS >= 10",
-          "chrome >= 100",
+          "chrome >= 72",
           "Firefox >= 55"
         ]
       }
@@ -62,10 +62,10 @@
   "scripts": {
     "lint": "stylelint **/*.scss",
     "lint:fix": "stylelint **/*.scss --fix",
-    "start": "parcel serve --dist-dir demo_temp --open",
+    "start": "parcel serve --dist-dir demo_temp --open ",
     "build": "parcel build --no-source-maps --target library --target plugins ",
     "build:debug": "parcel build --target library --target plugins --no-optimize",
-    "build:demo": "parcel build  --no-source-maps --target demo --no-optimize"
+    "build:demo": "parcel build  --no-source-maps --target demo"
   },
   "dependencies": {
     "stylelint-config-standard-scss": "^13.1.0"
