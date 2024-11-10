@@ -4,16 +4,13 @@
         classes to style
         your elements. You can also customize the styles to fit your needs.</p>
 
-    <h3>Quick start</h3>
+    <h3>Quick start (statics websites)</h3>
     <p>To quickly get started with Mg+, follow these steps:</p>
     <div class="mg-timeline">
         <ol>
             <li>Include the Mg+ CSS file in the <code>&lt;head&gt;</code> section of your HTML file to apply the default
                 styles:</li>
             <pre><code>&lt;link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css"&gt;</code></pre>
-            <li>Include the Mg+ JavaScript file before the closing <code>&lt;/body&gt;</code> to enable interactive
-                components</li>
-            <pre><code>&lt;script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/js/mgplus-dom.js"&gt;&lt;/script&gt;</code></pre>
             <li>Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
             </li>
             <pre><code>&lt;button class="mg-button"&gt;Click me&lt;/button&gt;</code></pre>
@@ -31,7 +28,13 @@
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }</code></pre>
     </p>
-    <h3>JS Plugin configuration</h3>
+    <h3>JS Plugin configuration (optional)</h3>
+    <p>For interactive components like dropdowns, tabs, modals, etc. You can include the Mg+ JS file in your project to
+        enable these features. The JS file is optional and can be included based on your requirements.</p>
+
+    <i>This vanilla plugin could be replaced easily by another JS UI Framework like : Angular, React, Vue, Svelte,
+        Solid, etc.</i>
+
     <h4>Default configuration</h4>
     <p>By default, all available plugins are registered</p>
     <p>

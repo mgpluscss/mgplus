@@ -65,7 +65,7 @@
     "start": "parcel serve --dist-dir demo_temp --open ",
     "build": "parcel build --no-source-maps --target library --target plugins ",
     "build:debug": "parcel build --target library --target plugins --no-optimize",
-    "build:demo": "parcel build  --no-source-maps --target demo"
+    "build:demo": "parcel build --target demo  --no-source-maps "
   },
   "dependencies": {
     "stylelint-config-standard-scss": "^13.1.0"

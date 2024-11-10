@@ -195,3 +195,29 @@ pre.prettyprint {
 #picker {
   padding: 1rem;
 }
+
+.liquid {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  content: "";
+  border-radius: 54% 46% 42% 58% / 60% 58% 42% 40%;
+  animation: wave 5s linear infinite;
+}
+@keyframes wave {
+  20% {
+    border-radius: 45% 55% 62% 38% / 53% 51% 49% 47%;
+  }
+  40% {
+    border-radius: 45% 55% 49% 51% / 36% 51% 49% 64%;
+  }
+  60% {
+    border-radius: 60% 40% 57% 43% / 47% 62% 38% 53%;
+  }
+  80% {
+    border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
+  }
+}
