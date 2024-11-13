@@ -19,8 +19,7 @@
     @include mg-icon-toggle;
 
     color: currentcolor;
-    top: 25%;
-
+    top: calc($control-height / 3);
     /* fix arrow position in center by compensating default margin bottom for inputs */
     margin-bottom: 1.5rem;
   }

@@ -12,7 +12,7 @@ input[type="submit"] {
   color: $color-light;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: $font-size-m;
   font-weight: 700;
   height: 3.8rem;
   letter-spacing: 0.1rem;
@@ -58,6 +58,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;
@@ -79,6 +80,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;
@@ -98,6 +100,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;
@@ -106,14 +109,14 @@ input[type="submit"] {
   }
 
   &.mg-button--small {
-    font-size: 75%;
+    font-size: 85%;
     height: 3rem;
     line-height: 2.6rem;
     padding: 0 1.5rem;
   }
 
   &.mg-button--large {
-    font-size: 1.4rem;
+    font-size: 115%;
     height: 4.5rem;
     line-height: 4.5rem;
     padding: 0 2rem;

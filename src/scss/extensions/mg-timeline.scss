@@ -92,7 +92,7 @@
 }
 
 .mg-timeline>ul li.active::after {
-  font-size: 1rem;
+  font-size: $font-size-s;
   text-align: center;
   border: 0.3rem solid $color-primary;
   background-color: $color-primary;
@@ -111,7 +111,7 @@
 }
 
 .mg-timeline-inline>ul li.active::before {
-  font-size: 1rem;
+  font-size: $font-size-s;
   text-align: center;
   border-color: $color-primary;
   background-color: $color-primary;

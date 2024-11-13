@@ -15,7 +15,7 @@ $version: "$PACKAGE_VERSION";
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
   --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
-
+  --mg-base-font-size: 3rem;
 
   //default secondary colors 
   --mg-color-initial: var(--mg-color-light);
@@ -36,7 +36,19 @@ $version: "$PACKAGE_VERSION";
 //  Variables
 //  _____________________________________________
 
-$base-font-size: 1.6rem;
+$control-height: calc(var(--mg-base-font-size) * 2);
+$base-font-size: var(--mg-base-font-size);
+$control-height-small: calc($base-font-size * 1.5);
+$control-height-large: calc($base-font-size * 2.5);
+$font-size-s: calc($base-font-size * 0.3 + 1rem);
+$font-size-m: calc($base-font-size);
+$font-size-l: calc($base-font-size * 1.2);
+$font-size-xl: calc($base-font-size * 1.5);
+$font-size-2xl: calc($base-font-size * 1.9);
+$font-size-3xl: calc($base-font-size * 2.4);
+$font-size-4xl: calc($base-font-size * 3);
+$font-size-5xl: calc($base-font-size * 3.8);
+
 $color-light: var(--mg-color-light) !default;
 $color-dark: var(--mg-color-dark) !default;
 $color-initial: var(--mg-color-initial) !default;
@@ -95,15 +107,14 @@ $rem-map: (
   10: 10rem,
 );
 $font-sizes: (
-  s: $base-font-size*0.1 + 1rem,
-  m: $base-font-size*0.3 + 1rem,
-  x: $base-font-size,
-  l: $base-font-size*1.2,
-  xl: $base-font-size*1.5,
-  2xl: $base-font-size*1.9,
-  3xl: $base-font-size*2.4,
-  4xl: $base-font-size*3,
-  5xl: $base-font-size*3.8,
+  s: $font-size-s,
+  m: $font-size-m,
+  l: $font-size-l,
+  xl: $font-size-xl,
+  2xl: $font-size-2xl,
+  3xl: $font-size-3xl,
+  4xl: $font-size-4xl,
+  5xl: $font-size-5xl
 );
 $sizing-map: (
   0:0%,

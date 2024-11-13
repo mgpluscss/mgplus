@@ -39,7 +39,7 @@ select {
   border-radius: $input-radius;
   box-shadow: none;
   box-sizing: inherit; // Forced to replace inherit values of the normalize.css
-  height: 3.8rem;
+  height: $control-height;
   padding: 1rem;
   width: 100%;
   color: $color-secondary;
@@ -50,15 +50,15 @@ select {
   }
 
   &.mg-input--small {
-    font-size: map.get($font-sizes, "x");
-    height: 3rem;
+    font-size: $font-size-s;
+    height: $control-height-small;
     line-height: 2.6rem;
     padding: 0 1rem;
   }
 
   &.mg-input--large {
-    font-size: map.get($font-sizes, "l");
-    height: 4.5rem;
+    font-size: $font-size-l;
+    height: $control-height-large;
     line-height: 4.5rem;
     padding: 0 1.2rem;
   }
@@ -68,6 +68,9 @@ select {
 /* stylelint-disable */
 select {
   background-color: $color-initial;
+  /* fix  text inside select */
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
 }
 
 /* stylelint-enable */
@@ -105,7 +108,7 @@ div.mg-input:focus-within {
 label,
 legend {
   display: block;
-  font-size: 1.6rem;
+  font-size: $font-size-m;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
