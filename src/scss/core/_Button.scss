@@ -11,12 +11,12 @@ input[type="submit"] {
   border-radius: $control-radius;
   color: $color-light;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: $font-size-m;
   font-weight: 700;
-  height: 3.8rem;
+  height: $control-height;
   letter-spacing: 0.1rem;
-  line-height: 3.5rem;
   padding: 0 2rem;
   text-align: center;
   text-decoration: none;
@@ -109,16 +109,15 @@ input[type="submit"] {
   }
 
   &.mg-button--small {
-    font-size: 85%;
-    height: 3rem;
-    line-height: 2.6rem;
+    font-size: 80%;
+    height: $control-height-small;
     padding: 0 1.5rem;
+
   }
 
   &.mg-button--large {
-    font-size: 115%;
-    height: 4.5rem;
-    line-height: 4.5rem;
+    font-size: 120%;
+    height: $control-height-large;
     padding: 0 2rem;
   }
 

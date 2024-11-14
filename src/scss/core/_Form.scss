@@ -52,14 +52,12 @@ select {
   &.mg-input--small {
     font-size: $font-size-s;
     height: $control-height-small;
-    line-height: 2.6rem;
     padding: 0 1rem;
   }
 
   &.mg-input--large {
     font-size: $font-size-l;
     height: $control-height-large;
-    line-height: 4.5rem;
     padding: 0 1.2rem;
   }
 

@@ -1,10 +1,12 @@
 .mg-select {
+  height: $control-height;
   display: flex;
   align-items: center;
   width: 100%;
   position: relative;
   vertical-align: top;
   margin-bottom: 1.5rem;
+
 
   &>select {
     appearance: none;
@@ -19,7 +21,7 @@
     @include mg-icon-toggle;
 
     color: currentcolor;
-    top: calc($control-height / 3);
+    top: 20%;
     /* fix arrow position in center by compensating default margin bottom for inputs */
     margin-bottom: 1.5rem;
   }
