@@ -13,7 +13,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  font-size: $font-size-m;
+  font-size: $font-size-s;
   font-weight: 700;
   height: $control-height;
   letter-spacing: 0.1rem;
@@ -109,14 +109,14 @@ input[type="submit"] {
   }
 
   &.mg-button--small {
-    font-size: 80%;
+    font-size: $font-size-s;
     height: $control-height-small;
     padding: 0 1.5rem;
 
   }
 
   &.mg-button--large {
-    font-size: 120%;
+    font-size: $font-size-l;
     height: $control-height-large;
     padding: 0 2rem;
   }

@@ -15,7 +15,7 @@ $version: "$PACKAGE_VERSION";
   --mg-color-green: #28a745;
   --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
   --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
-  --mg-base-font-size: 1.9rem;
+  --mg-base-font-size: 1.8rem;
 
   //default secondary colors 
   --mg-color-initial: var(--mg-color-light);
@@ -36,10 +36,10 @@ $version: "$PACKAGE_VERSION";
 //  Variables
 //  _____________________________________________
 
-$control-height: calc(var(--mg-base-font-size) * 2);
+$control-height: calc(var(--mg-base-font-size) * 2.5);
 $base-font-size: var(--mg-base-font-size);
-$control-height-small: calc($base-font-size * 1.8);
-$control-height-large: calc($base-font-size * 2.5);
+$control-height-small: calc($base-font-size * 1.6);
+$control-height-large: calc($base-font-size * 3);
 $font-size-s: calc($base-font-size * 0.3 + 1rem);
 $font-size-m: calc($base-font-size);
 $font-size-l: calc($base-font-size * 1.2);

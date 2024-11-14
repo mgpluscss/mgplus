@@ -1,8 +1,8 @@
 .mg-check,
 .mg-radio {
   position: relative;
-  padding-left: 2.88rem; // Converted from 1.8em to rem
-  margin-right: 1.76rem; // Converted from 1.1em to rem
+  padding-left: 3rem; // Converted from 1.8em to rem
+  margin-right: 2.5rem; // Converted from 1.1em to rem
   margin-bottom: 1.5rem;
   cursor: pointer;
   user-select: none;
@@ -20,7 +20,7 @@
 /* Create a custom checkbox */
 .mg-check .mg-check--icon {
   position: absolute;
-  top: 0;
+  top: calc(50% - 1.2rem);
   left: 0;
   height: 2.4rem; // Converted from 1.5em to rem
   width: 2.4rem; // Converted from 1.5em to rem

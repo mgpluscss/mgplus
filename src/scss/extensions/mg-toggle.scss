@@ -1,7 +1,7 @@
 .mg-toggle {
   position: relative;
-  padding-left: 6.08rem; // Converted from 3.8em to rem
-  margin-right: 1.76rem; // Converted from 1.1em to rem
+  padding-left: 5.6rem; // Converted from 3.8em to rem
+  margin-right: 2.5rem; // Converted from 1.1em to rem
   margin-bottom: 1.5rem;
   cursor: pointer;
   user-select: none;
@@ -63,7 +63,7 @@
 /* disabled state */
 .mg-toggle input:disabled~.mg-icon-toggle {
   background-color: $color-quinary;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .mg-toggle input:focus~.mg-icon-toggle {
