@@ -9,12 +9,12 @@
   box-sizing: inherit;
 }
 
-// The base font-size is set at 65% for having the convenience
+// The base font-size is set at 64% for having the convenience
 // of sizing rems in a way that is similar to using px: 1.6rem = 16px
 html,
 body {
   box-sizing: border-box;
-  font-size: 65%;
+  font-size: 64%;
   overflow-x: hidden;
 }
 
