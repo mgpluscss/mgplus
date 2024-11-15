@@ -18,8 +18,8 @@
 
 <body>
   <header>
-    <nav class="mg-fixed-top mg-w100">
-      <div class="mg-w100 mg-row mg-x--middle mg-x--between">
+    <nav class="mg-fixed-top mg-w-full">
+      <div class="mg-w-full mg-row mg-x--middle mg-x--between">
         <div class="mg-group mg-pad-l1">
           <div class="mg-dropdown">
             <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
@@ -64,7 +64,7 @@
             <i class="mg-icon mg-icon--3xl icon-menu"></i>
           </button>
           <div class="mg-dropdown--content mg-right mg-nav mg-w50vh mg-max-h80vh">
-            <ul class="mg-text-l mg-text-bold" id="nav_links">
+            <ul class="mg-text-l mg-text-bold" data-toggle="navlinks">
             </ul>
           </div>
         </div>
@@ -101,6 +101,14 @@
     </svg>
 
   </header>
+  <div class="mg-fixed-top mg-h-fullvh mg-top5 mg-bg-primary">
+    <div class="mg-nav">
+      <ul data-toggle="navlinks">
+
+      </ul>
+
+    </div>
+  </div>
   <main class="mg-container">
     <include src="demo/sections/intro-section.html"></include>
     <include src="demo/sections/getting-started.html"></include>

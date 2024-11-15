@@ -15,22 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 async function loadDemoSections() {
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelector("#nav_links");
+  const navLinksToggles = document.querySelectorAll("[data-toggle~=navlinks]");
+  navLinksToggles.forEach((navLinks) => {
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
 
-  for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
+      //ignore section not marked with id
+      if (!section.id) {
+        continue;
+      }
 
-    //ignore section not marked with id
-    if (!section.id) {
-      continue;
+      const navLink = document.createElement("li");
+      const navLinkTitle = section.querySelector("h2");
+
+      navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
+      navLinks.appendChild(navLink);
     }
-
-    const navLink = document.createElement("li");
-    const navLinkTitle = section.querySelector("h2");
-
-    navLink.innerHTML = `<a href="#${section.id}">${navLinkTitle.innerText}</a>`;
-    navLinks.appendChild(navLink);
-  }
+  });
   const download_button = document.getElementById("download_button");
 
   //workaround to set the package version, this should be done in the build process
