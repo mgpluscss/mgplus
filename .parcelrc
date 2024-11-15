@@ -5,9 +5,9 @@
       "@plasmohq/parcel-transformer-inject-env",
       "@parcel/transformer-css"
     ],
-    "*.html": [
-      "@plasmohq/parcel-transformer-inject-env",
-      "..."
+    "*/*.html": [
+      "...",
+      "@plasmohq/parcel-transformer-inject-env"
     ]
   }
 }
