@@ -58,7 +58,8 @@
     "parcel": "^2.12.0",
     "posthtml-include": "^1.7.4",
     "stylelint": "^16.10.0",
-    "stylelint-config-standard-scss": "^13.1.0"
+    "stylelint-config-standard-scss": "^13.1.0",
+    "svgo": "^3.3.2"
   },
   "scripts": {
     "lint": "stylelint **/*.scss",
