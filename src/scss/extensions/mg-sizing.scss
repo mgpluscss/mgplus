@@ -1,89 +1,110 @@
-// mg-w[0-100] { width: [0-100]% }
-@each $key, $value in $sizing-map {
+ .mg-w-full {
+     width: 100%;
+ }
 
-    .mg-w#{$key} {
-        width: #{$value};
-    }
+ .mg-h-full {
+     height: 100%;
+ }
 
-    .mg-h#{$key} {
-        height: #{$value};
-    }
+ .mg-min-w-full {
+     min-width: 100%;
+ }
 
-    .mg-min-w#{$key} {
-        min-width: #{$value};
-    }
+ .mg-min-h-full {
+     min-height: 100%;
+ }
 
-    .mg-min-h#{$key} {
-        min-height: #{$value};
-    }
+ .mg-max-w-full {
+     max-width: 100%;
+ }
 
-    .mg-max-w#{$key} {
-        max-width: #{$value};
-    }
+ .mg-max-h-full {
+     max-height: 100%;
+ }
 
-    .mg-max-h#{$key} {
-        max-height: #{$value};
-    }
-}
+ .mg-w-half {
+     width: 50%;
+ }
 
-// mg-w[0-100]vh { width: [0-100]vh }
-@each $key, $value in $sizing-map {
+ .mg-h-half {
+     height: 50%;
+ }
 
-    .mg-w#{$key}vh {
-        width: #{$key}vh;
-    }
+ .mg-min-w-half {
+     min-width: 50%;
+ }
 
-    .mg-h#{$key}vh {
-        height: #{$key}vh;
-    }
+ .mg-min-h-half {
+     min-height: 50%;
+ }
 
-    .mg-min-w#{$key}vh {
-        min-width: #{$key}vh;
-    }
+ .mg-max-w-half {
+     max-width: 50%;
+ }
 
-    .mg-min-h#{$key}vh {
-        min-height: #{$key}vh;
-    }
+ .mg-max-h-half {
+     max-height: 50%;
+ }
 
-    .mg-max-w#{$key}vh {
-        max-width: #{$key}vh;
-    }
 
-    .mg-max-h#{$key}vh {
-        max-height: #{$key}vh;
-    }
-}
+ // mg-w[0-100]vh { width: [0-100]vh step 10 }
+ @each $key, $value in $step-map {
 
-@each $key, $value in $rem-map {
-    .mg-h#{$key}rem {
-        height: $value;
-    }
+     .mg-w#{$key}vh {
+         width: #{$key}vh;
+     }
 
-    .mg-w#{$key}rem {
-        width: $value;
-    }
+     .mg-h#{$key}vh {
+         height: #{$key}vh;
+     }
 
-    .mg-min-h#{$key}rem {
-        min-height: $value;
-    }
+     .mg-min-w#{$key}vh {
+         min-width: #{$key}vh;
+     }
 
-    .mg-max-h#{$key}rem {
-        max-height: $value;
-    }
+     .mg-min-h#{$key}vh {
+         min-height: #{$key}vh;
+     }
 
-    .mg-min-w#{$key}rem {
-        min-width: $value;
-    }
+     .mg-max-w#{$key}vh {
+         max-width: #{$key}vh;
+     }
 
-    .mg-max-w#{$key}rem {
-        max-width: $value;
-    }
-}
+     .mg-max-h#{$key}vh {
+         max-height: #{$key}vh;
+     }
+ }
 
-.mg-box-border {
-    box-sizing: border-box;
-}
+ @each $key, $value in $rem-map {
+     .mg-h#{$key} {
+         height: $value;
+     }
 
-.mg-box-content {
-    box-sizing: content-box;
-}
+     .mg-w#{$key} {
+         width: $value;
+     }
+
+     .mg-min-h#{$key} {
+         min-height: $value;
+     }
+
+     .mg-max-h#{$key} {
+         max-height: $value;
+     }
+
+     .mg-min-w#{$key} {
+         min-width: $value;
+     }
+
+     .mg-max-w#{$key} {
+         max-width: $value;
+     }
+ }
+
+ .mg-box-border {
+     box-sizing: border-box;
+ }
+
+ .mg-box-content {
+     box-sizing: content-box;
+ }

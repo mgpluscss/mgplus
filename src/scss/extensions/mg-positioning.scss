@@ -153,23 +153,23 @@
 }
 
 
-// mg-top[0-100]vh { width: [0-100]vh }
-@each $key, $value in $sizing-map {
+// mg-top[0-100]vh { width: [0-100]vh step 10 }
+@each $key, $value in $step-map {
 
   .mg-top#{$key}vh {
-    width: #{$key}vh;
+    width: #{$value}vh;
   }
 
   .mg-left#{$key}vh {
-    height: #{$key}vh;
+    height: #{$value}vh;
   }
 
   .mg-right#{$key}vh {
-    min-width: #{$key}vh;
+    min-width: #{$value}vh;
   }
 
   .mg-bottom#{$key}vh {
-    min-height: #{$key}vh;
+    min-height: #{$value}vh;
   }
 }
 
@@ -177,19 +177,19 @@
 @each $key, $value in $rem-map {
 
   .mg-top#{$key} {
-    top: #{$key};
+    top: #{$value};
   }
 
   .mg-left#{$key} {
-    left: #{$key};
+    left: #{$value};
   }
 
   .mg-right#{$key} {
-    right: #{$key}vh;
+    right: #{$value};
   }
 
   .mg-bottom#{$key} {
-    bottom: #{$key}vh;
+    bottom: #{$value};
   }
 
 }
