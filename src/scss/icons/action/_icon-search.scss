@@ -1,6 +1,6 @@
 .icon-search {
     &::before {
-        border: 0.25rem solid;
+        border: $icon-border-width solid;
         border-radius: 100%;
         width: 60%;
         height: 60%;
