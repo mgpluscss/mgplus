@@ -1,7 +1,7 @@
 .mg-toggle {
   position: relative;
-  padding-left: 5.6rem; // Converted from 3.8em to rem
-  margin-right: 2.5rem; // Converted from 1.1em to rem
+  padding-left: 5.6rem;
+  margin-right: 2.5rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
   user-select: none;
@@ -22,8 +22,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 2.72rem; // Converted from 1.7em to rem
-  width: 4.8rem; // Converted from 3em to rem
+  height: 2.72rem;
+  width: 4.8rem;
   border-style: solid;
   border-color: $color-quaternary;
   border-width: thin;
@@ -46,8 +46,8 @@
   border-radius: $control-radius;
   position: absolute;
   content: "";
-  height: 2.08rem; // Converted from 1.3em to rem
-  width: 2.24rem; // Converted from 1.4em to rem
+  height: 2.08rem;
+  width: 2.24rem;
   top: 0.2rem;
   left: 0.2rem;
   background-color: $color-light;
@@ -57,7 +57,7 @@
 
 /* Show the mg-icon-toggle when checked */
 .mg-toggle input:checked~.mg-icon-toggle::after {
-  left: 2.08rem; // Converted from 1.3em to rem
+  left: 2.08rem;
 }
 
 /* disabled state */

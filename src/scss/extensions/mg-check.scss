@@ -1,8 +1,8 @@
 .mg-check,
 .mg-radio {
   position: relative;
-  padding-left: 3rem; // Converted from 1.8em to rem
-  margin-right: 2.5rem; // Converted from 1.1em to rem
+  padding-left: 3rem;
+  margin-right: 2.5rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
   user-select: none;
@@ -22,8 +22,8 @@
   position: absolute;
   top: calc(50% - 1.2rem);
   left: 0;
-  height: 2.4rem; // Converted from 1.5em to rem
-  width: 2.4rem; // Converted from 1.5em to rem
+  height: 2.4rem;
+  width: 2.4rem;
   border-style: solid;
   border-color: $color-quaternary;
   border-width: thin;
@@ -46,10 +46,10 @@
   content: "";
   position: absolute;
   display: none;
-  left: 0.8rem; // Converted from 0.5em to rem
-  top: 0.16rem; // Converted from 0.1em to rem
-  width: 0.8rem; // Converted from 0.5em to rem
-  height: 1.6rem; // Converted from 1em to rem
+  left: 0.8rem;
+  top: 0.16rem;
+  width: 0.8rem;
+  height: 1.6rem;
   border: solid $color-light;
   border-width: 0 0.25rem 0.3rem 0;
   transform: rotate(45deg);
