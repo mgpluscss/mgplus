@@ -151,3 +151,45 @@
 .mg-text-left {
   text-align: left;
 }
+
+
+// mg-top[0-100]vh { width: [0-100]vh }
+@each $key, $value in $sizing-map {
+
+  .mg-top#{$key}vh {
+    width: #{$key}vh;
+  }
+
+  .mg-left#{$key}vh {
+    height: #{$key}vh;
+  }
+
+  .mg-right#{$key}vh {
+    min-width: #{$key}vh;
+  }
+
+  .mg-bottom#{$key}vh {
+    min-height: #{$key}vh;
+  }
+}
+
+// .mg-pad[0-10] { padding: [0-10]rem; }
+@each $key, $value in $rem-map {
+
+  .mg-top#{$key} {
+    top: #{$key};
+  }
+
+  .mg-left#{$key} {
+    left: #{$key};
+  }
+
+  .mg-right#{$key} {
+    right: #{$key}vh;
+  }
+
+  .mg-bottom#{$key} {
+    bottom: #{$key}vh;
+  }
+
+}
