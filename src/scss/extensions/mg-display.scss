@@ -73,6 +73,11 @@
     visibility: hidden;
 }
 
+//default rounded value
+.mg-rounded {
+    border-radius: $control-radius;
+}
+
 @each $key, $value in $rem-map {
 
     .mg-rounded#{$key} {
@@ -96,10 +101,24 @@
     }
 }
 
-.mg-rounded-none {
-    border-radius: 0;
+@include build-none-half-full('mg-rounded', 'border-radius');
+
+.mg-border {
+    border-width: 2px;
+    border-style: solid;
 }
 
-.mg-rounded-full {
-    border-radius: 100%;
+.mg-border-thin {
+    border-width: 1px;
+    border-style: solid;
+}
+
+.mg-border-bold {
+    border-width: 3px;
+    border-style: solid;
+}
+
+.mg-border-bolder {
+    border-width: 5px;
+    border-style: solid;
 }

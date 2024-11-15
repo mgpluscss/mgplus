@@ -191,5 +191,9 @@
   .mg-bottom#{$key} {
     bottom: #{$value};
   }
-
 }
+
+@include build-none-half-full('mg-top', 'top');
+@include build-none-half-full('mg-left', 'left');
+@include build-none-half-full('mg-right', 'right');
+@include build-none-half-full('mg-bottom', 'bottom');
