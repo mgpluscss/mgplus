@@ -138,7 +138,7 @@ function registerDemoFeatures() {
       preContent.classList.add(
         "prettyprint",
         "mg-overflow-x-auto",
-        "mg-max-w100"
+        "mg-max-w-full"
       );
       preContent.innerHTML = quineHtml;
 
