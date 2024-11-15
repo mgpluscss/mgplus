@@ -108,7 +108,7 @@ function registerDemoFeatures() {
       const clipboardButton = document.createElement("button");
       const clipboardButtonIcon = document.createElement("i");
 
-      previewPan.classList.add("mg-pad-t3");
+      previewPan.classList.add("mg-pad-b3");
       buttonCollapse.classList.add(
         "mg-button",
         "mg-button--clear",
