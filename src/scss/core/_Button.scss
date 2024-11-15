@@ -14,7 +14,7 @@ input[type="submit"] {
   display: inline-flex;
   align-items: center;
   font-size: $font-size-s;
-  font-weight: 700;
+  font-weight: 600;
   height: $control-height;
   letter-spacing: 0.1rem;
   padding: 0 2rem;
@@ -58,6 +58,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;
@@ -79,6 +80,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;
@@ -98,6 +100,7 @@ input[type="submit"] {
     }
 
     &[disabled] {
+
       &:focus,
       &:hover {
         border-color: inherit;

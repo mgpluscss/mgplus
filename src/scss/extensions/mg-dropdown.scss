@@ -25,6 +25,7 @@
   max-height: 50vh;
   max-width: 90vw;
   overflow: hidden auto;
+  z-index: $zindex-full;
 
 }
 
@@ -32,5 +33,5 @@
   display: block;
   opacity: 1;
   visibility: visible;
-  z-index: 999;
+
 }

@@ -9,12 +9,12 @@
   box-sizing: inherit;
 }
 
-// The base font-size is set at 64% for having the convenience
+// The base font-size is set at 62% for having the convenience
 // of sizing rems in a way that is similar to using px: 1.6rem = 16px
 html,
 body {
   box-sizing: border-box;
-  font-size: 64%;
+  font-size: 62%;
   overflow-x: hidden;
 }
 
@@ -53,7 +53,7 @@ hr {
 
 pre {
   font-family: monospace;
-  font-size: map.get($font-sizes, 'm');
+  font-size: $font-size-m;
 }
 
 /**
@@ -91,11 +91,11 @@ code,
 kbd,
 samp {
   font-family: monospace;
-  font-size: map.get($font-sizes, 'm')
+  font-size: $font-size-m;
 }
 
 small {
-  font-size: map.get($font-sizes, 's');
+  font-size: $font-size-s;
 }
 
 sub,
@@ -233,7 +233,7 @@ legend {
 progress {
   vertical-align: baseline;
   border-radius: $input-radius;
-  height: map.get($font-sizes, 's');
+  height: $font-size-s;
 }
 
 progress::-webkit-progress-bar,
