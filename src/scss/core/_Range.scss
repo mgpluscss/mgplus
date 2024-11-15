@@ -2,7 +2,6 @@
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 input[type="range"] {
-
   background: $color-quaternary;
   border-radius: $input-radius;
   display: inline-block;
@@ -15,7 +14,6 @@ input[type="range"] {
   transition: opacity 0.2s;
   vertical-align: top;
   width: 100%;
-
 
   &:hover {
     opacity: 1;
