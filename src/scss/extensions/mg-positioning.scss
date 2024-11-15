@@ -56,14 +56,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: $zindex-full;
 }
 
 .mg-fixed-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 999;
+  z-index: $zindex-full;
 }
 
 .mg-valign-middle {
@@ -197,3 +197,31 @@
 @include build-none-half-full('mg-left', 'left');
 @include build-none-half-full('mg-right', 'right');
 @include build-none-half-full('mg-bottom', 'bottom');
+
+.mg-z0 {
+  z-index: $zindex-0;
+}
+
+.mg-z1 {
+  z-index: $zindex-1;
+}
+
+.mg-z2 {
+  z-index: $zindex-2;
+}
+
+.mg-z3 {
+  z-index: $zindex-3;
+}
+
+.mg-z4 {
+  z-index: $zindex-4;
+}
+
+.mg-z5 {
+  z-index: $zindex-5;
+}
+
+.mg-z-full {
+  z-index: $zindex-full;
+}
