@@ -68,5 +68,10 @@
     "build:debug": "parcel build --target library --target plugins --no-optimize",
     "build:demo": "parcel build --target demo  --no-source-maps "
   },
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "dist",
+    "README.md",
+    "LICENCE"
+  ]
 }
