@@ -1,4 +1,4 @@
-name: Build lib and demo page
+name: Build lib and demo page Action
 desctipion: "Build and test the lib and demo page"
 inputs:
   stage:
@@ -9,7 +9,7 @@ inputs:
 outputs:
   package_version:
     description: "Package version related to given stage"
-    value: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
+    value: v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
 runs:
   using: "composite"
   steps:
@@ -22,7 +22,7 @@ runs:
       uses: martinbeentjes/npm-get-version-action@v1.3.1
     - name: "build minified main css library, js plugins and demo in standalone mode"
       env:
-        PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
+        PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
       run: |
         npm install
         npm run lint

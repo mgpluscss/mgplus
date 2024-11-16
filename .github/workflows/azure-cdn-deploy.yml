@@ -25,9 +25,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "build lib and demo"
+        id: "build_action"
         uses: ./.github/actions/build-action
         with:
-          stage: "beta"
+          stage: "beta-${{ github.event.pull_request.number }}"
       - name: azure login
         uses: azure/login@v1
         with:
@@ -38,13 +39,13 @@ jobs:
       - name: deploy demo app to Azure static website
         uses: azure/CLI@v1
         env:
-          PACKAGE_VERSION: "v${{ steps.deploy_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
+          PACKAGE_VERSION: "${{ steps.build_action.outputs.package_version }}"
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/beta"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
+          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -62,6 +63,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: "build lib and demo"
         uses: ./.github/actions/build-action
+        id: "build_action"
         with:
           stage: "preview"
       - name: azure login
@@ -78,7 +80,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/preview"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_preview.outputs.package_version }}-preview"
+          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -96,6 +98,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: "build lib and demo"
         uses: ./.github/actions/build-action
+        id: "build_action"
         with:
           stage: "release"
       - name: azure login
@@ -112,7 +115,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/release"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_release.outputs.package_version }}"
+          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
