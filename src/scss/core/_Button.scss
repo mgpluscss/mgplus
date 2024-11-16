@@ -21,9 +21,6 @@ input[type="submit"] {
   padding: 0 2rem;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   opacity: 1;
   box-shadow: $control-shadow;
   position: relative;
@@ -61,7 +58,6 @@ input[type="submit"] {
     }
 
     &[disabled] {
-
       &:focus,
       &:hover {
         border-color: inherit;
@@ -83,7 +79,6 @@ input[type="submit"] {
     }
 
     &[disabled] {
-
       &:focus,
       &:hover {
         border-color: inherit;
@@ -103,7 +98,6 @@ input[type="submit"] {
     }
 
     &[disabled] {
-
       &:focus,
       &:hover {
         border-color: inherit;
