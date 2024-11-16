@@ -36,9 +36,9 @@ $version: "$PACKAGE_VERSION";
 //  Variables
 //  _____________________________________________
 
-$control-height: calc(var(--mg-base-font-size) * 2);
+$control-height: calc(var(--mg-base-font-size) * 2.5);
 $base-font-size: var(--mg-base-font-size);
-$control-height-small: calc($base-font-size * 1.7);
+$control-height-small: calc($base-font-size * 1.6 + 0.5rem);
 $control-height-large: calc($base-font-size * 2.5);
 
 $font-size-s: calc($base-font-size * 0.2 + 1rem);

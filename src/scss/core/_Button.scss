@@ -13,6 +13,7 @@ input[type="submit"] {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   font-size: $font-size-s;
   font-weight: 600;
   height: $control-height;
@@ -27,6 +28,8 @@ input[type="submit"] {
   box-shadow: $control-shadow;
   position: relative;
   overflow: hidden;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 
   &:focus,
   &:hover {
