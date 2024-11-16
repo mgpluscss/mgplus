@@ -23,7 +23,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: "build lib and demo"
         uses: ./.github/actions/build-action
         with:
@@ -59,7 +59,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: "build lib and demo"
         uses: ./.github/actions/build-action
         with:
@@ -93,7 +93,7 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: "build lib and demo"
         uses: ./.github/actions/build-action
         with:
