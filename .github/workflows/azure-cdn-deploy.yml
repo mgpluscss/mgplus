@@ -38,13 +38,13 @@ jobs:
       - name: deploy demo app to Azure static website
         uses: azure/CLI@v1
         env:
-          PACKAGE_VERSION: "v${{ steps.build_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
+          PACKAGE_VERSION: "v${{ steps.deploy_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/beta"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.build_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_pullrequest.outputs.package_version }}-beta-${{ github.event.pull_request.number }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -78,7 +78,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/preview"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.build_preview.outputs.package_version }}-preview"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_preview.outputs.package_version }}-preview"
         with:
           azcliversion: 2.30.0
           inlineScript: |
@@ -112,7 +112,7 @@ jobs:
           DEMO_SOURCE_DIR: demo_build
           DEMO_DEST_DIR: "$web/mgplus/release"
           DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/v${{ steps.build_release.outputs.package_version }}"
+          DIST_DEST_DIR: "mgpluscdn/v${{ steps.deploy_release.outputs.package_version }}"
         with:
           azcliversion: 2.30.0
           inlineScript: |
