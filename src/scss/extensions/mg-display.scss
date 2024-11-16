@@ -73,7 +73,6 @@
     visibility: hidden;
 }
 
-//default rounded value
 .mg-rounded {
     border-radius: $control-radius;
 }
@@ -104,21 +103,21 @@
 @include build-none-half-full('mg-rounded', 'border-radius');
 
 .mg-border {
-    border-width: 2px;
+    border-width: 0.12rem;
     border-style: solid;
 }
 
 .mg-border-thin {
-    border-width: 1px;
+    border-width: 0.07rem;
     border-style: solid;
 }
 
 .mg-border-bold {
-    border-width: 3px;
+    border-width: 0.19rem;
     border-style: solid;
 }
 
 .mg-border-bolder {
-    border-width: 5px;
+    border-width: 0.31rem;
     border-style: solid;
 }
