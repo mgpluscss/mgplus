@@ -52,6 +52,7 @@ jobs:
             az extension add -n storage-preview -y
             az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
             az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+            az cdn endpoint purge -g rg-devops -n mgplus-beta --profile-name cdn-evo --content-paths '/*'
   deploy_preview:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
     runs-on: ubuntu-latest
