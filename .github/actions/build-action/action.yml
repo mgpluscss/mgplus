@@ -29,3 +29,4 @@ runs:
         npm run build
         npm run build:demo
         npm run test --if-present
+      shell: bash
