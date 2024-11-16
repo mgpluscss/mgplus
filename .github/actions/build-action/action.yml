@@ -9,7 +9,6 @@ inputs:
 outputs:
   package_version:
     description: "Package version related to given stage"
-    required: true
     value: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
 runs:
   using: "composite"
