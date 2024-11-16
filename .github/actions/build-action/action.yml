@@ -10,20 +10,20 @@ outputs:
   package_version: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
 runs:
   using: "composite"
-    steps:
-      - name: Setup Node 18.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: "18.x"
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@v1.3.1
-      - name: "build minified main css library, js plugins and demo in standalone mode"
-        env:
-          PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
-        run: |
-          npm install
-          npm run lint
-          npm run build
-          npm run build:demo
-          npm run test --if-present
+  steps:
+    - name: Setup Node 18.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: "18.x"
+    - name: get-npm-version
+      id: package-version
+      uses: martinbeentjes/npm-get-version-action@v1.3.1
+    - name: "build minified main css library, js plugins and demo in standalone mode"
+      env:
+        PACKAGE_VERSION: ${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
+      run: |
+        npm install
+        npm run lint
+        npm run build
+        npm run build:demo
+        npm run test --if-present
