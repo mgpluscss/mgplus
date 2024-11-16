@@ -20,12 +20,12 @@
   position: absolute;
   background-color: $color-initial;
   top: 100%;
-  z-index: 999;
   border-color: $color-quaternary;
   border-radius: $control-radius;
   max-height: 50vh;
   max-width: 90vw;
   overflow: hidden auto;
+  z-index: $zindex-full;
 
 }
 
@@ -33,4 +33,5 @@
   display: block;
   opacity: 1;
   visibility: visible;
+
 }

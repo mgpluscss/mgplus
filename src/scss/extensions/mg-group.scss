@@ -1,6 +1,8 @@
 .mg-group {
   display: inline-flex;
+  justify-items: baseline;
   flex-wrap: nowrap;
+  height: auto;
 }
 
 /* stylelint-disable */

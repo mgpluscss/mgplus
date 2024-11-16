@@ -6,6 +6,10 @@
     display: inline-block;
 }
 
+.mg-inline-flex {
+    display: inline-flex;
+}
+
 .mg-inline {
     display: inline;
 }
@@ -69,6 +73,10 @@
     visibility: hidden;
 }
 
+.mg-rounded {
+    border-radius: $control-radius;
+}
+
 @each $key, $value in $rem-map {
 
     .mg-rounded#{$key} {
@@ -92,10 +100,24 @@
     }
 }
 
-.mg-rounded-none {
-    border-radius: 0;
+@include build-none-half-full('mg-rounded', 'border-radius');
+
+.mg-border {
+    border-width: 0.12rem;
+    border-style: solid;
 }
 
-.mg-rounded-full {
-    border-radius: 100%;
+.mg-border-thin {
+    border-width: 0.07rem;
+    border-style: solid;
+}
+
+.mg-border-bold {
+    border-width: 0.19rem;
+    border-style: solid;
+}
+
+.mg-border-bolder {
+    border-width: 0.31rem;
+    border-style: solid;
 }

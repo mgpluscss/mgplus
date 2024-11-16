@@ -11,22 +11,22 @@ input[type="submit"] {
   border-radius: $control-radius;
   color: $color-light;
   cursor: pointer;
-  display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 700;
-  height: 3.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-s;
+  font-weight: 600;
+  height: $control-height;
   letter-spacing: 0.1rem;
-  line-height: 3.5rem;
   padding: 0 2rem;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   opacity: 1;
   box-shadow: $control-shadow;
   position: relative;
   overflow: hidden;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 
   &:focus,
   &:hover {
@@ -106,16 +106,15 @@ input[type="submit"] {
   }
 
   &.mg-button--small {
-    font-size: 75%;
-    height: 3rem;
-    line-height: 2.6rem;
+    font-size: $font-size-s;
+    height: $control-height-small;
     padding: 0 1.5rem;
+
   }
 
   &.mg-button--large {
-    font-size: 1.4rem;
-    height: 4.5rem;
-    line-height: 4.5rem;
+    font-size: $font-size-l;
+    height: $control-height-large;
     padding: 0 2rem;
   }
 

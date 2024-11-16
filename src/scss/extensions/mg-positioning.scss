@@ -56,14 +56,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: $zindex-full;
 }
 
 .mg-fixed-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 999;
+  z-index: $zindex-full;
 }
 
 .mg-valign-middle {
@@ -150,4 +150,78 @@
 
 .mg-text-left {
   text-align: left;
+}
+
+
+// mg-top[0-100]vh { width: [0-100]vh step 10 }
+@each $key, $value in $step-map {
+
+  .mg-top#{$key}vh {
+    width: #{$value}vh;
+  }
+
+  .mg-left#{$key}vh {
+    height: #{$value}vh;
+  }
+
+  .mg-right#{$key}vh {
+    min-width: #{$value}vh;
+  }
+
+  .mg-bottom#{$key}vh {
+    min-height: #{$value}vh;
+  }
+}
+
+// .mg-pad[0-10] { padding: [0-10]rem; }
+@each $key, $value in $rem-map {
+
+  .mg-top#{$key} {
+    top: #{$value};
+  }
+
+  .mg-left#{$key} {
+    left: #{$value};
+  }
+
+  .mg-right#{$key} {
+    right: #{$value};
+  }
+
+  .mg-bottom#{$key} {
+    bottom: #{$value};
+  }
+}
+
+@include build-none-half-full('mg-top', 'top');
+@include build-none-half-full('mg-left', 'left');
+@include build-none-half-full('mg-right', 'right');
+@include build-none-half-full('mg-bottom', 'bottom');
+
+.mg-z0 {
+  z-index: $zindex-0;
+}
+
+.mg-z1 {
+  z-index: $zindex-1;
+}
+
+.mg-z2 {
+  z-index: $zindex-2;
+}
+
+.mg-z3 {
+  z-index: $zindex-3;
+}
+
+.mg-z4 {
+  z-index: $zindex-4;
+}
+
+.mg-z5 {
+  z-index: $zindex-5;
+}
+
+.mg-z-full {
+  z-index: $zindex-full;
 }

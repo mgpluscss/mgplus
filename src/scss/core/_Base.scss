@@ -9,13 +9,21 @@
   box-sizing: inherit;
 }
 
-// The base font-size is set at 62.5% for having the convenience
+// The base font-size is set at 65% for having the convenience
 // of sizing rems in a way that is similar to using px: 1.6rem = 16px
 html,
 body {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 68%;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: $screen-l) {
+  html,
+  body {
+    font-size: 62%;
+  }
+
 }
 
 // Default body styles
@@ -25,10 +33,11 @@ body {
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: $base-font-size; // Currently ems cause chrome bug misinterpreting rems on body element
   font-weight: 300;
-  letter-spacing: 0.016rem; // Converted from 0.01em to rem
+  letter-spacing: 0.016rem;
   line-height: 1.6;
   margin: 0;
 }
+
 
 main {
   display: block;
@@ -53,7 +62,7 @@ hr {
 
 pre {
   font-family: monospace;
-  font-size: map.get($font-sizes, 'm');
+  font-size: $font-size-m;
 }
 
 /**
@@ -91,11 +100,11 @@ code,
 kbd,
 samp {
   font-family: monospace;
-  font-size: map.get($font-sizes, 'm')
+  font-size: $font-size-m;
 }
 
 small {
-  font-size: map.get($font-sizes, 's');
+  font-size: $font-size-s;
 }
 
 sub,
@@ -107,11 +116,11 @@ sup {
 }
 
 sub {
-  bottom: -0.4rem; // Converted from -0.25em to rem
+  bottom: -0.4rem;
 }
 
 sup {
-  top: -0.8rem; // Converted from -0.5em to rem
+  top: -0.8rem;
 }
 
 /* Embedded content
@@ -233,7 +242,7 @@ legend {
 progress {
   vertical-align: baseline;
   border-radius: $input-radius;
-  height: map.get($font-sizes, 's');
+  height: $font-size-s;
 }
 
 progress::-webkit-progress-bar,

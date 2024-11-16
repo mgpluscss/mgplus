@@ -1,33 +1,12 @@
-// mg-w[0-100] { width: [0-100]% }
-@each $key, $value in $sizing-map {
+@include build-none-half-full('mg-w', 'width');
+@include build-none-half-full('mg-h', 'height');
+@include build-none-half-full('mg-min-w', 'min-width');
+@include build-none-half-full('mg-min-h', 'min-height');
+@include build-none-half-full('mg-max-w', 'max-width');
+@include build-none-half-full('mg-max-h', 'max-height');
 
-    .mg-w#{$key} {
-        width: #{$value};
-    }
-
-    .mg-h#{$key} {
-        height: #{$value};
-    }
-
-    .mg-min-w#{$key} {
-        min-width: #{$value};
-    }
-
-    .mg-min-h#{$key} {
-        min-height: #{$value};
-    }
-
-    .mg-max-w#{$key} {
-        max-width: #{$value};
-    }
-
-    .mg-max-h#{$key} {
-        max-height: #{$value};
-    }
-}
-
-// mg-w[0-100]vh { width: [0-100]vh }
-@each $key, $value in $sizing-map {
+// mg-w[0-100]vh { width: [0-100]vh step 10 }
+@each $key, $value in $step-map {
 
     .mg-w#{$key}vh {
         width: #{$key}vh;
@@ -55,27 +34,27 @@
 }
 
 @each $key, $value in $rem-map {
-    .mg-h#{$key}rem {
+    .mg-h#{$key} {
         height: $value;
     }
 
-    .mg-w#{$key}rem {
+    .mg-w#{$key} {
         width: $value;
     }
 
-    .mg-min-h#{$key}rem {
+    .mg-min-h#{$key} {
         min-height: $value;
     }
 
-    .mg-max-h#{$key}rem {
+    .mg-max-h#{$key} {
         max-height: $value;
     }
 
-    .mg-min-w#{$key}rem {
+    .mg-min-w#{$key} {
         min-width: $value;
     }
 
-    .mg-max-w#{$key}rem {
+    .mg-max-w#{$key} {
         max-width: $value;
     }
 }

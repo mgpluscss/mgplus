@@ -14,8 +14,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 2.4rem; // Converted from 1.5em to rem
-  width: 2.4rem; // Converted from 1.5em to rem
+  height: 2.4rem;
+  width: 2.4rem;
   border-radius: 50%;
   border-style: solid;
   border-color: var(--mg-color-quaternary);
@@ -35,10 +35,10 @@
 
 /* Style the indicator (dot/circle) */
 .mg-radio .mg-radio--icon::after {
-  top: 0.8rem; // Converted from 0.5em to rem
-  left: 0.8rem; // Converted from 0.5em to rem
-  width: 0.64rem; // Converted from 0.4em to rem
-  height: 0.64rem; // Converted from 0.4em to rem
+  top: 0.8rem;
+  left: 0.8rem;
+  width: 0.64rem;
+  height: 0.64rem;
   border-radius: 50%;
   background-color: var(--mg-color-light);
   content: "";

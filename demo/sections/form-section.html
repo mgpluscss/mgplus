@@ -1,6 +1,6 @@
 <section id="forms">
   <h2>Forms</h2>
-  <p>This section showcases the functionality of form elements in our design system. Forms are used to collect user
+  <p>Forms are used to collect user
     information and submit it to the server. Below, you will find examples of form elements in their default state, as
     well as examples of how to trigger the form functionality.</p>
   <form id="forms-example" data-toggle="htmlpreview">
@@ -16,19 +16,54 @@
       </div>
       <label>Toggle inline</label>
       <div class="mg-row">
-        <label class="mg-toggle mg-text-lighter">
+        <label class="mg-toggle">
           on
           <input type="checkbox" checked />
           <span class="mg-icon-toggle"></span>
         </label>
-        <label class="mg-toggle mg-text-lighter">
+        <label class="mg-toggle">
           off
           <input type="checkbox" checked />
           <span class="mg-icon-toggle"></span>
         </label>
       </div>
+      <label>Checkboxes</label>
+      <div class="mg-row">
+        <label class="mg-check">
+          on
+          <input type="checkbox" checked />
+          <span class="mg-check--icon"></span>
+        </label>
+        <label class="mg-check">
+          off
+          <input type="checkbox" />
+          <span class="mg-check--icon"></span>
+        </label>
+        <label class="mg-check">
+          disabled
+          <input type="checkbox" checked disabled />
+          <span class="mg-check--icon"></span>
+        </label>
+      </div>
+      <label>Radios</label>
+      <div class="mg-row">
+        <label class="mg-radio">
+          on
+          <input type="radio" name="radio" checked />
+          <span class="mg-radio--icon"></span>
+        </label>
+        <label class="mg-radio">
+          off
+          <input type="radio" name="radio" />
+          <span class="mg-radio--icon"></span>
+        </label>
+        <label class="mg-radio">
+          disabled
+          <input type="radio" name="radio" disabled />
+          <span class="mg-radio--icon"></span>
+        </label>
+      </div>
       <label>Range</label>
-      <label for="myRange3">Input range</label>
       <input type="range" min="1" max="100" value="50" id="myRange3" />
       <label for="ageRangeField">Select (mg+)</label>
       <div class="mg-select">

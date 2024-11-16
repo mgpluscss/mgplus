@@ -5,7 +5,7 @@
     background-color: $color-quinary;
     border-radius: $control-radius;
     width: 100%;
-    height: map.get($font-sizes, "s");
+    height: $font-size-s;
     margin-bottom: 1.2rem;
 
     &>.mg-progress--bar {

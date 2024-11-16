@@ -38,15 +38,15 @@
 }
 
 .mg-tabs--item {
-  margin-left: 0.32rem; // Converted from 0.2em to rem
-  margin-right: 0.32rem; // Converted from 0.2em to rem
-  padding-left: 0.32rem; // Converted from 0.2em to rem
-  padding-right: 0.32rem; // Converted from 0.2em to rem
+  margin-left: 0.32rem;
+  margin-right: 0.32rem;
+  padding-left: 0.32rem;
+  padding-right: 0.32rem;
 }
 
 .mg-tabs--content {
   display: none;
-  padding-bottom: 1.6rem; // Converted from 1em to rem
+  padding-bottom: 1.6rem;
   border-bottom: 0.15rem solid transparent;
   border-color: $color-quaternary;
   clear: both;
