@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: "build lib and deploy demo"
+        uses: ./.github/actions/build-action
+        id: "build_action"
+        with:
+          stage: "release"
       - uses: actions/setup-node@v1
         with:
           node-version: 14
