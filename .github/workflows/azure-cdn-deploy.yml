@@ -1,6 +1,6 @@
 # mgplus workflow
 
-name: Azure CDN and Demo CI/CD
+name: Azure CDN and deploy demo CI/CD
 env:
   AZURE_STORAGE_SERVICE_ENDPOINT: https://stevodocs.blob.core.windows.net/
   AZURE_STORAGE_AUTH_MODE: login
@@ -24,7 +24,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "build lib and deploy demo"
         id: "build_action"
         uses: ./.github/actions/build-action
         with:
@@ -43,7 +43,7 @@ jobs:
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/${{ steps.build_action.outputs.package_version }}"
+          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_version }}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
@@ -52,7 +52,7 @@ jobs:
             az extension add -n storage-preview -y
             az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
             az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-            az cdn endpoint purge -g rg-devops -n mgplus-beta --profile-name cdn-evo --content-paths '/*'
+            az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths '/*'
   deploy_preview:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
     runs-on: ubuntu-latest
@@ -62,7 +62,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "build lib and deploy demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -79,7 +79,7 @@ jobs:
         env:
           ACCOUNT_NAME: stevodocs
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/preview"
+          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_version }}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
@@ -97,7 +97,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "build lib and deploy demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -114,7 +114,7 @@ jobs:
         env:
           ACCOUNT_NAME: stevodocs
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/release"
+          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_base_version }}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_base_version }}"
         with:
