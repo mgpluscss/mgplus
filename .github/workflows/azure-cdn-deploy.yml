@@ -43,7 +43,7 @@ jobs:
           ACCOUNT_NAME: stevodocs
           DEMO_ROOT_DIR: "$web"
           DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/beta"
+          DEMO_DEST_DIR: "$web/mgplus/${{ steps.build_action.outputs.package_version }}"
           DIST_SOURCE_DIR: dist
           DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
         with:
