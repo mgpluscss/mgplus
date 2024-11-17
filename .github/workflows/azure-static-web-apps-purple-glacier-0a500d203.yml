@@ -57,7 +57,7 @@ jobs:
         id: package-version
         uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: Set preview version
-        run: echo "PACKAGE_VERSION=v${{ steps.package-version.outputs.current-version}}-preview" >> $GITHUB_ENV
+        run: echo "PACKAGE_VERSION=v${{ steps.package-version.outputs.current-version}}" >> $GITHUB_ENV
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
