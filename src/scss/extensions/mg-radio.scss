@@ -1,4 +1,13 @@
 /* Customize the label (the container) */
+.mg-radio {
+  position: relative;
+  padding-left: 3rem;
+  margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+}
 
 /* Hide the browser's default radio button */
 .mg-radio input {
