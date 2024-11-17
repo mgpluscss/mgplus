@@ -34,7 +34,7 @@ runs:
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
         npm run test --if-present
       shell: bash
-        - name: "build minified main css library, js plugins and demo in standalone mode"
+    - name: "build minified main css library, js plugins and demo in standalone mode"
       if: ${{ inputs.stage == 'release' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
