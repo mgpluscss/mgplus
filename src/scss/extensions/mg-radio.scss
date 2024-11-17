@@ -1,76 +1,65 @@
-/* Customize the label (the container) */
-.mg-radio {
-  position: relative;
-  padding-left: 3rem;
-  margin-right: 2.5rem;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-}
+ /* Hide the browser's default radio button */
+ .mg-radio input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
+ }
 
-/* Hide the browser's default radio button */
-.mg-radio input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+ /* Create a custom radio button */
+ .mg-radio .mg-radio--icon {
+   position: absolute;
+   top: calc(50% - 1.2rem);
+   left: 0;
+   height: 2.4rem;
+   width: 2.4rem;
+   border-radius: 50%;
+   border-style: solid;
+   border-color: var(--mg-color-quaternary);
+   border-width: thin;
+   transition: all 0.4s;
+ }
 
-/* Create a custom radio button */
-.mg-radio .mg-radio--icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 2.4rem;
-  width: 2.4rem;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: var(--mg-color-quaternary);
-  border-width: thin;
-  transition: all 0.4s;
-}
+ /* On mouse-over, add a grey background color */
+ .mg-radio:hover input~.mg-radio--icon {
+   background-color: $color-secondary;
+ }
 
-/* On mouse-over, add a grey background color */
-.mg-radio:hover input~.mg-radio--icon {
-  background-color: $color-secondary;
-}
+ /* When the radio button is checked, add a blue background */
+ .mg-radio input:checked~.mg-radio--icon {
+   background-color: var(--mg-color-primary);
+ }
 
-/* When the radio button is checked, add a blue background */
-.mg-radio input:checked~.mg-radio--icon {
-  background-color: var(--mg-color-primary);
-}
+ /* Style the indicator (dot/circle) */
+ .mg-radio .mg-radio--icon::after {
+   top: 0.8rem;
+   left: 0.8rem;
+   width: 0.64rem;
+   height: 0.64rem;
+   border-radius: 50%;
+   background-color: var(--mg-color-light);
+   content: "";
+   position: absolute;
+   display: none;
+ }
 
-/* Style the indicator (dot/circle) */
-.mg-radio .mg-radio--icon::after {
-  top: 0.8rem;
-  left: 0.8rem;
-  width: 0.64rem;
-  height: 0.64rem;
-  border-radius: 50%;
-  background-color: var(--mg-color-light);
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.mg-radio input:checked~.mg-radio--icon::after {
-  display: block;
-}
+ /* Show the indicator (dot/circle) when checked */
+ .mg-radio input:checked~.mg-radio--icon::after {
+   display: block;
+ }
 
 
-.mg-radio input:disabled~.mg-radio--icon {
-  background-color: var(--mg-color-quinary);
-}
+ .mg-radio input:disabled~.mg-radio--icon {
+   background-color: var(--mg-color-quinary);
+ }
 
-.mg-radio input:focus~.mg-radio--icon {
-  border-color: var(--mg-color-primary);
-  border-style: dotted;
-  border-width: thin;
-}
+ .mg-radio input:focus~.mg-radio--icon {
+   border-color: var(--mg-color-primary);
+   border-style: dotted;
+   border-width: thin;
+ }
 
-.mg-label--inline {
-  font-weight: 400;
-}
+ .mg-label--inline {
+   font-weight: 400;
+ }

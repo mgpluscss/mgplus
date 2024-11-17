@@ -31,3 +31,16 @@
     }
   }
 }
+
+.mg-check,
+.mg-radio,
+.mg-toggle {
+  position: relative;
+  padding-left: 3rem;
+  margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+}
