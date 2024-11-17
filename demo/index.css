@@ -32,56 +32,56 @@ header {
 }
 
 .svg-icon-darkmode {
-  background-image: url("images/darkmode.svg");
+  background-image: url("./images/darkmode.svg");
 }
 
 .svg-icon-colors {
-  background-image: url("images/colors.svg");
+  background-image: url("./images/colors.svg");
 }
 
 .svg-icon-gears {
-  background-image: url("images/gears.svg");
+  background-image: url("./images/gears.svg");
 }
 
 .svg-icon-fr {
-  background-image: url("images/fr.svg");
+  background-image: url("./images/fr.svg");
 }
 
 .svg-icon-sp {
-  background-image: url("images/sp.svg");
+  background-image: url("./images/sp.svg");
 }
 
 .svg-icon-de {
-  background-image: url("images/de.svg");
+  background-image: url("./images/de.svg");
 }
 .svg-icon-search {
-  background-image: url("images/search.svg");
+  background-image: url("./images/search.svg");
 }
 .svg-icon-clipboard {
-  background-image: url("images/clipboard.svg");
+  background-image: url("./images/clipboard.svg");
 }
 
 .svg-icon-github {
-  background-image: url("images/github.svg");
+  background-image: url("./images/github.svg");
 }
 .svg-icon-night {
-  background-image: url("images/night-fog.svg");
+  background-image: url("./images/night-fog.svg");
 }
 .svg-icon-sun {
-  background-image: url("images/sun-fog.svg");
+  background-image: url("./images/sun-fog.svg");
 }
 
 .svg-icon-screen-s {
-  background-image: url("images/screen-s.svg");
+  background-image: url("./images/screen-s.svg");
 }
 .svg-icon-screen-m {
-  background-image: url("images/screen-m.svg");
+  background-image: url("./images/screen-m.svg");
 }
 .svg-icon-screen-l {
-  background-image: url("images/screen-l.svg");
+  background-image: url("./images/screen-l.svg");
 }
 .svg-icon-screen-xl {
-  background-image: url("images/screen-xl.svg");
+  background-image: url("./images/screen-xl.svg");
 }
 
 .grid-cel {
