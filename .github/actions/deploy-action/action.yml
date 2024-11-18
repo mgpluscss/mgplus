@@ -14,22 +14,22 @@ runs:
   using: "composite"
   steps:
     - name: deploy demo app to Azure static website
-        uses: azure/CLI@v1
-        env:
-          PACKAGE_VERSION: "${{ inputs.package_version }}"
-          ACCOUNT_NAME: stevodocs
-          DEMO_ROOT_DIR: "$web"
-          DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/demo/${{ inputs.package_version }}"
-          DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/${{ inputs.package_version }}"
-        with:
-          azcliversion: 2.30.0
-          inlineScript: |
-            az extension add -n storage-preview -y
-            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
-            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-            az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths '/*'
-            az cdn endpoint purge -g rg-devops -n cdn-mgplus --profile-name cdn-evo2 --content-paths '/*'
-          shell: bash
+      uses: azure/CLI@v1
+      env:
+        PACKAGE_VERSION: "${{ inputs.package_version }}"
+        ACCOUNT_NAME: stevodocs
+        DEMO_ROOT_DIR: "$web"
+        DEMO_SOURCE_DIR: demo_build
+        DEMO_DEST_DIR: "$web/mgplus/demo/${{ inputs.package_version }}"
+        DIST_SOURCE_DIR: dist
+        DIST_DEST_DIR: "mgpluscdn/${{ inputs.package_version }}"
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+          az extension add -n storage-preview -y
+          az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
+          az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+          az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths '/*'
+          az cdn endpoint purge -g rg-devops -n cdn-mgplus --profile-name cdn-evo2 --content-paths '/*'
+        shell: bash
 
