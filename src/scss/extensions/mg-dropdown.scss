@@ -22,11 +22,14 @@
   top: 100%;
   border-color: $color-quaternary;
   border-radius: $control-radius;
-  max-height: 50vh;
   max-width: 90vw;
-  overflow: hidden auto;
   z-index: $zindex-max;
 
+}
+
+.mg-dropdown--content>* {
+  overflow: hidden auto;
+  max-height: 50vh;
 }
 
 .opened+.mg-dropdown--content {
