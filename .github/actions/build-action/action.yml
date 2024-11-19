@@ -6,6 +6,11 @@ inputs:
     default: "beta"
     required: false
     type: string
+  release_update_only:
+    description: "Only update the release version"
+    default: "false"
+    required: false
+    type: boolean
 outputs:
   package_base_version:
     description: "Package main version related to given stage"
@@ -35,7 +40,7 @@ runs:
         npm run test --if-present
       shell: bash
     - name: "build minified main css library, js plugins and demo in standalone mode"
-      if: ${{ inputs.stage == 'release' }}
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == "false" }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
@@ -43,5 +48,16 @@ runs:
         npm run lint
         npm run build
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}
+        npm run test --if-present
+      shell: bash
+    - name: "update only release demo page"
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == "true" }}
+      env:
+        PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
+      run: |
+        npm install
+        npm run lint
+        npm run build
+        parcel build --target demo --no-source-maps --no-content-hash
         npm run test --if-present
       shell: bash
