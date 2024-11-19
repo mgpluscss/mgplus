@@ -58,6 +58,6 @@ runs:
         npm install
         npm run lint
         npm run build
-        parcel build --target demo --no-source-maps --no-content-hash
+        parcel build --target demo --no-source-maps --no-content-hash --public-url ./mgplus
         npm run test --if-present
       shell: bash
