@@ -24,7 +24,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and deploy demo"
+      - name: "build lib and demo"
         id: "build_action"
         uses: ./.github/actions/build-action
         with:
@@ -36,24 +36,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: deploy demo app to Azure static website
-        uses: azure/CLI@v1
-        env:
-          PACKAGE_VERSION: "${{ steps.build_action.outputs.package_version }}"
-          ACCOUNT_NAME: stevodocs
-          DEMO_ROOT_DIR: "$web"
-          DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_version }}"
-          DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
+      - name: "deploy lib and demo"
+        id: "deploy_action"
+        uses: ./.github/actions/deploy-action
         with:
-          azcliversion: 2.30.0
-          inlineScript: |
-            az extension add -n storage-preview -y
-            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
-            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-            az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths '/*'
-            az cdn endpoint purge -g rg-devops -n cdn-mgplus --profile-name cdn-evo2 --content-paths '/*'
+          package_version: ${{ steps.build_action.outputs.package_version }}
+          stage: "beta-${{ github.event.pull_request.number }}"
   deploy_preview:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
     runs-on: ubuntu-latest
@@ -63,7 +51,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and deploy demo"
+      - name: "build lib and demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -75,20 +63,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: deploy demo site to Azure static website
-        uses: azure/CLI@v1
-        env:
-          ACCOUNT_NAME: stevodocs
-          DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_version }}"
-          DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_version }}"
+      - name: "deploy lib and demo"
+        id: "deploy_action"
+        uses: ./.github/actions/deploy-action
         with:
-          azcliversion: 2.30.0
-          inlineScript: |
-            az extension add -n storage-preview -y
-            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
-            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+          package_version: ${{ steps.build_action.outputs.package_version }}
+          stage: "preview"
   deploy_release:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') == true
     runs-on: ubuntu-latest
@@ -98,7 +78,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and deploy demo"
+      - name: "build lib and demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -110,17 +90,9 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: deploy demo site to Azure static website
-        uses: azure/CLI@v1
-        env:
-          ACCOUNT_NAME: stevodocs
-          DEMO_SOURCE_DIR: demo_build
-          DEMO_DEST_DIR: "$web/mgplus/demo/${{ steps.build_action.outputs.package_base_version }}"
-          DIST_SOURCE_DIR: dist
-          DIST_DEST_DIR: "mgpluscdn/${{ steps.build_action.outputs.package_base_version }}"
+      - name: "deploy lib and demo"
+        id: "deploy_action"
+        uses: ./.github/actions/deploy-action
         with:
-          azcliversion: 2.30.0
-          inlineScript: |
-            az extension add -n storage-preview -y
-            az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
-            az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
+          package_version: ${{ steps.build_action.outputs.package_base_version }}
+          stage: "release"

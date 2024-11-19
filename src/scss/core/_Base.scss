@@ -14,16 +14,8 @@
 html,
 body {
   box-sizing: border-box;
-  font-size: 68%;
+  font-size: 65%;
   overflow-x: hidden;
-}
-
-@media screen and (max-width: $screen-l) {
-  html,
-  body {
-    font-size: 62%;
-  }
-
 }
 
 // Default body styles

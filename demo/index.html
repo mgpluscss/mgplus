@@ -18,57 +18,59 @@
 
 <body>
   <header>
+
     <nav class="mg-fixed-top mg-w-full mg-pad1 ">
-      <div class="mg-w-full mg-row mg-x--middle mg-x--between">
-        <div class="mg-group mg-pad-l1">
-          <div class="mg-dropdown">
-            <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-darkmode"></i>
-            </button>
-            <div class="mg-dropdown--content">
-              <div class="mg-nav">
-                <ul>
-                  <li data-toggle="theme" data-value="light">Light</li>
-                  <li data-toggle="theme" data-value="dark">Dark</li>
-                  <li data-toggle="theme" data-value="auto">Auto</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="mg-dropdown">
-            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-gears"></i>
-            </button>
-            <div class="mg-dropdown--content  mg-pad-r3 mg-pad-l1">
-              <div class="mg-col  mg-x--start">
-                <label for="range2">Control radius</label>
-                <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
-                <label for="range1">Input radius</label>
-                <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
-              </div>
-            </div>
-          </div>
-          <div class="mg-dropdown">
-            <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-colors"></i>
-            </button>
-            <div class="mg-dropdown--content">
-              <div class="mg-row">
-                <div id="picker"></div>
-              </div>
+      <div class="mg-group mg-pad-l1">
+        <div class="mg-dropdown">
+          <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+            <i class="mg-icon svg-icon-darkmode"></i>
+          </button>
+          <div class="mg-dropdown--content">
+            <div class="mg-nav">
+              <ul>
+                <li data-toggle="theme" data-value="light">Light</li>
+                <li data-toggle="theme" data-value="dark">Dark</li>
+                <li data-toggle="theme" data-value="auto">Auto</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="mg-right mg-dropdown mg-xl-display">
-          <button title="menu" data-toggle="dropdown" class="mg-rounded-full mg-h5 mg-w5">
-            <i class="mg-icon mg-icon--3xl icon-menu"></i>
+        <div class="mg-dropdown">
+          <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+            <i class="mg-icon svg-icon-gears"></i>
           </button>
-          <div class="mg-dropdown--content mg-right mg-nav mg-w50vh mg-max-h80vh">
-            <ul class="mg-text-l mg-text-bold" data-toggle="navlinks">
+          <div class="mg-dropdown--content  mg-pad-r3 mg-pad-l1">
+            <div class="mg-col  mg-x--start">
+              <label for="range2">Control radius</label>
+              <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
+              <label for="range1">Input radius</label>
+              <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
+            </div>
+          </div>
+        </div>
+        <div class="mg-dropdown">
+          <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+            <i class="mg-icon svg-icon-colors"></i>
+          </button>
+          <div class="mg-dropdown--content">
+            <div class="mg-row">
+              <div id="picker"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mg-right mg-dropdown mg-xl-display">
+        <button title="menu" data-toggle="dropdown" class="mg-rounded-full mg-h5 mg-w5">
+          <i class="mg-icon mg-icon--3xl icon-menu"></i>
+        </button>
+        <div class="mg-dropdown--content mg-right">
+          <div class="mg-nav">
+            <ul data-toggle="navlinks" class="mg-text-bold">
             </ul>
           </div>
         </div>
       </div>
+
     </nav>
     <img alt="logo" class="logo-animation" src="./images/logo.svg" height="120" />
     <div class="mg-light">
@@ -102,11 +104,12 @@
     </svg>
 
   </header>
+
   <div
-    class="mg-fixed mg-top5 mg-right mg-bg-initial mg-rounded mg-border-thin mg-marg1 mg-pad-r1 mg-pad-l1 mg-xl-hidden">
-    <div class=" mg-max-h90vh mg-overflow-y-auto">
+    class="mg-fixed mg-top5 mg-right mg-bg-initial mg-rounded mg-border-thin mg-marg-l1 mg-marg-r1 mg-pad1 mg-xl-hidden">
+    <div class=" mg-max-h80vh mg-overflow-y-auto">
       <div class="mg-nav">
-        <ul data-toggle="navlinks">
+        <ul data-toggle="navlinks" class="mg-text-bold">
         </ul>
       </div>
     </div>

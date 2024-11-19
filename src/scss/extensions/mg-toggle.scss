@@ -1,10 +1,5 @@
 .mg-toggle {
-  position: relative;
   padding-left: 5.6rem;
-  margin-right: 2.5rem;
-  margin-bottom: 1.5rem;
-  cursor: pointer;
-  user-select: none;
 }
 
 /* Hide the browser's default checkbox */
@@ -20,7 +15,7 @@
 .mg-toggle .mg-icon-toggle {
   border-radius: $control-radius;
   position: absolute;
-  top: 0;
+  top: calc(50% - 1.2rem);
   left: 0;
   height: 2.72rem;
   width: 4.8rem;

@@ -2,7 +2,7 @@
   &::before {
     background: currentcolor;
     box-shadow: 0 -0.6rem, 0 0.6rem;
-    border: calc($icon-border-width / 1.6) solid currentcolor;
+    border: $icon-border-width/3 solid currentcolor;
     width: 75%;
   }
 }
