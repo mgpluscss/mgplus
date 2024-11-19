@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy mgplus demo page
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -30,6 +30,7 @@ jobs:
         id: "build_action"
         with:
           stage: "release"
+          release_update_only: "true"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
