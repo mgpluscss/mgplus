@@ -2,14 +2,14 @@
 
 ![](/demo/images/logo.svg)
 
-## A mini css library based on Milligram
+## A micro css library based on Milligram
 ### Build pretty websites with just a few drops of css
 
 **[doc and demo](https://www.mgpluscss.com)**
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-[CDN direct link](https://cdn.mgpluscss.com/v1.3.3/css/mgplus.css)
+[CDN direct link](https://cdn.mgpluscss.com/v1.3.4/css/mgplus.css)
 
 Striking the perfect balance between features and simplicity
 
@@ -32,6 +32,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Easy to extend
 * Lightweight with only essentials features
 * Responsive and mobile first design
+* Pure css, custom js required only to toggle mgplus classes
 
 ### Features
 
