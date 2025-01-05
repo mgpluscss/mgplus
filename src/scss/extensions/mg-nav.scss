@@ -1,3 +1,7 @@
+.mg-nav {
+  margin-bottom: 1.2rem;
+}
+
 .mg-nav ul {
   margin-bottom: 0;
   padding: 0.5rem;
@@ -52,8 +56,40 @@
   overflow-x: auto;
 }
 
-
-
 .mg-nav--inline ul>li:not(.mg-right) {
   float: left;
+}
+
+.mg-nav.mg-nav--buttons {
+  background-color: var(--mg-color-quinary);
+  color: var(--mg-color-secondary);
+  border-radius: var(--mg-control-radius);
+
+}
+
+.mg-nav.mg-nav--buttons ul>li {
+  border: none;
+  padding-bottom: 0;
+}
+
+.mg-nav.mg-nav--buttons ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  overflow-x: auto;
+  padding-bottom: 0;
+}
+
+.mg-nav.mg-nav--buttons>ul>li>button,
+.mg-nav.mg-nav--buttons>ul>li>.mg-button {
+  background-color: transparent;
+  color: var(--mg-color-secondary);
+
+}
+
+.mg-nav.mg-nav--buttons>ul>li.active>button,
+.mg-nav.mg-nav--buttons>ul>li.active>.mg-button {
+  background-color: var(--mg-color-primary);
+  color: var(--mg-color-light);
+
 }
