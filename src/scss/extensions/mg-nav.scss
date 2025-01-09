@@ -55,7 +55,16 @@
     background-color: var(--mg-color-quinary);
     color: var(--mg-color-secondary);
     border-radius: var(--mg-control-radius);
+  }
 
+  &.mg-nav--buttons ul {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    padding-bottom: 0;
+    align-items: baseline;
+    overflow-x: auto;
+    padding-bottom: 0;
   }
 
   &.mg-nav--buttons ul>li {
@@ -64,13 +73,7 @@
     padding-bottom: 0;
   }
 
-  &.mg-nav--buttons ul {
 
-    flex-flow: row nowrap;
-    align-items: baseline;
-    overflow-x: auto;
-    padding-bottom: 0;
-  }
 
   &.mg-nav--buttons>ul>li>button,
   &.mg-nav--buttons>ul>li>.mg-button {
