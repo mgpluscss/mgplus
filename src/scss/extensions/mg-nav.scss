@@ -1,15 +1,13 @@
-.mg-nav {
+ul.mg-nav {
   margin-bottom: 1.2rem;
+  margin-bottom: 0;
+  padding: 0.5rem;
+  margin-left: 0;
+  margin-top: 0;
+  overflow: auto;
 
-  & ul {
-    margin-bottom: 0;
-    padding: 0.5rem;
-    margin-left: 0;
-    margin-top: 0;
-    overflow: auto;
-  }
 
-  & ul>li {
+  &>li {
     white-space: nowrap;
     list-style-type: none;
     margin: 0;
@@ -22,7 +20,7 @@
     border-bottom: 0.125rem solid $color-quinary;
   }
 
-  & ul>li.active {
+  &>li.active {
     color: currentcolor;
     border-left: 0.3rem solid $color-primary;
     font-weight: bold;
@@ -30,7 +28,7 @@
 
 
 
-  & ul>li>a {
+  &>li>a {
     width: 100%;
     cursor: pointer;
     text-decoration: none;
@@ -42,10 +40,6 @@
   }
 
   &.mg-nav--inline {
-    max-width: 100%;
-  }
-
-  &.mg-nav--inline ul {
     display: flex;
     flex-flow: row nowrap;
     align-items: baseline;
@@ -57,43 +51,41 @@
     }
   }
 
-  &.mg-nav--inline>ul>li.active {
+
+  &.mg-nav--inline>li.active {
     border: none;
     border-bottom: 0.3rem solid $color-primary;
   }
 
   &.mg-nav--buttons {
-    background-color: var(--mg-color-quinary);
-    color: var(--mg-color-secondary);
-    border-radius: var(--mg-control-radius);
+
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    padding-bottom: 0;
+    align-items: baseline;
 
 
-    & ul {
-      display: flex;
-      flex-wrap: wrap;
-      border: none;
-      padding-bottom: 0;
-      align-items: baseline;
-    }
-
-    & ul>li {
+    &>li {
       border: none;
       padding-bottom: 0;
     }
 
-    &>ul>li>button,
-    &>ul>li>.mg-button {
+    &>li>button,
+    &>li>.mg-button {
       background-color: transparent;
       color: var(--mg-color-secondary);
 
     }
 
-    &>ul>li.active>button,
-    &>ul>li.active>.mg-button {
+    &>li.active>button,
+    &>li.active>.mg-button {
       background-color: var(--mg-color-primary);
       color: var(--mg-color-light);
 
     }
+
+
   }
 
 }
