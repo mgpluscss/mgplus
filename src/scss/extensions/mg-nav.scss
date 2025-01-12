@@ -6,7 +6,6 @@ ul.mg-nav {
   margin-top: 0;
   overflow: auto;
 
-
   &>li {
     white-space: nowrap;
     list-style-type: none;
@@ -25,8 +24,6 @@ ul.mg-nav {
     border-left: 0.3rem solid $color-primary;
     font-weight: bold;
   }
-
-
 
   &>li>a {
     width: 100%;
@@ -58,7 +55,6 @@ ul.mg-nav {
   }
 
   &.mg-nav--buttons {
-
     display: flex;
     flex-wrap: wrap;
     border: none;
