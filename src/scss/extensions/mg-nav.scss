@@ -5,7 +5,6 @@ ul.mg-nav {
   margin-left: 0;
   margin-top: 0;
   overflow: auto;
-  flex-direction: column;
 
 
   &>li {
@@ -39,43 +38,38 @@ ul.mg-nav {
   }
 
   &.mg-nav--inline {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: baseline;
+    display: flex;
+
 
     &>li {
       display: flex;
       flex-wrap: nowrap;
 
     }
-  }
 
-
-  &.mg-nav--inline>li.active {
-    border: none;
-    border-bottom: 0.3rem solid $color-primary;
+    &>li.active {
+      border: none;
+      border-bottom: 0.3rem solid $color-primary;
+    }
   }
 
   &.mg-nav--buttons {
     display: inline-flex;
     flex-flow: row wrap;
     border: none;
-    padding-bottom: 0;
-    align-items: baseline;
     background-color: $color-quinary;
     border-radius: var(--mg-control-radius);
 
-
-    &>li {
+    &>li,
+    &>li.active {
       border: none;
-      padding-bottom: 0;
     }
 
     &>li>button,
     &>li>.mg-button {
       background-color: transparent;
       color: var(--mg-color-secondary);
-
+      margin-bottom: 0;
     }
 
     &>li.active>button,
@@ -84,8 +78,6 @@ ul.mg-nav {
       color: var(--mg-color-light);
 
     }
-
-
   }
 
 }
