@@ -40,7 +40,7 @@ jobs:
         id: "deploy_action"
         uses: ./.github/actions/deploy-action
         with:
-          package_version: "${{ steps.build_action.outputs.package_version }}-beta"
+          package_version: "${{ steps.build_action.outputs.package_version }}"
           stage: "beta"
   deploy_preview:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
