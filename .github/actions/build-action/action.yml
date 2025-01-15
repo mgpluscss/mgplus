@@ -28,7 +28,7 @@ runs:
     - name: get-npm-version
       id: package-version
       uses: martinbeentjes/npm-get-version-action@v1.3.1
-    - name: "BETA-PREVIEW build minified main css library, js plugins and demo in standalone mode"
+    - name: BETA-PREVIEW build minified main css library, js plugins and demo in standalone mode
       if: ${{ inputs.stage != 'release' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
@@ -38,7 +38,7 @@ runs:
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
         npm run test --if-present
       shell: bash
-    - name: "RELEASE - build minified main css library, js plugins and demo in standalone mode"
+    - name: RELEASE - build minified main css library, js plugins and demo in standalone mode
       if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "false" }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
@@ -48,7 +48,7 @@ runs:
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}
         npm run test --if-present
       shell: bash
-    - name: "RELEASE - update only release demo page"
+    - name: RELEASE - update only release demo page
       if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "true" }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
