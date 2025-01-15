@@ -53,9 +53,9 @@
     }
   },
   "devDependencies": {
+    "@parcel/reporter-dev-server": "^2.13.3",
     "@parcel/transformer-sass": "^2.13.3",
     "@plasmohq/parcel-transformer-inject-env": "^0.2.11",
-    "@parcel/reporter-dev-server": "^2.13.3",
     "parcel": "^2.13.3",
     "postcss-url": "^10.1.3",
     "posthtml-include": "^1.7.4",

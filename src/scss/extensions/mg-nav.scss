@@ -58,7 +58,7 @@ ul.mg-nav {
     flex-flow: row wrap;
     border: none;
     background-color: $color-quinary;
-    border-radius: var(--mg-control-radius);
+    border-radius: $control-radius;
 
     &>li,
     &>li.active {
@@ -68,14 +68,13 @@ ul.mg-nav {
     &>li>button,
     &>li>.mg-button {
       background-color: transparent;
-      color: var(--mg-color-secondary);
       margin-bottom: 0;
     }
 
     &>li.active>button,
     &>li.active>.mg-button {
-      background-color: var(--mg-color-primary);
-      color: var(--mg-color-light);
+      background-color: $color-primary;
+      color: $color-light;
 
     }
   }
