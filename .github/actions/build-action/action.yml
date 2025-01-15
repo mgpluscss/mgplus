@@ -39,7 +39,7 @@ runs:
         npm run test --if-present
       shell: bash
     - name: "RELEASE - build minified main css library, js plugins and demo in standalone mode"
-      if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "false" }}
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == 'false' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
@@ -49,7 +49,7 @@ runs:
         npm run test --if-present
       shell: bash
     - name: "RELEASE - update only release demo page"
-      if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "true" }}
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == 'true' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
