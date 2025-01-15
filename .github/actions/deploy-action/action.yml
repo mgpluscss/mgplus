@@ -29,5 +29,5 @@ runs:
           az extension add -n storage-preview -y
           az storage blob upload-batch -s  $DEMO_SOURCE_DIR -d $DEMO_DEST_DIR --account-name $ACCOUNT_NAME
           az storage blob upload-batch -s  $DIST_SOURCE_DIR -d $DIST_DEST_DIR --account-name $ACCOUNT_NAME
-          az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths '/${{ inputs.package_version }}'
-          az cdn endpoint purge -g rg-devops -n cdn-mgplus --profile-name cdn-evo2 --content-paths '/${{ inputs.package_version }}'
+          az cdn endpoint purge -g rg-devops -n mgplus-demo --profile-name cdn-evo --content-paths /${{ inputs.package_version }}
+          az cdn endpoint purge -g rg-devops -n cdn-mgplus --profile-name cdn-evo2 --content-paths /${{ inputs.package_version }}
