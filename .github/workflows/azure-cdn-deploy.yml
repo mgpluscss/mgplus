@@ -24,7 +24,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "BETA - build lib and demo"
         id: "build_action"
         uses: ./.github/actions/build-action
         with:
@@ -36,7 +36,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: "deploy lib and demo"
+      - name: "BETA - deploy lib and demo"
         id: "deploy_action"
         uses: ./.github/actions/deploy-action
         with:
@@ -51,7 +51,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "PREVIEW - build lib and demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -63,7 +63,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: "deploy lib and demo"
+      - name: "PREVIEW - deploy lib and demo"
         id: "deploy_action"
         uses: ./.github/actions/deploy-action
         with:
@@ -78,7 +78,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v3
-      - name: "build lib and demo"
+      - name: "RELEASE - build lib and demo"
         uses: ./.github/actions/build-action
         id: "build_action"
         with:
@@ -90,7 +90,7 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           enable-AzPSSession: true
-      - name: "deploy lib and demo"
+      - name: "RELEASE - deploy lib and demo"
         id: "deploy_action"
         uses: ./.github/actions/deploy-action
         with:
