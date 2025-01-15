@@ -18,7 +18,7 @@ jobs:
   deploy_pullrequest:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
-    name: CDN - deploy PR version
+    name: CDN - deploy beta version
     permissions:
       contents: read
       id-token: write
