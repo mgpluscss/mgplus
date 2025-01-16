@@ -1,11 +1,12 @@
-ul.mg-nav {
+.mg-nav {
   margin-bottom: 1.2rem;
   margin-bottom: 0;
   padding: 0.5rem;
   margin-left: 0;
   margin-top: 0;
   overflow: auto;
-
+  display: flex;
+  flex-direction: column;
 
   &>li {
     white-space: nowrap;
@@ -37,46 +38,48 @@ ul.mg-nav {
     background-color: $color-quinary;
   }
 
-  &.mg-nav--inline {
+}
+
+.mg-nav--inline {
+  flex-direction: row;
+
+
+  &>li {
     display: flex;
+    flex-wrap: nowrap;
 
-
-    &>li {
-      display: flex;
-      flex-wrap: nowrap;
-
-    }
-
-    &>li.active {
-      border: none;
-      border-bottom: 0.3rem solid $color-primary;
-    }
   }
 
-  &.mg-nav--buttons {
-    display: inline-flex;
-    flex-flow: row wrap;
+  &>li.active {
     border: none;
-    background-color: $color-quinary;
-    border-radius: $control-radius;
+    border-bottom: 0.3rem solid $color-primary;
+  }
+}
 
-    &>li,
-    &>li.active {
-      border: none;
-    }
+.mg-nav--buttons {
 
-    &>li>button,
-    &>li>.mg-button {
-      background-color: transparent;
-      margin-bottom: 0;
-    }
+  display: inline-flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  border: none;
+  background-color: $color-quinary;
+  border-radius: $control-radius;
 
-    &>li.active>button,
-    &>li.active>.mg-button {
-      background-color: $color-primary;
-      color: $color-light;
-
-    }
+  & li,
+  & li.active {
+    border: none;
   }
 
+  & li>button,
+  & li>.mg-button {
+    background-color: transparent;
+    margin-bottom: 0;
+  }
+
+  & li.active>button,
+  & li.active>.mg-button {
+    background-color: $color-primary;
+    color: $color-light;
+
+  }
 }
