@@ -1,12 +1,11 @@
 .mg-nav {
-  margin-bottom: 1.2rem;
-  margin-bottom: 0;
   padding: 0.5rem;
   margin-left: 0;
   margin-top: 0;
   overflow: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
 
   &>li {
     white-space: nowrap;
@@ -57,9 +56,12 @@
 }
 
 .mg-nav--buttons {
+  margin: 0.5rem;
   display: inline-flex;
   flex-direction: row;
   flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
   border: none;
   background-color: $color-quinary;
   border-radius: $control-radius;
@@ -69,8 +71,13 @@
     border: none;
   }
 
+  & li:hover {
+    background-color: transparent;
+  }
+
   & li>button,
   & li>.mg-button {
+    border: none;
     background-color: transparent;
     margin-bottom: 0;
   }
