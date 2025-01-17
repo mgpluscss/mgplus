@@ -7,7 +7,7 @@
   flex-direction: column;
   margin-bottom: 0;
 
-  &>li {
+  & li {
     white-space: nowrap;
     list-style-type: none;
     margin: 0;
@@ -20,13 +20,13 @@
     border-bottom: 0.125rem solid $color-quinary;
   }
 
-  &>li.active {
+  & li.active {
     color: currentcolor;
     border-left: 0.3rem solid $color-primary;
     font-weight: bold;
   }
 
-  &>li>a {
+  & li>a {
     width: 100%;
     cursor: pointer;
     text-decoration: none;
@@ -42,14 +42,14 @@
 .mg-nav--inline {
   flex-direction: row;
 
-
-  &>li {
-    display: flex;
+  /* stylelint-disable */
+  & li {
     flex-wrap: nowrap;
 
   }
 
-  &>li.active {
+  /* stylelint-enable */
+  & li.active {
     border: none;
     border-bottom: 0.3rem solid $color-primary;
   }
@@ -58,19 +58,19 @@
 .mg-nav--buttons {
   margin: 0.5rem;
   display: inline-flex;
-  flex-direction: row;
   flex-flow: row wrap;
   justify-content: center;
-  align-content: center;
   border: none;
   background-color: $color-quinary;
   border-radius: $control-radius;
 
+  /* stylelint-disable */
   & li,
   & li.active {
     border: none;
   }
 
+  /* stylelint-enable */
   & li:hover {
     background-color: transparent;
   }
