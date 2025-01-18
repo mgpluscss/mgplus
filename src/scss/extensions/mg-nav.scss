@@ -2,17 +2,17 @@
   padding: 0.5rem;
   margin-left: 0;
   margin-top: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
 
   & li {
-    white-space: nowrap;
+    white-space: wrap;
     list-style-type: none;
     margin: 0;
     display: flex;
-    flex-wrap: nowrap;
     padding: 0.5rem;
     text-decoration: none;
     color: $color-secondary;
@@ -40,7 +40,9 @@
 }
 
 .mg-nav--inline {
+  overflow-x: auto;
   flex-direction: row;
+
 
   /* stylelint-disable */
   & li {
@@ -56,11 +58,8 @@
 }
 
 .mg-nav--buttons {
-  margin: 0.5rem;
-  display: inline-flex;
-  flex-flow: row wrap;  
-  border: none;
-  border-radius: $control-radius;
+  overflow-x: auto;
+  flex-direction: row;
 
   /* stylelint-disable */
   & li,
