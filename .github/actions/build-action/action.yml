@@ -34,7 +34,8 @@ runs:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
       run: |
         npm install
-        npm run lint        
+        npm run lint
+        npm run build:lib        
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
         npm run test --if-present
       shell: bash
@@ -44,7 +45,8 @@ runs:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
         npm install
-        npm run lint        
+        npm run lint
+        npm run build:lib         
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}
         npm run test --if-present
       shell: bash
@@ -54,7 +56,8 @@ runs:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
         npm install
-        npm run lint        
+        npm run lint
+        npm run build:lib         
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./
         npm run test --if-present
       shell: bash
