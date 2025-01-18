@@ -22,6 +22,10 @@
     flex-wrap: wrap;
 }
 
+.mg-nowrap {
+    flex-wrap: nowrap;
+}
+
 .mg-none {
     display: none;
 }
@@ -128,4 +132,8 @@
 .mg-border-bolder {
     border-width: 0.31rem;
     border-style: solid;
+}
+
+.mg-pointer {
+    cursor: pointer;
 }
