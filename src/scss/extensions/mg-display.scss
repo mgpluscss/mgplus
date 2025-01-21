@@ -2,16 +2,28 @@
     display: block;
 }
 
+.mg-inline {
+    display: inline;
+}
+
 .mg-inline-block {
     display: inline-block;
+}
+
+.mg-inline-table {
+    display: inline-table;
 }
 
 .mg-inline-flex {
     display: inline-flex;
 }
 
-.mg-inline {
-    display: inline;
+.mg-wrap {
+    flex-wrap: wrap;
+}
+
+.mg-nowrap {
+    flex-wrap: nowrap;
 }
 
 .mg-none {
@@ -120,4 +132,8 @@
 .mg-border-bolder {
     border-width: 0.31rem;
     border-style: solid;
+}
+
+.mg-pointer {
+    cursor: pointer;
 }

@@ -18,7 +18,7 @@ jobs:
   deploy_pullrequest:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
-    name: CDN - deploy PR version
+    name: CDN - deploy beta version
     permissions:
       contents: read
       id-token: write
@@ -40,8 +40,8 @@ jobs:
         id: "deploy_action"
         uses: ./.github/actions/deploy-action
         with:
-          package_version: ${{ steps.build_action.outputs.package_version }}
-          stage: "beta-${{ github.event.pull_request.number }}"
+          package_version: "${{ steps.build_action.outputs.package_version }}"
+          stage: "beta"
   deploy_preview:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/master') == true
     runs-on: ubuntu-latest

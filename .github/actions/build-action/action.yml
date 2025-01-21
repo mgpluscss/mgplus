@@ -28,36 +28,36 @@ runs:
     - name: get-npm-version
       id: package-version
       uses: martinbeentjes/npm-get-version-action@v1.3.1
-    - name: "build minified main css library, js plugins and demo in standalone mode"
+    - name: BETA-PREVIEW build minified main css library, js plugins and demo in standalone mode
       if: ${{ inputs.stage != 'release' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
       run: |
         npm install
         npm run lint
-        npm run build
+        npm run build:lib        
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
         npm run test --if-present
       shell: bash
-    - name: "build minified main css library, js plugins and demo in standalone mode"
-      if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "false" }}
+    - name: "RELEASE - build minified main css library, js plugins and demo in standalone mode"
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == 'false' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
         npm install
         npm run lint
-        npm run build
+        npm run build:lib         
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./v${{ steps.package-version.outputs.current-version }}
         npm run test --if-present
       shell: bash
-    - name: "update only release demo page"
-      if: ${{ inputs.stage == 'release' }} && {{ inputs.release_update_only == "true" }}
+    - name: "RELEASE - update only release demo page"
+      if: ${{ inputs.stage == 'release' && inputs.release_update_only == 'true' }}
       env:
         PACKAGE_VERSION: v${{ steps.package-version.outputs.current-version }}
       run: |
         npm install
         npm run lint
-        npm run build
+        npm run build:lib         
         parcel build --target demo --no-source-maps --no-content-hash --public-url ./
         npm run test --if-present
       shell: bash

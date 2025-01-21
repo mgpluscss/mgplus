@@ -16,7 +16,7 @@
   transition: all 0.2s;
 }
 
-@mixin mg-icon-toggle {
+@mixin mg-toggle-effect {
   transform: rotate(-45deg);
   top: calc(50% - 0.5rem);
 }
@@ -30,7 +30,7 @@
 
   &::after {
     @include mg-inline-css-icon;
-    @include mg-icon-toggle;
+    @include mg-toggle-effect;
   }
 
   &.opened::after {
@@ -46,7 +46,7 @@
 
   &::after {
     @include mg-inline-css-icon;
-    @include mg-icon-toggle;
+    @include mg-toggle-effect;
 
     transform: rotate(-135deg);
     top: 40%;

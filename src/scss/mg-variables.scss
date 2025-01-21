@@ -22,14 +22,14 @@ $version: "$PACKAGE_VERSION";
   --mg-color-secondary: hsl(255deg 0% 20%);
   --mg-color-tertiary: hsl(255deg 0% 40%);
   --mg-color-quaternary: hsl(255deg 0% 60%);
-  --mg-color-quinary: hsl(255deg 0% 80%);
+  --mg-color-quinary: hsl(255deg 0% 90%);
 
   //dark-colors 
   --mg-dark-color-initial: var(--mg-color-dark);
   --mg-dark-color-secondary: hsl(255deg 0% 80%);
   --mg-dark-color-tertiary: hsl(255deg 0% 70%);
   --mg-dark-color-quaternary: hsl(255deg 0% 50%);
-  --mg-dark-color-quinary: hsl(255deg 0% 30%);
+  --mg-dark-color-quinary: hsl(255deg 0% 25%);
 }
 
 //
@@ -148,5 +148,6 @@ $color-map: (
   blue: $color-blue,
   red: $color-red,
   green: $color-green,
-  orange: $color-orange
+  orange: $color-orange,
+  transparent: transparent
 );

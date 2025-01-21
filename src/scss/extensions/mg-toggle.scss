@@ -12,7 +12,7 @@
 }
 
 /* Create a custom checkbox */
-.mg-toggle .mg-icon-toggle {
+.mg-toggle .mg-toggle--icon {
   border-radius: $control-radius;
   position: absolute;
   top: calc(50% - 1.2rem);
@@ -26,17 +26,17 @@
 }
 
 /* On mouse-over, add a grey background color */
-.mg-toggle input~.mg-icon-toggle {
+.mg-toggle input~.mg-toggle--icon {
   background-color: $color-quaternary;
 }
 
 /* When the checkbox is checked, add a blue background */
-.mg-toggle input:checked~.mg-icon-toggle {
+.mg-toggle input:checked~.mg-toggle--icon {
   background-color: $color-primary;
 }
 
-/* Create the mg-icon-toggle/indicator (hidden when not checked) */
-.mg-toggle .mg-icon-toggle::after {
+/* Create the mg-toggle--icon/indicator (hidden when not checked) */
+.mg-toggle .mg-toggle--icon::after {
   border: none;
   border-radius: $control-radius;
   position: absolute;
@@ -50,18 +50,18 @@
   box-shadow: $control-shadow;
 }
 
-/* Show the mg-icon-toggle when checked */
-.mg-toggle input:checked~.mg-icon-toggle::after {
+/* Show the mg-toggle-icon when checked */
+.mg-toggle input:checked~.mg-toggle--icon::after {
   left: 2.08rem;
 }
 
 /* disabled state */
-.mg-toggle input:disabled~.mg-icon-toggle {
+.mg-toggle input:disabled~.mg-toggle--icon {
   background-color: $color-quinary;
   opacity: 0.6;
 }
 
-.mg-toggle input:focus~.mg-icon-toggle {
+.mg-toggle input:focus~.mg-toggle--icon {
   border-color: $color-primary;
   border-style: dotted;
   border-width: thin;

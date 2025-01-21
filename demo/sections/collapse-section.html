@@ -1,36 +1,50 @@
 <section id="Collapse">
   <h2>Collapse</h2>
+  <code>mg-collapse +/-[opened]</code>
   <p>Collapsible elements are used to hide or show content based on user interaction. Below, you will find examples of
     collapsible elements in their default state, as well as examples of how to trigger the collapse and expand
     functionality.</p>
-  <i>Collapse needs js to toggle class visibility</i>
-  <div class="mg-col mg-m6" id="collapse-example" data-toggle="htmlpreview">
+  <p>Place <code>mg-collapse</code> class to a clickable element</p>
+  <p>Place <code>mg-collapse--content</code> class to a sibling content element</p>
+  <p><code>opened</code> class will toggle visibility of the collapsible content inside
+    <code>mg-collapse--content</code>
+  </p>
+  <p>Place special inline icon <code>mg-icon-collapse</code> to reflect state of collapsible content</p>
+
+
+  <div class="mg-col mg-m6" data-toggle="htmlpreview">
     <button class="mg-button mg-button--outline mg-collapse mg-icon-collapse" data-toggle="collapse">collapse
       Button</button>
     <div class="mg-collapse--content">
       Content 1
     </div>
+  </div>
+
+  <div data-toggle="htmlpreview">
     <span class="mg-collapse mg-icon-collapse" data-toggle="collapse">Collapse div</span>
     <div class="mg-collapse--content">
-      Content 2
+      div content
     </div>
   </div>
+  </div>
   <h3>Collapsible navs</h3>
-  <div id="collapse-navs-example" data-toggle="htmlpreview" data-toggle="nav">
-    <div class="mg-nav mg-m6" data-toggle="nav">
-      <ul>
-        <li class="active"><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li class="mg-collapse mg-icon-nav" data-toggle="collapse"><a href="#contact">Contact</a>
-        </li>
-        <ul class="mg-collapse--content">
+  Here is a composition of navs and collapse elements
+  <div data-toggle="htmlpreview" data-toggle="nav">
+    <ul class="mg-nav" data-toggle="nav">
+      <li class="active"><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li class="mg-collapse mg-icon-nav" data-toggle="collapse"><a href="#contact">Contact</a>
+      </li>
+      <div class="mg-collapse--content">
+        <ul class="mg-nav">
           <li>Contact sales</li>
           <li>Contact customer</li>
           <li>Contact care</li>
         </ul>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </div>
+      </div>
+      <li><a href="#about">About</a></li>
+    </ul>
+
   </div>
 
 </section>

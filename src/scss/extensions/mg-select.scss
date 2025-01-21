@@ -18,7 +18,7 @@
 
   &::after {
     @include mg-inline-css-icon;
-    @include mg-icon-toggle;
+    @include mg-toggle-effect;
 
     color: currentcolor;
     top: calc(50% - 1.2rem);

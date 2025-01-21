@@ -16,7 +16,7 @@
    width: 2.4rem;
    border-radius: 50%;
    border-style: solid;
-   border-color: var(--mg-color-quaternary);
+   border-color: $color-quaternary;
    border-width: thin;
    transition: all 0.4s;
  }
@@ -28,7 +28,7 @@
 
  /* When the radio button is checked, add a blue background */
  .mg-radio input:checked~.mg-radio--icon {
-   background-color: var(--mg-color-primary);
+   background-color: $color-primary;
  }
 
  /* Style the indicator (dot/circle) */
@@ -38,7 +38,7 @@
    width: 0.64rem;
    height: 0.64rem;
    border-radius: 50%;
-   background-color: var(--mg-color-light);
+   background-color: $color-light;
    content: "";
    position: absolute;
    display: none;
@@ -51,11 +51,11 @@
 
 
  .mg-radio input:disabled~.mg-radio--icon {
-   background-color: var(--mg-color-quinary);
+   background-color: $color-quinary;
  }
 
  .mg-radio input:focus~.mg-radio--icon {
-   border-color: var(--mg-color-primary);
+   border-color: $color-primary;
    border-style: dotted;
    border-width: thin;
  }
