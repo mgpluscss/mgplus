@@ -1,129 +1,140 @@
-.mg-timeline,
-.mg-timeline-inline {
+.mg-timeline {
   line-height: normal;
+
+  &>ul {
+    position: relative;
+    padding-left: 3.6rem;
+    list-style: none;
+  }
+
+  &>ul::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    width: 1rem;
+    height: 100%;
+  }
+
+  &>ul li {
+
+    position: relative;
+    counter-increment: list;
+    margin-bottom: 0;
+  }
+
+
+
+  &>ul li:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+
+  &>ul li::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: -3rem;
+    height: 100%;
+    width: 1rem;
+    border-left: 0.3rem solid $color-quaternary;
+  }
+
+
+  &>ul li:last-child::before {
+    border-color: none;
+  }
+
+  &>ul li::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -3.6rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.3rem solid $color-quaternary;
+    border-radius: 50%;
+    background-color: $color-initial;
+  }
+
+  &>ul li.active::before {
+    border-left: 0.3rem solid $color-primary;
+  }
+
+  &>ul li:last-of-type::before {
+    border-left: 0.3rem solid transparent !important;
+  }
+
+  &>ul li.active::after {
+    font-size: $font-size-s;
+    text-align: center;
+    border: 0.3rem solid $color-primary;
+    background-color: $color-primary;
+  }
+
+  &>ul li.current::after {
+    border: 0.3rem solid $color-primary;
+    width: 1.5rem;
+    height: 1.5rem;
+    left: -3.6rem;
+    border-radius: 50%;
+  }
+
 }
 
-.mg-timeline>ul {
-  position: relative;
-  padding-left: 3.6rem;
-  list-style: none;
-}
+.mg-timeline-inline {
 
-.mg-timeline>ul::before {
-  display: inline-block;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
-  width: 1rem;
-  height: 100%;
-}
+  line-height: normal;
 
-.mg-timeline>ul li {
-  position: relative;
-  counter-increment: list;
-  margin-bottom: 0;
-}
+  &>ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 
+  &>ul li {
 
-.mg-timeline-inline>ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-}
+    padding-right: 0.15rem;
+    border-top: 0.3rem solid $color-quaternary;
+    flex: 1 1 0;
+  }
 
-.mg-timeline-inline>ul li {
-  border-top: 0.3rem solid $color-quaternary;
-  flex: 1 1 0;
-}
+  &>ul li::before {
+    content: "";
+    left: 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: text-top;
+    bottom: 0.9rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.3rem solid $color-quaternary;
+    border-radius: 50%;
+    background-color: $color-initial;
+  }
 
+  &>ul li.active {
+    border-color: $color-primary;
+  }
 
-.mg-timeline>ul li:not(:last-child) {
-  padding-bottom: 1rem;
-}
+  &>ul li.active::before {
+    font-size: $font-size-s;
+    text-align: center;
+    border-color: $color-primary;
+    background-color: $color-primary;
+  }
 
-.mg-timeline>ul li::before {
-  display: inline-block;
-  content: "";
-  position: absolute;
-  left: -3rem;
-  height: 100%;
-  width: 1rem;
-  border-left: 0.3rem solid $color-quaternary;
-}
-
-.mg-timeline-inline>ul li::before {
-  content: "";
-  left: 0;
-  display: inline-block;
-  position: relative;
-  vertical-align: text-top;
-  bottom: 0.9rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.3rem solid $color-quaternary;
-  border-radius: 50%;
-  background-color: $color-initial;
-}
-
-.mg-timeline>ul li:last-child::before {
-  border-color: none;
-}
-
-.mg-timeline>ul li::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: -3.6rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 0.3rem solid $color-quaternary;
-  border-radius: 50%;
-  background-color: $color-initial;
-}
-
-.mg-timeline>ul li.active::before {
-  border-left: 0.3rem solid $color-primary;
-}
-
-.mg-timeline>ul li:last-of-type::before {
-  border-left: 0.3rem solid transparent !important;
-}
-
-.mg-timeline>ul li.active::after {
-  font-size: $font-size-s;
-  text-align: center;
-  border: 0.3rem solid $color-primary;
-  background-color: $color-primary;
-}
-
-.mg-timeline>ul li.current::after {
-  border: 0.3rem solid $color-primary;
-  width: 1.5rem;
-  height: 1.5rem;
-  left: -3.6rem;
-  border-radius: 50%;
-}
-
-.mg-timeline-inline>ul li.active {
-  border-color: $color-primary;
-}
-
-.mg-timeline-inline>ul li.active::before {
-  font-size: $font-size-s;
-  text-align: center;
-  border-color: $color-primary;
-  background-color: $color-primary;
-}
-
-.mg-timeline-inline>ul li.current::before {
-  border: 0.3rem solid $color-primary;
-  border-radius: 50%;
-}
+  &>ul li.current::before {
+    border: 0.3rem solid $color-primary;
+    border-radius: 50%;
+  }
 
 
-.mg-timeline-inline>ul li:last-of-type {
-  border-top: 0.3rem solid transparent;
-  flex: 0 1 auto;
+  &>ul li:last-of-type {
+    border-top: 0.3rem solid transparent;
+    flex: 0 1 auto;
+  }
+
 }
