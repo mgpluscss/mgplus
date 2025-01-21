@@ -18,13 +18,10 @@
   }
 
   &>ul li {
-
     position: relative;
     counter-increment: list;
     margin-bottom: 0;
   }
-
-
 
   &>ul li:not(:last-child) {
     padding-bottom: 1rem;
@@ -84,18 +81,16 @@
 }
 
 .mg-timeline-inline {
-
   line-height: normal;
 
   &>ul {
     list-style: none;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    flex-flow: row nowrap;
   }
 
+  /* stylelint-disable */
   &>ul li {
-
     padding-right: 0.15rem;
     border-top: 0.3rem solid $color-quaternary;
     flex: 1 1 0;
@@ -115,6 +110,7 @@
     background-color: $color-initial;
   }
 
+  /* stylelint-enable */
   &>ul li.active {
     border-color: $color-primary;
   }
