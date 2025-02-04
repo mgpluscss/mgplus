@@ -3,13 +3,14 @@
 ![](/demo/images/logo.svg)
 
 ## A micro css library based on Milligram
+
 ### Build pretty websites with just a few drops of css
 
 **[doc and demo](https://www.mgpluscss.com)**
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-[CDN direct link](https://cdn.mgpluscss.com/v1.3.5/css/mgplus.css)
+[CDN direct link](https://cdn.mgpluscss.com/v1.3.6/css/mgplus.css)
 
 Striking the perfect balance between features and simplicity
 
