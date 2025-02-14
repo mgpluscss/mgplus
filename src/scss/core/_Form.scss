@@ -96,7 +96,7 @@ select:-webkit-autofill:focus {
   margin-bottom: 0;
   padding: 0;
   -webkit-text-fill-color: $color-secondary;
-  -webkit-box-shadow: $control-shadow;
+  -webkit-box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
 }
 
