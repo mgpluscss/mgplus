@@ -80,7 +80,7 @@ select {
   padding: 0;
 }
 
-/* Change Autocomplete styles in Chrome*/
+/* Change Autocomplete styles in Chrome */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -90,7 +90,6 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-
   appearance: none;
   border: 0;
   margin-top: 0;
