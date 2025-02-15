@@ -80,9 +80,24 @@ select {
   padding: 0;
 }
 
+/* Change Autocomplete styles in Chrome */
 input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  transition: background-color 0s 600000s, color 0s 600000s !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  appearance: none;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  -webkit-text-fill-color: $color-secondary;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 // Hide spin to input numbers
