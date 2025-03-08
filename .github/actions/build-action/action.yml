@@ -36,7 +36,7 @@ runs:
         npm install
         npm run lint
         npm run build:lib        
-        npm run vite --outDir demo_build --base ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
+        npx vite --outDir demo_build --base ./v${{ steps.package-version.outputs.current-version }}-${{ inputs.stage }}
         npm run test --if-present
       shell: bash
     - name: "RELEASE - build minified main css library, js plugins and demo in standalone mode"
@@ -47,7 +47,7 @@ runs:
         npm install
         npm run lint
         npm run build:lib         
-        npm run vite --outDir demo_build --base ./v${{ steps.package-version.outputs.current-version }}
+        npx vite --outDir demo_build --base ./v${{ steps.package-version.outputs.current-version }}
         npm run test --if-present
       shell: bash
     - name: "RELEASE - update only release demo page"
@@ -58,6 +58,6 @@ runs:
         npm install
         npm run lint
         npm run build:lib         
-        npm run vite --outDir demo_build
+        npx vite --outDir demo_build
         npm run test --if-present
       shell: bash
