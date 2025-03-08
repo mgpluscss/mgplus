@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/node": "^22.13.9",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.7",
     "postcss": "^8.5.3",
     "sass": "^1.71.1",
     "stylelint": "^16.15.0",

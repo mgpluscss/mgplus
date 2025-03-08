@@ -2,9 +2,20 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
 import stylelint from 'vite-plugin-stylelint';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
-
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          $package_version: ${process.env.PACKAGE_VERSION};        
+        `
+      }
+    }
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/mgplus.ts'),
@@ -32,6 +43,6 @@ export default defineConfig({
     }),
     stylelint({
       include: ['src/scss/*.scss']
-    }),
+    })  
   ],
 });
