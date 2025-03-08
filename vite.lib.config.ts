@@ -11,7 +11,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          $package_version: ${process.env.PACKAGE_VERSION};        
+          $package_version: "${process.env.PACKAGE_VERSION}";        
         `
       }
     }
