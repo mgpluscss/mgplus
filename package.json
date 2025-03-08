@@ -16,19 +16,24 @@
     "build": "vite build",
     "build:demo": "vite build --outDir demo_build",
     "build:lib": "vite build --config vite.lib.config.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "stylelint **/*.scss",
+    "lint:fix": "stylelint **/*.scss --fix"
   },
   "devDependencies": {
     "@types/node": "^22.13.9",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
     "sass": "^1.71.1",
+    "stylelint": "^16.15.0",
+    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "^5.8.2",
     "vite": "^5.4.2",
-    "vite-plugin-dts": "^4.5.3"
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-stylelint": "^6.0.0"
   },
   "dependencies": {
-    "@jaames/iro": "^5.5.2",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.3"
+    "@jaames/iro": "^5.5.2"
   },
   "files": [
     "dist",
