@@ -1,17 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="auto">
 
 <head>
-    <title>Mg+ micro css library</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="medevod" />
+  <meta name="description"
+    content="Mg+ provides a minimal setup of styles for a fast and clean starting point. Specially designed for better performance and higher productivity with fewer properties to reset resulting in cleaner code." />
+  <title>MgPlus | A micro CSS library.</title>
+  <link rel="icon" href="demo/images/logo.svg" />
+  <link rel="stylesheet" href="/src/scss/main.scss">
+  <link rel="stylesheet" href="/demo/index.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css" />
 </head>
 
-<body style="height: 100vh; background: linear-gradient(360deg, #0000 1%, #34237a 0%, #00acc1 90%); ">
-    <p style="display: flex; justify-content: center;">Redirecting to demo site...</p>
+<body>
+  <header>
+    <nav class="mg-fixed-top mg-w-full mg-pad1">
+      <div class="mg-container">
+        <div class="mg-group mg-pad-l1 mg-left">
+          <div class="mg-dropdown">
+            <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+              <i class="mg-icon svg-icon-darkmode"></i>
+            </button>
+            <div class="mg-dropdown--content">
+              <ul class="mg-nav">
+                <li data-toggle="theme" data-value="light">Light</li>
+                <li data-toggle="theme" data-value="dark">Dark</li>
+                <li data-toggle="theme" data-value="auto">Auto</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mg-dropdown">
+            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+              <i class="mg-icon svg-icon-gears"></i>
+            </button>
+            <div class="mg-dropdown--content  mg-pad-r3 mg-pad-l1">
+              <div class="mg-col  mg-x--start">
+                <label for="range2">Control radius</label>
+                <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
+                <label for="range1">Input radius</label>
+                <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
+              </div>
+            </div>
+          </div>
+          <div class="mg-dropdown">
+            <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+              <i class="mg-icon svg-icon-colors"></i>
+            </button>
+            <div class="mg-dropdown--content">
+              <div class="mg-row">
+                <div id="picker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mg-right mg-dropdown mg-xl-display">
+          <button title="menu" data-toggle="dropdown" class="mg-rounded-full mg-h5 mg-w5">
+            <i class="mg-icon mg-icon--3xl icon-menu"></i>
+          </button>
+          <div class="mg-dropdown--content mg-right">
+            <ul data-toggle="navlinks" class="mg-nav mg-text-bold">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+    <img alt="logo" class="logo-animation" src="./demo/images/logo.svg" height="120" />
+    <div class="mg-light">
+      <h1>Mg+</h1>
+      <span class="mg-text-s mg-badge">$PACKAGE_VERSION</span>
+      <h2>A micro CSS library </h2>
+      <p class="mg-text-bold mg-text-l">Build pretty websites with just a few drops of CSS</p>
+      <a class="mg-button" href="#getting-started">Getting started</a>
+      <a id="download_button" data-last-cdn-uri="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css"
+        class="mg-button" download="cdn">Download</a>
+      <a class="mg-button" href="https://github.com/mgpluscss/mgplus">Github <i class="mg-icon svg-icon-github"></i></a>
+      <div class="mg-row mg-gap2 mg-x--center">
+        <div class="mg-bg-danger mg-text-center mg-pad1 mg-text-bold liquid">CSS variables</div>
+        <div class="mg-bg-warning mg-text-center mg-pad1 mg-text-bold  liquid">Dark mode</div>
+        <div class="mg-bg-success mg-text-center mg-pad1 mg-text-bold  liquid">Fully responsive</div>
+        <div class="mg-bg-primary mg-text-center mg-pad1 mg-text-bold  liquid">Lightweight</div>
+      </div>
+    </div>
+    <!--Waves-->
+    <svg xmlns="http://www.w3.org/2000/svg" class="waves" viewBox="0 24 150 28" preserveAspectRatio="none"
+      shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="animated-waves">
+        <use href="#gentle-wave" x="48" y="0" />
+        <use href="#gentle-wave" x="48" y="3" />
+        <use href="#gentle-wave" x="48" y="5" />
+        <use href="#gentle-wave" x="48" y="7" />
+      </g>
+    </svg>
+
+  </header>
+  <div
+    class="mg-fixed mg-top5 mg-right mg-bg-initial mg-rounded mg-border-thin mg-marg-l1 mg-marg-r1 mg-pad1 mg-xl-hidden">
+    <div class=" mg-max-h80vh mg-overflow-y-auto">
+      <ul data-toggle="navlinks" class="mg-nav mg-text-bold">
+      </ul>
+    </div>
+  </div>
+  <main class="mg-container">
+    <include src="demo/sections/intro-section.html"></include>
+    <include src="demo/sections/getting-started.html"></include>
+    <h2>Examples</h2>
+    <p>Explore the various examples provided in the documentation to see how you can use Mg+ to build your web
+      interface. Each example demonstrates the usage of different components and utilities to help you get started
+      quickly.</p>
+    <p>We hope you find Mg+ useful and easy to work with. Happy coding!</p>
+    <include src="demo/sections/core-section.html"></include>
+    <include src="demo/sections/alert-section.html"></include>
+    <include src="demo/sections/badge-section.html"></include>
+    <include src="demo/sections/check-section.html"></include>
+    <include src="demo/sections/collapse-section.html"></include>
+    <include src="demo/sections/colors-section.html"></include>
+    <include src="demo/sections/dropdown-section.html"></include>
+    <include src="demo/sections/form-section.html"></include>
+    <include src="demo/sections/group-section.html"></include>
+    <include src="demo/sections/helpers-section.html"></include>
+    <include src="demo/sections/icons-section.html"></include>
+    <include src="demo/sections/input-section.html"></include>
+    <include src="demo/sections/loader-section.html"></include>
+    <include src="demo/sections/modal-section.html"></include>
+    <include src="demo/sections/nav-section.html"></include>
+    <include src="demo/sections/progress-section.html"></include>
+    <include src="demo/sections/radio-section.html"></include>
+    <include src="demo/sections/range-section.html"></include>
+    <include src="demo/sections/grid-section.html"></include>
+    <include src="demo/sections/responsive-display-section.html"></include>
+    <include src="demo/sections/select-section.html"> </include>
+    <include src="demo/sections/tab-section.html"></include>
+    <include src="demo/sections/timeline-section.html"></include>
+    <include src="demo/sections/toggle-section.html"></include>
+  </main>
+  <footer>
+    <div class="mg-block mg-text-center">
+      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">LICENSE</a>
+      <a href="https://github.com/mgpluscss/mgplus">Github</a>
+    </div>
+  </footer>
+  <script type="module" src="/demo/index.ts"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/prettify.js?skin=sunburst"></script>
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", function (event) {
-        window.location.replace("https://www.mgpluscss.com");
-    });
-</script>
 
 </html>
