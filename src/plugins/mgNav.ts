@@ -1,6 +1,6 @@
-export default function registerNavs() {
+export function registerNavs() {
   document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
-  function setupNav(nav) {
+  function setupNav(nav: Element) {
     const items = nav.getElementsByTagName("li");
 
     for (let j = 0; j < items.length; j++) {
@@ -15,11 +15,10 @@ export default function registerNavs() {
       }
     }
 
-    nav.addEventListener("click", function (e) {
-      let selector = e.target;
-      console.log(e.target.parentNode);
-      if (e.target.parentNode.tagName == "LI") {
-        selector = e.target.parentNode;
+    nav.addEventListener("click", function (e: Event) {
+      let selector = e.target as HTMLElement;
+      if (selector.parentNode?.nodeName == "LI" && selector.parentNode instanceof HTMLElement) {
+        selector = selector.parentNode;
       }
       if (selector.getAttribute("data-active") !== "true") {
         //disable all selected tabs

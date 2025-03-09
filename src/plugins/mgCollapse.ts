@@ -1,6 +1,6 @@
-export default function registergCollapses() {
+export function registergCollapses() {
   document.querySelectorAll("[data-toggle~=collapse]").forEach(setupCollapse);
-  function setupCollapse(collapseToggle) {
+  function setupCollapse(collapseToggle: Element) {
     const targetToCollapse = collapseToggle.getAttribute("data-target");
     collapseToggle.setAttribute("aria-haspopup", "true");
     collapseToggle.setAttribute("aria-expanded", "false");
@@ -9,11 +9,11 @@ export default function registergCollapses() {
       ? document.getElementById(targetToCollapse)
       : collapseToggle.nextElementSibling;
 
-    collapseContent.setAttribute("aria-hidden", "true");
+    collapseContent?.setAttribute("aria-hidden", "true");
 
-    collapseToggle.onclick = toggleCollapse;
+    collapseToggle.addEventListener("click", toggleCollapse);
 
-    function toggleCollapse(e) {
+    function toggleCollapse(e: Event) {
       e.preventDefault();
       e.stopPropagation();
       if (collapseToggle.getAttribute("aria-expanded") === "true") {

@@ -1,6 +1,6 @@
-export default function registerTabs() {
+export function registerTabs() {
   document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
-  function setupTabs(tabs) {
+  function setupTabs(tabs: Element) {
     let items = tabs.getElementsByClassName("mg-tabs--item");
 
     for (let j = 0; j < items.length; j++) {
@@ -24,9 +24,9 @@ export default function registerTabs() {
     }
 
     tabs.addEventListener("click", function (e) {
-      let selector = e.target;
-      if (e.target.parentNode.classList.contains("mg-tabs--item")) {
-        selector = e.target.parentNode;
+      let selector = e.target as HTMLElement;
+      if ((selector.parentNode as HTMLElement).classList.contains("mg-tabs--item")) {
+        selector = selector.parentNode as HTMLElement;
 
         e.stopPropagation();
         e.preventDefault();
