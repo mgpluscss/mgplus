@@ -5,6 +5,15 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          $package_version: "${process.env.PACKAGE_VERSION}";        
+        `
+      }
+    }
+  },
   plugins: [
     htmlIncludePlugin(),
     {
