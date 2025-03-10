@@ -10,7 +10,7 @@
         <ol>
             <li>Include the Mg+ CSS file in the <code>&lt;head&gt;</code> section of your HTML file to apply the default
                 styles:</li>
-            <pre><code>&lt;link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css"&gt;</code></pre>
+            <pre><code>&lt;link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus.css"&gt;</code></pre>
             <li>Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
             </li>
             <pre><code>&lt;button class="mg-button"&gt;Click me&lt;/button&gt;</code></pre>
@@ -38,13 +38,13 @@
     <h4>Default configuration</h4>
     <p>By default, all available plugins are registered</p>
     <p>
-    <pre><code>&lt;script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/js/mgplus-dom.js"&gt;&lt;/script&gt;</code></pre>
+    <pre><code>&lt;script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"&gt;&lt;/script&gt;</code></pre>
     </p>
     <h4>Custom configuration</h4>
     <p>Register only specific plugins by using inline query param</p>
     </p>
     <p>
-    <pre><code>&lt;script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/js/mgplus-dom.js?<b>register_plugins=dropdowns,tabs,modals,collapses</b>"&gt;&lt;/script&gt;</code></pre>
+    <pre><code>&lt;script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?<b>register=dropdowns,tabs,modals,collapses</b>"&gt;&lt;/script&gt;</code></pre>
     </p>
 
     <p>To allow plugin works for your mgplus css components
