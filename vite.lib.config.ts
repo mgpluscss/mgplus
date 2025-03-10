@@ -20,7 +20,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/mgplus.ts'),
       name: 'mgplusPlugins',
-      fileName: 'mgplus-plugins',
+      fileName: 'mgplus-vanilla',
       formats: ['es', 'umd'],
     },
     sourcemap: false,
@@ -43,6 +43,6 @@ export default defineConfig({
     }),
     stylelint({
       include: ['src/scss/*.scss']
-    })  
+    })
   ],
 });

@@ -12,7 +12,7 @@ export function autoRegister() {
     `mgplus - auto registering DOM plugins for query params`
   );
   window.addEventListener("DOMContentLoaded", () => {
-    const plugins = getQueryParam("register_plugins", getScriptUrl());
+    const plugins = getQueryParam("plugins", getScriptUrl());
     registerPlugins(plugins?.split(",") ?? []);
   });
 }
@@ -27,8 +27,17 @@ export function registerPlugins(plugins: string[]) {
   const pluginsArgs = plugins ? plugins : [];
   console.log(`mgplus - registering plugins: ${pluginsArgs}`);
   if (pluginsArgs instanceof Array) {
+
     pluginsArgs.map(function (pluginName) {
       switch (pluginName) {
+        case "all":
+          registerDropdowns();
+          registerModals();
+          registerNavs();
+          registerTabs();
+          registergCollapses();
+          registerDarkModePlugin();
+          break;
         case "dropdowns":
           registerDropdowns();
           break;
@@ -63,7 +72,7 @@ function getScriptUrl() {
   for (let i = 0; i < scripts.length; i++) {
     const scriptUrl = scripts[i] && scripts[i].src;
 
-    if (scriptUrl.indexOf("mgplus-dom.js") > 0) {
+    if (scriptUrl.indexOf("mgplus-vanilla.js") > 0) {
       return scriptUrl;
     }
   }
