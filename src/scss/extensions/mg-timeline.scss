@@ -1,13 +1,15 @@
 .mg-timeline {
   line-height: normal;
 
-  &>ul {
+  &>ul,
+  &>ol {
     position: relative;
     padding-left: 3.6rem;
     list-style: none;
   }
 
-  &>ul::before {
+  &>ul::before,
+  &>ol::before {
     display: inline-block;
     content: "";
     position: absolute;
@@ -17,17 +19,20 @@
     height: 100%;
   }
 
-  &>ul li {
-    position: relative;
+  &>ul li,
+  &>ol li {
     counter-increment: list;
+    position: relative;
     margin-bottom: 0;
   }
 
-  &>ul li:not(:last-child) {
+  &>ul li:not(:last-child),
+  &>ol li:not(:last-child) {
     padding-bottom: 1rem;
   }
 
-  &>ul li::before {
+  &>ul li::before,
+  &>ol li::before {
     display: inline-block;
     content: "";
     position: absolute;
@@ -38,44 +43,55 @@
   }
 
 
-  &>ul li:last-child::before {
+  &>ul li:last-child::before,
+  &>ol li:last-child::before {
     border-color: none;
   }
 
-  &>ul li::after {
+  &>ul li::after,
+  &>ol li::after {
     content: "";
     display: inline-block;
     position: absolute;
     top: 0;
-    left: -3.6rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    left: -4rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border: 0.3rem solid $color-quaternary;
     border-radius: 50%;
     background-color: $color-initial;
+    text-align: center;
   }
 
-  &>ul li.active::before {
+  &>ol li::after {
+    content: counter(list);
+    font-size: $font-size-s;
+    font-weight: 600;
+  }
+
+  &>ul li.active::before,
+  &>ol li.active::before {
     border-left: 0.3rem solid $color-primary;
   }
 
-  &>ul li:last-of-type::before {
+  &>ul li:last-of-type::before,
+  &>ol li:last-of-type::before {
     border-left: 0.3rem solid transparent !important;
   }
 
-  &>ul li.active::after {
-    font-size: $font-size-s;
-    text-align: center;
-    border: 0.3rem solid $color-primary;
+  &>ul li.active::after,
+  &>ol li.active::after {
+    border-color: $color-primary;
     background-color: $color-primary;
   }
 
-  &>ul li.current::after {
-    border: 0.3rem solid $color-primary;
-    width: 1.5rem;
-    height: 1.5rem;
-    left: -3.6rem;
-    border-radius: 50%;
+  &>ol li.active::after {
+    color: $color-light;
+  }
+
+  &>ul li.current::after,
+  &>ol li.current::after {
+    border-color: $color-primary;
   }
 
 }
@@ -83,54 +99,69 @@
 .mg-timeline-inline {
   line-height: normal;
 
-  &>ul {
+  &>ul,
+  &>ol {
     list-style: none;
     display: flex;
     flex-flow: row nowrap;
   }
 
   /* stylelint-disable */
-  &>ul li {
+  &>ul li,
+  &>ol li {
+    counter-increment: list;
     padding-right: 0.15rem;
     border-top: 0.3rem solid $color-quaternary;
     flex: 1 1 0;
   }
 
-  &>ul li::before {
+  &>ul li::before,
+  &>ol li::before {
     content: "";
     left: 0;
     display: inline-block;
     position: relative;
     vertical-align: text-top;
-    bottom: 0.9rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    bottom: 1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border: 0.3rem solid $color-quaternary;
     border-radius: 50%;
     background-color: $color-initial;
+    text-align: center;
+  }
+
+  &>ol li::before {
+    content: counter(list);
+    font-size: $font-size-s;
+    font-weight: 600;
   }
 
   /* stylelint-enable */
-  &>ul li.active {
+  &>ul li.active,
+  &>ol li.active {
     border-color: $color-primary;
   }
 
-  &>ul li.active::before {
-    font-size: $font-size-s;
-    text-align: center;
+  &>ul li.active::before,
+  &>ol li.active::before {
     border-color: $color-primary;
     background-color: $color-primary;
   }
 
-  &>ul li.current::before {
-    border: 0.3rem solid $color-primary;
-    border-radius: 50%;
+  &>ol li.active::before {
+    color: $color-light;
+  }
+
+  &>ul li.current::before,
+  &>ol li.current::before {
+    border-color: $color-primary;
   }
 
 
-  &>ul li:last-of-type {
+  &>ul li:last-of-type,
+  &>ol li:last-of-type {
     border-top: 0.3rem solid transparent;
     flex: 0 1 auto;
   }
-
 }
