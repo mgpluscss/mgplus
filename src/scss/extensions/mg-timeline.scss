@@ -1,3 +1,9 @@
+@mixin bullet-sequence() {
+  content: counter(list);
+  font-size: $font-size-s;
+  font-weight: 600;
+}
+
 .mg-timeline {
   line-height: normal;
 
@@ -64,9 +70,7 @@
   }
 
   &>ol li::after {
-    content: counter(list);
-    font-size: $font-size-s;
-    font-weight: 600;
+    @include bullet-sequence();
   }
 
   &>ul li.active::before,
@@ -132,9 +136,7 @@
   }
 
   &>ol li::before {
-    content: counter(list);
-    font-size: $font-size-s;
-    font-weight: 600;
+    @include bullet-sequence();
   }
 
   /* stylelint-enable */
@@ -157,7 +159,6 @@
   &>ol li.current::before {
     border-color: $color-primary;
   }
-
 
   &>ul li:last-of-type,
   &>ol li:last-of-type {
