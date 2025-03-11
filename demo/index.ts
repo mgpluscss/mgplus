@@ -3,7 +3,7 @@ import iro from '@jaames/iro';
 window.addEventListener("DOMContentLoaded", () => {
     loadDemoSections();
     registerDemoFeatures();
-    registerPlugins(["dropdowns", "modals", "navs", "collapses", "darkmode"]);
+    registerPlugins(["dropdowns", "modals", "navs", "collapses", "darkmode", "tabs"]);
 });
 
 function loadDemoSections() {
