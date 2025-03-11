@@ -6,4 +6,3 @@ export * from "./plugins/mgNav";
 export * from "./plugins/mgTabs";
 export * from "./plugins/mgDarkMode";
 export * from './scss/main.scss';
-export * from './plugins/tooltip';

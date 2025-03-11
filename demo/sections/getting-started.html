@@ -18,7 +18,7 @@
                 <pre><script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all" ></script></pre>
             </li>
             <li>Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
-                <pre><button class="mg-button">Click me></button></pre>
+                <pre><button class="mg-button">Click me</button></pre>
             </li>
         </ol>
     </div>
@@ -83,16 +83,16 @@
         <li>tabs <code>data-toggle="tabs"</code></li>
         <li>modals <code>data-toggle="modal"</code></li>
         <li>collapses <code>data-toggle="collapse"</code></li>
+        <li>darkmode</li>
+    </ul>
     </ul>
     </p>
     <h4>Configure DarkMode</h4>
     <p>
-        In your main html document page, add attribute <b>data-theme="dark"</b> or <b>data-theme="light"</b>
-        or
-        <b>data-theme="auto"</b>
+        In your main html document page, add attribute <b>data-theme=["dark"|</b>
     </p>
     <p>
-        <code><html lang="en" data-theme="auto">...</code>
+    <pre><html lang="en" data-theme="auto">...</html></pre>
     </p>
 
     <p>"auto" mode will use your system browser preference to choose dark or light mode</p>
