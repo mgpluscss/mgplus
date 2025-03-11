@@ -1,4 +1,4 @@
-@mixin bullet-sequence() {
+@mixin bullet-sequence {
   content: counter(list);
   font-size: $font-size-s;
   font-weight: 600;
@@ -70,7 +70,7 @@
   }
 
   &>ol li::after {
-    @include bullet-sequence();
+    @include bullet-sequence;
   }
 
   &>ul li.active::before,
