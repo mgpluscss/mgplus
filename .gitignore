@@ -334,3 +334,4 @@ node_modules
 .env
 demo_build/
 dist
+*.identifier

@@ -11,13 +11,14 @@
   <link rel="icon" href="demo/images/logo.svg" />
   <link rel="stylesheet" href="/src/scss/main.scss">
   <link rel="stylesheet" href="/demo/index.css">
+  <link rel="stylesheet" href="/demo/icons.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/skins/sunburst.css" />
 </head>
 
 <body>
-  <header>
+  <header class="grid-bg">
     <nav class="mg-fixed-top mg-w-full mg-pad1">
       <div class="mg-container">
         <div class="mg-group mg-pad-l1 mg-left">
@@ -58,7 +59,7 @@
           </div>
         </div>
         <div class="mg-right mg-dropdown mg-xl-display">
-          <button title="menu" data-toggle="dropdown" class="mg-rounded-full mg-h5 mg-w5">
+          <button title="menu" data-toggle="dropdown" class=" mg-icon-dropdown">
             <i class="mg-icon mg-icon--3xl icon-menu"></i>
           </button>
           <div class="mg-dropdown--content mg-right">
@@ -141,10 +142,11 @@
     <include src="demo/sections/timeline-section.html"></include>
     <include src="demo/sections/toggle-section.html"></include>
   </main>
-  <footer>
-    <div class="mg-block mg-text-center">
-      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">LICENSE</a>
-      <a href="https://github.com/mgpluscss/mgplus">Github</a>
+  <footer class="mg-container mg-pad3">    
+    <div class="mg-row mg-x--evenly mg-text-m"> 
+      <span>Powered by Vite <span class="mg-icon svg-icon-vite"></span></span>    
+      <a href="https://github.com/mgpluscss/mgplus">Github <span class="mg-icon svg-icon-github mg-hidden-light"></span>  <span class="mg-icon svg-icon-github-dark mg-hidden-dark"></span></a>
+      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">License <span class="mg-icon svg-icon-evo"></span></a>
     </div>
   </footer>
   <script type="module" src="/demo/index.ts"></script>

@@ -12,7 +12,7 @@
 
 [CDN direct link](https://cdn.mgpluscss.com/v1.4.0/mgplus.css)
 
-Striking the perfect balance between features and simplicity
+**Striking the perfect balance between features and simplicity**
 
 The project began in early 2021 with the goal of providing a more robust and feature-rich alternative while maintaining the minimalistic approach of Milligram
 
@@ -108,9 +108,10 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 ## Developing
 
-### Start demo page locally with enabled hot reload
+### Debug source and demo page locally without any custom configuration
+*Main repository project is now based on [Vite](https://vite.dev/)* to provide best developer experience
 
-* Clone the repository
+Clone the repository
 
 ```sh
 git clone https://github.com/Evodim/mgplus.git
