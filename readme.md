@@ -1,8 +1,8 @@
 # MgPlus (*Mg+*)
 
-![](/demo/images/logo.svg)
-
 ## A micro css library to build elegant web pages efficiently
+
+![](/demo/images/capture.png)
 
 ### Build pretty websites with just a few drops of css
 
@@ -71,9 +71,11 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 ```html
 <button class="mg-button">Click me</button>
 ```
+
 ## Customize
 
 ### Css variables
+
 ```css
 :root {
   --mg-color-dark: hsl(255deg 0% 5%);
@@ -109,6 +111,7 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 ## Developing
 
 ### Debug source and demo page locally without any custom configuration
+
 *Main repository project is now based on [Vite](https://vite.dev/)* to provide best developer experience
 
 Clone the repository
@@ -128,6 +131,7 @@ Build demo page
 ```sh
 npm run build
 ```
+
 Run debug demo page with hot reload
 
 ```sh
@@ -140,7 +144,7 @@ Output library will be copied in dist folder
 
 ```sh
 npm run build:lib
-``` 
+```
 
 ## License
 
