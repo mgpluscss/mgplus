@@ -21,50 +21,52 @@
   <header class="grid-bg">
     <nav class="mg-fixed-top mg-w-full mg-pad1">
       <div class="mg-container">
-        <div class="mg-group mg-pad-l1 mg-left">
-          <div class="mg-dropdown">
-            <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-darkmode"></i>
+        <div class="mg-row mg-x--between">
+          <div class="mg-group mg-pad-l1 mg-left">
+            <div class="mg-dropdown">
+              <button title="theme-switcher" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+                <i class="mg-icon svg-icon-darkmode"></i>
+              </button>
+              <div class="mg-dropdown--content">
+                <ul class="mg-nav">
+                  <li data-toggle="theme" data-value="light">Light</li>
+                  <li data-toggle="theme" data-value="dark">Dark</li>
+                  <li data-toggle="theme" data-value="auto">Auto</li>
+                </ul>
+              </div>
+            </div>
+            <div class="mg-dropdown">
+              <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+                <i class="mg-icon svg-icon-gears"></i>
+              </button>
+              <div class="mg-dropdown--content  mg-pad-r3 mg-pad-l1">
+                <div class="mg-col  mg-x--start">
+                  <label for="range2">Control radius</label>
+                  <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
+                  <label for="range1">Input radius</label>
+                  <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
+                </div>
+              </div>
+            </div>
+            <div class="mg-dropdown">
+              <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
+                <i class="mg-icon svg-icon-colors"></i>
+              </button>
+              <div class="mg-dropdown--content">
+                <div class="mg-row">
+                  <div id="picker"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mg-right mg-dropdown mg-xl-display">
+            <button title="menu" data-toggle="dropdown" class="mg-w7 mg-icon-dropdown">
+              <i class="mg-icon mg-icon--2xl icon-menu"></i>
             </button>
-            <div class="mg-dropdown--content">
-              <ul class="mg-nav">
-                <li data-toggle="theme" data-value="light">Light</li>
-                <li data-toggle="theme" data-value="dark">Dark</li>
-                <li data-toggle="theme" data-value="auto">Auto</li>
+            <div class="mg-dropdown--content mg-right">
+              <ul data-toggle="navlinks" class="mg-nav mg-text-bold">
               </ul>
             </div>
-          </div>
-          <div class="mg-dropdown">
-            <button title="controls" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-gears"></i>
-            </button>
-            <div class="mg-dropdown--content  mg-pad-r3 mg-pad-l1">
-              <div class="mg-col  mg-x--start">
-                <label for="range2">Control radius</label>
-                <input type="range" min="0" max="20" value="2" id="control-radius-selector" />
-                <label for="range1">Input radius</label>
-                <input type="range" min="0" max="20" value="2" id="input-radius-selector" />
-              </div>
-            </div>
-          </div>
-          <div class="mg-dropdown">
-            <button title="color-picker" data-toggle="dropdown" class="mg-button--small mg-icon-dropdown">
-              <i class="mg-icon svg-icon-colors"></i>
-            </button>
-            <div class="mg-dropdown--content">
-              <div class="mg-row">
-                <div id="picker"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="mg-right mg-dropdown mg-xl-display">
-          <button title="menu" data-toggle="dropdown" class=" mg-icon-dropdown">
-            <i class="mg-icon mg-icon--3xl icon-menu"></i>
-          </button>
-          <div class="mg-dropdown--content mg-right">
-            <ul data-toggle="navlinks" class="mg-nav mg-text-bold">
-            </ul>
           </div>
         </div>
       </div>
@@ -142,11 +144,13 @@
     <include src="demo/sections/timeline-section.html"></include>
     <include src="demo/sections/toggle-section.html"></include>
   </main>
-  <footer class="mg-container mg-pad3">    
-    <div class="mg-row mg-x--evenly mg-text-m"> 
-      <span>Powered by Vite <span class="mg-icon svg-icon-vite"></span></span>    
-      <a href="https://github.com/mgpluscss/mgplus">Github <span class="mg-icon svg-icon-github mg-hidden-light"></span>  <span class="mg-icon svg-icon-github-dark mg-hidden-dark"></span></a>
-      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">License <span class="mg-icon svg-icon-evo"></span></a>
+  <footer class="mg-container mg-pad3">
+    <div class="mg-row mg-x--evenly mg-text-m">
+      <span>Powered by Vite <span class="mg-icon svg-icon-vite"></span></span>
+      <a href="https://github.com/mgpluscss/mgplus">Github <span class="mg-icon svg-icon-github mg-hidden-light"></span>
+        <span class="mg-icon svg-icon-github-dark mg-hidden-dark"></span></a>
+      <a href="https://raw.githubusercontent.com/mgpluscss/mgplus/master/LICENSE">License <span
+          class="mg-icon svg-icon-evo"></span></a>
     </div>
   </footer>
   <script type="module" src="/demo/index.ts"></script>
