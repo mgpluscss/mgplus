@@ -2,7 +2,7 @@
 
 ## A micro css library to build elegant web pages efficiently
 
-![](/demo/images/capture.png)
+![mgplus-micro-css-library](/demo/images/mgplus-micro-css-library.png)
 
 ### Build pretty websites with just a few drops of css
 
