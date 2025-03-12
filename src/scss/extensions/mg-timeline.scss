@@ -1,3 +1,5 @@
+$bullet-size: 2rem;
+
 @mixin bullet-sequence {
   content: counter(list);
   font-size: $font-size-s;
@@ -48,7 +50,6 @@
     border-left: 0.3rem solid $color-quaternary;
   }
 
-
   &>ul li:last-child::before,
   &>ol li:last-child::before {
     border-color: none;
@@ -60,9 +61,9 @@
     display: inline-block;
     position: absolute;
     top: 0;
-    left: -4rem;
-    width: 2.2rem;
-    height: 2.2rem;
+    left: calc(-1 * ($bullet-size/2) - $bullet-size - 0.8rem);
+    width: $bullet-size;
+    height: $bullet-size;
     border: 0.3rem solid $color-quaternary;
     border-radius: 50%;
     background-color: $color-initial;
@@ -80,7 +81,7 @@
 
   &>ul li:last-of-type::before,
   &>ol li:last-of-type::before {
-    border-left: 0.3rem solid transparent !important;
+    border-color: transparent;
   }
 
   &>ul li.active::after,
@@ -97,7 +98,6 @@
   &>ol li.current::after {
     border-color: $color-primary;
   }
-
 }
 
 .mg-timeline-inline {
@@ -127,8 +127,8 @@
     position: relative;
     vertical-align: text-top;
     bottom: 1.2rem;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: $bullet-size;
+    height: $bullet-size;
     border: 0.3rem solid $color-quaternary;
     border-radius: 50%;
     background-color: $color-initial;
