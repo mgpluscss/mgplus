@@ -151,19 +151,24 @@ function registerDemoFeatures() {
     document.querySelectorAll("pre").forEach((el) => {
         el.innerHTML = htmlCodeFormatter(el.innerHTML)
         el.classList.add("prettyprint", "mg-overflow-x-auto", "mg-max-w-full");
-        const clipboardButton = document.createElement("button");
-        const clipboardButtonIcon = document.createElement("i");
+
+        document.querySelectorAll("code").forEach((el) => {
+            el.innerHTML = htmlCodeFormatter(el.innerHTML)
+            el.classList.add("prettyprint", "mg-overflow-x-auto", "mg-max-w-full");
 
 
-        // clipboardButton.classList.add("mg-button--link", "mg-button--small", "mg-right");
+            //const clipboardButton = document.createElement("button");
+            //const clipboardButtonIcon = document.createElement("i");
 
-        // clipboardButton.addEventListener("click", (ev) => {
-        //     navigator.clipboard.writeText(el.innerHTML);
-        // });
-        // clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
-        // clipboardButton.appendChild(clipboardButtonIcon);
-        // el.previousElementSibling?.append(clipboardButton);
+            // clipboardButton.classList.add("mg-button--link", "mg-button--small", "mg-right");
 
+            // clipboardButton.addEventListener("click", (ev) => {
+            //     navigator.clipboard.writeText(el.innerHTML);
+            // });
+            // clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
+            // clipboardButton.appendChild(clipboardButtonIcon);
+            // el.previousElementSibling?.append(clipboardButton);
+        });
     });
 
     (window as any)?.prettyPrint();

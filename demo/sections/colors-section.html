@@ -1,55 +1,104 @@
 <section id="colors">
     <h2>Colors</h2>
-    <p>These colors are used to create a
-        cohesive and visually appealing design. Below, you will find examples of how to use these colors in various
-        elements and components.</p>
-    <div data-toggle="htmlpreview">
-        <div class="mg-container">
-            <div class="mg-col">
-                <div class="mg-col mg-x6 mg-h10">
-                    <div class="mg-bg-primary">
-                        <code>mg-bg-primary</code>
-                    </div>
-                    <div class="mg-bg-secondary">
-                        <code>mg-bg-secondary</code>
-                    </div>
-                    <div class="mg-bg-tertiary">
-                        <code>mg-bg-tertiary</code>
-                    </div>
-                    <div class="mg-bg-quaternary">
-                        <code>mg-bg-quaternary</code>
-                    </div>
-                    <div class="mg-bg-quinary">
-                        <code>mg-bg-quinary</code>
-                    </div>
-                </div>
+    <p>Mgplus provides a set of predefined colors that you can use throughout your application.
+        These colors can be customized for both light and dark modes</p>
 
-                <h3>Basic colors</h3>
-                <div class="mg-col mg-x6 mg-h10">
-                    <div class="mg-bg-red">
-                        <code>mg-bg-red</code>
-                    </div>
-                    <div class="mg-bg-orange">
-                        <code>mg-bg-orange</code>
-                    </div>
-                    <div class="mg-bg-blue">
-                        <code>mg-bg-blue</code>
-                    </div>
-                    <div class="mg-bg-green">
-                        <code>mg-bg-green</code>
-                    </div>
-                </div>
-                <h3>Darkmode conditional hidden effects (hidden when light or dark)</h3>
-
-                <p>Automatically hide or show an element according to current theme color</p>
-                <p>Useful when you need to adapt an element or image in dark or light mode</p>
-
-
-                <div class="mg-col mg-x6 mg-h10">
-                    <span class="mg-hidden-dark"><code>mg-hidden-dark</code><i class="mg-icon svg-icon-sun"></i></span>
-                    <span class="mg-hidden-light"><code>mg-hidden-light</code><i
-                            class="mg-icon svg-icon-night"></i></span>
-                </div>
+    <h3>Light Mode Colors</h3>
+    <p>Here are the main colors available in light mode (default)</p>
+    <div class="mg-row">
+        <div class="mg-col mg-x6">
+            <div class="mg-primary">
+                <b>mg-primary</b>
+            </div>
+            <div class="mg-secondary">
+                <b>mg-secondary</b>
+            </div>
+            <div class="mg-tertiary">
+                <b>mg-tertiary</b>
+            </div>
+            <div class="mg-quaternary">
+                <b>mg-quaternary</b>
+            </div>
+            <div class="mg-quinary">
+                <b>mg-quinary</b>
             </div>
         </div>
+        <div class="mg-col mg-x6">
+            <div class="mg-bg-primary">
+                <code>mg-bg-primary</code>
+            </div>
+            <div class="mg-bg-initial">
+                <code>mg-bg-initial</code>
+            </div>
+            <div class="mg-bg-secondary">
+                <code>mg-bg-secondary</code>
+            </div>
+            <div class="mg-bg-tertiary">
+                <code>mg-bg-tertiary</code>
+            </div>
+            <div class="mg-bg-quaternary">
+                <code>mg-bg-quaternary</code>
+            </div>
+            <div class="mg-bg-quinary">
+                <code>mg-bg-quinary</code>
+            </div>
+        </div>
+    </div>
+
+    <h3>Basic Colors</h3>
+    <p>Here are some basic colors available:</p>
+    <div class="mg-row">
+        <div class="mg-col mg-x6 mg-h10">
+            <div class="mg-red">
+                <b>mg-red</b>
+            </div>
+            <div class="mg-orange">
+                <b>mg-orange</b>
+            </div>
+            <div class="mg-blue">
+                <b>mg-blue</b>
+            </div>
+            <div class="mg-green">
+                <b>mg-green</b>
+            </div>
+        </div>
+        <div class="mg-col mg-x6 mg-h10">
+            <div class="mg-bg-red">
+                <code>mg-bg-red</code>
+            </div>
+            <div class="mg-bg-orange">
+                <code>mg-bg-orange</code>
+            </div>
+            <div class="mg-bg-blue">
+                <code>mg-bg-blue</code>
+            </div>
+            <div class="mg-bg-green">
+                <code>mg-bg-green</code>
+            </div>
+        </div>
+    </div>
+    <h3>Dark Mode Colors</h3>
+    <p>In addition, you can customize the equivalent of these colors for dark mode:</p>
+    <pre>
+        --mg-dark-color-initial: var(--mg-color-dark);
+        --mg-dark-color-secondary: hsl(255deg 0% 80%);
+        --mg-dark-color-tertiary: hsl(255deg 0% 70%);
+        --mg-dark-color-quaternary: hsl(255deg 0% 50%);
+        --mg-dark-color-quinary: hsl(255deg 0% 25%);
+    </pre>
+    <h3>Dark Mode Conditional Hidden Effects</h3>
+    <p>Automatically hide or show an element according to the current theme color. This is useful when you need to adapt
+        an element or image in dark or light mode.</p>
+    <div class="mg-container">
+        <div class="mg-col mg-x6 mg-h10" data-toggle="htmlpreview">
+            <span class="mg-hidden-dark">
+                <code>mg-hidden-dark</code>
+                <i class="mg-icon svg-icon-sun"></i>
+            </span>
+            <span class="mg-hidden-light">
+                <code>mg-hidden-light</code>
+                <i class="mg-icon svg-icon-night"></i>
+            </span>
+        </div>
+    </div>
 </section>
