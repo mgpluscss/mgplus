@@ -18,39 +18,31 @@ h5,
 h6 {
 	font-weight: 600;
 	letter-spacing: -.1rem;
-	margin-bottom: 2.0rem;
 }
 
 h1 {
 	font-size: $font-size-4xl;
-	line-height: calc($font-size-4xl * 1.4);
 }
 
 h2 {
 	font-size: $font-size-3xl;
-	line-height: calc($font-size-3xl * 1.4);
 }
 
 h3 {
 	font-size: $font-size-2xl;
-	line-height: calc($font-size-2xl * 1.4);
 }
 
 h4 {
 	font-size: $font-size-xl;
 	letter-spacing: -.08rem;
-	line-height: calc($font-size-xl * 1.4);
 }
 
 h5 {
 	font-size: $font-size-l;
 	letter-spacing: -.05rem;
-	line-height: calc($font-size-l * 1.4);
 }
 
 h6 {
 	font-size: $font-size-m;
 	letter-spacing: 0;
-	line-height: 1.6;
-	line-height: calc($font-size-m * 1.4);
 }
