@@ -2,7 +2,7 @@
 
 ![](/demo/images/logo.svg)
 
-## A micro css library based on Milligram
+## A micro css library to build elegant web pages efficiently
 
 ### Build pretty websites with just a few drops of css
 
@@ -10,9 +10,9 @@
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-[CDN direct link](https://cdn.mgpluscss.com/v1.3.6/css/mgplus.css)
+[CDN direct link](https://cdn.mgpluscss.com/v1.4.0/mgplus.css)
 
-Striking the perfect balance between features and simplicity
+**Striking the perfect balance between features and simplicity**
 
 The project began in early 2021 with the goal of providing a more robust and feature-rich alternative while maintaining the minimalistic approach of Milligram
 
@@ -30,10 +30,10 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 
 * Easy to use: components are just html markups, no css skills required
 * Easy to integrate: just add only one css file in your page
-* Easy to extend
+* Easy to extend through css variables
 * Lightweight with only essentials features
 * Responsive and mobile first design
-* Pure css, custom js required only to toggle mgplus classes
+* Pure css, js only required to handle user interactivity
 
 ### Features
 
@@ -47,36 +47,77 @@ Mgplus is specially designed to quickly create a website or a small page with mi
 * Responsive flex grid system
 * Responsive display helpers
 * Icon helper including embedded css icons
-* Styling helpers like tailwindcss for positionning and sizing
+* Styling helpers like tailwindcss for positioning and sizing
 * And more ...
 
 ## Getting started
 
 ### Quick start
 
-* Import mgplus.css to your website from our CDN
+1- Include the Mg+ CSS file in the section of your HTML file to apply the default styles:
 
 ```html
- <link rel="stylesheet" type="text/css" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/css/mgplus.css" />
+ <link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus.css">
 ```
 
-* Optional: In order to use collapsible components or darkmode, import mgplus-dom.js to your website from our CDN
+2-  Include Mg+ plugins at the end of your page to allow user ui interactions (optional) styles:
 
 ```html
-<script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/js/mgplus-dom.js"></script>
+<script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script>
+```
+
+3-  Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
+
+```html
+<button class="mg-button">Click me</button>
+```
+## Customize
+
+### Css variables
+```css
+:root {
+  --mg-color-dark: hsl(255deg 0% 5%);
+  --mg-color-light: hsl(255deg 0% 95%);
+  --mg-color-primary: #475dca;
+  --mg-control-radius: 1rem;
+  --mg-input-radius: 1rem;
+  --mg-color-red: #dc3545;
+  --mg-color-orange: #fd7e14;
+  --mg-color-blue: #007bff;
+  --mg-color-green: #28a745;
+  --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
+  --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
+  --mg-base-font-size: 1.6rem;
+
+  //default secondary colors 
+  --mg-color-initial: var(--mg-color-light);
+  --mg-color-secondary: hsl(255deg 0% 20%);
+  --mg-color-tertiary: hsl(255deg 0% 40%);
+  --mg-color-quaternary: hsl(255deg 0% 60%);
+  --mg-color-quinary: hsl(255deg 0% 90%);
+
+  //dark-colors 
+  --mg-dark-color-initial: var(--mg-color-dark);
+  --mg-dark-color-secondary: hsl(255deg 0% 80%);
+  --mg-dark-color-tertiary: hsl(255deg 0% 70%);
+  --mg-dark-color-quaternary: hsl(255deg 0% 50%);
+  --mg-dark-color-quinary: hsl(255deg 0% 25%);
+}
+
 ```
 
 ## Developing
 
-### Start demo page locally with enabled hot reload
+### Debug source and demo page locally without any custom configuration
+*Main repository project is now based on [Vite](https://vite.dev/)* to provide best developer experience
 
-* Clone the repository
+Clone the repository
 
 ```sh
 git clone https://github.com/Evodim/mgplus.git
 ```
 
-Install packages
+Install packages (with yarn, npm, on pnpm)
 
 ```sh
 npm install
@@ -85,13 +126,12 @@ npm install
 Build demo page
 
 ```sh
-npm run build:demo
+npm run build
 ```
+Run debug demo page with hot reload
 
-Start demo page (hot reload enabled on any change)
-  
 ```sh
-npm run start
+npm run dev
 ```
 
 ### Build only the library
@@ -99,18 +139,8 @@ npm run start
 Output library will be copied in dist folder
 
 ```sh
-npm run build
-```
-
-### Build debug version of the library
-
-Build unminified version with sourcemaps
-
-```sh
-npm run build:debug
-```
-
-*yarn, pnpm commands are also supported*
+npm run build:lib
+``` 
 
 ## License
 

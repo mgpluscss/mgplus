@@ -1,6 +1,7 @@
-export default function registerTabs() {
+export function registerTabs() {
   document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
-  function setupTabs(tabs) {
+
+  function setupTabs(tabs: Element) {
     let items = tabs.getElementsByClassName("mg-tabs--item");
 
     for (let j = 0; j < items.length; j++) {
@@ -17,22 +18,26 @@ export default function registerTabs() {
         if (targetToShow) {
           const el = document.getElementById(targetToShow);
           if (el) {
-            el.style.display = "block";
+            el.classList.add("active");
           }
         }
       }
     }
 
     tabs.addEventListener("click", function (e) {
-      let selector = e.target;
-      if (e.target.parentNode.classList.contains("mg-tabs--item")) {
-        selector = e.target.parentNode;
+      let selector = e.target as HTMLElement;
 
+      // Ensure the clicked element is a tab item or its child
+      while (selector && !selector.classList.contains("mg-tabs--item")) {
+        selector = selector.parentElement as HTMLElement;
+      }
+
+      if (selector && selector.classList.contains("mg-tabs--item")) {
         e.stopPropagation();
         e.preventDefault();
 
         if (selector.getAttribute("data-active") !== "true") {
-          //disable all selected tabs
+          // Disable all selected tabs
           let items = tabs.getElementsByClassName("mg-tabs--item");
 
           for (let j = 0; j < items.length; j++) {
@@ -43,18 +48,19 @@ export default function registerTabs() {
             if (targetToHide) {
               const el = document.getElementById(targetToHide);
               if (el) {
-                el.style.display = "none";
+                el.classList.remove("active");
               }
             }
           }
-          //activate selected tab
+
+          // Activate selected tab
           selector.classList.add("active");
           selector.setAttribute("data-active", "true");
           let targetToShow = selector.getAttribute("data-target");
           if (targetToShow) {
             const el = document.getElementById(targetToShow);
             if (el) {
-              el.style.display = "block";
+              el.classList.add("active");
             }
           }
         }

@@ -3,9 +3,12 @@
   <p>Timelines are used to display a
     list of events in chronological order. Below, you will find examples of how to use the timeline system to create a
     variety of timeline states.</p>
-  <div>
-    <h3>vertical (default) <code>mg-timeline</code></h3>
-    <div class="mg-container" id="timeline-example">
+  <p> <code>mg-timeline</code> with <code>ul</code> or <code>ol</code> lists</p>
+  <p> <code>mg-timeline-inline</code> with <code>ul</code> or <code>ol</code> lists</p>
+
+  <div class="mg-row">
+    <div class="mg-x6">
+      <h3>Vertical (default)</h3>
       <div class="mg-timeline" data-toggle="htmlpreview">
         <ul>
           <li class="active">
@@ -26,9 +29,11 @@
           </li>
         </ul>
       </div>
-      <h3>inline <code>mg-timeline-inline</code></h3>
-      <div class="mg-timeline-inline mg-m6" data-toggle="htmlpreview">
-        <ul>
+    </div>
+    <div class="mg-x6">
+      <h3>Vertical ordered</h3>
+      <div class="mg-timeline" data-toggle="htmlpreview">
+        <ol>
           <li class="active">
             <div>2021</div>
             <div>Project inception and initial development phase.</div>
@@ -45,8 +50,51 @@
             <div>2024</div>
             <div>Stable release</div>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   </div>
+  <div class="mg-col">
+    <h3>Inline</h3>
+    <div class="mg-timeline-inline mg-m6" data-toggle="htmlpreview">
+      <ul>
+        <li class="active">
+          <div>2021</div>
+          <div>Project inception and initial development phase.</div>
+        </li>
+        <li class="active">
+          <div>2022</div>
+          <div>First release</div>
+        </li>
+        <li class="current">
+          <div>2023</div>
+          <div>Enhancement</div>
+        </li>
+        <li>
+          <div>2024</div>
+          <div>Stable release</div>
+        </li>
+      </ul>
+    </div>
+    <h3>Inline ordered</h3>
+    <div class="mg-timeline-inline mg-m6" data-toggle="htmlpreview">
+      <ol>
+        <li class="active">
+          <div>2021</div>
+          <div>Project inception and initial development phase.</div>
+        </li>
+        <li class="active">
+          <div>2022</div>
+          <div>First release</div>
+        </li>
+        <li class="current">
+          <div>2023</div>
+          <div>Enhancement</div>
+        </li>
+        <li>
+          <div>2024</div>
+          <div>Stable release</div>
+        </li>
+      </ol>
+    </div>
 </section>

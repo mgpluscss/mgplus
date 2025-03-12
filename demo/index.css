@@ -31,59 +31,6 @@ header {
   background: linear-gradient(360deg, transparent 1%, #34237a 0%, #0cd4ef 90%);
 }
 
-.svg-icon-darkmode {
-  background-image: url("./images/darkmode.svg");
-}
-
-.svg-icon-colors {
-  background-image: url("./images/colors.svg");
-}
-
-.svg-icon-gears {
-  background-image: url("./images/gears.svg");
-}
-
-.svg-icon-fr {
-  background-image: url("./images/fr.svg");
-}
-
-.svg-icon-sp {
-  background-image: url("./images/sp.svg");
-}
-
-.svg-icon-de {
-  background-image: url("./images/de.svg");
-}
-.svg-icon-search {
-  background-image: url("./images/search.svg");
-}
-.svg-icon-clipboard {
-  background-image: url("./images/clipboard.svg");
-}
-
-.svg-icon-github {
-  background-image: url("./images/github.svg");
-}
-.svg-icon-night {
-  background-image: url("./images/night-fog.svg");
-}
-.svg-icon-sun {
-  background-image: url("./images/sun-fog.svg");
-}
-
-.svg-icon-screen-s {
-  background-image: url("./images/screen-s.svg");
-}
-.svg-icon-screen-m {
-  background-image: url("./images/screen-m.svg");
-}
-.svg-icon-screen-l {
-  background-image: url("./images/screen-l.svg");
-}
-.svg-icon-screen-xl {
-  background-image: url("./images/screen-xl.svg");
-}
-
 .grid-cel {
   font-weight: bold;
   width: 100%;
@@ -220,4 +167,29 @@ pre.prettyprint {
   80% {
     border-radius: 60% 40% 32% 68% / 38% 36% 64% 62%;
   }
+}
+
+.grid-bg {
+}
+.grid-bg::before {
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 30vh;
+  background: linear-gradient(
+        90deg,
+        var(--mg-color-quinary) 1px,
+        transparent 1px 10vmin
+      )
+      0 10vmin / 10vmin 10vmin,
+    linear-gradient(var(--mg-color-quinary) 1px, transparent 1px 10vmin) 0
+      10vmin / 10vmin 10vmin;
+  mask: linear-gradient(
+    180deg,
+    transparent 10% 0%,
+    var(--mg-color-quinary) 100%
+  );
+  z-index: -2;
 }

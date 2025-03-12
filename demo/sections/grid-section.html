@@ -3,7 +3,18 @@
   <p>Grids are used to create a
     responsive layout for the application. Below, you will find examples of how to use the grid system to create a
     variety of layouts.</p>
-  <h5>Row sizing and placement</h5>
+  <h3>Horizontal aligment</h3>
+  <p>Horizontal alignment can be set using the <code>mg-row</code> class.
+    combined with
+    <code>mg-x--offset[1-12]</code>
+    <code>mg-x--start</code>
+    <code>mg-x--center</code>
+    <code>mg-x--end</code>
+    <code>mg-x--around</code>
+  </p>
+  </p>
+
+  <h4>Row sizing and placement</h4>
   <div class="mg-container" id="grid-example0" data-toggle="htmlpreview">
     <div class="mg-row ">
       <div class="grid-cel mg-x4">x4</div>
@@ -27,7 +38,7 @@
       </div>
     </div>
   </div>
-  <h5>Responsibve Row sizing</h5>
+  <h4>Responsibve Row sizing</h4>
   <div class="mg-container" id="grid-example1" data-toggle="htmlpreview">
     <div class="mg-row ">
       <div class="grid-cel mg-x6">x6</div>
@@ -38,7 +49,7 @@
 
   </div>
   </div>
-  <h5>Row alignment</h5>
+  <h4>Row alignment</h4>
   <div class="mg-container" id="grid-example3" data-toggle="htmlpreview">
     <div class="mg-row ">
       <div class="mg-col mg-x--start">
@@ -64,7 +75,7 @@
       </div>
     </div>
   </div>
-  <h5>Col alignment</h5>
+  <h3>Vertical alignment <code>mg-col</code></h3>
   <div class="mg-container" id="grid-example4" data-toggle="htmlpreview">
     <div class="mg-row  mg-h30vh">
       <div class="mg-col mg-x4 mg-x--top">
@@ -84,7 +95,8 @@
       </div>
     </div>
   </div>
-  <h5>Row grow</h5>
+  <h4>Row grow</h4>
+  <code>mg-[x,m,s,l]--grow</code>
   <div class="mg-container" id="grid-example5" data-toggle="htmlpreview">
     <div class="mg-row mg-h30vh">
       <div class="mg-col mg-x4">
@@ -101,11 +113,11 @@
       </div>
     </div>
   </div>
-  <h5>Gap</h5>
+  <h3>Gap</h3>
   <p>Mg+ uses a modular system to define the gap between elements with rem based unit (0 to 10rem)
     <code>mg-gap[0-10]</code>
     <code>mg-row-gap[0-10]</code>
-    <code>mg-row-gap[0-10]</code>
+    <code>mg-col-gap[0-10]</code>
   </p>
   <div class="mg-container" id="grid-example6" data-toggle="htmlpreview">
     <div class="mg-row mg-gap1">

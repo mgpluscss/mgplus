@@ -1,4 +1,4 @@
-export default function registerThemeSwitcher() {
+export function registerDarkMode() {
   const current = document.documentElement.getAttribute("data-theme");
 
   applyTheme(current ? current : "light");
@@ -13,7 +13,7 @@ export default function registerThemeSwitcher() {
   // Select all elements with data-toggle attribute containing "theme" and setup theme for each
   document.querySelectorAll("[data-toggle~=theme]").forEach(setupTheme);
 
-  function applyTheme(customTheme) {
+  function applyTheme(customTheme: string | null) {
     if (customTheme && customTheme != "auto" && customTheme != "system") {
       document.documentElement.setAttribute("data-theme", customTheme);
       console.log("mgplus - theme applied (forced):", customTheme);
@@ -28,7 +28,7 @@ export default function registerThemeSwitcher() {
     }
   }
   // Function to setup theme for an element
-  function setupTheme(el) {
+  function setupTheme(el: Element) {
     // Select target theme
     const newTheme = el.getAttribute("data-value");
     // Add event listener to the element to theme switcher

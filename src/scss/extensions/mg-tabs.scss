@@ -48,7 +48,13 @@
 
 .mg-tabs--content {
   border-top: 0.15rem solid $color-quaternary;
-  display: none;
   padding: 1.5rem;
   clear: both;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.mg-tabs--content:not(.active) {
+  display: none;
+  opacity: 0;
 }
