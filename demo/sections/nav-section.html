@@ -1,7 +1,9 @@
 <section id="nav-section">
   <h2>Navs</h2>
-  <p>Navs are used to navigate through
-    the application. Below, you will find examples of how to use the nav system to create a variety of nav states.</p>
+  <p>
+    Navs are used to navigate through the application. Below, you will find
+    examples of how to use the nav system to create a variety of nav states.
+  </p>
   <div data-toggle="htmlpreview">
     <h3>Nav vertical (default)</h3>
     <code>mg-nav</code>
@@ -11,10 +13,9 @@
       <li><a href="#contact">Contact</a></li>
       <li><a href="#about">About</a></li>
     </ul>
-
   </div>
   <div data-toggle="htmlpreview">
-    <h3>Nav inline </h3>
+    <h3>Nav inline</h3>
     <code>mg-nav mg-nav--inline</code>
     <ul class="mg-nav mg-nav--inline" data-toggle="nav">
       <li class="active"><a href="#home">Home</a></li>
@@ -25,7 +26,7 @@
   </div>
 
   <div data-toggle="htmlpreview">
-    <h3>Nav buttons</h3>
+    <h3>Nav buttons</h3>    
     <code>mg-nav mg-nav--buttons </code>
     <ul class="mg-nav mg-nav--buttons" data-toggle="nav">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
@@ -33,25 +34,32 @@
       <li><a class="mg-button" href="#contact">Contact</a></li>
       <li><a class="mg-button" href="#about">About</a></li>
     </ul>
-  </div>
+  </div>  
+  <h3>Nav buttons with custom background</h3>
+  <code>+ mg-bg-quinary</code>
+  <ul class="mg-nav mg-nav--buttons mg-bg-quinary mg-rounded" data-toggle="nav">
+    <li class="active"><a class="mg-button" href="#home">Home</a></li>
+    <li><a class="mg-button" href="#news">News</a></li>
+    <li><a class="mg-button" href="#contact">Contact</a></li>
+    <li><a class="mg-button" href="#about">About</a></li>
+  </ul>
+</div>
   <div data-toggle="htmlpreview">
     <h3>Nav buttons (wrapped)</h3>
-    <code>mg-nav mg-nav--buttons mg-wrap</code>
-    <ul class="mg-nav mg-nav--buttons mg-wrap" data-toggle="nav">
+    <code>+ mg-wrap</code>
+    <ul class="mg-nav mg-nav--buttons mg-wrap " data-toggle="nav">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
       <li><a class="mg-button" href="#news">News</a></li>
       <li><a class="mg-button" href="#contact">Contact</a></li>
       <li><a class="mg-button" href="#about">About</a></li>
     </ul>
     <h3>Nav buttons (vertical)</h3>
-    <code>mg-nav mg-nav--buttons mg-col</code>
+    <code>+ mg-col</code>
     <ul class="mg-nav mg-nav--buttons mg-col mg-x12 mg-m2" data-toggle="nav">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
-      <li><a class="mg-button" href="#news">News</a></li>
+      <li><a class="mg-button mg-bg-red" href="#news">News</a></li>
       <li><a class="mg-button" href="#contact">Contact</a></li>
       <li><a class="mg-button" href="#about">About</a></li>
     </ul>
   </div>
-
-
 </section>
