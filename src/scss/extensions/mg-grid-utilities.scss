@@ -1,9 +1,9 @@
 @use "sass:math";
 
-/* gutter fixed to 0 , usa mg-gap for column or row spacing*/
-$grid__gutter: 0rem;
+/* gutter fixed to 0 , usa mg-gap for column or row spacing */
+$grid-gutter: 0rem;
 
-@mixin grid-column($_gutter: $grid__gutter) {
+@mixin grid-column($_gutter: $grid-gutter) {
   flex: 0 0 100%;
   max-width: 100%;
 
@@ -16,7 +16,7 @@ $grid__gutter: 0rem;
 }
 
 //  Centered container element
-@mixin init-container($_gutter: $grid__gutter) {
+@mixin init-container($_gutter: $grid-gutter) {
   margin-right: auto;
   margin-left: auto;
   padding-right: 0.8rem;
@@ -25,14 +25,14 @@ $grid__gutter: 0rem;
 }
 
 //  Creates a wrapper for a series of columns
-@mixin init-row($_gutter: $grid__gutter) {
+@mixin init-row($_gutter: $grid-gutter) {
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
 }
 
 //  Generate default columns
-@mixin create-x($_columns, $_gutter: $grid__gutter) {
+@mixin create-x($_columns, $_gutter: $grid-gutter) {
   @include grid-column($_gutter);
 
   max-width: math.percentage(calc($_columns / $grid__columns));
@@ -43,7 +43,7 @@ $grid__gutter: 0rem;
 }
 
 //  Generate small columns
-@mixin create-s($_columns, $_gutter: $grid__gutter) {
+@mixin create-s($_columns, $_gutter: $grid-gutter) {
   @include grid-column($_gutter);
 
   @media screen and (min-width: $screen-s) {
@@ -58,7 +58,7 @@ $grid__gutter: 0rem;
 }
 
 //  Generate medium columns
-@mixin create-m($_columns, $_gutter: $grid__gutter) {
+@mixin create-m($_columns, $_gutter: $grid-gutter) {
   @include grid-column($_gutter);
 
   @media screen and (min-width: $screen-m) {
@@ -73,7 +73,7 @@ $grid__gutter: 0rem;
 }
 
 //  Generate large columns
-@mixin create-l($_columns, $_gutter: $grid__gutter) {
+@mixin create-l($_columns, $_gutter: $grid-gutter) {
   @include grid-column($_gutter);
 
   @media screen and (min-width: $screen-l) {
