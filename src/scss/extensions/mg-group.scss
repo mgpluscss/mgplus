@@ -6,6 +6,7 @@
 }
 
 /* stylelint-disable */
+/*left group styling*/
 .mg-group>select:nth-child(1),
 .mg-group>input:nth-child(1),
 .mg-group>button:nth-child(1),
@@ -17,7 +18,7 @@
   border-bottom-right-radius: 0;
   border-right: 0;
 }
-
+/*inner group styling*/
 .mg-group>select:not(:nth-child(1), :nth-last-child(1)),
 .mg-group>input:not(:nth-child(1), :nth-last-child(1)),
 .mg-group>button:not(:nth-child(1), :nth-last-child(1)),
@@ -25,9 +26,11 @@
 .mg-group>.mg-button:not(:nth-child(1), :nth-last-child(1)),
 .mg-group>.mg-dropdown:not(:nth-child(1), :nth-last-child(1))>button,
 .mg-group>.mg-select:not(:nth-child(1), :nth-last-child(1))>select {
-  border-radius: 0;
+  border-radius: 0; 
+  
 }
 
+/*right group styling*/
 .mg-group>.mg-select:last-child>select,
 .mg-group>input:last-child,
 .mg-group>button:last-child,
