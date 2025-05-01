@@ -1,5 +1,8 @@
 @use "sass:math";
 
+/* gutter fixed to 0 , usa mg-gap for column or row spacing*/
+$grid__gutter: 0rem;
+
 @mixin grid-column($_gutter: $grid__gutter) {
   flex: 0 0 100%;
   max-width: 100%;
