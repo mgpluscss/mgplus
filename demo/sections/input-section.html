@@ -1,27 +1,28 @@
 <section id="inputs">
   <h2>Inputs</h2>
-  <div id="inputs-example" data-toggle="htmlpreview">
-    <h3>Input sizing</h3>
-    <div class="mg-row">
-      <div class="mg-col mg-x6">
-        <input class="mg-input--small" title="input" type="text" />
-      </div>
-      <div class="mg-col mg-x6">
-        <input class="mg-input--large" title="input" type="text" />
-      </div>
-    </div>
-    <div class="mg-row">
-      <div class="mg-col mg-x6">
+  <div id="inputs-example" class="mg-container" data-toggle="htmlpreview">
+    <h3>Input sizing</h3> 
+      <input
+        class="mg-input--small"
+        title="input"
+        type="text"
+        placeholder="mg-input--small"
+      />
+      <input
+        class="mg-input--large"
+        title="input"
+        type="text"
+        placeholder="mg-input--large"
+      /> 
         <div class="mg-select">
-          <select id="ageRangeField" class="mg-input--small">
+          <select id="ageRangeField" class="mg-input--small" >
+            <option value="0-13">0-13</option>
             <option value="0-13">0-13</option>
             <option value="14-17">14-17</option>
             <option value="18-23">18-23</option>
             <option value="24+">24+</option>
           </select>
-        </div>
-      </div>
-      <div class="mg-col mg-x6">
+        </div> 
         <div class="mg-select">
           <select id="ageRangeField" class="mg-input--large">
             <option value="0-13">0-13</option>
@@ -31,7 +32,7 @@
           </select>
         </div>
       </div>
-    </div>
+    
     <h3>Styled inputs</h3>
     <div class="mg-input mg-input--small">
       <i class="mg-icon icon-search"></i>
