@@ -21,6 +21,7 @@
     "lint:fix": "stylelint **/*.scss --fix"
   },
   "devDependencies": {
+    "@stencil/core": "^4.31.0",
     "@types/node": "^22.13.9",
     "autoprefixer": "^10.4.20",
     "dotenv": "^16.4.7",
