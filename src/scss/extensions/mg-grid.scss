@@ -8,9 +8,7 @@
   height: 100%;
 }
 
-.mg-col>* {
-  flex: 0 0 auto;
-}
+
 
 @include create-all-grid-columns;
 
