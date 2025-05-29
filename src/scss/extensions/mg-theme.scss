@@ -6,6 +6,14 @@
    --mg-color-quinary: var(--mg-dark-color-quinary);
  }
 
+ @mixin light-colors {
+   --mg-color-initial: var(--mg-color-initial);
+   --mg-color-secondary: var(--mg-color-secondary);
+   --mg-color-tertiary: var(--mg-color-tertiary);
+   --mg-color-quaternary: var(--mg-color-quaternary);
+   --mg-color-quinary: var(--mg-color-quinary);
+ }
+
  /* stylelint-disable */
  :root {
    color-scheme: light;
@@ -24,6 +32,7 @@
 
  .mg-theme--light,
  :root[data-theme='light'] {
+   @include light-colors;
    color-scheme: light;
 
    .mg-hidden-light {
