@@ -19,7 +19,7 @@
    color-scheme: light;
  }
 
- .mg-theme--dark,
+ .mg-theme-dark,
  :root[data-theme='dark'] {
    @include dark-colors;
 
@@ -30,7 +30,7 @@
    }
  }
 
- .mg-theme--light {
+ .mg-theme-light {
    @include light-colors;
    color-scheme: light;
 
