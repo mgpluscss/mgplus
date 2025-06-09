@@ -30,8 +30,7 @@
    }
  }
 
- .mg-theme--light,
- :root[data-theme='light'] {
+ .mg-theme--light {
    @include light-colors;
    color-scheme: light;
 
