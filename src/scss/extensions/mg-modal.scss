@@ -21,14 +21,15 @@
   background: rgb(0 0 0 / 70%);
   transition: opacity 0.3s;
 
-  &>.mg-modal--content {
+  &>.mg-modal--content { 
     background-color: $color-initial;
     border-radius: $control-radius;
     color: $color-secondary;
-    padding: 2rem 1.5rem;    
+    padding: 2rem 1.5rem;
     margin-top: 0;
     z-index: 2000;
     box-shadow: $control-shadow;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 
@@ -38,28 +39,43 @@
   }
 
   &.mg-bottom>.mg-modal--content {
-    bottom: 0;
+    bottom: -100vh;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
   &.mg-top>.mg-modal--content {
-    top: 0;
+    top: -100vh;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 
   &.mg-right>.mg-modal--content {
-    right: 0;
+    right: -100vw;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin-right: -1rem;
   }
 
   &.mg-left>.mg-modal--content {
-    left: 0;
+    left: -100vw;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -1rem;
+  } 
+  &.mg-show.mg-right>.mg-modal--content {
+    transform: translateX(-100vw); 
+  }
+
+  &.mg-show.mg-left>.mg-modal--content {
+    transform: translateX(100vw);
+  }
+
+  &.mg-show.mg-top>.mg-modal--content {
+    transform: translateY(100vh); 
+  }
+
+  &.mg-show.mg-bottom>.mg-modal--content {
+    transform: translateY(-100vh); 
   }
 }
