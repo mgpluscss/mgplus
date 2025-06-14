@@ -6,7 +6,7 @@ export function registerModals() {
   function setupModal(el: Element) {
     // Function to handle modal removal
     function removeModalHandler() {
-      modal?.classList.remove("mg-show");
+      modal?.classList.remove("opened");
     }
 
     // Select the modal and close button elements
@@ -16,7 +16,7 @@ export function registerModals() {
 
     // Add event listener to the element to show modal on click
     el.addEventListener("click", function (_: Event) {
-      modal?.classList.add("mg-show");
+      modal?.classList.add("opened");
     });
 
     // Add event listener to the close button to remove modal on click

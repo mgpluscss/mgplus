@@ -21,6 +21,11 @@
   background: rgb(0 0 0 / 70%);
   transition: opacity 0.3s;
 
+  &.opened {
+    opacity: 1;
+    visibility: visible;
+  }
+
   &>.mg-modal--content {
     background-color: $color-initial;
     border-radius: $control-radius;
@@ -64,19 +69,19 @@
     margin-left: -1rem;
   }
 
-  &.mg-show.mg-right>.mg-modal--content {
+  &.opened.mg-right>.mg-modal--content {
     transform: translateX(-100vw);
   }
 
-  &.mg-show.mg-left>.mg-modal--content {
+  &.opened.mg-left>.mg-modal--content {
     transform: translateX(100vw);
   }
 
-  &.mg-show.mg-top>.mg-modal--content {
+  &.opened.mg-top>.mg-modal--content {
     transform: translateY(100vh);
   }
 
-  &.mg-show.mg-bottom>.mg-modal--content {
+  &.opened.mg-bottom>.mg-modal--content {
     transform: translateY(-100vh);
   }
 }
