@@ -21,7 +21,7 @@
   background: rgb(0 0 0 / 70%);
   transition: opacity 0.3s;
 
-  &>.mg-modal--content { 
+  &>.mg-modal--content {
     background-color: $color-initial;
     border-radius: $control-radius;
     color: $color-secondary;
@@ -62,9 +62,10 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     margin-left: -1rem;
-  } 
+  }
+
   &.mg-show.mg-right>.mg-modal--content {
-    transform: translateX(-100vw); 
+    transform: translateX(-100vw);
   }
 
   &.mg-show.mg-left>.mg-modal--content {
@@ -72,10 +73,10 @@
   }
 
   &.mg-show.mg-top>.mg-modal--content {
-    transform: translateY(100vh); 
+    transform: translateY(100vh);
   }
 
   &.mg-show.mg-bottom>.mg-modal--content {
-    transform: translateY(-100vh); 
+    transform: translateY(-100vh);
   }
 }
