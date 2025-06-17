@@ -115,23 +115,28 @@
 @include build-none-half-full('mg-rounded', 'border-radius');
 
 .mg-border {
-    border-width: 0.12rem;
-    border-style: solid;
+    border: 0.07rem solid $color-quaternary;
 }
 
-.mg-border-thin {
-    border-width: 0.07rem;
-    border-style: solid;
+.mg-border-none {
+    border: none;
 }
 
-.mg-border-bold {
-    border-width: 0.19rem;
-    border-style: solid;
+.mg-border-t {
+    border-top: 0.07rem solid $color-quaternary;
+
 }
 
-.mg-border-bolder {
-    border-width: 0.31rem;
-    border-style: solid;
+.mg-border-r {
+    border-right: 0.07rem solid $color-quaternary;
+}
+
+.mg-border-b {
+    border-bottom: 0.07rem solid $color-quaternary;
+}
+
+.mg-border-l {
+    border-left: 0.07rem solid $color-quaternary;
 }
 
 .mg-pointer {

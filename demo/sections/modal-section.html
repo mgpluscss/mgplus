@@ -182,7 +182,9 @@
 
   <p>
     Combine following classes with mg-modal to define orientation:
-    <code>mg-top | mg-bottom | mg-right | mg-left </code>
+    <code
+      >mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left
+    </code>
   </p>
   <div class="mg-container">
     <div class="mg-row mg-gap1">
@@ -266,11 +268,11 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-top mg-right" id="modal-tr">
-    <div class="mg-modal--content mg-container">
+  <div class="mg-modal mg-modal--right" id="modal-tr">
+    <div class="mg-modal--content mg-top mg-container">
       <h3>
         <i
-          class="mg-icon icon-close mg-icon--action mg-top mg-right"
+          class="mg-icon icon-close mg-icon--action mg-right"
           data-action="close"
         ></i>
       </h3>
@@ -279,7 +281,7 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-right" id="modal-r">
+  <div class="mg-modal mg-modal--right" id="modal-r">
     <div class="mg-modal--content mg-container">
       <h3>
         <i
@@ -292,7 +294,46 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-bottom mg-bottom mg-right" id="modal-br">
+  <div class="mg-modal mg-modal--right" id="modal-br">
+    <div class="mg-modal--content mg-bottom mg-container">
+      <h3>
+        <i
+          class="mg-icon icon-close mg-icon--action mg-right"
+          data-action="close"
+        ></i>
+      </h3>
+      <div>
+        <p>This is a modal window. You can do the following things with it:</p>
+      </div>
+    </div>
+  </div>
+  <div class="mg-modal mg-modal--left" id="modal-tl">
+    <div class="mg-modal--content mg-top mg-container">
+      <h3>
+        <i
+          class="mg-icon icon-close mg-icon--action mg-right"
+          data-action="close"
+        ></i>
+      </h3>
+      <div>
+        <p>This is a modal window. You can do the following things with it:</p>
+      </div>
+    </div>
+  </div>
+  <div class="mg-modal mg-modal--left" id="modal-bl">
+    <div class="mg-modal--content mg-bottom mg-container">
+      <h3>
+        <i
+          class="mg-icon icon-close mg-icon--action mg-right"
+          data-action="close"
+        ></i>
+      </h3>
+      <div>
+        <p>This is a modal window. You can do the following things with it:</p>
+      </div>
+    </div>
+  </div>
+  <div class="mg-modal mg-modal--left" id="modal-l">
     <div class="mg-modal--content mg-container">
       <h3>
         <i
@@ -305,46 +346,7 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-top mg-left" id="modal-tl">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-bottom mg-left" id="modal-bl">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-left" id="modal-l">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-top" id="modal-tc">
+  <div class="mg-modal mg-modal--top" id="modal-tc">
     <div class="mg-modal--content mg-container">
       <h3>
         <i
@@ -358,7 +360,7 @@
     </div>
   </div>
 
-  <div class="mg-modal mg-bottom" id="modal-b">
+  <div class="mg-modal mg-modal--bottom" id="modal-b">
     <div class="mg-modal--content mg-container">
       <h3>
         <i
