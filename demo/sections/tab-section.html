@@ -1,7 +1,19 @@
 <section id="tabs-section">
   <h2>Tabs</h2>
-  <p>Tabs are used to display a list of
-    options to the user. Below, you will find examples of how to use the tabs system to create a variety of tab states.
+  <p>
+    Tabs are used to display a list of options to the user. Below, you will find
+    examples of how to use the tabs system to create a variety of tab states.
+  </p>
+  <p>
+    If you use <b>MgPlus JS plugins</b>, just add
+    <code>data-target="id_of_tab_content"</code> to tab list menu and
+    <code>data-toggle="tabs"</code> to the main container (mg-tabs). This will
+    allow you to toggle between different tab contents.
+  </p>
+  <p>
+    Otherwise, you need to implement the tab switching functionality manually
+    using JavaScript by adding/removing the <code>active</code> class to
+    selected item of tab menu and item to the tab content as well.
   </p>
   <i>Tabs needs js to toggle class visibility</i>
   <div id="tabs-example" data-toggle="htmlpreview">
@@ -19,21 +31,21 @@
       </ul>
       <div class="mg-tabs--content" id="tab1">
         1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero fugit
-        quidem, voluptate veniam aut animi nihil voluptas mollitia, aliquid
-        inventore.
+        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
+        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
+        aliquid inventore.
       </div>
       <div class="mg-tabs--content" id="tab2">
         2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero fugit
-        quidem, voluptate veniam aut animi nihil voluptas mollitia, aliquid
-        inventore.
+        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
+        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
+        aliquid inventore.
       </div>
       <div class="mg-tabs--content" id="tab3">
         3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero fugit
-        quidem, voluptate veniam aut animi nihil voluptas mollitia, aliquid
-        inventore.
+        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
+        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
+        aliquid inventore.
       </div>
     </div>
   </div>

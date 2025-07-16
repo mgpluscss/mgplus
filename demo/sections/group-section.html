@@ -1,6 +1,11 @@
 <section id="group">
   <h2>Group</h2>
-  <p><code>mg-group</code> is used to group buttons or input in a same frame</p>
+  <p>
+    Place <code>mg-group</code> class to a div element to create a group of
+    buttons or inputs.
+  </p>
+    <code>mg-group</code> preserves the visual coherence of grouped elements whatever the size or rounding of the elements.
+  </p>
 
   <div class="mg-group" id="group-example" data-toggle="htmlpreview">
     <div class="mg-dropdown" data-value="bmw" id="car-dropdown">
@@ -18,11 +23,17 @@
       </div>
     </div>
     <input class="mg-x6" type="text" title="test" value="search" />
-    <a class="mg-button" href="#group"><i class="mg-icon svg-icon-search"></i></a>
+    <a class="mg-button" href="#group"
+      ><i class="mg-icon svg-icon-search"></i
+    ></a>
   </div>
   <div class="mg-group" id="group-example4" data-toggle="htmlpreview">
     <div class="mg-dropdown" data-value="bmw" id="car-dropdown2">
-      <button title="dropdown" data-toggle="dropdown" class="mg-icon-dropdown mg-button--small">
+      <button
+        title="dropdown"
+        data-toggle="dropdown"
+        class="mg-icon-dropdown mg-button--small"
+      >
         <i class="mg-icon svg-icon-gears"></i>
       </button>
       <div class="mg-dropdown--content mg-dropdown--content-left">
@@ -39,11 +50,21 @@
         </ul>
       </div>
     </div>
-    <a class="mg-button mg-button--small" href="#group"><span class="mg-icon svg-icon-search"></span></a>
+    <a class="mg-button mg-button--small" href="#group"
+      ><span class="mg-icon svg-icon-search"></span
+    ></a>
   </div>
   <div class="mg-group" id="group-example5" data-toggle="htmlpreview">
-    <input class="mg-x2 mg-button--small" type="number" min="1" max="31" maxlength="2" title="day" value="01" />
-    <div class="mg-select mg-x6">
+    <input
+      class="mg-x2 mg-pad0 mg-button--small"
+      type="number"
+      min="1"
+      max="31"
+      maxlength="2"
+      title="day"
+      value="01"
+    />
+    <div class="mg-select mg-x6 mg-pad0">
       <select aria-label="Month" title="Month" data-value="0">
         <option value="0" disabled="">Month</option>
         <option value="1">January</option>
@@ -60,6 +81,14 @@
         <option value="12">December</option>
       </select>
     </div>
-    <input class="mg-x4 mg-button--small" type="number" min="1900" max="2025" maxlength="4" title="year" value="2025" />
+    <input
+      class="mg-x4 mg-button--small"
+      type="number"
+      min="1900"
+      max="2025"
+      maxlength="4"
+      title="year"
+      value="2025"
+    />
   </div>
 </section>

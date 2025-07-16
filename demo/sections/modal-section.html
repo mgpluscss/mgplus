@@ -1,11 +1,29 @@
 <section id="modal">
   <h2>Modal</h2>
   <p>
-    A Modal is composed by a trigger button and a modal content window. Apart
-    using an UI framework, trigger could be handled by mgplus custom js plugin
+    A Modal is composed by a trigger button and a modal content window. The
+    modal content window is hidden by default and can be displayed by clicking
+    the trigger button.
   </p>
-  <code>data-toggle="modal"</code>
-  <code>data-target="any-modal-content-id"</code>
+  <p>
+    To create a modal, you need to use the following classes:
+    <code>mg-modal</code> for the modal content window,
+    <code>mg-modal--content</code> for the content inside the modal, and
+    <code>mg-modal--body</code> for the body of the modal.
+  </p>
+  <p>
+    If you use <b>MgPlus JS plugins</b> just add the following attributes to the
+    trigger button to open the modal:
+
+    <code>data-toggle="modal"</code> and
+    <code>data-target="any-modal-content-id"</code>
+  </p>
+  <p>
+    Otherwise to toggle visibility of the modal, you need to add dynamically
+    <code>opened</code> class to mg-modal element when you want to open it
+    (usually on click)
+    <code>mg-modal opened</code>
+  </p>
 
   <div class="mg-container">
     <div id="modal-example" data-toggle="htmlpreview">
@@ -183,8 +201,8 @@
   <p>
     Combine following classes with mg-modal to define orientation:
     <code
-      >mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left
-    </code>
+      >mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left</code
+    >
   </p>
   <div class="mg-container">
     <div class="mg-row mg-gap1">
