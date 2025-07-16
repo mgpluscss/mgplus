@@ -1,4 +1,3 @@
-
 /*! mgplus.css #{$package_version} | MIT License | github.com/mgpluscss/mgplus */
 // exposed variables 
 /* stylelint-disable */
@@ -29,6 +28,9 @@
   --mg-dark-color-tertiary: hsl(255deg 0% 70%);
   --mg-dark-color-quaternary: hsl(255deg 0% 50%);
   --mg-dark-color-quinary: hsl(255deg 0% 25%);
+
+  //grid gutter
+  --mg-grid-gutter: 0.5rem;
 }
 
 //
@@ -68,7 +70,9 @@ $color-green: var(--mg-color-green);
 $color-danger: $color-red;
 $color-warning: $color-orange;
 $color-success: $color-green;
+$grid__gutter: var(--mg-grid-gutter) !default;
 $grid__columns: 12;
+
 
 //css icons
 $icon-border-width: .05rem !default;
