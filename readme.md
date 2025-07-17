@@ -55,7 +55,7 @@ MgPlus is specially designed to quickly create a website or a small page with mi
  <link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus.css">
 ```
 
-2-  Include Mg+ plugins at the end of your page to allow user ui interactions (optional) styles:
+2- (Optional) Include Mg+ plugins at the end of your page to allow dynamic ui interactions (dynamic class toggling)
 
 ```html
 <script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script>
