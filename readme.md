@@ -152,18 +152,16 @@ npm run build:lib
 <img width="1899" height="965" alt="image" src="https://github.com/user-attachments/assets/faa5d058-aadd-464e-9fe3-01ba09104b08" />
 
 
-**[Advanced website integration](https://www.redassurances.com)**
+**Advanced website integration**
 
-- Advanced forms wizard (funnels)
-- Navigation
+- Advanced forms wizard (funnels) with validation
+- Navigation, navbars
 - Responsive layouts
 - Modals
 - Conditionnal elements for mobile or desktop
   
-<img width="369" height="867" alt="image" src="https://github.com/user-attachments/assets/b0bc3a78-6524-4a62-99f3-7ffaffefbb30" />
-<img width="367" height="869" alt="image" src="https://github.com/user-attachments/assets/7d0cdab5-f5be-4bd8-937c-7c56ffa43448" />
-
-
+<img width="369" height="867" alt="image" src="https://github.com/user-attachments/assets/d727022d-68e3-4f9d-a77d-019bb23eae4b" />
+<img width="367" height="863" alt="image" src="https://github.com/user-attachments/assets/b71bc49e-de66-4fa7-83fd-2cd61d3d7d6c" />
 
 
 ## License
