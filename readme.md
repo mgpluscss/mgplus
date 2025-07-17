@@ -1,6 +1,7 @@
 # MgPlus (*Mg+*)
 
-## A micro css library to build elegant web pages efficiently
+## A micro css library based on milligram to build elegant web pages efficiently
+
 
 ![mgplus-micro-css-library](/demo/images/mgplus-micro-css-library.png)
 
@@ -10,7 +11,7 @@
 
 ![Latest release on NPM](https://img.shields.io/npm/v/mgplus)
 
-[CDN direct link](https://cdn.mgpluscss.com/v1.4.0/mgplus.css)
+[CDN direct link](https://cdn.mgpluscss.com/v1.4.4/mgplus.css)
 
 **Striking the perfect balance between features and simplicity**
 
@@ -19,12 +20,6 @@ The project began in early 2021 with the goal of providing a more robust and fea
 MgPlus is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
 ****Only one css file, around 70 KB minified****
-
-### Integration example
-
-**[MgPlus portal](https://www.mgpluscss.com)**
-
-**[corporate website integration](https://www.evodim.com)**
 
 ### Why mgplus ?
 
@@ -145,6 +140,31 @@ Output library will be copied in dist folder
 ```sh
 npm run build:lib
 ```
+
+### Production ready examples
+ 
+**[Corporate website integration](https://www.evodim.com)**
+
+ - Simple contact forms
+ - Responsive layouts
+ - Navigation
+   
+<img width="1899" height="965" alt="image" src="https://github.com/user-attachments/assets/faa5d058-aadd-464e-9fe3-01ba09104b08" />
+
+
+**[Advanced website integration](https://www.redassurances.com)**
+
+- Advanced forms wizard (funnels)
+- Navigation
+- Responsive layouts
+- Modals
+- Conditionnal elements for mobile or desktop
+  
+<img width="369" height="867" alt="image" src="https://github.com/user-attachments/assets/b0bc3a78-6524-4a62-99f3-7ffaffefbb30" />
+<img width="367" height="869" alt="image" src="https://github.com/user-attachments/assets/7d0cdab5-f5be-4bd8-937c-7c56ffa43448" />
+
+
+
 
 ## License
 
