@@ -16,13 +16,13 @@
 
 The project began in early 2021 with the goal of providing a more robust and feature-rich alternative while maintaining the minimalistic approach of Milligram
 
-Mgplus is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
+MgPlus is specially designed to quickly create a website or a small page with minimal dependencies for better performance and higher productivity
 
 ****Only one css file, around 70 KB minified****
 
 ### Integration example
 
-**[mgplus portal](https://www.mgpluscss.com)**
+**[MgPlus portal](https://www.mgpluscss.com)**
 
 **[corporate website integration](https://www.evodim.com)**
 
