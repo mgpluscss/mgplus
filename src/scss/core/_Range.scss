@@ -27,7 +27,7 @@ input[type="range"] {
     box-shadow: $control-shadow;
     cursor: pointer;
     height: 2.5rem;
-    width: 2.7rem;
+    width: 2.5rem;
   }
 
   &::-webkit-slider-thumb {
@@ -40,7 +40,8 @@ input[type="range"] {
     box-shadow: $control-shadow;
     cursor: pointer;
     height: 2.5rem;
-    width: 2.7rem;
+    width: 2.5rem;
+    border-radius: var(--mg-control-radius);
   }
 
   &:disabled {
