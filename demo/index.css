@@ -192,3 +192,8 @@ pre.prettyprint {
   );
   z-index: -2;
 }
+
+code .kwd,
+pre .kwd {
+  color: #fff !important;
+}
