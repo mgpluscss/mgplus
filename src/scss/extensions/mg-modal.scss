@@ -16,7 +16,7 @@
   height: 100%;
   visibility: hidden;
   backface-visibility: hidden;
-  z-index: 1000;
+  z-index: calc($zindex-max + 1);
   opacity: 0;
   background: rgb(0 0 0 / 70%);
   transition: opacity 0.3s;
@@ -32,7 +32,7 @@
     color: $color-secondary;
     padding: 2rem 1.5rem;
     margin-top: 0;
-    z-index: 2000;
+    z-index: calc($zindex-max + 2);
     box-shadow: $control-shadow;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

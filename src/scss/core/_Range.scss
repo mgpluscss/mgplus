@@ -27,20 +27,19 @@ input[type="range"] {
     box-shadow: $control-shadow;
     cursor: pointer;
     height: 2.5rem;
-    width: 2.7rem;
+    width: 2.5rem;
   }
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     background: $color-primary;
-    border-radius: 100%;
-    ;
     border: none;
     box-shadow: $control-shadow;
     cursor: pointer;
     height: 2.5rem;
-    width: 2.7rem;
+    width: 2.5rem;
+    border-radius: var(--mg-control-radius);
   }
 
   &:disabled {

@@ -31,6 +31,15 @@
 
   //grid gutter
   --mg-grid-gutter: 0.5rem;
+
+  //z-index
+  --mg-zindex-0: 1;
+  --mg-zindex-1: 100;
+  --mg-zindex-2: 200;
+  --mg-zindex-3: 300;
+  --mg-zindex-4: 400;
+  --mg-zindex-5: 500;
+  --mg-zindex-max: 999;
 }
 
 //
@@ -78,26 +87,29 @@ $grid__columns: 12;
 $icon-border-width: .05rem !default;
 
 // Z-index
-$zindex-0: 1 !default;
-$zindex-1: 100 !default;
-$zindex-2: 200 !default;
-$zindex-3: 300 !default;
-$zindex-4: 400 !default;
-$zindex-5: 500 !default;
-$zindex-max: 999 !default;
+$zindex-0: var(--mg-zindex-0) !default;
+$zindex-1: var(--mg-zindex-1) !default;
+$zindex-2: var(--mg-zindex-2) !default;
+$zindex-3: var(--mg-zindex-3) !default;
+$zindex-4: var(--mg-zindex-4) !default;
+$zindex-5: var(--mg-zindex-5) !default;
+$zindex-max: var(--mg-zindex-max) !default;
 $name-x: mg-x;
 $name-s: mg-s;
 $name-m: mg-m;
 $name-l: mg-l;
 $name-xl: mg-xl;
+// Breakpoints
 $break-s: 480px;
 $break-m: 768px;
 $break-l: 1024px;
 $break-xl: 1440px;
+
 $screen-s: $break-s + 1;
 $screen-m: $break-m + 1;
 $screen-l: $break-l + 1;
 $screen-xl: $break-xl + 1;
+
 $rem-map: (
   0: 0,
   1: 1rem,
