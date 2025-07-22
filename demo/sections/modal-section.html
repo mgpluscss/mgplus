@@ -16,7 +16,7 @@
     trigger button to open the modal:
 
     <code>data-toggle="modal"</code> and
-    <code>data-target="any-modal-content-id"</code>
+    <code>data-target="id-of-modal-content"</code>
   </p>
   <p>
     Otherwise to toggle visibility of the modal, you need to add dynamically
@@ -200,16 +200,17 @@
 
   <p>
     Combine following classes with mg-modal to define orientation:
-    <code>mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left</code> 
+    <code
+      >mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left</code
+    >
   </p>
   <div class="mg-container">
-    <div class="mg-row mg-gap1">
+    <div class="mg-row mg-gap1" data-toggle="htmlpreview">
       <div class="mg-col mg-x2">
         <button
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-tl"
-          data-orientation="top-left"
         >
           <i class="mg-icon svg-icon-popup-tl"></i>
         </button>
@@ -217,7 +218,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-l"
-          data-orientation="left"
         >
           <i class="mg-icon svg-icon-popup-ml"></i>
         </button>
@@ -225,7 +225,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-bl"
-          data-orientation="bottom-left"
         >
           <i class="mg-icon svg-icon-popup-bl"></i>
         </button>
@@ -235,7 +234,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-tc"
-          data-orientation="top"
         >
           <i class="mg-icon svg-icon-popup-tc"></i>
         </button>
@@ -243,7 +241,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-default"
-          data-orientation="default"
         >
           <i class="mg-icon svg-icon-popup-mc"></i>
         </button>
@@ -251,7 +248,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-b"
-          data-orientation="bottom"
         >
           <i class="mg-icon svg-icon-popup-bc"></i>
         </button>
@@ -269,7 +265,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-r"
-          data-orientation="right"
         >
           <i class="mg-icon svg-icon-popup-mr"></i>
         </button>
@@ -277,7 +272,6 @@
           title="scrollable modal"
           data-toggle="modal"
           data-target="modal-br"
-          data-orientation="bottom-right"
         >
           <i class="mg-icon svg-icon-popup-br"></i>
         </button>
