@@ -4,8 +4,7 @@
   margin-bottom: 1rem;
   display: inline-block;
 
-
-  &>.mg-dropdown--content {
+  & .mg-dropdown--content {
     -webkit-overflow-scrolling: touch;
     width: 100%;
     min-width: max-content;
@@ -28,12 +27,10 @@
     overflow: hidden auto;
     max-height: 60vh;
   }
-
 }
 
 .opened+.mg-dropdown--content {
   display: block;
   opacity: 1;
   visibility: visible;
-
 }
