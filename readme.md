@@ -160,7 +160,10 @@ npm run build:lib
 - Modals
 - Conditionnal elements for mobile or desktop
   
-<img width="369" height="867" alt="image" src="https://github.com/user-attachments/assets/d727022d-68e3-4f9d-a77d-019bb23eae4b" />
+<img width="410" height="734" alt="image" src="https://github.com/user-attachments/assets/caa73d44-5282-417a-9c73-4b9f07e6c4aa" />
+
+<img width="1246" height="1000" alt="image" src="https://github.com/user-attachments/assets/a886e05c-4adb-4214-be09-74c4e6c68e66" />
+
 <img width="367" height="863" alt="image" src="https://github.com/user-attachments/assets/b71bc49e-de66-4fa7-83fd-2cd61d3d7d6c" />
 
 
