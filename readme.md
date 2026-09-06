@@ -13,6 +13,15 @@
 
 [CDN direct link](https://cdn.mgpluscss.com/v1.4.5/mgplus.css)
 
+## 🎯 Project Vision
+
+* **Ultra-lightweight**: Under 70 KB minified CSS, zero runtime JS framework dependencies.
+* **Works everywhere**: A single codebase powering static HTML, SSR, and reactive frontend frameworks.
+* **Plug & Play**: Minimalist vanilla JS plugins (`data-toggle`) without dependencies.
+* **Developer Friendly**: Seamless CDN standalone usage and modern package exports for bundlers (Vite, Webpack, Rollup).
+* **Standards-compliant**: Progressive enhancement and modern CSS architecture.
+
+
 **Striking the perfect balance between features and simplicity**
 
 The project began in early 2021 with the goal of providing a more robust and feature-rich alternative while maintaining the minimalistic approach of Milligram
