@@ -4,42 +4,61 @@
   "version": "1.4.5",
   "description": "mgplus a micro CSS library",
   "homepage": "https://evodim.github.io/mgplus",
-  "repository": "https://github.com/Evodim/mgplus",
+  "repository": "https://github.com/mgpluscss/mgplus",
   "license": "MIT",
   "author": "evodim",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/mgplus-vanilla.umd.cjs",
+  "module": "dist/mgplus-vanilla.js",
+  "types": "dist/types/mgplus.d.ts",
   "style": "dist/mgplus.css",
+  "unpkg": "dist/mgplus-vanilla.umd.cjs",
+  "jsdelivr": "dist/mgplus-vanilla.umd.cjs",
+  "exports": {
+    ".": {
+      "types": "./dist/types/mgplus.d.ts",
+      "import": "./dist/mgplus-vanilla.js",
+      "require": "./dist/mgplus-vanilla.umd.cjs",
+      "default": "./dist/mgplus-vanilla.umd.cjs"
+    },
+    "./css": "./dist/mgplus.css",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "build:demo": "vite build --outDir demo_build",
     "build:lib": "vite build --config vite.lib.config.ts",
     "preview": "vite preview",
-    "lint": "stylelint **/*.scss",
-    "lint:fix": "stylelint **/*.scss --fix"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint:css": "stylelint **/*.scss",
+    "lint:css:fix": "stylelint **/*.scss --fix",
+    "lint:js": "eslint src/",
+    "lint": "npm run lint:css && npm run lint:js",
+    "test": "npm run typecheck && npm run lint && npm run build:lib"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@jaames/iro": "^5.5.2",
     "@types/node": "^22.13.9",
     "autoprefixer": "^10.4.20",
     "dotenv": "^16.4.7",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
     "postcss": "^8.5.3",
     "sass": "^1.71.1",
     "stylelint": "^16.15.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "^5.8.2",
+    "typescript-eslint": "^8.69.0",
     "vite": "^5.4.2",
     "vite-plugin-dts": "^4.5.3",
     "vite-plugin-stylelint": "^6.0.0"
   },
-  "dependencies": {
-    "@jaames/iro": "^5.5.2"
-  },
   "files": [
     "dist",
-    "README.md",
-    "LICENCE"
-  ],
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "readme.md",
+    "LICENSE"
+  ]
 }

@@ -37,8 +37,8 @@ export default defineConfig({
   },
   plugins: [
     dts({
-      tsconfigPath: './tsconfig.node.json',
-      include: 'src/plugins/main.ts',
+      tsconfigPath: './tsconfig.lib.json',
+      include: ['src/**/*.ts'],
       outDir: 'dist/types'
     }),
     stylelint({

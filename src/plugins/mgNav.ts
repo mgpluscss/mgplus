@@ -1,37 +1,40 @@
 export function registerNavs() {
-  document.querySelectorAll("[data-toggle~=nav]").forEach(setupNav);
-  function setupNav(nav: Element) {
-    const items = nav.getElementsByTagName("li");
+  if (typeof document === "undefined") return;
 
-    for (let j = 0; j < items.length; j++) {
-      const item = items[j];
+  document.querySelectorAll<HTMLElement>("[data-toggle~=nav]").forEach(setupNav);
 
-      if (
-        item.classList.contains("active") ||
-        item.getAttribute("data-active") === "true"
-      ) {
+  function setupNav(nav: HTMLElement) {
+    if (nav.dataset.mgNavInitialized === "true") return;
+    nav.dataset.mgNavInitialized = "true";
+
+    const items = nav.querySelectorAll<HTMLElement>("li");
+
+    items.forEach((item) => {
+      if (item.classList.contains("active") || item.getAttribute("data-active") === "true") {
         item.setAttribute("data-active", "true");
         item.classList.add("active");
       }
-    }
+    });
 
-    nav.addEventListener("click", function (e: Event) {
-      let selector = e.target as HTMLElement;
-      if (selector.parentNode?.nodeName == "LI" && selector.parentNode instanceof HTMLElement) {
-        selector = selector.parentNode;
-      }
-      if (selector.getAttribute("data-active") !== "true") {
-        //disable all selected tabs
-        let items = nav.getElementsByTagName("li");
-        for (let j = 0; j < items.length; j++) {
-          const item = items[j];
+    nav.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      const listItem = target.closest("li");
+      if (!listItem || !nav.contains(listItem)) return;
+
+      if (listItem.getAttribute("data-active") !== "true") {
+        // Deactivate all items in this nav
+        items.forEach((item) => {
           item.classList.remove("active");
           item.setAttribute("data-active", "false");
-        }
-        //activate selected tab
-        selector.classList.add("active");
-        selector.setAttribute("data-active", "true");
+        });
+
+        // Activate selected item
+        listItem.classList.add("active");
+        listItem.setAttribute("data-active", "true");
       }
     });
   }
 }
+

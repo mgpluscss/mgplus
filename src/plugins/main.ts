@@ -1,92 +1,140 @@
-import { registergCollapses } from "./mgCollapse";
+import { registerCollapses, registergCollapses } from "./mgCollapse";
 import { registerDropdowns } from "./mgDropdown";
 import { registerModals } from "./mgModal";
 import { registerNavs } from "./mgNav";
 import { registerTabs } from "./mgTabs";
-import { registerDarkMode } from "./mgDarkMode";
+import { registerDarkMode, applyTheme, getCurrentTheme, getPreferredTheme } from "./mgDarkMode";
 
-
-
-export function autoRegister() {
-  console.log(
-    `mgplus - auto registering DOM plugins for query params`
-  );
-  window.addEventListener("DOMContentLoaded", () => {
-    const plugins = getQueryParam("plugins", getScriptUrl());
-    registerPlugins(plugins?.split(",") ?? []);
-  });
-}
-
+export {
+  registerCollapses,
+  registergCollapses,
+  registerDropdowns,
+  registerModals,
+  registerNavs,
+  registerTabs,
+  registerDarkMode,
+  applyTheme,
+  getCurrentTheme,
+  getPreferredTheme,
+};
 
 export function registerDarkModePlugin() {
   registerDarkMode();
 }
-//autorun : true or false
-//plugins : ["dropdowns", "modals", "navs", "collapses", "darkmode"]
-export function registerPlugins(plugins: string[]) {
-  const pluginsArgs = plugins ? plugins : [];
-  console.log(`mgplus - registering plugins: ${pluginsArgs}`);
-  if (pluginsArgs instanceof Array) {
 
-    pluginsArgs.map(function (pluginName) {
-      switch (pluginName) {
-        case "all":
-          registerDropdowns();
-          registerModals();
-          registerNavs();
-          registerTabs();
-          registergCollapses();
-          registerDarkModePlugin();
-          break;
-        case "dropdowns":
-          registerDropdowns();
-          break;
-        case "modals":
-          registerModals();
-          break;
-        case "navs":
-          registerNavs();
-          break;
-        case "tabs":
-          registerTabs();
-          break;
-        case "collapses":
-          registergCollapses();
-          break;
-        case "darkmode":
-          registerDarkModePlugin();
-          break;
-        default:
-          console.log(`mgplus - plugin not found: ${pluginName}`);
-          return;
-      }
-      console.log(`mgplus - registered plugin: ${pluginName}`);
-    });
+export type PluginName =
+  | "all"
+  | "dropdowns"
+  | "dropdown"
+  | "modals"
+  | "modal"
+  | "navs"
+  | "nav"
+  | "tabs"
+  | "tab"
+  | "collapses"
+  | "collapse"
+  | "darkmode"
+  | "theme";
+
+export function registerPlugins(plugins?: string[] | string) {
+  if (!plugins) return;
+
+  const list = Array.isArray(plugins)
+    ? plugins
+    : plugins.split(",").map((p) => p.trim());
+
+  for (const pluginName of list) {
+    const normalized = pluginName.toLowerCase().trim();
+    switch (normalized) {
+      case "all":
+        registerDropdowns();
+        registerModals();
+        registerNavs();
+        registerTabs();
+        registerCollapses();
+        registerDarkMode();
+        return;
+      case "dropdowns":
+      case "dropdown":
+        registerDropdowns();
+        break;
+      case "modals":
+      case "modal":
+        registerModals();
+        break;
+      case "navs":
+      case "nav":
+        registerNavs();
+        break;
+      case "tabs":
+      case "tab":
+        registerTabs();
+        break;
+      case "collapses":
+      case "collapse":
+        registerCollapses();
+        break;
+      case "darkmode":
+      case "theme":
+        registerDarkMode();
+        break;
+      default:
+        console.warn(`mgplus - unknown plugin: ${pluginName}`);
+        break;
+    }
   }
 }
 
-// extracts the params from the currently running (external) script
-function getScriptUrl() {
+// Extracts the params from the currently running script
+function getScriptUrl(): string | null {
+  if (typeof document === "undefined") return null;
+
+  const current = document.currentScript as HTMLScriptElement | null;
+  if (current?.src) return current.src;
+
   const scripts = document.getElementsByTagName("script");
-
-  for (let i = 0; i < scripts.length; i++) {
-    const scriptUrl = scripts[i] && scripts[i].src;
-
-    if (scriptUrl.indexOf("mgplus-vanilla.js") > 0) {
-      return scriptUrl;
+  for (let i = scripts.length - 1; i >= 0; i--) {
+    const src = scripts[i]?.src;
+    if (src && (src.includes("mgplus-vanilla") || src.includes("mgplus"))) {
+      return src;
     }
   }
   return null;
 }
 
-// gets the Query Params of a given query string
-function getQueryParam(name: string, query: string | null) {
-  name = name.replace(/[[]/, "\\[").replace(/[]]/, "\\]");
-  var regexS = "[\\?&]" + name + "=([^&#]*)";
-  var regex = new RegExp(regexS);
+// Gets Query Params from a URL string
+function getQueryParam(name: string, url: string | null): string {
+  if (!url) return "";
+  try {
+    const parsed = new URL(url, "https://dummy.base");
+    return parsed.searchParams.get(name) || "";
+  } catch {
+    const escaped = name.replace(/[[\]]/g, "\\[$&]");
+    const regex = new RegExp("[?&]" + escaped + "=([^&#]*)");
+    const results = regex.exec(url);
+    return results ? decodeURIComponent(results[1]) : "";
+  }
+}
 
-  var results = query && regex.exec(query);
+export function autoRegister() {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
 
-  if (!results) return "";
-  else return results[1];
-} 
+  const run = () => {
+    const scriptUrl = getScriptUrl();
+    if (!scriptUrl) return;
+
+    // Check both ?register= and ?plugins= parameters
+    const plugins = getQueryParam("register", scriptUrl) || getQueryParam("plugins", scriptUrl);
+    if (plugins) {
+      registerPlugins(plugins);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    window.addEventListener("DOMContentLoaded", run, { once: true });
+  } else {
+    run();
+  }
+}
+ 

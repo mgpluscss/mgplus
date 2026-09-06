@@ -1,70 +1,90 @@
 export function registerTabs() {
-  document.querySelectorAll("[data-toggle~=tabs]").forEach(setupTabs);
+  if (typeof document === "undefined") return;
 
-  function setupTabs(tabs: Element) {
-    let items = tabs.getElementsByClassName("mg-tabs--item");
+  document.querySelectorAll<HTMLElement>("[data-toggle~=tabs]").forEach(setupTabs);
 
-    for (let j = 0; j < items.length; j++) {
-      const item = items[j];
-      if (
+  function setupTabs(tabs: HTMLElement) {
+    if (tabs.dataset.mgTabsInitialized === "true") return;
+    tabs.dataset.mgTabsInitialized = "true";
+
+    const items = tabs.querySelectorAll<HTMLElement>(".mg-tabs--item");
+
+    items.forEach((item) => {
+      item.setAttribute("role", "tab");
+      const targetToShow = item.getAttribute("data-target");
+      if (targetToShow) {
+        item.setAttribute("aria-controls", targetToShow);
+      }
+
+      const isActive =
         item.classList.contains("active") ||
-        item.getAttribute("data-active") === "true"
-      ) {
-        item.setAttribute("data-active", "true");
-        item.classList.add("active");
+        item.getAttribute("data-active") === "true";
 
-        const targetToShow = item.getAttribute("data-target");
+      if (isActive) {
+        item.setAttribute("data-active", "true");
+        item.setAttribute("aria-selected", "true");
+        item.classList.add("active");
 
         if (targetToShow) {
           const el = document.getElementById(targetToShow);
           if (el) {
             el.classList.add("active");
+            el.setAttribute("aria-hidden", "false");
+          }
+        }
+      } else {
+        item.setAttribute("data-active", "false");
+        item.setAttribute("aria-selected", "false");
+        if (targetToShow) {
+          const el = document.getElementById(targetToShow);
+          if (el) {
+            el.setAttribute("aria-hidden", "true");
           }
         }
       }
-    }
+    });
 
-    tabs.addEventListener("click", function (e) {
-      let selector = e.target as HTMLElement;
+    tabs.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
 
-      // Ensure the clicked element is a tab item or its child
-      while (selector && !selector.classList.contains("mg-tabs--item")) {
-        selector = selector.parentElement as HTMLElement;
-      }
+      const tabItem = target.closest<HTMLElement>(".mg-tabs--item");
+      if (!tabItem || !tabs.contains(tabItem)) return;
 
-      if (selector && selector.classList.contains("mg-tabs--item")) {
-        e.stopPropagation();
-        e.preventDefault();
+      e.preventDefault();
 
-        if (selector.getAttribute("data-active") !== "true") {
-          // Disable all selected tabs
-          let items = tabs.getElementsByClassName("mg-tabs--item");
+      if (tabItem.getAttribute("data-active") !== "true") {
+        // Deactivate all tabs
+        items.forEach((item) => {
+          item.classList.remove("active");
+          item.setAttribute("data-active", "false");
+          item.setAttribute("aria-selected", "false");
 
-          for (let j = 0; j < items.length; j++) {
-            const item = items[j];
-            item.classList.remove("active");
-            item.setAttribute("data-active", "false");
-            let targetToHide = item.getAttribute("data-target");
-            if (targetToHide) {
-              const el = document.getElementById(targetToHide);
-              if (el) {
-                el.classList.remove("active");
-              }
+          const targetToHide = item.getAttribute("data-target");
+          if (targetToHide) {
+            const el = document.getElementById(targetToHide);
+            if (el) {
+              el.classList.remove("active");
+              el.setAttribute("aria-hidden", "true");
             }
           }
+        });
 
-          // Activate selected tab
-          selector.classList.add("active");
-          selector.setAttribute("data-active", "true");
-          let targetToShow = selector.getAttribute("data-target");
-          if (targetToShow) {
-            const el = document.getElementById(targetToShow);
-            if (el) {
-              el.classList.add("active");
-            }
+        // Activate selected tab
+        tabItem.classList.add("active");
+        tabItem.setAttribute("data-active", "true");
+        tabItem.setAttribute("aria-selected", "true");
+
+        const targetToShow = tabItem.getAttribute("data-target");
+        if (targetToShow) {
+          const el = document.getElementById(targetToShow);
+          if (el) {
+            el.classList.add("active");
+            el.setAttribute("aria-hidden", "false");
           }
         }
       }
     });
   }
 }
+
