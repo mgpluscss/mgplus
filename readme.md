@@ -67,7 +67,7 @@ MgPlus is specially designed to quickly create a website or a small page with mi
 2- (Optional) Include Mg+ plugins at the end of your page to allow dynamic ui interactions (dynamic class toggling)
 
 ```html
-<script src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script>
+<script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script>
 ```
 
 3-  Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
