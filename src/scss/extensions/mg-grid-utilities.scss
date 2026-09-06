@@ -1,6 +1,7 @@
+@use "../mg-variables";
 @use "sass:math";
 
-@mixin grid-column($_gutter: $grid__gutter) {
+@mixin grid-column($_gutter: mg-variables.$grid__gutter) {
   flex: 0 0 100%;
   max-width: 100%;
 
@@ -13,7 +14,7 @@
 }
 
 //  Centered container element
-@mixin init-container($_gutter: $grid__gutter) {
+@mixin init-container($_gutter: mg-variables.$grid__gutter) {
   margin-right: auto;
   margin-left: auto;
   padding-right: 0.8rem;
@@ -22,76 +23,76 @@
 }
 
 //  Creates a wrapper for a series of columns
-@mixin init-row($_gutter: $grid__gutter) {
+@mixin init-row($_gutter: mg-variables.$grid__gutter) {
   display: flex;
   flex: 0 1 auto;
   flex-flow: row wrap;
 }
 
 //  Generate default columns
-@mixin create-x($_columns, $_gutter: $grid__gutter) {
+@mixin create-x($_columns, $_gutter: mg-variables.$grid__gutter) {
   @include grid-column($_gutter);
 
-  max-width: math.percentage(calc($_columns / $grid__columns));
+  max-width: math.percentage(calc($_columns / mg-variables.$grid__columns));
 }
 
 @mixin create-x-offset($_columns) {
-  margin-left: math.percentage(calc($_columns / $grid__columns));
+  margin-left: math.percentage(calc($_columns / mg-variables.$grid__columns));
 }
 
 //  Generate small columns
-@mixin create-s($_columns, $_gutter: $grid__gutter) {
+@mixin create-s($_columns, $_gutter: mg-variables.$grid__gutter) {
   @include grid-column($_gutter);
 
-  @media screen and (min-width: $screen-s) {
-    max-width: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-s) {
+    max-width: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 @mixin create-s-offset($_columns) {
-  @media screen and (min-width: $screen-s) {
-    margin-left: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-s) {
+    margin-left: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 //  Generate medium columns
-@mixin create-m($_columns, $_gutter: $grid__gutter) {
+@mixin create-m($_columns, $_gutter: mg-variables.$grid__gutter) {
   @include grid-column($_gutter);
 
-  @media screen and (min-width: $screen-m) {
-    max-width: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-m) {
+    max-width: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 @mixin create-m-offset($_columns) {
-  @media screen and (min-width: $screen-m) {
-    margin-left: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-m) {
+    margin-left: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 //  Generate large columns
-@mixin create-l($_columns, $_gutter: $grid__gutter) {
+@mixin create-l($_columns, $_gutter: mg-variables.$grid__gutter) {
   @include grid-column($_gutter);
 
-  @media screen and (min-width: $screen-l) {
-    max-width: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-l) {
+    max-width: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 @mixin create-l-offset($_columns) {
-  @media screen and (min-width: $screen-l) {
-    margin-left: math.percentage(calc($_columns / $grid__columns));
+  @media screen and (min-width: mg-variables.$screen-l) {
+    margin-left: math.percentage(calc($_columns / mg-variables.$grid__columns));
   }
 }
 
 //  Grid generation
 
 @mixin create-all-grid-columns($i: 1,
-  $list: ".#{$name-x}#{$i}, .#{$name-s}#{$i}, .#{$name-m}#{$i}, .#{$name-l}#{$i}, .#{$name-xl}#{$i}"
+  $list: ".#{mg-variables.$name-x}#{$i}, .#{mg-variables.$name-s}#{$i}, .#{mg-variables.$name-m}#{$i}, .#{mg-variables.$name-l}#{$i}, .#{mg-variables.$name-xl}#{$i}"
 
 ) {
-  @for $i from (1 + 1) through $grid__columns {
-    $list: "#{$list}, .#{$name-x}#{$i}, .#{$name-s}#{$i}, .#{$name-m}#{$i}, .#{$name-l}#{$i}, .#{$name-xl}#{$i}";
+  @for $i from (1 + 1) through mg-variables.$grid__columns {
+    $list: "#{$list}, .#{mg-variables.$name-x}#{$i}, .#{mg-variables.$name-s}#{$i}, .#{mg-variables.$name-m}#{$i}, .#{mg-variables.$name-l}#{$i}, .#{mg-variables.$name-xl}#{$i}";
   }
 
   #{$list} {
@@ -102,14 +103,14 @@
 @mixin calc-grid-column($index, $class, $type) {
   @if $type ==width and $index >0 {
     .#{$class}#{$index} {
-      flex-basis: math.percentage(calc($index / $grid__columns));
-      max-width: math.percentage(calc($index / $grid__columns));
+      flex-basis: math.percentage(calc($index / mg-variables.$grid__columns));
+      max-width: math.percentage(calc($index / mg-variables.$grid__columns));
     }
   }
 
   @if $type ==offset {
     .#{$class}--offset#{$index} {
-      margin-left: math.percentage(calc($index / $grid__columns));
+      margin-left: math.percentage(calc($index / mg-variables.$grid__columns));
     }
   }
 
@@ -254,9 +255,9 @@
 
 // Create grid for specific class
 @mixin create-grid-columns($_class) {
-  @include loop-grid-columns($grid__columns, $_class, width);
-  @include loop-grid-columns($grid__columns, $_class, offset);
-  @include loop-grid-columns($grid__columns, $_class, order);
+  @include loop-grid-columns(mg-variables.$grid__columns, $_class, width);
+  @include loop-grid-columns(mg-variables.$grid__columns, $_class, offset);
+  @include loop-grid-columns(mg-variables.$grid__columns, $_class, order);
   @include create-positioning-row($_class);
   @include create-positioning-col($_class);
   @include create-growing-effects($_class);

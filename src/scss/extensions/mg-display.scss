@@ -1,3 +1,6 @@
+@use "../mg-variables";
+@use "mg-common";
+
 .mg-block {
     display: block;
 }
@@ -50,7 +53,7 @@
 }
 
 .mg-shadow {
-    box-shadow: $control-shadow;
+    box-shadow: mg-variables.$control-shadow;
 }
 
 .mg-overflow-auto {
@@ -86,10 +89,10 @@
 }
 
 .mg-rounded {
-    border-radius: $control-radius;
+    border-radius: mg-variables.$control-radius;
 }
 
-@each $key, $value in $rem-map {
+@each $key, $value in mg-variables.$rem-map {
 
     .mg-rounded#{$key} {
         border-radius: $value;
@@ -112,10 +115,10 @@
     }
 }
 
-@include build-none-half-full('mg-rounded', 'border-radius');
+@include mg-common.build-none-half-full('mg-rounded', 'border-radius');
 
 .mg-border {
-    border: 0.07rem solid $color-quaternary;
+    border: 0.07rem solid mg-variables.$color-quaternary;
 }
 
 .mg-border-none {
@@ -123,20 +126,20 @@
 }
 
 .mg-border-t {
-    border-top: 0.07rem solid $color-quaternary;
+    border-top: 0.07rem solid mg-variables.$color-quaternary;
 
 }
 
 .mg-border-r {
-    border-right: 0.07rem solid $color-quaternary;
+    border-right: 0.07rem solid mg-variables.$color-quaternary;
 }
 
 .mg-border-b {
-    border-bottom: 0.07rem solid $color-quaternary;
+    border-bottom: 0.07rem solid mg-variables.$color-quaternary;
 }
 
 .mg-border-l {
-    border-left: 0.07rem solid $color-quaternary;
+    border-left: 0.07rem solid mg-variables.$color-quaternary;
 }
 
 .mg-pointer {

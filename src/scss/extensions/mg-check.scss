@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 /* Hide the browser's default checkbox */
 .mg-check input {
   position: absolute;
@@ -15,7 +17,7 @@
   height: 2.4rem;
   width: 2.4rem;
   border-style: solid;
-  border-color: $color-quaternary;
+  border-color: mg-variables.$color-quaternary;
   border-width: thin;
   transition: all 0.3s;
   border-radius: 0.3rem;
@@ -23,12 +25,12 @@
 
 /* On mouse-over, add a grey background color */
 .mg-check:hover input~.mg-check--icon {
-  background-color: $color-secondary;
+  background-color: mg-variables.$color-secondary;
 }
 
 /* When the checkbox is checked, add a blue background */
 .mg-check input:checked~.mg-check--icon {
-  background-color: $color-primary;
+  background-color: mg-variables.$color-primary;
 }
 
 /* Create the mg-check--icon/indicator (hidden when not checked) */
@@ -40,7 +42,7 @@
   top: 0.16rem;
   width: 0.8rem;
   height: 1.6rem;
-  border: solid $color-light;
+  border: solid mg-variables.$color-light;
   border-width: 0 0.25rem 0.3rem 0;
   transform: rotate(45deg);
 }
@@ -55,11 +57,11 @@
 
 /* disabled state */
 .mg-check input:disabled~.mg-check--icon {
-  background-color: $color-quinary;
+  background-color: mg-variables.$color-quinary;
 }
 
 .mg-check input:focus~.mg-check--icon {
-  border-color: $color-primary;
+  border-color: mg-variables.$color-primary;
   border-style: dotted;
   border-width: thin;
 }

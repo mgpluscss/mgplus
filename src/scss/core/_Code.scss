@@ -1,8 +1,10 @@
+@use "../mg-variables";
+
 // Code
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 code {
-  background: $color-quinary;
+  background: mg-variables.$color-quinary;
   border-radius: 0.4rem;
   font-size: 86%;
   margin: 0 0.2rem;
@@ -11,8 +13,8 @@ code {
 }
 
 pre {
-  background: $color-quinary;
-  border-left: 0.3rem solid $color-primary;
+  background: mg-variables.$color-quinary;
+  border-left: 0.3rem solid mg-variables.$color-primary;
   overflow-y: hidden;
 
   & > code {

@@ -1,8 +1,10 @@
+@use "../../mg-variables";
+
 .icon-menu {
   &::before {
     background: currentcolor;
     box-shadow: 0 -0.6rem, 0 0.6rem;
-    border: calc($icon-border-width/3) solid currentcolor;
+    border: calc(mg-variables.$icon-border-width/3) solid currentcolor;
     width: 75%;
   }
 }

@@ -1,5 +1,8 @@
+@use "../mg-variables";
+@use "mg-common";
+
 // .mg-pad[0-10] { padding: [0-10]rem; }
-@each $key, $value in $rem-map {
+@each $key, $value in mg-variables.$rem-map {
 
   .mg-pad#{$key} {
     padding: $value;
@@ -56,14 +59,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $zindex-max;
+  z-index: mg-variables.$zindex-max;
 }
 
 .mg-fixed-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: $zindex-max;
+  z-index: mg-variables.$zindex-max;
 }
 
 .mg-valign-middle {
@@ -154,7 +157,7 @@
 
 
 // mg-top[0-100]vh { width: [0-100]vh step 10 }
-@each $key, $value in $step-map {
+@each $key, $value in mg-variables.$step-map {
 
   .mg-top#{$key}vh {
     width: #{$value}vh;
@@ -174,7 +177,7 @@
 }
 
 // .mg-pad[0-10] { padding: [0-10]rem; }
-@each $key, $value in $rem-map {
+@each $key, $value in mg-variables.$rem-map {
 
   .mg-top#{$key} {
     top: #{$value};
@@ -193,35 +196,35 @@
   }
 }
 
-@include build-none-half-full('mg-top', 'top');
-@include build-none-half-full('mg-left', 'left');
-@include build-none-half-full('mg-right', 'right');
-@include build-none-half-full('mg-bottom', 'bottom');
+@include mg-common.build-none-half-full('mg-top', 'top');
+@include mg-common.build-none-half-full('mg-left', 'left');
+@include mg-common.build-none-half-full('mg-right', 'right');
+@include mg-common.build-none-half-full('mg-bottom', 'bottom');
 
 .mg-z0 {
-  z-index: $zindex-0;
+  z-index: mg-variables.$zindex-0;
 }
 
 .mg-z1 {
-  z-index: $zindex-1;
+  z-index: mg-variables.$zindex-1;
 }
 
 .mg-z2 {
-  z-index: $zindex-2;
+  z-index: mg-variables.$zindex-2;
 }
 
 .mg-z3 {
-  z-index: $zindex-3;
+  z-index: mg-variables.$zindex-3;
 }
 
 .mg-z4 {
-  z-index: $zindex-4;
+  z-index: mg-variables.$zindex-4;
 }
 
 .mg-z5 {
-  z-index: $zindex-5;
+  z-index: mg-variables.$zindex-5;
 }
 
 .mg-z-max {
-  z-index: $zindex-max;
+  z-index: mg-variables.$zindex-max;
 }

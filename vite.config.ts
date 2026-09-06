@@ -8,6 +8,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        api: 'modern-compiler',
         additionalData: `
           $package_version: "${process.env.PACKAGE_VERSION}";        
         `
@@ -19,7 +20,7 @@ export default defineConfig({
     {
       name: 'html-transform',
       transformIndexHtml(html) {
-        return html.replace(/\$PACKAGE_VERSION/g, process.env.PACKAGE_VERSION);
+        return html.replace(/\$PACKAGE_VERSION/g, process.env.PACKAGE_VERSION || '');
       }
     }
   ],

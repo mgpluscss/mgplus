@@ -1,5 +1,7 @@
+@use "../mg-variables";
+
 .mg-badge {
-    border-radius: $control-radius;
+    border-radius: mg-variables.$control-radius;
     display: inline-block;
     margin-bottom: 0.5rem;
     padding: .5rem 1rem;
@@ -8,18 +10,18 @@
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    background-color: $color-primary;
-    color: $color-light;
+    background-color: mg-variables.$color-primary;
+    color: mg-variables.$color-light;
 
     &.success {
-        background-color: $color-success;
+        background-color: mg-variables.$color-success;
     }
 
     &.warning {
-        background-color: $color-warning;
+        background-color: mg-variables.$color-warning;
     }
 
     &.danger {
-        background-color: $color-danger;
+        background-color: mg-variables.$color-danger;
     }
 }

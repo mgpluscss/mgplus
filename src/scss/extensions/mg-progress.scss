@@ -1,16 +1,17 @@
+@use "../mg-variables";
 @use "sass:map";
 
 .mg-progress {
     display: inline-block;
-    background-color: $color-quinary;
-    border-radius: $control-radius;
+    background-color: mg-variables.$color-quinary;
+    border-radius: mg-variables.$control-radius;
     width: 100%;
-    height: $font-size-s;
+    height: mg-variables.$font-size-s;
     margin-bottom: 1.2rem;
 
     &>.mg-progress--bar {
-        border-radius: $control-radius;
-        background-color: $color-primary;
+        border-radius: mg-variables.$control-radius;
+        background-color: mg-variables.$color-primary;
         height: 100%;
     }
 }

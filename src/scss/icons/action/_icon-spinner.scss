@@ -1,5 +1,7 @@
+@use "../../mg-variables";
+
 .icon-spinner {
-  border: $icon-border-width solid currentcolor;
+  border: mg-variables.$icon-border-width solid currentcolor;
   border-radius: 50%;
   border-top-color: transparent;
 

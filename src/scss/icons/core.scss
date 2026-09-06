@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 $icon-border-width: .2rem;
 $icon-prefix: "mg-icon";
 
@@ -28,7 +30,7 @@ $icon-prefix: "mg-icon";
   }
 
 
-  @each $key, $value in $font-sizes {
+  @each $key, $value in mg-variables.$font-sizes {
     &.#{$icon-prefix}--#{$key} {
       font-size: $value;
       min-width: $value;

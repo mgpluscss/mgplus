@@ -1,3 +1,4 @@
-@include build-for-colors('mg', 'color');
-@include build-for-colors('mg-bg', 'background-color');
-@include build-for-colors('mg-border', 'border-color');
+@use "mg-common";
+@include mg-common.build-for-colors('mg', 'color');
+@include mg-common.build-for-colors('mg-bg', 'background-color');
+@include mg-common.build-for-colors('mg-border', 'border-color');

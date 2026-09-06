@@ -1,3 +1,4 @@
+@use "../mg-variables";
 @use 'sass:map';
 
 // Base
@@ -20,10 +21,10 @@ body {
 
 // Default body styles
 body {
-  background-color: $color-initial;
-  color: $color-secondary;
+  background-color: mg-variables.$color-initial;
+  color: mg-variables.$color-secondary;
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: $base-font-size; // Currently ems cause chrome bug misinterpreting rems on body element
+  font-size: mg-variables.$base-font-size; // Currently ems cause chrome bug misinterpreting rems on body element
   font-weight: 300;
   letter-spacing: 0.016rem;
   line-height: 1.6;
@@ -54,7 +55,7 @@ hr {
 
 pre {
   font-family: monospace;
-  font-size: $font-size-m;
+  font-size: mg-variables.$font-size-m;
 }
 
 /**
@@ -92,11 +93,11 @@ code,
 kbd,
 samp {
   font-family: monospace;
-  font-size: $font-size-m;
+  font-size: mg-variables.$font-size-m;
 }
 
 small {
-  font-size: $font-size-s;
+  font-size: mg-variables.$font-size-s;
 }
 
 sub,
@@ -233,19 +234,19 @@ legend {
 
 progress {
   vertical-align: baseline;
-  border-radius: $input-radius;
-  height: $font-size-s;
+  border-radius: mg-variables.$input-radius;
+  height: mg-variables.$font-size-s;
 }
 
 progress::-webkit-progress-bar {
-  background-color: $color-quaternary;
-  border-radius: $input-radius;
+  background-color: mg-variables.$color-quaternary;
+  border-radius: mg-variables.$input-radius;
 }
 
 progress::-webkit-progress-value {
-  background-color: $color-primary;
-  border-radius: $input-radius;
-  min-width: calc($input-radius);
+  background-color: mg-variables.$color-primary;
+  border-radius: mg-variables.$input-radius;
+  min-width: calc(mg-variables.$input-radius);
 }
 
 

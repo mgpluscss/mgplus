@@ -1,7 +1,9 @@
+@use "../../mg-variables";
+
 .icon-minus {
   &::before {
     background: currentcolor;
-    height: $icon-border-width;
+    height: mg-variables.$icon-border-width;
     width: 100%;
   }
 }

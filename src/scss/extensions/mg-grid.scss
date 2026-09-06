@@ -1,3 +1,6 @@
+@use "../mg-variables";
+@use "mg-grid-utilities";
+
 //  Make all grid columns
 //  ---------------------------------------------
 
@@ -10,39 +13,39 @@
 
 
 
-@include create-all-grid-columns;
+@include mg-grid-utilities.create-all-grid-columns;
 
 //  Columns X
 //  ---------------------------------------------
 
-@include create-grid-columns($name-x);
+@include mg-grid-utilities.create-grid-columns(mg-variables.$name-x);
 
 //  Columns S
 //  ---------------------------------------------
 
-@media screen and (min-width: $screen-s) {
-  @include create-grid-columns($name-s);
+@media screen and (min-width: mg-variables.$screen-s) {
+  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-s);
 }
 
 //  Columns M
 //  ---------------------------------------------
 
-@media screen and (min-width: $screen-m) {
-  @include create-grid-columns($name-m);
+@media screen and (min-width: mg-variables.$screen-m) {
+  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-m);
 }
 
 //  Columns L
 //  ---------------------------------------------
 
-@media screen and (min-width: $screen-l) {
-  @include create-grid-columns($name-l);
+@media screen and (min-width: mg-variables.$screen-l) {
+  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-l);
 }
 
 //  Columns XL
 //  ---------------------------------------------
 
-@media screen and (min-width: $screen-xl) {
-  @include create-grid-columns($name-xl);
+@media screen and (min-width: mg-variables.$screen-xl) {
+  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-xl);
 }
 
 //  Grid
@@ -50,53 +53,53 @@
 
 
 // Adaptative hide
-@media screen and (max-width: $screen-s) {
-  @include create-conditional-hidden($name-s);
+@media screen and (max-width: mg-variables.$screen-s) {
+  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-s);
 }
 
-@media screen and (max-width: $screen-m) {
-  @include create-conditional-hidden($name-m);
+@media screen and (max-width: mg-variables.$screen-m) {
+  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-m);
 }
 
-@media screen and (max-width: $screen-l) {
-  @include create-conditional-hidden($name-l);
+@media screen and (max-width: mg-variables.$screen-l) {
+  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-l);
 }
 
-@media screen and (max-width: $screen-xl) {
-  @include create-conditional-hidden($name-xl);
+@media screen and (max-width: mg-variables.$screen-xl) {
+  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-xl);
 }
 
 // Adaptative display
-@media screen and (min-width: $screen-s) {
-  @include create-conditional-display($name-s);
+@media screen and (min-width: mg-variables.$screen-s) {
+  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-s);
 }
 
-@media screen and (min-width: $screen-m) {
-  @include create-conditional-display($name-m);
+@media screen and (min-width: mg-variables.$screen-m) {
+  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-m);
 }
 
-@media screen and (min-width: $screen-l) {
-  @include create-conditional-display($name-l);
+@media screen and (min-width: mg-variables.$screen-l) {
+  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-l);
 }
 
-@media screen and (min-width: $screen-xl) {
-  @include create-conditional-display($name-xl);
+@media screen and (min-width: mg-variables.$screen-xl) {
+  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-xl);
 }
 
 .mg-container {
-  @include init-container;
+  @include mg-grid-utilities.init-container;
 
-  max-width: $screen-l;
+  max-width: mg-variables.$screen-l;
 }
 
 .mg-container-fluid {
-  @include init-container;
+  @include mg-grid-utilities.init-container;
 
   max-width: width auto;
 }
 
 .mg-row {
-  @include init-row;
+  @include mg-grid-utilities.init-row;
 }
 
-@include create-gap-utilities($rem-map);
+@include mg-grid-utilities.create-gap-utilities(mg-variables.$rem-map);

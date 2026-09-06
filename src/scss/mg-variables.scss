@@ -1,5 +1,7 @@
-/*! mgplus.css #{$package_version} | MIT License | github.com/mgpluscss/mgplus */
-// exposed variables 
+$package-version: '' !default;
+
+/*! mgplus.css #{$package-version} | MIT License | github.com/mgpluscss/mgplus */
+// exposed variables  
 /* stylelint-disable */
 :root {
   --mg-color-dark: hsl(255deg 0% 5%);

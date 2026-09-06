@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 .mg-text-left {
     text-align: left;
 }
@@ -62,7 +64,7 @@
     white-space: nowrap;
 }
 
-@each $key, $value in $font-sizes {
+@each $key, $value in mg-variables.$font-sizes {
     .mg-text-#{$key} {
         font-size: $value;
     }

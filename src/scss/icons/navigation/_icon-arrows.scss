@@ -1,3 +1,5 @@
+@use "../../mg-variables";
+
 .icon-arrow-down,
 .icon-arrow-left,
 .icon-arrow-right,
@@ -7,7 +9,7 @@
 .icon-forward,
 .icon-upward {
   &::before {
-    border: $icon-border-width solid currentcolor;
+    border: mg-variables.$icon-border-width solid currentcolor;
     border-bottom: 0;
     border-right: 0;
     height: 1.04rem;
@@ -43,7 +45,7 @@
 .icon-forward {
   &::after {
     background: currentcolor;
-    height: $icon-border-width;
+    height: mg-variables.$icon-border-width;
     width: 1.28rem;
   }
 }
@@ -53,7 +55,7 @@
   &::after {
     background: currentcolor;
     height: 1.28rem;
-    width: $icon-border-width;
+    width: mg-variables.$icon-border-width;
   }
 }
 

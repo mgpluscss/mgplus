@@ -1,12 +1,14 @@
+@use "../mg-variables";
+
 // Link
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 a {
-  color: $color-primary;
+  color: mg-variables.$color-primary;
   text-decoration: none;
 
   &:focus,
   &:hover {
-    color: $color-secondary;
+    color: mg-variables.$color-secondary;
   }
 }

@@ -1,12 +1,14 @@
-@include build-none-half-full('mg-w', 'width');
-@include build-none-half-full('mg-h', 'height');
-@include build-none-half-full('mg-min-w', 'min-width');
-@include build-none-half-full('mg-min-h', 'min-height');
-@include build-none-half-full('mg-max-w', 'max-width');
-@include build-none-half-full('mg-max-h', 'max-height');
+@use "../mg-variables";
+@use "mg-common";
+@include mg-common.build-none-half-full('mg-w', 'width');
+@include mg-common.build-none-half-full('mg-h', 'height');
+@include mg-common.build-none-half-full('mg-min-w', 'min-width');
+@include mg-common.build-none-half-full('mg-min-h', 'min-height');
+@include mg-common.build-none-half-full('mg-max-w', 'max-width');
+@include mg-common.build-none-half-full('mg-max-h', 'max-height');
 
 // mg-w[0-100]vh { width: [0-100]vh step 10 }
-@each $key, $value in $step-map {
+@each $key, $value in mg-variables.$step-map {
 
     .mg-w#{$key}vh {
         width: #{$key}vh;
@@ -33,7 +35,7 @@
     }
 }
 
-@each $key, $value in $rem-map {
+@each $key, $value in mg-variables.$rem-map {
     .mg-h#{$key} {
         height: $value;
     }

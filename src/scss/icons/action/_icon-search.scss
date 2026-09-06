@@ -1,6 +1,8 @@
+@use "../../mg-variables";
+
 .icon-search {
     &::before {
-        border: $icon-border-width solid;
+        border: mg-variables.$icon-border-width solid;
         border-radius: 100%;
         width: 60%;
         height: 60%;

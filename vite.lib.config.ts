@@ -10,6 +10,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        api: 'modern-compiler',
         additionalData: `
           $package_version: "${process.env.PACKAGE_VERSION}";        
         `
