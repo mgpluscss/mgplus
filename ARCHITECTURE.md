@@ -1,4 +1,4 @@
-# MgPlus Architecture: Hybrid Multi-Framework Strategy
+# MgPlus Architecture: Hybrid Multi-Framework Strategy (plan)
 
 This document describes the architectural foundation for **MgPlus**, explaining how a single micro-library codebase delivers zero-runtime-dependency UI components that integrate seamlessly into modern reactive frameworks (**React, Vue, Svelte, Angular, Solid, Astro**) as well as traditional server-rendered applications (**PHP/Laravel, Rails, Django, static HTML**).
 

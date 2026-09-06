@@ -89,9 +89,6 @@ For the full technical design and multi-framework integration guide, see [ARCHIT
 - [ ] **SCSS Modernization**:
   - Migrate from deprecated `@import` to Dart Sass `@use` and `@forward`.
   - Eliminate top-level `/* stylelint-disable */` in `mg-variables.scss` and resolve underlying Stylelint rules.
-- [ ] **Modular CSS & SCSS Exports**:
-  - Export standalone stylesheets: `mgplus/css/grid.css`, `mgplus/css/buttons.css`, `mgplus/css/core.css`.
-  - Allow selective SCSS `@use "mgplus/scss/grid"`.
 - [ ] **New UI Primitives**:
   - Toast / Snackbars component with auto-dismiss timers.
   - Accordion component with single-expand mode built upon `mgCollapse`.
