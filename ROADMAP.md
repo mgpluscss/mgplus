@@ -13,102 +13,42 @@ For the full technical design and multi-framework integration guide, see [ARCHIT
 * **Plug & Play**: Minimalist vanilla JS plugins (`data-toggle`) alongside native Light-DOM Web Components (`<mg-modal>`).
 * **Developer Friendly**: Seamless CDN standalone usage and modern package exports for bundlers (Vite, Webpack, Rollup).
 * **Standards-compliant**: Progressive enhancement, accessible semantics (WCAG), and modern CSS architecture.
+* **zero-build simplicity combined with modern native CSS standards** (Cascade Layers, CSS Nesting, native color spaces, and modern viewport units).
+
+A strategically positioned roadmap for **mgplus** focuses on four key phases:
+
+| Phase | Strategic Focus | Key Deliverables |
+| --- | --- | --- |
+| **1. Modern CSS Core** | Spec alignment & specificity control | `@layer` architecture, OKLCH color palettes, zero-JS container queries. |
+| **2. DX & Micro Footprint** | Lightweight footprint & drop-in ease | Sub-8KB brotli target, semantic classless default mode + optional utility mixins. |
+| **3. Component Architecture** | Modern web standards | Native HTML `<dialog>`, `<details>`, and `:has()` powered interactive elements without JS. |
+| **4. Modern Ecosystem** | Tooling & multi-stack adoption | Vite/Unocss/PostCSS plugins, automated CDN distribution, and design token integration. |
 
 ---
 
-## 📍 Milestones & Status
+**Phase 1: Modern CSS Foundation (Baseline Standards)**
 
-```
-[x] v1.5: Stability, Packaging & Standalone Priority (Current)
-└── [ ] v1.6: Multi-Framework Hybrid Architecture (Light-DOM Custom Elements & Controllers) ⭐
-    └── [ ] v1.7: SCSS Modernization, Modular Builds & Primitives
-        └── [ ] v2.0: Next-Gen CSS Architecture (@layer & light-dark)
-```
+* **Cascade Layers (`@layer`)**: Wrap mgplus internals into distinct layers (e.g., `@layer mg.reset, mg.base, mg.components, mg.utilities`). This allows consumers to override styles cleanly without fighting specificity or relying on `!important`.
+* **OKLCH & Perceptual Color Palettes**: Ditch RGB/HSL for `oklch()`. It enables consistent visual contrast, effortless programmatic tints/shades via CSS custom properties, and seamless `light-dark()` or `prefers-color-scheme` switching.
+* **Modern Layout Primitives**: Build grid and flex utilities around intrinsic sizing (`min()`, `clamp()`, `auto-fit`, `auto-fill`), deprecating rigid 12-column math in favor of container-aware responsive layouts.
 
----
+**Phase 2: Hybrid "Semantic-First + Utility-Lite" Identity**
 
-### ✅ Milestone 1: v1.5 — Stability, Packaging & Standalone Priority
+* **Classless Baseline**: Provide styled semantic HTML out-of-the-box (like Pico.css) so a raw Markdown/HTML file looks polished instantly.
+* **Selective Utilities**: Keep utilities strictly focused on layout rhythm (`display`, `gap`, `padding`, `margin`, `alignment`) rather than recreating atomic utility bloat.
+* **Strict Size Budget**: Cap the full compressed bundle strictly under **8KB (brotli/gzip)** to justify the "micro" moniker and enable instant CDN execution.
 
-*Goal: Stabilize the build pipeline, prioritize the standalone CDN bundle, clean up dependencies, and fix plugin bugs.*
+**Phase 3: Zero-JS Interactive Components**
 
-- [x] **Package Manager & Dependencies**:
-  - Standardized on **npm** (`package-lock.json` committed, yarn references removed).
-  - Moved demo-only dependency (`@jaames/iro`) to `devDependencies` for zero-dependency runtime.
-  - Fixed `repository` URL and package metadata (`files` list matching case).
-- [x] **Packaging & Exports**:
-  - Corrected entry points in `package.json` (`main`, `module`, `types`, `style`, `unpkg`, `jsdelivr`).
-  - Added modern conditional `exports` map for bundlers.
-  - Dedicated `tsconfig.lib.json` fixing DOM type errors during TypeScript `.d.ts` declaration generation.
-  - Cleaned up duplicate PostCSS configs (`postcss.config.cjs` removed, unused Node `os` import stripped).
-- [x] **Plugin Fixes & Refactoring**:
-  - **Auto-registration**: Automatic script execution on browser load supporting both `?register=` and `?plugins=` query parameters.
-  - **mgCollapse**: Corrected typo (`registerCollapses`, with deprecated `registergCollapses` alias) and fixed ARIA attribute management.
-  - **mgDropdown**: Replaced per-element document click listeners with a single delegated listener (eliminating memory leaks) and added `Escape` key dismissal.
-  - **mgModal**: Added support for multiple close buttons, backdrop click dismissal, `Escape` key listener, and dialog ARIA roles.
-  - **mgDarkMode**: Fixed theme detection to respect system `prefers-color-scheme`, added `localStorage` persistence, and exported theme utility helpers.
-  - **mgNav & mgTabs**: Improved nested element handling using `closest()`, proper ARIA attributes (`role="tab"`, `aria-selected`), and strict typing.
-  - Added initialization guards across all plugins to prevent duplicate listener bindings.
-  - Removed lingering `console.log` statements from production bundles.
-- [x] **CI/CD Modernization**:
-  - Upgraded GitHub Actions to `checkout@v4`, `setup-node@v4`, and Node 20 LTS.
-  - Switched release workflows to `npm publish`.
+* **The `:has()` Engine**: Leverage the parent selector to build dynamic UI states (e.g., floating form labels, card focus states, responsive menus) without JavaScript.
+* **Native Elements First**: Deliver styling for HTML5 primitives: `<dialog>` (modals), `<details>`/`<summary>` (accordions), `<progress>`, and popover APIs.
+* **Accessibility (a11y) Defaults**: Built-in visible focus rings (`:focus-visible`), forced color mode compatibility, and strict WCAG contrast compliance out of the box.
+
+**Phase 4: Tooling & Modern Integrations**
+
+* **Open Design Tokens**: Structure tokens using standard JSON format (`tokens.json`), making theme exports friendly for Figma, Vite, and frontend frameworks.
+* **CSS-Only CDN & NPM Dual-Delivery**: Ensure developers can either drop a single `<link>` tag into simple static sites or `npm install mgplus` into modern bundlers without requiring post-processors.
 
 ---
 
-### 🚧 Milestone 2: v1.6 — Multi-Framework Hybrid Architecture (PRIORITY) ⭐
-
-*Goal: Implement the 3-Tier Hybrid Strategy detailed in [ARCHITECTURE.md](file:///home/modev/gh/mgpluscss/mgplus/ARCHITECTURE.md), enabling seamless integration into React, Vue, Svelte, Angular, Solid, and Astro from a single codebase.*
-
-- [ ] **Headless Core Controllers**:
-  - Extract pure, framework-free UI state controllers (`createModalController`, `createDropdownController`, `createTabsController`, `createCollapseController`, `createThemeController`).
-  - Share 100% of UI behavior, keyboard handling, and ARIA logic between Tier 2 (Vanilla data-attributes) and Tier 3 (Custom Elements).
-  - Standardize custom event contracts (`mg:open`, `mg:close`, `mg:change`, `mg:theme-change`).
-- [ ] **Tier 3: Native Light-DOM Web Components**:
-  - Implement zero-dependency Custom Elements using standard browser `HTMLElement` APIs (no Lit, Stencil, or runtime overhead):
-    - `<mg-modal>`: Accessible modal dialog with backdrop dismiss, Escape key, and focus management.
-    - `<mg-dropdown>`: Contextual menu with automatic click-outside and keyboard dismissal.
-    - `<mg-tabs>`: Reactive tab list and tab panel management.
-    - `<mg-collapse>`: Collapsible accordion panels with ARIA sync.
-    - `<mg-darkmode>`: Declarative theme switcher syncing with `localStorage` and system preferences.
-  - Use **Light DOM** (no `attachShadow`) so components retain 100% access to `mgplus.css` utility classes and `--mg-*` variables.
-  - Automatic lifecycle cleanup in `disconnectedCallback()` to prevent memory leaks in SPAs.
-- [ ] **TypeScript JSX Typings**:
-  - Provide `JSX.IntrinsicElements` declarations for first-class TypeScript autocomplete in React, Preact, Vue, and Solid JSX/TSX files.
-- [ ] **Automated Testing Suite**:
-  - Setup [Vitest](https://vitest.dev/) with `jsdom` for automated testing.
-  - Unit-test both Vanilla plugins and Custom Elements lifecycles (mounting, unmounting, programmatic open/close, event dispatching, keyboard accessibility).
-- [ ] **Subpath Packaging**:
-  - Add `./elements` subpath export in `package.json` (`import 'mgplus/elements'`).
-
----
-
-### 🔮 Milestone 3: v1.7 — SCSS Modernization, Modular Builds & Primitives
-
-*Goal: Upgrade SCSS architecture, provide selective component imports, and expand UI primitives.*
-
-- [ ] **SCSS Modernization**:
-  - Migrate from deprecated `@import` to Dart Sass `@use` and `@forward`.
-  - Eliminate top-level `/* stylelint-disable */` in `mg-variables.scss` and resolve underlying Stylelint rules.
-- [ ] **New UI Primitives**:
-  - Toast / Snackbars component with auto-dismiss timers.
-  - Accordion component with single-expand mode built upon `mgCollapse`.
-  - Skeleton loading placeholders.
-- [ ] **Bundle Size Monitoring**:
-  - Integrate `size-limit` into GitHub Actions to enforce strict size thresholds on PRs.
-
----
-
-### 🚀 Milestone 4: v2.0 — Next-Gen Modern CSS Architecture
-
-*Goal: Modernize the core architecture leveraging native modern CSS baseline features.*
-
-- [ ] **CSS Cascade Layers (`@layer`)**:
-  - Structure CSS into `@layer reset, base, components, utilities;` to cleanly eliminate specificity clashes without `!important`.
-- [ ] **Native CSS Nesting**:
-  - Leverage native browser CSS nesting, simplifying build processing.
-- [ ] **Modern Color Functions**:
-  - Adopt native CSS `light-dark()` for zero-JS initial dark mode rendering.
-  - Modern color spaces (`oklch` / `color-mix()`) for dynamic palettes.
-- [ ] **Documentation / Playground Overhaul**:
-  - Interactive multi-framework component playground (toggle between HTML, React, Vue, Svelte).
-  - Live CSS variable customization and export.
+What architectural approach does mgplus currently take (e.g., classless/semantic, utility-first, or prebuilt component classes)? Knowing its current size and syntax helps tailor specific technical milestones.
