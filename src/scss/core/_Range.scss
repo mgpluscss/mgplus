@@ -1,9 +1,11 @@
+@use "../mg-variables";
+
 // Range input (native)
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 input[type="range"] {
-  background: $color-quaternary;
-  border-radius: $input-radius;
+  background: mg-variables.$color-quaternary;
+  border-radius: mg-variables.$input-radius;
   display: inline-block;
   height: 0.8rem;
   margin-right: 1.76rem;
@@ -21,10 +23,10 @@ input[type="range"] {
 
   &::-moz-range-thumb {
     appearance: none;
-    background: $color-primary;
+    background: mg-variables.$color-primary;
     border-radius: 100%;
     border: none;
-    box-shadow: $control-shadow;
+    box-shadow: mg-variables.$control-shadow;
     cursor: pointer;
     height: 2.5rem;
     width: 2.5rem;
@@ -33,9 +35,9 @@ input[type="range"] {
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: $color-primary;
+    background: mg-variables.$color-primary;
     border: none;
-    box-shadow: $control-shadow;
+    box-shadow: mg-variables.$control-shadow;
     cursor: pointer;
     height: 2.5rem;
     width: 2.5rem;
@@ -46,11 +48,11 @@ input[type="range"] {
     opacity: 0.5;
 
     &::-moz-range-thumb {
-      background: $color-quaternary;
+      background: mg-variables.$color-quaternary;
     }
 
     &::-webkit-slider-thumb {
-      background: $color-quaternary;
+      background: mg-variables.$color-quaternary;
     }
   }
 

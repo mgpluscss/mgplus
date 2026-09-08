@@ -1,28 +1,77 @@
-export function registerModals() {
-  // Select all elements with data-toggle attribute containing "modal" and setup modal for each
-  document.querySelectorAll("[data-toggle~=modal]").forEach(setupModal);
+let isModalKeydownInitialized = false;
 
-  // Function to setup modal for an element
-  function setupModal(el: Element) {
-    // Function to handle modal removal
-    function removeModalHandler() {
-      modal?.classList.remove("opened");
+function openModal(modal: HTMLElement) {
+  modal.classList.add("opened");
+  modal.setAttribute("aria-hidden", "false");
+
+  // Focus modal or first interactive element inside it
+  const focusable = modal.querySelector<HTMLElement>(
+    "input, button, select, textarea, a[href], [tabindex]:not([tabindex='-1'])"
+  );
+  if (focusable) {
+    focusable.focus();
+  }
+}
+
+function closeModal(modal: HTMLElement) {
+  modal.classList.remove("opened");
+  modal.setAttribute("aria-hidden", "true");
+}
+
+export function registerModals() {
+  if (typeof document === "undefined") return;
+
+  if (!isModalKeydownInitialized) {
+    isModalKeydownInitialized = true;
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        document.querySelectorAll<HTMLElement>(".mg-modal.opened").forEach((m) => {
+          closeModal(m);
+        });
+      }
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-toggle~=modal]").forEach(setupModal);
+
+  function setupModal(trigger: HTMLElement) {
+    if (trigger.dataset.mgModalInitialized === "true") return;
+    trigger.dataset.mgModalInitialized = "true";
+
+    const targetId = trigger.getAttribute("data-target");
+    if (!targetId) return;
+
+    const modal = document.getElementById(targetId);
+    if (!modal) return;
+
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    if (!modal.classList.contains("opened")) {
+      modal.setAttribute("aria-hidden", "true");
     }
 
-    // Select the modal and close button elements
-    var modal = document.querySelector("#" + el.getAttribute("data-target"));
-
-    var close = modal?.querySelector("[data-action=close]");
-
-    // Add event listener to the element to show modal on click
-    el.addEventListener("click", function (_: Event) {
-      modal?.classList.add("opened");
+    trigger.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      openModal(modal);
     });
 
-    // Add event listener to the close button to remove modal on click
-    close?.addEventListener("click", function (ev) {
-      ev.stopPropagation();
-      removeModalHandler();
+    // Close on any element with data-action="close"
+    modal.querySelectorAll<HTMLElement>("[data-action=close]").forEach((closeBtn) => {
+      if (closeBtn.dataset.mgCloseInitialized === "true") return;
+      closeBtn.dataset.mgCloseInitialized = "true";
+
+      closeBtn.addEventListener("click", (ev: Event) => {
+        ev.stopPropagation();
+        closeModal(modal);
+      });
+    });
+
+    // Close on clicking backdrop (direct click on modal wrapper)
+    modal.addEventListener("click", (e: MouseEvent) => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
     });
   }
 }
+

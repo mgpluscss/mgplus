@@ -1,3 +1,4 @@
+@use "../mg-variables";
 @use 'sass:map';
 
 // Form
@@ -35,29 +36,29 @@ select {
   appearance: none;
   -webkit-appearance: none;
   background-color: transparent;
-  border: 0.1rem solid $color-quaternary;
-  border-radius: $input-radius;
+  border: 0.1rem solid mg-variables.$color-quaternary;
+  border-radius: mg-variables.$input-radius;
   box-shadow: none;
   box-sizing: inherit; // Forced to replace inherit values of the normalize.css
-  height: $control-height;
+  height: mg-variables.$control-height;
   padding: 1rem;
   width: 100%;
-  color: $color-secondary;
+  color: mg-variables.$color-secondary;
 
   &:focus {
-    border-color: $color-primary;
+    border-color: mg-variables.$color-primary;
     outline: 0;
   }
 
   &.mg-input--small {
-    font-size: $font-size-s;
-    height: $control-height-small;
+    font-size: mg-variables.$font-size-s;
+    height: mg-variables.$control-height-small;
     padding: 0 1rem;
   }
 
   &.mg-input--large {
-    font-size: $font-size-l;
-    height: $control-height-large;
+    font-size: mg-variables.$font-size-l;
+    height: mg-variables.$control-height-large;
     padding: 0 1.2rem;
   }
 
@@ -65,7 +66,7 @@ select {
 
 /* stylelint-disable */
 select {
-  background-color: $color-initial;
+  background-color: mg-variables.$color-initial;
   /* fix  text inside select */
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
@@ -95,7 +96,7 @@ select:-webkit-autofill:focus {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
-  -webkit-text-fill-color: $color-secondary;
+  -webkit-text-fill-color: mg-variables.$color-secondary;
   -webkit-box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -114,14 +115,14 @@ input[type="radio"] {
 }
 
 div.mg-input:focus-within {
-  border-color: $color-primary;
+  border-color: mg-variables.$color-primary;
   outline: 0;
 }
 
 label,
 legend {
   display: block;
-  font-size: $font-size-m;
+  font-size: mg-variables.$font-size-m;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }

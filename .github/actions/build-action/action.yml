@@ -1,5 +1,5 @@
 name: Build lib and demo page Action
-desctipion: "Build and test the lib and demo page"
+description: "Build and test the lib and demo page"
 inputs:
   stage:
     description: "Current stage"
@@ -21,10 +21,10 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Setup Node 18.x
-      uses: actions/setup-node@v1
+    - name: Setup Node 20.x
+      uses: actions/setup-node@v4
       with:
-        node-version: "18.x"
+        node-version: "20.x"
     - name: get-npm-version
       id: package-version
       uses: martinbeentjes/npm-get-version-action@v1.3.1

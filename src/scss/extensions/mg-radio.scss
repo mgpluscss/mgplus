@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
  /* Hide the browser's default radio button */
  .mg-radio input {
    position: absolute;
@@ -16,19 +18,19 @@
    width: 2.4rem;
    border-radius: 50%;
    border-style: solid;
-   border-color: $color-quaternary;
+   border-color: mg-variables.$color-quaternary;
    border-width: thin;
    transition: all 0.4s;
  }
 
  /* On mouse-over, add a grey background color */
  .mg-radio:hover input~.mg-radio--icon {
-   background-color: $color-secondary;
+   background-color: mg-variables.$color-secondary;
  }
 
  /* When the radio button is checked, add a blue background */
  .mg-radio input:checked~.mg-radio--icon {
-   background-color: $color-primary;
+   background-color: mg-variables.$color-primary;
  }
 
  /* Style the indicator (dot/circle) */
@@ -38,7 +40,7 @@
    width: 0.64rem;
    height: 0.64rem;
    border-radius: 50%;
-   background-color: $color-light;
+   background-color: mg-variables.$color-light;
    content: "";
    position: absolute;
    display: none;
@@ -51,11 +53,11 @@
 
 
  .mg-radio input:disabled~.mg-radio--icon {
-   background-color: $color-quinary;
+   background-color: mg-variables.$color-quinary;
  }
 
  .mg-radio input:focus~.mg-radio--icon {
-   border-color: $color-primary;
+   border-color: mg-variables.$color-primary;
    border-style: dotted;
    border-width: thin;
  }

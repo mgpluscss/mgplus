@@ -1,9 +1,11 @@
+@use "../mg-variables";
+
 
 // Blockquote
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 blockquote {
-	border-left: .3rem solid $color-quaternary;
+	border-left: .3rem solid mg-variables.$color-quaternary;
 	margin-left: 0;
 	margin-right: 0;
 	padding: 1rem 1.5rem;

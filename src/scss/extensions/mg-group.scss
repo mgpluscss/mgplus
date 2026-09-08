@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 .mg-group {
   display: inline-flex;
   justify-items: baseline;
@@ -18,6 +20,7 @@
   border-bottom-right-radius: 0;
   border-right: 0;
 }
+
 /*inner group styling*/
 .mg-group>select:not(:nth-child(1), :nth-last-child(1)),
 .mg-group>input:not(:nth-child(1), :nth-last-child(1)),
@@ -26,8 +29,8 @@
 .mg-group>.mg-button:not(:nth-child(1), :nth-last-child(1)),
 .mg-group>.mg-dropdown:not(:nth-child(1), :nth-last-child(1))>button,
 .mg-group>.mg-select:not(:nth-child(1), :nth-last-child(1))>select {
-  border-radius: 0; 
-  
+  border-radius: 0;
+
 }
 
 /*right group styling*/
@@ -45,5 +48,5 @@
 
 /* stylelint-enable */
 .mg-group .mg-group--outline {
-  box-shadow: $control-shadow;
+  box-shadow: mg-variables.$control-shadow;
 }

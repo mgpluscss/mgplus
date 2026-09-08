@@ -1,13 +1,15 @@
+@use "../../mg-variables";
+
 .icon-plus {
   &::before {
     background: currentcolor;
-    height: $icon-border-width;
+    height: mg-variables.$icon-border-width;
     width: 100%;
   }
 
   &::after {
     background: currentcolor;
     height: 100%;
-    width: $icon-border-width;
+    width: mg-variables.$icon-border-width;
   }
 }

@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 /* The container must be positioned relative: */
 .mg-dropdown {
   position: relative;
@@ -9,7 +11,7 @@
     -webkit-overflow-scrolling: touch;
     width: 100%;
     min-width: max-content;
-    box-shadow: $control-shadow;
+    box-shadow: mg-variables.$control-shadow;
     margin-left: auto;
     margin-right: auto;
     border: 0.15rem solid;
@@ -19,12 +21,12 @@
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    background-color: $color-initial;
+    background-color: mg-variables.$color-initial;
     top: 100%;
-    border-color: $color-quaternary;
-    border-radius: $control-radius;
+    border-color: mg-variables.$color-quaternary;
+    border-radius: mg-variables.$control-radius;
     max-width: 90vw;
-    z-index: $zindex-max;
+    z-index: mg-variables.$zindex-max;
     overflow: hidden auto;
     max-height: 60vh;
   }

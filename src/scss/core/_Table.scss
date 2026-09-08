@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 
 // Table (native)
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -9,7 +11,7 @@ table {
 
 td,
 th {
-	border-bottom: .1rem solid $color-quinary;
+	border-bottom: .1rem solid mg-variables.$color-quinary;
 	padding: 1.2rem 1.5rem;
 	text-align: left;
 

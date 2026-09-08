@@ -1,8 +1,10 @@
+@use "../mg-variables";
+
 $bullet-size: 2rem;
 
 @mixin bullet-sequence {
   content: counter(list);
-  font-size: $font-size-s;
+  font-size: mg-variables.$font-size-s;
   font-weight: 600;
 }
 
@@ -47,7 +49,7 @@ $bullet-size: 2rem;
     left: -3rem;
     height: 100%;
     width: 1rem;
-    border-left: 0.3rem solid $color-quaternary;
+    border-left: 0.3rem solid mg-variables.$color-quaternary;
   }
 
   &>ul li:last-child::before,
@@ -64,9 +66,9 @@ $bullet-size: 2rem;
     left: calc(-1 * ($bullet-size/2) - $bullet-size - 0.8rem);
     width: $bullet-size;
     height: $bullet-size;
-    border: 0.3rem solid $color-quaternary;
+    border: 0.3rem solid mg-variables.$color-quaternary;
     border-radius: 50%;
-    background-color: $color-initial;
+    background-color: mg-variables.$color-initial;
     text-align: center;
   }
 
@@ -76,7 +78,7 @@ $bullet-size: 2rem;
 
   &>ul li.active::before,
   &>ol li.active::before {
-    border-left: 0.3rem solid $color-primary;
+    border-left: 0.3rem solid mg-variables.$color-primary;
   }
 
   &>ul li:last-of-type::before,
@@ -86,17 +88,17 @@ $bullet-size: 2rem;
 
   &>ul li.active::after,
   &>ol li.active::after {
-    border-color: $color-primary;
-    background-color: $color-primary;
+    border-color: mg-variables.$color-primary;
+    background-color: mg-variables.$color-primary;
   }
 
   &>ol li.active::after {
-    color: $color-light;
+    color: mg-variables.$color-light;
   }
 
   &>ul li.current::after,
   &>ol li.current::after {
-    border-color: $color-primary;
+    border-color: mg-variables.$color-primary;
   }
 }
 
@@ -115,7 +117,7 @@ $bullet-size: 2rem;
   &>ol li {
     counter-increment: list;
     padding-right: 0.15rem;
-    border-top: 0.3rem solid $color-quaternary;
+    border-top: 0.3rem solid mg-variables.$color-quaternary;
     flex: 1 1 0;
   }
 
@@ -129,9 +131,9 @@ $bullet-size: 2rem;
     bottom: 1.2rem;
     width: $bullet-size;
     height: $bullet-size;
-    border: 0.3rem solid $color-quaternary;
+    border: 0.3rem solid mg-variables.$color-quaternary;
     border-radius: 50%;
-    background-color: $color-initial;
+    background-color: mg-variables.$color-initial;
     text-align: center;
   }
 
@@ -142,22 +144,22 @@ $bullet-size: 2rem;
   /* stylelint-enable */
   &>ul li.active,
   &>ol li.active {
-    border-color: $color-primary;
+    border-color: mg-variables.$color-primary;
   }
 
   &>ul li.active::before,
   &>ol li.active::before {
-    border-color: $color-primary;
-    background-color: $color-primary;
+    border-color: mg-variables.$color-primary;
+    background-color: mg-variables.$color-primary;
   }
 
   &>ol li.active::before {
-    color: $color-light;
+    color: mg-variables.$color-light;
   }
 
   &>ul li.current::before,
   &>ol li.current::before {
-    border-color: $color-primary;
+    border-color: mg-variables.$color-primary;
   }
 
   &>ul li:last-of-type,

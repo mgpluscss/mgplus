@@ -1,5 +1,7 @@
+@use "../../mg-variables";
+
 .icon-stop {
-  border: $icon-border-width solid currentcolor;
+  border: mg-variables.$icon-border-width solid currentcolor;
   border-radius: 50%;
 
   &::after,

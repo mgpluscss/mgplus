@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 .mg-nav {
   padding: 0.5rem;
   margin-left: 0;
@@ -14,14 +16,14 @@
     display: flex;
     padding: 0.5rem;
     text-decoration: none;
-    color: $color-secondary;
+    color: mg-variables.$color-secondary;
     align-items: center;
-    border-bottom: 0.125rem solid $color-quinary;
+    border-bottom: 0.125rem solid mg-variables.$color-quinary;
   }
 
   & li.active {
     color: currentcolor;
-    border-left: 0.3rem solid $color-primary;
+    border-left: 0.3rem solid mg-variables.$color-primary;
     font-weight: bold;
   }
 
@@ -29,11 +31,11 @@
     width: 100%;
     cursor: pointer;
     text-decoration: none;
-    color: $color-secondary;
+    color: mg-variables.$color-secondary;
   }
 
   & li:hover {
-    background-color: $color-quinary;
+    background-color: mg-variables.$color-quinary;
   }
 
 }
@@ -52,7 +54,7 @@
   /* stylelint-enable */
   & li.active {
     border: none;
-    border-bottom: 0.3rem solid $color-primary;
+    border-bottom: 0.3rem solid mg-variables.$color-primary;
   }
 }
 
@@ -80,13 +82,13 @@
 
   & li button:hover,
   & li .mg-button:hover {
-    color: $color-secondary;
+    color: mg-variables.$color-secondary;
   }
 
   & li.active button,
   & li.active .mg-button {
-    border: 0.2rem solid $color-primary;
-    color: $color-secondary;
+    border: 0.2rem solid mg-variables.$color-primary;
+    color: mg-variables.$color-secondary;
   }
 
 

@@ -1,15 +1,15 @@
 /*! Forked from Icons.css | MIT License | github.com/picturepan2/icons.css */
 
-@import "core";
-@import "action/icon-check";
-@import "action/icon-close";
-@import "action/icon-minus";
-@import "action/icon-plus";
-@import "action/icon-spinner";
-@import "action/icon-stop";
-@import "action/icon-search";
-@import "navigation/icon-arrows";
-@import "navigation/icon-caret";
-@import "navigation/icon-menu";
-@import "navigation/icon-apps";
-@import "navigation/icon-more";
+@use "core";
+@use "action/icon-check";
+@use "action/icon-close";
+@use "action/icon-minus";
+@use "action/icon-plus";
+@use "action/icon-spinner";
+@use "action/icon-stop";
+@use "action/icon-search";
+@use "navigation/icon-arrows";
+@use "navigation/icon-caret";
+@use "navigation/icon-menu";
+@use "navigation/icon-apps";
+@use "navigation/icon-more";

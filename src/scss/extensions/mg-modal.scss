@@ -1,3 +1,5 @@
+@use "../mg-variables";
+
 .mg-modal--content {
   position: fixed;
   margin-left: auto;
@@ -16,7 +18,7 @@
   height: 100%;
   visibility: hidden;
   backface-visibility: hidden;
-  z-index: calc($zindex-max + 1);
+  z-index: calc(mg-variables.$zindex-max + 1);
   opacity: 0;
   background: rgb(0 0 0 / 70%);
   transition: opacity 0.3s;
@@ -27,13 +29,13 @@
   }
 
   &>.mg-modal--content {
-    background-color: $color-initial;
-    border-radius: $control-radius;
-    color: $color-secondary;
+    background-color: mg-variables.$color-initial;
+    border-radius: mg-variables.$control-radius;
+    color: mg-variables.$color-secondary;
     padding: 2rem 1.5rem;
     margin-top: 0;
-    z-index: calc($zindex-max + 2);
-    box-shadow: $control-shadow;
+    z-index: calc(mg-variables.$zindex-max + 2);
+    box-shadow: mg-variables.$control-shadow;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
