@@ -27,24 +27,17 @@
     </div>
   </div>
   </div>
-  <h3>Collapsible navs</h3>
-  Here is a composition of navs and collapse elements
-  <div data-toggle="htmlpreview" data-toggle="nav">
-    <ul class="mg-nav" data-toggle="nav">
-      <li class="active"><a href="#home">Home</a></li>
-      <li><a href="#news">News</a></li>
-      <li class="mg-collapse mg-icon-nav" data-toggle="collapse"><a href="#contact">Contact</a>
-      </li>
-      <div class="mg-collapse--content">
-        <ul class="mg-nav">
-          <li>Contact sales</li>
-          <li>Contact customer</li>
-          <li>Contact care</li>
-        </ul>
-      </div>
-      <li><a href="#about">About</a></li>
-    </ul>
+  <h3>Native Zero-JS Accordions (HTML5 <code>&lt;details&gt;</code>)</h3>
+  <p>Modern zero-JS accordions styled via <code>&lt;details class="mg-accordion"&gt;</code> and <code>&lt;summary&gt;</code>. Use HTML5 <code>name="..."</code> for native mutually exclusive accordion groups with zero JavaScript.</p>
 
+  <div data-toggle="htmlpreview">
+    <details class="mg-accordion" name="accordion-group">
+      <summary>Panel 1: Zero-JS Disclosure</summary>
+      <p>This accordion opens and closes natively without requiring any JavaScript. Keyboard navigation (Enter / Space) works out of the box.</p>
+    </details>
+    <details class="mg-accordion" name="accordion-group">
+      <summary>Panel 2: Mutually Exclusive Accordion</summary>
+      <p>By using the standard HTML <code>name="accordion-group"</code> attribute, opening this panel automatically closes sibling panels natively.</p>
+    </details>
   </div>
-
 </section>

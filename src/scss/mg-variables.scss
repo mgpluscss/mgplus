@@ -1,48 +1,54 @@
 $package-version: '' !default;
 
 /*! mgplus.css #{$package-version} | MIT License | github.com/mgpluscss/mgplus */
+@layer mg.reset, mg.base, mg.theme, mg.components, mg.utilities;
+
 // exposed variables  
 /* stylelint-disable */
-:root {
-  --mg-color-dark: hsl(255deg 0% 5%);
-  --mg-color-light: hsl(255deg 0% 95%);
-  --mg-color-primary: #475dca;
-  --mg-control-radius: 1rem;
-  --mg-input-radius: 1rem;
-  --mg-color-red: #dc3545;
-  --mg-color-orange: #fd7e14;
-  --mg-color-blue: #007bff;
-  --mg-color-green: #28a745;
-  --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
-  --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
-  --mg-base-font-size: 1.6rem;
+@layer mg.theme {
+  :root {
+    color-scheme: light dark;
+    --mg-color-dark: oklch(14% 0.015 260);
+    --mg-color-light: oklch(98% 0.005 260);
+    --mg-color-primary: oklch(55% 0.22 264);
+    --mg-control-radius: 1rem;
+    --mg-input-radius: 1rem;
+    --mg-color-red: oklch(60% 0.22 25);
+    --mg-color-orange: oklch(70% 0.18 55);
+    --mg-color-blue: oklch(60% 0.2 250);
+    --mg-color-green: oklch(62% 0.18 145);
+    --mg-control-shadow: 0 0 2px rgb(0 0 0 / 20%), 0 3px 4px rgb(0 0 0 / 15%);
+    --mg-control-active-shadow: inset 0 0 100px 100px rgb(0 0 0 / 10%);
+    --mg-base-font-size: 1.6rem;
 
-  //default secondary colors 
-  --mg-color-initial: var(--mg-color-light);
-  --mg-color-secondary: hsl(255deg 0% 20%);
-  --mg-color-tertiary: hsl(255deg 0% 40%);
-  --mg-color-quaternary: hsl(255deg 0% 60%);
-  --mg-color-quinary: hsl(255deg 0% 90%);
+    // default secondary colors using light-dark()
+    --mg-color-initial: light-dark(var(--mg-color-light), var(--mg-color-dark));
+    --mg-color-secondary: light-dark(oklch(20% 0.015 260), oklch(92% 0.01 260));
+    --mg-color-tertiary: light-dark(oklch(40% 0.02 260), oklch(75% 0.015 260));
+    --mg-color-quaternary: light-dark(oklch(60% 0.02 260), oklch(55% 0.015 260));
+    --mg-color-quinary: light-dark(oklch(90% 0.01 260), oklch(25% 0.015 260));
 
-  //dark-colors 
-  --mg-dark-color-initial: var(--mg-color-dark);
-  --mg-dark-color-secondary: hsl(255deg 0% 80%);
-  --mg-dark-color-tertiary: hsl(255deg 0% 70%);
-  --mg-dark-color-quaternary: hsl(255deg 0% 50%);
-  --mg-dark-color-quinary: hsl(255deg 0% 25%);
+    // dark-colors (legacy and explicit overrides)
+    --mg-dark-color-initial: var(--mg-color-dark);
+    --mg-dark-color-secondary: oklch(92% 0.01 260);
+    --mg-dark-color-tertiary: oklch(75% 0.015 260);
+    --mg-dark-color-quaternary: oklch(55% 0.015 260);
+    --mg-dark-color-quinary: oklch(25% 0.015 260);
 
-  //grid gutter
-  --mg-grid-gutter: 0.5rem;
+    // grid gutter
+    --mg-grid-gutter: 0.5rem;
 
-  //z-index
-  --mg-zindex-0: 1;
-  --mg-zindex-1: 100;
-  --mg-zindex-2: 200;
-  --mg-zindex-3: 300;
-  --mg-zindex-4: 400;
-  --mg-zindex-5: 500;
-  --mg-zindex-max: 999;
+    // z-index
+    --mg-zindex-0: 1;
+    --mg-zindex-1: 100;
+    --mg-zindex-2: 200;
+    --mg-zindex-3: 300;
+    --mg-zindex-4: 400;
+    --mg-zindex-5: 500;
+    --mg-zindex-max: 999;
+  }
 }
+
 
 //
 //  Variables

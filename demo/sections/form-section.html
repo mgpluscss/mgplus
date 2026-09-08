@@ -106,4 +106,15 @@
       </div>
     </fieldset>
   </form>
+
+  <h3>Modern Dynamic Fields with <code>:has()</code> & <code>:user-invalid</code></h3>
+  <p>
+    Wrap labels and inputs in <code>mg-field</code>. Using modern CSS <code>:has()</code>, the label automatically highlights when the field is focused, and adapts to danger color when input is <code>:user-invalid</code>.
+  </p>
+  <div class="mg-container" id="modern-field-example" data-toggle="htmlpreview">
+    <div class="mg-field">
+      <label for="has-email-demo">Email Address (try typing an invalid email and unfocusing)</label>
+      <input type="email" id="has-email-demo" placeholder="name@example.com" required />
+    </div>
+  </div>
 </section>

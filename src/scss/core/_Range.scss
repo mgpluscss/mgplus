@@ -3,57 +3,58 @@
 // Range input (native)
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-input[type="range"] {
-  background: mg-variables.$color-quaternary;
-  border-radius: mg-variables.$input-radius;
-  display: inline-block;
-  height: 0.8rem;
-  margin-right: 1.76rem;
-  opacity: 0.9;
-  outline: none;
-  padding: 0;
-  position: relative;
-  transition: opacity 0.2s;
-  vertical-align: top;
-  width: 100%;
+@layer mg.base {
+  input[type="range"] {
+    background: mg-variables.$color-quaternary;
+    border-radius: mg-variables.$input-radius;
+    display: inline-block;
+    height: 0.8rem;
+    margin-right: 1.76rem;
+    opacity: 0.9;
+    outline: none;
+    padding: 0;
+    position: relative;
+    transition: opacity 0.2s;
+    vertical-align: top;
+    width: 100%;
 
-  &:hover {
-    opacity: 1;
-  }
-
-  &::-moz-range-thumb {
-    appearance: none;
-    background: mg-variables.$color-primary;
-    border-radius: 100%;
-    border: none;
-    box-shadow: mg-variables.$control-shadow;
-    cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-  }
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    background: mg-variables.$color-primary;
-    border: none;
-    box-shadow: mg-variables.$control-shadow;
-    cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-radius: var(--mg-control-radius);
-  }
-
-  &:disabled {
-    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
 
     &::-moz-range-thumb {
-      background: mg-variables.$color-quaternary;
+      appearance: none;
+      background: mg-variables.$color-primary;
+      border-radius: 100%;
+      border: none;
+      box-shadow: mg-variables.$control-shadow;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
     }
 
     &::-webkit-slider-thumb {
-      background: mg-variables.$color-quaternary;
+      -webkit-appearance: none;
+      appearance: none;
+      background: mg-variables.$color-primary;
+      border: none;
+      box-shadow: mg-variables.$control-shadow;
+      cursor: pointer;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: var(--mg-control-radius);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+
+      &::-moz-range-thumb {
+        background: mg-variables.$color-quaternary;
+      }
+
+      &::-webkit-slider-thumb {
+        background: mg-variables.$color-quaternary;
+      }
     }
   }
-
 }

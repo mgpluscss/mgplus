@@ -152,4 +152,39 @@
   </div>
   </div>
 
+  <h3>Modern Intrinsic CSS Grid</h3>
+  <p>
+    Mg+ also provides modern intrinsic CSS Grid primitives using <code>repeat(auto-fit, minmax(...))</code> without media queries.
+    Use <code>mg-grid</code> or <code>mg-grid--auto</code>, or explicit column definitions like <code>mg-cols-[1-12]</code> and <code>mg-col-span-[2-6, full]</code>.
+  </p>
+  <div class="mg-container" id="grid-modern-example" data-toggle="htmlpreview">
+    <h4>Auto-fit Intrinsic Grid (<code>mg-grid</code>)</h4>
+    <div class="mg-grid mg-gap2">
+      <div class="grid-cel">Auto Card 1</div>
+      <div class="grid-cel">Auto Card 2</div>
+      <div class="grid-cel">Auto Card 3</div>
+    </div>
+
+    <h4 class="mg-pad-t2">Explicit Columns (<code>mg-cols-3</code>) with Spanning (<code>mg-col-span-2</code>)</h4>
+    <div class="mg-grid mg-cols-3 mg-gap1">
+      <div class="grid-cel mg-col-span-2">Span 2 Columns</div>
+      <div class="grid-cel">1 Column</div>
+      <div class="grid-cel">1 Column</div>
+      <div class="grid-cel mg-col-span-2">Span 2 Columns</div>
+    </div>
+  </div>
+
+  <h3>Container Queries</h3>
+  <p>
+    Add <code>mg-container-query</code> to declare an element as an inline-size container, enabling modular responsive layouts independent of viewport width.
+  </p>
+  <div class="mg-container" id="grid-cq-example" data-toggle="htmlpreview">
+    <div class="mg-container-query">
+      <div class="mg-row">
+        <div class="mg-col grid-cel">Container Query Child 1</div>
+        <div class="mg-col grid-cel">Container Query Child 2</div>
+      </div>
+    </div>
+  </div>
+
 </section>

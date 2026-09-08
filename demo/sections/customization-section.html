@@ -6,55 +6,39 @@
     their default values.
   </p>
 
-  <h3>Colors</h3>
+  <h3>Colors (OKLCH Color Space)</h3>
+  <p>Mg+ uses modern <code>oklch()</code> for perceptually uniform colors and native <code>light-dark()</code> adaptive tokens.</p>
   <div class="mg-col">
-    <span><code>--mg-color-dark</code>: <span>hsl(255deg 0% 5%)</span></span>
-    <span><code>--mg-color-light</code>: <span>hsl(255deg 0% 95%)</span></span>
-    <span><code>--mg-color-primary</code>: <span>#475dca</span></span>
-    <span><code>--mg-color-red</code>: <span>#dc3545</span></span>
-    <span><code>--mg-color-orange</code>: <span>#fd7e14</span></span>
-    <span><code>--mg-color-blue</code>: <span>#007bff</span></span>
-    <span><code>--mg-color-green</code>: <span>#28a745</span></span>
-    <span
-      ><code>--mg-color-initial</code>: <span>var(--mg-color-light)</span></span
-    >
-    <span
-      ><code>--mg-color-secondary</code>: <span>hsl(255deg 0% 20%)</span></span
-    >
-    <span
-      ><code>--mg-color-tertiary</code>: <span>hsl(255deg 0% 40%)</span></span
-    >
-    <span
-      ><code>--mg-color-quaternary</code>: <span>hsl(255deg 0% 60%)</span></span
-    >
-    <span
-      ><code>--mg-color-quinary</code>: <span>hsl(255deg 0% 90%)</span></span
-    >
+    <span><code>--mg-color-dark</code>: <span>oklch(0.2 0.01 270)</span></span>
+    <span><code>--mg-color-light</code>: <span>oklch(0.98 0.005 270)</span></span>
+    <span><code>--mg-color-primary</code>: <span>oklch(0.55 0.18 260)</span></span>
+    <span><code>--mg-color-red</code>: <span>oklch(0.55 0.22 25)</span></span>
+    <span><code>--mg-color-orange</code>: <span>oklch(0.68 0.18 50)</span></span>
+    <span><code>--mg-color-blue</code>: <span>oklch(0.58 0.18 240)</span></span>
+    <span><code>--mg-color-green</code>: <span>oklch(0.65 0.18 145)</span></span>
+    <span><code>--mg-color-initial</code>: <span>light-dark(var(--mg-color-light), var(--mg-dark-color-initial))</span></span>
+    <span><code>--mg-color-secondary</code>: <span>light-dark(oklch(0.3 0.02 270), var(--mg-dark-color-secondary))</span></span>
+    <span><code>--mg-color-tertiary</code>: <span>light-dark(oklch(0.45 0.02 270), var(--mg-dark-color-tertiary))</span></span>
+    <span><code>--mg-color-quaternary</code>: <span>light-dark(oklch(0.7 0.02 270), var(--mg-dark-color-quaternary))</span></span>
+    <span><code>--mg-color-quinary</code>: <span>light-dark(oklch(0.92 0.01 270), var(--mg-dark-color-quinary))</span></span>
   </div>
 
-  <h3>Dark Mode Colors</h3>
+  <h3>Dark Mode Tokens</h3>
   <div class="mg-col">
-    <span
-      ><code>--mg-dark-color-initial</code>:
-      <span>var(--mg-color-dark)</span></span
-    >
-    <span
-      ><code>--mg-dark-color-secondary</code>:
-      <span>hsl(255deg 0% 80%)</span></span
-    >
-    <span
-      ><code>--mg-dark-color-tertiary</code>:
-      <span>hsl(255deg 0% 70%)</span></span
-    >
-    <span
-      ><code>--mg-dark-color-quaternary</code>:
-      <span>hsl(255deg 0% 50%)</span></span
-    >
-    <span
-      ><code>--mg-dark-color-quinary</code>:
-      <span>hsl(255deg 0% 25%)</span></span
-    >
+    <span><code>--mg-dark-color-initial</code>: <span>oklch(0.2 0.01 270)</span></span>
+    <span><code>--mg-dark-color-secondary</code>: <span>oklch(0.9 0.01 270)</span></span>
+    <span><code>--mg-dark-color-tertiary</code>: <span>oklch(0.75 0.01 270)</span></span>
+    <span><code>--mg-dark-color-quaternary</code>: <span>oklch(0.45 0.01 270)</span></span>
+    <span><code>--mg-dark-color-quinary</code>: <span>oklch(0.3 0.01 270)</span></span>
   </div>
+
+  <h3>Open Design Tokens</h3>
+  <p>Tokens are exported directly as W3C DTCG-compliant JSON format from <code>mgplus/tokens</code>:</p>
+  <pre><code>import tokens from 'mgplus/tokens';</code></pre>
+
+  <h3>Cascade Layers</h3>
+  <p>All Mg+ styles are organized into standard CSS Cascade Layers so your application styles can easily override without specificity wars:</p>
+  <pre><code>@layer mg.reset, mg.base, mg.theme, mg.components, mg.utilities;</code></pre>
 
   <h3>Typography</h3>
   <div class="mg-col">

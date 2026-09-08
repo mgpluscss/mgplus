@@ -80,4 +80,34 @@
       </div>
     </div>
   </div>
+
+  <h3>Zero-JS Native Popover API</h3>
+  <p>
+    Use modern HTML5 native <code>popover</code> and <code>popovertarget</code> attributes with <code>mg-popover</code> or <code>mg-tooltip</code> for accessible dropdowns and popups with <b>zero JavaScript required</b>.
+  </p>
+  <div class="mg-container" id="popover-example" data-toggle="htmlpreview">
+    <div class="mg-flex mg-gap2">
+      <button popovertarget="native-popover-demo" class="mg-button">
+        Open Native Popover
+      </button>
+
+      <div id="native-popover-demo" popover class="mg-popover">
+        <p class="mg-text-m"><strong>Zero-JS Popover</strong></p>
+        <p>This popover is driven by native browser HTML5 Popover API. Click anywhere outside or press Escape to dismiss.</p>
+        <ul class="mg-nav">
+          <li>Dashboard</li>
+          <li>Settings</li>
+          <li>Logout</li>
+        </ul>
+      </div>
+
+      <button popovertarget="native-tooltip-demo" class="mg-button-outline">
+        Toggle Tooltip Popover
+      </button>
+
+      <div id="native-tooltip-demo" popover class="mg-popover mg-tooltip">
+        Native tooltip content!
+      </div>
+    </div>
+  </div>
 </section>

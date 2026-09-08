@@ -22,6 +22,7 @@
       "default": "./dist/mgplus-vanilla.umd.cjs"
     },
     "./css": "./dist/mgplus.css",
+    "./tokens": "./src/tokens.json",
     "./dist/*": "./dist/*",
     "./package.json": "./package.json"
   },

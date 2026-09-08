@@ -95,9 +95,19 @@
 
     <p>"auto" mode will use your system browser preference to choose dark or light mode</p>
 
-    <i>Js extensions are required only to handle interactions with dom events for navs, tabs, dropdowns,
+    <h3>Zero-JS Modern CSS Alternatives</h3>
+    <p>
+        Mg+ now supports zero-JS browser primitives out of the box:
+    </p>
+    <ul>
+        <li><strong>Accordions:</strong> Native <code>&lt;details class="mg-accordion"&gt;</code> and <code>&lt;summary&gt;</code></li>
+        <li><strong>Modals:</strong> Native HTML5 <code>&lt;dialog class="mg-modal"&gt;</code> with blurred <code>::backdrop</code></li>
+        <li><strong>Popovers:</strong> Native Popover API <code>&lt;div popover class="mg-popover"&gt;</code> with <code>popovertarget</code></li>
+        <li><strong>Responsive Grids:</strong> Modern Intrinsic CSS Grid (<code>.mg-grid</code>) & Container Queries (<code>.mg-container-query</code>)</li>
+    </ul>
+
+    <i>Js extensions are optional and provided for legacy DOM interactions with navs, tabs, dropdowns,
         modals, etc.
-        It could be replaced by creating a wrapped UI components with react, angular or other any UI
-        framework</i>
+        They can easily be replaced by native HTML5 primitives or any UI framework (React, Vue, Angular, Svelte).</i>
 
 </section>

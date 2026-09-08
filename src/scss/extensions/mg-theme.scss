@@ -1,42 +1,51 @@
- @mixin dark-colors {
-   --mg-color-initial: var(--mg-dark-color-initial);
-   --mg-color-secondary: var(--mg-dark-color-secondary);
-   --mg-color-tertiary: var(--mg-dark-color-tertiary);
-   --mg-color-quaternary: var(--mg-dark-color-quaternary);
-   --mg-color-quinary: var(--mg-dark-color-quinary);
- }
+/* stylelint-disable */
+@mixin dark-colors {
+  color-scheme: dark;
+  --mg-color-initial: var(--mg-dark-color-initial);
+  --mg-color-secondary: var(--mg-dark-color-secondary);
+  --mg-color-tertiary: var(--mg-dark-color-tertiary);
+  --mg-color-quaternary: var(--mg-dark-color-quaternary);
+  --mg-color-quinary: var(--mg-dark-color-quinary);
+}
 
- @mixin light-colors {
-   --mg-color-initial: var(--mg-color-initial);
-   --mg-color-secondary: var(--mg-color-secondary);
-   --mg-color-tertiary: var(--mg-color-tertiary);
-   --mg-color-quaternary: var(--mg-color-quaternary);
-   --mg-color-quinary: var(--mg-color-quinary);
- }
+@mixin light-colors {
+  color-scheme: light;
+  --mg-color-initial: var(--mg-color-light);
+  --mg-color-secondary: oklch(20% 0.015 260);
+  --mg-color-tertiary: oklch(40% 0.02 260);
+  --mg-color-quaternary: oklch(60% 0.02 260);
+  --mg-color-quinary: oklch(90% 0.01 260);
+}
 
- /* stylelint-disable */
- :root {
-   color-scheme: light;
- }
+:root {
+  color-scheme: light dark;
+}
 
- .mg-theme-dark,
- :root[data-theme='dark'] {
-   @include dark-colors;
+.mg-theme-dark,
+:root[data-theme='dark'] {
+  @include dark-colors;
 
-   color-scheme: dark;
+  color-scheme: dark;
 
-   .mg-hidden-dark {
-     display: none;
-   }
- }
+  .mg-hidden-dark {
+    display: none;
+  }
+}
 
- .mg-theme-light {
-   @include light-colors;
-   color-scheme: light;
+.mg-theme-light,
+:root[data-theme='light'] {
+  @include light-colors;
 
-   .mg-hidden-light {
-     display: none;
-   }
- }
+  color-scheme: light;
 
- /* stylelint-enable */
+  .mg-hidden-light {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-colors;
+  }
+}
+/* stylelint-enable */

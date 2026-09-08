@@ -1,0 +1,32 @@
+@use "../mg-variables";
+
+@layer mg.components {
+  // Native HTML5 Popover API (Zero-JS Dropdowns & Menus)
+  [popover].mg-popover,
+  [popover].mg-dropdown--content {
+    border: 0.15rem solid mg-variables.$color-quaternary;
+    border-radius: mg-variables.$control-radius;
+    background-color: mg-variables.$color-initial;
+    color: mg-variables.$color-secondary;
+    padding: 0.8rem 1.2rem;
+    box-shadow: mg-variables.$control-shadow;
+    margin: 0.5rem;
+    inset: auto;
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow-y: auto;
+
+    &::backdrop {
+      background: transparent;
+    }
+  }
+
+  // Popover tooltip style
+  [popover].mg-tooltip {
+    font-size: mg-variables.$font-size-s;
+    padding: 0.4rem 0.8rem;
+    background-color: mg-variables.$color-secondary;
+    color: mg-variables.$color-initial;
+    border: none;
+  }
+}

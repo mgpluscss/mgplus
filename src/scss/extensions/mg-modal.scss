@@ -1,27 +1,49 @@
 @use "../mg-variables";
 
-.mg-modal--content {
-  position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-}
+@layer mg.components {
+  // Native HTML5 Dialog (Zero-JS Interactive Modal)
+  dialog.mg-dialog,
+  dialog.mg-modal {
+    background-color: mg-variables.$color-initial;
+    border: none;
+    border-radius: mg-variables.$control-radius;
+    color: mg-variables.$color-secondary;
+    padding: 2rem 1.5rem;
+    box-shadow: mg-variables.$control-shadow;
+    max-width: min(90vw, 60rem);
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: auto;
 
-.mg-modal {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  place-items: center center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  visibility: hidden;
-  backface-visibility: hidden;
-  z-index: calc(mg-variables.$zindex-max + 1);
-  opacity: 0;
-  background: rgb(0 0 0 / 70%);
-  transition: opacity 0.3s;
+    &::backdrop {
+      background: rgb(0 0 0 / 60%);
+      backdrop-filter: blur(0.4rem);
+    }
+  }
+
+  .mg-modal--content {
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mg-modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    backface-visibility: hidden;
+    z-index: calc(mg-variables.$zindex-max + 1);
+    opacity: 0;
+    background: rgb(0 0 0 / 70%);
+    transition: opacity 0.3s;
+
 
   &.opened {
     opacity: 1;
@@ -86,4 +108,5 @@
   &.opened.mg-modal--bottom>.mg-modal--content {
     transform: translateY(-100vh);
   }
+}
 }

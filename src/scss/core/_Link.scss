@@ -3,12 +3,21 @@
 // Link
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-a {
-  color: mg-variables.$color-primary;
-  text-decoration: none;
+@layer mg.base {
+  a {
+    color: mg-variables.$color-primary;
+    text-decoration: none;
 
-  &:focus,
-  &:hover {
-    color: mg-variables.$color-secondary;
+    &:focus,
+    &:hover {
+      color: mg-variables.$color-secondary;
+    }
+
+    &:focus-visible {
+      outline: 0.2rem solid mg-variables.$color-primary;
+      outline-offset: 0.2rem;
+      border-radius: 0.2rem;
+    }
   }
 }
+

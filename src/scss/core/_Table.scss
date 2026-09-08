@@ -4,28 +4,38 @@
 // Table (native)
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-table {
-	border-spacing: 0;
-	width: 100%;
+@layer mg.base {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border-bottom: 0.1rem solid mg-variables.$color-quinary;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  table.table--responsive {
+    display: inline-block;
+    overflow-x: auto;
+  }
+
+  table.mg-table--striped tbody tr:nth-child(even) {
+    background-color: color-mix(in oklch, var(--mg-color-quinary) 50%, transparent);
+  }
+
+  table.mg-table--hover tbody tr:hover {
+    background-color: color-mix(in oklch, var(--mg-color-primary) 8%, transparent);
+  }
 }
-
-td,
-th {
-	border-bottom: .1rem solid mg-variables.$color-quinary;
-	padding: 1.2rem 1.5rem;
-	text-align: left;
-
-	&:first-child {
-		padding-left: 0;
-	}
-
-	&:last-child {
-		padding-right: 0;
-	}
-}
- 
-	table.table--responsive {
-		display: inline-block;
-		overflow-x: auto;
-  } 
-   

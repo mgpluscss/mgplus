@@ -3,48 +3,50 @@
 // Typography
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-b,
-strong {
-	font-weight: bold;
-}
+@layer mg.base {
+  b,
+  strong {
+    font-weight: bold;
+  }
 
-p {
-	margin-top: 0;
-}
+  p {
+    margin-top: 0;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: 600;
-	letter-spacing: -.1rem;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.1rem;
+  }
 
-h1 {
-	font-size: mg-variables.$font-size-4xl;
-}
+  h1 {
+    font-size: mg-variables.$font-size-4xl;
+  }
 
-h2 {
-	font-size: mg-variables.$font-size-3xl;
-}
+  h2 {
+    font-size: mg-variables.$font-size-3xl;
+  }
 
-h3 {
-	font-size: mg-variables.$font-size-2xl;
-}
+  h3 {
+    font-size: mg-variables.$font-size-2xl;
+  }
 
-h4 {
-	font-size: mg-variables.$font-size-xl;
-	letter-spacing: -.08rem;
-}
+  h4 {
+    font-size: mg-variables.$font-size-xl;
+    letter-spacing: -0.08rem;
+  }
 
-h5 {
-	font-size: mg-variables.$font-size-l;
-	letter-spacing: -.05rem;
-}
+  h5 {
+    font-size: mg-variables.$font-size-l;
+    letter-spacing: -0.05rem;
+  }
 
-h6 {
-	font-size: mg-variables.$font-size-m;
-	letter-spacing: 0;
+  h6 {
+    font-size: mg-variables.$font-size-m;
+    letter-spacing: 0;
+  }
 }

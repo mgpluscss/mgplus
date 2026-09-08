@@ -1,105 +1,229 @@
 @use "../mg-variables";
-@use "mg-grid-utilities";
+@use "sass:math";
 
-//  Make all grid columns
-//  ---------------------------------------------
+@layer mg.utilities {
+  // Modern Intrinsic Grid Primitives
+  .mg-grid {
+    display: grid;
+    gap: var(--mg-gap, 1.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--mg-col-min, 24rem)), 1fr));
+  }
 
-.mg-col {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  .mg-grid--auto {
+    display: grid;
+    gap: var(--mg-gap, 1.5rem);
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--mg-col-min, 18rem)), 1fr));
+  }
+
+  .mg-cols-1 { grid-template-columns: repeat(1, 1fr); }
+  .mg-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .mg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .mg-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .mg-cols-6 { grid-template-columns: repeat(6, 1fr); }
+  .mg-cols-12 { grid-template-columns: repeat(12, 1fr); }
+
+  .mg-col-span-full { grid-column: 1 / -1; }
+  .mg-col-span-2 { grid-column: span 2; }
+  .mg-col-span-3 { grid-column: span 3; }
+  .mg-col-span-4 { grid-column: span 4; }
+  .mg-col-span-6 { grid-column: span 6; }
+
+  // Fluid Flex Primitives
+  .mg-flex {
+    display: flex;
+    gap: var(--mg-gap, 1rem);
+    flex-wrap: wrap;
+  }
+
+  .mg-flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  // Modern Container Queries
+  .mg-container-query {
+    container-type: inline-size;
+  }
+
+  // Pure modern Flexbox Row & Column System
+  // ---------------------------------------------
+
+  .mg-row {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--mg-gap, var(--mg-grid-gutter, 0.5rem));
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+
+    // Row alignment modifiers
+    &.mg-row--start,
+    &.mg-x--start { justify-content: flex-start; }
+
+    &.mg-row--center,
+    &.mg-x--center { justify-content: center; }
+
+    &.mg-row--end,
+    &.mg-x--end { justify-content: flex-end; }
+
+    &.mg-row--between,
+    &.mg-x--between { justify-content: space-between; }
+
+    &.mg-row--around,
+    &.mg-x--around { justify-content: space-around; }
+
+    &.mg-row--evenly,
+    &.mg-x--evenly { justify-content: space-evenly; }
+
+    &.mg-row--top,
+    &.mg-x--top { align-items: flex-start; }
+
+    &.mg-row--middle,
+    &.mg-x--middle { align-items: center; }
+
+    &.mg-row--bottom,
+    &.mg-x--bottom { align-items: flex-end; }
+
+    &.mg-row--stretch,
+    &.mg-x--stretch { align-items: stretch; }
+
+    &.mg-row--baseline,
+    &.mg-x--baseline { align-items: baseline; }
+
+    &.mg-row--reverse,
+    &.mg-x--reverse { flex-direction: row-reverse; }
+  }
+
+  .mg-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+
+    // Column alignment modifiers
+    &.mg-col--start,
+    &.mg-x--start { align-items: flex-start; }
+
+    &.mg-col--center,
+    &.mg-x--center { align-items: center; }
+
+    &.mg-col--end,
+    &.mg-x--end { align-items: flex-end; }
+
+    &.mg-col--top,
+    &.mg-x--top { justify-content: flex-start; }
+
+    &.mg-col--middle,
+    &.mg-x--middle { justify-content: center; }
+
+    &.mg-col--bottom,
+    &.mg-x--bottom { justify-content: flex-end; }
+
+    &.mg-col--stretch,
+    &.mg-x--stretch { justify-content: stretch; }
+
+    &.mg-col--baseline,
+    &.mg-x--baseline { justify-content: baseline; }
+
+    &.mg-col--reverse,
+    &.mg-x--reverse { flex-direction: column-reverse; }
+  }
+
+  .mg-col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .mg-x--grow,
+  .mg-col--grow {
+    flex: 1 1 auto;
+  }
+
+  .mg-x--ungrow,
+  .mg-col--ungrow {
+    flex: 0 0 auto;
+  }
+
+  // 12-Column Sizing (Clean & Lightweight)
+  @for $i from 1 through 12 {
+    $pct: math.percentage(math.div($i, 12));
+
+    .mg-col-#{$i},
+    .mg-x#{$i},
+    .mg-s#{$i},
+    .mg-m#{$i},
+    .mg-l#{$i},
+    .mg-xl#{$i} {
+      flex: 0 0 calc(#{$pct} - (var(--mg-gap, var(--mg-grid-gutter, 0.5rem)) * #{math.div(12 - $i, 12)}));
+      max-width: #{$pct};
+    }
+
+    .mg-x--offset#{$i},
+    .mg-col--offset-#{$i} {
+      margin-left: #{$pct};
+    }
+  }
+
+  .mg-x--offset0,
+  .mg-col--offset-0 {
+    margin-left: 0;
+  }
+
+  // Adaptive visibility helpers
+  @media screen and (max-width: mg-variables.$screen-s) {
+    .mg-s-hidden { display: none !important; }
+  }
+
+  @media screen and (max-width: mg-variables.$screen-m) {
+    .mg-m-hidden { display: none !important; }
+  }
+
+  @media screen and (max-width: mg-variables.$screen-l) {
+    .mg-l-hidden { display: none !important; }
+  }
+
+  @media screen and (min-width: mg-variables.$screen-s) {
+    .mg-s-display { display: initial !important; }
+  }
+
+  @media screen and (min-width: mg-variables.$screen-m) {
+    .mg-m-display { display: initial !important; }
+  }
+
+  @media screen and (min-width: mg-variables.$screen-l) {
+    .mg-l-display { display: initial !important; }
+  }
+
+  // Containers
+  .mg-container {
+    width: 100%;
+    max-width: min(100% - 2rem, mg-variables.$screen-l);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  .mg-container-fluid {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  // Gap utilities
+  @each $key, $val in mg-variables.$rem-map {
+    .mg-gap#{$key},
+    .mg-gap-#{$key} {
+      gap: #{$val};
+    }
+
+    .mg-row-gap#{$key},
+    .mg-row-gap-#{$key} {
+      row-gap: #{$val};
+    }
+
+    .mg-col-gap#{$key},
+    .mg-col-gap-#{$key} {
+      column-gap: #{$val};
+    }
+  }
 }
-
-
-
-@include mg-grid-utilities.create-all-grid-columns;
-
-//  Columns X
-//  ---------------------------------------------
-
-@include mg-grid-utilities.create-grid-columns(mg-variables.$name-x);
-
-//  Columns S
-//  ---------------------------------------------
-
-@media screen and (min-width: mg-variables.$screen-s) {
-  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-s);
-}
-
-//  Columns M
-//  ---------------------------------------------
-
-@media screen and (min-width: mg-variables.$screen-m) {
-  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-m);
-}
-
-//  Columns L
-//  ---------------------------------------------
-
-@media screen and (min-width: mg-variables.$screen-l) {
-  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-l);
-}
-
-//  Columns XL
-//  ---------------------------------------------
-
-@media screen and (min-width: mg-variables.$screen-xl) {
-  @include mg-grid-utilities.create-grid-columns(mg-variables.$name-xl);
-}
-
-//  Grid
-//  _____________________________________________
-
-
-// Adaptative hide
-@media screen and (max-width: mg-variables.$screen-s) {
-  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-s);
-}
-
-@media screen and (max-width: mg-variables.$screen-m) {
-  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-m);
-}
-
-@media screen and (max-width: mg-variables.$screen-l) {
-  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-l);
-}
-
-@media screen and (max-width: mg-variables.$screen-xl) {
-  @include mg-grid-utilities.create-conditional-hidden(mg-variables.$name-xl);
-}
-
-// Adaptative display
-@media screen and (min-width: mg-variables.$screen-s) {
-  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-s);
-}
-
-@media screen and (min-width: mg-variables.$screen-m) {
-  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-m);
-}
-
-@media screen and (min-width: mg-variables.$screen-l) {
-  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-l);
-}
-
-@media screen and (min-width: mg-variables.$screen-xl) {
-  @include mg-grid-utilities.create-conditional-display(mg-variables.$name-xl);
-}
-
-.mg-container {
-  @include mg-grid-utilities.init-container;
-
-  max-width: mg-variables.$screen-l;
-}
-
-.mg-container-fluid {
-  @include mg-grid-utilities.init-container;
-
-  max-width: width auto;
-}
-
-.mg-row {
-  @include mg-grid-utilities.init-row;
-}
-
-@include mg-grid-utilities.create-gap-utilities(mg-variables.$rem-map);

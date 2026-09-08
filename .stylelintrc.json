@@ -9,7 +9,7 @@
     ],
     "property-no-vendor-prefix": null,
     "scss/operator-no-unspaced": null,
-    "unit-allowed-list": ["rem", "%", "deg", "s", "vw", "vh"],
+    "unit-allowed-list": ["rem", "em", "%", "deg", "s", "ms", "vw", "vh", "dvh", "dvw", "cqw", "cqh", "fr", "ch"],
     "max-nesting-depth": 3,
     "selector-max-id": 0
   }

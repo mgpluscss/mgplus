@@ -1,5 +1,62 @@
- .mg-collapse {
-   &:not(.opened)+.mg-collapse--content {
-     display: none;
-   }
- }
+@use "../mg-variables";
+
+@layer mg.components {
+  // Native HTML5 Details & Summary Accordion (Zero-JS)
+  details.mg-collapse,
+  details.mg-accordion {
+    border: 0.1rem solid mg-variables.$color-quaternary;
+    border-radius: mg-variables.$control-radius;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    background-color: mg-variables.$color-initial;
+    transition: all 0.2s ease;
+
+    & > summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: mg-variables.$color-secondary;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        width: 0.8rem;
+        height: 0.8rem;
+        border-right: 0.2rem solid currentcolor;
+        border-bottom: 0.2rem solid currentcolor;
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+      }
+    }
+
+    &[open] > summary {
+      margin-bottom: 1rem;
+
+      &::after {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  // Class-based collapse (closed by default)
+  .mg-collapse--content:not(.opened),
+  .mg-collapse--content[aria-hidden="true"],
+  .mg-collapse:not(.opened) + .mg-collapse--content {
+    display: none !important;
+  }
+
+  .mg-collapse.opened + .mg-collapse--content,
+  .mg-collapse--content.opened {
+    display: block;
+
+    &.mg-col {
+      display: flex;
+    }
+  }
+}

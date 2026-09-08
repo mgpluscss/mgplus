@@ -407,4 +407,22 @@
       </div>
     </div>
   </div>
+
+  <h3>Native HTML5 Dialog Modal</h3>
+  <p>
+    Mg+ styles native <code>&lt;dialog class="mg-modal"&gt;</code> or <code>&lt;dialog class="mg-dialog"&gt;</code>, including backdrop blur and zero-JS closing via <code>&lt;form method="dialog"&gt;</code>.
+  </p>
+  <div class="mg-container" id="dialog-example" data-toggle="htmlpreview">
+    <button class="mg-button" onclick="document.getElementById('native-dialog-example').showModal()">
+      Open Native Dialog Modal
+    </button>
+
+    <dialog class="mg-modal" id="native-dialog-example">
+      <h3>Native Dialog with Blurred Backdrop</h3>
+      <p>This modal uses browser-native <code>&lt;dialog&gt;</code> and <code>::backdrop</code> filter blur.</p>
+      <form method="dialog" class="mg-pad-t2">
+        <button class="mg-button-outline">Close Dialog (Zero-JS)</button>
+      </form>
+    </dialog>
+  </div>
 </section>

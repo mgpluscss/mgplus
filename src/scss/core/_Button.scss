@@ -3,125 +3,131 @@
 // Button
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.mg-button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  background-color: mg-variables.$color-primary;
-  border: 0.2rem solid mg-variables.$color-primary;
-  border-radius: mg-variables.$control-radius;
-  color: mg-variables.$color-light;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: mg-variables.$font-size-s;
-  font-weight: 600;
-  height: mg-variables.$control-height;
-  letter-spacing: 0.1rem;
-  padding: 0 2rem;
-  text-align: center;
-  text-decoration: none;
-  opacity: 1;
-  box-shadow: mg-variables.$control-shadow;
-  position: relative;
-  overflow: hidden;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-
-  &:focus,
-  &:hover {
-    transition: all 0.5s ease;
-    box-shadow: mg-variables.$control-active-shadow;
-    outline: 0;
+@layer mg.base {
+  .mg-button,
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    background-color: mg-variables.$color-primary;
+    border: 0.2rem solid mg-variables.$color-primary;
+    border-radius: mg-variables.$control-radius;
     color: mg-variables.$color-light;
-  }
-
-  &[disabled] {
-    cursor: default;
-    opacity: 0.5;
-
-    &:focus,
-    &:hover {
-      background-color: mg-variables.$color-secondary;
-      border-color: mg-variables.$color-primary;
-    }
-  }
-
-  &.mg-button--outline {
-    background-color: transparent;
-    color: mg-variables.$color-primary;
-
-    &:focus,
-    &:hover {
-      transition: all 0.5s ease;
-      box-shadow: mg-variables.$control-active-shadow;
-    }
-
-    &[disabled] {
-      &:focus,
-      &:hover {
-        border-color: inherit;
-      }
-    }
-  }
-
-  &.mg-button--link {
-    box-shadow: none;
-    background-color: transparent;
-    color: mg-variables.$color-primary;
-    border: none;
-
-    &:focus,
-    &:hover {
-      transition: all 0.5s ease;
-      box-shadow: mg-variables.$control-active-shadow;
-      color: mg-variables.$color-secondary;
-    }
-
-    &[disabled] {
-      &:focus,
-      &:hover {
-        border-color: inherit;
-      }
-    }
-  }
-
-  &.mg-button--clear {
-    background-color: transparent;
-    color: mg-variables.$color-primary;
-    border: none;
-
-    &:focus,
-    &:hover {
-      transition: all 0.5s ease;
-      box-shadow: mg-variables.$control-active-shadow;
-    }
-
-    &[disabled] {
-      &:focus,
-      &:hover {
-        border-color: inherit;
-      }
-    }
-  }
-
-  &.mg-button--small {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: mg-variables.$font-size-s;
-    height: mg-variables.$control-height-small;
-    padding: 0 1.5rem;
-
-  }
-
-  &.mg-button--large {
-    font-size: mg-variables.$font-size-l;
-    height: mg-variables.$control-height-large;
+    font-weight: 600;
+    height: mg-variables.$control-height;
+    letter-spacing: 0.1rem;
     padding: 0 2rem;
-  }
+    text-align: center;
+    text-decoration: none;
+    opacity: 1;
+    box-shadow: mg-variables.$control-shadow;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 
-  &.mg-button--transparent {
-    background-color: transparent;
-    border-color: transparent;
+    &:focus,
+    &:hover {
+      transition: all 0.3s ease;
+      box-shadow: mg-variables.$control-active-shadow;
+      outline: 0;
+      color: mg-variables.$color-light;
+    }
+
+    &:focus-visible {
+      outline: 0.2rem solid mg-variables.$color-primary;
+      outline-offset: 0.2rem;
+    }
+
+    &[disabled] {
+      cursor: default;
+      opacity: 0.5;
+
+      &:focus,
+      &:hover {
+        background-color: mg-variables.$color-secondary;
+        border-color: mg-variables.$color-primary;
+      }
+    }
+
+    &.mg-button--outline {
+      background-color: transparent;
+      color: mg-variables.$color-primary;
+
+      &:focus,
+      &:hover {
+        transition: all 0.3s ease;
+        box-shadow: mg-variables.$control-active-shadow;
+      }
+
+      &[disabled] {
+        &:focus,
+        &:hover {
+          border-color: inherit;
+        }
+      }
+    }
+
+    &.mg-button--link {
+      box-shadow: none;
+      background-color: transparent;
+      color: mg-variables.$color-primary;
+      border: none;
+
+      &:focus,
+      &:hover {
+        transition: all 0.3s ease;
+        box-shadow: mg-variables.$control-active-shadow;
+        color: mg-variables.$color-secondary;
+      }
+
+      &[disabled] {
+        &:focus,
+        &:hover {
+          border-color: inherit;
+        }
+      }
+    }
+
+    &.mg-button--clear {
+      background-color: transparent;
+      color: mg-variables.$color-primary;
+      border: none;
+
+      &:focus,
+      &:hover {
+        transition: all 0.3s ease;
+        box-shadow: mg-variables.$control-active-shadow;
+      }
+
+      &[disabled] {
+        &:focus,
+        &:hover {
+          border-color: inherit;
+        }
+      }
+    }
+
+    &.mg-button--small {
+      font-size: mg-variables.$font-size-s;
+      height: mg-variables.$control-height-small;
+      padding: 0 1.5rem;
+    }
+
+    &.mg-button--large {
+      font-size: mg-variables.$font-size-l;
+      height: mg-variables.$control-height-large;
+      padding: 0 2rem;
+    }
+
+    &.mg-button--transparent {
+      background-color: transparent;
+      border-color: transparent;
+    }
   }
 }
