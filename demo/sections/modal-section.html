@@ -29,18 +29,18 @@
     <div id="modal-example" data-toggle="htmlpreview">
       <button
         title="default modal"
-        data-toggle="modal"
-        data-target="modal-default"
+        popovertarget="modal-default"
         class="mg-icon-nav"
       >
         Default modal
       </button>
-      <div class="mg-modal" id="modal-default">
+      <div class="mg-modal" id="modal-default" popover>
         <div class="mg-modal--content mg-container">
           <h3>
             <i
               class="mg-icon icon-close mg-icon--action mg-right"
-              data-action="close"
+              popovertarget="modal-default"
+              popovertargetaction="hide"
             ></i>
           </h3>
           <div>
@@ -53,19 +53,19 @@
     </div>
     <button
       title="scrollable modal"
-      data-toggle="modal"
-      data-target="modal-scrollable"
+      popovertarget="modal-scrollable"
       class="mg-icon-nav"
     >
       Default modal with overflow
     </button>
-    <div class="mg-modal" id="modal-scrollable" data-toggle="htmlpreview">
+    <div class="mg-modal" id="modal-scrollable" popover data-toggle="htmlpreview">
       <div class="mg-modal--content mg-container">
         <h3>
           Default modal with overflow
           <i
             class="mg-icon icon-close mg-icon--action mg-right"
-            data-action="close"
+            popovertarget="modal-scrollable"
+            popovertargetaction="hide"
           ></i>
         </h3>
         <div class="mg-modal--body">
@@ -232,82 +232,73 @@
     <div class="mg-row mg-gap1" data-toggle="htmlpreview">
       <div class="mg-col mg-x2">
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tl"
+          title="top left modal"
+          popovertarget="modal-tl"
         >
           <i class="mg-icon svg-icon-popup-tl"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-l"
+          title="left modal"
+          popovertarget="modal-l"
         >
           <i class="mg-icon svg-icon-popup-ml"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-bl"
+          title="bottom left modal"
+          popovertarget="modal-bl"
         >
           <i class="mg-icon svg-icon-popup-bl"></i>
         </button>
       </div>
       <div class="mg-col mg-x2">
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tc"
+          title="top center modal"
+          popovertarget="modal-tc"
         >
           <i class="mg-icon svg-icon-popup-tc"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-default"
+          title="default modal"
+          popovertarget="modal-default"
         >
           <i class="mg-icon svg-icon-popup-mc"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-b"
+          title="bottom modal"
+          popovertarget="modal-b"
         >
           <i class="mg-icon svg-icon-popup-bc"></i>
         </button>
       </div>
       <div class="mg-col mg-x2">
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tr"
-          data-orientation="top-right"
+          title="top right modal"
+          popovertarget="modal-tr"
         >
           <i class="mg-icon svg-icon-popup-tr"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-r"
+          title="right modal"
+          popovertarget="modal-r"
         >
           <i class="mg-icon svg-icon-popup-mr"></i>
         </button>
         <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-br"
+          title="bottom right modal"
+          popovertarget="modal-br"
         >
           <i class="mg-icon svg-icon-popup-br"></i>
         </button>
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--right" id="modal-tr">
+  <div class="mg-modal mg-modal--right" id="modal-tr" popover>
     <div class="mg-modal--content mg-top mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-tr"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -315,12 +306,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--right" id="modal-r">
+  <div class="mg-modal mg-modal--right" id="modal-r" popover>
     <div class="mg-modal--content mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-r"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -328,12 +320,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--right" id="modal-br">
+  <div class="mg-modal mg-modal--right" id="modal-br" popover>
     <div class="mg-modal--content mg-bottom mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-br"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -341,12 +334,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--left" id="modal-tl">
+  <div class="mg-modal mg-modal--left" id="modal-tl" popover>
     <div class="mg-modal--content mg-top mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-tl"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -354,12 +348,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--left" id="modal-bl">
+  <div class="mg-modal mg-modal--left" id="modal-bl" popover>
     <div class="mg-modal--content mg-bottom mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-bl"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -367,12 +362,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--left" id="modal-l">
+  <div class="mg-modal mg-modal--left" id="modal-l" popover>
     <div class="mg-modal--content mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-l"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -380,12 +376,13 @@
       </div>
     </div>
   </div>
-  <div class="mg-modal mg-modal--top" id="modal-tc">
+  <div class="mg-modal mg-modal--top" id="modal-tc" popover>
     <div class="mg-modal--content mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-tc"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>
@@ -394,12 +391,13 @@
     </div>
   </div>
 
-  <div class="mg-modal mg-modal--bottom" id="modal-b">
+  <div class="mg-modal mg-modal--bottom" id="modal-b" popover>
     <div class="mg-modal--content mg-container">
       <h3>
         <i
           class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
+          popovertarget="modal-b"
+          popovertargetaction="hide"
         ></i>
       </h3>
       <div>

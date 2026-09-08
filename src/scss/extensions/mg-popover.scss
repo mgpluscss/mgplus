@@ -19,6 +19,12 @@
     &::backdrop {
       background: transparent;
     }
+
+    &:popover-open {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   // Popover tooltip style

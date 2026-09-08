@@ -45,10 +45,34 @@
     transition: opacity 0.3s;
 
 
-  &.opened {
-    opacity: 1;
-    visibility: visible;
-  }
+    &.opened,
+    &:popover-open,
+    &[open] {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &[popover] {
+      border: none;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      inset: 0;
+      margin: 0;
+
+      &::backdrop {
+        background: rgb(0 0 0 / 70%);
+        backdrop-filter: blur(0.4rem);
+      }
+
+      &:popover-open {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
   &>.mg-modal--content {
     background-color: mg-variables.$color-initial;

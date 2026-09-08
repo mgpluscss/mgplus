@@ -1,41 +1,44 @@
 @use "../mg-variables";
 
-/* The container must be positioned relative: */
-.mg-dropdown {
-  position: relative;
-  margin-bottom: 1rem;
-  display: inline-block;
+@layer mg.components {
+  /* The container must be positioned relative: */
+  .mg-dropdown {
+    position: relative;
+    margin-bottom: 1rem;
+    display: inline-block;
 
-
-  &>.mg-dropdown--content {
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-    min-width: max-content;
-    box-shadow: mg-variables.$control-shadow;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0.15rem solid;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    background-color: mg-variables.$color-initial;
-    top: 100%;
-    border-color: mg-variables.$color-quaternary;
-    border-radius: mg-variables.$control-radius;
-    max-width: 90vw;
-    z-index: mg-variables.$zindex-max;
-    overflow: hidden auto;
-    max-height: 60vh;
+    & > .mg-dropdown--content {
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      min-width: max-content;
+      box-shadow: mg-variables.$control-shadow;
+      margin-left: auto;
+      margin-right: auto;
+      border: 0.15rem solid;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      background-color: mg-variables.$color-initial;
+      top: 100%;
+      border-color: mg-variables.$color-quaternary;
+      border-radius: mg-variables.$control-radius;
+      max-width: 90vw;
+      z-index: mg-variables.$zindex-max;
+      overflow: hidden auto;
+      max-height: 60vh;
+    }
   }
 
-}
-
-.opened+.mg-dropdown--content {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-
+  .opened + .mg-dropdown--content,
+  .opened ~ .mg-dropdown--content,
+  .mg-dropdown--content.opened,
+  .mg-dropdown--content:popover-open,
+  [popover].mg-dropdown--content:popover-open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
 }

@@ -58,7 +58,7 @@ export function registerPlugins(plugins?: string[] | string) {
       case "nav":
       case "collapses":
       case "collapse":
-        // Deprecated: Now zero-JS native HTML5 primitives
+        // Native Zero-JS HTML5 primitives: Popover API, <dialog>, <details>
         break;
       default:
         console.warn(`mgplus - unknown plugin: ${pluginName}`);

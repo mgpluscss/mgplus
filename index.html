@@ -32,12 +32,12 @@
               <div class="mg-dropdown">
                 <button
                   title="theme-switcher"
-                  data-toggle="dropdown"
+                  popovertarget="theme-dropdown"
                   class="mg-button--small mg-icon-dropdown"
                 >
                   <i class="mg-icon svg-icon-darkmode"></i>
                 </button>
-                <div class="mg-dropdown--content">
+                <div id="theme-dropdown" popover class="mg-popover mg-dropdown--content">
                   <ul class="mg-nav">
                     <li data-toggle="theme" data-value="light">Light</li>
                     <li data-toggle="theme" data-value="dark">Dark</li>
@@ -48,12 +48,12 @@
               <div class="mg-dropdown">
                 <button
                   title="controls"
-                  data-toggle="dropdown"
+                  popovertarget="controls-dropdown"
                   class="mg-button--small mg-icon-dropdown"
                 >
                   <i class="mg-icon svg-icon-gears"></i>
                 </button>
-                <div class="mg-dropdown--content mg-pad-r3 mg-pad-l1">
+                <div id="controls-dropdown" popover class="mg-popover mg-dropdown--content mg-pad-r3 mg-pad-l1">
                   <div class="mg-col mg-x--start">
                     <label for="range2">Control radius</label>
                     <input
