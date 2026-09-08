@@ -3,7 +3,7 @@ import iro from '@jaames/iro';
 window.addEventListener("DOMContentLoaded", () => {
     loadDemoSections();
     registerDemoFeatures();
-    registerPlugins(["dropdowns", "modals", "navs", "collapses", "darkmode", "tabs"]);
+    registerPlugins(["darkmode", "tabs"]);
 });
 
 function loadDemoSections() {
@@ -44,7 +44,7 @@ function registerDemoFeatures() {
         // Set the initial color to pure red
         color: "#f00",
     });
-    colorPicker.on("color:change", function (color) {
+    colorPicker.on("color:change", function (color: any) {
         // log the current color as a HEX string
         theme?.style.setProperty("--mg-color-primary", color.hexString);
     });
@@ -79,51 +79,43 @@ function registerDemoFeatures() {
         },
         false
     );
-    function htmlCodeFormatter(s) {
-        return s
-            .replace(/\n\n/g, "")
-            .replace(/\t/g, "")
+    function htmlCodeFormatter(value: string) {
+        return value
             .replace(/&/g, "&amp;")
             .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(
-                /&lt;script src[\s\S]*?&gt;&lt;\/script&gt;|&lt;!--\?[\s\S]*?--&gt;|&lt;pre\b[\s\S]*?&lt;\/pre&gt;/g,  // Highlight the operative parts:
-                '<span class="operative">$&</span>'
-            );
+            .replace(/>/g, "&gt;");
     }
-    function buildHtmlPreview(elSource) {
 
+    function buildHtmlPreview(elSource: Element) {
         if (elSource) {
             // this page's own source code
+            const quineHtml = elSource.outerHTML;
 
-            var quineHtml = elSource.outerHTML;
+            const previewPan = document.createElement("details");
+            previewPan.classList.add("mg-collapse", "mg-pad-b3");
 
-            var previewPan = document.createElement("div");
-            var buttonCollapse = document.createElement("button");
-            var collapseContent = document.createElement("div");
-            const preContent = document.createElement("pre");
-            const clipboardButton = document.createElement("button");
-            const clipboardButtonIcon = document.createElement("i");
-
-            previewPan.classList.add("mg-pad-b3");
-            buttonCollapse.classList.add(
+            const summary = document.createElement("summary");
+            summary.classList.add(
                 "mg-button",
                 "mg-button--clear",
                 "mg-button--primary",
                 "mg-button--small",
-                "mg-icon-dropdown",
-                "mg-collapse"
+                "mg-icon-dropdown"
             );
+            summary.textContent = "view html";
+
+            const collapseContent = document.createElement("div");
+            const preContent = document.createElement("pre");
+            const clipboardButton = document.createElement("button");
+            const clipboardButtonIcon = document.createElement("i");
 
             clipboardButton.classList.add("mg-button--link", "mg-button--small");
-
             clipboardButton.addEventListener("click", (ev) => {
+                ev.preventDefault();
                 navigator.clipboard.writeText(elSource.outerHTML);
             });
             clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
-
-            buttonCollapse.setAttribute("data-toggle", "collapse");
-            buttonCollapse.textContent = "view html";
+            clipboardButton.appendChild(clipboardButtonIcon);
 
             collapseContent.classList.add(
                 "mg-collapse--content",
@@ -131,17 +123,13 @@ function registerDemoFeatures() {
                 "mg-x--end"
             );
 
-
             preContent.innerHTML = quineHtml;
-
-            clipboardButton.appendChild(clipboardButtonIcon);
-            previewPan.appendChild(buttonCollapse);
-            previewPan.appendChild(collapseContent);
-
+            previewPan.appendChild(summary);
             collapseContent.appendChild(clipboardButton);
             collapseContent.appendChild(preContent);
+            previewPan.appendChild(collapseContent);
 
-            elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
+            elSource.parentNode?.insertBefore(previewPan, elSource.nextSibling);
         }
     }
     document

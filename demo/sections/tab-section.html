@@ -49,4 +49,39 @@
       </div>
     </div>
   </div>
+
+  <h3>Zero-JS Pure CSS Tabs</h3>
+  <p>
+    Tabs can also be built with <b>Zero JavaScript</b> using radio inputs with <code>mg-tabs--radio</code> and CSS <code>:has()</code> selectors:
+  </p>
+  <div id="tabs-zerojs-example" data-toggle="htmlpreview">
+    <div class="mg-tabs">
+      <input type="radio" name="zerojs-tab" class="mg-tabs--radio" id="tab-radio-1" data-tab="1" checked />
+      <input type="radio" name="zerojs-tab" class="mg-tabs--radio" id="tab-radio-2" data-tab="2" />
+      <input type="radio" name="zerojs-tab" class="mg-tabs--radio" id="tab-radio-3" data-tab="3" />
+
+      <ul>
+        <li class="mg-tabs--item">
+          <label for="tab-radio-1" style="cursor: pointer;">Tab 1 (CSS only)</label>
+        </li>
+        <li class="mg-tabs--item">
+          <label for="tab-radio-2" style="cursor: pointer;">Tab 2 (CSS only)</label>
+        </li>
+        <li class="mg-tabs--item">
+          <label for="tab-radio-3" style="cursor: pointer;">Tab 3 (CSS only)</label>
+        </li>
+      </ul>
+
+      <div class="mg-tabs--content" data-tab-content="1">
+        Content for Tab 1 (Powered completely by CSS :has() with 0 JavaScript).
+      </div>
+      <div class="mg-tabs--content" data-tab-content="2">
+        Content for Tab 2 (Powered completely by CSS :has() with 0 JavaScript).
+      </div>
+      <div class="mg-tabs--content" data-tab-content="3">
+        Content for Tab 3 (Powered completely by CSS :has() with 0 JavaScript).
+      </div>
+    </div>
+  </div>
 </section>
+

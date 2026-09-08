@@ -1,16 +1,7 @@
-import { registerCollapses, registergCollapses } from "./mgCollapse";
-import { registerDropdowns } from "./mgDropdown";
-import { registerModals } from "./mgModal";
-import { registerNavs } from "./mgNav";
 import { registerTabs } from "./mgTabs";
 import { registerDarkMode, applyTheme, getCurrentTheme, getPreferredTheme } from "./mgDarkMode";
 
 export {
-  registerCollapses,
-  registergCollapses,
-  registerDropdowns,
-  registerModals,
-  registerNavs,
   registerTabs,
   registerDarkMode,
   applyTheme,
@@ -24,18 +15,18 @@ export function registerDarkModePlugin() {
 
 export type PluginName =
   | "all"
+  | "tabs"
+  | "tab"
+  | "darkmode"
+  | "theme"
   | "dropdowns"
   | "dropdown"
   | "modals"
   | "modal"
   | "navs"
   | "nav"
-  | "tabs"
-  | "tab"
   | "collapses"
-  | "collapse"
-  | "darkmode"
-  | "theme";
+  | "collapse";
 
 export function registerPlugins(plugins?: string[] | string) {
   if (!plugins) return;
@@ -48,36 +39,26 @@ export function registerPlugins(plugins?: string[] | string) {
     const normalized = pluginName.toLowerCase().trim();
     switch (normalized) {
       case "all":
-        registerDropdowns();
-        registerModals();
-        registerNavs();
         registerTabs();
-        registerCollapses();
         registerDarkMode();
         return;
-      case "dropdowns":
-      case "dropdown":
-        registerDropdowns();
-        break;
-      case "modals":
-      case "modal":
-        registerModals();
-        break;
-      case "navs":
-      case "nav":
-        registerNavs();
-        break;
       case "tabs":
       case "tab":
         registerTabs();
         break;
-      case "collapses":
-      case "collapse":
-        registerCollapses();
-        break;
       case "darkmode":
       case "theme":
         registerDarkMode();
+        break;
+      case "dropdowns":
+      case "dropdown":
+      case "modals":
+      case "modal":
+      case "navs":
+      case "nav":
+      case "collapses":
+      case "collapse":
+        // Deprecated: Now zero-JS native HTML5 primitives
         break;
       default:
         console.warn(`mgplus - unknown plugin: ${pluginName}`);

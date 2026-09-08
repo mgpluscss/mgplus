@@ -1,26 +1,20 @@
 <section id="dropdown">
-  <h2>Dropdown</h2>
-  <p>Place <code>mg-dropdown</code> as container class</p>
+  <h2>Dropdown & Popover (Zero-JS)</h2>
   <p>
-    Inside <code>mg-dropdown</code> place a button element with special icon
-    <code>mg-icon-dropdown</code>
-  </p>
-  <p>Place <code>mg-dropdown--content</code> after button element</p>
-  <p>
-    Usualy, place a <code>mg-nav</code> component inside
-    <code>mg-dropdown--content</code> to build a menu
+    Mg+ uses the standard modern HTML5 <b>Popover API</b> for accessible dropdown menus and popups with <b>Zero JavaScript</b>.
+    Simply add <code>popovertarget="id-of-content"</code> to your trigger button, and <code>popover class="mg-popover"</code> or <code>class="mg-dropdown--content"</code> to the dropdown element.
   </p>
 
   <div>
     <div class="mg-dropdown" role="menu" data-toggle="htmlpreview">
       <button
         title="choose a car"
-        class="mg-icon-dropdown"
-        data-toggle="dropdown"
+        class="mg-icon-dropdown mg-button"
+        popovertarget="car-menu"
       >
         Choose a car
       </button>
-      <div class="mg-dropdown--content">
+      <div id="car-menu" popover class="mg-popover mg-dropdown--content">
         <ul class="mg-nav">
           <li data-value="audi">Audi</li>
           <li data-value="bmw">BMW</li>
@@ -45,15 +39,15 @@
         button position
       </p>
       <div class="mg-row mg-x--between" data-toggle="htmlpreview">
-        <div class="mg-dropdown" role="menu" data-value="bmw">
+        <div class="mg-dropdown" role="menu">
           <button
             title="left side"
-            data-toggle="dropdown"
-            class="mg-icon-dropdown"
+            popovertarget="dropdown-left"
+            class="mg-icon-dropdown mg-button-outline"
           >
             left side
           </button>
-          <div class="mg-dropdown--content mg-left">
+          <div id="dropdown-left" popover class="mg-popover mg-dropdown--content mg-left">
             <ul class="mg-nav">
               <li data-value="audi">Audi</li>
               <li data-value="bmw">BMW</li>
@@ -61,15 +55,15 @@
             </ul>
           </div>
         </div>
-        <div class="mg-dropdown" role="menu" data-value="bmw">
+        <div class="mg-dropdown" role="menu">
           <button
             title="right side"
-            data-toggle="dropdown"
-            class="mg-icon-dropdown"
+            popovertarget="dropdown-right"
+            class="mg-icon-dropdown mg-button-outline"
           >
             right side
           </button>
-          <div class="mg-dropdown--content mg-right">
+          <div id="dropdown-right" popover class="mg-popover mg-dropdown--content mg-right">
             <ul class="mg-nav">
               <li data-value="audi">Audi</li>
               <li data-value="bmw">BMW</li>

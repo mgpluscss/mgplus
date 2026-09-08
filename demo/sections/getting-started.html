@@ -33,67 +33,28 @@
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
 }</pre>
     </p>
-    <h3>JS Plugin configuration (optional)</h3>
-    <p>For interactive components like dropdowns, tabs, modals, etc. You can include the Mg+ JS file in your
-        project to
-        enable these features. The JS file is optional and can be included based on your requirements.</p>
+    <h3>Zero-JS Modern CSS Architecture</h3>
+    <p>Mg+ is designed as a modern <b>Zero-JS micro-CSS library</b>. Interactive components use modern HTML5 and CSS primitives without requiring any JavaScript runtime:</p>
 
-    <i>This vanilla plugin could be replaced easily by another JS UI Framework like : Angular, React, Vue,
-        Svelte,
-        Solid, etc.</i>
-
-    <h4>Auto register all plugins</h4>
-    <p>Just add following script at the end of your page</p>
-    <p>
-    <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script></pre>
-    </p>
-    <h4>Register specific plugins</h4>
-    <p>Just add following script at the end of your page with required plugin names to register separated by
-        a comma</p>
-    </p>
-    <p>
-    <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=dropdowns,tabs,modals,collapses"></script></pre>
-    </p>
-
-    <p>To allow plugin works for your mgplus css components
-        Add html attribute data-toggle=["plugin_name"] in your html components</p>
-
-    Example:
-
-    <pre>
-        <div class="mg-dropdown" role="menu">
-            <button title="choose a car" class="mg-icon-dropdown" data-toggle="dropdown">
-              Choose a car
-            </button>
-            <div class="mg-dropdown--content">
-              <ul class="mg-nav">
-                <li data-value="audi">Audi</li>
-                <li data-value="bmw">BMW</li>
-                <li data-value="citroen">Citroen</li>
-              </ul>
-            </div>
-          </div>
-        </pre>
-
-    <h4>List of available plugins</h4>
-    <p>
     <ul>
-        <li>navs<code>data-toggle="nav"</code></li>
-        <li>dropdowns <code>data-toggle="dropdown"</code></li>
-        <li>tabs <code>data-toggle="tabs"</code></li>
-        <li>modals <code>data-toggle="modal"</code></li>
-        <li>collapses <code>data-toggle="collapse"</code></li>
-        <li>darkmode (enabled globally in your page)</li>
+        <li><strong>Dropdowns & Popovers:</strong> Native HTML5 Popover API (<code>[popover]</code> and <code>popovertarget</code>).</li>
+        <li><strong>Modals & Dialogs:</strong> Native HTML5 <code>&lt;dialog class="mg-modal"&gt;</code> with blurred <code>::backdrop</code>.</li>
+        <li><strong>Accordions & Collapses:</strong> Native HTML5 <code>&lt;details class="mg-accordion"&gt;</code> and <code>&lt;summary&gt;</code>.</li>
+        <li><strong>Responsive Grids:</strong> Modern Intrinsic CSS Grid (<code>.mg-grid</code>) & Container Queries (<code>.mg-container-query</code>).</li>
+        <li><strong>Dark Mode:</strong> Automatic system OS theme adaptation via CSS <code>light-dark()</code> and <code>color-scheme: light dark</code>.</li>
     </ul>
-    </ul>
-    </p>
-    <h4>Configure DarkMode</h4>
+
+    <h3>Optional JS Utilities</h3>
+    <p>A minimal JavaScript helper is available if you need manual dark mode toggle buttons with <code>localStorage</code> persistence or accessible tab switching:</p>
+
+    <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=theme,tabs"></script></pre>
+
+    <h4>Configure Dark Mode</h4>
     <p>
-        In your main html document page, set data theme value among those
+        In your main HTML document, set data theme value among:
         <code>data-theme=["dark"|"light"|"auto"]</code>
     </p>
-
-    <p>"auto" mode will use your system browser preference to choose dark or light mode</p>
+    <p>"auto" mode uses system browser preference automatically with zero JavaScript.</p>
 
     <h3>Zero-JS Modern CSS Alternatives</h3>
     <p>

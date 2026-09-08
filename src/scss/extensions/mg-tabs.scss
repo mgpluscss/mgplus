@@ -3,60 +3,78 @@
 // Tabs
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.mg-tabs>ul {
-  display: flex;
-  text-align: center;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  list-style: none;
-  margin-top: 1rem;
-  margin-bottom: -1rem;
+@layer mg.components {
+  .mg-tabs > ul {
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
 
+    & > li > * {
+      color: mg-variables.$color-secondary;
+      white-space: nowrap;
+    }
 
-  &>li>* {
-    color: mg-variables.$color-secondary;
-    white-space: nowrap;
+    & > li {
+      font-weight: bold;
+      border-bottom: 0.3rem solid transparent;
+      color: mg-variables.$color-tertiary;
+      opacity: 0.7;
+      flex: 0 0 auto;
+    }
+
+    & > li.active {
+      color: mg-variables.$color-primary;
+      border-color: mg-variables.$color-primary;
+      overflow-y: hidden;
+      opacity: 1;
+    }
+
+    & > li:hover {
+      color: mg-variables.$color-secondary;
+      border-color: mg-variables.$color-tertiary;
+      opacity: 1;
+      transition: all 0.3s;
+    }
   }
 
-  &>li {
-    font-weight: bold;
-    border-bottom: 0.3rem solid transparent;
-    color: mg-variables.$color-tertiary;
-    opacity: 0.7;
-    flex: 0 0 auto;
+  .mg-tabs--item {
+    margin-left: 0.32rem;
+    margin-right: 0.32rem;
+    padding-left: 0.32rem;
+    padding-right: 0.32rem;
   }
 
-  &>li.active {
-    color: mg-variables.$color-primary;
-    border-color: mg-variables.$color-primary;
-    overflow-y: hidden;
+  .mg-tabs--content {
+    border-top: 0.15rem solid mg-variables.$color-quaternary;
+    padding: 1.5rem;
+    clear: both;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .mg-tabs--content:not(.active) {
+    display: none;
+    opacity: 0;
+  }
+
+  // Zero-JS Native Radio Tabs
+  .mg-tabs--radio {
+    display: none;
+  }
+
+  .mg-tabs:has(.mg-tabs--radio:checked) .mg-tabs--content {
+    display: none;
+  }
+
+  .mg-tabs:has([data-tab="1"]:checked) [data-tab-content="1"],
+  .mg-tabs:has([data-tab="2"]:checked) [data-tab-content="2"],
+  .mg-tabs:has([data-tab="3"]:checked) [data-tab-content="3"],
+  .mg-tabs:has([data-tab="4"]:checked) [data-tab-content="4"] {
+    display: block;
     opacity: 1;
   }
-
-  &>li:hover {
-    color: mg-variables.$color-secondary;
-    border-color: mg-variables.$color-tertiary;
-    opacity: 1;
-    transition: all 0.3s;
-  }
-}
-
-.mg-tabs--item {
-  margin-left: 0.32rem;
-  margin-right: 0.32rem;
-  padding-left: 0.32rem;
-  padding-right: 0.32rem;
-}
-
-.mg-tabs--content {
-  border-top: 0.15rem solid mg-variables.$color-quaternary;
-  padding: 1.5rem;
-  clear: both;
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
-.mg-tabs--content:not(.active) {
-  display: none;
-  opacity: 0;
 }
