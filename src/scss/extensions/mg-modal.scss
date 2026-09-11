@@ -12,8 +12,20 @@
     box-shadow: mg-variables.$control-shadow;
     max-width: min(90vw, 60rem);
     max-height: 85vh;
+    width: fit-content;
+    height: fit-content;
     overflow-y: auto;
+    position: fixed;
+    inset: 0;
     margin: auto;
+
+    &:not([open]) {
+      display: none;
+    }
+
+    &[open] {
+      display: block;
+    }
 
     &::backdrop {
       background: rgb(0 0 0 / 60%);
@@ -27,7 +39,7 @@
     margin-right: auto;
   }
 
-  .mg-modal {
+  .mg-modal:not(dialog) {
     position: fixed;
     display: flex;
     flex-direction: column;

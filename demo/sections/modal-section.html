@@ -413,7 +413,12 @@
     Mg+ styles native <code>&lt;dialog class="mg-modal"&gt;</code> or <code>&lt;dialog class="mg-dialog"&gt;</code>, including backdrop blur and zero-JS closing via <code>&lt;form method="dialog"&gt;</code>.
   </p>
   <div class="mg-container" id="dialog-example" data-toggle="htmlpreview">
-    <button class="mg-button" onclick="document.getElementById('native-dialog-example').showModal()">
+    <button
+      class="mg-button"
+      data-toggle="modal"
+      data-target="native-dialog-example"
+      onclick="document.getElementById('native-dialog-example').showModal()"
+    >
       Open Native Dialog Modal
     </button>
 

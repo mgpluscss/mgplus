@@ -1,8 +1,14 @@
 let isModalKeydownInitialized = false;
 
 function openModal(modal: HTMLElement) {
-  modal.classList.add("opened");
-  modal.setAttribute("aria-hidden", "false");
+  if (modal instanceof HTMLDialogElement && typeof modal.showModal === "function") {
+    if (!modal.open) {
+      modal.showModal();
+    }
+  } else {
+    modal.classList.add("opened");
+    modal.setAttribute("aria-hidden", "false");
+  }
 
   // Focus modal or first interactive element inside it
   const focusable = modal.querySelector<HTMLElement>(
@@ -14,8 +20,14 @@ function openModal(modal: HTMLElement) {
 }
 
 function closeModal(modal: HTMLElement) {
-  modal.classList.remove("opened");
-  modal.setAttribute("aria-hidden", "true");
+  if (modal instanceof HTMLDialogElement && typeof modal.close === "function") {
+    if (modal.open) {
+      modal.close();
+    }
+  } else {
+    modal.classList.remove("opened");
+    modal.setAttribute("aria-hidden", "true");
+  }
 }
 
 export function registerModals() {
@@ -28,6 +40,26 @@ export function registerModals() {
         document.querySelectorAll<HTMLElement>(".mg-modal.opened").forEach((m) => {
           closeModal(m);
         });
+      }
+    });
+
+    // Close native dialog on backdrop click
+    document.addEventListener("click", (e: MouseEvent) => {
+      const target = e.target;
+      if (
+        target instanceof HTMLDialogElement &&
+        (target.classList.contains("mg-modal") || target.classList.contains("mg-dialog")) &&
+        target.open
+      ) {
+        const rect = target.getBoundingClientRect();
+        const isInDialog =
+          rect.top <= e.clientY &&
+          e.clientY <= rect.top + rect.height &&
+          rect.left <= e.clientX &&
+          e.clientX <= rect.left + rect.width;
+        if (!isInDialog) {
+          closeModal(target);
+        }
       }
     });
   }
@@ -44,10 +76,12 @@ export function registerModals() {
     const modal = document.getElementById(targetId);
     if (!modal) return;
 
-    modal.setAttribute("role", "dialog");
-    modal.setAttribute("aria-modal", "true");
-    if (!modal.classList.contains("opened")) {
-      modal.setAttribute("aria-hidden", "true");
+    if (!(modal instanceof HTMLDialogElement)) {
+      modal.setAttribute("role", "dialog");
+      modal.setAttribute("aria-modal", "true");
+      if (!modal.classList.contains("opened")) {
+        modal.setAttribute("aria-hidden", "true");
+      }
     }
 
     trigger.addEventListener("click", (e: Event) => {
@@ -66,9 +100,9 @@ export function registerModals() {
       });
     });
 
-    // Close on clicking backdrop (direct click on modal wrapper)
+    // Close on clicking backdrop (direct click on custom modal wrapper)
     modal.addEventListener("click", (e: MouseEvent) => {
-      if (e.target === modal) {
+      if (!(modal instanceof HTMLDialogElement) && e.target === modal) {
         closeModal(modal);
       }
     });
