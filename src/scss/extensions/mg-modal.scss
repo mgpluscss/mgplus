@@ -19,17 +19,45 @@
     border-radius: mg-variables.$control-radius;
     box-shadow: mg-variables.$control-shadow;
 
-    &:not([open]) {
-      display: none;
-    }
+    // Transitions for smooth entry and exit animation
+    opacity: 0;
+    transform: scale(0.95);
+    transition:
+      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      overlay 0.3s allow-discrete,
+      display 0.3s allow-discrete;
 
     &[open] {
-      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    @starting-style {
+      &[open] {
+        opacity: 0;
+        transform: scale(0.95);
+      }
     }
 
     &::backdrop {
       background: rgb(0 0 0 / 60%);
       backdrop-filter: blur(0.4rem);
+      opacity: 0;
+      transition:
+        opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        overlay 0.3s allow-discrete,
+        display 0.3s allow-discrete;
+    }
+
+    &[open]::backdrop {
+      opacity: 1;
+    }
+
+    @starting-style {
+      &[open]::backdrop {
+        opacity: 0;
+      }
     }
 
     // Modal sub-elements
@@ -63,6 +91,20 @@
       border-radius: 0;
       border-top-right-radius: mg-variables.$control-radius;
       border-bottom-right-radius: mg-variables.$control-radius;
+      opacity: 1;
+      transform: translateX(-100%);
+
+      &[open] {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @starting-style {
+        &[open] {
+          opacity: 1;
+          transform: translateX(-100%);
+        }
+      }
     }
 
     &.mg-modal--right {
@@ -74,6 +116,20 @@
       border-radius: 0;
       border-top-left-radius: mg-variables.$control-radius;
       border-bottom-left-radius: mg-variables.$control-radius;
+      opacity: 1;
+      transform: translateX(100%);
+
+      &[open] {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      @starting-style {
+        &[open] {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+      }
     }
 
     &.mg-modal--bottom {
@@ -84,6 +140,20 @@
       border-radius: 0;
       border-top-left-radius: mg-variables.$control-radius;
       border-top-right-radius: mg-variables.$control-radius;
+      opacity: 1;
+      transform: translateY(100%);
+
+      &[open] {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @starting-style {
+        &[open] {
+          opacity: 1;
+          transform: translateY(100%);
+        }
+      }
     }
 
     &.mg-modal--top {
@@ -94,6 +164,20 @@
       border-radius: 0;
       border-bottom-right-radius: mg-variables.$control-radius;
       border-bottom-left-radius: mg-variables.$control-radius;
+      opacity: 1;
+      transform: translateY(-100%);
+
+      &[open] {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @starting-style {
+        &[open] {
+          opacity: 1;
+          transform: translateY(-100%);
+        }
+      }
     }
 
     &.mg-modal--fullscreen {
@@ -104,6 +188,25 @@
       max-height: 100vh;
       margin: 0;
       border-radius: 0;
+      transform: none;
+
+      &[open] {
+        transform: none;
+      }
+
+      @starting-style {
+        &[open] {
+          transform: none;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+
+      &::backdrop {
+        transition: none;
+      }
     }
   }
 }
