@@ -44,7 +44,7 @@ function registerDemoFeatures() {
         // Set the initial color to pure red
         color: "#f00",
     });
-    colorPicker.on("color:change", function (color) {
+    colorPicker.on("color:change", function (color: any) {
         // log the current color as a HEX string
         theme?.style.setProperty("--mg-color-primary", color.hexString);
     });
@@ -79,7 +79,7 @@ function registerDemoFeatures() {
         },
         false
     );
-    function htmlCodeFormatter(s) {
+    function htmlCodeFormatter(s: string) {
         return s
             .replace(/\n\n/g, "")
             .replace(/\t/g, "")
@@ -91,12 +91,12 @@ function registerDemoFeatures() {
                 '<span class="operative">$&</span>'
             );
     }
-    function buildHtmlPreview(elSource) {
+    function buildHtmlPreview(elSource: Element) {
 
         if (elSource) {
             // this page's own source code
 
-            var quineHtml = elSource.outerHTML;
+            var quineHtml = htmlCodeFormatter(elSource.outerHTML);
 
             var previewPan = document.createElement("div");
             var buttonCollapse = document.createElement("button");
@@ -117,7 +117,7 @@ function registerDemoFeatures() {
 
             clipboardButton.classList.add("mg-button--link", "mg-button--small");
 
-            clipboardButton.addEventListener("click", (ev) => {
+            clipboardButton.addEventListener("click", () => {
                 navigator.clipboard.writeText(elSource.outerHTML);
             });
             clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
@@ -131,7 +131,7 @@ function registerDemoFeatures() {
                 "mg-x--end"
             );
 
-
+            preContent.classList.add("prettyprint", "mg-overflow-x-auto", "mg-max-w-full");
             preContent.innerHTML = quineHtml;
 
             clipboardButton.appendChild(clipboardButtonIcon);
@@ -141,7 +141,7 @@ function registerDemoFeatures() {
             collapseContent.appendChild(clipboardButton);
             collapseContent.appendChild(preContent);
 
-            elSource.parentNode.insertBefore(previewPan, elSource.nextSibling);
+            elSource.parentNode?.insertBefore(previewPan, elSource.nextSibling);
         }
     }
     document
@@ -149,13 +149,7 @@ function registerDemoFeatures() {
         .forEach(buildHtmlPreview);
 
     document.querySelectorAll("pre").forEach((el) => {
-        el.innerHTML = htmlCodeFormatter(el.innerHTML);
         el.classList.add("prettyprint", "mg-overflow-x-auto", "mg-max-w-full");
-
-        document.querySelectorAll("code").forEach((el) => {
-            el.innerHTML = htmlCodeFormatter(el.innerHTML);
-            el.classList.add("prettyprint", "mg-overflow-x-auto", "mg-max-w-full");
-        });
     });
 
     (window as any)?.prettyPrint();

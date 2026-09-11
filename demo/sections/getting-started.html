@@ -8,31 +8,31 @@
     <p>To quickly get started with Mg+, follow these steps:</p>
     <div class="mg-timeline">
         <ol>
-            <li>Include the Mg+ CSS file in the <code><head></code> section of your HTML file to apply the default
+            <li>Include the Mg+ CSS file in the <code>&lt;head&gt;</code> section of your HTML file to apply the default
                 styles:
-                <pre><link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus.css" /></pre>
+                <pre><code>&lt;link rel="stylesheet" href="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus.css" /&gt;</code></pre>
             </li>
             <li>Include Mg+ plugins at the end of your page to allow user ui interactions
                 (optional)
                 styles:
-                <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script></pre>
+                <pre><code>&lt;script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"&gt;&lt;/script&gt;</code></pre>
             </li>
             <li>Start using the predefined classes in your HTML elements. For example, to create a button, you can use:
-                <pre><button class="mg-button">Click me</button></pre>
+                <pre><code>&lt;button class="mg-button"&gt;Click me&lt;/button&gt;</code></pre>
             </li>
         </ol>
     </div>
 
     <h3>Customizable css variables</h3>
-    <p>To customize Mg+ variables, just override the root variables. For example:
-    <pre>:root {
+    <p>To customize Mg+ variables, just override the root variables. For example:</p>
+    <pre><code>:root {
     --mg-primary-color: #3498db;
     --mg-secondary-color: #2ecc71;
     --mg-control-radius: 1.5rem;
     --mg-input-radius: 1.5rem;
     --mg-control-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
-}</pre>
-    </p>
+}</code></pre>
+
     <h3>JS Plugin configuration (optional)</h3>
     <p>For interactive components like dropdowns, tabs, modals, etc. You can include the Mg+ JS file in your
         project to
@@ -44,49 +44,40 @@
 
     <h4>Auto register all plugins</h4>
     <p>Just add following script at the end of your page</p>
-    <p>
-    <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"></script></pre>
-    </p>
+    <pre><code>&lt;script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"&gt;&lt;/script&gt;</code></pre>
+
     <h4>Register specific plugins</h4>
     <p>Just add following script at the end of your page with required plugin names to register separated by
         a comma</p>
-    </p>
-    <p>
-    <pre><script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=dropdowns,tabs,modals,collapses"></script></pre>
-    </p>
+    <pre><code>&lt;script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=dropdowns,tabs,modals,collapses"&gt;&lt;/script&gt;</code></pre>
 
     <p>To allow plugin works for your mgplus css components
         Add html attribute data-toggle=["plugin_name"] in your html components</p>
 
     Example:
 
-    <pre>
-        <div class="mg-dropdown" role="menu">
-            <button title="choose a car" class="mg-icon-dropdown" data-toggle="dropdown">
-              Choose a car
-            </button>
-            <div class="mg-dropdown--content">
-              <ul class="mg-nav">
-                <li data-value="audi">Audi</li>
-                <li data-value="bmw">BMW</li>
-                <li data-value="citroen">Citroen</li>
-              </ul>
-            </div>
-          </div>
-        </pre>
+    <pre><code>&lt;div class="mg-dropdown" role="menu"&gt;
+  &lt;button title="choose a car" class="mg-icon-dropdown" data-toggle="dropdown"&gt;
+    Choose a car
+  &lt;/button&gt;
+  &lt;div class="mg-dropdown--content"&gt;
+    &lt;ul class="mg-nav"&gt;
+      &lt;li data-value="audi"&gt;Audi&lt;/li&gt;
+      &lt;li data-value="bmw"&gt;BMW&lt;/li&gt;
+      &lt;li data-value="citroen"&gt;Citroen&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
     <h4>List of available plugins</h4>
-    <p>
     <ul>
-        <li>navs<code>data-toggle="nav"</code></li>
+        <li>navs <code>data-toggle="nav"</code></li>
         <li>dropdowns <code>data-toggle="dropdown"</code></li>
         <li>tabs <code>data-toggle="tabs"</code></li>
         <li>modals <code>data-toggle="modal"</code></li>
         <li>collapses <code>data-toggle="collapse"</code></li>
         <li>darkmode (enabled globally in your page)</li>
     </ul>
-    </ul>
-    </p>
     <h4>Configure DarkMode</h4>
     <p>
         In your main html document page, set data theme value among those
