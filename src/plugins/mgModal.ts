@@ -1,17 +1,11 @@
-let isModalKeydownInitialized = false;
+let isModalInitialized = false;
 
-function openModal(modal: HTMLElement) {
-  if (modal instanceof HTMLDialogElement && typeof modal.showModal === "function") {
-    if (!modal.open) {
-      modal.showModal();
-    }
-  } else {
-    modal.classList.add("opened");
-    modal.setAttribute("aria-hidden", "false");
+function openModal(dialog: HTMLDialogElement) {
+  if (typeof dialog.showModal === "function" && !dialog.open) {
+    dialog.showModal();
   }
 
-  // Focus modal or first interactive element inside it
-  const focusable = modal.querySelector<HTMLElement>(
+  const focusable = dialog.querySelector<HTMLElement>(
     "input, button, select, textarea, a[href], [tabindex]:not([tabindex='-1'])"
   );
   if (focusable) {
@@ -19,31 +13,19 @@ function openModal(modal: HTMLElement) {
   }
 }
 
-function closeModal(modal: HTMLElement) {
-  if (modal instanceof HTMLDialogElement && typeof modal.close === "function") {
-    if (modal.open) {
-      modal.close();
-    }
-  } else {
-    modal.classList.remove("opened");
-    modal.setAttribute("aria-hidden", "true");
+function closeModal(dialog: HTMLDialogElement) {
+  if (typeof dialog.close === "function" && dialog.open) {
+    dialog.close();
   }
 }
 
 export function registerModals() {
   if (typeof document === "undefined") return;
 
-  if (!isModalKeydownInitialized) {
-    isModalKeydownInitialized = true;
-    document.addEventListener("keydown", (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        document.querySelectorAll<HTMLElement>(".mg-modal.opened").forEach((m) => {
-          closeModal(m);
-        });
-      }
-    });
+  if (!isModalInitialized) {
+    isModalInitialized = true;
 
-    // Close native dialog on backdrop click
+    // Close native dialog when clicking on its backdrop
     document.addEventListener("click", (e: MouseEvent) => {
       const target = e.target;
       if (
@@ -62,6 +44,17 @@ export function registerModals() {
         }
       }
     });
+
+    // Close on any element with data-action="close"
+    document.addEventListener("click", (e: MouseEvent) => {
+      const closeBtn = (e.target as HTMLElement)?.closest<HTMLElement>("[data-action=close]");
+      if (!closeBtn) return;
+      const dialog = closeBtn.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
+      if (dialog) {
+        e.stopPropagation();
+        closeModal(dialog);
+      }
+    });
   }
 
   document.querySelectorAll<HTMLElement>("[data-toggle~=modal]").forEach(setupModal);
@@ -74,38 +67,11 @@ export function registerModals() {
     if (!targetId) return;
 
     const modal = document.getElementById(targetId);
-    if (!modal) return;
-
-    if (!(modal instanceof HTMLDialogElement)) {
-      modal.setAttribute("role", "dialog");
-      modal.setAttribute("aria-modal", "true");
-      if (!modal.classList.contains("opened")) {
-        modal.setAttribute("aria-hidden", "true");
-      }
-    }
+    if (!(modal instanceof HTMLDialogElement)) return;
 
     trigger.addEventListener("click", (e: Event) => {
       e.preventDefault();
       openModal(modal);
     });
-
-    // Close on any element with data-action="close"
-    modal.querySelectorAll<HTMLElement>("[data-action=close]").forEach((closeBtn) => {
-      if (closeBtn.dataset.mgCloseInitialized === "true") return;
-      closeBtn.dataset.mgCloseInitialized = "true";
-
-      closeBtn.addEventListener("click", (ev: Event) => {
-        ev.stopPropagation();
-        closeModal(modal);
-      });
-    });
-
-    // Close on clicking backdrop (direct click on custom modal wrapper)
-    modal.addEventListener("click", (e: MouseEvent) => {
-      if (!(modal instanceof HTMLDialogElement) && e.target === modal) {
-        closeModal(modal);
-      }
-    });
   }
 }
-

@@ -1,23 +1,23 @@
 @use "../mg-variables";
 
 @layer mg.components {
-  // Native HTML5 Dialog (Zero-JS Interactive Modal)
+  // Native HTML5 Dialog (Standard Modal Component)
   dialog.mg-dialog,
   dialog.mg-modal {
-    background-color: mg-variables.$color-initial;
-    border: none;
-    border-radius: mg-variables.$control-radius;
-    color: mg-variables.$color-secondary;
-    padding: 2rem 1.5rem;
-    box-shadow: mg-variables.$control-shadow;
-    max-width: min(90vw, 60rem);
-    max-height: 85vh;
-    width: fit-content;
-    height: fit-content;
-    overflow-y: auto;
     position: fixed;
     inset: 0;
     margin: auto;
+    width: fit-content;
+    height: fit-content;
+    max-width: min(90vw, 60rem);
+    max-height: 85vh;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    color: mg-variables.$color-secondary;
+    background-color: mg-variables.$color-initial;
+    border: none;
+    border-radius: mg-variables.$control-radius;
+    box-shadow: mg-variables.$control-shadow;
 
     &:not([open]) {
       display: none;
@@ -31,94 +31,79 @@
       background: rgb(0 0 0 / 60%);
       backdrop-filter: blur(0.4rem);
     }
+
+    // Modal sub-elements
+    .mg-modal--header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .mg-modal--body {
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+
+    .mg-modal--footer {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+    }
+
+    // Position / Drawer Variants
+    &.mg-modal--left {
+      inset: 0 auto 0 0;
+      max-width: min(85vw, 40rem);
+      height: 100vh;
+      max-height: 100vh;
+      margin: 0;
+      border-radius: 0;
+      border-top-right-radius: mg-variables.$control-radius;
+      border-bottom-right-radius: mg-variables.$control-radius;
+    }
+
+    &.mg-modal--right {
+      inset: 0 0 0 auto;
+      max-width: min(85vw, 40rem);
+      height: 100vh;
+      max-height: 100vh;
+      margin: 0;
+      border-radius: 0;
+      border-top-left-radius: mg-variables.$control-radius;
+      border-bottom-left-radius: mg-variables.$control-radius;
+    }
+
+    &.mg-modal--bottom {
+      inset: auto 0 0;
+      width: 100vw;
+      max-width: min(100vw, 70rem);
+      margin: 0 auto;
+      border-radius: 0;
+      border-top-left-radius: mg-variables.$control-radius;
+      border-top-right-radius: mg-variables.$control-radius;
+    }
+
+    &.mg-modal--top {
+      inset: 0 0 auto;
+      width: 100vw;
+      max-width: min(100vw, 70rem);
+      margin: 0 auto;
+      border-radius: 0;
+      border-bottom-right-radius: mg-variables.$control-radius;
+      border-bottom-left-radius: mg-variables.$control-radius;
+    }
+
+    &.mg-modal--fullscreen {
+      inset: 0;
+      width: 100vw;
+      max-width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      margin: 0;
+      border-radius: 0;
+    }
   }
-
-  .mg-modal--content {
-    position: fixed;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .mg-modal:not(dialog) {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    place-items: center center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    backface-visibility: hidden;
-    z-index: calc(mg-variables.$zindex-max + 1);
-    opacity: 0;
-    background: rgb(0 0 0 / 70%);
-    transition: opacity 0.3s;
-
-
-  &.opened {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &>.mg-modal--content {
-    background-color: mg-variables.$color-initial;
-    border-radius: mg-variables.$control-radius;
-    color: mg-variables.$color-secondary;
-    padding: 2rem 1.5rem;
-    margin-top: 0;
-    z-index: calc(mg-variables.$zindex-max + 2);
-    box-shadow: mg-variables.$control-shadow;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-
-  &>.mg-modal--content>.mg-modal--body {
-    max-height: 80vh;
-    overflow-y: auto;
-  }
-
-  &.mg-modal--bottom>.mg-modal--content {
-    bottom: -100vh;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  &.mg-modal--top>.mg-modal--content {
-    top: -100vh;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-
-  &.mg-modal--right>.mg-modal--content {
-    right: -100vw;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-right: -1rem;
-  }
-
-  &.mg-modal--left>.mg-modal--content {
-    left: -100vw;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-left: -1rem;
-  }
-
-  &.opened.mg-modal--right>.mg-modal--content {
-    transform: translateX(-100vw);
-  }
-
-  &.opened.mg-modal--left>.mg-modal--content {
-    transform: translateX(100vw);
-  }
-
-  &.opened.mg-modal--top>.mg-modal--content {
-    transform: translateY(100vh);
-  }
-
-  &.opened.mg-modal--bottom>.mg-modal--content {
-    transform: translateY(-100vh);
-  }
-}
 }

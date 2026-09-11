@@ -1,433 +1,174 @@
 <section id="modal">
-  <h2>Modal</h2>
+  <h2>Modal &amp; Dialogs</h2>
   <p>
-    A Modal is composed by a trigger button and a modal content window. The
-    modal content window is hidden by default and can be displayed by clicking
-    the trigger button.
+    Mg+ uses the native HTML5 <code>&lt;dialog&gt;</code> element (<code>.mg-modal</code> or <code>.mg-dialog</code>) for all modals, drawers, and bottom sheets.
   </p>
   <p>
-    To create a modal, you need to use the following classes:
-    <code>mg-modal</code> for the modal content window,
-    <code>mg-modal--content</code> for the content inside the modal, and
-    <code>mg-modal--body</code> for the body of the modal.
-  </p>
-  <p>
-    If you use <b>MgPlus JS plugins</b> just add the following attributes to the
-    trigger button to open the modal:
-
-    <code>data-toggle="modal"</code> and
-    <code>data-target="id-of-modal-content"</code>
-  </p>
-  <p>
-    Otherwise to toggle visibility of the modal, you need to add dynamically
-    <code>opened</code> class to mg-modal element when you want to open it
-    (usually on click)
-    <code>mg-modal opened</code>
+    Native dialogs render in the browser's <b>Top Layer</b>, guaranteeing they are never trapped by parent <code>z-index</code>, <code>transform</code>, or <code>overflow: hidden</code> stacking contexts.
+    They include built-in focus trapping, native <kbd>Escape</kbd> key dismissal, <code>::backdrop</code> blur styling, and zero-JS form closing via <code>&lt;form method="dialog"&gt;</code>.
   </p>
 
-  <div class="mg-container">
-    <div id="modal-example" data-toggle="htmlpreview">
-      <button
-        title="default modal"
-        data-toggle="modal"
-        data-target="modal-default"
-        class="mg-icon-nav"
-      >
-        Default modal
-      </button>
-      <div class="mg-modal" id="modal-default">
-        <div class="mg-modal--content mg-container">
-          <h3>
-            <i
-              class="mg-icon icon-close mg-icon--action mg-right"
-              data-action="close"
-            ></i>
-          </h3>
-          <div>
-            <p>
-              This is a modal window. You can do the following things with it:
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h3>Default Modal (Centered Dialog)</h3>
+  <p>
+    Open via the native DOM API <code>dialog.showModal()</code>, or use the Mg+ plugin with <code>data-toggle="modal" data-target="dialog-id"</code>.
+  </p>
+  <div class="mg-container" id="modal-default-example" data-toggle="htmlpreview">
     <button
-      title="scrollable modal"
+      class="mg-button mg-button--primary"
       data-toggle="modal"
-      data-target="modal-scrollable"
-      class="mg-icon-nav"
+      data-target="dialog-default"
+      onclick="document.getElementById('dialog-default').showModal()"
     >
-      Default modal with overflow
+      Open Default Modal
     </button>
-    <div class="mg-modal" id="modal-scrollable" data-toggle="htmlpreview">
-      <div class="mg-modal--content mg-container">
-        <h3>
-          Default modal with overflow
-          <i
-            class="mg-icon icon-close mg-icon--action mg-right"
-            data-action="close"
-          ></i>
-        </h3>
-        <div class="mg-modal--body">
-          <div class="mg-dropdown" role="menu">
-            <button
-              title="choose a car"
-              class="mg-icon-dropdown"
-              data-toggle="dropdown"
-            >
-              a dropdown inside a modal
-            </button>
-            <div class="mg-dropdown--content">
-              <ul class="mg-nav">
-                <li data-value="audi">Audi</li>
-                <li data-value="bmw">BMW</li>
-                <li data-value="citroen">Citroen</li>
-                <li data-value="ford">Ford</li>
-                <li data-value="honda">Honda</li>
-                <li data-value="jaguar">Jaguar</li>
-                <li data-value="land-rover">Land Rover</li>
-                <li data-value="mini">Mini</li>
-                <li data-value="nissan">Nissan</li>
-                <li data-value="toyota">Toyota</li>
-                <li data-value="volvo">Volvo</li>
-              </ul>
-            </div>
-          </div>
-          <div id="lipsum">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              euismod tortor eget magna auctor, eu hendrerit ipsum mattis. Etiam
-              vitae ligula nulla. Nulla facilisi. Maecenas eu orci ac erat
-              mollis fringilla. Donec semper, metus vitae laoreet fringilla,
-              nisl velit auctor ligula, vitae hendrerit lectus elit eu tellus.
-              Mauris finibus, ante quis malesuada interdum, odio massa
-              scelerisque eros, ac iaculis tellus turpis vitae dolor. Nullam id
-              diam eu tellus dictum tempor. Vestibulum finibus eros vitae
-              pretium varius.
-            </p>
-            <p>
-              Aenean in ex eu ante viverra semper. Nullam at condimentum quam.
-              Sed elit sapien, maximus ac pretium ac, viverra aliquam tortor.
-              Class aptent taciti sociosqu ad litora torquent per conubia
-              nostra, per inceptos himenaeos. Cras sed sapien fermentum,
-              elementum mi efficitur, congue tellus. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus. Cras malesuada lorem enim, eget
-              scelerisque orci vestibulum a. Proin scelerisque enim nibh,
-              egestas euismod nunc aliquam vel. Pellentesque facilisis lacus
-              tortor, nec dictum augue porttitor nec. Quisque ut lacus eleifend
-              lorem lobortis fermentum nec sit amet lacus. Vestibulum vehicula
-              lobortis lectus ut pellentesque. Nullam tempus in ligula at
-              lacinia. Etiam accumsan eleifend nunc, at rhoncus nulla tincidunt
-              sed. Sed turpis dui, hendrerit vitae finibus ut, luctus quis
-              ligula. Aenean venenatis id diam tempor interdum. Nulla mauris
-              est, lacinia a fermentum at, ullamcorper ut ante.
-            </p>
-            <p>
-              Suspendisse gravida diam sit amet malesuada interdum. Cras odio
-              ipsum, scelerisque ac auctor ac, rutrum eget elit. Nulla sodales
-              hendrerit leo, eget mattis velit suscipit vitae. Quisque interdum
-              quam at convallis vestibulum. Aenean est ex, lacinia in leo vitae,
-              euismod ullamcorper enim. Donec vulputate odio non metus elementum
-              tincidunt. Integer bibendum ultricies risus a viverra. Fusce
-              mattis turpis justo, non vehicula mauris feugiat vel. Etiam ut
-              mauris ultrices orci aliquam placerat.
-            </p>
-            <p>
-              Praesent varius ut eros ut sollicitudin. Curabitur vehicula
-              fermentum massa, nec scelerisque diam posuere quis. Etiam ut diam
-              nec quam sollicitudin finibus sit amet in ipsum. Suspendisse
-              cursus in urna eu condimentum. Cras ultricies sed nibh id mollis.
-              Sed gravida ex sed tortor rhoncus malesuada eu non lorem. Cras vel
-              erat tristique, pretium neque nec, sagittis velit. Nulla non
-              iaculis dolor. Aenean a nulla a elit ornare consequat ac fringilla
-              nibh. Praesent volutpat orci tellus, in hendrerit leo imperdiet
-              eget. Aliquam erat volutpat.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus.
-              Quisque nunc est, convallis ac ultricies sit amet, sagittis ac
-              eros. Morbi gravida interdum sapien, ac elementum orci
-              sollicitudin quis. Donec suscipit arcu non est rutrum cursus vitae
-              eget lacus. Curabitur pulvinar sit amet lectus in efficitur.
-              Pellentesque ultricies ultricies mauris, a ultrices leo sodales
-              vel. Aliquam sapien turpis, egestas eu volutpat at, semper vel
-              ligula. Sed pretium lacus ut tellus blandit, nec ornare sapien
-              varius. Nulla in ornare mi, eu congue libero. Curabitur non urna
-              quis dui eleifend dictum. Vivamus quis enim sem.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              euismod tortor eget magna auctor, eu hendrerit ipsum mattis. Etiam
-              vitae ligula nulla. Nulla facilisi. Maecenas eu orci ac erat
-              mollis fringilla. Donec semper, metus vitae laoreet fringilla,
-              nisl velit auctor ligula, vitae hendrerit lectus elit eu tellus.
-              Mauris finibus, ante quis malesuada interdum, odio massa
-              scelerisque eros, ac iaculis tellus turpis vitae dolor. Nullam id
-              diam eu tellus dictum tempor. Vestibulum finibus eros vitae
-              pretium varius.
-            </p>
-            <p>
-              Aenean in ex eu ante viverra semper. Nullam at condimentum quam.
-              Sed elit sapien, maximus ac pretium ac, viverra aliquam tortor.
-              Class aptent taciti sociosqu ad litora torquent per conubia
-              nostra, per inceptos himenaeos. Cras sed sapien fermentum,
-              elementum mi efficitur, congue tellus. Interdum et malesuada fames
-              ac ante ipsum primis in faucibus. Cras malesuada lorem enim, eget
-              scelerisque orci vestibulum a. Proin scelerisque enim nibh,
-              egestas euismod nunc aliquam vel. Pellentesque facilisis lacus
-              tortor, nec dictum augue porttitor nec. Quisque ut lacus eleifend
-              lorem lobortis fermentum nec sit amet lacus. Vestibulum vehicula
-              lobortis lectus ut pellentesque. Nullam tempus in ligula at
-              lacinia. Etiam accumsan eleifend nunc, at rhoncus nulla tincidunt
-              sed. Sed turpis dui, hendrerit vitae finibus ut, luctus quis
-              ligula. Aenean venenatis id diam tempor interdum. Nulla mauris
-              est, lacinia a fermentum at, ullamcorper ut ante.
-            </p>
-            <p>
-              Suspendisse gravida diam sit amet malesuada interdum. Cras odio
-              ipsum, scelerisque ac auctor ac, rutrum eget elit. Nulla sodales
-              hendrerit leo, eget mattis velit suscipit vitae. Quisque interdum
-              quam at convallis vestibulum. Aenean est ex, lacinia in leo vitae,
-              euismod ullamcorper enim. Donec vulputate odio non metus elementum
-              tincidunt. Integer bibendum ultricies risus a viverra. Fusce
-              mattis turpis justo, non vehicula mauris feugiat vel. Etiam ut
-              mauris ultrices orci aliquam placerat.
-            </p>
-            <p>
-              Praesent varius ut eros ut sollicitudin. Curabitur vehicula
-              fermentum massa, nec scelerisque diam posuere quis. Etiam ut diam
-              nec quam sollicitudin finibus sit amet in ipsum. Suspendisse
-              cursus in urna eu condimentum. Cras ultricies sed nibh id mollis.
-              Sed gravida ex sed tortor rhoncus malesuada eu non lorem. Cras vel
-              erat tristique, pretium neque nec, sagittis velit. Nulla non
-              iaculis dolor. Aenean a nulla a elit ornare consequat ac fringilla
-              nibh. Praesent volutpat orci tellus, in hendrerit leo imperdiet
-              eget. Aliquam erat volutpat.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus.
-              Quisque nunc est, convallis ac ultricies sit amet, sagittis ac
-              eros. Morbi gravida interdum sapien, ac elementum orci
-              sollicitudin quis. Donec suscipit arcu non est rutrum cursus vitae
-              eget lacus. Curabitur pulvinar sit amet lectus in efficitur.
-              Pellentesque ultricies ultricies mauris, a ultrices leo sodales
-              vel. Aliquam sapien turpis, egestas eu volutpat at, semper vel
-              ligula. Sed pretium lacus ut tellus blandit, nec ornare sapien
-              varius. Nulla in ornare mi, eu congue libero. Curabitur non urna
-              quis dui eleifend dictum. Vivamus quis enim sem.
-            </p>
+
+    <dialog class="mg-modal" id="dialog-default">
+      <div class="mg-modal--header">
+        <h3>Modal Title</h3>
+        <i class="mg-icon icon-close mg-icon--action" data-action="close"></i>
+      </div>
+      <div class="mg-modal--body">
+        <p>
+          This is a native HTML5 dialog styled with Mg+. It renders in the browser top-layer with blurred backdrop.
+        </p>
+        <p>
+          You can close it by clicking the close button below, clicking the <kbd>×</kbd> icon, clicking anywhere on the backdrop, or pressing the <kbd>Escape</kbd> key.
+        </p>
+      </div>
+      <div class="mg-modal--footer">
+        <form method="dialog">
+          <button class="mg-button">Close Dialog (Zero-JS)</button>
+        </form>
+      </div>
+    </dialog>
+  </div>
+
+  <h3>Side Drawers &amp; Off-Canvas</h3>
+  <p>
+    Add position modifiers to turn any <code>&lt;dialog&gt;</code> into a full-height side drawer or mobile sheet:
+    <code>.mg-modal--right</code>, <code>.mg-modal--left</code>, or <code>.mg-modal--bottom</code>.
+  </p>
+  <div class="mg-container" id="modal-drawers-example" data-toggle="htmlpreview">
+    <div class="mg-row mg-gap2">
+      <button
+        class="mg-button"
+        data-toggle="modal"
+        data-target="dialog-right"
+        onclick="document.getElementById('dialog-right').showModal()"
+      >
+        Right Drawer
+      </button>
+      <button
+        class="mg-button"
+        data-toggle="modal"
+        data-target="dialog-left"
+        onclick="document.getElementById('dialog-left').showModal()"
+      >
+        Left Drawer
+      </button>
+      <button
+        class="mg-button"
+        data-toggle="modal"
+        data-target="dialog-bottom"
+        onclick="document.getElementById('dialog-bottom').showModal()"
+      >
+        Bottom Sheet
+      </button>
+    </div>
+
+    <!-- Right Drawer -->
+    <dialog class="mg-modal mg-modal--right" id="dialog-right">
+      <div class="mg-modal--header">
+        <h3>Right Drawer</h3>
+        <i class="mg-icon icon-close mg-icon--action" data-action="close"></i>
+      </div>
+      <div class="mg-modal--body">
+        <p>This off-canvas drawer slides in from the right edge of the screen.</p>
+        <div class="mg-dropdown" role="menu">
+          <button title="choose an option" class="mg-icon-dropdown" data-toggle="dropdown">
+            Dropdown inside drawer
+          </button>
+          <div class="mg-dropdown--content">
+            <ul class="mg-nav">
+              <li data-value="item1">Option 1</li>
+              <li data-value="item2">Option 2</li>
+              <li data-value="item3">Option 3</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+      <div class="mg-modal--footer">
+        <form method="dialog">
+          <button class="mg-button-outline">Close</button>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Left Drawer -->
+    <dialog class="mg-modal mg-modal--left" id="dialog-left">
+      <div class="mg-modal--header">
+        <h3>Left Drawer</h3>
+        <i class="mg-icon icon-close mg-icon--action" data-action="close"></i>
+      </div>
+      <div class="mg-modal--body">
+        <p>This off-canvas drawer slides in from the left edge of the screen, ideal for mobile navigation menus.</p>
+        <ul class="mg-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#settings">Settings</a></li>
+        </ul>
+      </div>
+      <div class="mg-modal--footer">
+        <form method="dialog">
+          <button class="mg-button-outline">Close</button>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Bottom Sheet -->
+    <dialog class="mg-modal mg-modal--bottom" id="dialog-bottom">
+      <div class="mg-modal--header">
+        <h3>Bottom Sheet</h3>
+        <i class="mg-icon icon-close mg-icon--action" data-action="close"></i>
+      </div>
+      <div class="mg-modal--body">
+        <p>Bottom sheets slide up from the bottom of the viewport, perfect for mobile actions and menus.</p>
+      </div>
+      <div class="mg-modal--footer">
+        <form method="dialog">
+          <button class="mg-button">Done</button>
+        </form>
+      </div>
+    </dialog>
   </div>
 
+  <h3>Fullscreen Modal</h3>
   <p>
-    Combine following classes with mg-modal to define orientation:
-    <code
-      >mg-modal--top | mg-modal--bottom | mg-modal--right | mg-modal--left</code
-    >
+    Use <code>.mg-modal--fullscreen</code> for full-viewport takeovers, checkout wizards, or image galleries.
   </p>
-  <div class="mg-container">
-    <div class="mg-row mg-gap1" data-toggle="htmlpreview">
-      <div class="mg-col mg-x2">
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tl"
-        >
-          <i class="mg-icon svg-icon-popup-tl"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-l"
-        >
-          <i class="mg-icon svg-icon-popup-ml"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-bl"
-        >
-          <i class="mg-icon svg-icon-popup-bl"></i>
-        </button>
-      </div>
-      <div class="mg-col mg-x2">
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tc"
-        >
-          <i class="mg-icon svg-icon-popup-tc"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-default"
-        >
-          <i class="mg-icon svg-icon-popup-mc"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-b"
-        >
-          <i class="mg-icon svg-icon-popup-bc"></i>
-        </button>
-      </div>
-      <div class="mg-col mg-x2">
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-tr"
-          data-orientation="top-right"
-        >
-          <i class="mg-icon svg-icon-popup-tr"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-r"
-        >
-          <i class="mg-icon svg-icon-popup-mr"></i>
-        </button>
-        <button
-          title="scrollable modal"
-          data-toggle="modal"
-          data-target="modal-br"
-        >
-          <i class="mg-icon svg-icon-popup-br"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--right" id="modal-tr">
-    <div class="mg-modal--content mg-top mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--right" id="modal-r">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--right" id="modal-br">
-    <div class="mg-modal--content mg-bottom mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--left" id="modal-tl">
-    <div class="mg-modal--content mg-top mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--left" id="modal-bl">
-    <div class="mg-modal--content mg-bottom mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--left" id="modal-l">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-  <div class="mg-modal mg-modal--top" id="modal-tc">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="mg-modal mg-modal--bottom" id="modal-b">
-    <div class="mg-modal--content mg-container">
-      <h3>
-        <i
-          class="mg-icon icon-close mg-icon--action mg-right"
-          data-action="close"
-        ></i>
-      </h3>
-      <div>
-        <p>This is a modal window. You can do the following things with it:</p>
-      </div>
-    </div>
-  </div>
-
-  <h3>Native HTML5 Dialog Modal</h3>
-  <p>
-    Mg+ styles native <code>&lt;dialog class="mg-modal"&gt;</code> or <code>&lt;dialog class="mg-dialog"&gt;</code>, including backdrop blur and zero-JS closing via <code>&lt;form method="dialog"&gt;</code>.
-  </p>
-  <div class="mg-container" id="dialog-example" data-toggle="htmlpreview">
+  <div class="mg-container" id="modal-fullscreen-example" data-toggle="htmlpreview">
     <button
       class="mg-button"
       data-toggle="modal"
-      data-target="native-dialog-example"
-      onclick="document.getElementById('native-dialog-example').showModal()"
+      data-target="dialog-fullscreen"
+      onclick="document.getElementById('dialog-fullscreen').showModal()"
     >
-      Open Native Dialog Modal
+      Open Fullscreen Modal
     </button>
 
-    <dialog class="mg-modal" id="native-dialog-example">
-      <h3>Native Dialog with Blurred Backdrop</h3>
-      <p>This modal uses browser-native <code>&lt;dialog&gt;</code> and <code>::backdrop</code> filter blur.</p>
-      <form method="dialog" class="mg-pad-t2">
-        <button class="mg-button-outline">Close Dialog (Zero-JS)</button>
-      </form>
+    <dialog class="mg-modal mg-modal--fullscreen" id="dialog-fullscreen">
+      <div class="mg-modal--header">
+        <h3>Fullscreen View</h3>
+        <i class="mg-icon icon-close mg-icon--action" data-action="close"></i>
+      </div>
+      <div class="mg-modal--body">
+        <p>This modal covers 100% of the screen width and height.</p>
+      </div>
+      <div class="mg-modal--footer">
+        <form method="dialog">
+          <button class="mg-button">Close Fullscreen</button>
+        </form>
+      </div>
     </dialog>
   </div>
 </section>
