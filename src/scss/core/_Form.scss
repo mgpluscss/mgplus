@@ -23,14 +23,21 @@
   }
 
   .mg-input,
-  input[type="range"],
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
   input[type="email"],
+  input[type="month"],
   input[type="number"],
   input[type="password"],
   input[type="search"],
   input[type="tel"],
   input[type="text"],
+  input[type="time"],
   input[type="url"],
+  input[type="week"],
+  input:not([type]),
   textarea,
   select {
     appearance: none;
@@ -80,12 +87,29 @@
   }
   /* stylelint-enable */
 
+  /* stylelint-disable no-descending-specificity */
   .mg-input > input {
     appearance: none;
+    background-color: transparent;
     border: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    box-shadow: none;
+    color: inherit;
+    flex: 1 1 auto;
+    font-family: inherit;
+    font-size: inherit;
+    height: 100%;
+    margin: 0;
+    min-width: 0;
+    outline: 0;
     padding: 0;
+    width: 100%;
+
+    &:focus,
+    &:focus-visible {
+      border: 0;
+      box-shadow: none;
+      outline: 0;
+    }
   }
 
   /* Change Autocomplete styles in Chrome */
@@ -107,6 +131,7 @@
     -webkit-box-shadow: none;
     transition: background-color 5000s ease-in-out 0s;
   }
+  /* stylelint-enable no-descending-specificity */
 
   // Hide spin to input numbers
   input::-webkit-outer-spin-button,
@@ -120,9 +145,18 @@
     display: inline;
   }
 
-  div.mg-input:focus-within {
+  .mg-input:focus-within {
     border-color: mg-variables.$color-primary;
     outline: 0;
+  }
+
+  .mg-input:has(:focus-visible) {
+    outline: 0.2rem solid mg-variables.$color-primary;
+    outline-offset: 0.1rem;
+  }
+
+  .mg-input:has(:user-invalid) {
+    border-color: mg-variables.$color-danger;
   }
 
   label,
