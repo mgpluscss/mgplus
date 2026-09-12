@@ -1,7 +1,8 @@
 let isModalInitialized = false;
 
-function openModal(dialog: HTMLDialogElement) {
+export function openModal(dialog: HTMLDialogElement) {
   if (typeof dialog.showModal === "function" && !dialog.open) {
+    dialog.classList.remove("mg-modal--closing");
     dialog.showModal();
   }
 
@@ -13,9 +14,36 @@ function openModal(dialog: HTMLDialogElement) {
   }
 }
 
-function closeModal(dialog: HTMLDialogElement) {
+export function closeModal(dialog: HTMLDialogElement) {
   if (typeof dialog.close === "function" && dialog.open) {
-    dialog.close();
+    if (dialog.classList.contains("mg-modal--closing")) return;
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      dialog.close();
+      return;
+    }
+
+    dialog.classList.add("mg-modal--closing");
+
+    let closed = false;
+    const finishClose = () => {
+      if (closed) return;
+      closed = true;
+      dialog.classList.remove("mg-modal--closing");
+      dialog.removeEventListener("animationend", finishClose);
+      if (dialog.open) {
+        dialog.close();
+      }
+    };
+
+    dialog.addEventListener("animationend", finishClose, { once: true });
+
+    // Safety fallback in case animationend does not fire
+    setTimeout(finishClose, 300);
   }
 }
 
@@ -53,6 +81,34 @@ export function registerModals() {
       if (dialog) {
         e.stopPropagation();
         closeModal(dialog);
+      }
+    });
+
+    // Close on <form method="dialog"> submission with exit animation
+    document.addEventListener("submit", (e: SubmitEvent) => {
+      const form = e.target as HTMLFormElement;
+      if (form && form.getAttribute("method") === "dialog") {
+        const dialog = form.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
+        if (dialog && dialog.open && !dialog.classList.contains("mg-modal--closing")) {
+          e.preventDefault();
+          closeModal(dialog);
+        }
+      }
+    });
+
+    // Close on Escape key with exit animation
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        const openDialogs = document.querySelectorAll<HTMLDialogElement>(
+          "dialog.mg-modal[open], dialog.mg-dialog[open]"
+        );
+        if (openDialogs.length > 0) {
+          const topDialog = openDialogs[openDialogs.length - 1];
+          if (!topDialog.classList.contains("mg-modal--closing")) {
+            e.preventDefault();
+            closeModal(topDialog);
+          }
+        }
       }
     });
   }

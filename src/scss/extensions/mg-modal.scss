@@ -1,5 +1,130 @@
 @use "../mg-variables";
 
+// Animation Keyframes
+@keyframes mg-modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mg-modal-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes mg-backdrop-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mg-backdrop-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mg-drawer-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes mg-drawer-out-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes mg-drawer-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes mg-drawer-out-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes mg-drawer-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mg-drawer-out-bottom {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes mg-drawer-in-top {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mg-drawer-out-top {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 @layer mg.components {
   // Native HTML5 Dialog (Standard Modal Component)
   dialog.mg-dialog,
@@ -19,50 +144,36 @@
     border-radius: mg-variables.$control-radius;
     box-shadow: mg-variables.$control-shadow;
 
-    // Transitions for smooth entry and exit animation
-    opacity: 0;
-    transform: scale(0.95);
-    transition:
-      opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-      overlay 0.3s allow-discrete,
-      display 0.3s allow-discrete;
-
-    &[open] {
-      opacity: 1;
-      transform: scale(1);
+    &:not([open]) {
+      display: none;
     }
 
-    @starting-style {
-      &[open] {
-        opacity: 0;
-        transform: scale(0.95);
+    &[open] {
+      display: block;
+      animation: mg-modal-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+      &::backdrop {
+        animation: mg-backdrop-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    }
+
+    &.mg-modal--closing {
+      animation: mg-modal-fade-out 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+      &::backdrop {
+        animation: mg-backdrop-fade-out 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
     &::backdrop {
       background: rgb(0 0 0 / 60%);
       backdrop-filter: blur(0.4rem);
-      opacity: 0;
-      transition:
-        opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-        overlay 0.3s allow-discrete,
-        display 0.3s allow-discrete;
-    }
-
-    &[open]::backdrop {
-      opacity: 1;
-    }
-
-    @starting-style {
-      &[open]::backdrop {
-        opacity: 0;
-      }
     }
 
     // Modal sub-elements
     .mg-modal--header {
       display: flex;
+      flex-shrink: 0;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 1rem;
@@ -71,10 +182,17 @@
     .mg-modal--body {
       max-height: 70vh;
       overflow-y: auto;
+
+      // Prevent clipping when a dropdown is open inside modal body
+      &:has(.opened),
+      &:has([aria-expanded="true"]) {
+        overflow: visible;
+      }
     }
 
     .mg-modal--footer {
       display: flex;
+      flex-shrink: 0;
       gap: 1rem;
       align-items: center;
       justify-content: flex-end;
@@ -91,19 +209,24 @@
       border-radius: 0;
       border-top-right-radius: mg-variables.$control-radius;
       border-bottom-right-radius: mg-variables.$control-radius;
-      opacity: 1;
-      transform: translateX(-100%);
 
-      &[open] {
-        opacity: 1;
-        transform: translateX(0);
+      .mg-modal--body {
+        flex: 1;
+        max-height: none;
       }
 
-      @starting-style {
-        &[open] {
-          opacity: 1;
-          transform: translateX(-100%);
-        }
+      .mg-modal--footer {
+        margin-top: auto;
+      }
+
+      &[open] {
+        display: flex;
+        flex-direction: column;
+        animation: mg-drawer-in-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      &.mg-modal--closing {
+        animation: mg-drawer-out-left 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
@@ -116,19 +239,24 @@
       border-radius: 0;
       border-top-left-radius: mg-variables.$control-radius;
       border-bottom-left-radius: mg-variables.$control-radius;
-      opacity: 1;
-      transform: translateX(100%);
 
-      &[open] {
-        opacity: 1;
-        transform: translateX(0);
+      .mg-modal--body {
+        flex: 1;
+        max-height: none;
       }
 
-      @starting-style {
-        &[open] {
-          opacity: 1;
-          transform: translateX(100%);
-        }
+      .mg-modal--footer {
+        margin-top: auto;
+      }
+
+      &[open] {
+        display: flex;
+        flex-direction: column;
+        animation: mg-drawer-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      &.mg-modal--closing {
+        animation: mg-drawer-out-right 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
@@ -140,19 +268,14 @@
       border-radius: 0;
       border-top-left-radius: mg-variables.$control-radius;
       border-top-right-radius: mg-variables.$control-radius;
-      opacity: 1;
-      transform: translateY(100%);
 
       &[open] {
-        opacity: 1;
-        transform: translateY(0);
+        display: block;
+        animation: mg-drawer-in-bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      @starting-style {
-        &[open] {
-          opacity: 1;
-          transform: translateY(100%);
-        }
+      &.mg-modal--closing {
+        animation: mg-drawer-out-bottom 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
@@ -164,19 +287,14 @@
       border-radius: 0;
       border-bottom-right-radius: mg-variables.$control-radius;
       border-bottom-left-radius: mg-variables.$control-radius;
-      opacity: 1;
-      transform: translateY(-100%);
 
       &[open] {
-        opacity: 1;
-        transform: translateY(0);
+        display: block;
+        animation: mg-drawer-in-top 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      @starting-style {
-        &[open] {
-          opacity: 1;
-          transform: translateY(-100%);
-        }
+      &.mg-modal--closing {
+        animation: mg-drawer-out-top 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
@@ -188,24 +306,26 @@
       max-height: 100vh;
       margin: 0;
       border-radius: 0;
-      transform: none;
 
       &[open] {
-        transform: none;
+        display: block;
+        animation: mg-modal-fade-in 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
 
-      @starting-style {
-        &[open] {
-          transform: none;
-        }
+      &.mg-modal--closing {
+        animation: mg-modal-fade-out 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      transition: none;
+      &,
+      &[open],
+      &.mg-modal--closing {
+        animation: none;
 
-      &::backdrop {
-        transition: none;
+        &::backdrop {
+          animation: none;
+        }
       }
     }
   }
