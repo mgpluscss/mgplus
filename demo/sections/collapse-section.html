@@ -1,34 +1,36 @@
 <section id="collapse">
   <h2>Collapse</h2>
-  <code>mg-collapse + opened</code>
-  <p>Collapsible elements are used to hide or show content based on user interaction. Below, you will find examples of
-    collapsible elements in their default state, as well as examples of how to trigger the collapse and expand
-    functionality.</p>
-  <p>Place <code>mg-collapse</code> class to a clickable element</p>
-  <p>Place <code>mg-collapse--content</code> just after the clickable element</p>
-  <p>Adding <code>opened</code> class to <code>mg-collapse</code> will toggle visibility of the collapsible content inside
-    <code>mg-collapse--content</code>
+  <p>
+    Mg+ supports collapsible components through two approaches: modern <strong>Zero-JS native HTML5</strong> (<code>&lt;details class="mg-collapse"&gt;</code>) or the classic <strong>JavaScript plugin</strong> (<code>data-toggle="collapse"</code>).
   </p>
-  <p>Place special inline icon <code>mg-icon-collapse</code> to reflect state of collapsible content</p>
 
+  <h3>Native Zero-JS Collapse (HTML5 <code>&lt;details class="mg-collapse"&gt;</code>)</h3>
+  <p>
+    Wrap your trigger in <code>&lt;summary&gt;</code> and content in <code>&lt;details class="mg-collapse"&gt;</code>. Works natively without any JavaScript, supports keyboard navigation out of the box, and rotates <code>.mg-icon-collapse</code> automatically.
+  </p>
 
   <div class="mg-col mg-m6" data-toggle="htmlpreview">
-    <button class="mg-button mg-button--outline mg-collapse mg-icon-collapse" data-toggle="collapse">collapse
-      Button</button>
-    <div class="mg-collapse--content">
-      Content 1
-    </div>
+    <details class="mg-collapse">
+      <summary class="mg-button mg-button--outline mg-icon-collapse">Zero-JS Button Collapse</summary>
+      <div class="mg-collapse--content">
+        <p>This collapsible section is driven entirely by native HTML5 <code>&lt;details&gt;</code> with zero JavaScript. The button chevron rotates smoothly on open/close.</p>
+      </div>
+    </details>
   </div>
 
   <div data-toggle="htmlpreview">
-    <span class="mg-collapse mg-icon-collapse" data-toggle="collapse">Collapse div</span>
-    <div class="mg-collapse--content">
-      div content
-    </div>
+    <details class="mg-collapse">
+      <summary class="mg-icon-collapse">Zero-JS Text Collapse</summary>
+      <div class="mg-collapse--content">
+        <p>A clean text toggle trigger that expands and collapses content natively without JavaScript.</p>
+      </div>
+    </details>
   </div>
-  </div>
-  <h3>Native Zero-JS Accordions (HTML5 <code>&lt;details&gt;</code>)</h3>
-  <p>Modern zero-JS accordions styled via <code>&lt;details class="mg-accordion"&gt;</code> and <code>&lt;summary&gt;</code>. Use HTML5 <code>name="..."</code> for native mutually exclusive accordion groups with zero JavaScript.</p>
+
+  <h3>Native Zero-JS Accordions (HTML5 <code>&lt;details class="mg-accordion"&gt;</code>)</h3>
+  <p>
+    Boxed accordion panels styled via <code>&lt;details class="mg-accordion"&gt;</code> and <code>&lt;summary&gt;</code>. Use the HTML5 <code>name="..."</code> attribute for native mutually exclusive accordion groups with zero JavaScript.
+  </p>
 
   <div data-toggle="htmlpreview">
     <details class="mg-accordion" name="accordion-group">
@@ -39,5 +41,26 @@
       <summary>Panel 2: Mutually Exclusive Accordion</summary>
       <p>By using the standard HTML <code>name="accordion-group"</code> attribute, opening this panel automatically closes sibling panels natively.</p>
     </details>
+  </div>
+
+  <h3>JavaScript Plugin Collapse (<code>data-toggle="collapse"</code>)</h3>
+  <p>
+    Existing class-based implementation: place <code>mg-collapse</code> and <code>data-toggle="collapse"</code> on a clickable element, followed by a sibling with <code>mg-collapse--content</code>.
+  </p>
+
+  <div class="mg-col mg-m6" data-toggle="htmlpreview">
+    <button class="mg-button mg-button--outline mg-collapse mg-icon-collapse" data-toggle="collapse">
+      JS Collapse Button
+    </button>
+    <div class="mg-collapse--content">
+      JS Collapsible Content 1
+    </div>
+  </div>
+
+  <div data-toggle="htmlpreview">
+    <span class="mg-collapse mg-icon-collapse" data-toggle="collapse">JS Collapse div</span>
+    <div class="mg-collapse--content">
+      JS Collapsible div content
+    </div>
   </div>
 </section>

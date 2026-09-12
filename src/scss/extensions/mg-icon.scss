@@ -33,9 +33,13 @@
     @include mg-toggle-effect;
   }
 
-  &.opened::after {
-    transform: rotate(-225deg);
+  &.opened::after,
+  details[open] > summary.mg-icon-collapse::after,
+  details[open] > summary.mg-icon-dropdown::after,
+  details[open] > summary &.mg-icon-collapse::after,
+  details[open] > summary &.mg-icon-dropdown::after {
     top: 45%;
+    transform: rotate(-225deg);
   }
 }
 

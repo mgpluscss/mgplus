@@ -3,55 +3,73 @@
 // Tabs
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
-.mg-tabs>ul {
+.mg-tabs > ul {
   display: flex;
-  text-align: center;
   flex-wrap: nowrap;
-  overflow-x: auto;
   list-style: none;
   margin-top: 1rem;
   margin-bottom: -1rem;
+  overflow-x: auto;
+  text-align: center;
 
-
-  &>li>* {
+  & > li > * {
     color: mg-variables.$color-secondary;
     white-space: nowrap;
   }
 
-  &>li {
-    font-weight: bold;
-    border-bottom: 0.3rem solid transparent;
-    color: mg-variables.$color-tertiary;
-    opacity: 0.7;
+  & > li {
     flex: 0 0 auto;
+    font-weight: bold;
+    color: mg-variables.$color-tertiary;
+    border-bottom: 0.3rem solid transparent;
+    opacity: 0.7;
+
+    & label {
+      display: block;
+      margin-bottom: 0;
+      font-weight: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
   }
 
-  &>li.active {
-    color: mg-variables.$color-primary;
-    border-color: mg-variables.$color-primary;
-    overflow-y: hidden;
-    opacity: 1;
-  }
-
-  &>li:hover {
+  & > li:hover {
     color: mg-variables.$color-secondary;
     border-color: mg-variables.$color-tertiary;
     opacity: 1;
     transition: all 0.3s;
   }
+
+  & > li.active,
+  & > li:has(.mg-tabs--radio:checked) {
+    color: mg-variables.$color-primary;
+    border-color: mg-variables.$color-primary;
+    opacity: 1;
+    overflow-y: hidden;
+  }
 }
 
 .mg-tabs--item {
-  margin-left: 0.32rem;
-  margin-right: 0.32rem;
-  padding-left: 0.32rem;
   padding-right: 0.32rem;
+  padding-left: 0.32rem;
+  margin-right: 0.32rem;
+  margin-left: 0.32rem;
+}
+
+// Zero-JS hidden radio controller
+.mg-tabs--radio {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .mg-tabs--content {
-  border-top: 0.15rem solid mg-variables.$color-quaternary;
   padding: 1.5rem;
   clear: both;
+  border-top: 0.15rem solid mg-variables.$color-quaternary;
   opacity: 1;
   transition: opacity 0.3s;
 }
@@ -59,4 +77,30 @@
 .mg-tabs--content:not(.active) {
   display: none;
   opacity: 0;
+}
+
+// Native Zero-JS Tab Content Display (Radio input-driven via :has())
+@for $i from 1 through 8 {
+  .mg-tabs:has(> .mg-tabs--radio:nth-of-type(#{$i}):checked) > ul > li:nth-child(#{$i}) {
+    color: mg-variables.$color-primary;
+    border-color: mg-variables.$color-primary;
+    opacity: 1;
+    overflow-y: hidden;
+  }
+
+  .mg-tabs:has(> ul > li:nth-child(#{$i}) .mg-tabs--radio:checked) > .mg-tabs--content:nth-of-type(#{$i}),
+  .mg-tabs:has(> .mg-tabs--radio:nth-of-type(#{$i}):checked) > .mg-tabs--content:nth-of-type(#{$i}) {
+    display: block;
+    opacity: 1;
+  }
+}
+
+// Native Zero-JS Tab Content Display (Anchor-driven via :target)
+.mg-tabs--content:target {
+  display: block;
+  opacity: 1;
+}
+
+.mg-tabs:has(.mg-tabs--content:target) > .mg-tabs--content.active:not(:target) {
+  display: none;
 }

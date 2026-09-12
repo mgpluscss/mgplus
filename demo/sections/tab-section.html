@@ -1,21 +1,48 @@
 <section id="tabs-section">
   <h2>Tabs</h2>
   <p>
-    Tabs are used to display a list of options to the user. Below, you will find
-    examples of how to use the tabs system to create a variety of tab states.
+    Tabs are used to switch between different views within the same context. Mg+ supports both modern <strong>Zero-JS native CSS tabs</strong> (via hidden radio controls and <code>:has()</code>) and the classic <strong>JavaScript plugin</strong> (<code>data-toggle="tabs"</code>).
   </p>
+
+  <h3>Native Zero-JS Tabs (CSS <code>:has()</code> + Radio Inputs)</h3>
   <p>
-    If you use <b>MgPlus JS plugins</b>, just add
-    <code>data-target="id_of_tab_content"</code> to tab list menu and
-    <code>data-toggle="tabs"</code> to the main container (mg-tabs). This will
-    allow you to toggle between different tab contents.
+    Create interactive tabs with <strong>zero JavaScript</strong> using hidden <code>.mg-tabs--radio</code> controls and standard <code>&lt;label&gt;</code> elements. The active tab and content switch natively, with built-in arrow-key keyboard navigation.
   </p>
+  <div id="tabs-zerojs-example" data-toggle="htmlpreview">
+    <div class="mg-tabs">
+      <input type="radio" name="zero-tabs" id="tab-z1" class="mg-tabs--radio" checked>
+      <input type="radio" name="zero-tabs" id="tab-z2" class="mg-tabs--radio">
+      <input type="radio" name="zero-tabs" id="tab-z3" class="mg-tabs--radio">
+
+      <ul>
+        <li class="mg-tabs--item">
+          <label for="tab-z1">First Tab (Zero-JS)</label>
+        </li>
+        <li class="mg-tabs--item">
+          <label for="tab-z2">Second Tab (Zero-JS)</label>
+        </li>
+        <li class="mg-tabs--item">
+          <label for="tab-z3">Third Tab (Zero-JS)</label>
+        </li>
+      </ul>
+
+      <div class="mg-tabs--content">
+        <p>1. This is tab content displayed purely with CSS <code>:has()</code> and HTML radio inputs. No JavaScript loaded or executed.</p>
+      </div>
+      <div class="mg-tabs--content">
+        <p>2. Second panel content, activated automatically when the second radio button is selected.</p>
+      </div>
+      <div class="mg-tabs--content">
+        <p>3. Third panel content, with native accessibility and keyboard support (<kbd>←</kbd> / <kbd>→</kbd> arrow keys).</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>JavaScript Plugin Tabs (<code>data-toggle="tabs"</code>)</h3>
   <p>
-    Otherwise, you need to implement the tab switching functionality manually
-    using JavaScript by adding/removing the <code>active</code> class to
-    selected item of tab menu and item to the tab content as well.
+    If you use the <strong>Mg+ JS plugin</strong>, add <code>data-target="id_of_tab_content"</code> to each tab item and <code>data-toggle="tabs"</code> to the <code>.mg-tabs</code> container. The plugin automatically handles ARIA roles (<code>role="tab"</code>, <code>aria-selected</code>) and active class switching.
   </p>
-  <i>Tabs needs js to toggle class visibility</i>
+
   <div id="tabs-example" data-toggle="htmlpreview">
     <div class="mg-tabs" data-toggle="tabs">
       <ul>
@@ -30,22 +57,13 @@
         </li>
       </ul>
       <div class="mg-tabs--content" id="tab1">
-        1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
-        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
-        aliquid inventore.
+        1. JavaScript-driven tab content with automatic ARIA attribute synchronization.
       </div>
       <div class="mg-tabs--content" id="tab2">
-        2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
-        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
-        aliquid inventore.
+        2. Second tab content managed by the <code>mgTabs</code> plugin.
       </div>
       <div class="mg-tabs--content" id="tab3">
-        3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iste,
-        placeat voluptates sapiente blanditiis fuga ullam. Iure dolorum libero
-        fugit quidem, voluptate veniam aut animi nihil voluptas mollitia,
-        aliquid inventore.
+        3. Third tab content managed by the <code>mgTabs</code> plugin.
       </div>
     </div>
   </div>

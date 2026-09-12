@@ -1,66 +1,69 @@
 @use "../mg-variables";
 
 .mg-nav {
-  padding: 0.5rem;
-  margin-left: 0;
-  margin-top: 0;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
+  margin-top: 0;
   margin-bottom: 0;
+  margin-left: 0;
+  overflow-y: auto;
 
   & li {
-    white-space: wrap;
-    list-style-type: none;
-    margin: 0;
     display: flex;
-    padding: 0.5rem;
-    text-decoration: none;
-    color: mg-variables.$color-secondary;
     align-items: center;
+    padding: 0.5rem;
+    margin: 0;
+    color: mg-variables.$color-secondary;
+    text-decoration: none;
+    list-style-type: none;
+    white-space: wrap;
     border-bottom: 0.125rem solid mg-variables.$color-quinary;
-  }
-
-  & li.active {
-    color: currentcolor;
-    border-left: 0.3rem solid mg-variables.$color-primary;
-    font-weight: bold;
   }
 
   & li a {
     width: 100%;
-    cursor: pointer;
-    text-decoration: none;
     color: mg-variables.$color-secondary;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   & li:hover {
     background-color: mg-variables.$color-quinary;
   }
 
+  & li.active,
+  & li:has(> a[aria-current="page"]),
+  & li:has(> a.active),
+  & li[aria-current="page"] {
+    font-weight: bold;
+    color: currentcolor;
+    border-left: 0.3rem solid mg-variables.$color-primary;
+  }
 }
 
 .mg-nav--inline {
-  overflow-x: auto;
   flex-direction: row;
-
+  overflow-x: auto;
 
   /* stylelint-disable */
   & li {
     flex-wrap: nowrap;
-
   }
-
   /* stylelint-enable */
-  & li.active {
+
+  & li.active,
+  & li:has(> a[aria-current="page"]),
+  & li:has(> a.active),
+  & li[aria-current="page"] {
     border: none;
     border-bottom: 0.3rem solid mg-variables.$color-primary;
   }
 }
 
 .mg-nav--buttons {
-  overflow-x: auto;
   flex-direction: row;
+  overflow-x: auto;
 
   /* stylelint-disable */
   & li,
@@ -68,16 +71,16 @@
     border: none;
   }
 
-  /* stylelint-enable */
   & li:hover {
     background-color: transparent;
   }
+  /* stylelint-enable */
 
   & li button,
   & li .mg-button {
-    border: 0.2rem solid transparent;
-    background-color: transparent;
     margin-bottom: 0;
+    background-color: transparent;
+    border: 0.2rem solid transparent;
   }
 
   & li button:hover,
@@ -86,10 +89,13 @@
   }
 
   & li.active button,
-  & li.active .mg-button {
-    border: 0.2rem solid mg-variables.$color-primary;
+  & li.active .mg-button,
+  & li:has(> [aria-current="page"]) button,
+  & li:has(> [aria-current="page"]) .mg-button,
+  & li [aria-current="page"].mg-button,
+  & li[aria-current="page"] button,
+  & li[aria-current="page"] .mg-button {
     color: mg-variables.$color-secondary;
+    border: 0.2rem solid mg-variables.$color-primary;
   }
-
-
 }
