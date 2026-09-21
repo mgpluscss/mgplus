@@ -4,6 +4,17 @@ import { registerModals } from "./mgModal";
 import { registerNavs } from "./mgNav";
 import { registerTabs } from "./mgTabs";
 import { registerDarkMode, applyTheme, getCurrentTheme, getPreferredTheme } from "./mgDarkMode";
+import {
+  registerCompat,
+  checkBrowserSupport,
+  getMissingFeatures,
+  loadRequiredPlugins,
+  autoCompat,
+  isCompatActive,
+  type BrowserSupport,
+  type CompatOptions,
+  type CompatResult,
+} from "./mgCompat";
 
 export {
   registerCollapses,
@@ -16,10 +27,23 @@ export {
   applyTheme,
   getCurrentTheme,
   getPreferredTheme,
+  registerCompat,
+  checkBrowserSupport,
+  getMissingFeatures,
+  loadRequiredPlugins,
+  autoCompat,
+  isCompatActive,
+  type BrowserSupport,
+  type CompatOptions,
+  type CompatResult,
 };
 
 export function registerDarkModePlugin() {
   registerDarkMode();
+}
+
+export function registerCompatPlugin(options?: CompatOptions) {
+  return registerCompat(options);
 }
 
 export type PluginName =
@@ -35,7 +59,9 @@ export type PluginName =
   | "collapses"
   | "collapse"
   | "darkmode"
-  | "theme";
+  | "theme"
+  | "compat"
+  | "autocompat";
 
 export function registerPlugins(plugins?: string[] | string) {
   if (!plugins) return;
@@ -79,6 +105,10 @@ export function registerPlugins(plugins?: string[] | string) {
       case "theme":
         registerDarkMode();
         break;
+      case "compat":
+      case "autocompat":
+        registerCompat();
+        break;
       default:
         console.warn(`mgplus - unknown plugin: ${pluginName}`);
         break;
@@ -121,7 +151,26 @@ export function autoRegister() {
   if (typeof window === "undefined" || typeof document === "undefined") return;
 
   const run = () => {
+    const currentScript = document.currentScript as HTMLScriptElement | null;
+    const hasDataAutoCompat =
+      Boolean(currentScript?.hasAttribute("data-autocompat")) ||
+      document.querySelector("script[data-autocompat]") !== null;
+
     const scriptUrl = getScriptUrl();
+    const isCompatUrl = Boolean(
+      scriptUrl &&
+        (getQueryParam("autocompat", scriptUrl) === "true" ||
+          getQueryParam("compat", scriptUrl) === "true" ||
+          scriptUrl.includes("?autocompat") ||
+          scriptUrl.includes("&autocompat") ||
+          scriptUrl.includes("?compat") ||
+          scriptUrl.includes("&compat"))
+    );
+
+    if (hasDataAutoCompat || isCompatUrl) {
+      registerCompat();
+    }
+
     if (!scriptUrl) return;
 
     // Check both ?register= and ?plugins= parameters

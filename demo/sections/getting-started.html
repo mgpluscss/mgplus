@@ -46,6 +46,10 @@
     <p>Just add following script at the end of your page</p>
     <pre><code>&lt;script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?register=all"&gt;&lt;/script&gt;</code></pre>
 
+    <h4>Auto Compat for older browsers (Zero-overhead on modern browsers)</h4>
+    <p>Checks browser feature support and automatically loads/activates only the required fallback plugins and polyfills when modern HTML5/CSS standards (like <code>&lt;dialog&gt;</code>, Popover API, CSS <code>:has()</code>, or <code>light-dark()</code>) are missing:</p>
+    <pre><code>&lt;script type="module" src="https://cdn.mgpluscss.com/$PACKAGE_VERSION/mgplus-vanilla.js?autocompat"&gt;&lt;/script&gt;</code></pre>
+
     <h4>Register specific plugins</h4>
     <p>Just add following script at the end of your page with required plugin names to register separated by
         a comma</p>
@@ -77,6 +81,7 @@
         <li>modals <code>data-toggle="modal"</code></li>
         <li>collapses <code>data-toggle="collapse"</code></li>
         <li>darkmode (enabled globally in your page)</li>
+        <li>compat / autocompat (automatically detects old browsers and loads required fallback plugins)</li>
     </ul>
     <h4>Configure DarkMode</h4>
     <p>
