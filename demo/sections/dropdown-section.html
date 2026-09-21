@@ -1,15 +1,9 @@
 <section id="dropdown">
-  <h2>Dropdown</h2>
-  <p>Place <code>mg-dropdown</code> as container class</p>
+  <h2>Dropdown <span class="mg-badge mg-bg-success mg-text-xs">Dual Mode</span></h2>
   <p>
-    Inside <code>mg-dropdown</code> place a button element with special icon
-    <code>mg-icon-dropdown</code>
+    Mg+ dropdowns support both <strong>Zero-JS native interactions</strong> (via modern HTML5 Popover API or CSS <code>:focus-within</code>) and the classic <strong>JavaScript plugin</strong> (<code>data-toggle="dropdown"</code>).
   </p>
-  <p>Place <code>mg-dropdown--content</code> after button element</p>
-  <p>
-    Usualy, place a <code>mg-nav</code> component inside
-    <code>mg-dropdown--content</code> to build a menu
-  </p>
+  <p>Place <code>mg-dropdown</code> as container class with a button trigger and <code>mg-dropdown--content</code>.</p>
 
   <div>
     <div class="mg-dropdown" role="menu" data-toggle="htmlpreview">
@@ -81,7 +75,7 @@
     </div>
   </div>
 
-  <h3>Zero-JS Native Popover API</h3>
+  <h3>Zero-JS Native Popover API <span class="mg-badge mg-bg-primary mg-text-xs">⚡ Zero-JS Native</span></h3>
   <p>
     Use modern HTML5 native <code>popover</code> and <code>popovertarget</code> attributes with <code>mg-popover</code> or <code>mg-tooltip</code> for accessible dropdowns and popups with <b>zero JavaScript required</b>.
   </p>

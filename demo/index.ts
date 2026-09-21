@@ -1,9 +1,13 @@
-import { registerPlugins } from '../src/plugins/main.ts';
+import { registerPlugins, registerCompat, checkBrowserSupport, applyTheme } from '../src/plugins/main.ts';
 import iro from '@jaames/iro';
+
+let currentDemoMode: "zero-js" | "plugins" | "compat" = "zero-js";
+
 window.addEventListener("DOMContentLoaded", () => {
     loadDemoSections();
     registerDemoFeatures();
-    registerPlugins([]);
+    initDemoMode();
+    initThemeSwitcher();
 });
 
 function loadDemoSections() {
@@ -92,37 +96,36 @@ function registerDemoFeatures() {
             );
     }
     function buildHtmlPreview(elSource: Element) {
-
         if (elSource) {
             // this page's own source code
-
             var quineHtml = htmlCodeFormatter(elSource.outerHTML);
 
-            var previewPan = document.createElement("div");
-            var buttonCollapse = document.createElement("button");
+            // Use native HTML5 <details class="mg-collapse"> for 100% zero-JS native collapse
+            var previewPan = document.createElement("details");
+            var buttonCollapse = document.createElement("summary");
             var collapseContent = document.createElement("div");
             const preContent = document.createElement("pre");
             const clipboardButton = document.createElement("button");
             const clipboardButtonIcon = document.createElement("i");
 
-            previewPan.classList.add("mg-pad-b3");
+            previewPan.classList.add("mg-collapse", "mg-pad-b3");
             buttonCollapse.classList.add(
                 "mg-button",
                 "mg-button--clear",
                 "mg-button--primary",
                 "mg-button--small",
-                "mg-icon-dropdown",
-                "mg-collapse"
+                "mg-icon-dropdown"
             );
 
             clipboardButton.classList.add("mg-button--link", "mg-button--small");
 
-            clipboardButton.addEventListener("click", () => {
+            clipboardButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
                 navigator.clipboard.writeText(elSource.outerHTML);
             });
             clipboardButtonIcon.classList.add("mg-icon", "svg-icon-clipboard");
 
-            buttonCollapse.setAttribute("data-toggle", "collapse");
             buttonCollapse.textContent = "view html";
 
             collapseContent.classList.add(
@@ -153,4 +156,96 @@ function registerDemoFeatures() {
     });
 
     (window as any)?.prettyPrint();
+}
+
+function initThemeSwitcher() {
+    const savedTheme = typeof localStorage !== "undefined" ? localStorage.getItem("mg-theme") : null;
+    if (savedTheme) {
+        applyTheme(savedTheme, false);
+    }
+
+    document.querySelectorAll<HTMLElement>("[data-toggle~=theme]").forEach((el) => {
+        el.addEventListener("click", () => {
+            const targetTheme = el.getAttribute("data-value") || "auto";
+            applyTheme(targetTheme, true);
+        });
+    });
+}
+
+function initDemoMode() {
+    const savedMode = (typeof localStorage !== "undefined" ? localStorage.getItem("mg-demo-mode") : null) as
+        | "zero-js"
+        | "plugins"
+        | "compat"
+        | null;
+
+    setDemoMode(savedMode || "zero-js");
+
+    const modeBtnZero = document.getElementById("mode-btn-zero");
+    const modeBtnPlugins = document.getElementById("mode-btn-plugins");
+    const modeBtnCompat = document.getElementById("mode-btn-compat");
+
+    modeBtnZero?.addEventListener("click", () => setDemoMode("zero-js"));
+    modeBtnPlugins?.addEventListener("click", () => setDemoMode("plugins"));
+    modeBtnCompat?.addEventListener("click", () => setDemoMode("compat"));
+}
+
+function setDemoMode(mode: "zero-js" | "plugins" | "compat") {
+    currentDemoMode = mode;
+    if (typeof localStorage !== "undefined") {
+        localStorage.setItem("mg-demo-mode", mode);
+    }
+
+    const currentModeBtn = document.getElementById("demo-mode-current");
+    const modeBadge = document.getElementById("active-mode-badge");
+    const compatInfo = document.getElementById("compat-info");
+
+    const modeBtnZero = document.getElementById("mode-btn-zero");
+    const modeBtnPlugins = document.getElementById("mode-btn-plugins");
+    const modeBtnCompat = document.getElementById("mode-btn-compat");
+
+    [modeBtnZero, modeBtnPlugins, modeBtnCompat].forEach((btn) => btn?.classList.remove("active"));
+
+    if (mode === "zero-js") {
+        modeBtnZero?.classList.add("active");
+        if (currentModeBtn) currentModeBtn.innerHTML = "⚡ Zero-JS";
+        if (modeBadge) {
+            modeBadge.className = "mg-badge mg-bg-primary";
+            modeBadge.innerHTML = "⚡ Active Mode: Zero-JS (Pure HTML5 &amp; CSS)";
+        }
+        if (compatInfo) compatInfo.classList.add("mg-hidden");
+        registerPlugins([]);
+    } else if (mode === "plugins") {
+        modeBtnPlugins?.classList.add("active");
+        if (currentModeBtn) currentModeBtn.innerHTML = "🚀 JS Plugins";
+        if (modeBadge) {
+            modeBadge.className = "mg-badge mg-bg-success";
+            modeBadge.innerHTML = "🚀 Active Mode: JS Plugins Enabled";
+        }
+        if (compatInfo) compatInfo.classList.add("mg-hidden");
+        registerPlugins(["dropdowns", "modals", "navs", "collapses", "darkmode", "tabs"]);
+    } else if (mode === "compat") {
+        modeBtnCompat?.classList.add("active");
+        if (currentModeBtn) currentModeBtn.innerHTML = "🛡️ Auto-Compat";
+        if (modeBadge) {
+            modeBadge.className = "mg-badge mg-bg-warning";
+            modeBadge.innerHTML = "🛡️ Active Mode: Auto-Compat (Feature Detection)";
+        }
+
+        const support = checkBrowserSupport();
+        if (compatInfo) {
+            compatInfo.classList.remove("mg-hidden");
+            compatInfo.innerHTML = `
+                <div class="mg-text-bold mg-pad-b1">Browser Features:</div>
+                <div class="mg-row mg-gap1 mg-text-xs">
+                    <span>Dialog: ${support.dialog ? "✅" : "❌"}</span>
+                    <span>Popover: ${support.popover ? "✅" : "❌"}</span>
+                    <span>:has(): ${support.cssHas ? "✅" : "❌"}</span>
+                    <span>Details: ${support.details ? "✅" : "❌"}</span>
+                    <span>light-dark: ${support.lightDark ? "✅" : "❌"}</span>
+                </div>
+            `;
+        }
+        registerCompat({ polyfills: true });
+    }
 }

@@ -38,25 +38,25 @@
     </div>
   </div>
 
-  <h3>JavaScript Plugin Tabs (<code>data-toggle="tabs"</code>)</h3>
+  <h3>JavaScript Plugin Tabs (<code>data-toggle="tabs"</code>) <span class="mg-badge mg-bg-success mg-text-xs">JS Plugins Mode</span></h3>
   <p>
-    If you use the <strong>Mg+ JS plugin</strong>, add <code>data-target="id_of_tab_content"</code> to each tab item and <code>data-toggle="tabs"</code> to the <code>.mg-tabs</code> container. The plugin automatically handles ARIA roles (<code>role="tab"</code>, <code>aria-selected</code>) and active class switching.
+    When using the <strong>Mg+ JS plugin</strong>, add <code>data-target="id_of_tab_content"</code> to each tab item and <code>data-toggle="tabs"</code> to the <code>.mg-tabs</code> container. The plugin automatically handles ARIA roles (<code>role="tab"</code>, <code>aria-selected</code>) and active class switching. If JS is disabled, standard anchor links (<code>href="#tab1"</code>) provide native CSS <code>:target</code> fallback.
   </p>
 
   <div id="tabs-example" data-toggle="htmlpreview">
     <div class="mg-tabs" data-toggle="tabs">
       <ul>
         <li class="mg-tabs--item active" data-target="tab1">
-          <a href="#">First tab</a>
+          <a href="#tab1">First tab</a>
         </li>
         <li class="mg-tabs--item" data-target="tab2">
-          <a href="#">Second tab</a>
+          <a href="#tab2">Second tab</a>
         </li>
         <li class="mg-tabs--item" data-target="tab3">
-          <a href="#">Third tab</a>
+          <a href="#tab3">Third tab</a>
         </li>
       </ul>
-      <div class="mg-tabs--content" id="tab1">
+      <div class="mg-tabs--content active" id="tab1">
         1. JavaScript-driven tab content with automatic ARIA attribute synchronization.
       </div>
       <div class="mg-tabs--content" id="tab2">

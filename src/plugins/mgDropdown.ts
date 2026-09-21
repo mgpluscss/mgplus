@@ -6,6 +6,7 @@ function closeDropdown(toggle: HTMLElement, content: HTMLElement | null) {
   content?.setAttribute("aria-hidden", "true");
   toggle.classList.remove("opened");
   content?.classList.remove("opened");
+  toggle.blur();
   if (currentDropdown === toggle) {
     currentDropdown = null;
   }

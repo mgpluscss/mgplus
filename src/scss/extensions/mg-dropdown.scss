@@ -33,9 +33,9 @@
 
 }
 
-.opened+.mg-dropdown--content {
+.opened + .mg-dropdown--content,
+.mg-dropdown:focus-within > .mg-dropdown--content {
   display: block;
   opacity: 1;
   visibility: visible;
-
 }

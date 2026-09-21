@@ -88,6 +88,34 @@
                   </div>
                 </div>
               </div>
+              <div class="mg-dropdown" id="demo-mode-dropdown">
+                <button
+                  id="demo-mode-current"
+                  title="Demo Runtime Mode"
+                  data-toggle="dropdown"
+                  class="mg-button--small mg-icon-dropdown"
+                >
+                  ⚡ Zero-JS
+                </button>
+                <div class="mg-dropdown--content mg-pad1">
+                  <div class="mg-text-xs mg-text-bold mg-text-tertiary mg-pad-b1">DEMO RUNTIME MODE</div>
+                  <ul class="mg-nav">
+                    <li id="mode-btn-zero" class="active" style="cursor: pointer;">
+                      <strong>⚡ Zero-JS Mode</strong>
+                      <span class="mg-text-xs mg-display-block">Native HTML5 &amp; CSS only</span>
+                    </li>
+                    <li id="mode-btn-plugins" style="cursor: pointer;">
+                      <strong>🚀 JS Plugins Mode</strong>
+                      <span class="mg-text-xs mg-display-block">Classic Mg+ Vanilla JS plugins</span>
+                    </li>
+                    <li id="mode-btn-compat" style="cursor: pointer;">
+                      <strong>🛡️ Auto-Compat Mode</strong>
+                      <span class="mg-text-xs mg-display-block">Feature detection &amp; polyfills</span>
+                    </li>
+                  </ul>
+                  <div id="compat-info" class="mg-text-xs mg-pad-t1 mg-border-t mg-hidden"></div>
+                </div>
+              </div>
             </div>
             <div class="mg-right mg-dropdown mg-xl-display">
               <button
@@ -139,8 +167,11 @@
             Fully responsive
           </div>
           <div class="mg-bg-primary mg-text-center mg-pad1 mg-text-bold liquid">
-            Lightweight
+            Zero-JS Ready
           </div>
+        </div>
+        <div class="mg-marg-t2">
+          <span id="active-mode-badge" class="mg-badge mg-bg-primary">⚡ Active Mode: Zero-JS (Pure HTML5 &amp; CSS)</span>
         </div>
       </div>
       <!--Waves-->
