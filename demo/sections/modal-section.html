@@ -1,11 +1,14 @@
 <section id="modal">
   <h2>Modal &amp; Dialogs</h2>
   <p>
-    Mg+ uses the native HTML5 <code>&lt;dialog&gt;</code> element (<code>.mg-modal</code> or <code>.mg-dialog</code>) for all modals, drawers, and bottom sheets.
+    Mg+ uses the native HTML5 <code>&lt;dialog&gt;</code> element (<code>.mg-modal</code> or <code>.mg-dialog</code>)
+    for all modals, drawers, and bottom sheets.
   </p>
   <p>
-    Native dialogs render in the browser's <b>Top Layer</b>, guaranteeing they are never trapped by parent <code>z-index</code>, <code>transform</code>, or <code>overflow: hidden</code> stacking contexts.
-    They include built-in focus trapping, native <kbd>Escape</kbd> key dismissal, <code>::backdrop</code> blur styling, and zero-JS form closing via <code>&lt;form method="dialog"&gt;</code>.
+    Native dialogs render in the browser's <b>Top Layer</b>, guaranteeing they are never trapped by parent
+    <code>z-index</code>, <code>transform</code>, or <code>overflow: hidden</code> stacking contexts.
+    They include built-in focus trapping, native <kbd>Escape</kbd> key dismissal, <code>::backdrop</code> blur styling,
+    and zero-JS form closing via <code>&lt;form method="dialog"&gt;</code>.
   </p>
 
   <h3>Default Modal (Centered Dialog)</h3>
@@ -13,10 +16,7 @@
     Open via the native DOM API <code>dialog.showModal()</code>.
   </p>
   <div class="mg-container" id="modal-default-example" data-toggle="htmlpreview">
-    <button
-      class="mg-button mg-button--primary"
-      onclick="document.getElementById('dialog-default').showModal()"
-    >
+    <button class="mg-button mg-button--primary" onclick="document.getElementById('dialog-default').showModal()">
       Open Default Modal
     </button>
 
@@ -24,7 +24,8 @@
       <div class="mg-modal--header">
         <h3>Modal Title</h3>
         <form method="dialog" class="mg-marg-0">
-          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close" aria-label="Close dialog">
+          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close"
+            aria-label="Close dialog">
             <i class="mg-icon icon-close mg-icon--action"></i>
           </button>
         </form>
@@ -34,12 +35,13 @@
           This is a native HTML5 dialog styled with Mg+. It renders in the browser top-layer with blurred backdrop.
         </p>
         <p>
-          You can close it by clicking the close button below, clicking the <kbd>×</kbd> icon, clicking anywhere on the backdrop, or pressing the <kbd>Escape</kbd> key.
+          You can close it by clicking the close button below, clicking the <kbd>×</kbd> icon, clicking anywhere on the
+          backdrop, or pressing the <kbd>Escape</kbd> key.
         </p>
       </div>
       <div class="mg-modal--footer">
         <form method="dialog">
-          <button class="mg-button">Close Dialog (Zero-JS)</button>
+          <button class="mg-button">Close</button>
         </form>
       </div>
     </dialog>
@@ -52,22 +54,13 @@
   </p>
   <div class="mg-container" id="modal-drawers-example" data-toggle="htmlpreview">
     <div class="mg-row mg-gap2">
-      <button
-        class="mg-button"
-        onclick="document.getElementById('dialog-right').showModal()"
-      >
+      <button class="mg-button" onclick="document.getElementById('dialog-right').showModal()">
         Right Drawer
       </button>
-      <button
-        class="mg-button"
-        onclick="document.getElementById('dialog-left').showModal()"
-      >
+      <button class="mg-button" onclick="document.getElementById('dialog-left').showModal()">
         Left Drawer
       </button>
-      <button
-        class="mg-button"
-        onclick="document.getElementById('dialog-bottom').showModal()"
-      >
+      <button class="mg-button" onclick="document.getElementById('dialog-bottom').showModal()">
         Bottom Sheet
       </button>
     </div>
@@ -77,7 +70,8 @@
       <div class="mg-modal--header">
         <h3>Right Drawer</h3>
         <form method="dialog" class="mg-marg-0">
-          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close" aria-label="Close dialog">
+          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close"
+            aria-label="Close dialog">
             <i class="mg-icon icon-close mg-icon--action"></i>
           </button>
         </form>
@@ -109,7 +103,8 @@
       <div class="mg-modal--header">
         <h3>Left Drawer</h3>
         <form method="dialog" class="mg-marg-0">
-          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close" aria-label="Close dialog">
+          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close"
+            aria-label="Close dialog">
             <i class="mg-icon icon-close mg-icon--action"></i>
           </button>
         </form>
@@ -134,7 +129,8 @@
       <div class="mg-modal--header">
         <h3>Bottom Sheet</h3>
         <form method="dialog" class="mg-marg-0">
-          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close" aria-label="Close dialog">
+          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close"
+            aria-label="Close dialog">
             <i class="mg-icon icon-close mg-icon--action"></i>
           </button>
         </form>
@@ -155,10 +151,7 @@
     Use <code>.mg-modal--fullscreen</code> for full-viewport takeovers, checkout wizards, or image galleries.
   </p>
   <div class="mg-container" id="modal-fullscreen-example" data-toggle="htmlpreview">
-    <button
-      class="mg-button"
-      onclick="document.getElementById('dialog-fullscreen').showModal()"
-    >
+    <button class="mg-button" onclick="document.getElementById('dialog-fullscreen').showModal()">
       Open Fullscreen Modal
     </button>
 
@@ -166,7 +159,8 @@
       <div class="mg-modal--header">
         <h3>Fullscreen View</h3>
         <form method="dialog" class="mg-marg-0">
-          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close" aria-label="Close dialog">
+          <button type="submit" class="mg-button--clear mg-button--small mg-pad-0" data-action="close"
+            aria-label="Close dialog">
             <i class="mg-icon icon-close mg-icon--action"></i>
           </button>
         </form>
@@ -176,7 +170,7 @@
       </div>
       <div class="mg-modal--footer">
         <form method="dialog">
-          <button class="mg-button">Close Fullscreen</button>
+          <button class="mg-button">Close</button>
         </form>
       </div>
     </dialog>
