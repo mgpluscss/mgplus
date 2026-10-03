@@ -1,0 +1,54 @@
+<section id="accordions">
+  <h2>Accordions</h2>
+  <p>
+    Mg+ provides boxed accordion components built on native <strong>Pure CSS and HTML5</strong> primitives
+    (<code>&lt;details class="mg-accordion"&gt;</code>) with 100% zero JavaScript required. Each panel features a clean
+    disclosure chevron indicator, smooth transitions, and out-of-the-box keyboard accessibility.
+  </p>
+
+  <h3>Mutually Exclusive Accordions (Native <code>name="..."</code> Grouping)</h3>
+  <p>
+    By utilizing the standard HTML5 <code>name</code> attribute, opening one panel automatically closes any other open
+    panel within the same group natively with no JavaScript.
+  </p>
+
+  <div data-toggle="htmlpreview">
+    <details class="mg-accordion" name="demo-accordion-group" open>
+      <summary>What is Mg+?</summary>
+      <p>
+        Mg+ is a lightweight micro CSS library built on Milligram, emphasizing modern browser primitives, pure CSS
+        helpers, and full dark mode support.
+      </p>
+    </details>
+    <details class="mg-accordion" name="demo-accordion-group">
+      <summary>Does this require any JavaScript?</summary>
+      <p>
+        Zero JavaScript is required. The accordions rely entirely on HTML5 <code>&lt;details&gt;</code> and CSS styling,
+        with full keyboard navigation (<kbd>Enter</kbd> / <kbd>Space</kbd>) handled natively by the browser.
+      </p>
+    </details>
+    <details class="mg-accordion" name="demo-accordion-group">
+      <summary>How does grouping work?</summary>
+      <p>
+        By giving sibling <code>&lt;details&gt;</code> elements the same <code>name="demo-accordion-group"</code>
+        attribute, the browser natively coordinates mutually exclusive expansion.
+      </p>
+    </details>
+  </div>
+
+  <h3>Independent Accordions (Multiple Expandable)</h3>
+  <p>
+    Omit the <code>name</code> attribute to allow multiple accordion panels to remain expanded simultaneously.
+  </p>
+
+  <div data-toggle="htmlpreview">
+    <details class="mg-accordion">
+      <summary>Independent Panel 1</summary>
+      <p>This panel operates independently. Opening or closing it will not affect sibling panels.</p>
+    </details>
+    <details class="mg-accordion">
+      <summary>Independent Panel 2</summary>
+      <p>You can expand multiple panels at the same time for flexible content display.</p>
+    </details>
+  </div>
+</section>

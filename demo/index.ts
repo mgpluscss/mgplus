@@ -347,15 +347,15 @@ function setDemoMode(mode: "pure-css" | "compat") {
         if (currentModeBtn) currentModeBtn.innerHTML = `<i class="mg-icon">🛡️</i>`;
         if (modeBadge) {
             modeBadge.className = "mg-badge mg-bg-warning";
-            modeBadge.innerHTML = "🛡️ Active Mode: Compat Mode (Forced Polyfills)";
+            modeBadge.innerHTML = "🛡️ Compatibility Mode (Polyfills)";
         }
 
         const support = checkBrowserSupport();
         if (compatInfo) {
             compatInfo.classList.remove("mg-hidden");
             compatInfo.innerHTML = `
-                <div class="mg-text-bold mg-pad-b1">Forced Compat Polyfills:</div>
-                <div class="mg-row mg-gap1 mg-text-xs">
+              
+                <div class="mg-col mg-gap1  mg-x--start">
                     <span>Dialog: ${support.dialog ? "Native" : "Polyfilled"}</span>
                     <span>Popover: ${support.popover ? "Native" : "Polyfilled"}</span>
                     <span>:has(): ${support.cssHas ? "Native" : "Polyfilled"}</span>
