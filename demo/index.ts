@@ -54,19 +54,23 @@ function registerDemoFeatures() {
         theme?.style.setProperty("--mg-color-primary", color.hexString);
     });
 
-    const inputRadiusSelector = document.querySelector("#input-radius-selector");
-
-    inputRadiusSelector?.addEventListener("change", (ev: any) => {
-        theme.style.setProperty("--mg-input-radius", `${ev.target.value / 10}rem`);
-    });
-    const controlRadiusSelector = document.querySelector(
+    const inputRadiusSelector = document.querySelector<HTMLInputElement>(
+        "#input-radius-selector"
+    );
+    const controlRadiusSelector = document.querySelector<HTMLInputElement>(
         "#control-radius-selector"
     );
-    controlRadiusSelector?.addEventListener("change", (ev: any) => {
-        theme.style.setProperty(
-            "--mg-control-radius",
-            `${ev.target.value / 10}rem`
-        );
+
+    ["input", "change"].forEach((evt) => {
+        inputRadiusSelector?.addEventListener(evt, (ev: any) => {
+            theme.style.setProperty("--mg-input-radius", `${ev.target.value / 10}rem`);
+        });
+        controlRadiusSelector?.addEventListener(evt, (ev: any) => {
+            theme.style.setProperty(
+                "--mg-control-radius",
+                `${ev.target.value / 10}rem`
+            );
+        });
     });
     //loader interaction
     const loader = document.querySelector("#loader-button") as HTMLElement;

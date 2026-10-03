@@ -5,55 +5,122 @@
 
 @layer mg.base {
   input[type="range"] {
-    background: mg-variables.$color-quaternary;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
     border-radius: mg-variables.$input-radius;
-    display: inline-block;
-    height: 0.8rem;
-    margin-right: 1.76rem;
-    opacity: 0.9;
+    cursor: pointer;
+    display: block;
+    height: 2.4rem;
+    margin: 0.5rem 0 1rem;
     outline: none;
     padding: 0;
-    position: relative;
-    transition: opacity 0.2s;
-    vertical-align: top;
     width: 100%;
 
     &:hover {
       opacity: 1;
     }
 
-    &::-moz-range-thumb {
-      appearance: none;
-      background: mg-variables.$color-primary;
-      border-radius: 100%;
+    // WebKit Track
+    &::-webkit-slider-runnable-track {
+      background: mg-variables.$color-quaternary;
       border: none;
-      box-shadow: mg-variables.$control-shadow;
-      cursor: pointer;
-      height: 2.5rem;
-      width: 2.5rem;
+      border-radius: mg-variables.$input-radius;
+      height: 0.6rem;
+      width: 100%;
+      transition: background 0.2s ease;
     }
 
+    // WebKit Thumb
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       background: mg-variables.$color-primary;
       border: none;
+      border-radius: 50%;
       box-shadow: mg-variables.$control-shadow;
       cursor: pointer;
-      height: 2.5rem;
-      width: 2.5rem;
-      border-radius: var(--mg-control-radius);
+      height: 2rem;
+      width: 2rem;
+      margin-top: -0.7rem; // Center 2rem thumb on 0.6rem track: (0.6 - 2.0) / 2
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
     }
 
-    &:disabled {
-      opacity: 0.5;
+    // Firefox Track
+    &::-moz-range-track {
+      background: mg-variables.$color-quaternary;
+      border: none;
+      border-radius: mg-variables.$input-radius;
+      height: 0.6rem;
+      width: 100%;
+      transition: background 0.2s ease;
+    }
+
+    // Firefox Thumb
+    &::-moz-range-thumb {
+      appearance: none;
+      background: mg-variables.$color-primary;
+      border: none;
+      border-radius: 50%;
+      box-shadow: mg-variables.$control-shadow;
+      cursor: pointer;
+      height: 2rem;
+      width: 2rem;
+      transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::-webkit-slider-thumb {
+        box-shadow: 0 0 0 0.3rem var(--mg-color-quaternary), mg-variables.$control-shadow;
+      }
 
       &::-moz-range-thumb {
+        box-shadow: 0 0 0 0.3rem var(--mg-color-quaternary), mg-variables.$control-shadow;
+      }
+    }
+
+    // Disabled state
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+
+      &::-webkit-slider-runnable-track {
         background: mg-variables.$color-quaternary;
       }
 
       &::-webkit-slider-thumb {
+        background: mg-variables.$color-tertiary;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      &::-moz-range-track {
         background: mg-variables.$color-quaternary;
+      }
+
+      &::-moz-range-thumb {
+        background: mg-variables.$color-tertiary;
+        cursor: not-allowed;
+        transform: none;
       }
     }
   }
