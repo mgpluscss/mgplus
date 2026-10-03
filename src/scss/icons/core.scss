@@ -11,7 +11,7 @@ $icon-prefix: "mg-icon";
   box-sizing: content-box;
   display: inline-flex;
   font-family: inherit, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", emoji, sans-serif;
-  font-size: inherit;
+  font-size: medium;
   font-style: normal;
   font-weight: 400;
   justify-content: center;
@@ -37,6 +37,7 @@ $icon-prefix: "mg-icon";
 
   // When used with inner text or emojis (without pseudo-icon classes), disable empty pseudo-elements
   &:not([class*="icon-"], [class*="svg-icon-"]) {
+
     &::before,
     &::after {
       content: none;
