@@ -1,5 +1,3 @@
-let isModalInitialized = false;
-
 export function openModal(dialog: HTMLDialogElement) {
   if (typeof dialog.showModal === "function" && !dialog.open) {
     dialog.classList.remove("mg-modal--closing");
@@ -47,71 +45,73 @@ export function closeModal(dialog: HTMLDialogElement) {
   }
 }
 
+let modalController: AbortController | null = null;
+
 export function registerModals() {
   if (typeof document === "undefined") return;
 
-  if (!isModalInitialized) {
-    isModalInitialized = true;
+  unregisterModals();
+  modalController = new AbortController();
+  const { signal } = modalController;
 
-    // Close native dialog when clicking on its backdrop
-    document.addEventListener("click", (e: MouseEvent) => {
-      const target = e.target;
-      if (
-        target instanceof HTMLDialogElement &&
-        (target.classList.contains("mg-modal") || target.classList.contains("mg-dialog")) &&
-        target.open
-      ) {
-        const rect = target.getBoundingClientRect();
-        const isInDialog =
-          rect.top <= e.clientY &&
-          e.clientY <= rect.top + rect.height &&
-          rect.left <= e.clientX &&
-          e.clientX <= rect.left + rect.width;
-        if (!isInDialog) {
-          closeModal(target);
-        }
+  // Close native dialog when clicking on its backdrop
+  document.addEventListener("click", (e: MouseEvent) => {
+    const target = e.target;
+    if (
+      target instanceof HTMLDialogElement &&
+      (target.classList.contains("mg-modal") || target.classList.contains("mg-dialog")) &&
+      target.open
+    ) {
+      const rect = target.getBoundingClientRect();
+      const isInDialog =
+        rect.top <= e.clientY &&
+        e.clientY <= rect.top + rect.height &&
+        rect.left <= e.clientX &&
+        e.clientX <= rect.left + rect.width;
+      if (!isInDialog) {
+        closeModal(target);
       }
-    });
+    }
+  }, { signal });
 
-    // Close on any element with data-action="close"
-    document.addEventListener("click", (e: MouseEvent) => {
-      const closeBtn = (e.target as HTMLElement)?.closest<HTMLElement>("[data-action=close]");
-      if (!closeBtn) return;
-      const dialog = closeBtn.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
-      if (dialog) {
-        e.stopPropagation();
+  // Close on any element with data-action="close"
+  document.addEventListener("click", (e: MouseEvent) => {
+    const closeBtn = (e.target as HTMLElement)?.closest<HTMLElement>("[data-action=close]");
+    if (!closeBtn) return;
+    const dialog = closeBtn.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
+    if (dialog) {
+      e.stopPropagation();
+      closeModal(dialog);
+    }
+  }, { signal });
+
+  // Close on <form method="dialog"> submission with exit animation
+  document.addEventListener("submit", (e: SubmitEvent) => {
+    const form = e.target as HTMLFormElement;
+    if (form && form.getAttribute("method") === "dialog") {
+      const dialog = form.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
+      if (dialog && dialog.open && !dialog.classList.contains("mg-modal--closing")) {
+        e.preventDefault();
         closeModal(dialog);
       }
-    });
+    }
+  }, { signal });
 
-    // Close on <form method="dialog"> submission with exit animation
-    document.addEventListener("submit", (e: SubmitEvent) => {
-      const form = e.target as HTMLFormElement;
-      if (form && form.getAttribute("method") === "dialog") {
-        const dialog = form.closest<HTMLDialogElement>("dialog.mg-modal, dialog.mg-dialog");
-        if (dialog && dialog.open && !dialog.classList.contains("mg-modal--closing")) {
+  // Close on Escape key with exit animation
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      const openDialogs = document.querySelectorAll<HTMLDialogElement>(
+        "dialog.mg-modal[open], dialog.mg-dialog[open]"
+      );
+      if (openDialogs.length > 0) {
+        const topDialog = openDialogs[openDialogs.length - 1];
+        if (!topDialog.classList.contains("mg-modal--closing")) {
           e.preventDefault();
-          closeModal(dialog);
+          closeModal(topDialog);
         }
       }
-    });
-
-    // Close on Escape key with exit animation
-    document.addEventListener("keydown", (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        const openDialogs = document.querySelectorAll<HTMLDialogElement>(
-          "dialog.mg-modal[open], dialog.mg-dialog[open]"
-        );
-        if (openDialogs.length > 0) {
-          const topDialog = openDialogs[openDialogs.length - 1];
-          if (!topDialog.classList.contains("mg-modal--closing")) {
-            e.preventDefault();
-            closeModal(topDialog);
-          }
-        }
-      }
-    });
-  }
+    }
+  }, { signal });
 
   document.querySelectorAll<HTMLElement>("[data-toggle~=modal]").forEach(setupModal);
 
@@ -128,6 +128,18 @@ export function registerModals() {
     trigger.addEventListener("click", (e: Event) => {
       e.preventDefault();
       openModal(modal);
+    }, { signal });
+  }
+}
+
+export function unregisterModals() {
+  if (modalController) {
+    modalController.abort();
+    modalController = null;
+  }
+  if (typeof document !== "undefined") {
+    document.querySelectorAll<HTMLElement>("[data-toggle~=modal]").forEach((el) => {
+      delete el.dataset.mgModalInitialized;
     });
   }
 }

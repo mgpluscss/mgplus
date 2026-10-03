@@ -1,5 +1,11 @@
+let tabsController: AbortController | null = null;
+
 export function registerTabs() {
   if (typeof document === "undefined") return;
+
+  unregisterTabs();
+  tabsController = new AbortController();
+  const { signal } = tabsController;
 
   document.querySelectorAll<HTMLElement>("[data-toggle~=tabs]").forEach(setupTabs);
 
@@ -84,6 +90,18 @@ export function registerTabs() {
           }
         }
       }
+    }, { signal });
+  }
+}
+
+export function unregisterTabs() {
+  if (tabsController) {
+    tabsController.abort();
+    tabsController = null;
+  }
+  if (typeof document !== "undefined") {
+    document.querySelectorAll<HTMLElement>("[data-toggle~=tabs]").forEach((el) => {
+      delete el.dataset.mgTabsInitialized;
     });
   }
 }

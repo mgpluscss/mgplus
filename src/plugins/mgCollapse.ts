@@ -1,4 +1,12 @@
+let collapsesController: AbortController | null = null;
+
 export function registerCollapses() {
+  if (typeof document === "undefined") return;
+
+  unregisterCollapses();
+  collapsesController = new AbortController();
+  const { signal } = collapsesController;
+
   document.querySelectorAll<HTMLElement>("[data-toggle~=collapse]").forEach(setupCollapse);
 
   function setupCollapse(collapseToggle: HTMLElement) {
@@ -21,7 +29,7 @@ export function registerCollapses() {
       collapseContent.setAttribute("aria-hidden", "true");
     }
 
-    collapseToggle.addEventListener("click", toggleCollapse);
+    collapseToggle.addEventListener("click", toggleCollapse, { signal });
 
     function toggleCollapse(e: Event) {
       e.preventDefault();
@@ -38,6 +46,18 @@ export function registerCollapses() {
         collapseContent.classList.toggle("opened", nextState);
       }
     }
+  }
+}
+
+export function unregisterCollapses() {
+  if (collapsesController) {
+    collapsesController.abort();
+    collapsesController = null;
+  }
+  if (typeof document !== "undefined") {
+    document.querySelectorAll<HTMLElement>("[data-toggle~=collapse]").forEach((el) => {
+      delete el.dataset.mgCollapseInitialized;
+    });
   }
 }
 

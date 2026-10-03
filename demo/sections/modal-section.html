@@ -10,13 +10,11 @@
 
   <h3>Default Modal (Centered Dialog)</h3>
   <p>
-    Open via the native DOM API <code>dialog.showModal()</code>, or use the Mg+ plugin with <code>data-toggle="modal" data-target="dialog-id"</code>.
+    Open via the native DOM API <code>dialog.showModal()</code>.
   </p>
   <div class="mg-container" id="modal-default-example" data-toggle="htmlpreview">
     <button
       class="mg-button mg-button--primary"
-      data-toggle="modal"
-      data-target="dialog-default"
       onclick="document.getElementById('dialog-default').showModal()"
     >
       Open Default Modal
@@ -56,24 +54,18 @@
     <div class="mg-row mg-gap2">
       <button
         class="mg-button"
-        data-toggle="modal"
-        data-target="dialog-right"
         onclick="document.getElementById('dialog-right').showModal()"
       >
         Right Drawer
       </button>
       <button
         class="mg-button"
-        data-toggle="modal"
-        data-target="dialog-left"
         onclick="document.getElementById('dialog-left').showModal()"
       >
         Left Drawer
       </button>
       <button
         class="mg-button"
-        data-toggle="modal"
-        data-target="dialog-bottom"
         onclick="document.getElementById('dialog-bottom').showModal()"
       >
         Bottom Sheet
@@ -93,7 +85,7 @@
       <div class="mg-modal--body">
         <p>This off-canvas drawer slides in from the right edge of the screen.</p>
         <div class="mg-dropdown" role="menu">
-          <button title="choose an option" class="mg-icon-dropdown" data-toggle="dropdown">
+          <button title="choose an option" class="mg-icon-dropdown">
             Dropdown inside drawer
           </button>
           <div class="mg-dropdown--content">
@@ -165,8 +157,6 @@
   <div class="mg-container" id="modal-fullscreen-example" data-toggle="htmlpreview">
     <button
       class="mg-button"
-      data-toggle="modal"
-      data-target="dialog-fullscreen"
       onclick="document.getElementById('dialog-fullscreen').showModal()"
     >
       Open Fullscreen Modal

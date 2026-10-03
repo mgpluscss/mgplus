@@ -1,5 +1,5 @@
+let dropdownController: AbortController | null = null;
 let currentDropdown: HTMLElement | null = null;
-let isDropdownDocListenerInitialized = false;
 
 function closeDropdown(toggle: HTMLElement, content: HTMLElement | null) {
   toggle.setAttribute("aria-expanded", "false");
@@ -43,34 +43,34 @@ function closeCurrent() {
 export function registerDropdowns() {
   if (typeof document === "undefined") return;
 
-  if (!isDropdownDocListenerInitialized) {
-    isDropdownDocListenerInitialized = true;
+  unregisterDropdowns();
+  dropdownController = new AbortController();
+  const { signal } = dropdownController;
 
-    document.addEventListener("click", (event: Event) => {
-      const element = event.target as Node;
-      if (!currentDropdown) return;
+  document.addEventListener("click", (event: Event) => {
+    const element = event.target as Node;
+    if (!currentDropdown) return;
 
-      const target = currentDropdown.getAttribute("data-target");
-      const content = target
-        ? document.getElementById(target)
-        : (currentDropdown.nextElementSibling as HTMLElement | null);
+    const target = currentDropdown.getAttribute("data-target");
+    const content = target
+      ? document.getElementById(target)
+      : (currentDropdown.nextElementSibling as HTMLElement | null);
 
-      if (
-        !currentDropdown.contains(element) &&
-        (!content || !content.contains(element))
-      ) {
-        closeCurrent();
-      }
-    });
+    if (
+      !currentDropdown.contains(element) &&
+      (!content || !content.contains(element))
+    ) {
+      closeCurrent();
+    }
+  }, { signal });
 
-    document.addEventListener("keydown", (event: KeyboardEvent) => {
-      if (event.key === "Escape" && currentDropdown) {
-        const toggleToFocus = currentDropdown;
-        closeCurrent();
-        toggleToFocus.focus();
-      }
-    });
-  }
+  document.addEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Escape" && currentDropdown) {
+      const toggleToFocus = currentDropdown;
+      closeCurrent();
+      toggleToFocus.focus();
+    }
+  }, { signal });
 
   document.querySelectorAll<HTMLElement>("[data-toggle~=dropdown]").forEach(setupDropdown);
 
@@ -103,6 +103,19 @@ export function registerDropdowns() {
         closeCurrent();
         openDropdown(dropdownToggle, dropdownContent);
       }
+    }, { signal });
+  }
+}
+
+export function unregisterDropdowns() {
+  closeCurrent();
+  if (dropdownController) {
+    dropdownController.abort();
+    dropdownController = null;
+  }
+  if (typeof document !== "undefined") {
+    document.querySelectorAll<HTMLElement>("[data-toggle~=dropdown]").forEach((el) => {
+      delete el.dataset.mgDropdownInitialized;
     });
   }
 }

@@ -2,15 +2,14 @@
   <h2>Navs</h2>
   <p>
     Navs are used to navigate through the application. Below, you will find
-    examples of how to use the nav system to create a variety of nav states.
-  </p>
-  <p>
-    Mg+ supports both modern <strong>Zero-JS native navigation</strong> using standard HTML <code>aria-current="page"</code>, and the <strong>JavaScript plugin</strong> (<code>data-toggle="nav"</code>) for client-side state switching.
+    examples of how to use the nav system to create a variety of navigation layouts using <strong>Pure CSS</strong> and
+    standard semantic HTML <code>aria-current="page"</code>.
   </p>
 
-  <h3>Native Zero-JS Nav (<code>aria-current="page"</code>) <span class="mg-badge mg-bg-primary mg-text-xs">⚡ Zero-JS Native</span></h3>
+  <h3>Semantic Nav (<code>aria-current="page"</code>) <span class="mg-badge mg-bg-primary mg-text-xs"></span></h3>
   <p>
-    Standard semantic HTML. Mark the active page or section with <code>aria-current="page"</code> on the link. Mg+ styles the active state automatically with zero JavaScript required.
+    Standard semantic HTML. Mark the active page or section with <code>aria-current="page"</code> on the link. Mg+
+    styles the active state automatically with zero JavaScript required.
   </p>
   <div data-toggle="htmlpreview">
     <ul class="mg-nav mg-nav--inline">
@@ -30,14 +29,14 @@
     </ul>
   </div>
 
-  <h3>JavaScript Plugin Nav (<code>data-toggle="nav"</code>) <span class="mg-badge mg-bg-success mg-text-xs">JS Plugins Mode</span></h3>
+  <h3>Pure CSS Nav Layouts <span class="mg-badge mg-bg-primary mg-text-xs"></span></h3>
   <p>
-    The JS plugin listens for clicks and dynamically swaps the <code>.active</code> class across items for client-side single-page interactions.
+    Combine utility modifiers to style inline, button-style, wrapped, or colored navigation panels.
   </p>
   <div data-toggle="htmlpreview">
     <h4>Nav vertical (default)</h4>
     <code>mg-nav</code>
-    <ul class="mg-nav" data-toggle="nav">
+    <ul class="mg-nav">
       <li class="active"><a href="#home">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -47,7 +46,7 @@
   <div data-toggle="htmlpreview">
     <h4>Nav inline</h4>
     <code>mg-nav mg-nav--inline</code>
-    <ul class="mg-nav mg-nav--inline" data-toggle="nav">
+    <ul class="mg-nav mg-nav--inline">
       <li class="active"><a href="#home">Home</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -56,18 +55,18 @@
   </div>
 
   <div data-toggle="htmlpreview">
-    <h4>Nav buttons</h4>    
+    <h4>Nav buttons</h4>
     <code>mg-nav mg-nav--buttons </code>
-    <ul class="mg-nav mg-nav--buttons" data-toggle="nav">
+    <ul class="mg-nav mg-nav--buttons">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
       <li><a class="mg-button" href="#news">News</a></li>
       <li><a class="mg-button" href="#contact">Contact</a></li>
       <li><a class="mg-button" href="#about">About</a></li>
     </ul>
-  </div>  
+  </div>
   <h4>Nav buttons with custom background</h4>
   <code>+ mg-bg-quinary</code>
-  <ul class="mg-nav mg-nav--buttons mg-bg-quinary mg-rounded" data-toggle="nav">
+  <ul class="mg-nav mg-nav--buttons mg-bg-quinary mg-rounded">
     <li class="active"><a class="mg-button" href="#home">Home</a></li>
     <li><a class="mg-button" href="#news">News</a></li>
     <li><a class="mg-button" href="#contact">Contact</a></li>
@@ -76,7 +75,7 @@
   <div data-toggle="htmlpreview">
     <h4>Nav buttons (wrapped)</h4>
     <code>+ mg-wrap</code>
-    <ul class="mg-nav mg-nav--buttons mg-wrap" data-toggle="nav">
+    <ul class="mg-nav mg-nav--buttons mg-wrap">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
       <li><a class="mg-button" href="#news">News</a></li>
       <li><a class="mg-button" href="#contact">Contact</a></li>
@@ -84,7 +83,7 @@
     </ul>
     <h4>Nav buttons (vertical)</h4>
     <code>+ mg-col</code>
-    <ul class="mg-nav mg-nav--buttons mg-col mg-x12 mg-m2" data-toggle="nav">
+    <ul class="mg-nav mg-nav--buttons mg-col mg-x12 mg-m2">
       <li class="active"><a class="mg-button" href="#home">Home</a></li>
       <li><a class="mg-button mg-bg-red" href="#news">News</a></li>
       <li><a class="mg-button" href="#contact">Contact</a></li>

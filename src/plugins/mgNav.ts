@@ -1,5 +1,11 @@
+let navController: AbortController | null = null;
+
 export function registerNavs() {
   if (typeof document === "undefined") return;
+
+  unregisterNavs();
+  navController = new AbortController();
+  const { signal } = navController;
 
   document.querySelectorAll<HTMLElement>("[data-toggle~=nav]").forEach(setupNav);
 
@@ -34,6 +40,18 @@ export function registerNavs() {
         listItem.classList.add("active");
         listItem.setAttribute("data-active", "true");
       }
+    }, { signal });
+  }
+}
+
+export function unregisterNavs() {
+  if (navController) {
+    navController.abort();
+    navController = null;
+  }
+  if (typeof document !== "undefined") {
+    document.querySelectorAll<HTMLElement>("[data-toggle~=nav]").forEach((el) => {
+      delete el.dataset.mgNavInitialized;
     });
   }
 }

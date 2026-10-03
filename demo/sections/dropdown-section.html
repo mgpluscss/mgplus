@@ -1,17 +1,14 @@
 <section id="dropdown">
-  <h2>Dropdown <span class="mg-badge mg-bg-success mg-text-xs">Dual Mode</span></h2>
+  <h2>Dropdown <span class="mg-badge mg-bg-primary mg-text-xs"></span></h2>
   <p>
-    Mg+ dropdowns support both <strong>Zero-JS native interactions</strong> (via modern HTML5 Popover API or CSS <code>:focus-within</code>) and the classic <strong>JavaScript plugin</strong> (<code>data-toggle="dropdown"</code>).
+    Mg+ dropdowns support <strong>Pure CSS interactions</strong> (via modern HTML5 Popover API or CSS
+    <code>:focus-within</code>) with zero JavaScript required.
   </p>
   <p>Place <code>mg-dropdown</code> as container class with a button trigger and <code>mg-dropdown--content</code>.</p>
 
   <div>
     <div class="mg-dropdown" role="menu" data-toggle="htmlpreview">
-      <button
-        title="choose a car"
-        class="mg-icon-dropdown"
-        data-toggle="dropdown"
-      >
+      <button title="choose a car" class="mg-icon-dropdown">
         Choose a car
       </button>
       <div class="mg-dropdown--content">
@@ -40,11 +37,7 @@
       </p>
       <div class="mg-row mg-x--between" data-toggle="htmlpreview">
         <div class="mg-dropdown" role="menu" data-value="bmw">
-          <button
-            title="left side"
-            data-toggle="dropdown"
-            class="mg-icon-dropdown"
-          >
+          <button title="left side" class="mg-icon-dropdown">
             left side
           </button>
           <div class="mg-dropdown--content mg-left">
@@ -56,11 +49,7 @@
           </div>
         </div>
         <div class="mg-dropdown" role="menu" data-value="bmw">
-          <button
-            title="right side"
-            data-toggle="dropdown"
-            class="mg-icon-dropdown"
-          >
+          <button title="right side" class="mg-icon-dropdown">
             right side
           </button>
           <div class="mg-dropdown--content mg-right">
@@ -75,9 +64,10 @@
     </div>
   </div>
 
-  <h3>Zero-JS Native Popover API <span class="mg-badge mg-bg-primary mg-text-xs">⚡ Zero-JS Native</span></h3>
+  <h3>Zero-JS Native Popover API</h3>
   <p>
-    Use modern HTML5 native <code>popover</code> and <code>popovertarget</code> attributes with <code>mg-popover</code> or <code>mg-tooltip</code> for accessible dropdowns and popups with <b>zero JavaScript required</b>.
+    Use modern HTML5 native <code>popover</code> and <code>popovertarget</code> attributes with <code>mg-popover</code>
+    or <code>mg-tooltip</code> for accessible dropdowns and popups with <b>zero JavaScript required</b>.
   </p>
   <div class="mg-container" id="popover-example" data-toggle="htmlpreview">
     <div class="mg-flex mg-gap2">
@@ -87,7 +77,8 @@
 
       <div id="native-popover-demo" popover class="mg-popover">
         <p class="mg-text-m"><strong>Zero-JS Popover</strong></p>
-        <p>This popover is driven by native browser HTML5 Popover API. Click anywhere outside or press Escape to dismiss.</p>
+        <p>This popover is driven by native browser HTML5 Popover API. Click anywhere outside or press Escape to
+          dismiss.</p>
         <ul class="mg-nav">
           <li>Dashboard</li>
           <li>Settings</li>

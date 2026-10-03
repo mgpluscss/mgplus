@@ -1,8 +1,8 @@
-import { registerCollapses, registergCollapses } from "./mgCollapse";
-import { registerDropdowns } from "./mgDropdown";
-import { registerModals } from "./mgModal";
-import { registerNavs } from "./mgNav";
-import { registerTabs } from "./mgTabs";
+import { registerCollapses, registergCollapses, unregisterCollapses } from "./mgCollapse";
+import { registerDropdowns, unregisterDropdowns } from "./mgDropdown";
+import { registerModals, unregisterModals, openModal, closeModal } from "./mgModal";
+import { registerNavs, unregisterNavs } from "./mgNav";
+import { registerTabs, unregisterTabs } from "./mgTabs";
 import { registerDarkMode, applyTheme, getCurrentTheme, getPreferredTheme } from "./mgDarkMode";
 import {
   registerCompat,
@@ -19,10 +19,17 @@ import {
 export {
   registerCollapses,
   registergCollapses,
+  unregisterCollapses,
   registerDropdowns,
+  unregisterDropdowns,
   registerModals,
+  unregisterModals,
+  openModal,
+  closeModal,
   registerNavs,
+  unregisterNavs,
   registerTabs,
+  unregisterTabs,
   registerDarkMode,
   applyTheme,
   getCurrentTheme,
@@ -111,6 +118,49 @@ export function registerPlugins(plugins?: string[] | string) {
         break;
       default:
         console.warn(`mgplus - unknown plugin: ${pluginName}`);
+        break;
+    }
+  }
+}
+
+export function unregisterPlugins(plugins?: string[] | string) {
+  if (!plugins) return;
+
+  const list = Array.isArray(plugins)
+    ? plugins
+    : plugins.split(",").map((p) => p.trim());
+
+  for (const pluginName of list) {
+    const normalized = pluginName.toLowerCase().trim();
+    switch (normalized) {
+      case "all":
+        unregisterDropdowns();
+        unregisterModals();
+        unregisterNavs();
+        unregisterTabs();
+        unregisterCollapses();
+        return;
+      case "dropdowns":
+      case "dropdown":
+        unregisterDropdowns();
+        break;
+      case "modals":
+      case "modal":
+        unregisterModals();
+        break;
+      case "navs":
+      case "nav":
+        unregisterNavs();
+        break;
+      case "tabs":
+      case "tab":
+        unregisterTabs();
+        break;
+      case "collapses":
+      case "collapse":
+        unregisterCollapses();
+        break;
+      default:
         break;
     }
   }

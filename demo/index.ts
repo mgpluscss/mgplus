@@ -1,13 +1,14 @@
-import { registerPlugins, registerCompat, checkBrowserSupport, applyTheme } from '../src/plugins/main.ts';
+import { registerPlugins, unregisterPlugins, registerCompat, checkBrowserSupport, applyTheme } from '../src/plugins/main.ts';
 import iro from '@jaames/iro';
 
-let currentDemoMode: "zero-js" | "plugins" | "compat" = "zero-js";
+let currentDemoMode: "pure-css" | "compat" = "pure-css";
 
 window.addEventListener("DOMContentLoaded", () => {
     loadDemoSections();
     registerDemoFeatures();
     initDemoMode();
     initThemeSwitcher();
+    initToolbarDropdowns();
 });
 
 function loadDemoSections() {
@@ -165,32 +166,153 @@ function initThemeSwitcher() {
     }
 
     document.querySelectorAll<HTMLElement>("[data-toggle~=theme]").forEach((el) => {
+        el.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+        });
         el.addEventListener("click", () => {
             const targetTheme = el.getAttribute("data-value") || "auto";
             applyTheme(targetTheme, true);
+            closeAllToolbarDropdowns();
         });
+        el.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                const targetTheme = el.getAttribute("data-value") || "auto";
+                applyTheme(targetTheme, true);
+                closeAllToolbarDropdowns();
+            }
+        });
+    });
+}
+
+function initToolbarDropdowns() {
+    const toolbarDropdowns = document.querySelectorAll<HTMLElement>(
+        "header nav .mg-dropdown:not(#demo-mode-dropdown)"
+    );
+
+    toolbarDropdowns.forEach((dd) => {
+        const btn = dd.querySelector<HTMLElement>("button.mg-icon-dropdown, button[data-toggle=dropdown]");
+        const content = dd.querySelector<HTMLElement>(".mg-dropdown--content");
+        if (!btn || !content) return;
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpened = btn.classList.contains("opened");
+
+            // Close all other dropdowns
+            closeAllToolbarDropdowns();
+
+            if (!isOpened) {
+                btn.classList.add("opened");
+                btn.setAttribute("aria-expanded", "true");
+                content.classList.add("opened");
+            }
+        });
+    });
+
+    document.addEventListener("click", (e) => {
+        const target = e.target as Node;
+        toolbarDropdowns.forEach((dd) => {
+            if (!dd.contains(target)) {
+                const btn = dd.querySelector<HTMLElement>("button.mg-icon-dropdown, button[data-toggle=dropdown]");
+                const content = dd.querySelector<HTMLElement>(".mg-dropdown--content");
+                btn?.classList.remove("opened");
+                btn?.setAttribute("aria-expanded", "false");
+                content?.classList.remove("opened");
+            }
+        });
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeAllToolbarDropdowns();
+        }
+    });
+}
+
+function closeAllToolbarDropdowns() {
+    const dropdowns = document.querySelectorAll<HTMLElement>("header nav .mg-dropdown");
+    dropdowns.forEach((dd) => {
+        const btn = dd.querySelector<HTMLElement>("button.mg-icon-dropdown, button[data-toggle=dropdown]");
+        const content = dd.querySelector<HTMLElement>(".mg-dropdown--content");
+        btn?.classList.remove("opened");
+        btn?.setAttribute("aria-expanded", "false");
+        content?.classList.remove("opened");
     });
 }
 
 function initDemoMode() {
     const savedMode = (typeof localStorage !== "undefined" ? localStorage.getItem("mg-demo-mode") : null) as
-        | "zero-js"
-        | "plugins"
+        | "pure-css"
         | "compat"
         | null;
 
-    setDemoMode(savedMode || "zero-js");
+    setDemoMode(savedMode === "compat" ? "compat" : "pure-css");
 
-    const modeBtnZero = document.getElementById("mode-btn-zero");
-    const modeBtnPlugins = document.getElementById("mode-btn-plugins");
-    const modeBtnCompat = document.getElementById("mode-btn-compat");
+    const modeDropdown = document.getElementById("demo-mode-dropdown");
+    const modeCurrentBtn = document.getElementById("demo-mode-current");
+    const modeDropdownContent = modeDropdown?.querySelector<HTMLElement>(".mg-dropdown--content");
 
-    modeBtnZero?.addEventListener("click", () => setDemoMode("zero-js"));
-    modeBtnPlugins?.addEventListener("click", () => setDemoMode("plugins"));
-    modeBtnCompat?.addEventListener("click", () => setDemoMode("compat"));
+    function closeModeDropdown() {
+        modeCurrentBtn?.classList.remove("opened");
+        modeCurrentBtn?.setAttribute("aria-expanded", "false");
+        modeDropdownContent?.classList.remove("opened");
+    }
+
+    modeCurrentBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = modeCurrentBtn.classList.contains("opened");
+        closeAllToolbarDropdowns();
+        if (!isOpen) {
+            modeCurrentBtn.classList.add("opened");
+            modeCurrentBtn.setAttribute("aria-expanded", "true");
+            modeDropdownContent?.classList.add("opened");
+        }
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!modeDropdown?.contains(e.target as Node)) {
+            closeModeDropdown();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            closeModeDropdown();
+        }
+    });
+
+    const bindModeButton = (id: string, mode: "pure-css" | "compat") => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+
+        btn.addEventListener("mousedown", (e) => {
+            e.preventDefault();
+        });
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setDemoMode(mode);
+            closeModeDropdown();
+        });
+
+        btn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setDemoMode(mode);
+                closeModeDropdown();
+            }
+        });
+    };
+
+    bindModeButton("mode-btn-pure", "pure-css");
+    bindModeButton("mode-btn-compat", "compat");
 }
 
-function setDemoMode(mode: "zero-js" | "plugins" | "compat") {
+function setDemoMode(mode: "pure-css" | "compat") {
     currentDemoMode = mode;
     if (typeof localStorage !== "undefined") {
         localStorage.setItem("mg-demo-mode", mode);
@@ -200,52 +322,47 @@ function setDemoMode(mode: "zero-js" | "plugins" | "compat") {
     const modeBadge = document.getElementById("active-mode-badge");
     const compatInfo = document.getElementById("compat-info");
 
-    const modeBtnZero = document.getElementById("mode-btn-zero");
-    const modeBtnPlugins = document.getElementById("mode-btn-plugins");
+    const modeBtnPure = document.getElementById("mode-btn-pure");
     const modeBtnCompat = document.getElementById("mode-btn-compat");
 
-    [modeBtnZero, modeBtnPlugins, modeBtnCompat].forEach((btn) => btn?.classList.remove("active"));
+    [modeBtnPure, modeBtnCompat].forEach((btn) => btn?.classList.remove("active"));
 
-    if (mode === "zero-js") {
-        modeBtnZero?.classList.add("active");
-        if (currentModeBtn) currentModeBtn.innerHTML = "⚡ Zero-JS";
+    // Always unregister existing polyfills first to cleanly tear down old state
+    unregisterPlugins("all");
+
+    if (mode === "pure-css") {
+        modeBtnPure?.classList.add("active");
+        if (currentModeBtn) currentModeBtn.innerHTML = "⚡ Pure CSS";
         if (modeBadge) {
             modeBadge.className = "mg-badge mg-bg-primary";
-            modeBadge.innerHTML = "⚡ Active Mode: Zero-JS (Pure HTML5 &amp; CSS)";
+            modeBadge.innerHTML = "⚡ Active Mode: Pure CSS (Zero-JS)";
         }
         if (compatInfo) compatInfo.classList.add("mg-hidden");
-        registerPlugins([]);
-    } else if (mode === "plugins") {
-        modeBtnPlugins?.classList.add("active");
-        if (currentModeBtn) currentModeBtn.innerHTML = "🚀 JS Plugins";
-        if (modeBadge) {
-            modeBadge.className = "mg-badge mg-bg-success";
-            modeBadge.innerHTML = "🚀 Active Mode: JS Plugins Enabled";
-        }
-        if (compatInfo) compatInfo.classList.add("mg-hidden");
-        registerPlugins(["dropdowns", "modals", "navs", "collapses", "darkmode", "tabs"]);
     } else if (mode === "compat") {
         modeBtnCompat?.classList.add("active");
-        if (currentModeBtn) currentModeBtn.innerHTML = "🛡️ Auto-Compat";
+        if (currentModeBtn) currentModeBtn.innerHTML = "🛡️ Compat Mode";
         if (modeBadge) {
             modeBadge.className = "mg-badge mg-bg-warning";
-            modeBadge.innerHTML = "🛡️ Active Mode: Auto-Compat (Feature Detection)";
+            modeBadge.innerHTML = "🛡️ Active Mode: Compat Mode (Forced Polyfills)";
         }
 
         const support = checkBrowserSupport();
         if (compatInfo) {
             compatInfo.classList.remove("mg-hidden");
             compatInfo.innerHTML = `
-                <div class="mg-text-bold mg-pad-b1">Browser Features:</div>
+                <div class="mg-text-bold mg-pad-b1">Forced Compat Polyfills:</div>
                 <div class="mg-row mg-gap1 mg-text-xs">
-                    <span>Dialog: ${support.dialog ? "✅" : "❌"}</span>
-                    <span>Popover: ${support.popover ? "✅" : "❌"}</span>
-                    <span>:has(): ${support.cssHas ? "✅" : "❌"}</span>
-                    <span>Details: ${support.details ? "✅" : "❌"}</span>
-                    <span>light-dark: ${support.lightDark ? "✅" : "❌"}</span>
+                    <span>Dialog: ${support.dialog ? "Native" : "Polyfilled"}</span>
+                    <span>Popover: ${support.popover ? "Native" : "Polyfilled"}</span>
+                    <span>:has(): ${support.cssHas ? "Native" : "Polyfilled"}</span>
+                    <span>Details: ${support.details ? "Native" : "Polyfilled"}</span>
+                    <span>light-dark: ${support.lightDark ? "Native" : "Polyfilled"}</span>
                 </div>
             `;
         }
-        registerCompat({ polyfills: true });
+        registerCompat({
+            polyfills: true,
+            forcePlugins: ["modal", "dropdown", "tabs", "nav", "collapse", "darkmode"],
+        });
     }
 }

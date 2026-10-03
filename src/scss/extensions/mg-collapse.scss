@@ -59,6 +59,11 @@
   }
 
   // Class-based / JS collapse (closed by default outside native details)
+  .mg-collapse:not(details),
+  [data-toggle~="collapse"] {
+    cursor: pointer;
+  }
+
   .mg-collapse--content:not(.opened, details > *),
   .mg-collapse--content[aria-hidden="true"]:not(details > *),
   .mg-collapse:not(.opened) + .mg-collapse--content {
