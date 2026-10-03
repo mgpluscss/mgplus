@@ -1,22 +1,28 @@
 @use "../mg-variables";
 
-$icon-border-width: .2rem;
+$icon-border-width: 0.2rem;
 $icon-prefix: "mg-icon";
 
 .#{$icon-prefix} {
-  box-sizing: content-box;
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+  align-items: center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
-  display: inline-block;
+  box-sizing: content-box;
+  display: inline-flex;
+  font-family: inherit, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", emoji, sans-serif;
   font-size: inherit;
   font-style: normal;
-  min-width: 2rem;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
   min-height: 2rem;
+  min-width: 2rem;
   position: relative;
-  text-indent: -9999rem;
+  text-align: center;
+  user-select: none;
   vertical-align: middle;
 
   &::before,
@@ -29,12 +35,20 @@ $icon-prefix: "mg-icon";
     transform: translate(-50%, -50%);
   }
 
+  // When used with inner text or emojis (without pseudo-icon classes), disable empty pseudo-elements
+  &:not([class*="icon-"], [class*="svg-icon-"]) {
+    &::before,
+    &::after {
+      content: none;
+      display: none;
+    }
+  }
 
   @each $key, $value in mg-variables.$font-sizes {
     &.#{$icon-prefix}--#{$key} {
       font-size: $value;
-      min-width: $value;
       min-height: $value;
+      min-width: $value;
     }
   }
 }
