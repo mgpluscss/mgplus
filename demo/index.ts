@@ -332,7 +332,7 @@ function setDemoMode(mode: "pure-css" | "compat") {
 
     if (mode === "pure-css") {
         modeBtnPure?.classList.add("active");
-        if (currentModeBtn) currentModeBtn.innerHTML = "⚡ Pure CSS";
+        if (currentModeBtn) currentModeBtn.innerHTML = `<span>⚡</span><span class="mg-s-hidden"> Pure CSS</span>`;
         if (modeBadge) {
             modeBadge.className = "mg-badge mg-bg-primary";
             modeBadge.innerHTML = "⚡ Active Mode: Pure CSS (Zero-JS)";
@@ -340,7 +340,7 @@ function setDemoMode(mode: "pure-css" | "compat") {
         if (compatInfo) compatInfo.classList.add("mg-hidden");
     } else if (mode === "compat") {
         modeBtnCompat?.classList.add("active");
-        if (currentModeBtn) currentModeBtn.innerHTML = "🛡️ Compat Mode";
+        if (currentModeBtn) currentModeBtn.innerHTML = `<span>🛡️</span><span class="mg-s-hidden"> Compat Mode</span>`;
         if (modeBadge) {
             modeBadge.className = "mg-badge mg-bg-warning";
             modeBadge.innerHTML = "🛡️ Active Mode: Compat Mode (Forced Polyfills)";

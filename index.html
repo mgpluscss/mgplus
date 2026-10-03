@@ -21,7 +21,7 @@
   <header class="grid-bg">
     <nav class="mg-fixed-top mg-w-full mg-pad-t1">
       <div class="mg-container">
-        <div class="mg-row mg-x--between">
+        <div class="mg-row mg-x--between mg-flex-nowrap">
           <div class="mg-group">
             <div class="mg-dropdown">
               <button title="theme-switcher" class="mg-button--small mg-icon-dropdown">
@@ -63,9 +63,9 @@
             </div>
             <div class="mg-dropdown" id="demo-mode-dropdown">
               <button id="demo-mode-current" title="Demo Runtime Mode" class="mg-button--small mg-icon-dropdown">
-                ⚡ Pure CSS
+                <span>⚡</span><span class="mg-s-hidden"> Pure CSS</span>
               </button>
-              <div class="mg-dropdown--content mg-pad1 mg-right">
+              <div class="mg-dropdown--content mg-pad1">
                 <div class="mg-text-xs mg-text-bold mg-text-tertiary mg-pad-b1">DEMO RUNTIME MODE</div>
                 <ul class="mg-nav" role="menu">
                   <li id="mode-btn-pure" class="active" role="menuitem" tabindex="0" style="cursor: pointer;">

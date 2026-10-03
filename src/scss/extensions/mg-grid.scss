@@ -171,28 +171,36 @@
   }
 
   // Adaptive visibility helpers
-  @media screen and (max-width: mg-variables.$screen-s) {
+  @media screen and (max-width: mg-variables.$break-s) {
     .mg-s-hidden { display: none !important; }
   }
 
-  @media screen and (max-width: mg-variables.$screen-m) {
+  @media screen and (max-width: mg-variables.$break-m) {
     .mg-m-hidden { display: none !important; }
   }
 
-  @media screen and (max-width: mg-variables.$screen-l) {
+  @media screen and (max-width: mg-variables.$break-l) {
     .mg-l-hidden { display: none !important; }
   }
 
+  @media screen and (max-width: mg-variables.$break-xl) {
+    .mg-xl-hidden { display: none !important; }
+  }
+
   @media screen and (min-width: mg-variables.$screen-s) {
-    .mg-s-display { display: initial !important; }
+    .mg-s-display { display: none !important; }
   }
 
   @media screen and (min-width: mg-variables.$screen-m) {
-    .mg-m-display { display: initial !important; }
+    .mg-m-display { display: none !important; }
   }
 
   @media screen and (min-width: mg-variables.$screen-l) {
-    .mg-l-display { display: initial !important; }
+    .mg-l-display { display: none !important; }
+  }
+
+  @media screen and (min-width: mg-variables.$screen-xl) {
+    .mg-xl-display { display: none !important; }
   }
 
   // Containers
