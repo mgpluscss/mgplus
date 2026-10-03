@@ -8,7 +8,7 @@ $package-version: '' !default;
 @layer mg.theme {
   :root {
     color-scheme: light dark;
-    --mg-color-dark: oklch(14% 0.015 260);
+    --mg-color-dark: oklch(25% 0.015 260);
     --mg-color-light: oklch(98% 0.005 260);
     --mg-color-primary: oklch(55% 0.22 264);
     --mg-control-radius: 1rem;
